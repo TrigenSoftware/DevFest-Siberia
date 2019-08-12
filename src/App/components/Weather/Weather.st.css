@@ -1,0 +1,63 @@
+
+:vars {
+	paramBorderColor: black;
+}
+
+.root {
+	-st-states: smSize;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.date {
+	font-size: .8em;
+}
+
+.temp {
+	line-height: 1;
+	font-size: 10em;
+}
+
+.root:smSize .temp {
+	line-height: 1.2;
+	font-size: 2em;
+}
+
+.temp sup {
+	font-size: .5em;
+}
+
+.description {
+	line-height: 1;
+	font-size: 3em;
+}
+
+.root:smSize .description {
+	line-height: 1.2;
+	font-size: 1.2em;
+}
+
+.params {
+	display: flex;
+	margin: 1em 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.root:smSize .params {
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.param {
+	padding: 0 1em;
+}
+
+.root:smSize .param {
+	margin-bottom: .5em;
+}
+
+.root:not(:smSize) .param:not(:last-child) {
+	border-right: 1px solid value(paramBorderColor);
+}

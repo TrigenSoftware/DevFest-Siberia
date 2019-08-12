@@ -1,0 +1,13 @@
+{
+  "name": "DevFest-Siberia",
+  "short_name": "DevFest Siberia",
+  "description": "DevFest Siberia site",
+  "dir": "auto",
+  "lang": "ru-RU",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/?homescreen=1",
+  "background_color": "#18227f",
+  "theme_color": "#18227f"
+}

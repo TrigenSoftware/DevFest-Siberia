@@ -1,0 +1,19 @@
+
+.root {
+	/* Empty block */
+}
+
+.list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.root,
+.list {
+	display: flex;
+}
+
+.item {
+	padding: 10px;
+}

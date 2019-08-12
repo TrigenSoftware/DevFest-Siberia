@@ -1,0 +1,19 @@
+
+.root {
+	display: flex;
+	justify-content: center;
+}
+
+.input {
+	width: 80%;
+}
+
+.button {
+	width: 20%;
+}
+
+.input:focus-within,
+.button:focus {
+	position: relative;
+	z-index: 1;
+}
