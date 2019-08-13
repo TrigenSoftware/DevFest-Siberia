@@ -50,6 +50,7 @@ storiesOf('Components|Link', module)
 				{...events}
 				to={`/${faker.random.word()}`}
 				disabled={boolean('Disabled', false)}
+				disguised={boolean('Disguised', false)}
 			>
 				{text('Label', 'Link')}
 			</Link>
@@ -64,6 +65,7 @@ storiesOf('Components|Link', module)
 				icon={<TestIcon/>}
 				alignIcon={select('Align icon', AlignSideValues, AlignSideValues[0])}
 				disabled={boolean('Disabled', false)}
+				disguised={boolean('Disguised', false)}
 			>
 				{text('Label', 'Link')}
 			</Link>
@@ -78,6 +80,7 @@ storiesOf('Components|Link', module)
 				icon={<TestIcon/>}
 				alignIcon={select('Align icon', AlignSideValues, 'right')}
 				disabled={boolean('Disabled', false)}
+				disguised={boolean('Disguised', false)}
 			>
 				{text('Label', 'Link')}
 			</Link>
@@ -94,6 +97,7 @@ storiesOf('Components|Link', module)
 				alignIcon={select('Align icon', AlignSideValues, AlignSideValues[0])}
 				flexIcon={boolean('Flex icon', true)}
 				disabled={boolean('Disabled', false)}
+				disguised={boolean('Disguised', false)}
 			>
 				{text('Label', 'Link')}
 			</Link>
