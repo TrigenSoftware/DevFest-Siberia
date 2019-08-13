@@ -24,8 +24,15 @@
 	-st-named: outline;
 }
 
+:import {
+	-st-from: './mods/Link--disguised.st.css';
+	-st-named: disguised;
+}
+
 .root {
-	-st-states: disabled;
+	-st-states:
+		disabled,
+		disguised;
 	will-change:
 		color,
 		box-shadow;
@@ -73,4 +80,8 @@
 
 .root .icon:leftAlign {
 	margin-right: rel(5, 16);
+}
+
+.root:disguised {
+	-st-mixin: disguised;
 }

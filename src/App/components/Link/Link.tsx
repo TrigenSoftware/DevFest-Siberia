@@ -16,6 +16,7 @@ import stylesheet from './Link.st.css';
 
 export interface IProps extends IFlexisLinkProps {
 	disabled?: boolean;
+	disguised?: boolean;
 	to?: LocationDescriptor;
 }
 
@@ -27,8 +28,9 @@ export default class Link extends Component<IProps> {
 
 	static propTypes = {
 		...FlexisLink.propTypes,
-		disabled: PropTypes.bool,
-		to:       PropTypes.any
+		disabled:  PropTypes.bool,
+		disguised: PropTypes.bool,
+		to:        PropTypes.any
 	};
 
 	static defaultProps = {
@@ -43,6 +45,7 @@ export default class Link extends Component<IProps> {
 			linkElementCustomProps: linkElementCustomPropsProp,
 			tabIndex: tabIndexProp,
 			disabled,
+			disguised,
 			to,
 			href,
 			icon,
@@ -67,7 +70,8 @@ export default class Link extends Component<IProps> {
 			<FlexisLink
 				{...props}
 				{...stylesheet('root', {
-					disabled: Boolean(disabled)
+					disabled:  Boolean(disabled),
+					disguised: Boolean(disguised)
 				}, props)}
 				linkElement={linkElement}
 				linkElementCustomProps={linkElementCustomProps}
