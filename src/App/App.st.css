@@ -1,24 +1,62 @@
 
-:vars {
-	fontFamily:
-		/* Safari for OS X and iOS (San Francisco) */
-		-apple-system,
-		/* Chrome < 56 for OS X (San Francisco) */
-		BlinkMacSystemFont,
-		/* Windows */
-		'Segoe UI',
-		/* Android */
-		Roboto,
-		/* Basic web fallback */
-		'Helvetica Neue',
-		Arial,
-		sans-serif,
-		/* Emoji fonts */
-		'Apple Color Emoji',
-		'Segoe UI Emoji',
-		'Segoe UI Symbol' /* https://github.com/wix/stylable/issues/306 */;
+:global(body) {
+	font-family: value(fontFamily);
+	font-size: 2.4rem;
 }
 
-.root {
-	font-family: value(fontFamily);
+:global(h1) {
+	line-height: 10.8rem;
+	color: value(colorPink0);
+	font-size: 8.2rem;
+}
+
+:global(h2) {
+	line-height: 10.1rem;
+	color: value(colorBlue4);
+	font-size: 7.6rem;
+}
+
+:global(h3) {
+	line-height: 8.9rem;
+	color: value(colorBlue6);
+	font-size: 6.8rem;
+}
+
+:global(h4) {
+	line-height: 7.7rem;
+	color: value(colorBlue5);
+	font-size: 5.8rem;
+}
+
+:global(h5) {
+	line-height: 6.3rem;
+	color: value(colorBlue5);
+	font-size: 4.8rem;
+}
+
+:global(h6) {
+	line-height: 3.9rem;
+	color: value(colorBlue6);
+	font-size: 3rem;
+}
+
+:global(p) {
+	line-height: 3.6rem;
+	color: value(colorGray2);
+}
+
+:vars {
+	fontFamily:
+		Roboto Mono,
+		monospace;
+}
+
+:import {
+	-st-from: './components/variables.st.css';
+	-st-named:
+		colorPink0,
+		colorBlue4,
+		colorBlue5,
+		colorBlue6,
+		colorGray2;
 }
