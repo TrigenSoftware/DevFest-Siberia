@@ -22,7 +22,9 @@ storiesOf('Components|BurgerButton', module)
 		() => (
 			<BurgerButton
 				active={boolean('Active', false)}
-			/>
+			>
+				Open menu
+			</BurgerButton>
 		)
 	)
 	.add(
@@ -30,6 +32,8 @@ storiesOf('Components|BurgerButton', module)
 		() => (
 			<BurgerButton
 				active={boolean('Active', true)}
-			/>
+			>
+				Open menu
+			</BurgerButton>
 		)
 	);

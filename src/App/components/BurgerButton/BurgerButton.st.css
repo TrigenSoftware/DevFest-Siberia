@@ -20,14 +20,21 @@
 	position: fixed;
 	z-index: 1;
 	align-items: center;
-	will-change: box-shadow;
-	transition: box-shadow value(durationTransition);
+	will-change:
+		background-color,
+		box-shadow;
+	transition:
+		background-color value(durationTransition),
+		box-shadow value(durationTransition);
 	outline: none !important;
 	border: none;
-	background: none;
+	background: currentColor;
+	background-clip: content-box;
 	cursor: pointer;
-	width: 2.6rem;
-	height: 2.6rem;
+	padding: 1.1em 0;
+	width: 2.4em;
+	height: 2.4em;
+	font-size: 1rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -43,9 +50,8 @@
 }
 
 /* stylelint-disable a11y/media-prefers-reduced-motion */
-.root > span,
-.root > span::before,
-.root > span::after {
+.root::before,
+.root::after {
 	display: block;
 	position: absolute;
 	left: 0;
@@ -57,48 +63,36 @@
 		transform value(durationTransition);
 	background-color: currentColor;
 	width: 100%;
-	height: rel(2, 24);
+	height: .2em;
 }/* stylelint-enable */
 
 @media (prefers-reduced-motion: reduce) {
 
-	.root > span,
-	.root > span::before,
-	.root > span::after {
+	.root::before,
+	.root::after {
 		will-change: none;
 		transition: none;
 	}
 }
 
-.root > span::before {
-	top: rel(-8, 24);
+.root::before {
+	top: .5em;
 	content: '';
 }
 
-.root > span::after {
-	top: rel(8, 24);
+.root::after {
+	bottom: .5em;
 	content: '';
 }
 
-.root:hover > span,
-.root:focus > span,
-.root:hover > span::before,
-.root:focus > span::before,
-.root:hover > span::after,
-.root:focus > span::after {
-	background-color: currentColor;
+.root:active {
+	background-color: transparent;
 }
 
-.root:active > span {
-	transform: rotate(45deg);
+.root:active::before {
+	transform: translateY(.6em) rotate(45deg);
 }
 
-.root:active > span::before {
-	top: 0;
-	transform: rotate(0);
-}
-
-.root:active > span::after {
-	top: 0;
-	transform: rotate(90deg);
+.root:active::after {
+	transform: translateY(-.6em) rotate(-45deg);
 }

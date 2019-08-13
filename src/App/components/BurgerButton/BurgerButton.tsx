@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import {
 	CombinePropsAndAttributes
 } from '@flexis/ui/helpers';
+import SROnly from '@flexis/ui/components/SROnly';
 import stylesheet from './BurgerButton.st.css';
 
 interface ISelfProps {
@@ -27,6 +28,7 @@ export default class BurgerButton extends Component<IProps> {
 
 		const {
 			active,
+			children,
 			...props
 		} = this.props;
 
@@ -37,7 +39,13 @@ export default class BurgerButton extends Component<IProps> {
 					active
 				}, props)}
 			>
-				<span/>
+				{children && (
+					<SROnly>
+						<span>
+							{children}
+						</span>
+					</SROnly>
+				)}
 			</button>
 		);
 	}
