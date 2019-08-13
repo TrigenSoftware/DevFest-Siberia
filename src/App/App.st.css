@@ -1,3 +1,19 @@
+/* stylelint-disable no-descending-specificity */
+:vars {
+	fontFamily:
+		Roboto Mono,
+		monospace;
+}
+
+:import {
+	-st-from: './components/variables.st.css';
+	-st-named:
+		colorPink0,
+		colorBlue4,
+		colorBlue5,
+		colorBlue6,
+		colorGray2;
+}
 
 :global(body) {
 	font-family: value(fontFamily);
@@ -47,22 +63,7 @@
 }
 
 :global(p) {
+	text-indent: 5rem;
 	line-height: 3.6rem;
 	color: value(colorGray2);
-}
-
-:vars {
-	fontFamily:
-		Roboto Mono,
-		monospace;
-}
-
-:import {
-	-st-from: './components/variables.st.css';
-	-st-named:
-		colorPink0,
-		colorBlue4,
-		colorBlue5,
-		colorBlue6,
-		colorGray2;
 }

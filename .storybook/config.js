@@ -5,11 +5,11 @@ import {
 import {
 	addDecorator
 } from '@storybook/react';
-import reboot from '@flexis/ui/reboot.st.css';
-import stylesheet from '../src/App/App.st.css';
+import '@flexis/ui/reboot.st.css';
+import '../src/App/App.st.css';
 
 addDecorator(story => (
-	<div {...stylesheet('root', {}, reboot('root'))}>
+	<div>
 		{story()}
 	</div>
 ));
