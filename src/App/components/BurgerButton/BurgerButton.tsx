@@ -34,7 +34,7 @@ export default class BurgerButton extends Component<IProps> {
 			<button
 				{...props}
 				{...stylesheet('root', {
-					active: Boolean(active)
+					active
 				}, props)}
 			>
 				<span/>
