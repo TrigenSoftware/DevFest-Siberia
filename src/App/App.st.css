@@ -11,6 +11,9 @@
 
 :vars {
 	fontFamily:
+		Roboto,
+		sans-serif;
+	fontFamilyRobotoMono:
 		Roboto Mono,
 		monospace;
 }
@@ -22,36 +25,42 @@
 
 :global(h1) {
 	color: value(colorPink0);
+	font-family: value(fontFamilyRobotoMono);
 	font-size: 8.2rem;
 	font-weight: bold;
 }
 
 :global(h2) {
 	color: value(colorBlue4);
+	font-family: value(fontFamilyRobotoMono);
 	font-size: 7.6rem;
 	font-weight: 500;
 }
 
 :global(h3) {
 	color: value(colorBlue6);
+	font-family: value(fontFamilyRobotoMono);
 	font-size: 6.8rem;
 	font-weight: 500;
 }
 
 :global(h4) {
 	color: value(colorBlue5);
+	font-family: value(fontFamilyRobotoMono);
 	font-size: 5.8rem;
 	font-weight: normal;
 }
 
 :global(h5) {
 	color: value(colorBlue5);
+	font-family: value(fontFamilyRobotoMono);
 	font-size: 4.8rem;
 	font-weight: normal;
 }
 
 :global(h6) {
 	color: value(colorBlue6);
+	font-family: value(fontFamilyRobotoMono);
 	font-size: 3rem;
 	font-weight: normal;
 }
