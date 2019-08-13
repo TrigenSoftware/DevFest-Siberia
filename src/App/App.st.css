@@ -1,10 +1,4 @@
-
-:vars {
-	fontFamily:
-		Roboto Mono,
-		monospace;
-}
-
+/* stylelint-disable no-descending-specificity */
 :import {
 	-st-from: './components/variables.st.css';
 	-st-named:
@@ -15,7 +9,12 @@
 		colorGray2;
 }
 
-/* stylelint-disable no-descending-specificity */
+:vars {
+	fontFamily:
+		Roboto Mono,
+		monospace;
+}
+
 :global(body) {
 	font-family: value(fontFamily);
 	font-size: 2.4rem;
