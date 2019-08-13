@@ -1,0 +1,76 @@
+
+:import {
+	-st-from: '@flexis/ui/components/Link/Link.st.css';
+	-st-named: icon;
+}
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named:
+		durationTransition,
+		colorPink0,
+		colorPink1,
+		colorPink2,
+		colorBlue2;
+}
+
+:import {
+	-st-from: '../mixins.st.css';
+	-st-named: outline;
+}
+
+.root {
+	-st-states: disabled;
+	will-change:
+		color,
+		box-shadow;
+	transition:
+		color value(durationTransition),
+		box-shadow value(durationTransition);
+	outline: none;
+	color: value(colorPink0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.root {
+		will-change: none;
+		transition: none;
+	}
+}
+
+.root:focus {
+	-st-mixin: outline;
+}
+
+.root:hover,
+.root:focus {
+	color: value(colorPink1);
+}
+
+.root:visited {
+	color: value(colorPink2);
+}
+
+.root:disabled {
+	pointer-events: none;
+	color: value(colorBlue2);
+}
+
+.root .icon {
+	width: 1em;
+	height: 1em;
+}
+
+.root .icon:rightAlign {
+	margin-left: rel(5, 16);
+}
+
+.root .icon:leftAlign {
+	margin-right: rel(5, 16);
+}

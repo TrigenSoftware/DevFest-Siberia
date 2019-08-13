@@ -1,0 +1,14 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/colors';
+	-st-named: opacity;
+}
+
+:import {
+	-st-from: './variables.st.css';
+	-st-named: colorBlue8;
+}
+
+.outline {
+	box-shadow: 0 0 0 3px opacity(value(colorBlue8), 60%);
+}

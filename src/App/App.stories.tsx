@@ -13,7 +13,7 @@ Stylable API
 _empty_
 `;
 
-storiesOf('Typography', module)
+storiesOf('Components|Typography', module)
 	.addParameters({
 		info: stylableApi
 	})
