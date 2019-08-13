@@ -6,10 +6,7 @@
 
 :import {
 	-st-from: '../variables.st.css';
-	-st-named:
-		durationTransition,
-		colorGray0,
-		colorGray4;
+	-st-named: durationTransition;
 }
 
 :import {
@@ -89,7 +86,7 @@
 .root:focus > span::before,
 .root:hover > span::after,
 .root:focus > span::after {
-	background-color: value(colorGray4);
+	background-color: currentColor;
 }
 
 .root:active > span {
