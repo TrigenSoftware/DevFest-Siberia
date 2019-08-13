@@ -8,36 +8,42 @@
 	line-height: 10.8rem;
 	color: value(colorPink0);
 	font-size: 8.2rem;
+	font-weight: bold;
 }
 
 :global(h2) {
 	line-height: 10.1rem;
 	color: value(colorBlue4);
 	font-size: 7.6rem;
+	font-weight: 500;
 }
 
 :global(h3) {
 	line-height: 8.9rem;
 	color: value(colorBlue6);
 	font-size: 6.8rem;
+	font-weight: 500;
 }
 
 :global(h4) {
 	line-height: 7.7rem;
 	color: value(colorBlue5);
 	font-size: 5.8rem;
+	font-weight: normal;
 }
 
 :global(h5) {
 	line-height: 6.3rem;
 	color: value(colorBlue5);
 	font-size: 4.8rem;
+	font-weight: normal;
 }
 
 :global(h6) {
 	line-height: 3.9rem;
 	color: value(colorBlue6);
 	font-size: 3rem;
+	font-weight: normal;
 }
 
 :global(p) {
