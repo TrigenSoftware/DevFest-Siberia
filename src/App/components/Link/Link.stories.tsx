@@ -48,7 +48,7 @@ storiesOf('Components|Link', module)
 		() => (
 			<Link
 				{...events}
-				to={`${faker.internet.url()}`}
+				to={`/${faker.random.word()}`}
 				disabled={boolean('Disabled', false)}
 			>
 				{text('Label', 'Link')}
@@ -60,7 +60,7 @@ storiesOf('Components|Link', module)
 		() => (
 			<Link
 				{...events}
-				to={`${faker.internet.url()}`}
+				to={`/${faker.random.word()}`}
 				icon={<TestIcon/>}
 				alignIcon={select('Align icon', AlignSideValues, AlignSideValues[0])}
 				disabled={boolean('Disabled', false)}
@@ -74,7 +74,7 @@ storiesOf('Components|Link', module)
 		() => (
 			<Link
 				{...events}
-				to={`${faker.internet.url()}`}
+				to={`/${faker.random.word()}`}
 				icon={<TestIcon/>}
 				alignIcon={select('Align icon', AlignSideValues, 'right')}
 				disabled={boolean('Disabled', false)}
@@ -89,7 +89,7 @@ storiesOf('Components|Link', module)
 			<Link
 				{...events}
 				style={{ width: '100px' }}
-				to={`${faker.internet.url()}`}
+				to={`/${faker.random.word()}`}
 				icon={<TestIcon/>}
 				alignIcon={select('Align icon', AlignSideValues, AlignSideValues[0])}
 				flexIcon={boolean('Flex icon', true)}
