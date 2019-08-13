@@ -24,4 +24,12 @@ storiesOf('Components|BurgerButton', module)
 				active={boolean('Active', false)}
 			/>
 		)
+	)
+	.add(
+		'with active state',
+		() => (
+			<BurgerButton
+				active={boolean('Active', true)}
+			/>
+		)
 	);
