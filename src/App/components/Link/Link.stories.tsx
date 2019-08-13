@@ -1,3 +1,4 @@
+import faker from 'faker';
 import React from 'react';
 import {
 	storiesOf
@@ -35,7 +36,7 @@ export const parameters = extendInfo(
 	]
 );
 
-storiesOf('Link', module)
+storiesOf('Components|Link', module)
 	.addParameters(parameters)
 	.addDecorator(story => (
 		<MemoryRouter initialEntries={['/']}>
@@ -47,7 +48,7 @@ storiesOf('Link', module)
 		() => (
 			<Link
 				{...events}
-				to='#'
+				to={`/${faker.internet.url()}`}
 				disabled={boolean('Disabled', false)}
 			>
 				{text('Label', 'Link')}
@@ -59,7 +60,7 @@ storiesOf('Link', module)
 		() => (
 			<Link
 				{...events}
-				to='#'
+				to={`/${faker.internet.url()}`}
 				icon={<TestIcon/>}
 				alignIcon={select('Align icon', AlignSideValues, AlignSideValues[0])}
 				disabled={boolean('Disabled', false)}
@@ -73,7 +74,7 @@ storiesOf('Link', module)
 		() => (
 			<Link
 				{...events}
-				to='#'
+				to={`/${faker.internet.url()}`}
 				icon={<TestIcon/>}
 				alignIcon={select('Align icon', AlignSideValues, 'right')}
 				disabled={boolean('Disabled', false)}
@@ -88,7 +89,7 @@ storiesOf('Link', module)
 			<Link
 				{...events}
 				style={{ width: '100px' }}
-				to='#'
+				to={`/${faker.internet.url()}`}
 				icon={<TestIcon/>}
 				alignIcon={select('Align icon', AlignSideValues, AlignSideValues[0])}
 				flexIcon={boolean('Flex icon', true)}
