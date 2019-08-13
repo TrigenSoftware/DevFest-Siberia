@@ -1,0 +1,39 @@
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named:
+		colorWhite,
+		colorBlue3;
+}
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+.root {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: rel(20, 24);
+	font-size: 2rem;
+}
+
+.list {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.link {
+	padding: 0  rel(14, 24);
+	text-decoration: none;
+	color: value(colorWhite);
+}
+
+.separator {
+	background-color: value(colorBlue3);
+	width: 1px;
+	height: 100%;
+}
