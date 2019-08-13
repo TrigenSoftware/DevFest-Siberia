@@ -1,0 +1,98 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named: durationTransition;
+}
+
+:import {
+	-st-from: '../mixins.st.css';
+	-st-named: outline;
+}
+
+.root {
+	-st-states: active;
+	display: flex;
+	position: fixed;
+	z-index: 1;
+	align-items: center;
+	will-change:
+		background-color,
+		box-shadow;
+	transition:
+		background-color value(durationTransition),
+		box-shadow value(durationTransition);
+	outline: none !important;
+	border: none;
+	background: currentColor;
+	background-clip: content-box;
+	cursor: pointer;
+	padding: 1.1em 0;
+	width: 2.4em;
+	height: 2.4em;
+	font-size: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.root {
+		will-change: none;
+		transition: none;
+	}
+}
+
+.root:focus {
+	-st-mixin: outline;
+}
+
+/* stylelint-disable a11y/media-prefers-reduced-motion */
+.root::before,
+.root::after {
+	display: block;
+	position: absolute;
+	left: 0;
+	will-change:
+		background-color,
+		transform;
+	transition:
+		background-color value(durationTransition),
+		transform value(durationTransition);
+	background-color: currentColor;
+	width: 100%;
+	height: .2em;
+}/* stylelint-enable */
+
+@media (prefers-reduced-motion: reduce) {
+
+	.root::before,
+	.root::after {
+		will-change: none;
+		transition: none;
+	}
+}
+
+.root::before {
+	top: .5em;
+	content: '';
+}
+
+.root::after {
+	bottom: .5em;
+	content: '';
+}
+
+.root:active {
+	background-color: transparent;
+}
+
+.root:active::before {
+	transform: translateY(.6em) rotate(45deg);
+}
+
+.root:active::after {
+	transform: translateY(-.6em) rotate(-45deg);
+}
