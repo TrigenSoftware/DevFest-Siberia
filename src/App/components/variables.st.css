@@ -3,6 +3,9 @@
 	/* Commons */
 	durationTransition: .2s;
 
+	/* Sizes */
+	sizeBorderRadius: 10px;
+
 	/* Colors */
 	colorBlack: black;
 	colorWhite: white;
@@ -18,6 +21,7 @@
 	colorPink0: #ff0093;
 	colorPink1: #cc007e;
 	colorPink2: #782388;
+	colorPink3: #b9006a;
 	colorGray0: #888888;
 	colorGray1: #555555;
 	colorGray2: #1d1d1d;
