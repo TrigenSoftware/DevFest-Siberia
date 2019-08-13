@@ -27,7 +27,7 @@ storiesOf('Typography', module)
 				<h4>{text('h4', 'Header 04')}</h4>
 				<h5>{text('h5', 'Header 05')}</h5>
 				<h6>{text('h6', 'Header 06')}</h6>
-				<p>{text('p', faker.lorem.words())}</p>
+				<p>{text('p', faker.lorem.paragraph())}</p>
 			</>
 		)
 	);
