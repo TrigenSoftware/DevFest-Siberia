@@ -1,0 +1,102 @@
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named:
+		durationTransition,
+		colorGray0,
+		colorGray4;
+}
+
+:import {
+	-st-from: '../mixins.st.css';
+	-st-named: outline;
+}
+
+.root {
+	-st-states: active;
+	display: flex;
+	position: fixed;
+	z-index: 1;
+	align-items: center;
+	will-change: box-shadow;
+	transition: box-shadow value(durationTransition);
+	outline: none !important;
+	border: none;
+	background: none;
+	cursor: pointer;
+	width: 2.6rem;
+	height: 2.6rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.root {
+		will-change: none;
+		transition: none;
+	}
+}
+
+.root:focus {
+	-st-mixin: outline;
+}
+
+/* stylelint-disable a11y/media-prefers-reduced-motion */
+.root > span,
+.root > span::before,
+.root > span::after {
+	display: block;
+	position: absolute;
+	left: 0;
+	will-change:
+		background-color,
+		transform;
+	transition:
+		background-color value(durationTransition),
+		transform value(durationTransition);
+	background-color: value(colorGray0);
+	width: 100%;
+	height: 2px;
+}/* stylelint-enable */
+
+@media (prefers-reduced-motion: reduce) {
+
+	.root > span,
+	.root > span::before,
+	.root > span::after {
+		will-change: none;
+		transition: none;
+	}
+}
+
+.root > span::before {
+	top: -8px;
+	content: '';
+}
+
+.root > span::after {
+	top: 8px;
+	content: '';
+}
+
+.root:hover > span,
+.root:focus > span,
+.root:hover > span::before,
+.root:focus > span::before,
+.root:hover > span::after,
+.root:focus > span::after {
+	background-color: value(colorGray4);
+}
+
+.root:active > span {
+	transform: rotate(45deg);
+}
+
+.root:active > span::before {
+	top: 0;
+	transform: rotate(0);
+}
+
+.root:active > span::after {
+	top: 0;
+	transform: rotate(90deg);
+}
