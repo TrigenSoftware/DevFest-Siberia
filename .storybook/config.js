@@ -1,4 +1,5 @@
 import React from 'react';
+import './injectTestIcon';
 import {
 	configure
 } from '@trigen/scripts-preset-react-app/storybook/config';
