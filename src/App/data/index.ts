@@ -13,10 +13,11 @@ export const googleMaps = {
 		lat: 54.857755,
 		lng: 83.111595
 	},
-	zoom: 17,
+	zoom: 16,
 	options: {
-		draggable:      false,
-		scrollwheel:    false,
-		mapTypeControl: true
+		draggable:         false,
+		scrollwheel:       false,
+		fullscreenControl: false,
+		mapTypeControl:    true
 	}
 };

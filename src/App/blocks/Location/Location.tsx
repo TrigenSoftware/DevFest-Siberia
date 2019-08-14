@@ -6,7 +6,11 @@ import {
 	Bind
 } from '@flexis/ui/helpers';
 import GoogleMapReact from 'google-map-react';
+import {
+	noSize
+} from '~/components/common/unsetSize';
 import Section from '~/components/Section';
+import PinIcon from '~/icons/pin.svg';
 import {
 	googleMaps
 } from '~/data';
@@ -34,6 +38,18 @@ export default class Location extends Component<IProps> {
 					options={googleMaps.options}
 					onGoogleApiLoaded={this.renderMarkers}
 				/>
+				<article
+					{...stylesheet('info')}
+				>
+					<PinIcon
+						{...stylesheet('icon')}
+						{...noSize}
+					/>
+					<address>
+						<b>Технопарк Новосибирского Академгородка</b><br/>
+						ул. Николаева д. 12, г. Новосибирск
+					</address>
+				</article>
 			</Section>
 		);
 	}
