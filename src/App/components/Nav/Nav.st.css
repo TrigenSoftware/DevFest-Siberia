@@ -6,6 +6,7 @@
 		sizeGap,
 		sizeGapSmall,
 		sizeScreenLarge,
+		colorBlue8,
 		colorGray2,
 		colorWhite;
 }
@@ -83,9 +84,13 @@
 		bottom: 0;
 		left: 0;
 		transform: translateX(-110%);
-		box-shadow: rel(2, 24) 0 rel(40, 24) rel(-15, 24) value(colorGray2);
+		box-shadow: 0 .2rem .5rem value(colorBlue8);
 		background: value(colorWhite);
-		padding: value(sizeGap);
+		padding:
+			calc(value(sizeGap) - .5rem)
+			value(sizeGap)
+			value(sizeGap)
+			calc(value(sizeGap) * 2);
 	}
 
 	.root:active .list {
