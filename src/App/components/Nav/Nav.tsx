@@ -1,6 +1,5 @@
 import React, {
 	HTMLAttributes,
-	Children,
 	Component
 } from 'react';
 import {
@@ -48,13 +47,7 @@ export default class Nav extends Component<IProps, IState> {
 				<ul
 					{...stylesheet('list')}
 				>
-					{Children.map(children, child => child && (
-						<li
-							{...stylesheet('item')}
-						>
-							{child}
-						</li>
-					))}
+					{children}
 				</ul>
 				<button
 					{...stylesheet('close')}

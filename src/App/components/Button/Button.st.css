@@ -36,7 +36,7 @@
 		box-shadow value(durationTransition);
 	outline: none !important;
 	border: 0;
-	border-radius: rel(value(sizeBorderRadius), 24);
+	border-radius: value(sizeBorderRadius);
 	background-color: value(colorPink0);
 	padding: rel(16, 24) rel(31, 24);
 	color: value(colorWhite);
