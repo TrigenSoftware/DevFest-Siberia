@@ -9,8 +9,7 @@ import {
 	events
 } from '@flexis/ui/components/Link/Link.stories';
 import Nav, {
-	NavLink,
-	NavSeparator
+	NavLink
 } from './';
 
 const stylableApi = `
@@ -32,11 +31,7 @@ storiesOf('Components|Nav', module)
 	.add(
 		'with default state',
 		() => (
-			<Nav
-				style={{
-					backgroundColor: '#18227f'
-				}}
-			>
+			<Nav>
 				<NavLink
 					{...events}
 					to='/team'
@@ -49,14 +44,12 @@ storiesOf('Components|Nav', module)
 				>
 					Become speaker
 				</NavLink>
-				<NavSeparator/>
 				<NavLink
 					{...events}
 					to='/en'
 				>
 					En
 				</NavLink>
-				<NavSeparator/>
 				<NavLink
 					{...events}
 					to='/login'

@@ -6,7 +6,6 @@ import React, {
 import stylesheet from './Nav.st.css';
 
 export * from './NavLink';
-export * from './NavSeparator';
 
 export type IProps = HTMLAttributes<HTMLElement>;
 
