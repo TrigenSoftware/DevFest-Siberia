@@ -6,6 +6,7 @@
 		sizeGap,
 		sizeGapSmall,
 		sizeScreenLarge,
+		colorGray2,
 		colorWhite;
 }
 
@@ -24,6 +25,7 @@
 
 .toggle {
 	left: 1rem;
+	z-index: 3;
 }
 
 .list {
@@ -80,7 +82,8 @@
 		top: 0;
 		bottom: 0;
 		left: 0;
-		transform: translateX(-103%);
+		transform: translateX(-110%);
+		box-shadow: rel(2, 24) 0 rel(40, 24) rel(-15, 24) value(colorGray2);
 		background: value(colorWhite);
 		padding: value(sizeGap);
 	}

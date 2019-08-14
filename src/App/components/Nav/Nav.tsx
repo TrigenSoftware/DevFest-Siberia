@@ -13,7 +13,7 @@ export * from './NavLink';
 
 export type IProps = HTMLAttributes<HTMLElement>;
 
-export interface IState {
+interface IState {
 	active: boolean;
 }
 
