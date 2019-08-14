@@ -21,7 +21,7 @@ export class NavLink extends Component<IProps> {
 		return (
 			<Link
 				{...props}
-				{...stylesheet('link')}
+				{...stylesheet('link', {}, props)}
 			>
 				{children}
 			</Link>

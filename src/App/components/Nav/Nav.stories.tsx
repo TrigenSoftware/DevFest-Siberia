@@ -15,8 +15,10 @@ import Nav, {
 const stylableApi = `
 Stylable API
 ---
+- ::toggle
 - ::list
-- ::link
+- ::item
+- ::close
 `;
 
 storiesOf('Components|Nav', module)

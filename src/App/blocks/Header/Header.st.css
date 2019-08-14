@@ -1,0 +1,124 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named:
+		sizeScreenLarge,
+		colorWhite,
+		colorBlack,
+		colorBlue1,
+		colorBlue2,
+		colorBlue4;
+}
+
+:import {
+	-st-from: '~/components/Link/Link.st.css';
+	-st-named: icon;
+}
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+:import {
+	-st-from: '~/components/BurgerButton/BurgerButton.st.css';
+	-st-default: toggle;
+}
+
+:import {
+	-st-from: '~/components/Button/Button.st.css';
+	-st-default: button;
+}
+
+.root {
+	display: flex;
+	align-items: center;
+	background-color: value(colorBlue4);
+	padding: 0 3rem;
+	height: 11.5rem;
+}
+
+.root .center {
+	display: flex;
+	align-items: center;
+}
+
+.root .toggle {
+	left: 1.2rem;
+	color: value(colorWhite);
+}
+
+.section {
+	width: 100%;
+}
+
+.logo {
+	display: inline-flex;
+	overflow: hidden;
+}
+
+.logo .icon {
+	width: auto;
+	max-width: 30rem;
+	height: 6.7rem;
+}
+
+.nav {
+	margin-left: auto;
+}
+
+.link {
+	-st-states: separated;
+	text-decoration: none;
+	font-size: 2rem;
+}
+
+.spacer {
+	width: auto;
+}
+
+@media (min-width: value(sizeScreenLarge)) {
+
+	.link {
+		color: value(colorBlue1);
+	}
+
+	.link:separated {
+		border-right: 1px solid value(colorBlue2);
+		border-left: 1px solid value(colorBlue2);
+	}
+}
+
+@media (max-width: value(sizeScreenLarge)) {
+
+	.root {
+		padding: 0 1.5rem 0 4.7rem;
+		height: 7rem;
+	}
+
+	.root .center {
+		padding: 0;
+	}
+
+	.root .button {
+		display: flex;
+		border-radius: rel(6, 24);
+		padding: rel(6, 24) rel(15, 24);
+		font-size: 1.6rem;
+	}
+
+	.root .toggle:active {
+		color: value(colorBlack);
+	}
+
+	.logo .icon {
+		width: auto;
+		max-width: 12.3rem;
+		height: 2.75rem;
+	}
+}
