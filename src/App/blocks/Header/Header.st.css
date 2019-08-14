@@ -27,12 +27,12 @@
 
 :import {
 	-st-from: '~/components/BurgerButton/BurgerButton.st.css';
-	-st-default: toggle;
+	-st-default: Toggle;
 }
 
 :import {
 	-st-from: '~/components/Button/Button.st.css';
-	-st-default: button;
+	-st-default: Button;
 }
 
 .root {
@@ -48,7 +48,7 @@
 	align-items: center;
 }
 
-.root .toggle {
+.root .Toggle {
 	left: 1.2rem;
 	color: value(colorWhite);
 }
@@ -105,14 +105,14 @@
 		padding: 0;
 	}
 
-	.root .button {
+	.root .Button {
 		display: flex;
 		border-radius: rel(6, 24);
 		padding: rel(6, 24) rel(15, 24);
 		font-size: 1.6rem;
 	}
 
-	.root .toggle:active {
+	.root .Toggle:active {
 		color: value(colorBlack);
 	}
 
