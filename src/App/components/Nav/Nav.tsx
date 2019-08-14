@@ -3,13 +3,25 @@ import React, {
 	Children,
 	Component
 } from 'react';
+import {
+	Bind
+} from '@flexis/ui/helpers';
+import BurgerButton from '../BurgerButton';
 import stylesheet from './Nav.st.css';
 
 export * from './NavLink';
 
 export type IProps = HTMLAttributes<HTMLElement>;
 
-export default class Nav extends Component<IProps> {
+export interface IState {
+	active: boolean;
+}
+
+export default class Nav extends Component<IProps, IState> {
+
+	state = {
+		active: false
+	};
 
 	render() {
 
@@ -17,22 +29,47 @@ export default class Nav extends Component<IProps> {
 			children,
 			...props
 		} = this.props;
+		const {
+			active
+		} = this.state;
 
 		return (
 			<nav
 				{...props}
 				{...stylesheet('root', {}, props)}
 			>
+				<BurgerButton
+					{...stylesheet('burger')}
+					active={active}
+					onClick={this.onClick}
+				/>
 				<ul
-					{...stylesheet('list')}
+					{...stylesheet('list', {
+						active
+					})}
 				>
 					{Children.map(children, child => child && (
-						<li>
+						<li
+							{...stylesheet('item')}
+						>
 							{child}
 						</li>
 					))}
 				</ul>
+				<button
+					{...stylesheet('mobile_bg')}
+					onClick={this.onClick}
+				/>
 			</nav>
 		);
+	}
+
+	@Bind()
+	private onClick() {
+		this.setState(({
+			active
+		}) => ({
+			active: !active
+		}));
 	}
 }

@@ -1,5 +1,13 @@
 
 :import {
+	-st-from: '../variables.st.css';
+	-st-named:
+		durationTransition,
+		sizeScreenLg,
+		colorWhite;
+}
+
+:import {
 	-st-from: '@flexis/ui/stylable/rel';
 	-st-default: rel;
 }
@@ -11,13 +19,79 @@
 	padding: rel(20, 24);
 }
 
+.burger {
+	left: 1rem;
+	visibility: hidden;
+}
+
 .list {
+	-st-states: active;
 	display: flex;
+	z-index: 2;
+	will-change: transform;
+	transition: transform value(durationTransition);
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
+@media (prefers-reduced-motion: reduce) {
+
+	.list {
+		will-change: none;
+		transition: none;
+	}
+}
+
 .link {
 	padding: 0  rel(14, 24);
+}
+
+.mobile_bg {
+	visibility: hidden;
+}
+
+@media (max-width: value(sizeScreenLg)) {
+
+	.burger {
+		visibility: visible;
+	}
+
+	.list {
+		display: block;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		transform: translateX(-103%);
+		background: value(colorWhite);
+		padding: rel(20, 24);
+	}
+
+	.list:active {
+		transform: translateX(0);
+	}
+
+	.list:active ~ .mobile_bg {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		visibility: visible;
+		outline: none !important;
+		border: none;
+		background: none;
+		cursor: pointer;
+		width: 100%;
+	}
+
+	.item {
+		padding-bottom: 2rem;
+	}
+
+	.link {
+		display: block;
+	}
 }
