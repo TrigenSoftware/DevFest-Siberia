@@ -1,0 +1,111 @@
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named:
+		durationTransition,
+		sizeGap,
+		sizeGapSmall,
+		sizeScreenLarge,
+		colorBlue8,
+		colorGray2,
+		colorWhite;
+}
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+.root {
+	-st-states: active;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: value(sizeGap);
+}
+
+.toggle {
+	left: 1rem;
+	z-index: 3;
+}
+
+.list {
+	display: flex;
+	z-index: 2;
+	will-change: transform;
+	transition: transform value(durationTransition);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.list {
+		will-change: none;
+		transition: none;
+	}
+}
+
+.link {
+	padding: 0 value(sizeGapSmall);
+}
+
+/* stylelint-disable a11y/no-display-none */
+.close {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	outline: none !important;
+	border: none;
+	background: none;
+	cursor: pointer;
+	width: 100%;
+}/* stylelint-enable */
+
+@media (min-width: value(sizeScreenLarge)) {
+
+	/* stylelint-disable a11y/no-display-none */
+	.toggle {
+		display: none;
+	}/* stylelint-enable */
+}
+
+@media (max-width: value(sizeScreenLarge)) {
+
+	.list {
+		display: block;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		transform: translateX(-110%);
+		box-shadow: 0 .2rem .5rem value(colorBlue8);
+		background: value(colorWhite);
+		padding:
+			calc(value(sizeGap) - .5rem)
+			value(sizeGap)
+			value(sizeGap)
+			calc(value(sizeGap) * 2);
+	}
+
+	.root:active .list {
+		transform: translateX(0);
+	}
+
+	.root:active .close {
+		display: block;
+	}
+
+	.item {
+		padding-bottom: value(sizeGap);
+	}
+
+	.link {
+		display: block;
+	}
+}
