@@ -1,0 +1,11 @@
+
+:import {
+	-st-from: '@flexis/ui/components/Link/Link.st.css';
+	-st-named: icon;
+}
+
+.root .icon {
+	margin: 0 !important;
+	width: 4rem;
+	height: 4rem;
+}
