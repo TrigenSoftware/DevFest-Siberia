@@ -3,9 +3,9 @@
 	-st-from: '../variables.st.css';
 	-st-named:
 		durationTransition,
-		sizeScreenLarge,
 		sizeGap,
 		sizeGapSmall,
+		sizeScreenLarge,
 		colorWhite;
 }
 
