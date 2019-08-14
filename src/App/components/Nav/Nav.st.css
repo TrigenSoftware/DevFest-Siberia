@@ -47,7 +47,7 @@
 }
 
 /* stylelint-disable a11y/no-display-none */
-.root .close {
+.close {
 	display: none;
 	position: fixed;
 	top: 0;
