@@ -10,6 +10,7 @@ import {
 } from 'react';
 import PropTypes from 'prop-types';
 import icon from './icon';
+import animate from './animate';
 import {
 	IIconProps
 } from './types';
@@ -57,5 +58,9 @@ export default class TimerCat extends PureComponent<IProps, IIconProps> {
 
 	render() {
 		return icon(this.state);
+	}
+
+	componentDidMount() {
+		animate();
 	}
 }

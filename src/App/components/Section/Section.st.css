@@ -1,0 +1,16 @@
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named: sizeScreenLarge;
+}
+
+.center {
+	width: value(sizeScreenLarge);
+}
+
+@media (max-width: value(sizeScreenLarge)) {
+
+	.center {
+		width: 100%;
+	}
+}
