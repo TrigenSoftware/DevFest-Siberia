@@ -1,0 +1,100 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/colors';
+	-st-named: darken;
+}
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named:
+		colorWhite,
+		colorBlue4;
+}
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+:vars {
+	breakpoint: 1080px;
+}
+
+.root {
+	background-color: value(colorBlue4);
+	overflow: hidden;
+}
+
+.root .center {
+	position: relative;
+}
+
+.info {
+	position: absolute;
+	top: 4.5em;
+	font-size: 1rem;
+}
+
+@media (max-width: value(breakpoint)) {
+
+	.info {
+		font-size: 1vw;
+	}
+}
+
+.info h2 {
+	display: flex;
+	align-items: center;
+	margin-bottom: 2em;
+	height: 7em;
+	overflow: hidden;
+	text-transform: uppercase;
+	color: value(colorWhite);
+	font-size: 1em;
+}
+
+.info address {
+	margin: 0;
+	font-size: 6.4em;
+	font-weight: normal;
+}
+
+.info time {
+	font-size: 6.2em;
+}
+
+.info small {
+	font-size: rel(20, 76);
+	font-weight: normal;
+}
+
+.info span {
+	font-weight: 300;
+}
+
+.info small:first-child {
+	margin-right: -.9em;
+}
+
+.info address,
+.info time {
+	background-color: darken(value(colorBlue4), 30%);
+	padding: 0 rel(40, 76) 0 rel(90, 76);
+}
+
+.svg {
+	margin: -10vw 0 -10px;
+	width: 145%;
+}
+
+@media (max-width: value(breakpoint)) {
+
+	.svg {
+		margin-top: 0;
+	}
+}
