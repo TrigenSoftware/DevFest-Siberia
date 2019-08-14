@@ -1,0 +1,10 @@
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+.root .center {
+	padding: 0;
+	height: 660px;
+}
