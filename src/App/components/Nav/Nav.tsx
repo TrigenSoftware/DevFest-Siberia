@@ -36,17 +36,17 @@ export default class Nav extends Component<IProps, IState> {
 		return (
 			<nav
 				{...props}
-				{...stylesheet('root', {}, props)}
+				{...stylesheet('root', {
+					active
+				}, props)}
 			>
 				<BurgerButton
-					{...stylesheet('burger')}
+					{...stylesheet('toggle')}
 					onClick={this.onClick}
 					active={active}
 				/>
 				<ul
-					{...stylesheet('list', {
-						active
-					})}
+					{...stylesheet('list')}
 				>
 					{Children.map(children, child => child && (
 						<li
@@ -57,7 +57,7 @@ export default class Nav extends Component<IProps, IState> {
 					))}
 				</ul>
 				<button
-					{...stylesheet('mobile_bg')}
+					{...stylesheet('close')}
 					onClick={this.onClick}
 				/>
 			</nav>
