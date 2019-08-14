@@ -5,7 +5,9 @@
 
 	/* Sizes */
 	sizeBorderRadius: 1rem;
+	sizeScreenMiddle: 1080px;
 	sizeScreenLarge: 1366px;
+	sizeGapLarge: 4rem;
 	sizeGap: 2rem;
 	sizeGapSmall: 1.4rem;
 

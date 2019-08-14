@@ -1,0 +1,107 @@
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named:
+		sizeScreenMiddle,
+		sizeScreenLarge,
+		sizeBorderRadius,
+		sizeGap,
+		sizeGapLarge,
+		colorPink0,
+		colorWhite;
+}
+
+@media (max-width: value(sizeScreenLarge)) {
+
+	.root::after {
+		display: block;
+		background-color: value(colorPink0);
+		height: 11rem;
+		content: '';
+	}
+}
+
+.root .center {
+	position: relative;
+	padding: 0;
+	height: 66rem;
+}
+
+@media (max-width: value(sizeScreenLarge)) {
+
+	.root .center {
+		position: relative;
+		padding: 0;
+		height: 50rem;
+	}
+}
+
+@media (max-width: value(sizeScreenMiddle)) {
+
+	.root .center {
+		height: 35rem;
+	}
+}
+
+.info {
+	display: flex;
+	align-items: flex-start;
+	box-shadow: 0 .2rem .5rem rgba(0, 0, 0, .3);
+	border-radius: value(sizeBorderRadius);
+	background-color: value(colorWhite);
+	padding:
+		value(sizeGapLarge)
+		value(sizeGapLarge)
+		value(sizeGapLarge)
+		0;
+}
+
+@media (min-width: value(sizeScreenLarge)) {
+
+	.info {
+		position: absolute;
+		top: 8rem;
+		left: 8rem;
+		width: 50rem;
+	}
+}
+
+@media (max-width: value(sizeScreenLarge)) {
+
+	.info {
+		transform: translateY(-65%);
+		margin: 0 auto;
+		padding:
+			1.5rem
+			1.5rem
+			1.5rem
+			0;
+		max-width: 50rem;
+	}
+}
+
+@media (max-width: value(sizeScreenMiddle)) {
+
+	.info {
+		transform: translateY(-40%);
+		font-size: calc(16em / 24);
+	}
+}
+
+@media (max-width: 520px) {
+
+	.info {
+		margin: 0 1rem;
+	}
+}
+
+.icon {
+	width: 5em;
+	height: 7rem;
+	color: value(colorPink0);
+}
