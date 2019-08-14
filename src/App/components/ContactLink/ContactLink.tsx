@@ -6,12 +6,12 @@ import SROnly from '@flexis/ui/components/SROnly';
 import Link, {
 	IProps as ILinkProps
 } from '../Link';
-import stylesheet from './ContactLink.st.css';
 import TelegramIcon from '~/icons/telegram-icon.svg';
 import EmailIcon from '~/icons/email-icon.svg';
 import TwitterIcon from '~/icons/twitter-icon.svg';
 import VkIcon from '~/icons/vk-icon.svg';
 import SiteIcon from '~/icons/site-icon.svg';
+import stylesheet from './ContactLink.st.css';
 
 export enum ContactLinkTypeVariant {
 	Telegram = 'telegram',
