@@ -6,9 +6,9 @@ import {
 import date from './date';
 import counter from './counter';
 
-export default function icon(props: IIconProps) {
+export default function icon(props: IIconProps, otherProps: any) {
 	return (
-		<svg viewBox="0 0 2900 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<svg {...otherProps} viewBox="0 0 2900 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<g id="Cat original" clipPath="url(#clip0)">
 				<g id="Background">
 					<path id="Pink" d="M2900 0H0V1199.6H2900V0Z" fill="#18227F"></path>

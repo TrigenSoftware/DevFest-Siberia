@@ -1,26 +1,28 @@
 /* tslint:disable:no-magic-numbers */
-import faker from 'faker';
 import React from 'react';
 import {
 	storiesOf
 } from '@storybook/react';
-import Section from './';
+import Main from './';
 
 const stylableApi = `
 Stylable API
 ---
-- ::center
+_empty_
 `;
 
-storiesOf('Components|Section', module)
+storiesOf('Blocks|Main', module)
 	.addParameters({
 		info: stylableApi
 	})
+	.addDecorator(story => (
+		<div style={{ margin: '-12px' }}>
+			{story()}
+		</div>
+	))
 	.add(
-		'with content',
+		'with basic state',
 		() => (
-			<Section>
-				{faker.lorem.paragraph()}
-			</Section>
+			<Main/>
 		)
 	);

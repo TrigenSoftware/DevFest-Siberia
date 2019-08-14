@@ -1,16 +1,20 @@
 
 :import {
 	-st-from: '../variables.st.css';
-	-st-named: sizeScreenLarge;
+	-st-named:
+		sizeScreenLarge,
+		sizeGapSmall;
 }
 
 .center {
+	margin: 0 auto;
 	width: value(sizeScreenLarge);
 }
 
 @media (max-width: value(sizeScreenLarge)) {
 
 	.center {
+		padding: 0 value(sizeGapSmall);
 		width: 100%;
 	}
 }

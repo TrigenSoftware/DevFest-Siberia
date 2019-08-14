@@ -57,7 +57,7 @@ export default class TimerCat extends PureComponent<IProps, IIconProps> {
 	};
 
 	render() {
-		return icon(this.state);
+		return icon(this.state, this.props);
 	}
 
 	componentDidMount() {

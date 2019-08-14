@@ -1,4 +1,4 @@
-import {
+import React, {
 	HTMLAttributes,
 	Component
 } from 'react';
