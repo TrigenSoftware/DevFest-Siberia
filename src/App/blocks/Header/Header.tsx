@@ -4,12 +4,19 @@ import React, {
 } from 'react';
 import Section from '~/components/Section';
 import Link from '~/components/Link';
+import Button from '~/components/Button';
 import Logo from '~/icons/logo.svg';
+import Share from '~/icons/share.svg';
+import {
+	HeaderNav
+} from './HeaderNav';
+import {
+	HeaderLink
+} from './HeaderLink';
+import {
+	HeaderSpacer
+} from './HeaderSpacer';
 import stylesheet from './Header.st.css';
-
-export * from './HeaderNav';
-export * from './HeaderLink';
-export * from './HeaderSpacer';
 
 export type IProps = HTMLAttributes<HTMLElement>;
 
@@ -35,7 +42,45 @@ export default class Header extends Component<IProps> {
 						to='/'
 						icon={<Logo />}
 					/>
-					{children}
+					<HeaderNav>
+						<HeaderLink
+							to='/team'
+						>
+							Team
+						</HeaderLink>
+						<HeaderLink
+							to='/speaker'
+						>
+							Become speaker
+						</HeaderLink>
+						<HeaderSpacer/>
+						<HeaderLink
+							to='/en'
+							separated
+						>
+							En
+						</HeaderLink>
+						<HeaderLink
+							to='/login'
+						>
+							Login
+						</HeaderLink>
+					</HeaderNav>
+					<ul
+						{...stylesheet('controls')}
+					>
+						<Link
+							disguised
+						>
+						<Button>
+							Buy ticket
+						</Button>
+						</Link>
+						<HeaderLink
+							to='/share'
+							icon={<Share/>}
+						/>
+					</ul>
 				</Section>
 			</header>
 		);

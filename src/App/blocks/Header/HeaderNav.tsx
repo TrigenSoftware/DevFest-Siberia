@@ -4,7 +4,6 @@ import React, {
 import Nav, {
 	IProps
 } from '~/components/Nav';
-import stylesheet from './Header.st.css';
 
 export class HeaderNav extends Component<IProps> {
 
@@ -18,7 +17,6 @@ export class HeaderNav extends Component<IProps> {
 		return (
 			<Nav
 				{...props}
-				{...stylesheet('nav')}
 			>
 				{children}
 			</Nav>

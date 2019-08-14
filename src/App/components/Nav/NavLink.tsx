@@ -19,12 +19,16 @@ export class NavLink extends Component<IProps> {
 		} = this.props;
 
 		return (
-			<Link
-				{...props}
-				{...stylesheet('link', {}, props)}
+			<li
+				{...stylesheet('item')}
 			>
-				{children}
-			</Link>
+				<Link
+					{...props}
+					{...stylesheet('link', {}, props)}
+				>
+					{children}
+				</Link>
+			</li>
 		);
 	}
 }

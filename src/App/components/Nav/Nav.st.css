@@ -19,6 +19,7 @@
 .root {
 	-st-states: active;
 	display: flex;
+	flex: 1;
 	align-items: center;
 	justify-content: center;
 	padding: value(sizeGap);
@@ -32,6 +33,9 @@
 .list {
 	display: flex;
 	z-index: 2;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
 	will-change: transform;
 	transition: transform value(durationTransition);
 	margin: 0;
@@ -101,7 +105,7 @@
 		display: block;
 	}
 
-	.item {
+	.item:not(:last-child) {
 		padding-bottom: value(sizeGap);
 	}
 

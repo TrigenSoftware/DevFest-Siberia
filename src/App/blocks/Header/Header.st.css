@@ -68,10 +68,6 @@
 	height: 6.7rem;
 }
 
-.nav {
-	margin-left: auto;
-}
-
 .link {
 	-st-states: separated;
 	text-decoration: none;
@@ -79,7 +75,17 @@
 }
 
 .spacer {
-	width: auto;
+	margin: auto;
+	width: 0;
+}
+
+.controls {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 @media (min-width: value(sizeScreenLarge)) {
