@@ -64,7 +64,9 @@ export default class Link extends Component<IProps> {
 			};
 		const tabIndex = typeof tabIndexProp !== 'undefined'
 			? tabIndexProp
-			: undefined;
+			: disguised
+				? -1
+				: undefined;
 
 		return (
 			<FlexisLink
