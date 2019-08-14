@@ -1,10 +1,10 @@
 import React, {
-	HTMLAttributes,
+	LiHTMLAttributes,
 	Component
 } from 'react';
 import stylesheet from './Header.st.css';
 
-export type IProps = HTMLAttributes<HTMLDivElement>;
+export type IProps = LiHTMLAttributes<HTMLLIElement>;
 
 export class HeaderSpacer extends Component<IProps> {
 
@@ -15,7 +15,7 @@ export class HeaderSpacer extends Component<IProps> {
 		} = this;
 
 		return (
-			<div
+			<li
 				{...props}
 				{...stylesheet('spacer')}
 			/>

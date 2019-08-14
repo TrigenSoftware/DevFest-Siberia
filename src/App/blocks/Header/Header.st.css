@@ -8,6 +8,7 @@
 	-st-from: '~/components/variables.st.css';
 	-st-named:
 		sizeScreenLarge,
+		sizeGap,
 		colorWhite,
 		colorBlack,
 		colorBlue1,
@@ -77,6 +78,10 @@
 .spacer {
 	margin: auto;
 	width: 0;
+}
+
+.nav {
+	padding-top: value(sizeGap);
 }
 
 .controls {

@@ -43,6 +43,7 @@ export default class Header extends Component<IProps> {
 						icon={<Logo />}
 					/>
 					<HeaderNav>
+						<HeaderSpacer/>
 						<HeaderLink
 							to='/team'
 						>
