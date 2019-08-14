@@ -12,6 +12,7 @@
 :import {
 	-st-from: '~/components/variables.st.css';
 	-st-named:
+		sizeScreenMiddle,
 		colorWhite,
 		colorBlue4;
 }
@@ -19,10 +20,6 @@
 :import {
 	-st-from: '~/components/Section/Section.st.css';
 	-st-named: center;
-}
-
-:vars {
-	breakpoint: 1080px;
 }
 
 .root {
@@ -40,7 +37,7 @@
 	font-size: 1rem;
 }
 
-@media (max-width: value(breakpoint)) {
+@media (max-width: value(sizeScreenMiddle)) {
 
 	.info {
 		font-size: 1vw;
@@ -92,7 +89,7 @@
 	width: 145%;
 }
 
-@media (max-width: value(breakpoint)) {
+@media (max-width: value(sizeScreenMiddle)) {
 
 	.svg {
 		margin-top: 0;
