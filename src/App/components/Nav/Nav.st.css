@@ -3,7 +3,9 @@
 	-st-from: '../variables.st.css';
 	-st-named:
 		durationTransition,
-		sizeScreenLg,
+		sizeScreenLarge,
+		sizeGap,
+		sizeGapSmall,
 		colorWhite;
 }
 
@@ -17,7 +19,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: rel(20, 24);
+	padding: value(sizeGap);
 }
 
 .toggle {
@@ -43,7 +45,7 @@
 }
 
 .link {
-	padding: 0  rel(14, 24);
+	padding: 0 value(sizeGapSmall);
 }
 
 /* stylelint-disable a11y/no-display-none */
@@ -62,7 +64,7 @@
 	width: 100%;
 }/* stylelint-enable */
 
-@media (min-width: value(sizeScreenLg)) {
+@media (min-width: value(sizeScreenLarge)) {
 
 	/* stylelint-disable a11y/no-display-none */
 	.toggle {
@@ -70,7 +72,7 @@
 	}/* stylelint-enable */
 }
 
-@media (max-width: value(sizeScreenLg)) {
+@media (max-width: value(sizeScreenLarge)) {
 
 	.list {
 		display: block;
@@ -80,7 +82,7 @@
 		left: 0;
 		transform: translateX(-103%);
 		background: value(colorWhite);
-		padding: rel(20, 24);
+		padding: value(sizeGap);
 	}
 
 	.root:active .list {
@@ -92,7 +94,7 @@
 	}
 
 	.item {
-		padding-bottom: 2rem;
+		padding-bottom: value(sizeGap);
 	}
 
 	.link {

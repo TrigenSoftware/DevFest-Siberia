@@ -51,6 +51,7 @@
     "redux": "^4.0.4"
   },
   "devDependencies": {
+    "@storybook/addon-viewport": "^5.1.11",
     "@trigen/scripts": "2.7.0",
     "@trigen/scripts-plugin-eslint": "2.7.0",
     "@trigen/scripts-preset-react-app": "2.7.1",

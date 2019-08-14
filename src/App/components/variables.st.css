@@ -5,7 +5,9 @@
 
 	/* Sizes */
 	sizeBorderRadius: 10px;
-	sizeScreenLg: 1366px;
+	sizeScreenLarge: 1366px;
+	sizeGap: 2rem;
+	sizeGapSmall: 1.4rem;
 
 	/* Colors */
 	colorBlack: black;
