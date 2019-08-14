@@ -5,7 +5,7 @@
 		durationTransition,
 		sizeGap,
 		sizeGapSmall,
-		sizeScreenLarge,
+		sizeScreenMiddle,
 		colorBlue8,
 		colorGray2,
 		colorWhite;
@@ -71,7 +71,7 @@
 	width: 100%;
 }/* stylelint-enable */
 
-@media (min-width: value(sizeScreenLarge)) {
+@media (min-width: value(sizeScreenMiddle)) {
 
 	/* stylelint-disable a11y/no-display-none */
 	.root .toggle {
@@ -79,7 +79,7 @@
 	}/* stylelint-enable */
 }
 
-@media (max-width: value(sizeScreenLarge)) {
+@media (max-width: value(sizeScreenMiddle)) {
 
 	.list {
 		display: block;

@@ -7,7 +7,7 @@
 :import {
 	-st-from: '~/components/variables.st.css';
 	-st-named:
-		sizeScreenLarge,
+		sizeScreenMiddle,
 		sizeGap,
 		colorWhite,
 		colorBlack,
@@ -93,7 +93,7 @@
 	list-style: none;
 }
 
-@media (min-width: value(sizeScreenLarge)) {
+@media (min-width: value(sizeScreenMiddle)) {
 
 	.link {
 		color: value(colorBlue1);
@@ -105,7 +105,7 @@
 	}
 }
 
-@media (max-width: value(sizeScreenLarge)) {
+@media (max-width: value(sizeScreenMiddle)) {
 
 	.root {
 		padding: 0 1.5rem 0 4.7rem;
