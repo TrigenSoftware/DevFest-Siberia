@@ -40,8 +40,8 @@ export default class Nav extends Component<IProps, IState> {
 			>
 				<BurgerButton
 					{...stylesheet('burger')}
-					active={active}
 					onClick={this.onClick}
+					active={active}
 				/>
 				<ul
 					{...stylesheet('list', {
