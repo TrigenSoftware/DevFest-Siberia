@@ -1,4 +1,4 @@
-
+/* stylelint-disable a11y/font-size-is-readable */
 :import {
 	-st-from: '@flexis/ui/stylable/rel';
 	-st-default: rel;
@@ -8,6 +8,7 @@
 	-st-from: '../variables.st.css';
 	-st-named:
 		fontFamilyMono,
+		sizeBorderRadiusSm,
 		colorBlue4;
 }
 
@@ -43,12 +44,12 @@
 		red,
 		purple;
 	border: 2px solid transparent;
-	border-radius: rel(5, 14);
+	border-radius: rel(value(sizeBorderRadiusSm), 14);
 	background-color: transparent;
 	padding: 0 rel(10, 14);
 	color: value(colorBlue4);
 	font-family: value(fontFamilyMono);
-	font-size: 1.4rem;
+	font-size: 14px;
 	font-weight: 500;
 }
 

@@ -1,13 +1,12 @@
 
 :import {
 	-st-from: '~/components/variables.st.css';
-	-st-named: sizeScreenMiddle;
+	-st-named: sizeScreenMdMax;
 }
 
-@media (max-width: value(sizeScreenMiddle)) {
+@media (max-width: value(sizeScreenMdMax)) {
 
 	.title {
 		text-align: center;
-		font-size: 3.2rem;
 	}
 }
