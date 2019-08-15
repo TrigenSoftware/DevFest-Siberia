@@ -1,0 +1,53 @@
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named:
+		sizeScreenMiddle,
+		colorBlue6;
+}
+
+.root {
+	margin-bottom: 3em;
+	font-size: 1rem;
+}
+
+.title {
+	margin-bottom: 1em;
+	color: value(colorBlue6);
+	font-size: 3em;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.item {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 1em;
+}
+
+.item:not(:last-child) {
+	margin-right: 2em;
+}
+
+.img {
+	max-height: 14em;
+}
+
+@media (max-width: value(sizeScreenMiddle)) {
+
+	.root {
+		font-size: calc(1rem / 3 * 2);
+	}
+
+	.title {
+		text-align: center;
+	}
+
+	.row {
+		justify-content: center;
+	}
+}

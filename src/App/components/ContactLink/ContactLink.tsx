@@ -78,11 +78,13 @@ export default class ContactLink extends Component<IProps> {
 				{...stylesheet('root', {}, props)}
 				icon={<Icon/>}
 			>
-				<SROnly>
-					<span>
-						{children}
-					</span>
-				</SROnly>
+				{children && (
+					<SROnly>
+						<span>
+							{children}
+						</span>
+					</SROnly>
+				)}
 			</Link>
 		);
 	}

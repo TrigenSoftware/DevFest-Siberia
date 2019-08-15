@@ -1,8 +1,9 @@
 import React, {
-	HTMLAttributes,
 	Component
 } from 'react';
-import Section from '~/components/Section';
+import Section, {
+	IProps as ISectionProps
+} from '~/components/Section';
 import Link from '~/components/Link';
 import Button from '~/components/Button';
 import Logo from '~/icons/logo.svg';
@@ -18,16 +19,15 @@ import {
 } from './HeaderSpacer';
 import stylesheet from './Header.st.css';
 
-export type IProps = HTMLAttributes<HTMLElement>;
+export type IProps = ISectionProps;
 
 export default class Header extends Component<IProps> {
 
 	render() {
 
 		const {
-			children,
-			...props
-		} = this.props;
+			props
+		} = this;
 
 		return (
 			<header
