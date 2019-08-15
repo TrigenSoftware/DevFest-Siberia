@@ -1,3 +1,4 @@
+import faker from 'faker';
 import React from 'react';
 import {
 	storiesOf
@@ -41,7 +42,7 @@ storiesOf('Components|ContactLink', module)
 		() => (
 			<ContactLink
 				{...events}
-				to='/'
+				to={`/${faker.random.word()}`}
 				type={select('Contact Link Type', [...ContactLinkTypeValues], ContactLinkTypeValues[0])}
 			/>
 		)
@@ -51,10 +52,10 @@ storiesOf('Components|ContactLink', module)
 		() => (
 			<ContactLink
 				{...events}
-				to='/'
+				to={`/${faker.random.word()}`}
 				type={select('Type', [...ContactLinkTypeValues], ContactLinkTypeValues[0])}
 			>
-				{text('SROnly Content', 'Telegram')}
+				{text('Content', 'Telegram')}
 			</ContactLink>
 		)
 	);

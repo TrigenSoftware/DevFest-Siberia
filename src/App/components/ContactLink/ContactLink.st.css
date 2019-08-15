@@ -5,7 +5,11 @@
 }
 
 .root .icon {
-	margin: 0 !important;
 	width: 4rem;
 	height: 4rem;
+}
+
+.root .icon:leftAlign,
+.root .icon:rightAlign {
+	margin: 0;
 }

@@ -6,11 +6,11 @@ import SROnly from '@flexis/ui/components/SROnly';
 import Link, {
 	IProps as ILinkProps
 } from '../Link';
-import TelegramIcon from '~/icons/telegram-icon.svg';
-import EmailIcon from '~/icons/email-icon.svg';
-import TwitterIcon from '~/icons/twitter-icon.svg';
-import VkIcon from '~/icons/vk-icon.svg';
-import SiteIcon from '~/icons/site-icon.svg';
+import TelegramIcon from '~/icons/telegram.svg';
+import EmailIcon from '~/icons/email.svg';
+import TwitterIcon from '~/icons/twitter.svg';
+import VkIcon from '~/icons/vk.svg';
+import SiteIcon from '~/icons/site.svg';
 import stylesheet from './ContactLink.st.css';
 
 export enum ContactLinkTypeVariant {
@@ -45,28 +45,28 @@ export default class ContactLink extends Component<IProps> {
 			children,
 			...props
 		} = this.props;
-		let icon = null;
+		let Icon = null;
 
 		switch (type) {
 
 			case ContactLinkTypeVariant.Telegram:
-				icon = <TelegramIcon/>;
+				Icon = TelegramIcon;
 				break;
 
 			case ContactLinkTypeVariant.Email:
-				icon = <EmailIcon/>;
+				Icon = EmailIcon;
 				break;
 
 			case ContactLinkTypeVariant.Twitter:
-				icon = <TwitterIcon/>;
+				Icon = TwitterIcon;
 				break;
 
 			case ContactLinkTypeVariant.Vk:
-				icon = <VkIcon/>;
+				Icon = VkIcon;
 				break;
 
 			case ContactLinkTypeVariant.Site:
-				icon = <SiteIcon/>;
+				Icon = SiteIcon;
 				break;
 
 			default:
@@ -76,7 +76,7 @@ export default class ContactLink extends Component<IProps> {
 			<Link
 				{...props}
 				{...stylesheet('root', {}, props)}
-				icon={icon}
+				icon={<Icon/>}
 			>
 				<SROnly>
 					<span>
