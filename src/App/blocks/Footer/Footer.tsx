@@ -158,17 +158,23 @@ export default class Footer extends Component<IProps> {
 								{...stylesheet('contactLink')}
 								type='telegram'
 								to='/telegram'
-							/>
+							>
+								Telegram Link
+							</ContactLink>
 							<ContactLink
 								{...stylesheet('contactLink')}
 								type='twitter'
 								to='/twitter'
-							/>
+							>
+								Twitter Link
+							</ContactLink>
 							<ContactLink
 								{...stylesheet('contactLink')}
 								type='vk'
 								to='/vk'
-							/>
+							>
+								Vkontakte Link
+							</ContactLink>
 						</li>
 					</ul>
 				</footer>
