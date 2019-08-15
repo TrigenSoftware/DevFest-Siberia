@@ -1,5 +1,4 @@
 import React, {
-	HTMLAttributes,
 	Component
 } from 'react';
 import {
@@ -9,14 +8,16 @@ import GoogleMapReact from 'google-map-react';
 import {
 	noSize
 } from '~/components/common/unsetSize';
-import Section from '~/components/Section';
+import Section, {
+	IProps as ISectionProps
+} from '~/components/Section';
 import PinIcon from '~/icons/pin.svg';
 import {
 	googleMaps
 } from '~/data';
 import stylesheet from './Location.st.css';
 
-export type IProps = HTMLAttributes<HTMLElement>;
+export type IProps = ISectionProps;
 
 export default class Location extends Component<IProps> {
 

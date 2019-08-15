@@ -1,5 +1,10 @@
 /* stylelint-disable no-descending-specificity */
 :import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
 	-st-from: './components/variables.st.css';
 	-st-named:
 		fontFamily,
@@ -16,47 +21,49 @@
 	font-size: 2.4rem;
 }
 
-:global(h1) {
+:global(h1),
+:global(h2) {
+	margin-bottom: rel(30, 82);
 	color: value(colorPink0);
 	font-family: value(fontFamilyMono);
 	font-size: 8.2rem;
 	font-weight: bold;
 }
 
-:global(h2) {
+:global(h3) {
 	color: value(colorBlue4);
 	font-family: value(fontFamilyMono);
 	font-size: 7.6rem;
 	font-weight: 500;
 }
 
-:global(h3) {
+:global(h4) {
 	color: value(colorBlue6);
 	font-family: value(fontFamilyMono);
 	font-size: 6.8rem;
 	font-weight: 500;
 }
 
-:global(h4) {
+:global(h5) {
 	color: value(colorBlue5);
 	font-family: value(fontFamilyMono);
 	font-size: 5.8rem;
 	font-weight: normal;
 }
 
-:global(h5) {
+:global(h6) {
 	color: value(colorBlue5);
 	font-family: value(fontFamilyMono);
 	font-size: 4.8rem;
 	font-weight: normal;
 }
 
-:global(h6) {
+/* :global(h7) {
 	color: value(colorBlue6);
 	font-family: value(fontFamilyMono);
 	font-size: 3rem;
 	font-weight: normal;
-}
+} */
 
 :global(p) {
 	text-indent: 5rem;
