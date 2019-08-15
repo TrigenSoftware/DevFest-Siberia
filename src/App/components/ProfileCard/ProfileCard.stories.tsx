@@ -70,12 +70,10 @@ storiesOf('Components|ProfileCard', module)
 				description={text('Description', 'iOs, Android, Tech')}
 				location={text('Location', 'USA, Springfiels')}
 				badge={<Badge>GDG</Badge>}
-				contacts={
-					{
-						twitter: `/${faker.random.word()}`,
-						vk:      `/${faker.random.word()}`
-					}
-				}
+				contacts={{
+					twitter: `/${faker.random.word()}`,
+					vk:      `/${faker.random.word()}`
+				}}
 			/>
 		)
 	);
