@@ -1,0 +1,45 @@
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named:
+		fontFamily,
+		colorBlue4,
+		colorBlue9,
+		colorGray0,
+		colorGray1;
+}
+
+.img {
+	margin: 0;
+	background-size: cover;
+	width: 35rem;
+	height: 35rem;
+}
+
+.name {
+	color: value(colorBlue9);
+	font-family: value(fontFamily);
+	font-size: 3.8rem;
+}
+
+.description {
+	color: value(colorBlue4);
+	font-size: 2.4rem;
+}
+
+.location {
+	color: value(colorGray1);
+	font-size: 2rem;
+}
+
+.footer {
+	padding-top: 1rem;
+}
+
+.link {
+	color: value(colorGray0);
+}
+
+.link:not(:last-child) {
+	margin-right: 1.5rem;
+}
