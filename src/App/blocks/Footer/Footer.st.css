@@ -1,0 +1,97 @@
+
+:import {
+	-st-from: '@flexis/ui/components/Link/Link.st.css';
+	-st-named: icon;
+}
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named:
+		fontFamily,
+		sizeScreenMiddle,
+		colorBlack,
+		colorBlue6,
+		colorGray2;
+}
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+.root {
+	font-size: 1rem;
+}
+
+.root .center {
+	padding-top: 4.3em;
+	padding-bottom: 5.8em;
+}
+
+.footer {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.list:not(:last-child) {
+	margin-right: 8em;
+}
+
+.title {
+	color: value(colorBlack);
+	font-family: value(fontFamily);
+	font-size: 2.4em;
+}
+
+.item:not(:last-child) {
+	padding-bottom: 1.4em;
+}
+
+.separator {
+	height: 3.7em;
+}
+
+.link {
+	text-decoration: none;
+	color: value(colorBlue6);
+	font-size: 2.4em;
+}
+
+.siteLink {
+	font-size: 2.4em;
+}
+
+.contactLink {
+	color: value(colorGray2);
+}
+
+.contactLink:not(:last-child) {
+	margin-right: 2em;
+}
+
+.contactLink .icon {
+	width: 4em;
+	height: 4em;
+}
+
+@media (max-width: value(sizeScreenMiddle)) {
+
+	.root {
+		font-size: .8rem;
+	}
+
+	.list:not(:last-child) {
+		margin-bottom: rel(37, 8);
+	}
+}
