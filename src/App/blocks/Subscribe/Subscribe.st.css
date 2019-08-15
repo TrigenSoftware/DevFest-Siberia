@@ -71,7 +71,7 @@
 	border-radius: 0 rel(10, 24) rel(10, 24) 0;
 	background-color: value(colorBlue7);
 	cursor: pointer;
-	padding: rel(18, 24);
+	padding: rel(18, 24) rel(34, 24);
 	color: value(colorWhite);
 	font-size: 2.4em;
 	font-weight: bold;
