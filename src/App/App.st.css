@@ -2,20 +2,13 @@
 :import {
 	-st-from: './components/variables.st.css';
 	-st-named:
+		fontFamily,
+		fontFamilyMono,
 		colorPink0,
 		colorBlue4,
 		colorBlue5,
 		colorBlue6,
 		colorGray2;
-}
-
-:vars {
-	fontFamily:
-		Roboto,
-		sans-serif;
-	fontFamilyMono:
-		Roboto Mono,
-		monospace;
 }
 
 :global(body) {

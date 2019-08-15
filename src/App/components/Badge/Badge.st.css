@@ -5,13 +5,10 @@
 }
 
 :import {
-	-st-from: '../../App.st.css';
-	-st-named: fontFamilyMono;
-}
-
-:import {
 	-st-from: '../variables.st.css';
-	-st-named: colorBlue4;
+	-st-named:
+		fontFamilyMono,
+		colorBlue4;
 }
 
 :import {

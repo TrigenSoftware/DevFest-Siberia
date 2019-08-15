@@ -1,6 +1,12 @@
 
 :vars {
 	/* Commons */
+	fontFamily:
+		Roboto,
+		sans-serif;
+	fontFamilyMono:
+		Roboto Mono,
+		monospace;
 	durationTransition: .2s;
 	opacityDisabled: .6;
 
