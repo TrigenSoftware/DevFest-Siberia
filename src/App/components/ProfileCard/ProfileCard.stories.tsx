@@ -23,6 +23,7 @@ Stylable API
 - ::description
 - ::location
 - ::footer
+- ::contacts
 - ::link
 `;
 
