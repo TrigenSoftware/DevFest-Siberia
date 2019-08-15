@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<svg style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" xml:space="preserve"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+	<style type="text/css">
+	.st0{fill:currentColor}
+	</style>
+	<g id="Layer_1"/>
+	<g id="icons">
+		<path class="st0" d="M2,16L2,16c0,7.7,6.3,14,14,14h0c7.7,0,14-6.3,14-14v0c0-7.7-6.3-14-14-14h0C8.3,2,2,8.3,2,16z    M11.5,20.5c-3.6,0.8-6.7-2.3-5.9-5.9c0.4-1.8,1.9-3.3,3.7-3.7c3.6-0.8,6.7,2.3,5.9,5.9C14.8,18.6,13.3,20.1,11.5,20.5z M22.8,21.1   c-3.6,0.8-6.7-2.3-5.9-5.9c0.4-1.8,1.9-3.3,3.7-3.7c3.6-0.8,6.7,2.3,5.9,5.9C26,19.3,24.6,20.7,22.8,21.1z" id="flickr"/>
+	</g>
+</svg>

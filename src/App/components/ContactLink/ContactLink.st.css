@@ -1,0 +1,20 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '@flexis/ui/components/Link/Link.st.css';
+	-st-named: icon;
+}
+
+.root .icon {
+	width: rel(40, 24);
+	height: rel(40, 24);
+}
+
+.root .icon:leftAlign,
+.root .icon:rightAlign {
+	margin: 0;
+}
