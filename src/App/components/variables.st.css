@@ -2,9 +2,11 @@
 :vars {
 	/* Commons */
 	durationTransition: .2s;
+	opacityDisabled: .6;
 
 	/* Sizes */
 	sizeBorderRadius: 1rem;
+	sizeBorderRadiusSmall: .6rem;
 	sizeScreenMiddle: 1080px;
 	sizeScreenLarge: 1366px;
 	sizeGapLarge: 4rem;

@@ -9,6 +9,7 @@
 	-st-named:
 		sizeScreenMiddle,
 		sizeGap,
+		sizeBorderRadiusSmall,
 		colorWhite,
 		colorBlack,
 		colorBlue1,
@@ -118,7 +119,7 @@
 
 	.root .Button {
 		display: flex;
-		border-radius: rel(6, 24);
+		border-radius: value(sizeBorderRadiusSmall);
 		padding: rel(6, 24) rel(15, 24);
 		font-size: 1.6rem;
 	}
