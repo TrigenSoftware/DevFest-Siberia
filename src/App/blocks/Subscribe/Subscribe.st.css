@@ -1,0 +1,135 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named:
+		sizeScreenMiddle,
+		durationTransition,
+		colorWhite,
+		colorPink0,
+		colorBlue4,
+		colorBlue7,
+		colorBlue10;
+}
+
+:import {
+	-st-from: '~/components/mixins.st.css';
+	-st-named: outline;
+}
+
+.root {
+	background-color: value(colorPink0);
+	padding: rel(38, 10) 0;
+	font-size: 1rem;
+}
+
+.title {
+	color: value(colorWhite);
+	font-size: 5.2em;
+	font-weight: 500;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1.7em;
+}
+
+.input {
+	will-change: box-shadow;
+	transition: box-shadow value(durationTransition);
+	outline: none;
+	border: none;
+	border-radius: rel(10, 24) 0 0 rel(10, 24);
+	background-color: value(colorWhite);
+	padding: rel(18, 24);
+	width: 100%;
+	font-size: 2.4em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.input {
+		will-change: none;
+		transition: none;
+	}
+}
+
+.button {
+	will-change:
+		background-color,
+		box-shadow;
+	transition:
+		background-color value(durationTransition),
+		box-shadow value(durationTransition);
+	outline: none !important;
+	border: none;
+	border-radius: 0 rel(10, 24) rel(10, 24) 0;
+	background-color: value(colorBlue7);
+	cursor: pointer;
+	padding: rel(18, 24);
+	color: value(colorWhite);
+	font-size: 2.4em;
+	font-weight: bold;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.button {
+		will-change: none;
+		transition: none;
+	}
+}
+
+.button:focus {
+	-st-mixin: outline;
+}
+
+.button:focus,
+.button:not(:disabled):hover {
+	background-color: value(colorBlue10);
+}
+
+.button:not(:disabled):active {
+	background-color: value(colorBlue4);
+}
+
+.input:focus {
+	-st-mixin: outline;
+}
+
+.footer {
+	display: flex;
+	align-items: center;
+	color: value(colorWhite);
+	font-size: 2.4em;
+}
+
+.checkbox {
+	margin-right: 2em;
+	width: 3.8em;
+	height: 3.8em;
+}
+
+.link {
+	color: value(colorWhite);
+	font-size: rel(24, 24);
+}
+
+@media (min-width: value(sizeScreenMiddle)) {
+
+	.input {
+		text-indent: rel(70, 24);
+	}
+}
+
+@media (max-width: value(sizeScreenMiddle)) {
+
+	.root {
+		font-size: .5rem;
+	}
+}
