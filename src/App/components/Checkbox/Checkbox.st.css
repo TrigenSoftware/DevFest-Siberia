@@ -10,7 +10,7 @@
 		durationTransition,
 		opacityDisabled,
 		sizeBorderRadiusSmall,
-		colorWhite,
+		colorBlue1,
 		colorBlue5,
 		colorBlue8;
 }
@@ -36,7 +36,7 @@
 	outline: none;
 	border: 1px solid value(colorBlue5);
 	border-radius: value(sizeBorderRadiusSmall);
-	background-color: value(colorWhite);
+	background-color: value(colorBlue1);
 	width: 5em;
 	height: 5em;
 	vertical-align: text-bottom;
@@ -49,11 +49,6 @@
 		will-change: none;
 		transition: none;
 	}
-}
-
-.root:checked {
-	border-color: value(colorBlue5);
-	background-color: value(colorWhite);
 }
 
 .root:checked::before {
