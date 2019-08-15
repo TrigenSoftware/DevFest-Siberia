@@ -1,6 +1,3 @@
-import {
-	List
-} from 'immutable';
 import React, {
 	HTMLAttributes,
 	Component,
@@ -10,8 +7,9 @@ import PropTypes from 'prop-types';
 import {
 	CombinePropsAndAttributes
 } from '@flexis/ui/helpers';
-import Contact from '~/models/Contact';
-import ContactLink from '../ContactLink';
+import ContactLink, {
+	ContactLinkType
+} from '../ContactLink';
 import stylesheet from './ProfileCard.st.css';
 
 interface ISelfProps {
@@ -21,7 +19,7 @@ interface ISelfProps {
 	description: string;
 	location?: string;
 	badge?: ReactElement;
-	contacts?: List<Contact>;
+	contacts?: Record<string, string>;
 }
 
 export type IProps = CombinePropsAndAttributes<
@@ -86,23 +84,35 @@ export default class ProfileCard extends Component<IProps> {
 				<footer
 					{...stylesheet('footer')}
 				>
-					<div>
-						{contacts && contacts.map(({
-							type,
-							link
-						}) => (
-							<ContactLink
-								{...stylesheet('link')}
-								type={type}
-								to={link}
-							/>
-						))}
-					</div>
-					{badge && (
-						badge
-					)}
+					{this.renderContacts()}
+					{badge}
 				</footer>
 			</article>
+		);
+	}
+
+	private renderContacts() {
+
+		const {
+			contacts
+		} = this.props;
+
+		if (!contacts) {
+			return null;
+		}
+
+		return (
+			<div
+				{...stylesheet('contacts')}
+			>
+				{Object.entries(contacts).map(item => (
+					<ContactLink
+						{...stylesheet('link')}
+						type={item[0] as ContactLinkType}
+						to={item[1]}
+					/>
+				))}
+			</div>
 		);
 	}
 }
