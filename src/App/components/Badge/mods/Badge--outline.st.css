@@ -1,0 +1,31 @@
+
+:import {
+	-st-from: '../../variables.st.css';
+	-st-named:
+		colorWhite,
+		colorRed,
+		colorBlue10,
+		colorBlue11,
+		colorPink0,
+		colorPink4;
+}
+
+.outline {
+	border-color: value(colorBlue10);
+}
+
+.outlineAqua {
+	border-color: value(colorBlue11);
+}
+
+.outlinePink {
+	border-color: value(colorPink4);
+}
+
+.outlineRed {
+	border-color: value(colorRed);
+}
+
+.outlinePurple {
+	border-color: value(colorPink0);
+}

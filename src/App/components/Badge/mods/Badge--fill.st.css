@@ -1,0 +1,41 @@
+
+:import {
+	-st-from: '../../variables.st.css';
+	-st-named:
+		colorWhite,
+		colorRed,
+		colorBlue10,
+		colorBlue11,
+		colorPink0,
+		colorPink4;
+}
+
+.fill {
+	border-color: value(colorBlue10);
+	background-color: value(colorBlue10);
+	color: value(colorWhite);
+}
+
+.fillAqua {
+	border-color: value(colorBlue11);
+	background-color: value(colorBlue11);
+	color: value(colorWhite);
+}
+
+.fillPink {
+	border-color: value(colorPink4);
+	background-color: value(colorPink4);
+	color: value(colorWhite);
+}
+
+.fillRed {
+	border-color: value(colorRed);
+	background-color: value(colorRed);
+	color: value(colorWhite);
+}
+
+.fillPurple {
+	border-color: value(colorPink0);
+	background-color: value(colorPink0);
+	color: value(colorWhite);
+}

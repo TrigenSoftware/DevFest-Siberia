@@ -1,6 +1,12 @@
 
 :vars {
 	/* Commons */
+	fontFamily:
+		Roboto,
+		sans-serif;
+	fontFamilyMono:
+		Roboto Mono,
+		monospace;
 	durationTransition: .2s;
 	opacityDisabled: .6;
 
@@ -16,6 +22,7 @@
 	/* Colors */
 	colorBlack: black;
 	colorWhite: white;
+	colorRed: #db0000;
 	colorBlue1: #f8f9ff;
 	colorBlue2: #8c9dcb;
 	colorBlue3: #6981b2;
@@ -25,14 +32,16 @@
 	colorBlue7: #0016d1;
 	colorBlue8: #959de0;
 	colorBlue9: #000e2b;
+	colorBlue10: #0058ff;
+	colorBlue11: #0eb5ff;
 	colorPink0: #ff0093;
 	colorPink1: #cc007e;
 	colorPink2: #782388;
 	colorPink3: #b9006a;
+	colorPink4: #ff00d8;
 	colorGray0: #888888;
 	colorGray1: #555555;
 	colorGray2: #1d1d1d;
 	colorGray3: #fff8f9;
 	colorGray4: #b7b7b7;
-	colorRed: #db0000;
 }
