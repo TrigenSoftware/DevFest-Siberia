@@ -1,0 +1,104 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../../App.st.css';
+	-st-named: fontFamilyMono;
+}
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named: colorBlue4;
+}
+
+:import {
+	-st-from: './mods/Badge--outline.st.css';
+	-st-named:
+		outline,
+		outlineAqua,
+		outlinePink,
+		outlinePurple,
+		outlineRed;
+}
+
+:import {
+	-st-from: './mods/Badge--fill.st.css';
+	-st-named:
+		fill,
+		fillAqua,
+		fillPink,
+		fillPurple,
+		fillRed;
+}
+
+.root {
+	-st-states:
+		/* Variant states */
+		fill,
+		outline,
+		/* Color states */
+		blue,
+		aqua,
+		pink,
+		red,
+		purple;
+	border: 2px solid transparent;
+	border-radius: rel(5, 14);
+	background-color: transparent;
+	padding: 0 rel(10, 14);
+	color: value(colorBlue4);
+	font-family: value(fontFamilyMono);
+	font-size: 1.4rem;
+	font-weight: 500;
+}
+
+.root:outline {
+	-st-mixin: outline;
+}
+
+.root:fill {
+	-st-mixin: fill;
+}
+
+.root:outline:blue {
+	-st-mixin: outline;
+}
+
+.root:outline:aqua {
+	-st-mixin: outlineAqua;
+}
+
+.root:outline:pink {
+	-st-mixin: outlinePink;
+}
+
+.root:outline:red {
+	-st-mixin: outlineRed;
+}
+
+.root:outline:purple {
+	-st-mixin: outlinePurple;
+}
+
+.root:fill:blue {
+	-st-mixin: fill;
+}
+
+.root:fill:aqua {
+	-st-mixin: fillAqua;
+}
+
+.root:fill:pink {
+	-st-mixin: fillPink;
+}
+
+.root:fill:red {
+	-st-mixin: fillRed;
+}
+
+.root:fill:purple {
+	-st-mixin: fillPurple;
+}

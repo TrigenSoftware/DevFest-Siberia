@@ -1,0 +1,41 @@
+
+:import {
+	-st-from: '../../variables.st.css';
+	-st-named:
+		colorWhite,
+		colorRed,
+		colorBlue10,
+		colorBlue11,
+		colorPink0,
+		colorPink4;
+}
+
+:import {
+	-st-from: '../Badge.st.css';
+	-st-default: Badge;
+}
+
+.outline {
+	-st-extends: Badge;
+	border-color: value(colorBlue10);
+}
+
+.outlineAqua {
+	-st-extends: Button;
+	border-color: value(colorBlue11);
+}
+
+.outlinePink {
+	-st-extends: Button;
+	border-color: value(colorPink4);
+}
+
+.outlineRed {
+	-st-extends: Button;
+	border-color: value(colorRed);
+}
+
+.outlinePurple {
+	-st-extends: Button;
+	border-color: value(colorPink0);
+}
