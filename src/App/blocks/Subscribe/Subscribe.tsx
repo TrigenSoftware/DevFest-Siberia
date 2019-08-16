@@ -5,9 +5,11 @@ import React, {
 import {
 	Bind
 } from '@flexis/ui/helpers';
+import SROnly from '@flexis/ui/components/SROnly';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
+import Button from '~/components/Button';
 import Checkbox from '~/components/Checkbox';
 import Link from '~/components/Link';
 import stylesheet from './Subscribe.st.css';
@@ -16,14 +18,12 @@ export type IProps = ISectionProps;
 
 interface IState {
 	email: string;
-	checked: boolean;
 }
 
 export default class Subscribe extends Component<IProps, IState> {
 
 	state = {
-		email:   '',
-		checked: false
+		email: ''
 	};
 
 	render() {
@@ -32,8 +32,7 @@ export default class Subscribe extends Component<IProps, IState> {
 			props
 		} = this;
 		const {
-			email,
-			checked
+			email
 		} = this.state;
 
 		return (
@@ -52,34 +51,38 @@ export default class Subscribe extends Component<IProps, IState> {
 					<div
 						{...stylesheet('group')}
 					>
+						<SROnly>
+							<label htmlFor='email'>Email</label>
+						</SROnly>
 						<input
 							{...stylesheet('input')}
 							required
+							id='email'
 							type='email'
 							name='email'
-							placeholder='Name or nickname'
+							placeholder='Email'
 							onChange={this.onInputChange}
 							value={email}
 						/>
-						<button
+						<Button
 							{...stylesheet('button')}
 						>
 							Подписаться
-						</button>
+						</Button>
 					</div>
 					<footer
 						{...stylesheet('footer')}
 					>
 						<Checkbox
 							{...stylesheet('checkbox')}
+							required
 							id='policy'
-							onChange={this.onCheckboxChange}
-							checked={checked}
+							name='policy'
 						/>
 						<label
 							htmlFor='policy'
 						>
-							I agree to accept {' '}
+							I agree to accept{' '}
 							<Link
 								{...stylesheet('link')}
 								to='/policy'
@@ -91,15 +94,6 @@ export default class Subscribe extends Component<IProps, IState> {
 				</form>
 			</Section>
 		);
-	}
-
-	@Bind()
-	private onCheckboxChange() {
-		this.setState(({
-			checked
-		}) => ({
-			checked: !checked
-		}));
 	}
 
 	@Bind()
@@ -119,12 +113,6 @@ export default class Subscribe extends Component<IProps, IState> {
 
 		event.preventDefault();
 
-		const {
-			checked
-		} = this.state;
-
-		if (checked) {
-			console.log('submited');
-		}
+		console.log('submited');
 	}
 }

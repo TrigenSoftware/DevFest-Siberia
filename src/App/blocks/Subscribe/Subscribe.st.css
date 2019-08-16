@@ -7,7 +7,7 @@
 :import {
 	-st-from: '~/components/variables.st.css';
 	-st-named:
-		sizeScreenMd,
+		sizeScreenMdMin,
 		sizeGap,
 		sizeGapXl,
 		sizeGapLg,
@@ -71,42 +71,21 @@
 }
 
 .button {
-	will-change:
-		background-color,
-		box-shadow;
-	transition:
-		background-color value(durationTransition),
-		box-shadow value(durationTransition);
-	outline: none !important;
-	border: none;
 	border-radius: 0 rel(10, 24) rel(10, 24) 0;
 	background-color: value(colorBlue7);
-	cursor: pointer;
 	padding: rel(18, 24) rel(34, 24);
 	color: value(colorWhite);
-	font-size: 1em;
-	font-weight: bold;
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-	.button {
-		will-change: none;
-		transition: none;
-	}
-}
-
-.button:focus {
-	-st-mixin: outline;
 }
 
 .button:focus,
 .button:not(:disabled):hover {
 	background-color: value(colorBlue10);
+	color: value(colorWhite);
 }
 
 .button:not(:disabled):active {
 	background-color: value(colorBlue4);
+	color: value(colorWhite);
 }
 
 .input:focus {
@@ -129,7 +108,7 @@
 	color: value(colorWhite);
 }
 
-@media (min-width: value(sizeScreenMd)) {
+@media (min-width: value(sizeScreenMdMin)) {
 
 	.input {
 		text-indent: rel(70, 24);
