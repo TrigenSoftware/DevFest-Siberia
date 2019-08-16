@@ -27,9 +27,7 @@ export default class Team extends Component<ISectionProps> {
 				{...stylesheet('root', {}, props)}
 			>
 				<h2>Команда</h2>
-				<ul
-					{...stylesheet('list')}
-				>
+				<ul>
 					<li>
 						<ProfileCard
 							src={imageUrl}

@@ -6,7 +6,9 @@
 
 :import {
 	-st-from: '~/components/variables.st.css';
-	-st-named: sizeGapLg;
+	-st-named:
+		sizeGap,
+		sizeGapLg;
 }
 
 :import {
@@ -16,18 +18,18 @@
 
 .root .center {
 	padding-top: value(sizeGapLg);
+	padding-bottom: value(sizeGapLg);
 }
 
-.list {
+.root ul {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-.list li {
-	margin-bottom: value(sizeGapLg);
-	max-width: rel(350, 24);
+.root li {
+	flex: 1 1 25%;
+	margin: 0 value(sizeGap) value(sizeGapLg) 0;
 }
