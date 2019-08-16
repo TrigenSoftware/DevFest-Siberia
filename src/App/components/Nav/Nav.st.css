@@ -4,8 +4,10 @@
 	-st-named:
 		durationTransition,
 		sizeGap,
-		sizeGapSmall,
-		sizeScreenMiddle,
+		sizeGapSm,
+		sizeGapLg,
+		sizeScreenMdMin,
+		sizeScreenMdMax,
 		colorBlue8,
 		colorGray2,
 		colorWhite;
@@ -26,7 +28,7 @@
 }
 
 .root .toggle {
-	left: 1rem;
+	left: 10px;
 	z-index: 3;
 }
 
@@ -52,7 +54,7 @@
 }
 
 .link {
-	padding: 0 value(sizeGapSmall);
+	padding: 0 value(sizeGapSm);
 }
 
 /* stylelint-disable a11y/no-display-none */
@@ -71,7 +73,7 @@
 	width: 100%;
 }/* stylelint-enable */
 
-@media (min-width: value(sizeScreenMiddle)) {
+@media (min-width: value(sizeScreenMdMin)) {
 
 	/* stylelint-disable a11y/no-display-none */
 	.root .toggle {
@@ -79,7 +81,7 @@
 	}/* stylelint-enable */
 }
 
-@media (max-width: value(sizeScreenMiddle)) {
+@media (max-width: value(sizeScreenMdMax)) {
 
 	.list {
 		display: block;
@@ -88,13 +90,13 @@
 		bottom: 0;
 		left: 0;
 		transform: translateX(-110%);
-		box-shadow: 0 .2rem .5rem value(colorBlue8);
+		box-shadow: 0 2px 5px value(colorBlue8);
 		background: value(colorWhite);
 		padding:
-			calc(value(sizeGap) - .5rem)
-			value(sizeGap)
-			value(sizeGap)
-			calc(value(sizeGap) * 2);
+			calc(value(sizeGapLg) - 15px)
+			value(sizeGapLg)
+			value(sizeGapLg)
+			calc(value(sizeGapLg) * 1.2);
 	}
 
 	.root:active .list {
@@ -106,7 +108,7 @@
 	}
 
 	.item:not(:last-child) {
-		padding-bottom: value(sizeGap);
+		padding-bottom: value(sizeGapLg);
 	}
 
 	.link {

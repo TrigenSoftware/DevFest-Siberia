@@ -1,5 +1,6 @@
 import React, {
 	HTMLAttributes,
+	MouseEvent,
 	Component
 } from 'react';
 import {
@@ -46,6 +47,7 @@ export default class Nav extends Component<IProps, IState> {
 				/>
 				<ul
 					{...stylesheet('list')}
+					onClick={this.onLinkClick}
 				>
 					{children}
 				</ul>
@@ -64,5 +66,13 @@ export default class Nav extends Component<IProps, IState> {
 		}) => ({
 			active: !active
 		}));
+	}
+
+	@Bind()
+	private onLinkClick(event: MouseEvent<HTMLUListElement>) {
+
+		if ((event.target as HTMLElement).tagName === 'A') {
+			this.onClick();
+		}
 	}
 }

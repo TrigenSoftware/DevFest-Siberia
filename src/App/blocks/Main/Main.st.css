@@ -12,7 +12,7 @@
 :import {
 	-st-from: '~/components/variables.st.css';
 	-st-named:
-		sizeScreenMiddle,
+		sizeScreenMdMax,
 		colorWhite,
 		colorBlue4;
 }
@@ -29,6 +29,7 @@
 
 .root .center {
 	position: relative;
+	padding: 0;
 }
 
 .info {
@@ -37,7 +38,7 @@
 	font-size: 1rem;
 }
 
-@media (max-width: value(sizeScreenMiddle)) {
+@media (max-width: value(sizeScreenMdMax)) {
 
 	.info {
 		font-size: 1vw;
@@ -61,12 +62,16 @@
 	font-weight: normal;
 }
 
+.info address {
+	padding: 0 rel(40, 64) 0 rel(80, 64);
+}
+
 .info time {
 	font-size: 6.2em;
 }
 
 .info small {
-	font-size: rel(20, 76);
+	font-size: rel(20, 62);
 	font-weight: normal;
 }
 
@@ -78,10 +83,13 @@
 	margin-right: -.9em;
 }
 
+.info time {
+	padding: 0 rel(40, 62) 0 rel(80, 62);
+}
+
 .info address,
 .info time {
 	background-color: darken(value(colorBlue4), 30%);
-	padding: 0 rel(40, 76) 0 rel(90, 76);
 }
 
 .svg {
@@ -89,7 +97,7 @@
 	width: 145%;
 }
 
-@media (max-width: value(sizeScreenMiddle)) {
+@media (max-width: value(sizeScreenMdMax)) {
 
 	.svg {
 		margin-top: 0;
