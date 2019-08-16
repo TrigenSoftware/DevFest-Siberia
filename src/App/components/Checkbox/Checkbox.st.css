@@ -9,7 +9,7 @@
 	-st-named:
 		durationTransition,
 		opacityDisabled,
-		sizeBorderRadiusSmall,
+		sizeBorderRadiusSm,
 		colorBlue1,
 		colorBlue5,
 		colorBlue8;
@@ -35,7 +35,7 @@
 	appearance: none;
 	outline: none;
 	border: 1px solid value(colorBlue5);
-	border-radius: value(sizeBorderRadiusSmall);
+	border-radius: value(sizeBorderRadiusSm);
 	background-color: value(colorBlue1);
 	width: 5em;
 	height: 5em;

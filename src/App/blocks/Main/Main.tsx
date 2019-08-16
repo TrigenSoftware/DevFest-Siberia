@@ -1,16 +1,17 @@
 import React, {
-	HTMLAttributes,
 	Component
 } from 'react';
 import SROnly from '@flexis/ui/components/SROnly';
-import Section from '~/components/Section';
+import Section, {
+	IProps as ISectionProps
+} from '~/components/Section';
 import TimerCat from '~/components/TimerCat';
 import {
 	startTime
 } from '~/data';
 import stylesheet from './Main.st.css';
 
-export type IProps = HTMLAttributes<HTMLElement>;
+export type IProps = ISectionProps;
 
 export default class Main extends Component<IProps> {
 

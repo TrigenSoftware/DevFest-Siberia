@@ -1,18 +1,17 @@
 /* tslint:disable:no-magic-numbers */
-import faker from 'faker';
 import React from 'react';
 import {
 	storiesOf
 } from '@storybook/react';
-import Section from './';
+import Partners from './';
 
 const stylableApi = `
 Stylable API
 ---
-- ::center
+_empty_
 `;
 
-storiesOf('Components|Section', module)
+storiesOf('Blocks|Partners', module)
 	.addParameters({
 		info: stylableApi
 	})
@@ -22,10 +21,8 @@ storiesOf('Components|Section', module)
 		</div>
 	))
 	.add(
-		'with content',
+		'with basic state',
 		() => (
-			<Section>
-				{faker.lorem.paragraph()}
-			</Section>
+			<Partners/>
 		)
 	);

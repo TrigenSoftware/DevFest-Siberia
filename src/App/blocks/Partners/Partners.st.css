@@ -1,0 +1,12 @@
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named: sizeScreenMdMax;
+}
+
+@media (max-width: value(sizeScreenMdMax)) {
+
+	.title {
+		text-align: center;
+	}
+}

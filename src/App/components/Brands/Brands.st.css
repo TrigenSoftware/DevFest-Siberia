@@ -1,0 +1,48 @@
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named:
+		sizeScreenMdMax,
+		colorBlue6;
+}
+
+.root {
+	margin-bottom: 3rem;
+}
+
+.title {
+	margin-bottom: 1em;
+	color: value(colorBlue6);
+	font-size: 3rem;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.item {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 1rem;
+}
+
+.item:not(:last-child) {
+	margin-right: 2rem;
+}
+
+.img {
+	max-height: 14rem;
+}
+
+@media (max-width: value(sizeScreenMdMax)) {
+
+	.title {
+		text-align: center;
+	}
+
+	.row {
+		justify-content: center;
+	}
+}

@@ -11,13 +11,26 @@
 	opacityDisabled: .6;
 
 	/* Sizes */
+	/* Radius */
+	sizeBorderRadiusSm: 5px;
 	sizeBorderRadius: 1rem;
-	sizeBorderRadiusSmall: .6rem;
-	sizeScreenMiddle: 1080px;
-	sizeScreenLarge: 1366px;
-	sizeGapLarge: 4rem;
+
+	/* Screen */
+	sizeScreenSmMax: 569px;
+	sizeScreenSmMin: 570px;
+	sizeScreenSm: 570px;
+	sizeScreenMdMax: 1079px;
+	sizeScreenMdMin: 1080px;
+	sizeScreenMd: 1080px;
+	sizeScreenLgMax: 1365px;
+	sizeScreenLgMin: 1366px;
+	sizeScreenLg: 1366px;
+
+	/* Gap */
+	sizeGapSm: 14px;
 	sizeGap: 2rem;
-	sizeGapSmall: 1.4rem;
+	sizeGapLg: 4rem;
+	sizeGapXl: 8rem;
 
 	/* Colors */
 	colorBlack: black;

@@ -1,4 +1,4 @@
-
+/* stylelint-disable a11y/font-size-is-readable */
 :import {
 	-st-from: '@flexis/ui/stylable/rel';
 	-st-default: rel;
@@ -34,7 +34,7 @@
 	padding: 1.1em 0;
 	width: 2.4em;
 	height: 2.4em;
-	font-size: 1rem;
+	font-size: 10px;
 }
 
 @media (prefers-reduced-motion: reduce) {
