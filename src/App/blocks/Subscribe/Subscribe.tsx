@@ -1,6 +1,10 @@
 import React, {
+	ChangeEvent,
 	Component
 } from 'react';
+import {
+	Bind
+} from '@flexis/ui/helpers';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -10,13 +14,27 @@ import stylesheet from './Subscribe.st.css';
 
 export type IProps = ISectionProps;
 
-export default class Subscribe extends Component<IProps> {
+interface IState {
+	email: string;
+	checked: boolean;
+}
+
+export default class Subscribe extends Component<IProps, IState> {
+
+	state = {
+		email:   '',
+		checked: false
+	};
 
 	render() {
 
 		const {
 			props
 		} = this;
+		const {
+			email,
+			checked
+		} = this.state;
 
 		return (
 			<Section
@@ -28,14 +46,19 @@ export default class Subscribe extends Component<IProps> {
 				>
 					Держите меня в курсе
 				</h2>
-				<form>
+				<form
+					onSubmit={this.onSubmit}
+				>
 					<div
 						{...stylesheet('row')}
 					>
 						<input
 							{...stylesheet('input')}
-							type='text'
+							type='email'
+							name='email'
 							placeholder='Name or nickname'
+							onChange={this.onInputChange}
+							value={email}
 						/>
 						<button
 							{...stylesheet('button')}
@@ -49,6 +72,8 @@ export default class Subscribe extends Component<IProps> {
 						<Checkbox
 							{...stylesheet('checkbox')}
 							id='policy'
+							onChange={this.onCheckboxChange}
+							checked={checked}
 						/>
 						<label
 							htmlFor='policy'
@@ -65,5 +90,41 @@ export default class Subscribe extends Component<IProps> {
 				</form>
 			</Section>
 		);
+	}
+
+	@Bind()
+	private onCheckboxChange() {
+		this.setState(({
+			checked
+		}) => ({
+			checked: !checked
+		}));
+	}
+
+	@Bind()
+	private onInputChange(event: ChangeEvent<HTMLInputElement>) {
+
+		const {
+			value
+		} = event.target;
+
+		this.setState(() => ({
+			email: value
+		}));
+	}
+
+	@Bind()
+	private onSubmit(event: ChangeEvent<HTMLFormElement>) {
+
+		event.preventDefault();
+
+		const {
+			email,
+			checked
+		} = this.state;
+
+		if (email && checked) {
+			console.log('submited');
+		}
 	}
 }
