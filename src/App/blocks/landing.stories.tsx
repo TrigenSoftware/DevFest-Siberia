@@ -9,6 +9,7 @@ import {
 import Header from './Header';
 import Main from './Main';
 import Facts from './Facts';
+import Subscribe from './Subscribe';
 import Location from './Location';
 import Partners from './Partners';
 
@@ -39,6 +40,7 @@ storiesOf('Blocks|Landing', module)
 				<Header/>
 				<Main/>
 				<Facts/>
+				<Subscribe/>
 				<Location/>
 				<Partners/>
 			</>
