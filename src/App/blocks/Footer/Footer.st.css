@@ -1,10 +1,5 @@
 
 :import {
-	-st-from: '@flexis/ui/components/Link/Link.st.css';
-	-st-named: icon;
-}
-
-:import {
 	-st-from: '@flexis/ui/stylable/rel';
 	-st-default: rel;
 }
@@ -13,54 +8,58 @@
 	-st-from: '~/components/variables.st.css';
 	-st-named:
 		fontFamily,
-		sizeScreenSm,
+		sizeGapXl,
+		sizeGapLg,
 		colorBlack,
 		colorBlue6,
+		colorBlue12,
 		colorGray2;
 }
 
-.root {
-	padding-top: rel(43, 24);
-	padding-bottom: rel(58, 24);
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
 }
 
-.footer {
+.root {
+	background-color: value(colorBlue12);
+}
+
+.root .center {
 	display: flex;
 	flex-wrap: wrap;
+	padding-top: value(sizeGapLg);
 }
 
 .list {
 	margin: 0;
+	margin-bottom: value(sizeGapLg);
 	padding: 0;
 	list-style: none;
 }
 
 .list:not(:last-child) {
-	margin-right: rel(80, 24);
+	margin-right: value(sizeGapXl);
 }
 
-.title {
+.list li:not(:last-child) {
+	padding-bottom: rel(14, 24);
+}
+
+.list li.separator {
+	padding: 0;
+	height: rel(37, 24);
+}
+
+.list h3 {
 	color: value(colorBlack);
 	font-family: value(fontFamily);
 	font-size: 1em;
 }
 
-.item:not(:last-child) {
-	padding-bottom: rel(14, 24);
-}
-
-.separator {
-	height: rel(37, 24);
-}
-
 .link {
 	text-decoration: none;
 	color: value(colorBlue6);
-	font-size: 1em;
-}
-
-.siteLink {
-	font-size: 1em;
 }
 
 .contactLink {
@@ -69,16 +68,4 @@
 
 .contactLink:not(:last-child) {
 	margin-right: rel(20, 24);
-}
-
-.contactLink .icon {
-	width: rel(40, 24);
-	height: rel(40, 24);
-}
-
-@media (max-width: value(sizeScreenSm)) {
-
-	.list:not(:last-child) {
-		margin-bottom: rel(37, 16);
-	}
 }

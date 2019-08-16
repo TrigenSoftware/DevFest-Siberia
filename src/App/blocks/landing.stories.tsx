@@ -11,6 +11,7 @@ import Main from './Main';
 import Facts from './Facts';
 import Location from './Location';
 import Partners from './Partners';
+import Footer from './Footer';
 
 const stylableApi = `
 Stylable API
@@ -41,6 +42,7 @@ storiesOf('Blocks|Landing', module)
 				<Facts/>
 				<Location/>
 				<Partners/>
+				<Footer/>
 			</>
 		)
 	);

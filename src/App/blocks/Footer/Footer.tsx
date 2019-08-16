@@ -20,28 +20,22 @@ export default class Footer extends Component<IProps> {
 		} = this;
 
 		return (
-			<Section
-				{...props}
+			<footer
 				{...stylesheet('root', {}, props)}
 			>
-				<footer
-					{...stylesheet('footer')}
+				<Section
+					{...props}
+					{...stylesheet('section')}
 				>
 					<ul
 						{...stylesheet('list')}
 					>
-						<li
-							{...stylesheet('item')}
-						>
-							<h3
-								{...stylesheet('title')}
-							>
+						<li>
+							<h3>
 								Участникам
 							</h3>
 						</li>
-						<li
-							{...stylesheet('item')}
-						>
+						<li>
 							<Link
 								{...stylesheet('link')}
 								to='/rules'
@@ -49,9 +43,7 @@ export default class Footer extends Component<IProps> {
 								Правила поведения
 							</Link>
 						</li>
-						<li
-							{...stylesheet('item')}
-						>
+						<li>
 							<Link
 								{...stylesheet('link')}
 								to='/students'
@@ -62,9 +54,7 @@ export default class Footer extends Component<IProps> {
 						<li
 							{...stylesheet('separator')}
 						/>
-						<li
-							{...stylesheet('item')}
-						>
+						<li>
 							<Link
 								{...stylesheet('link')}
 								to='/devfest2018'
@@ -72,9 +62,7 @@ export default class Footer extends Component<IProps> {
 								DevFest 2018
 							</Link>
 						</li>
-						<li
-							{...stylesheet('item')}
-						>
+						<li>
 							<Link
 								{...stylesheet('link')}
 								to='/devfest2017'
@@ -82,9 +70,7 @@ export default class Footer extends Component<IProps> {
 								DevFest 2017
 							</Link>
 						</li>
-						<li
-							{...stylesheet('item')}
-						>
+						<li>
 							<Link
 								{...stylesheet('link')}
 								to='/devfest2016'
@@ -96,18 +82,12 @@ export default class Footer extends Component<IProps> {
 					<ul
 						{...stylesheet('list')}
 					>
-						<li
-							{...stylesheet('item')}
-						>
-							<h3
-								{...stylesheet('title')}
-							>
-								Компания
+						<li>
+							<h3>
+								Компаниям
 							</h3>
 						</li>
-						<li
-							{...stylesheet('item')}
-						>
+						<li>
 							<Link
 								{...stylesheet('link')}
 								to='/partners'
@@ -119,20 +99,13 @@ export default class Footer extends Component<IProps> {
 					<ul
 						{...stylesheet('list')}
 					>
-						<li
-							{...stylesheet('item')}
-						>
-							<h3
-								{...stylesheet('title')}
-							>
+						<li>
+							<h3>
 								Контакты
 							</h3>
 						</li>
-						<li
-							{...stylesheet('item')}
-						>
+						<li>
 							<Link
-								{...stylesheet('siteLink')}
 								icon={<EnvelopeIcon/>}
 								to='/contacts'
 							>
@@ -142,18 +115,12 @@ export default class Footer extends Component<IProps> {
 						<li
 							{...stylesheet('separator')}
 						/>
-						<li
-							{...stylesheet('item')}
-						>
-							<h3
-								{...stylesheet('title')}
-							>
+						<li>
+							<h3>
 								Мы в соцсетях
 							</h3>
 						</li>
-						<li
-							{...stylesheet('item')}
-						>
+						<li>
 							<ContactLink
 								{...stylesheet('contactLink')}
 								type='telegram'
@@ -177,8 +144,8 @@ export default class Footer extends Component<IProps> {
 							</ContactLink>
 						</li>
 					</ul>
-				</footer>
-			</Section>
+				</Section>
+			</footer>
 		);
 	}
 }
