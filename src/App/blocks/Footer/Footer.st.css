@@ -19,12 +19,7 @@
 		colorGray2;
 }
 
-:import {
-	-st-from: '~/components/Section/Section.st.css';
-	-st-named: center;
-}
-
-.root .center {
+.root {
 	padding-top: rel(43, 24);
 	padding-bottom: rel(58, 24);
 }
