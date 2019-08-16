@@ -11,6 +11,7 @@ import Main from './Main';
 import Facts from './Facts';
 import Location from './Location';
 import Partners from './Partners';
+import Team from './Team';
 import Footer from './Footer';
 
 const stylableApi = `
@@ -34,7 +35,7 @@ storiesOf('Blocks|Landing', module)
 		</MemoryRouter>
 	))
 	.add(
-		'with landing',
+		'with main page',
 		() => (
 			<>
 				<Header/>
@@ -42,6 +43,16 @@ storiesOf('Blocks|Landing', module)
 				<Facts/>
 				<Location/>
 				<Partners/>
+				<Footer/>
+			</>
+		)
+	)
+	.add(
+		'with team page',
+		() => (
+			<>
+				<Header/>
+				<Team/>
 				<Footer/>
 			</>
 		)

@@ -62,7 +62,7 @@ storiesOf('Components|ProfileCard', module)
 		)
 	)
 	.add(
-		'with badge and contacnts',
+		'with badge and contacts',
 		() => (
 			<ProfileCard
 				src={text('Source', imageUrl)}
