@@ -9,6 +9,7 @@
 	-st-named:
 		fontFamily,
 		fontFamilyMono,
+		sizeScreenMdMax,
 		colorPink0,
 		colorBlue4,
 		colorBlue5,
@@ -21,6 +22,13 @@
 	font-size: 2.4rem;
 }
 
+@media (max-width: value(sizeScreenMdMax)) {
+
+	:global(html) {
+		font-size: calc(160em / 24 / 16);
+	}
+}
+
 :global(h1),
 :global(h2) {
 	margin-bottom: rel(30, 82);
@@ -31,6 +39,7 @@
 }
 
 :global(h3) {
+	margin-bottom: rel(30, 76);
 	color: value(colorBlue4);
 	font-family: value(fontFamilyMono);
 	font-size: 7.6rem;
@@ -66,6 +75,6 @@
 } */
 
 :global(p) {
-	text-indent: 5rem;
+	text-indent: rel(50, 24);
 	color: value(colorGray2);
 }

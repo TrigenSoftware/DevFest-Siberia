@@ -2,19 +2,31 @@
 :import {
 	-st-from: '../variables.st.css';
 	-st-named:
-		sizeScreenLarge,
-		sizeGapSmall;
+		sizeScreenLg,
+		sizeScreenLgMax,
+		sizeScreenMdMax,
+		sizeGapXl,
+		sizeGapLg,
+		sizeGapSm;
 }
 
 .center {
 	margin: 0 auto;
-	width: value(sizeScreenLarge);
+	padding: 0 value(sizeGapXl);
+	width: value(sizeScreenLg);
 }
 
-@media (max-width: value(sizeScreenLarge)) {
+@media (max-width: value(sizeScreenLgMax)) {
 
 	.center {
-		padding: 0 value(sizeGapSmall);
+		padding: 0 value(sizeGapLg);
 		width: 100%;
+	}
+}
+
+@media (max-width: value(sizeScreenMdMax)) {
+
+	.center {
+		padding: 0 value(sizeGapSm);
 	}
 }
