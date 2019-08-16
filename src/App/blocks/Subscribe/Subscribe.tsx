@@ -50,10 +50,11 @@ export default class Subscribe extends Component<IProps, IState> {
 					onSubmit={this.onSubmit}
 				>
 					<div
-						{...stylesheet('row')}
+						{...stylesheet('group')}
 					>
 						<input
 							{...stylesheet('input')}
+							required
 							type='email'
 							name='email'
 							placeholder='Name or nickname'
@@ -119,11 +120,10 @@ export default class Subscribe extends Component<IProps, IState> {
 		event.preventDefault();
 
 		const {
-			email,
 			checked
 		} = this.state;
 
-		if (email && checked) {
+		if (checked) {
 			console.log('submited');
 		}
 	}

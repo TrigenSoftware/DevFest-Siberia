@@ -7,7 +7,7 @@
 :import {
 	-st-from: '~/components/variables.st.css';
 	-st-named:
-		sizeScreenMiddle,
+		sizeScreenMd,
 		durationTransition,
 		colorWhite,
 		colorPink0,
@@ -23,20 +23,19 @@
 
 .root {
 	background-color: value(colorPink0);
-	padding: rel(38, 10) 0;
-	font-size: 1rem;
+	padding: rel(38, 24) 0;
 }
 
 .title {
 	color: value(colorWhite);
-	font-size: 5.2em;
+	font-size: rel(52, 24);
 	font-weight: 500;
 }
 
-.row {
+.group {
 	display: flex;
 	align-items: center;
-	margin-bottom: 1.7em;
+	margin-bottom: rel(17, 24);
 }
 
 .input {
@@ -48,7 +47,7 @@
 	background-color: value(colorWhite);
 	padding: rel(18, 24);
 	width: 100%;
-	font-size: 2.4em;
+	font-size: 1em;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -73,7 +72,7 @@
 	cursor: pointer;
 	padding: rel(18, 24) rel(34, 24);
 	color: value(colorWhite);
-	font-size: 2.4em;
+	font-size: 1em;
 	font-weight: bold;
 }
 
@@ -106,13 +105,13 @@
 	display: flex;
 	align-items: center;
 	color: value(colorWhite);
-	font-size: 2.4em;
+	font-size: 1em;
 }
 
 .checkbox {
-	margin-right: 2em;
-	width: 3.8em;
-	height: 3.8em;
+	margin-right: rel(20, 24);
+	width: 38px;
+	height: 38px;
 }
 
 .link {
@@ -120,16 +119,9 @@
 	font-size: rel(24, 24);
 }
 
-@media (min-width: value(sizeScreenMiddle)) {
+@media (min-width: value(sizeScreenMd)) {
 
 	.input {
 		text-indent: rel(70, 24);
-	}
-}
-
-@media (max-width: value(sizeScreenMiddle)) {
-
-	.root {
-		font-size: .5rem;
 	}
 }
