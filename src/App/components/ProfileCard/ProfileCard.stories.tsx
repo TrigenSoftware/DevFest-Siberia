@@ -1,3 +1,4 @@
+import faker from 'faker';
 import React from 'react';
 import {
 	storiesOf
@@ -11,7 +12,6 @@ import {
 import {
 	imageUrl
 } from '@flexis/ui/components/ImageSelect/ImageSelect.stories';
-import mockContacts from './mock';
 import Badge from '../Badge';
 import ProfileCard from './';
 
@@ -23,6 +23,7 @@ Stylable API
 - ::description
 - ::location
 - ::footer
+- ::contacts
 - ::link
 `;
 
@@ -70,7 +71,10 @@ storiesOf('Components|ProfileCard', module)
 				description={text('Description', 'iOs, Android, Tech')}
 				location={text('Location', 'USA, Springfiels')}
 				badge={<Badge>GDG</Badge>}
-				contacts={mockContacts()}
+				contacts={{
+					twitter: `/${faker.random.word()}`,
+					vk:      `/${faker.random.word()}`
+				}}
 			/>
 		)
 	);
