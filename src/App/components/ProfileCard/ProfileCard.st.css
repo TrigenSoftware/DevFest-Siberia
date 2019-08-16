@@ -1,0 +1,70 @@
+
+:import {
+	-st-from: '@flexis/ui/components/Link/Link.st.css';
+	-st-named: icon;
+}
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named:
+		fontFamily,
+		colorBlue4,
+		colorBlue9,
+		colorBlack,
+		colorGray1;
+}
+
+.root {
+	font-size: 1rem;
+}
+
+.img {
+	background-size: cover;
+	width: 35em;
+	height: 35em;
+}
+
+.name {
+	margin: 0;
+	line-height: rel(48, 38);
+	color: value(colorBlue9);
+	font-family: value(fontFamily);
+	font-size: 3.8em;
+	font-weight: normal;
+}
+
+.description {
+	color: value(colorBlue4);
+	font-size: 2.4em;
+}
+
+.location {
+	color: value(colorGray1);
+	font-size: 2em;
+}
+
+.footer {
+	padding-top: 1em;
+}
+
+.contacts {
+	padding-bottom: 1em;
+}
+
+.link {
+	color: value(colorBlack);
+}
+
+.link:not(:last-child) {
+	margin-right: 1em;
+}
+
+.link .icon {
+	width: 4.7em;
+	height: 4.7em;
+}
