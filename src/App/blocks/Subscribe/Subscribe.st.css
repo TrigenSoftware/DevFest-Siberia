@@ -8,6 +8,8 @@
 	-st-from: '~/components/variables.st.css';
 	-st-named:
 		sizeScreenMd,
+		sizeGapXl,
+		sizeGapLg,
 		durationTransition,
 		colorWhite,
 		colorPink0,
@@ -21,9 +23,18 @@
 	-st-named: outline;
 }
 
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
 .root {
 	background-color: value(colorPink0);
-	padding: rel(38, 24) 0 rel(85, 24);
+}
+
+.root .center {
+	padding-top: value(sizeGapLg);
+	padding-bottom: value(sizeGapXl);
 }
 
 .title {
@@ -105,7 +116,6 @@
 	display: flex;
 	align-items: center;
 	color: value(colorWhite);
-	font-size: 1em;
 }
 
 .checkbox {
