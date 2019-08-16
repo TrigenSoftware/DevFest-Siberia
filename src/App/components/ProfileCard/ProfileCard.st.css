@@ -12,11 +12,10 @@
 :import {
 	-st-from: '../variables.st.css';
 	-st-named:
-		sizeScreenMiddle,
 		fontFamily,
 		colorBlue4,
 		colorBlue9,
-		colorGray0,
+		colorBlack,
 		colorGray1;
 }
 
@@ -25,16 +24,18 @@
 }
 
 .img {
-	margin: 0;
 	background-size: cover;
 	width: 35em;
 	height: 35em;
 }
 
 .name {
+	margin: 0;
+	line-height: rel(48, 38);
 	color: value(colorBlue9);
 	font-family: value(fontFamily);
 	font-size: 3.8em;
+	font-weight: normal;
 }
 
 .description {
@@ -56,21 +57,14 @@
 }
 
 .link {
-	color: value(colorGray0);
+	color: value(colorBlack);
 }
 
 .link:not(:last-child) {
-	margin-right: 1.5em;
+	margin-right: 1em;
 }
 
 .link .icon {
 	width: 4.7em;
 	height: 4.7em;
-}
-
-@media (max-width: value(sizeScreenMiddle)) {
-
-	.root {
-		font-size: .8rem;
-	}
 }

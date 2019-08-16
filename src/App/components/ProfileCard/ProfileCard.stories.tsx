@@ -72,8 +72,8 @@ storiesOf('Components|ProfileCard', module)
 				location={text('Location', 'USA, Springfiels')}
 				badge={<Badge>GDG</Badge>}
 				contacts={{
-					twitter: `/${faker.random.word()}`,
-					vk:      `/${faker.random.word()}`
+					twitter: faker.internet.url(),
+					vk:      faker.internet.url()
 				}}
 			/>
 		)

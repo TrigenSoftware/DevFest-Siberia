@@ -16,7 +16,7 @@ interface ISelfProps {
 	src: string;
 	firstname: string;
 	lastname: string;
-	description: string;
+	description?: string;
 	location?: string;
 	badge?: ReactElement;
 	contacts?: Record<string, string>;
@@ -33,7 +33,7 @@ export default class ProfileCard extends Component<IProps> {
 		src:         PropTypes.string.isRequired,
 		firstname:   PropTypes.string.isRequired,
 		lastname:    PropTypes.string.isRequired,
-		description: PropTypes.string.isRequired,
+		description: PropTypes.string,
 		location:    PropTypes.string,
 		badge:       PropTypes.any,
 		contacts:    PropTypes.any
@@ -105,12 +105,14 @@ export default class ProfileCard extends Component<IProps> {
 			<div
 				{...stylesheet('contacts')}
 			>
-				{Object.entries(contacts).map(item => (
+				{Object.entries(contacts).map(([type, href]) => (
 					<ContactLink
 						{...stylesheet('link')}
-						type={item[0] as ContactLinkType}
-						to={item[1]}
-					/>
+						type={type as ContactLinkType}
+						href={href}
+					>
+						{type}
+					</ContactLink>
 				))}
 			</div>
 		);
