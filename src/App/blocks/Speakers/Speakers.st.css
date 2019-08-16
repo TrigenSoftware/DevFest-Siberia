@@ -1,0 +1,69 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named:
+		sizeScreenMd,
+		sizeGap,
+		sizeGapLg,
+		colorWhite,
+		colorBlue4,
+		colorBlue7,
+		colorBlue10;
+}
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+.root .center {
+	padding-top: value(sizeGapLg);
+	padding-bottom: value(sizeGapLg);
+}
+
+.root ul {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.root li {
+	flex: 1 1 25%;
+	margin: 0 value(sizeGap) value(sizeGapLg) 0;
+}
+
+.group {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.button {
+	background-color: value(colorBlue7);
+}
+
+.button:focus,
+.button:not(:disabled):hover {
+	background-color: value(colorBlue10);
+	color: value(colorWhite);
+}
+
+.button:not(:disabled):active {
+	background-color: value(colorBlue4);
+	color: value(colorWhite);
+}
+
+@media (max-width: value(sizeScreenMd)) {
+
+	/* stylelint-disable a11y/no-display-none */
+	.button {
+		display: none;
+	}/* stylelint-enable */
+}
