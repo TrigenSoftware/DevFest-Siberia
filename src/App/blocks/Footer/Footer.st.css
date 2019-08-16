@@ -13,7 +13,7 @@
 	-st-from: '~/components/variables.st.css';
 	-st-named:
 		fontFamily,
-		sizeScreenMiddle,
+		sizeScreenSm,
 		colorBlack,
 		colorBlue6,
 		colorGray2;
@@ -24,13 +24,9 @@
 	-st-named: center;
 }
 
-.root {
-	font-size: 1rem;
-}
-
 .root .center {
-	padding-top: 4.3em;
-	padding-bottom: 5.8em;
+	padding-top: rel(43, 24);
+	padding-bottom: rel(58, 24);
 }
 
 .footer {
@@ -45,31 +41,31 @@
 }
 
 .list:not(:last-child) {
-	margin-right: 8em;
+	margin-right: rel(80, 24);
 }
 
 .title {
 	color: value(colorBlack);
 	font-family: value(fontFamily);
-	font-size: 2.4em;
+	font-size: 1em;
 }
 
 .item:not(:last-child) {
-	padding-bottom: 1.4em;
+	padding-bottom: rel(14, 24);
 }
 
 .separator {
-	height: 3.7em;
+	height: rel(37, 24);
 }
 
 .link {
 	text-decoration: none;
 	color: value(colorBlue6);
-	font-size: 2.4em;
+	font-size: 1em;
 }
 
 .siteLink {
-	font-size: 2.4em;
+	font-size: 1em;
 }
 
 .contactLink {
@@ -77,21 +73,17 @@
 }
 
 .contactLink:not(:last-child) {
-	margin-right: 2em;
+	margin-right: rel(20, 24);
 }
 
 .contactLink .icon {
-	width: 4em;
-	height: 4em;
+	width: rel(40, 24);
+	height: rel(40, 24);
 }
 
-@media (max-width: value(sizeScreenMiddle)) {
-
-	.root {
-		font-size: .8rem;
-	}
+@media (max-width: value(sizeScreenSm)) {
 
 	.list:not(:last-child) {
-		margin-bottom: rel(37, 8);
+		margin-bottom: rel(37, 16);
 	}
 }
