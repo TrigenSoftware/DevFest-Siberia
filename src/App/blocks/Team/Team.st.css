@@ -1,0 +1,23 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+.root {
+	padding-top: rel(33, 24);
+}
+
+.list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.item {
+	margin-bottom: rel(50, 24);
+	max-width: rel(350, 24);
+}
