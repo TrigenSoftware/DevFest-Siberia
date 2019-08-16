@@ -4,8 +4,18 @@
 	-st-default: rel;
 }
 
-.root {
-	padding-top: rel(33, 24);
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named: sizeGapLg;
+}
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+.root .center {
+	padding-top: value(sizeGapLg);
 }
 
 .list {
@@ -17,7 +27,7 @@
 	list-style: none;
 }
 
-.item {
-	margin-bottom: rel(50, 24);
+.list li {
+	margin-bottom: value(sizeGapLg);
 	max-width: rel(350, 24);
 }

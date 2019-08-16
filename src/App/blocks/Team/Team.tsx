@@ -30,9 +30,7 @@ export default class Team extends Component<ISectionProps> {
 				<ul
 					{...stylesheet('list')}
 				>
-					<li
-						{...stylesheet('item')}
-					>
+					<li>
 						<ProfileCard
 							src={imageUrl}
 							firstname='Имя'
@@ -44,9 +42,7 @@ export default class Team extends Component<ISectionProps> {
 							}}
 						/>
 					</li>
-					<li
-						{...stylesheet('item')}
-					>
+					<li>
 						<ProfileCard
 							src={imageUrl}
 							firstname='Имя'
@@ -58,9 +54,7 @@ export default class Team extends Component<ISectionProps> {
 							}}
 						/>
 					</li>
-					<li
-						{...stylesheet('item')}
-					>
+					<li>
 						<ProfileCard
 							src={imageUrl}
 							firstname='Имя'
@@ -72,9 +66,7 @@ export default class Team extends Component<ISectionProps> {
 							}}
 						/>
 					</li>
-					<li
-						{...stylesheet('item')}
-					>
+					<li>
 						<ProfileCard
 							src={imageUrl}
 							firstname='Имя'
@@ -86,9 +78,7 @@ export default class Team extends Component<ISectionProps> {
 							}}
 						/>
 					</li>
-					<li
-						{...stylesheet('item')}
-					>
+					<li>
 						<ProfileCard
 							src={imageUrl}
 							firstname='Имя'
@@ -100,9 +90,7 @@ export default class Team extends Component<ISectionProps> {
 							}}
 						/>
 					</li>
-					<li
-						{...stylesheet('item')}
-					>
+					<li>
 						<ProfileCard
 							src={imageUrl}
 							firstname='Имя'
