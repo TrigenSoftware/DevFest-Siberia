@@ -1,0 +1,71 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named:
+		fontFamily,
+		sizeGapXl,
+		sizeGapLg,
+		colorBlack,
+		colorBlue6,
+		colorBlue12,
+		colorGray2;
+}
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+.root {
+	background-color: value(colorBlue12);
+}
+
+.root .center {
+	display: flex;
+	flex-wrap: wrap;
+	padding-top: value(sizeGapLg);
+}
+
+.list {
+	margin: 0;
+	margin-bottom: value(sizeGapLg);
+	padding: 0;
+	list-style: none;
+}
+
+.list:not(:last-child) {
+	margin-right: value(sizeGapXl);
+}
+
+.list li:not(:last-child) {
+	padding-bottom: rel(14, 24);
+}
+
+.list li.separator {
+	padding: 0;
+	height: rel(37, 24);
+}
+
+.list h3 {
+	color: value(colorBlack);
+	font-family: value(fontFamily);
+	font-size: 1em;
+}
+
+.link {
+	text-decoration: none;
+	color: value(colorBlue6);
+}
+
+.contactLink {
+	color: value(colorGray2);
+}
+
+.contactLink:not(:last-child) {
+	margin-right: rel(20, 24);
+}

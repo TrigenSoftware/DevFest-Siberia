@@ -1,4 +1,3 @@
-/* tslint:disable:no-magic-numbers */
 import React from 'react';
 import {
 	storiesOf
@@ -6,12 +5,7 @@ import {
 import {
 	MemoryRouter
 } from 'react-router';
-import Header from './Header';
-import Main from './Main';
-import Facts from './Facts';
-import Location from './Location';
-import Partners from './Partners';
-import Footer from './Footer';
+import Footer from './';
 
 const stylableApi = `
 Stylable API
@@ -19,7 +13,7 @@ Stylable API
 _empty_
 `;
 
-storiesOf('Blocks|Landing', module)
+storiesOf('Blocks|Footer', module)
 	.addParameters({
 		info: stylableApi
 	})
@@ -34,15 +28,8 @@ storiesOf('Blocks|Landing', module)
 		</MemoryRouter>
 	))
 	.add(
-		'with landing',
+		'with basic state',
 		() => (
-			<>
-				<Header/>
-				<Main/>
-				<Facts/>
-				<Location/>
-				<Partners/>
-				<Footer/>
-			</>
+			<Footer/>
 		)
 	);
