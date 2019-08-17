@@ -111,6 +111,6 @@
 @media (min-width: value(sizeScreenMdMin)) {
 
 	.input {
-		text-indent: rel(70, 24);
+		padding-left: rel(88, 24);
 	}
 }
