@@ -7,7 +7,7 @@
 :import {
 	-st-from: '~/components/variables.st.css';
 	-st-named:
-		sizeScreenMd,
+		sizeScreenMdMax,
 		sizeGap,
 		sizeGapLg,
 		colorWhite,
@@ -22,6 +22,7 @@
 }
 
 .root .center {
+	position: relative;
 	padding-top: value(sizeGapLg);
 	padding-bottom: value(sizeGapLg);
 }
@@ -60,7 +61,7 @@
 	color: value(colorWhite);
 }
 
-@media (max-width: value(sizeScreenMd)) {
+@media (max-width: value(sizeScreenMdMax)) {
 
 	/* stylelint-disable a11y/no-display-none */
 	.button {
