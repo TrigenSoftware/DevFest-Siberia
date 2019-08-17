@@ -4,5 +4,14 @@
 		"address": "Novosibirsk",
 		"dates": "29<>november</><>-</>01<>december</>",
 		"year": "2019"
+	},
+	"footer": {
+		"visitors": "Visitors",
+		"students": "To students",
+		"conduct": "Code of conduct",
+		"companies": "For Companies",
+		"partner": "Become a partner",
+		"contact": "Contact us",
+		"social": "We are in social networks"
 	}
 }
