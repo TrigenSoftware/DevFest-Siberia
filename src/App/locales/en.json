@@ -6,20 +6,8 @@
 		"year": "2019"
 	},
 	"team": [
-		{
-			"firstname": "Fistname",
-			"lastname": "Lastname",
-			"description": "Роль, занятие, цель смысл"
-		},
-		{
-			"firstname": "Fistname",
-			"lastname": "Lastname",
-			"description": "Роль, занятие, цель смысл"
-		},
-		{
-			"firstname": "Fistname",
-			"lastname": "Lastname",
-			"description": "Роль, занятие, цель смысл"
-		}
+		{ "firstname": "Fistname", "lastname": "Lastname", "description": "Роль, занятие, цель смысл"},
+		{ "firstname": "Fistname", "lastname": "Lastname", "description": "Роль, занятие, цель смысл"},
+		{ "firstname": "Fistname", "lastname": "Lastname", "description": "Роль, занятие, цель смысл"}
 	]
 }
