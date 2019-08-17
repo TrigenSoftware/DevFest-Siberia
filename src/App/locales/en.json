@@ -4,5 +4,10 @@
 		"address": "Novosibirsk",
 		"dates": "29<>november</><>-</>01<>december</>",
 		"year": "2019"
+	},
+	"partners": {
+		"title": "Partners",
+		"support": "With support of",
+		"partners": "Media Partners"
 	}
 }
