@@ -4,5 +4,17 @@
 		"address": "Novosibirsk",
 		"dates": "29<>november</><>-</>01<>december</>",
 		"year": "2019"
+	},
+	"facts": {
+		"title": "DevFest Siberia -",
+		"also": "As well -",
+		"topics": "Topics",
+		"topicsDescription": "Mobile Development, IoT, Virtual and Augmented Reality, Modern Web Application Development, Firebase Interaction from experts around the world.",
+		"workshops": "Workshops",
+		"workshopsDescription": "Full separated day of workshops, hands-on experience, hacking and debugging. Come and tame your favourite technology!",
+		"attendees": "<>900+</><>ATTENDEES</>from everywhere",
+		"days": "<>3</><>DAYS</>of hardcore technical discussions",
+		"speakers": "<>48+</><>SPEAKERS</>from Russia and beyond",
+		"tracks": "<>48+</><>TRACKS</>plus workshops and codelabs"
 	}
 }
