@@ -54,7 +54,6 @@ export default class Team extends Component<ISectionProps> {
 							key={lastname}
 						>
 							<ProfileCard
-								key={lastname}
 								src={src}
 								firstname={firstname}
 								lastname={lastname}
