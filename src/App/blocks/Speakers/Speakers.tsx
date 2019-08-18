@@ -67,13 +67,13 @@ export default class Speakers extends Component<ISectionProps> {
 						>
 							<ProfileCard
 								{...item}
-								badge={
+								badge={item.badge && (
 									<Badge
 										color='pink'
 									>
 										{item.badge}
 									</Badge>
-								}
+								)}
 							/>
 						</li>
 					))}
