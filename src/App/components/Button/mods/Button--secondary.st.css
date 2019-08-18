@@ -1,0 +1,26 @@
+
+:import {
+	-st-from: '../../variables.st.css';
+	-st-named:
+		colorWhite,
+		colorBlue4,
+		colorBlue7;
+}
+
+.secondary {
+	background-color: value(colorBlue7);
+	color: value(colorWhite);
+}
+
+.secondary:focus,
+.secondary:not(:disabled):hover {
+	border-color: value(colorBlue7);
+	background-color: value(colorWhite);
+	color: value(colorBlue7);
+}
+
+.secondary:not(:disabled):active {
+	border-color: value(colorBlue4);
+	background-color: value(colorWhite);
+	color: value(colorBlue4);
+}

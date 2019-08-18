@@ -20,6 +20,7 @@ import Facts from './Facts';
 import Location from './Location';
 import Partners from './Partners';
 import Team from './Team';
+import Speakers from './Speakers';
 import Footer from './Footer';
 
 const stylableApi = `
@@ -73,6 +74,16 @@ storiesOf('Blocks|Landing', module)
 			<>
 				<Header/>
 				<Team/>
+				<Footer/>
+			</>
+		)
+	)
+	.add(
+		'with speakers page',
+		() => (
+			<>
+				<Header/>
+				<Speakers/>
 				<Footer/>
 			</>
 		)
