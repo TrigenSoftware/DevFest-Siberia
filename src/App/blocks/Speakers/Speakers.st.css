@@ -44,7 +44,7 @@
 @media (max-width: value(sizeScreenMdMax)) {
 
 	/* stylelint-disable a11y/no-display-none */
-	.button {
+	.group button {
 		display: none;
 	}/* stylelint-enable */
 }
