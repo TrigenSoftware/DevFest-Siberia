@@ -29,6 +29,36 @@
 	"location": {
 		"address": "<>Academpark</>12, Nikolaeva, Novosibirsk"
 	},
+	"partners": {
+		"title": "Partners",
+		"partners": [
+			{
+				"title": "With support of",
+				"items": [
+					{
+						"href": "https://academpark.com",
+						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/academpark.svg",
+						"title": "Academpark"
+					},
+					{
+						"href": "https://developers.google.com",
+						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/google.svg",
+						"title": "Google"
+					}
+				]
+			},
+			{
+				"title": "Media Partners",
+				"items": [
+					{
+						"href": "https://androiddev.apptractor.ru/",
+						"src": "https://res.cloudinary.com/trigen/image/upload/v1565857597/devfest2019/android.svg",
+						"title": "Android Dev Podcast"
+					}
+				]
+			}
+		]
+	},
 	"footer": {
 		"visitors": "For Visitors",
 		"students": "For Students",
