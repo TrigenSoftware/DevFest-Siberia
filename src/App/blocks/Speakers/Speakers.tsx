@@ -1,7 +1,11 @@
-import faker from 'faker';
 import React, {
+	ContextType,
 	Component
 } from 'react';
+import {
+	I18nContext,
+	__x
+} from 'i18n-for-react';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -9,20 +13,29 @@ import Link from '~/components/Link';
 import Button from '~/components/Button';
 import ProfileCard from '~/components/ProfileCard';
 import Badge from '~/components/Badge';
-import {
-	imageUrl
-} from '@flexis/ui/components/ImageSelect/ImageSelect.stories';
 import stylesheet from './Speakers.st.css';
 
 export type IProps = ISectionProps;
 
 export default class Speakers extends Component<ISectionProps> {
 
+	static contextType = I18nContext;
+
+	context!: ContextType<typeof I18nContext>;
+
 	render() {
 
 		const {
+			context,
 			props
 		} = this;
+		const {
+			speakers: {
+				speakers
+			}
+		} = this.context.getCatalog(
+			context.getLocale()
+		) as any;
 
 		return (
 			<Section
@@ -32,7 +45,9 @@ export default class Speakers extends Component<ISectionProps> {
 				<div
 					{...stylesheet('group')}
 				>
-					<h2>Спикеры</h2>
+					<h2>
+						{__x`speakers.title`}
+					</h2>
 					<Link
 						{...stylesheet('link')}
 						to='/'
@@ -41,125 +56,27 @@ export default class Speakers extends Component<ISectionProps> {
 						<Button
 							variant='secondary'
 						>
-							Стать спикером
+							{__x`speakers.cfp`}
 						</Button>
 					</Link>
 				</div>
 				<ul>
-					<li>
-						<ProfileCard
-							src={imageUrl}
-							firstname='Имя'
-							lastname='Фамилия'
-							description='Роль, занятие, цель смысл'
-							badge={
-								<Badge
-									color='pink'
-								>
-									GDE
-								</Badge>
-							}
-							contacts={{
-								twitter: faker.internet.url(),
-								vk:      faker.internet.url()
-							}}
-						/>
-					</li>
-					<li>
-						<ProfileCard
-							src={imageUrl}
-							firstname='Имя'
-							lastname='Фамилия'
-							description='Роль, занятие, цель смысл'
-							badge={
-								<Badge
-									color='pink'
-								>
-									GDE
-								</Badge>
-							}
-							contacts={{
-								twitter: faker.internet.url(),
-								vk:      faker.internet.url()
-							}}
-						/>
-					</li>
-					<li>
-						<ProfileCard
-							src={imageUrl}
-							firstname='Имя'
-							lastname='Фамилия'
-							description='Роль, занятие, цель смысл'
-							badge={
-								<Badge
-									color='pink'
-								>
-									GDE
-								</Badge>
-							}
-							contacts={{
-								twitter: faker.internet.url(),
-								vk:      faker.internet.url()
-							}}
-						/>
-					</li>
-					<li>
-						<ProfileCard
-							src={imageUrl}
-							firstname='Имя'
-							lastname='Фамилия'
-							description='Роль, занятие, цель смысл'
-							badge={
-								<Badge
-									color='pink'
-								>
-									GDE
-								</Badge>
-							}
-							contacts={{
-								twitter: faker.internet.url(),
-								vk:      faker.internet.url()
-							}}
-						/>
-					</li>
-					<li>
-						<ProfileCard
-							src={imageUrl}
-							firstname='Имя'
-							lastname='Фамилия'
-							description='Роль, занятие, цель смысл'
-							badge={
-								<Badge
-									color='pink'
-								>
-									GDE
-								</Badge>
-							}
-							contacts={{
-								twitter: faker.internet.url(),
-								vk:      faker.internet.url()
-							}}
-						/>
-					</li>
-					<li>
-						<ProfileCard
-							src={imageUrl}
-							firstname='Имя'
-							lastname='Фамилия'
-							description='Роль, занятие, цель смысл'
-							badge={
-								<Badge
-									color='pink'
-								>
-									GDE
-								</Badge>
-							}
-							contacts={{
-								twitter: faker.internet.url(),
-								vk:      faker.internet.url()
-							}}
-						/>
-					</li>
+					{speakers.map(item => (
+						<li
+							key={item.src}
+						>
+							<ProfileCard
+								{...item}
+								badge={
+									<Badge
+										color='pink'
+									>
+										{item.badge}
+									</Badge>
+								}
+							/>
+						</li>
+					))}
 				</ul>
 			</Section>
 		);
