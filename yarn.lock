@@ -2070,6 +2070,16 @@
     "@trigen/scripts" "^2.7.0"
     babel-preset-trigen "^2.2.1"
 
+"@trigen/scripts-plugin-babel@file:../trigen-scripts/packages/scripts-plugin-babel/package":
+  version "2.7.0"
+  dependencies:
+    "@babel/cli" "^7.2.3"
+    "@babel/core" "^7.4.0"
+    "@babel/node" "^7.0.0"
+    "@babel/runtime" "^7.4.2"
+    "@trigen/scripts" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-plugin-babel-2.7.0-6683abe2-13e7-4e01-b149-15da667c57ad-1566137496589/node_modules/scripts/package"
+    babel-preset-trigen "^2.2.1"
+
 "@trigen/scripts-plugin-eslint@2.7.0":
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/@trigen/scripts-plugin-eslint/-/scripts-plugin-eslint-2.7.0.tgz#11828a8801c953967f1f47e1c131dcf94858013f"
@@ -2085,6 +2095,15 @@
   integrity sha512-SnnDAHfuj+hacqwSVV9ddUTUvOq9tre6dOxnam5V5dIgIWgjNOtOffv5e9DinEypi/d/Qguo6Ng1KU37QcRm5w==
   dependencies:
     "@trigen/scripts" "^2.7.0"
+    "@types/jest" "^24.0.10"
+    babel-jest "^24.5.0"
+    babel-preset-trigen "^2.2.2"
+    jest "^24.3.0"
+
+"@trigen/scripts-plugin-jest@file:../trigen-scripts/packages/scripts-plugin-jest/package":
+  version "2.7.0"
+  dependencies:
+    "@trigen/scripts" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-plugin-jest-2.7.0-a1545215-dec7-490a-b344-fffeff04f944-1566137496588/node_modules/scripts/package"
     "@types/jest" "^24.0.10"
     babel-jest "^24.5.0"
     babel-preset-trigen "^2.2.2"
@@ -2108,6 +2127,22 @@
     "@types/storybook__addon-knobs" "4.0.0"
     "@types/storybook__react" "^4.0.0"
 
+"@trigen/scripts-plugin-storybook@file:../trigen-scripts/packages/scripts-plugin-storybook/package":
+  version "2.7.2"
+  dependencies:
+    "@storybook/addon-a11y" "^5.1.10"
+    "@storybook/addon-actions" "^5.0.5"
+    "@storybook/addon-info" "^5.0.5"
+    "@storybook/addon-knobs" "^5.0.5"
+    "@storybook/addon-options" "^5.0.5"
+    "@storybook/addons" "^5.0.5"
+    "@storybook/react" "^5.0.5"
+    "@trigen/scripts" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-plugin-storybook-2.7.2-6f17c0f3-a155-4a71-9a7d-b15a3c056d70-1566137496592/node_modules/scripts/package"
+    "@types/storybook__addon-actions" "^3.4.1"
+    "@types/storybook__addon-info" "^4.1.0"
+    "@types/storybook__addon-knobs" "4.0.0"
+    "@types/storybook__react" "^4.0.0"
+
 "@trigen/scripts-plugin-typescript@^2.7.2":
   version "2.7.2"
   resolved "https://registry.yarnpkg.com/@trigen/scripts-plugin-typescript/-/scripts-plugin-typescript-2.7.2.tgz#d38f34c219015f6d682fcabe838c83f7d7de6fe8"
@@ -2120,6 +2155,64 @@
     tslint-config-trigen "^3.0.7"
     typedoc "^0.15.0"
     typescript "3.5.3"
+
+"@trigen/scripts-plugin-typescript@file:../trigen-scripts/packages/scripts-plugin-typescript/package":
+  version "2.7.2"
+  dependencies:
+    "@trigen/scripts" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-plugin-typescript-2.7.2-603033b5-4c90-47f4-a5ef-487ef43ae2ef-1566137496591/node_modules/scripts/package"
+    ts-node-dev "^1.0.0-pre.39"
+    tsconfig-paths "^3.8.0"
+    tslint "^5.11.0"
+    tslint-config-trigen "^3.0.7"
+    typedoc "^0.15.0"
+    typescript "3.5.3"
+
+"@trigen/scripts-preset-react-app@/Users/dangreen/github/trigen-scripts/packages/scripts-preset-react-app/package":
+  version "2.7.2"
+  dependencies:
+    "@babel/register" "^7.4.0"
+    "@flexis/srcset-loader" "^1.0.0"
+    "@flexis/workbox-webpack-plugin" "^1.0.0-beta"
+    "@stylable/core" "^1.0.6"
+    "@stylable/webpack-plugin" "^1.1.4"
+    "@trigen/scripts" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-preset-react-app-2.7.2-287292fd-b498-43d3-ba9b-b0deced96395-1566137496539/node_modules/scripts/package"
+    "@trigen/scripts-plugin-babel" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-preset-react-app-2.7.2-287292fd-b498-43d3-ba9b-b0deced96395-1566137496539/node_modules/scripts-plugin-babel/package"
+    "@trigen/scripts-plugin-jest" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-preset-react-app-2.7.2-287292fd-b498-43d3-ba9b-b0deced96395-1566137496539/node_modules/scripts-plugin-jest/package"
+    "@trigen/scripts-plugin-storybook" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-preset-react-app-2.7.2-287292fd-b498-43d3-ba9b-b0deced96395-1566137496539/node_modules/scripts-plugin-storybook/package"
+    "@trigen/scripts-plugin-typescript" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-preset-react-app-2.7.2-287292fd-b498-43d3-ba9b-b0deced96395-1566137496539/node_modules/scripts-plugin-typescript/package"
+    autoprefixer "^9.1.3"
+    awesome-typescript-loader "^5.2.0"
+    babel-loader "^8.0.0"
+    browser-sync "^2.24.7"
+    browserslist-config-trigen "^1.1.0"
+    clean-webpack-plugin "^3.0.0"
+    connect-history-api-fallback "^1.5.0"
+    core-js "3"
+    eslint-loader "^2.1.1"
+    file-loader "^3.0.0"
+    html-webpack-plugin "^3.2.0"
+    http-proxy-middleware "^0.19.0"
+    humps "^2.0.1"
+    husky "^3.0.3"
+    lint-staged "^9.2.1"
+    loader-utils "^1.1.0"
+    node-notifier "*"
+    postcss "^7.0.2"
+    postcss-momentum-scrolling "^1.4.8"
+    react-hot-loader "4.12.11"
+    service-worker-loader "^3.0.0"
+    stylelint "^10.0.1"
+    stylelint-config-trigen "^2.0.4"
+    stylelint-webpack-plugin "^0.10.5"
+    svg-sprite-loader "4.1.3"
+    svgo "^1.0.5"
+    svgo-loader "^2.1.0"
+    tslint-loader "^3.6.0"
+    webpack "^4.26.1"
+    webpack-dev-middleware "^3.2.0"
+    webpack-filter-warnings-plugin "^1.2.1"
+    webpack-hot-middleware "^2.22.3"
+    webpack-node-externals "^1.7.2"
 
 "@trigen/scripts-preset-react-app@2.7.2":
   version "2.7.2"
@@ -2173,6 +2266,16 @@
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/@trigen/scripts/-/scripts-2.7.0.tgz#7a36334f65a868f8a424c73c3a36e6bfa0964b67"
   integrity sha512-xvRY6StDwCplpPQK1JzKopnYEQnhxa6mxPJz5D+ut39SblwcZWGcFFDG5QbbBWhurq9Lb0bnKhSfLNbHmWnLpw==
+  dependencies:
+    "@babel/runtime" "^7.4.2"
+    chalk "^2.4.2"
+    core-js "3"
+    immutability-helper "^3.0.0"
+    rcfile "^1.0.3"
+    resolve-cwd "^3.0.0"
+
+"@trigen/scripts@file:../trigen-scripts/packages/scripts/package":
+  version "2.7.0"
   dependencies:
     "@babel/runtime" "^7.4.2"
     chalk "^2.4.2"
@@ -16320,6 +16423,11 @@ webpack-log@^2.0.0:
   dependencies:
     ansi-colors "^3.0.0"
     uuid "^3.3.2"
+
+webpack-node-externals@^1.7.2:
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/webpack-node-externals/-/webpack-node-externals-1.7.2.tgz#6e1ee79ac67c070402ba700ef033a9b8d52ac4e3"
+  integrity sha512-ajerHZ+BJKeCLviLUUmnyd5B4RavLF76uv3cs6KNuO8W+HuQaEs0y0L7o40NQxdPy5w0pcv8Ew7yPUAQG0UdCg==
 
 webpack-sources@^1.1.0, webpack-sources@^1.3.0, webpack-sources@^1.4.0, webpack-sources@^1.4.1:
   version "1.4.3"
