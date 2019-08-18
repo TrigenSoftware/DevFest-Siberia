@@ -66,6 +66,7 @@ export default class Subscribe extends Component<IProps, IState> {
 						/>
 						<Button
 							{...stylesheet('button')}
+							variant='secondary'
 						>
 							Подписаться
 						</Button>
