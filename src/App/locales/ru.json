@@ -66,6 +66,75 @@
 			}
 		]
 	},
+	"speakers": {
+		"title": "Спикеры",
+		"cfp": "Стать спикером",
+		"speakers": [
+			{
+				"src": "https://gdg-siberia.com/img/team/LeonidKalneus.jpg",
+				"firstname": "Леонид",
+				"lastname": "Кальнеус",
+				"description": "Человек-конференция",
+				"badge": "Тест",
+				"contacts": {
+					"telegram": "https://t.me/ManFromSiberia",
+					"email": "mailto:leo@gdg-siberia.com"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/AlexeyRomanenko.jpg",
+				"firstname": "Алексей",
+				"lastname": "Романенко",
+				"description": "Координатор волонтеров",
+				"badge": "Тест",
+				"contacts": {
+					"telegram": "https://t.me/slimus",
+					"email": "mailto:alex@gdg-siberia.com"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/YuriyKashnikov.jpg",
+				"firstname": "Юрий",
+				"lastname": "Кашников",
+				"description": "Программный комитет",
+				"badge": "Тест",
+				"contacts": {
+					"site": "http://kayuri.github.io/"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/KirZharov.jpg",
+				"firstname": "Кир",
+				"lastname": "Жаров",
+				"description": "Разработка сайта, frontend",
+				"badge": "Тест"
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/IvanKruchkov.png",
+				"firstname": "Иван",
+				"lastname": "Крючков",
+				"description": "Разработка сайта, backend",
+				"badge": "Тест"
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/AminaKotomanova.jpg",
+				"firstname": "Амина",
+				"lastname": "Котоманова",
+				"description": "Дизайнер",
+				"badge": "Тест",
+				"contacts": {
+					"site": "http://rebelart.ru"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/LevNovokreshchenov.jpg",
+				"firstname": "Лев",
+				"lastname": "Новокрещёнов",
+				"description": "Член семьи",
+				"badge": "Тест"
+			}
+		]
+	},
 	"header": {
 		"home": "Главная",
 		"team": "Команда",
