@@ -3,6 +3,9 @@ import React from 'react';
 import {
 	storiesOf
 } from '@storybook/react';
+import {
+	MemoryRouter
+} from 'react-router';
 import Speakers from './';
 
 const stylableApi = `
@@ -15,6 +18,11 @@ storiesOf('Blocks|Speakers', module)
 	.addParameters({
 		info: stylableApi
 	})
+	.addDecorator(story => (
+		<MemoryRouter initialEntries={['/']}>
+			{story()}
+		</MemoryRouter>
+	))
 	.addDecorator(story => (
 		<div style={{ margin: '-12px' }}>
 			{story()}

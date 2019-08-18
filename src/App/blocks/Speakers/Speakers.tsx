@@ -5,6 +5,7 @@ import React, {
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
+import Link from '~/components/Link';
 import Button from '~/components/Button';
 import ProfileCard from '~/components/ProfileCard';
 import Badge from '~/components/Badge';
@@ -32,11 +33,17 @@ export default class Speakers extends Component<ISectionProps> {
 					{...stylesheet('group')}
 				>
 					<h2>Спикеры</h2>
-					<Button
-						variant='secondary'
+					<Link
+						{...stylesheet('link')}
+						to='/'
+						disguised
 					>
-						Стать спикером
-					</Button>
+						<Button
+							variant='secondary'
+						>
+							Стать спикером
+						</Button>
+					</Link>
 				</div>
 				<ul>
 					<li>
