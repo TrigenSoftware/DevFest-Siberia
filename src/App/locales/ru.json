@@ -1,9 +1,70 @@
 {
 	"main": {
 		"title": "DevFest Siberia 2019",
-		"address": "Новосибирск",
-		"dates": "29<>ноября</><>-</>01<>декабря</>",
+		"address": "Novosibirsk",
+		"dates": "29<>november</><>-</>01<>december</>",
 		"year": "2019"
+	},
+	"team": {
+		"title": "Команда",
+		"team": [
+			{
+				"src": "https://gdg-siberia.com/img/team/LeonidKalneus.jpg",
+				"firstname": "Леонид",
+				"lastname": "Кальнеус",
+				"description": "Человек-конференция",
+				"contacts": {
+					"telegram": "https://t.me/ManFromSiberia",
+					"email": "mailto:leo@gdg-siberia.com"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/AlexeyRomanenko.jpg",
+				"firstname": "Алексей",
+				"lastname": "Романенко",
+				"description": "Координатор волонтеров",
+				"contacts": {
+					"telegram": "https://t.me/slimus",
+					"email": "mailto:alex@gdg-siberia.com"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/YuriyKashnikov.jpg",
+				"firstname": "Юрий",
+				"lastname": "Кашников",
+				"description": "Программный комитет",
+				"contacts": {
+					"site": "http://kayuri.github.io/"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/KirZharov.jpg",
+				"firstname": "Кир",
+				"lastname": "Жаров",
+				"description": "Разработка сайта, frontend"
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/IvanKruchkov.png",
+				"firstname": "Иван",
+				"lastname": "Крючков",
+				"description": "Разработка сайта, backend"
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/AminaKotomanova.jpg",
+				"firstname": "Амина",
+				"lastname": "Котоманова",
+				"description": "Дизайнер",
+				"contacts": {
+					"site": "http://rebelart.ru"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/LevNovokreshchenov.jpg",
+				"firstname": "Лев",
+				"lastname": "Новокрещёнов",
+				"description": "Член семьи"
+			}
+		]
 	},
 	"header": {
 		"home": "Главная",

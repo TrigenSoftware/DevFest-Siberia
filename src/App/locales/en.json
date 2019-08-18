@@ -5,6 +5,67 @@
 		"dates": "29<>november</><>-</>01<>december</>",
 		"year": "2019"
 	},
+	"team": {
+		"title": "Team",
+		"team": [
+			{
+				"src": "https://gdg-siberia.com/img/team/LeonidKalneus.jpg",
+				"firstname": "Leonid",
+				"lastname": "Kalneus",
+				"description": "Head of the team",
+				"contacts": {
+					"telegram": "https://t.me/ManFromSiberia",
+					"email": "mailto:leo@gdg-siberia.com"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/AlexeyRomanenko.jpg",
+				"firstname": "Alexey",
+				"lastname": "Romanenko",
+				"description": "Volunteer coordinator",
+				"contacts": {
+					"telegram": "https://t.me/slimus",
+					"email": "mailto:alex@gdg-siberia.com"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/YuriyKashnikov.jpg",
+				"firstname": "Yuriy",
+				"lastname": "Kashnikov",
+				"description": "Program committee member",
+				"contacts": {
+					"site": "http://kayuri.github.io/"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/KirZharov.jpg",
+				"firstname": "Kir",
+				"lastname": "Zharov",
+				"description": "Website team, frontend"
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/IvanKruchkov.png",
+				"firstname": "Ivan",
+				"lastname": "Kruchkov",
+				"description": "Website team, backend"
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/AminaKotomanova.jpg",
+				"firstname": "Amina",
+				"lastname": "Kotomanova",
+				"description": "Illustrator",
+				"contacts": {
+					"site": "http://rebelart.ru"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/LevNovokreshchenov.jpg",
+				"firstname": "Lev",
+				"lastname": "Novokreshchenov",
+				"description": "Member of the family"
+			}
+		]
+	},
 	"header": {
 		"home": "Home",
 		"team": "Team",
