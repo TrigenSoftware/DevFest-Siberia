@@ -10,10 +10,11 @@ import stylesheet from './Button.st.css';
 
 export enum VariantVariant {
 	Primary = 'primary',
-	Secondary = 'secondary'
+	Secondary = 'secondary',
+	Alt = 'alt'
 }
 
-export type Variant = 'primary'| 'secondary';
+export type Variant = 'primary'|'secondary'|'alt';
 
 export interface IProps extends IFlexisButtonProps {
 	variant?: Variant;
