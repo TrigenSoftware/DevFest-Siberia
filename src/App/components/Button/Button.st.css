@@ -30,8 +30,15 @@
 	-st-named: secondary;
 }
 
+:import {
+	-st-from: './mods/Button--alt.st.css';
+	-st-named: alt;
+}
+
 .root {
-	-st-states: secondary;
+	-st-states:
+		secondary,
+		alt;
 	will-change:
 		background-color,
 		color,
@@ -77,6 +84,10 @@
 
 .root:secondary {
 	-st-mixin: secondary;
+}
+
+.root:alt {
+	-st-mixin: alt;
 }
 
 .root:disabled {

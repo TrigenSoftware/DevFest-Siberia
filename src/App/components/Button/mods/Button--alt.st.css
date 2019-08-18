@@ -1,0 +1,32 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../../variables.st.css';
+	-st-named:
+		colorWhite,
+		colorPink0,
+		colorPink3;
+}
+
+.alt {
+	border: 2px solid value(colorWhite);
+	background-color: value(colorPink0);
+	padding: rel(7, 20) rel(16, 20);
+	color: value(colorWhite);
+	font-size: 2rem;
+}
+
+.alt:focus,
+.alt:not(:disabled):hover {
+	background-color: value(colorWhite);
+	color: value(colorPink0);
+}
+
+.alt:not(:disabled):active {
+	background-color: value(colorWhite);
+	color: value(colorPink3);
+}
