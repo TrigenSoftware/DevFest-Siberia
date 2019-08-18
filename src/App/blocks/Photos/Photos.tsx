@@ -6,9 +6,6 @@ import Section, {
 } from '~/components/Section';
 import Link from '~/components/Link';
 import Button from '~/components/Button';
-import {
-	imageUrl
-} from '@flexis/ui/components/ImageSelect/ImageSelect.stories';
 import stylesheet from './Photos.st.css';
 
 export type IProps = ISectionProps;
@@ -25,7 +22,7 @@ export default class Photos extends Component<IProps> {
 			<Section
 				{...stylesheet('root', {}, props)}
 			>
-				<div
+				<article
 					{...stylesheet('info')}
 				>
 					<h2
@@ -36,12 +33,6 @@ export default class Photos extends Component<IProps> {
 					<div
 						{...stylesheet('text')}
 					>
-						<figure
-							{...stylesheet('icon')}
-							style={{
-								backgroundImage: `url(${imageUrl})`
-							}}
-						/>
 						Как все прошло год назад и тут нужен осмысленный текст
 					</div>
 					<footer
@@ -52,36 +43,42 @@ export default class Photos extends Component<IProps> {
 							disguised
 						>
 							<Button
-								variant='secondary'
+								variant='alt'
 							>
 								Больше фото
 							</Button>
 						</Link>
 					</footer>
+				</article>
+				<div>
+					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/7.jpg'/>
 				</div>
 				<div>
-					<img src={imageUrl}/>
+					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/3.jpg'/>
 				</div>
 				<div>
-					<img src={imageUrl}/>
+					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/2.jpg'/>
+				</div>
+				<div
+					{...stylesheet('bigImg')}
+				>
+					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/4.jpg'/>
+				</div>
+				<div
+					{...stylesheet('bigImg')}
+				>
+					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/1.jpg'/>
 				</div>
 				<div>
-					<img src={imageUrl}/>
+					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131705/devfest2019/photos/6.jpg'/>
+				</div>
+				<div
+					{...stylesheet('bigImg')}
+				>
+					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/8.jpg'/>
 				</div>
 				<div>
-					<img src={imageUrl}/>
-				</div>
-				<div>
-					<img src={imageUrl}/>
-				</div>
-				<div>
-					<img src={imageUrl}/>
-				</div>
-				<div>
-					<img src={imageUrl}/>
-				</div>
-				<div>
-					<img src={imageUrl}/>
+					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/5.jpg'/>
 				</div>
 			</Section>
 		);

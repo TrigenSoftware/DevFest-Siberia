@@ -27,8 +27,12 @@
 
 .root .center > div {
 	display: flex;
-	flex: 1 1 30%;
+	flex: 1 1 20%;
 	height: rel(350, 24);
+}
+
+.root .center .bigImg {
+	flex: 1 1 50%;
 }
 
 .root .center > div img {
@@ -39,7 +43,7 @@
 	flex-direction: column;
 	justify-content: space-around;
 	background-color: value(colorPink0);
-	padding: value(sizeGap) value(sizeGap) value(sizeGap) value(sizeGapXl);
+	padding: value(sizeGap) rel(50, 24) value(sizeGap) value(sizeGapXl);
 	width: 36%;
 }
 
@@ -50,19 +54,10 @@
 }
 
 .text {
-	display: flex;
-	align-items: center;
 	color: value(colorWhite);
 }
 
-.icon {
-	margin: 0 rel(30, 24) 0 0;
-	border-radius: 50%;
-	background-size: cover;
-	width: 60px;
-	height: 60px;
-}
-
 .footer {
+	margin-top: value(sizeGap);
 	text-align: right;
 }
