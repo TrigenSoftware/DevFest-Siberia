@@ -8,17 +8,24 @@ import FlexisButton, {
 import unsetSize from '../common/unsetSize';
 import stylesheet from './Button.st.css';
 
-export type Variant = 'primary';
+export enum VariantVariant {
+	Primary = 'primary',
+	Secondary = 'secondary'
+}
+
+export type Variant = 'primary'| 'secondary';
 
 export interface IProps extends IFlexisButtonProps {
 	variant?: Variant;
 }
 
+export const VariantValues: Variant[] = Object.values(VariantVariant);
+
 export default class Button extends Component<IProps> {
 
 	static propTypes = {
 		...FlexisButton.propTypes,
-		variant: PropTypes.string
+		variant: PropTypes.oneOf(VariantValues)
 	};
 
 	static defaultProps = {
