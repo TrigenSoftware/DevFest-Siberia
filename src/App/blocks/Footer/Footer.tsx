@@ -1,6 +1,9 @@
 import React, {
 	Component
 } from 'react';
+import {
+	__x
+} from 'i18n-for-react';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -32,7 +35,7 @@ export default class Footer extends Component<IProps> {
 					>
 						<li>
 							<h3>
-								Участникам
+								{__x`footer.visitors`}
 							</h3>
 						</li>
 						<li>
@@ -40,7 +43,7 @@ export default class Footer extends Component<IProps> {
 								{...stylesheet('link')}
 								to='/rules'
 							>
-								Правила поведения
+								{__x`footer.coc`}
 							</Link>
 						</li>
 						<li>
@@ -48,7 +51,7 @@ export default class Footer extends Component<IProps> {
 								{...stylesheet('link')}
 								to='/students'
 							>
-								Студентам
+								{__x`footer.students`}
 							</Link>
 						</li>
 						<li
@@ -84,7 +87,7 @@ export default class Footer extends Component<IProps> {
 					>
 						<li>
 							<h3>
-								Компаниям
+								{__x`footer.companies`}
 							</h3>
 						</li>
 						<li>
@@ -92,7 +95,7 @@ export default class Footer extends Component<IProps> {
 								{...stylesheet('link')}
 								to='/partners'
 							>
-								Стать партнером
+								{__x`footer.partner`}
 							</Link>
 						</li>
 					</ul>
@@ -101,7 +104,7 @@ export default class Footer extends Component<IProps> {
 					>
 						<li>
 							<h3>
-								Контакты
+								{__x`footer.contact`}
 							</h3>
 						</li>
 						<li>
@@ -117,7 +120,7 @@ export default class Footer extends Component<IProps> {
 						/>
 						<li>
 							<h3>
-								Мы в соцсетях
+								{__x`footer.socials`}
 							</h3>
 						</li>
 						<li>
@@ -126,21 +129,21 @@ export default class Footer extends Component<IProps> {
 								type='telegram'
 								to='/telegram'
 							>
-								Telegram Link
+								Telegram
 							</ContactLink>
 							<ContactLink
 								{...stylesheet('contactLink')}
 								type='twitter'
 								to='/twitter'
 							>
-								Twitter Link
+								Twitter
 							</ContactLink>
 							<ContactLink
 								{...stylesheet('contactLink')}
 								type='vk'
 								to='/vk'
 							>
-								Vkontakte Link
+								VK
 							</ContactLink>
 						</li>
 					</ul>

@@ -28,5 +28,14 @@
 	},
 	"location": {
 		"address": "<>Academpark</>12, Nikolaeva, Novosibirsk"
+	},
+	"footer": {
+		"visitors": "For Visitors",
+		"students": "For Students",
+		"coc": "Code of conduct",
+		"companies": "For Companies",
+		"partner": "Become a partner",
+		"contact": "Contact us",
+		"socials": "We are in social networks"
 	}
 }
