@@ -38,6 +38,10 @@
 		0;
 }
 
+.info b {
+	display: block;
+}
+
 .icon {
 	width: 5em;
 	height: 7rem;

@@ -25,5 +25,8 @@
 		"days": "<>3</><>Days</>of hardcore technical discussions",
 		"speakers": "<>48+</><>Speakers</>from Russia and beyond",
 		"tracks": "<>48+</><>Tracks</>plus workshops and codelabs"
-  }
+	},
+	"location": {
+		"address": "<>Academpark</>12, Nikolaeva, Novosibirsk"
+	}
 }
