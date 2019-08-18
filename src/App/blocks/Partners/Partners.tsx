@@ -1,6 +1,11 @@
 import React, {
+	ContextType,
 	Component
 } from 'react';
+import {
+	I18nContext,
+	__x
+} from 'i18n-for-react';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -15,11 +20,23 @@ export type IProps = ISectionProps;
 
 export default class Partners extends Component<IProps> {
 
+	static contextType = I18nContext;
+
+	context!: ContextType<typeof I18nContext>;
+
 	render() {
 
 		const {
+			context,
 			props
 		} = this;
+		const {
+			partners: {
+				partners
+			}
+		} = this.context.getCatalog(
+			context.getLocale()
+		) as any;
 
 		return (
 			<Section
@@ -29,37 +46,26 @@ export default class Partners extends Component<IProps> {
 				<h2
 					{...stylesheet('title')}
 				>
-					Partners
+					{__x`partners.title`}
 				</h2>
-				<Brands>
-					<BrandsTitle>
-						With support of
-					</BrandsTitle>
-					<BrandsRow>
-						<BrandsItem
-							href='https://academpark.com'
-							src='https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/academpark.svg'
-							title='Academpark'
-						/>
-						<BrandsItem
-							href='https://developers.google.com'
-							src='https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/google.svg'
-							title='Google'
-						/>
-					</BrandsRow>
-				</Brands>
-				<Brands>
-					<BrandsTitle>
-						Media Partners
-					</BrandsTitle>
-					<BrandsRow>
-						<BrandsItem
-							href='https://androiddev.apptractor.ru/'
-							src='https://res.cloudinary.com/trigen/image/upload/v1565857597/devfest2019/android.svg'
-							title='Android Dev Podcast'
-						/>
-					</BrandsRow>
-				</Brands>
+				{partners.map(({
+					title,
+					items
+				}) => (
+					<Brands key={title}>
+						<BrandsTitle>
+							{title}
+						</BrandsTitle>
+						<BrandsRow>
+							{items.map(item => (
+								<BrandsItem
+									key={item.title}
+									{...item}
+								/>
+							))}
+						</BrandsRow>
+					</Brands>
+				))}
 			</Section>
 		);
 	}

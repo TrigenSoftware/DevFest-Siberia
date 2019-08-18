@@ -1,105 +1,68 @@
-import faker from 'faker';
 import React, {
+	ContextType,
 	Component
 } from 'react';
+import {
+	I18nContext,
+	__x
+} from 'i18n-for-react';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
 import ProfileCard from '~/components/ProfileCard';
-import {
-	imageUrl
-} from '@flexis/ui/components/ImageSelect/ImageSelect.stories';
 import stylesheet from './Team.st.css';
 
 export type IProps = ISectionProps;
 
 export default class Team extends Component<ISectionProps> {
 
+	static contextType = I18nContext;
+
+	context!: ContextType<typeof I18nContext>;
+
 	render() {
 
 		const {
+			context,
 			props
 		} = this;
+		const {
+			team: {
+				team
+			}
+		} = this.context.getCatalog(
+			context.getLocale()
+		) as any;
 
 		return (
 			<Section
 				{...props}
 				{...stylesheet('root', {}, props)}
 			>
-				<h2>Команда</h2>
+				<h2>
+					{__x`team.title`}
+				</h2>
 				<ul>
-					<li>
-						<ProfileCard
-							src={imageUrl}
-							firstname='Имя'
-							lastname='Фамилия'
-							description='Роль, занятие, цель смысл'
-							contacts={{
-								twitter: faker.internet.url(),
-								vk:      faker.internet.url()
-							}}
-						/>
-					</li>
-					<li>
-						<ProfileCard
-							src={imageUrl}
-							firstname='Имя'
-							lastname='Фамилия'
-							description='Роль, занятие, цель смысл'
-							contacts={{
-								twitter: faker.internet.url(),
-								vk:      faker.internet.url()
-							}}
-						/>
-					</li>
-					<li>
-						<ProfileCard
-							src={imageUrl}
-							firstname='Имя'
-							lastname='Фамилия'
-							description='Роль, занятие, цель смысл'
-							contacts={{
-								twitter: faker.internet.url(),
-								vk:      faker.internet.url()
-							}}
-						/>
-					</li>
-					<li>
-						<ProfileCard
-							src={imageUrl}
-							firstname='Имя'
-							lastname='Фамилия'
-							description='Роль, занятие, цель смысл'
-							contacts={{
-								twitter: faker.internet.url(),
-								vk:      faker.internet.url()
-							}}
-						/>
-					</li>
-					<li>
-						<ProfileCard
-							src={imageUrl}
-							firstname='Имя'
-							lastname='Фамилия'
-							description='Роль, занятие, цель смысл'
-							contacts={{
-								twitter: faker.internet.url(),
-								vk:      faker.internet.url()
-							}}
-						/>
-					</li>
-					<li>
-						<ProfileCard
-							src={imageUrl}
-							firstname='Имя'
-							lastname='Фамилия'
-							description='Роль, занятие, цель смысл'
-							contacts={{
-								twitter: faker.internet.url(),
-								vk:      faker.internet.url()
-							}}
-						/>
-					</li>
+					{team.map(({
+						src,
+						firstname,
+						lastname,
+						description,
+						contacts
+					}) => (
+						<li
+							key={lastname}
+						>
+							<ProfileCard
+								key={lastname}
+								src={src}
+								firstname={firstname}
+								lastname={lastname}
+								description={description}
+								contacts={contacts}
+							/>
+						</li>
+					))}
 				</ul>
 			</Section>
 		);

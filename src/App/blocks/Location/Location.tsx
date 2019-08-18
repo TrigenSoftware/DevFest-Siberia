@@ -1,6 +1,11 @@
 import React, {
+	ContextType,
 	Component
 } from 'react';
+import {
+	I18nContext,
+	__x
+} from 'i18n-for-react';
 import {
 	Bind
 } from '@flexis/ui/helpers';
@@ -19,13 +24,22 @@ import stylesheet from './Location.st.css';
 
 export type IProps = ISectionProps;
 
+const address = [
+	<b key='place'/>
+];
+
 export default class Location extends Component<IProps> {
+
+	static contextType = I18nContext;
+
+	context!: ContextType<typeof I18nContext>;
 
 	render() {
 
 		const {
 			props
 		} = this;
+		const locale = this.context.getLocale();
 
 		return (
 			<Section
@@ -33,7 +47,10 @@ export default class Location extends Component<IProps> {
 				{...stylesheet('root', {}, props)}
 			>
 				<GoogleMapReact
-					bootstrapURLKeys={googleMaps.keys}
+					bootstrapURLKeys={{
+						...googleMaps.keys,
+						language: locale
+					}}
 					defaultCenter={googleMaps.center}
 					defaultZoom={googleMaps.zoom}
 					options={googleMaps.options}
@@ -47,8 +64,7 @@ export default class Location extends Component<IProps> {
 						{...noSize}
 					/>
 					<address>
-						<b>Технопарк Новосибирского Академгородка</b><br/>
-						ул. Николаева д. 12, г. Новосибирск
+						{__x('location.address', address)}
 					</address>
 				</article>
 			</Section>

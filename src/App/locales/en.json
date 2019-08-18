@@ -5,9 +5,128 @@
 		"dates": "29<>november</><>-</>01<>december</>",
 		"year": "2019"
 	},
-	"team": [
-		{ "firstname": "Fistname", "lastname": "Lastname", "description": "Роль, занятие, цель смысл"},
-		{ "firstname": "Fistname", "lastname": "Lastname", "description": "Роль, занятие, цель смысл"},
-		{ "firstname": "Fistname", "lastname": "Lastname", "description": "Роль, занятие, цель смысл"}
-	]
+	"team": {
+		"title": "Team",
+		"team": [
+			{
+				"src": "https://gdg-siberia.com/img/team/LeonidKalneus.jpg",
+				"firstname": "Leonid",
+				"lastname": "Kalneus",
+				"description": "Head of the team",
+				"contacts": {
+					"telegram": "https://t.me/ManFromSiberia",
+					"email": "mailto:leo@gdg-siberia.com"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/AlexeyRomanenko.jpg",
+				"firstname": "Alexey",
+				"lastname": "Romanenko",
+				"description": "Volunteer coordinator",
+				"contacts": {
+					"telegram": "https://t.me/slimus",
+					"email": "mailto:alex@gdg-siberia.com"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/YuriyKashnikov.jpg",
+				"firstname": "Yuriy",
+				"lastname": "Kashnikov",
+				"description": "Program committee member",
+				"contacts": {
+					"site": "http://kayuri.github.io/"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/KirZharov.jpg",
+				"firstname": "Kir",
+				"lastname": "Zharov",
+				"description": "Website team, frontend"
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/IvanKruchkov.png",
+				"firstname": "Ivan",
+				"lastname": "Kruchkov",
+				"description": "Website team, backend"
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/AminaKotomanova.jpg",
+				"firstname": "Amina",
+				"lastname": "Kotomanova",
+				"description": "Illustrator",
+				"contacts": {
+					"site": "http://rebelart.ru"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/LevNovokreshchenov.jpg",
+				"firstname": "Lev",
+				"lastname": "Novokreshchenov",
+				"description": "Member of the family"
+			}
+		]
+	},
+	"header": {
+		"home": "Home",
+		"team": "Team",
+		"cfp": "Become a speaker",
+		"lang": "Ru",
+		"login": "Log In",
+		"buyTicket": "Buy ticket",
+		"share": "Share"
+	},
+	"facts": {
+		"title": "DevFest Siberia -",
+		"topics": "Topics",
+		"topicsDescription": "Mobile Development, IoT, Virtual and Augmented Reality, Modern Web Application Development, Firebase Interaction from experts around the world.",
+		"workshops": "Workshops",
+		"workshopsDescription": "Full separated day of workshops, hands-on experience, hacking and debugging. Come and tame your favourite technology!",
+		"also": "As well -",
+		"attendees": "<>900+</><>Attendees</>from everywhere",
+		"days": "<>3</><>Days</>of hardcore technical discussions",
+		"speakers": "<>48+</><>Speakers</>from Russia and beyond",
+		"tracks": "<>48+</><>Tracks</>plus workshops and codelabs"
+	},
+	"location": {
+		"address": "<>Academpark</>12, Nikolaeva, Novosibirsk"
+	},
+	"partners": {
+		"title": "Partners",
+		"partners": [
+			{
+				"title": "With support of",
+				"items": [
+					{
+						"href": "https://academpark.com",
+						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/academpark.svg",
+						"title": "Academpark"
+					},
+					{
+						"href": "https://developers.google.com",
+						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/google.svg",
+						"title": "Google"
+					}
+				]
+			},
+			{
+				"title": "Media Partners",
+				"items": [
+					{
+						"href": "https://androiddev.apptractor.ru/",
+						"src": "https://res.cloudinary.com/trigen/image/upload/v1565857597/devfest2019/android.svg",
+						"title": "Android Dev Podcast"
+					}
+				]
+			}
+		]
+	},
+	"footer": {
+		"visitors": "For Visitors",
+		"students": "For Students",
+		"coc": "Code of conduct",
+		"companies": "For Companies",
+		"partner": "Become a partner",
+		"contact": "Contact us",
+		"socials": "We are in social networks"
+	}
 }
