@@ -30,11 +30,6 @@
 	-st-named: secondary;
 }
 
-:import {
-	-st-from: './mods/Button--disabled.st.css';
-	-st-named: disabled;
-}
-
 .root {
 	-st-states: secondary;
 	will-change:
@@ -63,10 +58,6 @@
 	}
 }
 
-.root:disabled {
-	-st-mixin: disabled;
-}
-
 .root:focus {
 	-st-mixin: outline;
 }
@@ -88,6 +79,11 @@
 	-st-mixin: secondary;
 }
 
+.root:disabled {
+	background-color: value(colorWhite);
+	color: value(colorGray4);
+}
+
 .root:focus,
 .root:not(:disabled):hover {
 	background-color: value(colorWhite);
@@ -97,8 +93,4 @@
 .root:not(:disabled):active {
 	background-color: value(colorWhite);
 	color: value(colorPink3);
-}
-
-.root:secondary:disabled {
-	-st-mixin: disabled;
 }
