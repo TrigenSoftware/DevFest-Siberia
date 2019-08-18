@@ -1,0 +1,12 @@
+
+:import {
+	-st-from: '../../variables.st.css';
+	-st-named:
+		colorWhite,
+		colorGray4;
+}
+
+.disabled {
+	background-color: value(colorWhite);
+	color: value(colorGray4);
+}

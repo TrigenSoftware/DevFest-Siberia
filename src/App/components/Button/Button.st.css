@@ -25,7 +25,18 @@
 	-st-named: outline;
 }
 
+:import {
+	-st-from: './mods/Button--secondary.st.css';
+	-st-named: secondary;
+}
+
+:import {
+	-st-from: './mods/Button--disabled.st.css';
+	-st-named: disabled;
+}
+
 .root {
+	-st-states: secondary;
 	will-change:
 		background-color,
 		color,
@@ -35,10 +46,10 @@
 		color value(durationTransition),
 		box-shadow value(durationTransition);
 	outline: none !important;
-	border: 0;
+	border: 3px solid transparent;
 	border-radius: value(sizeBorderRadius);
 	background-color: value(colorPink0);
-	padding: rel(16, 24) rel(31, 24);
+	padding: rel(13, 24) rel(28, 24);
 	color: value(colorWhite);
 	font-size: 2.4rem;
 	font-weight: bold;
@@ -53,8 +64,7 @@
 }
 
 .root:disabled {
-	background-color: value(colorWhite);
-	color: value(colorGray4);
+	-st-mixin: disabled;
 }
 
 .root:focus {
@@ -74,6 +84,10 @@
 	margin-right: rel(8, 16);
 }
 
+.root:secondary {
+	-st-mixin: secondary;
+}
+
 .root:focus,
 .root:not(:disabled):hover {
 	background-color: value(colorWhite);
@@ -83,4 +97,8 @@
 .root:not(:disabled):active {
 	background-color: value(colorWhite);
 	color: value(colorPink3);
+}
+
+.root:secondary:disabled {
+	-st-mixin: disabled;
 }
