@@ -13,7 +13,9 @@ import ButtonStories, {
 import {
 	AlignSideValues
 } from '../types';
-import Button from './';
+import Button, {
+	VariantValues
+} from './';
 
 const {
 	TestIcon
@@ -27,6 +29,7 @@ storiesOf('Components|Button', module)
 			<Button
 				{...events}
 				disabled={boolean('Disabled', false)}
+				variant={select('Variant', [null, ...VariantValues], null)}
 			>
 				{text('Label', 'Button name')}
 			</Button>
@@ -40,6 +43,7 @@ storiesOf('Components|Button', module)
 				disabled={boolean('Disabled', false)}
 				icon={<TestIcon/>}
 				alignIcon={select('Align icon', AlignSideValues, AlignSideValues[0])}
+				variant={select('Variant', [null, ...VariantValues], null)}
 			>
 				{text('Label', 'Button name')}
 			</Button>
@@ -53,6 +57,7 @@ storiesOf('Components|Button', module)
 				disabled={boolean('Disabled', false)}
 				icon={<TestIcon/>}
 				alignIcon={select('Align icon', AlignSideValues, AlignSideValues[0])}
+				variant={select('Variant', [null, ...VariantValues], null)}
 			/>
 		)
 	)
@@ -64,6 +69,7 @@ storiesOf('Components|Button', module)
 				disabled={boolean('Disabled', false)}
 				icon={<TestIcon/>}
 				alignIcon={select('Align icon', AlignSideValues, 'right')}
+				variant={select('Variant', [null, ...VariantValues], null)}
 			>
 				{text('Label', 'Button name')}
 			</Button>
@@ -79,6 +85,7 @@ storiesOf('Components|Button', module)
 				icon={<TestIcon/>}
 				alignIcon={select('Align icon', AlignSideValues, AlignSideValues[0])}
 				flexIcon={boolean('Flex icon', true)}
+				variant={select('Variant', [null, ...VariantValues], null)}
 			>
 				{text('Label', 'Button name')}
 			</Button>
