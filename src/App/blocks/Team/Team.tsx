@@ -43,22 +43,13 @@ export default class Team extends Component<ISectionProps> {
 					{__x`team.title`}
 				</h2>
 				<ul>
-					{team.map(({
-						src,
-						firstname,
-						lastname,
-						description,
-						contacts
-					}) => (
+					{team.map(item => (
 						<li
-							key={lastname}
+							key={item.src}
 						>
 							<ProfileCard
-								src={src}
-								firstname={firstname}
-								lastname={lastname}
-								description={description}
-								contacts={contacts}
+								key={item.src}
+								{...item}
 							/>
 						</li>
 					))}
