@@ -18,7 +18,6 @@
 }
 
 .root .center {
-	position: relative;
 	padding-top: value(sizeGapLg);
 	padding-bottom: value(sizeGapLg);
 }
