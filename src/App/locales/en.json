@@ -5,7 +5,28 @@
 		"dates": "29<>november</><>-</>01<>december</>",
 		"year": "2019"
 	},
+	"header": {
+		"home": "Home",
+		"team": "Team",
+		"cfp": "Become a speaker",
+		"lang": "Ru",
+		"login": "Log In",
+		"buyTicket": "Buy ticket",
+		"share": "Share"
+	},
+	"facts": {
+		"title": "DevFest Siberia -",
+		"topics": "Topics",
+		"topicsDescription": "Mobile Development, IoT, Virtual and Augmented Reality, Modern Web Application Development, Firebase Interaction from experts around the world.",
+		"workshops": "Workshops",
+		"workshopsDescription": "Full separated day of workshops, hands-on experience, hacking and debugging. Come and tame your favourite technology!",
+		"also": "As well -",
+		"attendees": "<>900+</><>Attendees</>from everywhere",
+		"days": "<>3</><>Days</>of hardcore technical discussions",
+		"speakers": "<>48+</><>Speakers</>from Russia and beyond",
+		"tracks": "<>48+</><>Tracks</>plus workshops and codelabs"
+	},
 	"location": {
-		"address": "<>Academpark</></>12, Nikolaeva, Novosibirsk"
+		"address": "<>Academpark</>12, Nikolaeva, Novosibirsk"
 	}
 }

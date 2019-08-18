@@ -1,12 +1,20 @@
 import React, {
 	Component
 } from 'react';
+import {
+	__x
+} from 'i18n-for-react';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
 import stylesheet from './Facts.st.css';
 
 export type IProps = ISectionProps;
+
+const numbers = [
+	<b key='number'/>,
+	<div key='label'/>
+];
 
 export default class Facts extends Component<IProps> {
 
@@ -26,57 +34,47 @@ export default class Facts extends Component<IProps> {
 						alt: true
 					})}
 				>
-					DevFest Siberia это –
+					{__x`facts.title`}
 				</h3>
 				<article
 					{...stylesheet('article')}
 				>
 					<h4>
-						Доклады
+						{__x`facts.topics`}
 					</h4>
 					<p>
-						Самые горячие темы этого года от экспертов со всего мира. Секции этого года – Mobile,
-						Frontend, Backend, Blockchaind и прочее и побольше. Созданно с любовью сибирскими разработчиками!
+						{__x`facts.topicsDescription`}
 					</p>
 				</article>
 				<article
 					{...stylesheet('article')}
 				>
 					<h4>
-						Воркшопы
+						{__x`facts.workshops`}
 					</h4>
 					<p>
-						Выделенный день для практических занятий с ведущими экспертами отрасли!
-						Отличный способ попробовать новые технологии, не откладывая на потом.
+						{__x`facts.workshopsDescription`}
 					</p>
 				</article>
 				<h2
 					{...stylesheet('title')}
 				>
-					А также это –
+					{__x`facts.also`}
 				</h2>
 				<ul
 					{...stylesheet('numbers')}
 				>
 					<li>
-						<b>900+</b>
-						<div>Участников</div>
-						Со всей страны
+						{__x('facts.attendees', numbers)}
 					</li>
 					<li>
-						<b>3</b>
-						<div>Дня</div>
-						Включая день воркшопов и практических семинаров
+						{__x('facts.days', numbers)}
 					</li>
 					<li>
-						<b>48+</b>
-						<div>Спикеров</div>
-						Со всего мира
+						{__x('facts.speakers', numbers)}
 					</li>
 					<li>
-						<b>4</b>
-						<div>Потока</div>
-						2880 минут удовольствия
+						{__x('facts.tracks', numbers)}
 					</li>
 				</ul>
 			</Section>
