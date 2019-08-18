@@ -1,0 +1,68 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named:
+		sizeGap,
+		sizeGapXl,
+		colorWhite,
+		colorPink0;
+}
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+.root .center {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	width: 100%;
+}
+
+.root .center > div {
+	display: flex;
+	flex: 1 1 30%;
+	height: rel(350, 24);
+}
+
+.root .center > div img {
+	width: 100%;
+}
+
+.info {
+	flex-direction: column;
+	justify-content: space-around;
+	background-color: value(colorPink0);
+	padding: value(sizeGap) value(sizeGap) value(sizeGap) value(sizeGapXl);
+	width: 36%;
+}
+
+.title {
+	text-transform: uppercase;
+	color: value(colorWhite);
+	font-size: rel(42, 24);
+}
+
+.text {
+	display: flex;
+	align-items: center;
+	color: value(colorWhite);
+}
+
+.icon {
+	margin: 0 rel(30, 24) 0 0;
+	border-radius: 50%;
+	background-size: cover;
+	width: 60px;
+	height: 60px;
+}
+
+.footer {
+	text-align: right;
+}
