@@ -108,6 +108,14 @@
 	list-style: none;
 }
 
+.controls li:not(:last-child) {
+	padding: 0;
+}
+
+.controls button {
+	margin: 0 -14px;
+}
+
 @media (min-width: value(sizeScreenMdMin)) {
 
 	.link {

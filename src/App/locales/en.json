@@ -8,13 +8,10 @@
 	"header": {
 		"home": "Home",
 		"team": "Team",
-		"speaker": "Become a speaker",
-		"schedule": "Schedule",
-		"partners": "For partners",
-		"language:": "En",
+		"cfp": "Become a speaker",
+		"lang": "Ru",
 		"login": "Log In",
-		"logout": "Log Out",
-		"ticket": "Buy ticket",
-		"profile": "Profile"
+		"buyTicket": "Buy ticket",
+		"share": "Share"
 	}
 }
