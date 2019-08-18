@@ -1,6 +1,12 @@
 import React, {
+	ContextType,
 	Component
 } from 'react';
+import {
+	I18nContext,
+	__ as tr,
+	__x
+} from 'i18n-for-react';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -23,11 +29,16 @@ export type IProps = ISectionProps;
 
 export default class Header extends Component<IProps> {
 
+	static contextType = I18nContext;
+
+	context!: ContextType<typeof I18nContext>;
+
 	render() {
 
 		const {
 			props
 		} = this;
+		const __ = this.context.bind(tr);
 
 		return (
 			<header
@@ -40,46 +51,48 @@ export default class Header extends Component<IProps> {
 					<Link
 						{...stylesheet('logo')}
 						to='/'
-						icon={<Logo />}
+						icon={<Logo/>}
+						title={__`header.home`}
 					/>
 					<HeaderNav>
 						<HeaderSpacer/>
 						<HeaderLink
 							to='/team'
 						>
-							Team
+							{__x`header.team`}
 						</HeaderLink>
 						<HeaderLink
 							to='/speaker'
 						>
-							Become speaker
+							{__x`header.cfp`}
 						</HeaderLink>
 						<HeaderSpacer/>
 						<HeaderLink
 							to='/en'
 							separated
 						>
-							En
+							{__x`header.lang`}
 						</HeaderLink>
 						<HeaderLink
 							to='/login'
 						>
-							Login
+							{__x`header.login`}
 						</HeaderLink>
 					</HeaderNav>
 					<ul
 						{...stylesheet('controls')}
 					>
-						<Link
+						<HeaderLink
 							disguised
 						>
-						<Button>
-							Buy ticket
-						</Button>
-						</Link>
+							<Button>
+								{__x`header.buyTicket`}
+							</Button>
+						</HeaderLink>
 						<HeaderLink
 							to='/share'
 							icon={<Share/>}
+							title={__`header.share`}
 						/>
 					</ul>
 				</Section>
