@@ -5,6 +5,15 @@
 		"dates": "29<>november</><>-</>01<>december</>",
 		"year": "2019"
 	},
+	"header": {
+		"home": "Home",
+		"team": "Team",
+		"cfp": "Become a speaker",
+		"lang": "Ru",
+		"login": "Log In",
+		"buyTicket": "Buy ticket",
+		"share": "Share"
+	},
 	"facts": {
 		"title": "DevFest Siberia -",
 		"topics": "Topics",
@@ -16,5 +25,5 @@
 		"days": "<>3</><>Days</>of hardcore technical discussions",
 		"speakers": "<>48+</><>Speakers</>from Russia and beyond",
 		"tracks": "<>48+</><>Tracks</>plus workshops and codelabs"
-	}
+  }
 }
