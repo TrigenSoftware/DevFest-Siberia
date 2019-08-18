@@ -34,6 +34,7 @@ export default class Speakers extends Component<ISectionProps> {
 					<h2>Спикеры</h2>
 					<Button
 						{...stylesheet('button')}
+						variant='secondary'
 					>
 						Стать спикером
 					</Button>

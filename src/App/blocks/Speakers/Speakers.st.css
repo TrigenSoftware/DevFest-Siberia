@@ -9,11 +9,7 @@
 	-st-named:
 		sizeScreenMdMax,
 		sizeGap,
-		sizeGapLg,
-		colorWhite,
-		colorBlue4,
-		colorBlue7,
-		colorBlue10;
+		sizeGapLg;
 }
 
 :import {
@@ -44,21 +40,6 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-}
-
-.button {
-	background-color: value(colorBlue7);
-}
-
-.button:focus,
-.button:not(:disabled):hover {
-	background-color: value(colorBlue10);
-	color: value(colorWhite);
-}
-
-.button:not(:disabled):active {
-	background-color: value(colorBlue4);
-	color: value(colorWhite);
 }
 
 @media (max-width: value(sizeScreenMdMax)) {
