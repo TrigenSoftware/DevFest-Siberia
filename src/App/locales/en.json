@@ -4,5 +4,14 @@
 		"address": "Novosibirsk",
 		"dates": "29<>november</><>-</>01<>december</>",
 		"year": "2019"
+	},
+	"header": {
+		"home": "Home",
+		"team": "Team",
+		"cfp": "Become a speaker",
+		"lang": "Ru",
+		"login": "Log In",
+		"buyTicket": "Buy ticket",
+		"share": "Share"
 	}
 }
