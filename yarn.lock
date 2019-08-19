@@ -1155,10 +1155,10 @@
     vinyl "^2.2.0"
     vinyl-fs "^3.0.3"
 
-"@flexis/ui@^0.18.7-alpha":
-  version "0.18.7-alpha"
-  resolved "https://registry.yarnpkg.com/@flexis/ui/-/ui-0.18.7-alpha.tgz#0dd33cdb279dec6aadf8c75aa74526ccb6bf38e1"
-  integrity sha512-P1vAF0S4Nu+ljCRKnFAVH5ed0HhBiKgyu9ng6S6Sv65PhuGOkwLYe+yWdbDzC+4QQsOBmkOASfrzkuijj+PFlw==
+"@flexis/ui@^0.19.0-alpha":
+  version "0.19.0-alpha"
+  resolved "https://registry.yarnpkg.com/@flexis/ui/-/ui-0.19.0-alpha.tgz#f7ad1fed514c4f4218e0f1634634439db44ec071"
+  integrity sha512-AVnAO4Li3xshWmzMIs1tr+f0eoSiTe7SrzlDBKUYpJyOJ6hO4TL/T1b/piZ+YVGxLN4R7p4pBqENZrtY3qQ2jA==
   dependencies:
     "@babel/runtime" "^7.4.4"
     "@stylable/runtime" "^1.0.4"
@@ -2058,18 +2058,6 @@
     "@svgr/plugin-svgo" "^4.3.1"
     loader-utils "^1.2.3"
 
-"@trigen/scripts-plugin-babel@^2.7.0":
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/@trigen/scripts-plugin-babel/-/scripts-plugin-babel-2.7.0.tgz#a69f17172dd44bc5ef9432d562d3ab85e25c8692"
-  integrity sha512-WxXBn9aGu9UIr5oJZz/QwAVYc2r8cZvcr5wqerwj9AndoxDnIPXoKGJ4ItoudJGZH7/GAsNpHPxhA1YaNyhVOA==
-  dependencies:
-    "@babel/cli" "^7.2.3"
-    "@babel/core" "^7.4.0"
-    "@babel/node" "^7.0.0"
-    "@babel/runtime" "^7.4.2"
-    "@trigen/scripts" "^2.7.0"
-    babel-preset-trigen "^2.2.1"
-
 "@trigen/scripts-plugin-babel@file:../trigen-scripts/packages/scripts-plugin-babel/package":
   version "2.7.0"
   dependencies:
@@ -2077,7 +2065,7 @@
     "@babel/core" "^7.4.0"
     "@babel/node" "^7.0.0"
     "@babel/runtime" "^7.4.2"
-    "@trigen/scripts" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-plugin-babel-2.7.0-6683abe2-13e7-4e01-b149-15da667c57ad-1566137496589/node_modules/scripts/package"
+    "@trigen/scripts" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-plugin-babel-2.7.0-afccd492-ec65-4977-9cf2-736c1df2129f-1566188260063/node_modules/scripts/package"
     babel-preset-trigen "^2.2.1"
 
 "@trigen/scripts-plugin-eslint@2.7.0":
@@ -2089,43 +2077,14 @@
     eslint "^5.15.3"
     eslint-config-trigen "^3.2.3"
 
-"@trigen/scripts-plugin-jest@^2.7.0":
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/@trigen/scripts-plugin-jest/-/scripts-plugin-jest-2.7.0.tgz#33b1c4220381b0df225c93803c265358c4a3f37e"
-  integrity sha512-SnnDAHfuj+hacqwSVV9ddUTUvOq9tre6dOxnam5V5dIgIWgjNOtOffv5e9DinEypi/d/Qguo6Ng1KU37QcRm5w==
-  dependencies:
-    "@trigen/scripts" "^2.7.0"
-    "@types/jest" "^24.0.10"
-    babel-jest "^24.5.0"
-    babel-preset-trigen "^2.2.2"
-    jest "^24.3.0"
-
 "@trigen/scripts-plugin-jest@file:../trigen-scripts/packages/scripts-plugin-jest/package":
   version "2.7.0"
   dependencies:
-    "@trigen/scripts" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-plugin-jest-2.7.0-a1545215-dec7-490a-b344-fffeff04f944-1566137496588/node_modules/scripts/package"
+    "@trigen/scripts" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-plugin-jest-2.7.0-9b6bb119-042d-447b-bf2a-e158ef989342-1566188259940/node_modules/scripts/package"
     "@types/jest" "^24.0.10"
     babel-jest "^24.5.0"
     babel-preset-trigen "^2.2.2"
     jest "^24.3.0"
-
-"@trigen/scripts-plugin-storybook@^2.7.2":
-  version "2.7.2"
-  resolved "https://registry.yarnpkg.com/@trigen/scripts-plugin-storybook/-/scripts-plugin-storybook-2.7.2.tgz#2a6ccff232908b4f1a652558c3a3d1fdefe5e248"
-  integrity sha512-GbZcWeuSmq7QKm6r6dpMrYQ6yKswefAi8i9BAlWw6PDcCDXjMOTsHI2het3CY1AOduXNbZ7w+1u6FlnkgKg2BQ==
-  dependencies:
-    "@storybook/addon-a11y" "^5.1.10"
-    "@storybook/addon-actions" "^5.0.5"
-    "@storybook/addon-info" "^5.0.5"
-    "@storybook/addon-knobs" "^5.0.5"
-    "@storybook/addon-options" "^5.0.5"
-    "@storybook/addons" "^5.0.5"
-    "@storybook/react" "^5.0.5"
-    "@trigen/scripts" "^2.7.0"
-    "@types/storybook__addon-actions" "^3.4.1"
-    "@types/storybook__addon-info" "^4.1.0"
-    "@types/storybook__addon-knobs" "4.0.0"
-    "@types/storybook__react" "^4.0.0"
 
 "@trigen/scripts-plugin-storybook@file:../trigen-scripts/packages/scripts-plugin-storybook/package":
   version "2.7.2"
@@ -2137,29 +2096,16 @@
     "@storybook/addon-options" "^5.0.5"
     "@storybook/addons" "^5.0.5"
     "@storybook/react" "^5.0.5"
-    "@trigen/scripts" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-plugin-storybook-2.7.2-6f17c0f3-a155-4a71-9a7d-b15a3c056d70-1566137496592/node_modules/scripts/package"
+    "@trigen/scripts" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-plugin-storybook-2.7.2-4eac8b5c-d477-4a21-84da-9752ee5a710e-1566188260003/node_modules/scripts/package"
     "@types/storybook__addon-actions" "^3.4.1"
     "@types/storybook__addon-info" "^4.1.0"
     "@types/storybook__addon-knobs" "4.0.0"
     "@types/storybook__react" "^4.0.0"
 
-"@trigen/scripts-plugin-typescript@^2.7.2":
-  version "2.7.2"
-  resolved "https://registry.yarnpkg.com/@trigen/scripts-plugin-typescript/-/scripts-plugin-typescript-2.7.2.tgz#d38f34c219015f6d682fcabe838c83f7d7de6fe8"
-  integrity sha512-cqm1mmgIqv+9BdB/oGuxBr0gM4ICOWjTGnxMTijOMy2cX6PqGHHHBlezxSd6opikeotPBgFJkYJSAhbBq8qnhg==
-  dependencies:
-    "@trigen/scripts" "^2.7.0"
-    ts-node-dev "^1.0.0-pre.39"
-    tsconfig-paths "^3.8.0"
-    tslint "^5.11.0"
-    tslint-config-trigen "^3.0.7"
-    typedoc "^0.15.0"
-    typescript "3.5.3"
-
 "@trigen/scripts-plugin-typescript@file:../trigen-scripts/packages/scripts-plugin-typescript/package":
   version "2.7.2"
   dependencies:
-    "@trigen/scripts" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-plugin-typescript-2.7.2-603033b5-4c90-47f4-a5ef-487ef43ae2ef-1566137496591/node_modules/scripts/package"
+    "@trigen/scripts" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-plugin-typescript-2.7.2-a9c7b862-4d2e-4f61-8f93-9fdacb0e64d6-1566188260069/node_modules/scripts/package"
     ts-node-dev "^1.0.0-pre.39"
     tsconfig-paths "^3.8.0"
     tslint "^5.11.0"
@@ -2174,12 +2120,13 @@
     "@flexis/srcset-loader" "^1.0.0"
     "@flexis/workbox-webpack-plugin" "^1.0.0-beta"
     "@stylable/core" "^1.0.6"
+    "@stylable/node" "^1.0.7"
     "@stylable/webpack-plugin" "^1.1.4"
-    "@trigen/scripts" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-preset-react-app-2.7.2-287292fd-b498-43d3-ba9b-b0deced96395-1566137496539/node_modules/scripts/package"
-    "@trigen/scripts-plugin-babel" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-preset-react-app-2.7.2-287292fd-b498-43d3-ba9b-b0deced96395-1566137496539/node_modules/scripts-plugin-babel/package"
-    "@trigen/scripts-plugin-jest" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-preset-react-app-2.7.2-287292fd-b498-43d3-ba9b-b0deced96395-1566137496539/node_modules/scripts-plugin-jest/package"
-    "@trigen/scripts-plugin-storybook" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-preset-react-app-2.7.2-287292fd-b498-43d3-ba9b-b0deced96395-1566137496539/node_modules/scripts-plugin-storybook/package"
-    "@trigen/scripts-plugin-typescript" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-preset-react-app-2.7.2-287292fd-b498-43d3-ba9b-b0deced96395-1566137496539/node_modules/scripts-plugin-typescript/package"
+    "@trigen/scripts" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-preset-react-app-2.7.2-918d3a87-126a-492c-9cf0-0b05f54edfe0-1566188260082/node_modules/scripts/package"
+    "@trigen/scripts-plugin-babel" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-preset-react-app-2.7.2-918d3a87-126a-492c-9cf0-0b05f54edfe0-1566188260082/node_modules/scripts-plugin-babel/package"
+    "@trigen/scripts-plugin-jest" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-preset-react-app-2.7.2-918d3a87-126a-492c-9cf0-0b05f54edfe0-1566188260082/node_modules/scripts-plugin-jest/package"
+    "@trigen/scripts-plugin-storybook" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-preset-react-app-2.7.2-918d3a87-126a-492c-9cf0-0b05f54edfe0-1566188260082/node_modules/scripts-plugin-storybook/package"
+    "@trigen/scripts-plugin-typescript" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-preset-react-app-2.7.2-918d3a87-126a-492c-9cf0-0b05f54edfe0-1566188260082/node_modules/scripts-plugin-typescript/package"
     autoprefixer "^9.1.3"
     awesome-typescript-loader "^5.2.0"
     babel-loader "^8.0.0"
@@ -2214,21 +2161,20 @@
     webpack-hot-middleware "^2.22.3"
     webpack-node-externals "^1.7.2"
 
-"@trigen/scripts-preset-react-app@2.7.2":
+"@trigen/scripts-preset-react-app@file:../trigen-scripts/packages/scripts-preset-react-app/package":
   version "2.7.2"
-  resolved "https://registry.yarnpkg.com/@trigen/scripts-preset-react-app/-/scripts-preset-react-app-2.7.2.tgz#b56fddac77cb7ce58f8b2133387eee9b458f72d6"
-  integrity sha512-VaklQv67hwib3T+NqFRaZm6KoaXw5nQwbnsTeJrTubjKPajhyWof+wqW9yk59AO2Bes4SXsRw8df9epi4PAGmg==
   dependencies:
     "@babel/register" "^7.4.0"
     "@flexis/srcset-loader" "^1.0.0"
     "@flexis/workbox-webpack-plugin" "^1.0.0-beta"
     "@stylable/core" "^1.0.6"
+    "@stylable/node" "^1.0.7"
     "@stylable/webpack-plugin" "^1.1.4"
-    "@trigen/scripts" "^2.7.0"
-    "@trigen/scripts-plugin-babel" "^2.7.0"
-    "@trigen/scripts-plugin-jest" "^2.7.0"
-    "@trigen/scripts-plugin-storybook" "^2.7.2"
-    "@trigen/scripts-plugin-typescript" "^2.7.2"
+    "@trigen/scripts" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-preset-react-app-2.7.2-63c69201-7af8-4acb-ae36-c049e8520133-1566188259687/node_modules/scripts/package"
+    "@trigen/scripts-plugin-babel" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-preset-react-app-2.7.2-63c69201-7af8-4acb-ae36-c049e8520133-1566188259687/node_modules/scripts-plugin-babel/package"
+    "@trigen/scripts-plugin-jest" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-preset-react-app-2.7.2-63c69201-7af8-4acb-ae36-c049e8520133-1566188259687/node_modules/scripts-plugin-jest/package"
+    "@trigen/scripts-plugin-storybook" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-preset-react-app-2.7.2-63c69201-7af8-4acb-ae36-c049e8520133-1566188259687/node_modules/scripts-plugin-storybook/package"
+    "@trigen/scripts-plugin-typescript" "file:../../Library/Caches/Yarn/v4/npm-@trigen-scripts-preset-react-app-2.7.2-63c69201-7af8-4acb-ae36-c049e8520133-1566188259687/node_modules/scripts-plugin-typescript/package"
     autoprefixer "^9.1.3"
     awesome-typescript-loader "^5.2.0"
     babel-loader "^8.0.0"
@@ -2261,6 +2207,7 @@
     webpack-dev-middleware "^3.2.0"
     webpack-filter-warnings-plugin "^1.2.1"
     webpack-hot-middleware "^2.22.3"
+    webpack-node-externals "^1.7.2"
 
 "@trigen/scripts@2.7.0", "@trigen/scripts@^2.7.0":
   version "2.7.0"
@@ -8262,10 +8209,10 @@ i18n-for-browser@^1.2.0:
     sprintf-js "^1.1.2"
     url "^0.11.0"
 
-i18n-for-react@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/i18n-for-react/-/i18n-for-react-2.0.1.tgz#1043f1766ba2f9969d124023110cbfbf42e15d82"
-  integrity sha512-9ECT963VBPt5nv5Yf1sz7ZQga1LFIpFbhqhLbPp42JksDGh+XiuwPtc3PS/eusx9HLe09QKug58bnlxWI2HXQQ==
+i18n-for-react@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/i18n-for-react/-/i18n-for-react-2.0.2.tgz#dae00bacfd1635ff2f80f545529b69fce934d3c3"
+  integrity sha512-o0JjWJ6gjjiC6D92T5WuI5PNijRqlnoQLdnkDtRVahVg2w6U4LV99yu7mCAjMO1QmfrlDxRbTJq8hi+QehOW+Q==
   dependencies:
     "@types/react" "^16.8.19"
     hoist-non-react-statics "^3.3.0"

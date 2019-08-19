@@ -1,64 +1,57 @@
 import React, {
 	ReactChild,
-	PureComponent
+	Component
 } from 'react';
-import {
-	hot
-} from 'react-hot-loader';
+// import {
+// 	hot
+// } from 'react-hot-loader';
 import {
 	BrowserRouter as Router,
-	Route,
-	Link
+	Route
 } from 'react-router-dom';
-import Weather from '~/containers/Weather/loadable';
-import Todo from '~/containers/Todo/loadable';
-import Navigator from '~/components/Navigator';
-import stylesheet from './App.st.css';
+import Header from '~/blocks/Header';
+import Main from '~/blocks/Main';
+import Facts from '~/blocks/Facts';
+import Location from '~/blocks/Location';
+import Partners from '~/blocks/Partners';
+import Team from '~/blocks/Team';
+import Speakers from '~/blocks/Speakers';
+import Footer from '~/blocks/Footer';
+import '@flexis/ui/reboot.st.css';
+import './App.st.css';
 
 export interface IProps {
 	disableRouter?: boolean;
 }
 
-@hot(module)
-export default class App extends PureComponent<IProps> {
+// @hot(module)
+export default class App extends Component<IProps> {
 
 	render() {
 		return this.router(
-			<div
-				{...stylesheet('root')}
-			>
-				<Navigator>
-					<Link to='/'>
-						Home
-					</Link>
-					<Link to='/weather'>
-						Weather
-					</Link>
-					<Link to='/todo'>
-						Todo
-					</Link>
-				</Navigator>
-				<hr/>
+			<>
+				<Header/>
 				<Route
 					path='/'
 					exact
-					component={Home}
+					render={this.home}
 				/>
 				<Route
-					path='/weather'
+					path='/team'
 					exact
-					component={Weather}
+					component={Team}
 				/>
 				<Route
-					path='/todo'
+					path='/speakers'
 					exact
-					component={Todo}
+					component={Speakers}
 				/>
-			</div>
+				<Footer/>
+			</>
 		);
 	}
 
-	router(children: ReactChild) {
+	private router(children: ReactChild) {
 
 		const {
 			disableRouter = false
@@ -74,10 +67,15 @@ export default class App extends PureComponent<IProps> {
 			</Router>
 		);
 	}
-}
 
-function Home() {
-	return (
-		<h2>Home</h2>
-	);
+	private home() {
+		return (
+			<>
+				<Main/>
+				<Facts/>
+				<Location/>
+				<Partners/>
+			</>
+		);
+	}
 }
