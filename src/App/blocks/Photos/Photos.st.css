@@ -25,12 +25,12 @@
 	overflow: hidden;
 }
 
-.root .center figure {
+.photo {
 	flex: auto;
 	margin: 0;
 }
 
-.root .center figure img {
+.photo img {
 	min-width: 100%;
 	min-height: 100%;
 }
@@ -54,4 +54,15 @@
 .footer {
 	margin-top: value(sizeGap);
 	text-align: right;
+}
+
+@media (max-width: 1195px) {
+
+	/* stylelint-disable a11y/no-display-none */
+	.photo:nth-of-type(2),
+	.photo:nth-of-type(5),
+	.photo:nth-of-type(6),
+	.photo:nth-of-type(7) {
+		display: none;
+	}/* stylelint-enable */
 }
