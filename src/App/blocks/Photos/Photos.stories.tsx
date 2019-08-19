@@ -4,17 +4,17 @@ import {
 	storiesOf
 } from '@storybook/react';
 import {
-	select
-} from '@storybook/addon-knobs';
-import {
 	MemoryRouter
 } from 'react-router';
+import {
+	select
+} from '@storybook/addon-knobs';
 import {
 	I18nProvider
 } from 'i18n-for-react';
 import ru from '~/locales/ru.json';
 import en from '~/locales/en.json';
-import Speakers from './';
+import Photos from './';
 
 const stylableApi = `
 Stylable API
@@ -22,7 +22,7 @@ Stylable API
 _empty_
 `;
 
-storiesOf('Blocks|Speakers', module)
+storiesOf('Blocks|Photos', module)
 	.addParameters({
 		info: stylableApi
 	})
@@ -51,6 +51,6 @@ storiesOf('Blocks|Speakers', module)
 	.add(
 		'with basic state',
 		() => (
-			<Speakers/>
+			<Photos/>
 		)
 	);

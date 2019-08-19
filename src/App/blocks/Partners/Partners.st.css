@@ -1,7 +1,13 @@
 
 :import {
 	-st-from: '~/components/variables.st.css';
-	-st-named: sizeScreenMdMax;
+	-st-named:
+		sizeScreenMdMax,
+		sizeGap;
+}
+
+.root {
+	padding-top: value(sizeGap);
 }
 
 @media (max-width: value(sizeScreenMdMax)) {
