@@ -78,6 +78,7 @@
 
 .root .center {
 	display: flex;
+	position: relative;
 	flex-wrap: wrap;
 	padding: 0;
 	overflow: hidden;
@@ -116,16 +117,20 @@
 
 @media (max-width: 880px) {
 
+	.root .center {
+		padding-bottom: 320px;
+	}
+
 	.info {
 		width: 100%;
 	}
 
 	.photo {
 		position: absolute;
-		top: 100%;
+		bottom: 0;
 		opacity: 0;
 		width: 100%;
-		height: rel(320, 16);
+		height: 320px;
 		overflow: hidden;
 	}
 
