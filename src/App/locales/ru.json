@@ -1,9 +1,139 @@
 {
 	"main": {
 		"title": "DevFest Siberia 2019",
-		"address": "Новосибирск",
-		"dates": "29<>ноября</><>-</>01<>декабря</>",
+		"address": "Novosibirsk",
+		"dates": "29<>november</><>-</>01<>december</>",
 		"year": "2019"
+	},
+	"team": {
+		"title": "Команда",
+		"team": [
+			{
+				"src": "https://gdg-siberia.com/img/team/LeonidKalneus.jpg",
+				"firstname": "Леонид",
+				"lastname": "Кальнеус",
+				"description": "Человек-конференция",
+				"contacts": {
+					"telegram": "https://t.me/ManFromSiberia",
+					"email": "mailto:leo@gdg-siberia.com"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/AlexeyRomanenko.jpg",
+				"firstname": "Алексей",
+				"lastname": "Романенко",
+				"description": "Координатор волонтеров",
+				"contacts": {
+					"telegram": "https://t.me/slimus",
+					"email": "mailto:alex@gdg-siberia.com"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/YuriyKashnikov.jpg",
+				"firstname": "Юрий",
+				"lastname": "Кашников",
+				"description": "Программный комитет",
+				"contacts": {
+					"site": "http://kayuri.github.io/"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/KirZharov.jpg",
+				"firstname": "Кир",
+				"lastname": "Жаров",
+				"description": "Разработка сайта, frontend"
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/IvanKruchkov.png",
+				"firstname": "Иван",
+				"lastname": "Крючков",
+				"description": "Разработка сайта, backend"
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/AminaKotomanova.jpg",
+				"firstname": "Амина",
+				"lastname": "Котоманова",
+				"description": "Дизайнер",
+				"contacts": {
+					"site": "http://rebelart.ru"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/LevNovokreshchenov.jpg",
+				"firstname": "Лев",
+				"lastname": "Новокрещёнов",
+				"description": "Член семьи"
+			}
+		]
+	},
+	"speakers": {
+		"title": "Спикеры",
+		"cfp": "Стать спикером",
+		"speakers": [
+			{
+				"src": "https://gdg-siberia.com/img/team/LeonidKalneus.jpg",
+				"firstname": "Леонид",
+				"lastname": "Кальнеус",
+				"description": "Человек-конференция",
+				"badge": "Тест",
+				"contacts": {
+					"telegram": "https://t.me/ManFromSiberia",
+					"email": "mailto:leo@gdg-siberia.com"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/AlexeyRomanenko.jpg",
+				"firstname": "Алексей",
+				"lastname": "Романенко",
+				"description": "Координатор волонтеров",
+				"badge": "Тест",
+				"contacts": {
+					"telegram": "https://t.me/slimus",
+					"email": "mailto:alex@gdg-siberia.com"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/YuriyKashnikov.jpg",
+				"firstname": "Юрий",
+				"lastname": "Кашников",
+				"description": "Программный комитет",
+				"badge": "Тест",
+				"contacts": {
+					"site": "http://kayuri.github.io/"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/KirZharov.jpg",
+				"firstname": "Кир",
+				"lastname": "Жаров",
+				"description": "Разработка сайта, frontend",
+				"badge": "Тест"
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/IvanKruchkov.png",
+				"firstname": "Иван",
+				"lastname": "Крючков",
+				"description": "Разработка сайта, backend",
+				"badge": "Тест"
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/AminaKotomanova.jpg",
+				"firstname": "Амина",
+				"lastname": "Котоманова",
+				"description": "Дизайнер",
+				"badge": "Тест",
+				"contacts": {
+					"site": "http://rebelart.ru"
+				}
+			},
+			{
+				"src": "https://gdg-siberia.com/img/team/LevNovokreshchenov.jpg",
+				"firstname": "Лев",
+				"lastname": "Новокрещёнов",
+				"description": "Член семьи",
+				"badge": "Тест"
+			}
+		]
 	},
 	"header": {
 		"home": "Главная",
@@ -28,6 +158,36 @@
 	},
 	"location": {
 		"address": "<>Технопарк Новосибирского Академгородка</>ул. Николаева д. 12, г. Новосибирск"
+	},
+	"partners": {
+		"title": "Партнеры",
+		"partners": [
+			{
+				"title": "При поддержке",
+				"items": [
+					{
+						"href": "https://academpark.com",
+						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/academpark.svg",
+						"title": "Академпарк"
+					},
+					{
+						"href": "https://developers.google.com",
+						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/google.svg",
+						"title": "Google"
+					}
+				]
+			},
+			{
+				"title": "Инфопартнеры",
+				"items": [
+					{
+						"href": "https://androiddev.apptractor.ru/",
+						"src": "https://res.cloudinary.com/trigen/image/upload/v1565857597/devfest2019/android.svg",
+						"title": "Android Dev Podcast"
+					}
+				]
+			}
+		]
 	},
 	"footer": {
 		"visitors": "Участникам",

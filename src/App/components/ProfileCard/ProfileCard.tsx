@@ -108,6 +108,7 @@ export default class ProfileCard extends Component<IProps> {
 				{Object.entries(contacts).map(([type, href]) => (
 					<ContactLink
 						{...stylesheet('link')}
+						key={href}
 						type={type as ContactLinkType}
 						href={href}
 					>
