@@ -7,7 +7,6 @@
 :import {
 	-st-from: '~/components/variables.st.css';
 	-st-named:
-		sizeScreenMdMax,
 		sizeGap,
 		sizeGapXl,
 		colorWhite,
@@ -107,6 +106,7 @@
 }
 
 .text {
+	text-indent: 0;
 	color: value(colorWhite);
 }
 

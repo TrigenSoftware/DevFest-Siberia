@@ -34,16 +34,17 @@ export default class Photos extends Component<IProps> {
 					>
 						DevFest 2018
 					</h2>
-					<div
+					<p
 						{...stylesheet('text')}
 					>
 						{__x`photos.description`}
-					</div>
+					</p>
 					<footer
 						{...stylesheet('footer')}
 					>
 						<Link
 							to='https://photos.google.com/share/AF1QipOPbiE4-pBJ0FsGr6t7_htpI1IoNY0seA7S5bYW-Cg-szV7B4GX8c-812JByf6FvQ?key=eWg2VGJZc0dnX1RYTHhmT2pNZTV0dE1VbURIc1RR'
+							target='_blank'
 							disguised
 						>
 							<Button
