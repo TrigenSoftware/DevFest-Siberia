@@ -6,6 +6,14 @@ import {
 import {
 	MemoryRouter
 } from 'react-router';
+import {
+	select
+} from '@storybook/addon-knobs';
+import {
+	I18nProvider
+} from 'i18n-for-react';
+import ru from '~/locales/ru.json';
+import en from '~/locales/en.json';
 import Photos from './';
 
 const stylableApi = `
@@ -27,6 +35,18 @@ storiesOf('Blocks|Photos', module)
 		<div style={{ margin: '-12px' }}>
 			{story()}
 		</div>
+	))
+	.addDecorator(story => (
+		<I18nProvider
+			locale={select('Locale', ['en', 'ru'], 'en')}
+			locales={{
+				ru,
+				en
+			}}
+			objectNotation
+		>
+			{story()}
+		</I18nProvider>
 	))
 	.add(
 		'with basic state',

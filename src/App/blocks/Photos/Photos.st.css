@@ -22,29 +22,23 @@
 	display: flex;
 	flex-wrap: wrap;
 	padding: 0;
-	width: 100%;
+	overflow: hidden;
 }
 
-.root .center > div {
-	display: flex;
-	flex: 1 1 20%;
-	height: rel(350, 24);
+.root .center figure {
+	flex: auto;
+	margin: 0;
 }
 
-.root .center .bigImg {
-	flex: 1 1 50%;
-}
-
-.root .center > div img {
-	width: 100%;
+.root .center figure img {
+	min-width: 100%;
+	min-height: 100%;
 }
 
 .info {
-	flex-direction: column;
-	justify-content: space-around;
 	background-color: value(colorPink0);
 	padding: value(sizeGap) rel(50, 24) value(sizeGap) value(sizeGapXl);
-	width: 36%;
+	width: rel(490, 24);
 }
 
 .title {

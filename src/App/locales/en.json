@@ -156,6 +156,10 @@
 		"speakers": "<>48+</><>Speakers</>from Russia and beyond",
 		"tracks": "<>48+</><>Tracks</>plus workshops and codelabs"
 	},
+	"photos": {
+		"description": "How it all went a year ago",
+		"more": "More photos"
+	},
 	"location": {
 		"address": "<>Academpark</>12, Nikolaeva, Novosibirsk"
 	},

@@ -1,6 +1,10 @@
+/* tslint:disable:max-line-length */
 import React, {
 	Component
 } from 'react';
+import {
+	__x
+} from 'i18n-for-react';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -33,53 +37,47 @@ export default class Photos extends Component<IProps> {
 					<div
 						{...stylesheet('text')}
 					>
-						Как все прошло год назад и тут нужен осмысленный текст
+						{__x`photos.description`}
 					</div>
 					<footer
 						{...stylesheet('footer')}
 					>
 						<Link
-							to='/photo'
+							to='https://photos.google.com/share/AF1QipOPbiE4-pBJ0FsGr6t7_htpI1IoNY0seA7S5bYW-Cg-szV7B4GX8c-812JByf6FvQ?key=eWg2VGJZc0dnX1RYTHhmT2pNZTV0dE1VbURIc1RR'
 							disguised
 						>
 							<Button
 								variant='alt'
 							>
-								Больше фото
+								{__x`photos.more`}
 							</Button>
 						</Link>
 					</footer>
 				</article>
-				<div>
+				<figure>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/7.jpg'/>
-				</div>
-				<div>
+				</figure>
+				<figure>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/3.jpg'/>
-				</div>
-				<div>
+				</figure>
+				<figure>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/2.jpg'/>
-				</div>
-				<div
-					{...stylesheet('bigImg')}
-				>
+				</figure>
+				<figure>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/4.jpg'/>
-				</div>
-				<div
-					{...stylesheet('bigImg')}
-				>
+				</figure>
+				<figure>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/1.jpg'/>
-				</div>
-				<div>
+				</figure>
+				<figure>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131705/devfest2019/photos/6.jpg'/>
-				</div>
-				<div
-					{...stylesheet('bigImg')}
-				>
+				</figure>
+				<figure>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/8.jpg'/>
-				</div>
-				<div>
+				</figure>
+				<figure>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/5.jpg'/>
-				</div>
+				</figure>
 			</Section>
 		);
 	}
