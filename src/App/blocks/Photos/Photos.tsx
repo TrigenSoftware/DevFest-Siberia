@@ -54,28 +54,44 @@ export default class Photos extends Component<IProps> {
 						</Link>
 					</footer>
 				</article>
-				<figure>
+				<figure
+					{...stylesheet('photo')}
+				>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/7.jpg'/>
 				</figure>
-				<figure>
+				<figure
+					{...stylesheet('photo')}
+				>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/3.jpg'/>
 				</figure>
-				<figure>
+				<figure
+					{...stylesheet('photo')}
+				>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/2.jpg'/>
 				</figure>
-				<figure>
+				<figure
+					{...stylesheet('photo')}
+				>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/4.jpg'/>
 				</figure>
-				<figure>
+				<figure
+					{...stylesheet('photo')}
+				>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/1.jpg'/>
 				</figure>
-				<figure>
+				<figure
+					{...stylesheet('photo')}
+				>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131705/devfest2019/photos/6.jpg'/>
 				</figure>
-				<figure>
+				<figure
+					{...stylesheet('photo')}
+				>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/8.jpg'/>
 				</figure>
-				<figure>
+				<figure
+					{...stylesheet('photo')}
+				>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/5.jpg'/>
 				</figure>
 			</Section>
