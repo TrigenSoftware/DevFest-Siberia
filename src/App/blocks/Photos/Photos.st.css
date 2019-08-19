@@ -7,6 +7,7 @@
 :import {
 	-st-from: '~/components/variables.st.css';
 	-st-named:
+		sizeScreenMdMax,
 		sizeGap,
 		sizeGapXl,
 		colorWhite,
@@ -16,6 +17,29 @@
 :import {
 	-st-from: '~/components/Section/Section.st.css';
 	-st-named: center;
+}
+
+@keyframes fade {
+
+	0% {
+		opacity: 0;
+	}
+
+	6% {
+		opacity: 1;
+	}
+
+	24% {
+		opacity: 1;
+	}
+
+	30% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 0;
+	}
 }
 
 .root .center {
@@ -54,4 +78,60 @@
 .footer {
 	margin-top: value(sizeGap);
 	text-align: right;
+}
+
+@media (max-width: value(sizeScreenMdMax)) {
+
+	.info {
+		width: 100%;
+	}
+
+	.root .center figure {
+		position: absolute;
+		top: 100%;
+		animation: fade 40s infinite;
+		opacity: 0;
+		width: 100%;
+		height: rel(320, 16);
+		overflow: hidden;
+	}
+
+	.root .center figure:nth-of-type(2) {
+		animation-delay: 5s;
+	}
+
+	.root .center figure:nth-of-type(3) {
+		animation-delay: 10s;
+	}
+
+	.root .center figure:nth-of-type(4) {
+		animation-delay: 15s;
+	}
+
+	.root .center figure:nth-of-type(5) {
+		animation-delay: 20s;
+	}
+
+	.root .center figure:nth-of-type(6) {
+		animation-delay: 25s;
+	}
+
+	.root .center figure:nth-of-type(7) {
+		animation-delay: 30s;
+	}
+
+	.root .center figure:nth-of-type(8) {
+		animation-delay: 35s;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+
+		.root .center figure {
+			animation: none;
+		}
+	}
+
+	.root .center figure img {
+		object-fit: cover;
+	}
 }
