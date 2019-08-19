@@ -17,6 +17,7 @@ import en from '~/locales/en.json';
 import Header from './Header';
 import Main from './Main';
 import Facts from './Facts';
+import Photos from './Photos';
 import Location from './Location';
 import Partners from './Partners';
 import Team from './Team';
@@ -62,6 +63,7 @@ storiesOf('Blocks|Landing', module)
 				<Header/>
 				<Main/>
 				<Facts/>
+				<Photos/>
 				<Location/>
 				<Partners/>
 				<Footer/>
