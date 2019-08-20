@@ -5,6 +5,73 @@
 		"dates": "29<>ноября</><>-</>01<>декабря</>",
 		"year": "2019"
 	},
+	"header": {
+		"home": "Главная",
+		"team": "Команда",
+		"cfp": "Стать спикером",
+		"lang": "En",
+		"login": "Войти",
+		"buyTicket": "Купить Билет",
+		"share": "Поделиться"
+	},
+	"facts": {
+		"title": "DevFest Siberia это –",
+		"topics": "Доклады",
+		"topicsDescription": "Самые горячие темы этого года от экспертов со всего мира. Секции этого года – Mobile, Frontend, Backend, Blockchaind и прочее и побольше. Созданно с любовью сибирскими разработчиками!",
+		"workshops": "Воркшопы",
+		"workshopsDescription": "Выделенный день для практических занятий с ведущими экспертами отрасли! Отличный способ попробовать новые технологии, не откладывая на потом!",
+		"also": "А также это –",
+		"attendees": "<>900+</><>Участников</>Со всей страны",
+		"days": "<>3</><>Дня</>Включая день воркшопов и практических семинаров",
+		"speakers": "<>48+</><>Спикеров</>со всего Мира",
+		"tracks": "<>48+</><>Потока</>2880 минут удовольствия"
+	},
+	"photos": {
+		"description": "Как все прошло год назад и тут нужен осмысленный текст",
+		"more": "Больше фото"
+	},
+	"location": {
+		"address": "<>Технопарк Новосибирского Академгородка</>ул. Николаева д. 12, г. Новосибирск"
+	},
+	"partners": {
+		"title": "Партнеры",
+		"partners": [
+			{
+				"title": "При поддержке",
+				"items": [
+					{
+						"href": "https://academpark.com",
+						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/academpark.svg",
+						"title": "Академпарк"
+					},
+					{
+						"href": "https://developers.google.com",
+						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/google.svg",
+						"title": "Google"
+					}
+				]
+			},
+			{
+				"title": "Инфопартнеры",
+				"items": [
+					{
+						"href": "https://androiddev.apptractor.ru/",
+						"src": "https://res.cloudinary.com/trigen/image/upload/v1565857597/devfest2019/android.svg",
+						"title": "Android Dev Podcast"
+					}
+				]
+			}
+		]
+	},
+	"footer": {
+		"visitors": "Участникам",
+		"students": "Студентам",
+		"coc": "Правила поведения",
+		"companies": "Компаниям",
+		"partner": "Стать партнером",
+		"contact": "Контакты",
+		"socials": "Мы в соцсетях"
+	},
 	"team": {
 		"title": "Команда",
 		"team": [
@@ -134,72 +201,5 @@
 				"badge": "Тест"
 			}
 		]
-	},
-	"header": {
-		"home": "Главная",
-		"team": "Команда",
-		"cfp": "Стать спикером",
-		"lang": "En",
-		"login": "Войти",
-		"buyTicket": "Купить Билет",
-		"share": "Поделиться"
-	},
-	"facts": {
-		"title": "DevFest Siberia это –",
-		"topics": "Доклады",
-		"topicsDescription": "Самые горячие темы этого года от экспертов со всего мира. Секции этого года – Mobile, Frontend, Backend, Blockchaind и прочее и побольше. Созданно с любовью сибирскими разработчиками!",
-		"workshops": "Воркшопы",
-		"workshopsDescription": "Выделенный день для практических занятий с ведущими экспертами отрасли! Отличный способ попробовать новые технологии, не откладывая на потом!",
-		"also": "А также это –",
-		"attendees": "<>900+</><>Участников</>Со всей страны",
-		"days": "<>3</><>Дня</>Включая день воркшопов и практических семинаров",
-		"speakers": "<>48+</><>Спикеров</>со всего Мира",
-		"tracks": "<>48+</><>Потока</>2880 минут удовольствия"
-	},
-	"photos": {
-		"description": "Как все прошло год назад и тут нужен осмысленный текст",
-		"more": "Больше фото"
-	},
-	"location": {
-		"address": "<>Технопарк Новосибирского Академгородка</>ул. Николаева д. 12, г. Новосибирск"
-	},
-	"partners": {
-		"title": "Партнеры",
-		"partners": [
-			{
-				"title": "При поддержке",
-				"items": [
-					{
-						"href": "https://academpark.com",
-						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/academpark.svg",
-						"title": "Академпарк"
-					},
-					{
-						"href": "https://developers.google.com",
-						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/google.svg",
-						"title": "Google"
-					}
-				]
-			},
-			{
-				"title": "Инфопартнеры",
-				"items": [
-					{
-						"href": "https://androiddev.apptractor.ru/",
-						"src": "https://res.cloudinary.com/trigen/image/upload/v1565857597/devfest2019/android.svg",
-						"title": "Android Dev Podcast"
-					}
-				]
-			}
-		]
-	},
-	"footer": {
-		"visitors": "Участникам",
-		"students": "Студентам",
-		"coc": "Правила поведения",
-		"companies": "Компаниям",
-		"partner": "Стать партнером",
-		"contact": "Контакты",
-		"socials": "Мы в соцсетях"
 	}
 }

@@ -1,64 +1,61 @@
 import React, {
 	ReactChild,
-	PureComponent
+	ContextType,
+	Component
 } from 'react';
 import {
 	hot
 } from 'react-hot-loader';
 import {
 	BrowserRouter as Router,
-	Route,
-	Link
+	Route
 } from 'react-router-dom';
-import Weather from '~/containers/Weather/loadable';
-import Todo from '~/containers/Todo/loadable';
-import Navigator from '~/components/Navigator';
-import stylesheet from './App.st.css';
+import {
+	I18nContext
+} from 'i18n-for-react';
+import Header from '~/blocks/Header';
+import Main from '~/blocks/Main';
+import Facts from '~/blocks/Facts';
+import Photos from '~/blocks/Photos';
+import Location from '~/blocks/Location';
+import Partners from '~/blocks/Partners';
+import Team from '~/blocks/Team';
+// import Speakers from '~/blocks/Speakers';
+import Footer from '~/blocks/Footer';
+import '@flexis/ui/reboot.st.css';
+import './App.st.css';
 
 export interface IProps {
 	disableRouter?: boolean;
 }
 
 @hot(module)
-export default class App extends PureComponent<IProps> {
+export default class App extends Component<IProps> {
+
+	static contextType = I18nContext;
+
+	context!: ContextType<typeof I18nContext>;
 
 	render() {
 		return this.router(
-			<div
-				{...stylesheet('root')}
-			>
-				<Navigator>
-					<Link to='/'>
-						Home
-					</Link>
-					<Link to='/weather'>
-						Weather
-					</Link>
-					<Link to='/todo'>
-						Todo
-					</Link>
-				</Navigator>
-				<hr/>
+			<>
+				<Header/>
 				<Route
-					path='/'
+					path={this.path('/')}
 					exact
-					component={Home}
+					render={this.home}
 				/>
 				<Route
-					path='/weather'
+					path={this.path('/team')}
 					exact
-					component={Weather}
+					render={this.team}
 				/>
-				<Route
-					path='/todo'
-					exact
-					component={Todo}
-				/>
-			</div>
+				<Footer/>
+			</>
 		);
 	}
 
-	router(children: ReactChild) {
+	private router(children: ReactChild) {
 
 		const {
 			disableRouter = false
@@ -74,10 +71,31 @@ export default class App extends PureComponent<IProps> {
 			</Router>
 		);
 	}
-}
 
-function Home() {
-	return (
-		<h2>Home</h2>
-	);
+	private home() {
+		return (
+			<>
+				<Main/>
+				<Facts/>
+				<Photos/>
+				<Location/>
+				<Partners/>
+			</>
+		);
+	}
+
+	private team() {
+		return (
+			<Team/>
+		);
+	}
+
+	private path(path: string) {
+
+		const locale = this.context.getLocale();
+
+		return locale === 'en'
+			? path
+			: `/ru${path}`;
+	}
 }

@@ -60,9 +60,9 @@
 	color: value(colorPink1);
 }
 
-.root:visited {
+/* .root:visited {
 	color: value(colorPink2);
-}
+} */
 
 .root:disabled {
 	pointer-events: none;

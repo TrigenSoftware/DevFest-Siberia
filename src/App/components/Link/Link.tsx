@@ -1,4 +1,5 @@
 import React, {
+	ContextType,
 	Component
 } from 'react';
 import {
@@ -8,6 +9,9 @@ import {
 	LocationDescriptor
 } from 'history';
 import PropTypes from 'prop-types';
+import {
+	I18nContext
+} from 'i18n-for-react';
 import FlexisLink, {
 	IProps as IFlexisLinkProps
 } from '@flexis/ui/components/Link';
@@ -38,6 +42,10 @@ export default class Link extends Component<IProps> {
 		linkElement: null
 	};
 
+	static contextType = I18nContext;
+
+	context!: ContextType<typeof I18nContext>;
+
 	render() {
 
 		const {
@@ -60,7 +68,9 @@ export default class Link extends Component<IProps> {
 			? { href: to || href }
 			: {
 				...linkElementCustomPropsProp,
-				to
+				to: typeof to === 'string'
+					? this.path(to)
+					: to
 			};
 		const tabIndex = typeof tabIndexProp !== 'undefined'
 			? tabIndexProp
@@ -83,5 +93,14 @@ export default class Link extends Component<IProps> {
 				{children}
 			</FlexisLink>
 		);
+	}
+
+	private path(path: string) {
+
+		const locale = this.context.getLocale();
+
+		return locale === 'en'
+			? path
+			: `/ru${path}`;
 	}
 }

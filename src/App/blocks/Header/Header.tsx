@@ -36,9 +36,11 @@ export default class Header extends Component<IProps> {
 	render() {
 
 		const {
+			context,
 			props
 		} = this;
-		const __ = this.context.bind(tr);
+		const locale = context.getLocale();
+		const __ = context.bind(tr);
 
 		return (
 			<header
@@ -62,13 +64,14 @@ export default class Header extends Component<IProps> {
 							{__x`header.team`}
 						</HeaderLink>
 						<HeaderLink
-							to='/speaker'
+							href='https://www.papercall.io/dfsiberia19'
+							target='_blank'
 						>
 							{__x`header.cfp`}
 						</HeaderLink>
 						<HeaderSpacer/>
 						<HeaderLink
-							to='/en'
+							href={`/${locale === 'en' ? 'ru' : ''}`}
 							separated
 						>
 							{__x`header.lang`}
@@ -83,6 +86,7 @@ export default class Header extends Component<IProps> {
 						{...stylesheet('controls')}
 					>
 						<HeaderLink
+							to='/buy'
 							disguised
 						>
 							<Button>
