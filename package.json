@@ -26,6 +26,7 @@
     "start": "trigen-scripts start",
     "build": "trigen-scripts build",
     "build:render": "trigen-scripts build:render",
+    "render": "trigen-scripts render",
     "serve": "trigen-scripts serve"
   },
   "dependencies": {
@@ -60,9 +61,10 @@
     "@storybook/addon-viewport": "^5.1.11",
     "@trigen/scripts": "2.7.0",
     "@trigen/scripts-plugin-eslint": "2.7.0",
-    "@trigen/scripts-preset-react-app": "^2.8.0",
+    "@trigen/scripts-preset-react-app": "^2.9.0",
     "@types/faker": "^4.1.4",
     "faker": "^4.1.0",
+    "jsesc": "^2.5.2",
     "moxios": "^0.4.0"
   }
 }
