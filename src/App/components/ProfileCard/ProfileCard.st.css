@@ -16,26 +16,41 @@
 		durationTransition,
 		sizeBorderRadius,
 		colorWhite,
+		colorBlack,
 		colorBlue4,
 		colorBlue9,
 		colorBlue10,
-		colorBlack,
-		colorGray1;
+		colorGray1,
+		colorPink0;
 }
 
 .root {
-	-st-states: onClick;
+	-st-states: to;
+	font-size: 1rem;
+}
+
+.root:to {
 	will-change: box-shadow;
 	transition: box-shadow value(durationTransition);
-	font-size: 1rem;
+	border-radius: value(sizeBorderRadius);
+	padding: rel(25, 10);
 }
 
 @media (prefers-reduced-motion: reduce) {
 
-	.root {
+	.root:to {
 		will-change: none;
 		transition: none;
 	}
+}
+
+.root:to:hover,
+.root:to:focus {
+	box-shadow: 0 0 rel(20, 24) 0 rgba(0, 0, 0, .32);
+}
+
+.profileLink {
+	text-decoration: none;
 }
 
 .img {
@@ -45,35 +60,42 @@
 	height: 35em;
 }
 
-.profileLink {
+.profileText {
 	position: absolute;
 	right: 0;
 	bottom: 0;
 	left: 0;
-	will-change:
-		color,
-		opacity;
-	transition:
-		color value(durationTransition),
-		opacity value(durationTransition);
+	will-change: opacity;
+	transition: opacity value(durationTransition);
 	opacity: 0;
 	text-align: center;
-	text-decoration: none;
+	line-height: rel(48, 24);
 	color: value(colorWhite);
 	font-size: 2.4em;
 }
 
 @media (prefers-reduced-motion: reduce) {
 
-	.profileLink {
+	.profileText {
 		will-change: none;
 		transition: none;
 	}
 }
 
-.profileLink:hover,
-.profileLink:focus {
-	color: value(colorBlue10);
+.root:to:hover .profileText,
+.root:to:focus .profileText {
+	opacity: 1;
+}
+
+.root:to .img::before {
+	position: absolute;
+	border-top: 1em solid value(colorPink0);
+	border-right: 1em solid value(colorPink0);
+	border-bottom: 4.8em solid value(colorPink0);
+	border-left: 1em solid value(colorPink0);
+	width: 100%;
+	height: 100%;
+	content: '';
 }
 
 .name {
@@ -114,19 +136,4 @@
 .link .icon {
 	width: 4.7em;
 	height: 4.7em;
-}
-
-.root:onClick {
-	border-radius: value(sizeBorderRadius);
-	padding: rel(26, 10);
-}
-
-.root:onClick:hover,
-.root:onClick:focus {
-	box-shadow: 0 0 rel(20, 24) 0 rgba(0, 0, 0, .32);
-}
-
-.root:onClick:hover .profileLink,
-.root:onClick:focus .profileLink {
-	opacity: 1;
 }

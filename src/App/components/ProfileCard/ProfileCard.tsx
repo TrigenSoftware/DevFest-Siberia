@@ -21,7 +21,7 @@ interface ISelfProps {
 	location?: string;
 	badge?: ReactElement;
 	contacts?: Record<string, string>;
-	onClick?: boolean;
+	to?: boolean;
 }
 
 export type IProps = CombinePropsAndAttributes<
@@ -39,10 +39,30 @@ export default class ProfileCard extends Component<IProps> {
 		location:    PropTypes.string,
 		badge:       PropTypes.any,
 		contacts:    PropTypes.any,
-		onClick:     PropTypes.bool
+		to:          PropTypes.bool
 	};
 
 	render() {
+
+		const {
+			to
+		} = this.props;
+
+		return (
+			to
+				? (
+					<Link
+						{...stylesheet('profileLink')}
+						to='/speakers/some-id'
+					>
+						{this.renderProfile()}
+					</Link>
+				)
+				: this.renderProfile()
+		);
+	}
+
+	private renderProfile() {
 
 		const {
 			src,
@@ -52,7 +72,7 @@ export default class ProfileCard extends Component<IProps> {
 			location,
 			badge,
 			contacts,
-			onClick,
+			to,
 			...props
 		} = this.props;
 
@@ -60,7 +80,7 @@ export default class ProfileCard extends Component<IProps> {
 			<article
 				{...props}
 				{...stylesheet('root', {
-					onClick
+					to
 				}, props)}
 			>
 				<figure
@@ -70,13 +90,12 @@ export default class ProfileCard extends Component<IProps> {
 						backgroundImage: `url(${src})`
 					}}
 				>
-					{onClick && (
-						<Link
-							{...stylesheet('profileLink')}
-							to='/speakers/some-id'
+					{to && (
+						<div
+							{...stylesheet('profileText')}
 						>
 							Посмотреть Профиль
-						</Link>
+						</div>
 					)}
 				</figure>
 				<h3
