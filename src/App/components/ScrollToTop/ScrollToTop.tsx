@@ -11,7 +11,7 @@ export type IProps = RouteComponentProps;
 class ScrollToTop extends Component<IProps> {
 
 	render() {
-		return this.props.children;
+		return this.props.children || null;
 	}
 
 	componentDidUpdate({ location: prevLocation }) {

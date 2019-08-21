@@ -35,7 +35,8 @@ export default class App extends Component<IProps> {
 
 	render() {
 		return this.router(
-			<ScrollToTop>
+			<>
+				<ScrollToTop/>
 				<Header/>
 				<Route
 					path={this.path('/')}
@@ -53,7 +54,7 @@ export default class App extends Component<IProps> {
 					component={Speakers}
 				/>
 				<Footer/>
-			</ScrollToTop>
+			</>
 		);
 	}
 
