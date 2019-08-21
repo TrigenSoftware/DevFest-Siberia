@@ -32,7 +32,7 @@
 	},
 	"subscribe": {
 		"title": "Keep me informed",
-		"subscribe": "Subscribe",
+		"button": "Subscribe",
 		"policy": "I agree to accept <>The Privacy Policy</>"
 	},
 	"location": {

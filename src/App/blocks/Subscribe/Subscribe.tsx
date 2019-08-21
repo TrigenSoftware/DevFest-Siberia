@@ -1,13 +1,9 @@
 import React, {
-	ChangeEvent,
 	Component
 } from 'react';
 import {
 	__x
 } from 'i18n-for-react';
-import {
-	Bind
-} from '@flexis/ui/helpers';
 import SROnly from '@flexis/ui/components/SROnly';
 import Section, {
 	IProps as ISectionProps
@@ -29,18 +25,11 @@ const policy = [
 
 export default class Subscribe extends Component<IProps, IState> {
 
-	state = {
-		email: ''
-	};
-
 	render() {
 
 		const {
 			props
 		} = this;
-		const {
-			email
-		} = this.state;
 
 		return (
 			<Section
@@ -70,14 +59,12 @@ export default class Subscribe extends Component<IProps, IState> {
 							type='email'
 							name='EMAIL'
 							placeholder='Email'
-							onChange={this.onInputChange}
-							value={email}
 						/>
 						<Button
 							{...stylesheet('button')}
 							variant='secondary'
 						>
-							{__x`subscribe.subscribe`}
+							{__x`subscribe.button`}
 						</Button>
 					</div>
 					<footer
@@ -98,17 +85,5 @@ export default class Subscribe extends Component<IProps, IState> {
 				</form>
 			</Section>
 		);
-	}
-
-	@Bind()
-	private onInputChange(event: ChangeEvent<HTMLInputElement>) {
-
-		const {
-			value
-		} = event.target;
-
-		this.setState(() => ({
-			email: value
-		}));
 	}
 }
