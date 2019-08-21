@@ -57,6 +57,7 @@
 	transform: translate(0, calc(-110% - 2em));
 	will-change: transform;
 	transition: transform value(durationTransition);
+	box-shadow: 0 .2rem .5rem rgba(0, 0, 0, .3);
 	border-radius: value(sizeBorderRadius);
 	background: value(colorWhite);
 	padding: value(sizeGapLg);
@@ -86,4 +87,11 @@
 
 .root .closeButton {
 	-st-mixin: crossButton;
+}
+
+@media (max-width: 600px) {
+
+	.root {
+		padding: 0;
+	}
 }
