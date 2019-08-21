@@ -7,8 +7,10 @@
 :import {
 	-st-from: '../variables.st.css';
 	-st-named:
+		sizeScreenMdMax,
 		durationTransition,
 		opacityDisabled,
+		colorWhite,
 		colorPink0;
 }
 
@@ -20,8 +22,8 @@
 /* stylelint-disable a11y/line-height-is-vertical-rhythmed */
 .crossButton {
 	position: absolute;
-	top: rel(10, 48);
-	right: rel(10, 48);
+	top: rel(25, 48);
+	right: rel(25, 48);
 	will-change:
 		opacity,
 		box-shadow;
@@ -53,4 +55,13 @@
 .crossButton:focus,
 .crossButton:not(:disabled):hover {
 	opacity: value(opacityDisabled);
+}
+
+@media (max-width: value(sizeScreenMdMax)) {
+
+	.crossButton {
+		top: rel(15, 48);
+		right: rel(12, 48);
+		color: value(colorWhite);
+	}
 }

@@ -20,12 +20,13 @@
 :import {
 	-st-from: '../variables.st.css';
 	-st-named:
-		sizeScreenSmMax,
+		sizeScreenMdMax,
 		sizeGapLg,
 		durationTransition,
 		sizeBorderRadius,
 		colorWhite,
-		colorBlue7;
+		colorBlue7,
+		colorPink0;
 }
 
 :import {
@@ -35,11 +36,11 @@
 
 .root {
 	-st-extends: Modal;
-	z-index: 10;
+	z-index: 2;
 	will-change: background;
 	transition: background value(durationTransition);
 	background: transparent;
-	padding: value(sizeGapLg);
+	padding: rel(149, 24) value(sizeGapLg) value(sizeGapLg);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -90,9 +91,29 @@
 	-st-mixin: crossButton;
 }
 
-@media (max-width: value(sizeScreenSmMax)) {
+@media (max-width: value(sizeScreenMdMax)) {
 
 	.root {
-		padding: 0;
+		padding: rel(62, 16) 0 0 0;
+	}
+
+	.root:active {
+		background: transparent;
+	}
+
+	.root .window {
+		padding-top: rel(57, 16);
+		overflow: hidden;
+	}
+
+	.root .window::before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		background: value(colorPink0);
+		width: 100%;
+		height: rel(41, 16);
+		content: '';
 	}
 }
