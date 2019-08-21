@@ -13,7 +13,8 @@
 		sizeGapLg,
 		durationTransition,
 		colorWhite,
-		colorPink0;
+		colorPink0,
+		colorBlue10;
 }
 
 :import {
@@ -90,6 +91,11 @@
 
 .link {
 	color: value(colorWhite);
+}
+
+.link:hover,
+.link:focus {
+	color: value(colorBlue10);
 }
 
 @media (min-width: value(sizeScreenMdMin)) {
