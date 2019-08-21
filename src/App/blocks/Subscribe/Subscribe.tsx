@@ -15,15 +15,11 @@ import stylesheet from './Subscribe.st.css';
 
 export type IProps = ISectionProps;
 
-interface IState {
-	email: string;
-}
-
 const policy = [
 	<Link {...stylesheet('link')} key='link' to='/policy'/>
 ];
 
-export default class Subscribe extends Component<IProps, IState> {
+export default class Subscribe extends Component<IProps> {
 
 	render() {
 
