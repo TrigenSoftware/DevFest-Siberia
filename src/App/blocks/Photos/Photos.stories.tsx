@@ -4,6 +4,9 @@ import {
 	storiesOf
 } from '@storybook/react';
 import {
+	MemoryRouter
+} from 'react-router';
+import {
 	select
 } from '@storybook/addon-knobs';
 import {
@@ -11,7 +14,7 @@ import {
 } from 'i18n-for-react';
 import ru from '~/locales/ru.json';
 import en from '~/locales/en.json';
-import Team from './';
+import Photos from './';
 
 const stylableApi = `
 Stylable API
@@ -19,10 +22,15 @@ Stylable API
 _empty_
 `;
 
-storiesOf('Blocks|Team', module)
+storiesOf('Blocks|Photos', module)
 	.addParameters({
 		info: stylableApi
 	})
+	.addDecorator(story => (
+		<MemoryRouter initialEntries={['/']}>
+			{story()}
+		</MemoryRouter>
+	))
 	.addDecorator(story => (
 		<div style={{ margin: '-12px' }}>
 			{story()}
@@ -43,6 +51,6 @@ storiesOf('Blocks|Team', module)
 	.add(
 		'with basic state',
 		() => (
-			<Team/>
+			<Photos/>
 		)
 	);

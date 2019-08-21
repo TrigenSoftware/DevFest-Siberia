@@ -9,12 +9,15 @@ import {
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
+import Link from '~/components/Link';
+import Button from '~/components/Button';
 import ProfileCard from '~/components/ProfileCard';
-import stylesheet from './Team.st.css';
+import Badge from '~/components/Badge';
+import stylesheet from './Speakers.st.css';
 
 export type IProps = ISectionProps;
 
-export default class Team extends Component<ISectionProps> {
+export default class Speakers extends Component<ISectionProps> {
 
 	static contextType = I18nContext;
 
@@ -27,8 +30,8 @@ export default class Team extends Component<ISectionProps> {
 			props
 		} = this;
 		const {
-			team: {
-				team
+			speakers: {
+				speakers
 			}
 		} = this.context.getCatalog(
 			context.getLocale()
@@ -39,16 +42,38 @@ export default class Team extends Component<ISectionProps> {
 				{...props}
 				{...stylesheet('root', {}, props)}
 			>
-				<h2>
-					{__x`team.title`}
-				</h2>
+				<div
+					{...stylesheet('group')}
+				>
+					<h2>
+						{__x`speakers.title`}
+					</h2>
+					<Link
+						{...stylesheet('link')}
+						to='/'
+						disguised
+					>
+						<Button
+							variant='secondary'
+						>
+							{__x`speakers.cfp`}
+						</Button>
+					</Link>
+				</div>
 				<ul>
-					{team.map(item => (
+					{speakers.map(item => (
 						<li
 							key={item.src}
 						>
 							<ProfileCard
 								{...item}
+								badge={item.badge && (
+									<Badge
+										color='pink'
+									>
+										{item.badge}
+									</Badge>
+								)}
 							/>
 						</li>
 					))}

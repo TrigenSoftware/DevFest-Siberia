@@ -3,6 +3,9 @@ import React, {
 	Component
 } from 'react';
 import {
+	__x
+} from 'i18n-for-react';
+import {
 	Bind
 } from '@flexis/ui/helpers';
 import SROnly from '@flexis/ui/components/SROnly';
@@ -19,6 +22,10 @@ export type IProps = ISectionProps;
 interface IState {
 	email: string;
 }
+
+const policy = [
+	<Link {...stylesheet('link')} key='link' to='/policy'/>
+];
 
 export default class Subscribe extends Component<IProps, IState> {
 
@@ -43,10 +50,12 @@ export default class Subscribe extends Component<IProps, IState> {
 				<h2
 					{...stylesheet('title')}
 				>
-					Держите меня в курсе
+					{__x`subscribe.title`}
 				</h2>
 				<form
-					onSubmit={this.onSubmit}
+					action='//gdg.us13.list-manage.com/subscribe/post?u=73a04239d206286c61645aa1c&amp;id=c08f8ec1f1'
+					method='post'
+					target='_blank'
 				>
 					<div
 						{...stylesheet('group')}
@@ -59,7 +68,7 @@ export default class Subscribe extends Component<IProps, IState> {
 							required
 							id='email'
 							type='email'
-							name='email'
+							name='EMAIL'
 							placeholder='Email'
 							onChange={this.onInputChange}
 							value={email}
@@ -68,7 +77,7 @@ export default class Subscribe extends Component<IProps, IState> {
 							{...stylesheet('button')}
 							variant='secondary'
 						>
-							Подписаться
+							{__x`subscribe.subscribe`}
 						</Button>
 					</div>
 					<footer
@@ -83,13 +92,7 @@ export default class Subscribe extends Component<IProps, IState> {
 						<label
 							htmlFor='policy'
 						>
-							I agree to accept{' '}
-							<Link
-								{...stylesheet('link')}
-								to='/policy'
-							>
-								The Privacy Policy
-							</Link>
+							{__x('subscribe.policy', policy)}
 						</label>
 					</footer>
 				</form>
@@ -107,13 +110,5 @@ export default class Subscribe extends Component<IProps, IState> {
 		this.setState(() => ({
 			email: value
 		}));
-	}
-
-	@Bind()
-	private onSubmit(event: ChangeEvent<HTMLFormElement>) {
-
-		event.preventDefault();
-
-		console.log('submited');
 	}
 }

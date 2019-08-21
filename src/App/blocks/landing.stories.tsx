@@ -18,9 +18,11 @@ import Header from './Header';
 import Main from './Main';
 import Facts from './Facts';
 import Subscribe from './Subscribe';
+import Photos from './Photos';
 import Location from './Location';
 import Partners from './Partners';
 import Team from './Team';
+import Speakers from './Speakers';
 import Footer from './Footer';
 
 const stylableApi = `
@@ -62,6 +64,7 @@ storiesOf('Blocks|Landing', module)
 				<Header/>
 				<Main/>
 				<Facts/>
+				<Photos/>
 				<Subscribe/>
 				<Location/>
 				<Partners/>
@@ -75,6 +78,16 @@ storiesOf('Blocks|Landing', module)
 			<>
 				<Header/>
 				<Team/>
+				<Footer/>
+			</>
+		)
+	)
+	.add(
+		'with speakers page',
+		() => (
+			<>
+				<Header/>
+				<Speakers/>
 				<Footer/>
 			</>
 		)
