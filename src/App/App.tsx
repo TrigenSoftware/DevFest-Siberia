@@ -13,6 +13,7 @@ import {
 import {
 	I18nContext
 } from 'i18n-for-react';
+import ScrollToTop from '~/components/ScrollToTop';
 import Header from '~/blocks/Header';
 import Index from '~/containers/Index';
 import Team from '~/containers/Team';
@@ -34,7 +35,7 @@ export default class App extends Component<IProps> {
 
 	render() {
 		return this.router(
-			<>
+			<ScrollToTop>
 				<Header/>
 				<Route
 					path={this.path('/')}
@@ -52,7 +53,7 @@ export default class App extends Component<IProps> {
 					component={Speakers}
 				/>
 				<Footer/>
-			</>
+			</ScrollToTop>
 		);
 	}
 
