@@ -1,0 +1,106 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named:
+		sizeScreenMdMin,
+		sizeGap,
+		sizeGapXl,
+		sizeGapLg,
+		durationTransition,
+		colorWhite,
+		colorPink0,
+		colorBlue10;
+}
+
+:import {
+	-st-from: '~/components/mixins.st.css';
+	-st-named: outline;
+}
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+.root {
+	background-color: value(colorPink0);
+}
+
+.root .center {
+	padding-top: value(sizeGapLg);
+	padding-bottom: value(sizeGapXl);
+}
+
+.title {
+	color: value(colorWhite);
+	font-size: rel(52, 24);
+	font-weight: 500;
+}
+
+.group {
+	display: flex;
+	align-items: center;
+	margin-bottom: value(sizeGap);
+}
+
+.input {
+	will-change: box-shadow;
+	transition: box-shadow value(durationTransition);
+	outline: none;
+	border: none;
+	border-radius: rel(10, 24) 0 0 rel(10, 24);
+	background-color: value(colorWhite);
+	padding: rel(18, 24);
+	width: 100%;
+	font-size: 1em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.input {
+		will-change: none;
+		transition: none;
+	}
+}
+
+.button {
+	border-radius: 0 rel(10, 24) rel(10, 24) 0;
+	padding: rel(15, 24) rel(31, 24);
+}
+
+.input:focus {
+	-st-mixin: outline;
+}
+
+.footer {
+	display: flex;
+	align-items: center;
+	color: value(colorWhite);
+}
+
+.checkbox {
+	margin-right: value(sizeGap);
+	width: 38px;
+	height: 38px;
+}
+
+.link {
+	color: value(colorWhite);
+}
+
+.link:hover,
+.link:focus {
+	color: value(colorBlue10);
+}
+
+@media (min-width: value(sizeScreenMdMin)) {
+
+	.input {
+		padding-left: rel(88, 24);
+	}
+}
