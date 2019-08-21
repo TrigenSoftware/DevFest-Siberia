@@ -30,6 +30,11 @@
 		"description": "How it all went a year ago",
 		"more": "More photos"
 	},
+	"subscribe": {
+		"title": "Keep me informed",
+		"button": "Subscribe",
+		"policy": "I agree to accept <>The Privacy Policy</>"
+	},
 	"location": {
 		"address": "<>Academpark</>12, Nikolaeva, Novosibirsk"
 	},
