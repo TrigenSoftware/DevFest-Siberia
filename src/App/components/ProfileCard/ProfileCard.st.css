@@ -13,20 +13,67 @@
 	-st-from: '../variables.st.css';
 	-st-named:
 		fontFamily,
+		durationTransition,
+		sizeBorderRadius,
+		colorWhite,
 		colorBlue4,
 		colorBlue9,
+		colorBlue10,
 		colorBlack,
 		colorGray1;
 }
 
 .root {
+	-st-states: onClick;
+	will-change: box-shadow;
+	transition: box-shadow value(durationTransition);
 	font-size: 1rem;
 }
 
+@media (prefers-reduced-motion: reduce) {
+
+	.root {
+		will-change: none;
+		transition: none;
+	}
+}
+
 .img {
+	position: relative;
 	background-size: cover;
 	width: 35em;
 	height: 35em;
+}
+
+.profileLink {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	will-change:
+		color,
+		opacity;
+	transition:
+		color value(durationTransition),
+		opacity value(durationTransition);
+	opacity: 0;
+	text-align: center;
+	text-decoration: none;
+	color: value(colorWhite);
+	font-size: 2.4em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.profileLink {
+		will-change: none;
+		transition: none;
+	}
+}
+
+.profileLink:hover,
+.profileLink:focus {
+	color: value(colorBlue10);
 }
 
 .name {
@@ -67,4 +114,19 @@
 .link .icon {
 	width: 4.7em;
 	height: 4.7em;
+}
+
+.root:onClick {
+	border-radius: value(sizeBorderRadius);
+	padding: rel(26, 10);
+}
+
+.root:onClick:hover,
+.root:onClick:focus {
+	box-shadow: 0 0 rel(20, 24) 0 rgba(0, 0, 0, .32);
+}
+
+.root:onClick:hover .profileLink,
+.root:onClick:focus .profileLink {
+	opacity: 1;
 }

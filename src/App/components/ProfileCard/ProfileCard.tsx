@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import {
 	CombinePropsAndAttributes
 } from '@flexis/ui/helpers';
+import Link from '../Link';
 import ContactLink, {
 	ContactLinkType
 } from '../ContactLink';
@@ -20,6 +21,7 @@ interface ISelfProps {
 	location?: string;
 	badge?: ReactElement;
 	contacts?: Record<string, string>;
+	onClick?: boolean;
 }
 
 export type IProps = CombinePropsAndAttributes<
@@ -36,7 +38,8 @@ export default class ProfileCard extends Component<IProps> {
 		description: PropTypes.string,
 		location:    PropTypes.string,
 		badge:       PropTypes.any,
-		contacts:    PropTypes.any
+		contacts:    PropTypes.any,
+		onClick:     PropTypes.bool
 	};
 
 	render() {
@@ -49,13 +52,16 @@ export default class ProfileCard extends Component<IProps> {
 			location,
 			badge,
 			contacts,
+			onClick,
 			...props
 		} = this.props;
 
 		return (
 			<article
 				{...props}
-				{...stylesheet('root', {}, props)}
+				{...stylesheet('root', {
+					onClick
+				}, props)}
 			>
 				<figure
 					{...stylesheet('img')}
@@ -63,7 +69,16 @@ export default class ProfileCard extends Component<IProps> {
 					style={{
 						backgroundImage: `url(${src})`
 					}}
-				/>
+				>
+					{onClick && (
+						<Link
+							{...stylesheet('profileLink')}
+							to='/speakers/some-id'
+						>
+							Посмотреть Профиль
+						</Link>
+					)}
+				</figure>
 				<h3
 					{...stylesheet('name')}
 				>
