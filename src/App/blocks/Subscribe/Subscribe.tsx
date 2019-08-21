@@ -16,7 +16,13 @@ import stylesheet from './Subscribe.st.css';
 export type IProps = ISectionProps;
 
 const policy = [
-	<Link {...stylesheet('link')} key='link' to='/policy'/>
+	(
+		<Link
+			key='link'
+			{...stylesheet('link')}
+			to='/policy'
+		/>
+	)
 ];
 
 export default class Subscribe extends Component<IProps> {

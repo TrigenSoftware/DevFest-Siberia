@@ -97,11 +97,15 @@ export default class Link extends Component<IProps> {
 
 	private path(path: string) {
 
-		if (!this.context) {
+		const {
+			context
+		} = this;
+
+		if (!context) {
 			return path;
 		}
 
-		const locale = this.context.getLocale();
+		const locale = context.getLocale();
 
 		return locale === 'en'
 			? path
