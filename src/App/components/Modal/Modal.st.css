@@ -36,7 +36,7 @@
 
 .root {
 	-st-extends: Modal;
-	z-index: 2;
+	z-index: 3;
 	will-change: background;
 	transition: background value(durationTransition);
 	background: transparent;
