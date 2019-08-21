@@ -20,6 +20,7 @@
 :import {
 	-st-from: '../variables.st.css';
 	-st-named:
+		sizeScreenSmMax,
 		sizeGapLg,
 		durationTransition,
 		sizeBorderRadius,
@@ -57,7 +58,7 @@
 	transform: translate(0, calc(-110% - 2em));
 	will-change: transform;
 	transition: transform value(durationTransition);
-	box-shadow: 0 .2rem .5rem rgba(0, 0, 0, .3);
+	box-shadow: 0 rel(3, 24) rel(6, 24) rgba(0, 0, 0, .16);
 	border-radius: value(sizeBorderRadius);
 	background: value(colorWhite);
 	padding: value(sizeGapLg);
@@ -89,7 +90,7 @@
 	-st-mixin: crossButton;
 }
 
-@media (max-width: 600px) {
+@media (max-width: value(sizeScreenSmMax)) {
 
 	.root {
 		padding: 0;
