@@ -50,7 +50,8 @@ export default class Speakers extends Component<ISectionProps> {
 					</h2>
 					<Link
 						{...stylesheet('link')}
-						to='/'
+						href='https://www.papercall.io/dfsiberia19'
+						target='_blank'
 						disguised
 					>
 						<Button
