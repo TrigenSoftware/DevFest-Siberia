@@ -5,23 +5,14 @@ import {
 	withRouter,
 	RouteComponentProps
 } from 'react-router-dom';
-import {
-	Location
-} from 'history';
 
-export interface IProps extends RouteComponentProps {
-	location: Location;
-}
+export type IProps = RouteComponentProps;
 
 class ScrollToTop extends Component<IProps> {
 
 	render() {
 
-		const {
-			children
-		} = this.props;
-
-		return children;
+		return this.props.children;
 	}
 
 	componentDidUpdate({ location: prevLocation }) {
