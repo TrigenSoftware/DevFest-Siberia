@@ -13,14 +13,11 @@ import {
 import {
 	I18nContext
 } from 'i18n-for-react';
+import ScrollToTop from '~/components/ScrollToTop';
 import Header from '~/blocks/Header';
-import Main from '~/blocks/Main';
-import Facts from '~/blocks/Facts';
-import Photos from '~/blocks/Photos';
-import Location from '~/blocks/Location';
-import Partners from '~/blocks/Partners';
-import Team from '~/blocks/Team';
-// import Speakers from '~/blocks/Speakers';
+import Index from '~/containers/Index';
+import Team from '~/containers/Team';
+import Speakers from '~/containers/Speakers';
 import Footer from '~/blocks/Footer';
 import '@flexis/ui/reboot.st.css';
 import './App.st.css';
@@ -39,16 +36,22 @@ export default class App extends Component<IProps> {
 	render() {
 		return this.router(
 			<>
+				<ScrollToTop/>
 				<Header/>
 				<Route
 					path={this.path('/')}
 					exact
-					render={this.home}
+					component={Index}
 				/>
 				<Route
 					path={this.path('/team')}
 					exact
-					render={this.team}
+					component={Team}
+				/>
+				<Route
+					path={this.path('/speakers')}
+					exact
+					component={Speakers}
 				/>
 				<Footer/>
 			</>
@@ -69,24 +72,6 @@ export default class App extends Component<IProps> {
 			<Router>
 				{children}
 			</Router>
-		);
-	}
-
-	private home() {
-		return (
-			<>
-				<Main/>
-				<Facts/>
-				<Photos/>
-				<Location/>
-				<Partners/>
-			</>
-		);
-	}
-
-	private team() {
-		return (
-			<Team/>
 		);
 	}
 
