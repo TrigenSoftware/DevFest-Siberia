@@ -71,7 +71,6 @@ export default class ProfileCard extends Component<IProps> {
 			description,
 			location,
 			badge,
-			contacts,
 			to,
 			...props
 		} = this.props;
