@@ -14,9 +14,9 @@ import {
 	I18nContext
 } from 'i18n-for-react';
 import Header from '~/blocks/Header';
-import IndexContainer from '~/containers/Index';
-import TeamContainer from '~/containers/Team';
-import SpeakersContainer from '~/containers/Speakers';
+import Index from '~/containers/Index';
+import Team from '~/containers/Team';
+import Speakers from '~/containers/Speakers';
 import Footer from '~/blocks/Footer';
 import '@flexis/ui/reboot.st.css';
 import './App.st.css';
@@ -39,17 +39,17 @@ export default class App extends Component<IProps> {
 				<Route
 					path={this.path('/')}
 					exact
-					render={this.home}
+					component={Index}
 				/>
 				<Route
 					path={this.path('/team')}
 					exact
-					render={this.team}
+					component={Team}
 				/>
 				<Route
 					path={this.path('/speakers')}
 					exact
-					render={this.speakers}
+					component={Speakers}
 				/>
 				<Footer/>
 			</>
@@ -70,24 +70,6 @@ export default class App extends Component<IProps> {
 			<Router>
 				{children}
 			</Router>
-		);
-	}
-
-	private home() {
-		return (
-			<IndexContainer/>
-		);
-	}
-
-	private team() {
-		return (
-			<TeamContainer/>
-		);
-	}
-
-	private speakers() {
-		return (
-			<SpeakersContainer/>
 		);
 	}
 

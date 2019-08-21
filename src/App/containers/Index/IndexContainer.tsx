@@ -10,7 +10,6 @@ import Partners from '~/blocks/Partners';
 export default class IndexContainer extends Component {
 
 	render() {
-
 		return (
 			<>
 				<Main/>
