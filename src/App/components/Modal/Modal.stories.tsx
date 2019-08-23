@@ -3,12 +3,12 @@ import {
 	storiesOf
 } from '@storybook/react';
 import {
-	MemoryRouter
-} from 'react-router';
-import {
 	boolean,
 	select
 } from '@storybook/addon-knobs/react';
+import {
+	MemoryRouter
+} from 'react-router';
 import {
 	I18nProvider
 } from 'i18n-for-react';
