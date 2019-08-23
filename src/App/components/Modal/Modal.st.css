@@ -103,7 +103,7 @@
 
 	.root .window {
 		padding-top: rel(57, 16);
-		width: rel(320, 16);
+		width: 100%;
 		overflow: hidden;
 	}
 

@@ -33,7 +33,7 @@
 	outline: none;
 	border: none;
 	background: none;
-	padding: rel(13, 48) rel(2, 48) rel(16, 48);
+	padding: rel(13, 48) rel(2, 48);
 	line-height: 0;
 	color: value(colorPink0);
 	font-size: 2em;
