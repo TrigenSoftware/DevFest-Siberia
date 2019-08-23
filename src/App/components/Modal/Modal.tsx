@@ -53,7 +53,6 @@ export default class Modal extends Component<IProps> {
 			onClose
 		} = this.props;
 
-		event.stopPropagation();
 		onClose(event as any);
 	}
 }
