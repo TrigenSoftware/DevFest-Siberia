@@ -21,6 +21,7 @@
 	-st-from: '../variables.st.css';
 	-st-named:
 		sizeScreenMdMax,
+		sizeScreenSmMax,
 		sizeGapLg,
 		durationTransition,
 		sizeBorderRadius,
@@ -103,7 +104,7 @@
 
 	.root .window {
 		padding-top: rel(57, 16);
-		width: 100%;
+		width: 80%;
 		overflow: hidden;
 	}
 
@@ -116,5 +117,12 @@
 		width: 100%;
 		height: rel(41, 16);
 		content: '';
+	}
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.root .window {
+		width: 100%;
 	}
 }
