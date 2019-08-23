@@ -44,6 +44,10 @@ export default class Modal extends Component<IProps> {
 		this.toggleEffects();
 	}
 
+	componentWillUnmount() {
+		this.removeEffects();
+	}
+
 	componentDidUpdate({ active: prevActive }: IProps) {
 
 		const {
@@ -88,6 +92,14 @@ export default class Modal extends Component<IProps> {
 			}
 		} else
 		if (clickSubscribed) {
+			this.unsubscribeClick();
+			this.unsubscribeClick = null;
+		}
+	}
+
+	private removeEffects() {
+
+		if (typeof this.unsubscribeClick === 'function') {
 			this.unsubscribeClick();
 			this.unsubscribeClick = null;
 		}
