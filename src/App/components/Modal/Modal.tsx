@@ -74,16 +74,13 @@ export default class Modal extends Component<IProps> {
 	}
 
 	@Bind()
-	private onEscPress(event: KeyboardEvent) {
+	private onHeaderClick(event: KeyboardEvent) {
 
 		const {
 			onClose
 		} = this.props;
 
-		if (event.keyCode === ESC_KEY
-			&& typeof onClose === 'function'
-		) {
-			event.stopPropagation();
+		if (typeof onClose === 'function') {
 			onClose(event);
 		}
 	}
@@ -117,7 +114,7 @@ export default class Modal extends Component<IProps> {
 				this.unsubscribeKeyDown = subscribeEvent(
 					header,
 					'click',
-					this.onEscPress
+					this.onHeaderClick
 				);
 			}
 		} else
