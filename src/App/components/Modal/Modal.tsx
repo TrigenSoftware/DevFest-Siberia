@@ -2,14 +2,27 @@ import React, {
 	Component
 } from 'react';
 import {
+	subscribeEvent,
 	Bind
 } from '@flexis/ui/helpers';
+import toggleScrollBlock from '@flexis/ui/components/common/toggleScrollBlock';
+import toggleAriaHide from '@flexis/ui/components/common/toggleAriaHide';
 import FlexisModal, {
 	IProps as IFlexisModalProps
 } from '@flexis/ui/components/Modal';
 import stylesheet from './Modal.st.css';
 
 export type IProps = IFlexisModalProps;
+
+const ESC_KEY = 27;
+
+let appElement = null;
+
+export function setAppElement(appElementSource) {
+	appElement = typeof appElementSource === 'string'
+		? document.querySelector(appElementSource)
+		: appElementSource;
+}
 
 export default class Modal extends Component<IProps> {
 
@@ -19,6 +32,10 @@ export default class Modal extends Component<IProps> {
 		...FlexisModal.defaultProps,
 		transitionDuration: 200
 	};
+
+	private unblockScroll: () => void = null;
+	private unsubscribeKeyDown: () => void = null;
+	private ariaShow: () => void = null;
 
 	render() {
 
@@ -38,23 +55,93 @@ export default class Modal extends Component<IProps> {
 	}
 
 	componentDidMount() {
+		this.toggleEffects();
+	}
 
-		const header = document.querySelector('header');
+	componentWillUnmount() {
+		this.removeEffects();
+	}
 
-		if (header) {
-			header.addEventListener('click', this.onHeaderClick);
+	componentDidUpdate({ active: prevActive }: IProps) {
+
+		const {
+			active
+		} = this.props;
+
+		if (prevActive !== active) {
+			this.toggleEffects();
 		}
 	}
 
 	@Bind()
-	private onHeaderClick(event: MouseEvent) {
+	private onEscPress(event: KeyboardEvent) {
 
 		const {
 			onClose
 		} = this.props;
 
-		if (typeof onClose === 'function') {
-			onClose(event as any);
+		if (event.keyCode === ESC_KEY
+			&& typeof onClose === 'function'
+		) {
+			event.stopPropagation();
+			onClose(event);
+		}
+	}
+
+	private toggleEffects() {
+
+		const {
+			active
+		} = this.props;
+
+		this.unblockScroll = toggleScrollBlock(
+			active,
+			this.unblockScroll
+		);
+
+		if (appElement) {
+			this.ariaShow = toggleAriaHide(
+				active,
+				this.ariaShow,
+				appElement
+			);
+		}
+
+		const keyDownSubscribed = typeof this.unsubscribeKeyDown === 'function';
+
+		if (active) {
+
+			const header = document.querySelector('header');
+
+			if (!keyDownSubscribed && header) {
+				this.unsubscribeKeyDown = subscribeEvent(
+					header,
+					'click',
+					this.onEscPress
+				);
+			}
+		} else
+		if (keyDownSubscribed) {
+			this.unsubscribeKeyDown();
+			this.unsubscribeKeyDown = null;
+		}
+	}
+
+	private removeEffects() {
+
+		if (typeof this.unblockScroll === 'function') {
+			this.unblockScroll();
+			this.unblockScroll = null;
+		}
+
+		if (typeof this.ariaShow === 'function') {
+			this.ariaShow();
+			this.ariaShow = null;
+		}
+
+		if (typeof this.unsubscribeKeyDown === 'function') {
+			this.unsubscribeKeyDown();
+			this.unsubscribeKeyDown = null;
 		}
 	}
 }
