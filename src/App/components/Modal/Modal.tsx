@@ -1,5 +1,5 @@
 import React, {
-	Component, SyntheticEvent
+	Component
 } from 'react';
 import {
 	subscribeEvent,
@@ -72,14 +72,14 @@ export default class Modal extends Component<IProps> {
 	}
 
 	@Bind()
-	private onHeaderClick(event: SyntheticEvent) {
+	private onHeaderClick(event: MouseEvent) {
 
 		const {
 			onClose
 		} = this.props;
 
 		if (typeof onClose === 'function') {
-			onClose(event);
+			onClose(event as any);
 		}
 	}
 
