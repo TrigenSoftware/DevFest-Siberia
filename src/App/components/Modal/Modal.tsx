@@ -14,8 +14,6 @@ import stylesheet from './Modal.st.css';
 
 export type IProps = IFlexisModalProps;
 
-const ESC_KEY = 27;
-
 let appElement = null;
 
 export function setAppElement(appElementSource) {
