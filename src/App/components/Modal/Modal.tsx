@@ -1,6 +1,9 @@
 import React, {
 	Component
 } from 'react';
+import {
+	Bind
+} from '@flexis/ui/helpers';
 import FlexisModal, {
 	IProps as IFlexisModalProps
 } from '@flexis/ui/components/Modal';
@@ -37,12 +40,21 @@ export default class Modal extends Component<IProps> {
 	componentDidMount() {
 
 		const header = document.querySelector('header');
+
+		if (header) {
+			header.addEventListener('click', this.onHeaderClick);
+		}
+	}
+
+	@Bind()
+	private onHeaderClick(event: MouseEvent) {
+
 		const {
 			onClose
 		} = this.props;
 
-		if (header) {
-			header.addEventListener('click', onClose as any);
+		if (typeof onClose === 'function') {
+			onClose(event as any);
 		}
 	}
 }
