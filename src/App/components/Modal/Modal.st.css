@@ -93,6 +93,13 @@
 
 @media (max-width: value(sizeScreenMdMax)) {
 
+	.root .window {
+		width: 85%;
+	}
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
 	.root {
 		top: rel(62, 16);
 		padding: 0;
@@ -104,7 +111,7 @@
 
 	.root .window {
 		padding-top: rel(57, 16);
-		width: 80%;
+		width: 100%;
 		overflow: hidden;
 	}
 
@@ -117,12 +124,5 @@
 		width: 100%;
 		height: rel(41, 16);
 		content: '';
-	}
-}
-
-@media (max-width: value(sizeScreenSmMax)) {
-
-	.root .window {
-		width: 100%;
 	}
 }
