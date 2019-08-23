@@ -28,6 +28,11 @@ setAppElement('#root');
 storiesOf('Components|Modal', module)
 	.addParameters(ModalStories.parameters)
 	.addDecorator(story => (
+		<div style={{ margin: '-12px' }}>
+			{story()}
+		</div>
+	))
+	.addDecorator(story => (
 		<MemoryRouter initialEntries={['/']}>
 			{story()}
 		</MemoryRouter>

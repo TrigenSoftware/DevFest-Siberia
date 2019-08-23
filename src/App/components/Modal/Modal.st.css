@@ -63,8 +63,7 @@
 	border-radius: value(sizeBorderRadius);
 	background: value(colorWhite);
 	padding: value(sizeGapLg);
-	width: 100%;
-	max-width: rel(800, 24);
+	width: rel(800, 24);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -94,7 +93,8 @@
 @media (max-width: value(sizeScreenMdMax)) {
 
 	.root {
-		padding: rel(62, 16) 0 0 0;
+		top: rel(62, 16);
+		padding: 0;
 	}
 
 	.root:active {
@@ -103,6 +103,7 @@
 
 	.root .window {
 		padding-top: rel(57, 16);
+		width: rel(320, 16);
 		overflow: hidden;
 	}
 
