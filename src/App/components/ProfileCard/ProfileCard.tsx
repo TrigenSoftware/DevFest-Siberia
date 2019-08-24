@@ -49,10 +49,6 @@ export default class ProfileCard extends Component<IProps> {
 	};
 
 	render() {
-		return this.renderProfile();
-	}
-
-	private renderProfile() {
 
 		const {
 			badge,
@@ -71,10 +67,10 @@ export default class ProfileCard extends Component<IProps> {
 						{...stylesheet('link')}
 						to={to}
 					>
-						{this.renderProfileContent()}
+						{this.renderProfileInfo()}
 					</Link>
 				) : (
-					this.renderProfileContent()
+					this.renderProfileInfo()
 				)}
 				<footer
 					{...stylesheet('footer')}
@@ -86,7 +82,7 @@ export default class ProfileCard extends Component<IProps> {
 		);
 	}
 
-	private renderProfileContent() {
+	private renderProfileInfo() {
 
 		const {
 			src,
