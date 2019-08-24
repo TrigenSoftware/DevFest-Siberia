@@ -49,30 +49,8 @@ export default class ProfileCard extends Component<IProps> {
 	};
 
 	render() {
-
-		const {
-			to,
-			...props
-		} = this.props;
-
 		return (
-			to ? (
-				<Link
-					{...stylesheet('root', {
-						clickable: Boolean(to)
-					}, props)}
-					to={to}
-				>
-					{this.renderProfile()}
-				</Link>
-			) : (
-				<article
-					{...props}
-					{...stylesheet('root', {}, props)}
-				>
-					{this.renderProfile()}
-				</article>
-			)
+			this.renderProfile()
 		);
 	}
 
@@ -85,50 +63,105 @@ export default class ProfileCard extends Component<IProps> {
 			description,
 			location,
 			badge,
-			to
+			to,
+			...props
 		} = this.props;
 
 		return (
-			<>
-				<figure
-					{...stylesheet('img')}
-					aria-hidden
-					style={{
-						backgroundImage: `url(${src})`
-					}}
+			to ? (
+				<article
+					{...stylesheet('root', {
+						clickable: Boolean(to)
+					}, props)}
 				>
-					{to && (
-						<div
-							{...stylesheet('label')}
+					<Link
+						{...stylesheet('link')}
+						to={to}
+					>
+						<figure
+							{...stylesheet('img')}
+							aria-hidden
+							style={{
+								backgroundImage: `url(${src})`
+							}}
 						>
-							{__x`profile.view`}
+							{to && (
+								<div
+									{...stylesheet('label')}
+								>
+									{__x`profile.view`}
+								</div>
+							)}
+						</figure>
+						<h3
+							{...stylesheet('name')}
+						>
+							{firstname}
+							<br />
+							{lastname}
+						</h3>
+						<div
+							{...stylesheet('description')}
+						>
+							{description}
 						</div>
-					)}
-				</figure>
-				<h3
-					{...stylesheet('name')}
+						<div
+							{...stylesheet('location')}
+						>
+							{location}
+						</div>
+					</Link>
+					<footer
+						{...stylesheet('footer')}
+					>
+						{this.renderContacts()}
+						{badge}
+					</footer>
+				</article>
+			) : (
+				<article
+					{...stylesheet('root', {}, props)}
 				>
-					{firstname}
-					<br />
-					{lastname}
-				</h3>
-				<div
-					{...stylesheet('description')}
-				>
-					{description}
-				</div>
-				<div
-					{...stylesheet('location')}
-				>
-					{location}
-				</div>
-				<footer
-					{...stylesheet('footer')}
-				>
-					{this.renderContacts()}
-					{badge}
-				</footer>
-			</>
+					<figure
+						{...stylesheet('img')}
+						aria-hidden
+						style={{
+							backgroundImage: `url(${src})`
+						}}
+					>
+						{to && (
+							<div
+								{...stylesheet('label')}
+							>
+								{__x`profile.view`}
+							</div>
+						)}
+					</figure>
+					<h3
+						{...stylesheet('name')}
+					>
+						{firstname}
+						<br />
+						{lastname}
+					</h3>
+					<div
+						{...stylesheet('description')}
+					>
+						{description}
+					</div>
+					<div
+						{...stylesheet('location')}
+					>
+						{location}
+					</div>
+					<footer
+						{...stylesheet('footer')}
+					>
+						{this.renderContacts()}
+						{badge}
+					</footer>
+				</article>
+			)
 		);
 	}
 
@@ -148,7 +181,7 @@ export default class ProfileCard extends Component<IProps> {
 			>
 				{Object.entries(contacts).map(([type, href]) => (
 					<ContactLink
-						{...stylesheet('link')}
+						{...stylesheet('contactLink')}
 						key={href}
 						type={type as ContactLinkType}
 						href={href}

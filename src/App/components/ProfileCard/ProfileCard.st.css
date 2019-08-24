@@ -30,10 +30,14 @@
 }
 
 .root:clickable {
+	display: inline-block;
 	will-change: box-shadow;
 	transition: box-shadow value(durationTransition);
 	border-radius: value(sizeBorderRadius);
-	padding: rel(25, 10);
+}
+
+.root:clickable .link {
+	padding: rel(25, 10) rel(25, 10) 0;
 	text-decoration: none;
 }
 
@@ -118,19 +122,23 @@
 	padding-top: 1em;
 }
 
+.root:clickable .footer {
+	padding: 1em rel(25, 10) rel(25, 10);
+}
+
 .contacts {
 	padding-bottom: 1em;
 }
 
-.link {
+.contactLink {
 	color: value(colorBlack);
 }
 
-.link:not(:last-child) {
+.contactLink:not(:last-child) {
 	margin-right: 1em;
 }
 
-.link .icon {
+.contactLink .icon {
 	width: 4.7em;
 	height: 4.7em;
 }
