@@ -28,7 +28,6 @@ interface ISelfProps {
 	badge?: ReactElement;
 	contacts?: Record<string, string>;
 	to?: LocationDescriptor;
-	clickable?: boolean;
 }
 
 export type IProps = CombinePropsAndAttributes<
@@ -46,19 +45,17 @@ export default class ProfileCard extends Component<IProps> {
 		location:    PropTypes.string,
 		badge:       PropTypes.any,
 		contacts:    PropTypes.any,
-		to:          PropTypes.any,
-		clickable:   PropTypes.bool
+		to:          PropTypes.any
 	};
 
 	render() {
 
 		const {
-			to,
-			clickable
+			to
 		} = this.props;
 
 		return (
-			clickable
+			to
 				? (
 					<Link
 						{...stylesheet('profileLink')}
@@ -80,7 +77,7 @@ export default class ProfileCard extends Component<IProps> {
 			description,
 			location,
 			badge,
-			clickable,
+			to,
 			...props
 		} = this.props;
 
@@ -88,7 +85,7 @@ export default class ProfileCard extends Component<IProps> {
 			<article
 				{...props}
 				{...stylesheet('root', {
-					clickable
+					clickable: Boolean(to)
 				}, props)}
 			>
 				<figure
@@ -98,12 +95,12 @@ export default class ProfileCard extends Component<IProps> {
 						backgroundImage: `url(${src})`
 					}}
 				>
-					{clickable && (
-						<label
-							{...stylesheet('profileText')}
+					{to && (
+						<div
+							{...stylesheet('label')}
 						>
 							{__x`profile.view`}
-						</label>
+						</div>
 					)}
 				</figure>
 				<h3

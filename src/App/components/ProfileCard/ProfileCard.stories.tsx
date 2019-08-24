@@ -7,7 +7,6 @@ import {
 	MemoryRouter
 } from 'react-router';
 import {
-	boolean,
 	text
 } from '@storybook/addon-knobs/react';
 import {
@@ -66,7 +65,6 @@ storiesOf('Components|ProfileCard', module)
 				lastname={text('Lastname', 'Doe')}
 				description={text('Description', 'iOs, Android, Tech')}
 				location={text('Location', 'USA, Springfiels')}
-				clickable={boolean('Clickable', false)}
 			/>
 		)
 	)
@@ -80,7 +78,6 @@ storiesOf('Components|ProfileCard', module)
 				description={text('Description', 'iOs, Android, Tech')}
 				location={text('Location', 'USA, Springfiels')}
 				badge={<Badge>GDG</Badge>}
-				clickable={boolean('Clickable', false)}
 			/>
 		)
 	)
@@ -98,7 +95,24 @@ storiesOf('Components|ProfileCard', module)
 					twitter: faker.internet.url(),
 					vk:      faker.internet.url()
 				}}
-				clickable={boolean('Clickable', false)}
+			/>
+		)
+	)
+	.add(
+		'with link',
+		() => (
+			<ProfileCard
+				src={text('Source', imageUrl)}
+				firstname={text('Firstname', 'Jhon')}
+				lastname={text('Lastname', 'Doe')}
+				description={text('Description', 'iOs, Android, Tech')}
+				location={text('Location', 'USA, Springfiels')}
+				badge={<Badge>GDG</Badge>}
+				contacts={{
+					twitter: faker.internet.url(),
+					vk:      faker.internet.url()
+				}}
+				to='/some-id'
 			/>
 		)
 	);

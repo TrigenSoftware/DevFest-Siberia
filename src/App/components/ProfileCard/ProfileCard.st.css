@@ -60,7 +60,7 @@
 	height: 35em;
 }
 
-.profileText {
+.label {
 	position: absolute;
 	right: 0;
 	bottom: 0;
@@ -76,14 +76,14 @@
 
 @media (prefers-reduced-motion: reduce) {
 
-	.profileText {
+	.label {
 		will-change: none;
 		transition: none;
 	}
 }
 
-.root:clickable:hover .profileText,
-.root:clickable:focus .profileText {
+.root:clickable:hover .label,
+.root:clickable:focus .label {
 	opacity: 1;
 }
 
