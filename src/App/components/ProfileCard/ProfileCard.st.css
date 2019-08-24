@@ -44,7 +44,7 @@
 }
 
 .root:clickable:hover,
-.root:clickable:focus {
+.root:clickable:focus-within {
 	box-shadow: 0 0 rel(20, 24) 0 rgba(0, 0, 0, .32);
 }
 
@@ -86,7 +86,7 @@
 }
 
 .root:clickable:hover .label,
-.root:clickable:focus .label {
+.root:clickable:focus-within .label {
 	opacity: 1;
 }
 
@@ -113,7 +113,7 @@
 }
 
 .root:clickable:hover .img::before,
-.root:clickable:focus .img::before {
+.root:clickable:focus-within .img::before {
 	opacity: 1;
 }
 
