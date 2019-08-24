@@ -51,20 +51,28 @@ export default class ProfileCard extends Component<IProps> {
 	render() {
 
 		const {
-			to
+			to,
+			...props
 		} = this.props;
 
 		return (
-			to
-				? (
-					<Link
-						{...stylesheet('profileLink')}
-						to={to}
-					>
-						{this.renderProfile()}
-					</Link>
-				)
-				: this.renderProfile()
+			to ? (
+				<Link
+					{...stylesheet('root', {
+						clickable: Boolean(to)
+					}, props)}
+					to={to}
+				>
+					{this.renderProfile()}
+				</Link>
+			) : (
+				<article
+					{...props}
+					{...stylesheet('root', {}, props)}
+				>
+					{this.renderProfile()}
+				</article>
+			)
 		);
 	}
 
@@ -77,17 +85,11 @@ export default class ProfileCard extends Component<IProps> {
 			description,
 			location,
 			badge,
-			to,
-			...props
+			to
 		} = this.props;
 
 		return (
-			<article
-				{...props}
-				{...stylesheet('root', {
-					clickable: Boolean(to)
-				}, props)}
-			>
+			<>
 				<figure
 					{...stylesheet('img')}
 					aria-hidden
@@ -126,7 +128,7 @@ export default class ProfileCard extends Component<IProps> {
 					{this.renderContacts()}
 					{badge}
 				</footer>
-			</article>
+			</>
 		);
 	}
 

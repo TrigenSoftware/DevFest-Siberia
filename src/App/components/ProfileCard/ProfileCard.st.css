@@ -34,6 +34,7 @@
 	transition: box-shadow value(durationTransition);
 	border-radius: value(sizeBorderRadius);
 	padding: rel(25, 10);
+	text-decoration: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -47,10 +48,6 @@
 .root:clickable:hover,
 .root:clickable:focus {
 	box-shadow: 0 0 rel(20, 24) 0 rgba(0, 0, 0, .32);
-}
-
-.profileLink {
-	text-decoration: none;
 }
 
 .img {
