@@ -21,7 +21,7 @@ export default class Modal extends Component<IProps> {
 		transitionDuration: 200
 	};
 
-	private headerClick: () => void = null;
+	private unsubscribeHeaderClick: () => void = null;
 
 	render() {
 
@@ -77,31 +77,31 @@ export default class Modal extends Component<IProps> {
 			active
 		} = this.props;
 
-		const clickSubscribed = typeof this.headerClick === 'function';
+		const headerClickSubscribed = typeof this.unsubscribeHeaderClick === 'function';
 
 		if (active) {
 
 			const header = document.querySelector('header');
 
-			if (!clickSubscribed && header) {
-				this.headerClick = subscribeEvent(
+			if (!headerClickSubscribed && header) {
+				this.unsubscribeHeaderClick = subscribeEvent(
 					header,
 					'click',
 					this.onHeaderClick
 				);
 			}
 		} else
-		if (clickSubscribed) {
-			this.headerClick();
-			this.headerClick = null;
+		if (headerClickSubscribed) {
+			this.unsubscribeHeaderClick();
+			this.unsubscribeHeaderClick = null;
 		}
 	}
 
 	private removeEffects() {
 
-		if (typeof this.headerClick === 'function') {
-			this.headerClick();
-			this.headerClick = null;
+		if (typeof this.unsubscribeHeaderClick === 'function') {
+			this.unsubscribeHeaderClick();
+			this.unsubscribeHeaderClick = null;
 		}
 	}
 }
