@@ -1,0 +1,67 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named:
+		sizeScreenSmMax,
+		colorGray1,
+		colorBlue4,
+		colorPink0;
+}
+
+.root {
+	position: relative;
+}
+
+.root,
+.list {
+	display: flex;
+	align-items: stretch;
+	justify-content: start;
+}
+
+.root::after {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	border: 1px dashed value(colorGray1);
+	width: 100%;
+	content: '';
+}
+
+.list {
+	z-index: 1;
+	margin: 0;
+	background: white;
+	padding: 0;
+	list-style: none;
+}
+
+.item:not(:last-child) {
+	margin-right: rel(60, 24);
+}
+
+.link {
+	color: value(colorBlue4);
+	font-size: rel(32, 24);
+}
+
+.active {
+	text-decoration: none;
+	color: value(colorPink0);
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.link {
+		font-size: rel(14, 16);
+	}
+
+	.item:not(:last-child) {
+		margin-right: rel(20, 16);
+	}
+}
