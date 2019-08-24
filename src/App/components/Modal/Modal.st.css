@@ -1,0 +1,128 @@
+
+:import {
+	-st-from: '@flexis/ui/components/Modal/Modal.st.css';
+	-st-default: Modal;
+	-st-named:
+		closeButton,
+		window;
+}
+
+:import {
+	-st-from: '@flexis/ui/stylable/colors';
+	-st-named: opacity;
+}
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named:
+		sizeScreenMdMax,
+		sizeScreenSmMax,
+		sizeGapLg,
+		durationTransition,
+		sizeBorderRadius,
+		colorWhite,
+		colorBlue7,
+		colorPink0;
+}
+
+:import {
+	-st-from: './crossButton.st.css';
+	-st-named: crossButton;
+}
+
+.root {
+	-st-extends: Modal;
+	z-index: 3;
+	will-change: background;
+	transition: background value(durationTransition);
+	background: transparent;
+	padding: rel(149, 24) value(sizeGapLg) value(sizeGapLg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.root {
+		will-change: none;
+		transition: none;
+	}
+}
+
+.root:active {
+	background: opacity(value(colorBlue7), 70%);
+}
+
+.root .window {
+	transform: translate(0, calc(-110% - 2em));
+	will-change: transform;
+	transition: transform value(durationTransition);
+	box-shadow: 0 rel(3, 24) rel(6, 24) rgba(0, 0, 0, .16);
+	border-radius: value(sizeBorderRadius);
+	background: value(colorWhite);
+	padding: value(sizeGapLg);
+	width: rel(800, 24);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.root .window {
+		will-change: none;
+		transition: none;
+	}
+}
+
+.root .window:centered {
+	transform: translate(-50%, calc(-110% - 50vh));
+}
+
+.root:active .window {
+	transform: translate(0, 0);
+}
+
+.root:active .window:centered {
+	transform: translate(-50%, -50%);
+}
+
+.root .closeButton {
+	-st-mixin: crossButton;
+}
+
+@media (max-width: value(sizeScreenMdMax)) {
+
+	.root .window {
+		width: 85%;
+	}
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.root {
+		top: rel(62, 16);
+		padding: 0;
+	}
+
+	.root:active {
+		background: transparent;
+	}
+
+	.root .window {
+		padding-top: rel(57, 16);
+		width: 100%;
+		overflow: hidden;
+	}
+
+	.root .window::before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		background: value(colorPink0);
+		width: 100%;
+		height: rel(41, 16);
+		content: '';
+	}
+}

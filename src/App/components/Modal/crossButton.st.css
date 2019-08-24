@@ -1,0 +1,67 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named:
+		sizeScreenSmMax,
+		durationTransition,
+		opacityDisabled,
+		colorWhite,
+		colorPink0;
+}
+
+:import {
+	-st-from: '../mixins.st.css';
+	-st-named: outline;
+}
+
+/* stylelint-disable a11y/line-height-is-vertical-rhythmed */
+.crossButton {
+	position: absolute;
+	top: rel(25, 48);
+	right: rel(25, 48);
+	will-change:
+		opacity,
+		box-shadow;
+	transition:
+		opacity value(durationTransition),
+		box-shadow value(durationTransition);
+	outline: none;
+	border: none;
+	background: none;
+	padding: rel(13, 48) rel(2, 48);
+	line-height: 0;
+	color: value(colorPink0);
+	font-size: 2em;
+}
+/* stylelint-enable */
+
+@media (prefers-reduced-motion: reduce) {
+
+	.crossButton {
+		will-change: none;
+		transition: none;
+	}
+}
+
+.crossButton:focus {
+	-st-mixin: outline;
+}
+
+.crossButton:focus,
+.crossButton:not(:disabled):hover {
+	opacity: value(opacityDisabled);
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.crossButton {
+		top: rel(15, 48);
+		right: rel(12, 48);
+		color: value(colorWhite);
+	}
+}
