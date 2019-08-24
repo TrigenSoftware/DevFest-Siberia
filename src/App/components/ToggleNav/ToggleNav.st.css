@@ -28,7 +28,7 @@
 	position: absolute;
 	top: 50%;
 	right: 0;
-	border: 1px dashed value(colorGray1);
+	border: rel(1, 24) dashed value(colorGray1);
 	width: 100%;
 	content: '';
 }
@@ -41,7 +41,7 @@
 	list-style: none;
 }
 
-.item:not(:last-child) {
+.item {
 	margin-right: rel(60, 24);
 }
 
