@@ -3,10 +3,16 @@ import React, {
 	Component,
 	ReactElement
 } from 'react';
+import {
+	LocationDescriptor
+} from 'history';
 import PropTypes from 'prop-types';
 import {
 	CombinePropsAndAttributes
 } from '@flexis/ui/helpers';
+import {
+	__x
+} from 'i18n-for-react';
 import Link from '../Link';
 import ContactLink, {
 	ContactLinkType
@@ -21,7 +27,8 @@ interface ISelfProps {
 	location?: string;
 	badge?: ReactElement;
 	contacts?: Record<string, string>;
-	to?: boolean;
+	to?: LocationDescriptor;
+	clickable?: boolean;
 }
 
 export type IProps = CombinePropsAndAttributes<
@@ -39,21 +46,23 @@ export default class ProfileCard extends Component<IProps> {
 		location:    PropTypes.string,
 		badge:       PropTypes.any,
 		contacts:    PropTypes.any,
-		to:          PropTypes.bool
+		to:          PropTypes.any,
+		clickable:   PropTypes.bool
 	};
 
 	render() {
 
 		const {
-			to
+			to,
+			clickable
 		} = this.props;
 
 		return (
-			to
+			clickable
 				? (
 					<Link
 						{...stylesheet('profileLink')}
-						to='/speakers/some-id'
+						to={to}
 					>
 						{this.renderProfile()}
 					</Link>
@@ -71,7 +80,7 @@ export default class ProfileCard extends Component<IProps> {
 			description,
 			location,
 			badge,
-			to,
+			clickable,
 			...props
 		} = this.props;
 
@@ -79,7 +88,7 @@ export default class ProfileCard extends Component<IProps> {
 			<article
 				{...props}
 				{...stylesheet('root', {
-					to
+					clickable
 				}, props)}
 			>
 				<figure
@@ -89,12 +98,12 @@ export default class ProfileCard extends Component<IProps> {
 						backgroundImage: `url(${src})`
 					}}
 				>
-					{to && (
-						<div
+					{clickable && (
+						<label
 							{...stylesheet('profileText')}
 						>
-							Посмотреть Профиль
-						</div>
+							{__x`profile.view`}
+						</label>
 					)}
 				</figure>
 				<h3

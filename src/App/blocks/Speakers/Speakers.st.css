@@ -25,10 +25,14 @@
 .root ul {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: start;
 	margin: 0;
 	padding: 0;
 	list-style: none;
+}
+
+.root li {
+	flex: 1 1 25%;
+	margin: 0 value(sizeGap) value(sizeGapLg) 0;
 }
 
 .group {

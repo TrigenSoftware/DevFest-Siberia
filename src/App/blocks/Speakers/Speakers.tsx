@@ -68,7 +68,6 @@ export default class Speakers extends Component<ISectionProps> {
 						>
 							<ProfileCard
 								{...item}
-								to
 								badge={item.badge && (
 									<Badge
 										color='pink'

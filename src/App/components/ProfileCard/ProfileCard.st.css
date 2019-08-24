@@ -25,11 +25,11 @@
 }
 
 .root {
-	-st-states: to;
+	-st-states: clickable;
 	font-size: 1rem;
 }
 
-.root:to {
+.root:clickable {
 	will-change: box-shadow;
 	transition: box-shadow value(durationTransition);
 	border-radius: value(sizeBorderRadius);
@@ -38,14 +38,14 @@
 
 @media (prefers-reduced-motion: reduce) {
 
-	.root:to {
+	.root:clickable {
 		will-change: none;
 		transition: none;
 	}
 }
 
-.root:to:hover,
-.root:to:focus {
+.root:clickable:hover,
+.root:clickable:focus {
 	box-shadow: 0 0 rel(20, 24) 0 rgba(0, 0, 0, .32);
 }
 
@@ -82,12 +82,12 @@
 	}
 }
 
-.root:to:hover .profileText,
-.root:to:focus .profileText {
+.root:clickable:hover .profileText,
+.root:clickable:focus .profileText {
 	opacity: 1;
 }
 
-.root:to .img::before {
+.root:clickable .img::before {
 	position: absolute;
 	border-top: 1em solid value(colorPink0);
 	border-right: 1em solid value(colorPink0);
