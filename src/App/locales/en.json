@@ -206,5 +206,8 @@
 				"badge": "GDE"
 			}
 		]
+	},
+	"profile": {
+		"view": "View profile"
 	}
 }

@@ -3,10 +3,17 @@ import React, {
 	Component,
 	ReactElement
 } from 'react';
+import {
+	LocationDescriptor
+} from 'history';
 import PropTypes from 'prop-types';
 import {
 	CombinePropsAndAttributes
 } from '@flexis/ui/helpers';
+import {
+	__x
+} from 'i18n-for-react';
+import Link from '../Link';
 import ContactLink, {
 	ContactLinkType
 } from '../ContactLink';
@@ -20,6 +27,7 @@ interface ISelfProps {
 	location?: string;
 	badge?: ReactElement;
 	contacts?: Record<string, string>;
+	to?: LocationDescriptor;
 }
 
 export type IProps = CombinePropsAndAttributes<
@@ -36,10 +44,45 @@ export default class ProfileCard extends Component<IProps> {
 		description: PropTypes.string,
 		location:    PropTypes.string,
 		badge:       PropTypes.any,
-		contacts:    PropTypes.any
+		contacts:    PropTypes.any,
+		to:          PropTypes.any
 	};
 
 	render() {
+
+		const {
+			badge,
+			to,
+			...props
+		} = this.props;
+
+		return (
+			<article
+				{...stylesheet('root', {
+					clickable: Boolean(to)
+				}, props)}
+			>
+				{to ? (
+					<Link
+						{...stylesheet('link')}
+						to={to}
+					>
+						{this.renderProfileInfo()}
+					</Link>
+				) : (
+					this.renderProfileInfo()
+				)}
+				<footer
+					{...stylesheet('footer')}
+				>
+					{this.renderContacts()}
+					{badge}
+				</footer>
+			</article>
+		);
+	}
+
+	private renderProfileInfo() {
 
 		const {
 			src,
@@ -47,15 +90,12 @@ export default class ProfileCard extends Component<IProps> {
 			lastname,
 			description,
 			location,
-			badge,
-			contacts,
-			...props
+			to
 		} = this.props;
 
 		return (
-			<article
-				{...props}
-				{...stylesheet('root', {}, props)}
+			<div
+				{...stylesheet('info')}
 			>
 				<figure
 					{...stylesheet('img')}
@@ -63,7 +103,15 @@ export default class ProfileCard extends Component<IProps> {
 					style={{
 						backgroundImage: `url(${src})`
 					}}
-				/>
+				>
+					{to && (
+						<div
+							{...stylesheet('label')}
+						>
+							{__x`profile.view`}
+						</div>
+					)}
+				</figure>
 				<h3
 					{...stylesheet('name')}
 				>
@@ -81,13 +129,7 @@ export default class ProfileCard extends Component<IProps> {
 				>
 					{location}
 				</div>
-				<footer
-					{...stylesheet('footer')}
-				>
-					{this.renderContacts()}
-					{badge}
-				</footer>
-			</article>
+			</div>
 		);
 	}
 
@@ -107,7 +149,7 @@ export default class ProfileCard extends Component<IProps> {
 			>
 				{Object.entries(contacts).map(([type, href]) => (
 					<ContactLink
-						{...stylesheet('link')}
+						{...stylesheet('contactLink')}
 						key={href}
 						type={type as ContactLinkType}
 						href={href}

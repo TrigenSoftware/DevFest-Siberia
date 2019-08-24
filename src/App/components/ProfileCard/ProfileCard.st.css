@@ -13,20 +13,108 @@
 	-st-from: '../variables.st.css';
 	-st-named:
 		fontFamily,
+		durationTransition,
+		sizeBorderRadius,
+		colorWhite,
+		colorBlack,
 		colorBlue4,
 		colorBlue9,
-		colorBlack,
-		colorGray1;
+		colorGray1,
+		colorPink0;
 }
 
 .root {
+	-st-states: clickable;
 	font-size: 1rem;
 }
 
+.root:clickable {
+	display: inline-block;
+	will-change: box-shadow;
+	transition: box-shadow value(durationTransition);
+	border-radius: value(sizeBorderRadius);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.root:clickable {
+		will-change: none;
+		transition: none;
+	}
+}
+
+.root:clickable:hover,
+.root:clickable:focus-within {
+	box-shadow: 0 0 rel(20, 24) 0 rgba(0, 0, 0, .32);
+}
+
+.link {
+	text-decoration: none;
+}
+
+.info {
+	padding: rel(25, 10) rel(25, 10) 0;
+}
+
 .img {
+	position: relative;
 	background-size: cover;
 	width: 35em;
 	height: 35em;
+}
+
+.label {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	will-change: opacity;
+	transition: opacity value(durationTransition);
+	opacity: 0;
+	text-align: center;
+	line-height: rel(48, 24);
+	color: value(colorWhite);
+	font-size: 2.4em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.label {
+		will-change: none;
+		transition: none;
+	}
+}
+
+.root:clickable:hover .label,
+.root:clickable:focus-within .label {
+	opacity: 1;
+}
+
+.root:clickable .img::before {
+	position: absolute;
+	will-change: opacity;
+	transition: opacity value(durationTransition);
+	opacity: 0;
+	border-top: 1em solid value(colorPink0);
+	border-right: 1em solid value(colorPink0);
+	border-bottom: 4.8em solid value(colorPink0);
+	border-left: 1em solid value(colorPink0);
+	width: 100%;
+	height: 100%;
+	content: '';
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.root:clickable .img::before {
+		will-change: none;
+		transition: none;
+	}
+}
+
+.root:clickable:hover .img::before,
+.root:clickable:focus-within .img::before {
+	opacity: 1;
 }
 
 .name {
@@ -49,22 +137,22 @@
 }
 
 .footer {
-	padding-top: 1em;
+	padding: 1em rel(25, 10) rel(25, 10);
 }
 
 .contacts {
 	padding-bottom: 1em;
 }
 
-.link {
+.contactLink {
 	color: value(colorBlack);
 }
 
-.link:not(:last-child) {
+.contactLink:not(:last-child) {
 	margin-right: 1em;
 }
 
-.link .icon {
+.contactLink .icon {
 	width: 4.7em;
 	height: 4.7em;
 }
