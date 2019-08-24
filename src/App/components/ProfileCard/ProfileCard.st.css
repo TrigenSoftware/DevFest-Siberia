@@ -92,6 +92,9 @@
 
 .root:clickable .img::before {
 	position: absolute;
+	will-change: opacity;
+	transition: opacity value(durationTransition);
+	opacity: 0;
 	border-top: 1em solid value(colorPink0);
 	border-right: 1em solid value(colorPink0);
 	border-bottom: 4.8em solid value(colorPink0);
@@ -99,6 +102,19 @@
 	width: 100%;
 	height: 100%;
 	content: '';
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.root:clickable .img::before {
+		will-change: none;
+		transition: none;
+	}
+}
+
+.root:clickable:hover .img::before,
+.root:clickable:focus .img::before {
+	opacity: 1;
 }
 
 .name {
