@@ -19,7 +19,6 @@
 		colorBlack,
 		colorBlue4,
 		colorBlue9,
-		colorBlue10,
 		colorGray1,
 		colorPink0;
 }
@@ -36,11 +35,6 @@
 	border-radius: value(sizeBorderRadius);
 }
 
-.root:clickable .link {
-	padding: rel(25, 10) rel(25, 10) 0;
-	text-decoration: none;
-}
-
 @media (prefers-reduced-motion: reduce) {
 
 	.root:clickable {
@@ -52,6 +46,14 @@
 .root:clickable:hover,
 .root:clickable:focus {
 	box-shadow: 0 0 rel(20, 24) 0 rgba(0, 0, 0, .32);
+}
+
+.link {
+	text-decoration: none;
+}
+
+.info {
+	padding: rel(25, 10) rel(25, 10) 0;
 }
 
 .img {
@@ -119,10 +121,6 @@
 }
 
 .footer {
-	padding-top: 1em;
-}
-
-.root:clickable .footer {
 	padding: 1em rel(25, 10) rel(25, 10);
 }
 

@@ -49,19 +49,12 @@ export default class ProfileCard extends Component<IProps> {
 	};
 
 	render() {
-		return (
-			this.renderProfile()
-		);
+		return this.renderProfile();
 	}
 
 	private renderProfile() {
 
 		const {
-			src,
-			firstname,
-			lastname,
-			description,
-			location,
 			badge,
 			to,
 			...props
@@ -78,74 +71,10 @@ export default class ProfileCard extends Component<IProps> {
 						{...stylesheet('link')}
 						to={to}
 					>
-						<figure
-							{...stylesheet('img')}
-							aria-hidden
-							style={{
-								backgroundImage: `url(${src})`
-							}}
-						>
-							{to && (
-								<div
-									{...stylesheet('label')}
-								>
-									{__x`profile.view`}
-								</div>
-							)}
-						</figure>
-						<h3
-							{...stylesheet('name')}
-						>
-							{firstname}
-							<br />
-							{lastname}
-						</h3>
-						<div
-							{...stylesheet('description')}
-						>
-							{description}
-						</div>
-						<div
-							{...stylesheet('location')}
-						>
-							{location}
-						</div>
+						{this.renderProfileContent()}
 					</Link>
 				) : (
-					<>
-						<figure
-							{...stylesheet('img')}
-							aria-hidden
-							style={{
-								backgroundImage: `url(${src})`
-							}}
-						>
-							{to && (
-								<div
-									{...stylesheet('label')}
-								>
-									{__x`profile.view`}
-								</div>
-							)}
-						</figure>
-						<h3
-							{...stylesheet('name')}
-						>
-							{firstname}
-							<br />
-							{lastname}
-						</h3>
-						<div
-							{...stylesheet('description')}
-						>
-							{description}
-						</div>
-						<div
-							{...stylesheet('location')}
-						>
-							{location}
-						</div>
-					</>
+					this.renderProfileContent()
 				)}
 				<footer
 					{...stylesheet('footer')}
@@ -154,6 +83,57 @@ export default class ProfileCard extends Component<IProps> {
 					{badge}
 				</footer>
 			</article>
+		);
+	}
+
+	private renderProfileContent() {
+
+		const {
+			src,
+			firstname,
+			lastname,
+			description,
+			location,
+			to
+		} = this.props;
+
+		return (
+			<div
+				{...stylesheet('info')}
+			>
+				<figure
+					{...stylesheet('img')}
+					aria-hidden
+					style={{
+						backgroundImage: `url(${src})`
+					}}
+				>
+					{to && (
+						<div
+							{...stylesheet('label')}
+						>
+							{__x`profile.view`}
+						</div>
+					)}
+				</figure>
+				<h3
+					{...stylesheet('name')}
+				>
+					{firstname}
+					<br />
+					{lastname}
+				</h3>
+				<div
+					{...stylesheet('description')}
+				>
+					{description}
+				</div>
+				<div
+					{...stylesheet('location')}
+				>
+					{location}
+				</div>
+			</div>
 		);
 	}
 
