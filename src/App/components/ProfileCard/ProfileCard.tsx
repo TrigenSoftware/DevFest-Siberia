@@ -68,12 +68,12 @@ export default class ProfileCard extends Component<IProps> {
 		} = this.props;
 
 		return (
-			to ? (
-				<article
-					{...stylesheet('root', {
-						clickable: Boolean(to)
-					}, props)}
-				>
+			<article
+				{...stylesheet('root', {
+					clickable: Boolean(to)
+				}, props)}
+			>
+				{to ? (
 					<Link
 						{...stylesheet('link')}
 						to={to}
@@ -111,57 +111,49 @@ export default class ProfileCard extends Component<IProps> {
 							{location}
 						</div>
 					</Link>
-					<footer
-						{...stylesheet('footer')}
-					>
-						{this.renderContacts()}
-						{badge}
-					</footer>
-				</article>
-			) : (
-				<article
-					{...stylesheet('root', {}, props)}
+				) : (
+					<>
+						<figure
+							{...stylesheet('img')}
+							aria-hidden
+							style={{
+								backgroundImage: `url(${src})`
+							}}
+						>
+							{to && (
+								<div
+									{...stylesheet('label')}
+								>
+									{__x`profile.view`}
+								</div>
+							)}
+						</figure>
+						<h3
+							{...stylesheet('name')}
+						>
+							{firstname}
+							<br />
+							{lastname}
+						</h3>
+						<div
+							{...stylesheet('description')}
+						>
+							{description}
+						</div>
+						<div
+							{...stylesheet('location')}
+						>
+							{location}
+						</div>
+					</>
+				)}
+				<footer
+					{...stylesheet('footer')}
 				>
-					<figure
-						{...stylesheet('img')}
-						aria-hidden
-						style={{
-							backgroundImage: `url(${src})`
-						}}
-					>
-						{to && (
-							<div
-								{...stylesheet('label')}
-							>
-								{__x`profile.view`}
-							</div>
-						)}
-					</figure>
-					<h3
-						{...stylesheet('name')}
-					>
-						{firstname}
-						<br />
-						{lastname}
-					</h3>
-					<div
-						{...stylesheet('description')}
-					>
-						{description}
-					</div>
-					<div
-						{...stylesheet('location')}
-					>
-						{location}
-					</div>
-					<footer
-						{...stylesheet('footer')}
-					>
-						{this.renderContacts()}
-						{badge}
-					</footer>
-				</article>
-			)
+					{this.renderContacts()}
+					{badge}
+				</footer>
+			</article>
 		);
 	}
 
