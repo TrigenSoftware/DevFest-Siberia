@@ -131,8 +131,6 @@
 @media (max-width: value(sizeScreenMdMax)) {
 
 	.root {
-		position: relative;
-		z-index: 4;
 		height: 70px;
 	}
 
