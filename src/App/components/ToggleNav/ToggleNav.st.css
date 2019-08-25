@@ -13,10 +13,6 @@
 		colorPink0;
 }
 
-.root {
-	position: relative;
-}
-
 .root,
 .list {
 	display: flex;
