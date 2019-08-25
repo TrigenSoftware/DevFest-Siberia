@@ -23,6 +23,10 @@
 	padding-bottom: value(sizeGapLg);
 }
 
+.nav {
+	margin-bottom: rel(30, 24);
+}
+
 .list {
 	display: flex;
 	flex-wrap: wrap;

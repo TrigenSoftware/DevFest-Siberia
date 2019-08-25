@@ -45,7 +45,28 @@ export default class Speakers extends Component<ISectionProps> {
 				{...props}
 				{...stylesheet('root', {}, props)}
 			>
-				<ToggleNav>
+				<div
+					{...stylesheet('group')}
+				>
+					<h2>
+						{__x`speakers.title`}
+					</h2>
+					<Link
+						{...stylesheet('link')}
+						href='https://www.papercall.io/dfsiberia19'
+						target='_blank'
+						disguised
+					>
+						<Button
+							variant='secondary'
+						>
+							{__x`speakers.cfp`}
+						</Button>
+					</Link>
+				</div>
+				<ToggleNav
+					{...stylesheet('nav')}
+				>
 					<ToggleNavLink
 						to='/all'
 					>
@@ -67,25 +88,6 @@ export default class Speakers extends Component<ISectionProps> {
 						{__x`speakers.ai`}
 					</ToggleNavLink>
 				</ToggleNav>
-				<div
-					{...stylesheet('group')}
-				>
-					<h2>
-						{__x`speakers.title`}
-					</h2>
-					<Link
-						{...stylesheet('link')}
-						href='https://www.papercall.io/dfsiberia19'
-						target='_blank'
-						disguised
-					>
-						<Button
-							variant='secondary'
-						>
-							{__x`speakers.cfp`}
-						</Button>
-					</Link>
-				</div>
 				<ul
 					{...stylesheet('list')}
 				>
