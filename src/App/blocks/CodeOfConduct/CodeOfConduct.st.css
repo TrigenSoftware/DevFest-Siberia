@@ -1,0 +1,67 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named:
+		sizeScreenMdMax,
+		sizeScreenSmMax,
+		colorBlack,
+		colorBlue5,
+		colorGray1;
+}
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+.root .center {
+	padding-top: rel(32, 24);
+	padding-bottom: rel(113, 24);
+}
+
+.article {
+	margin-right: 35%;
+}
+
+.article p {
+	color: value(colorBlack);
+}
+
+.list {
+	margin: 0;
+	padding-left: rel(22, 24);
+}
+
+.footer h3 {
+	text-transform: uppercase;
+	color: value(colorBlue5);
+	font-size: rel(34, 24);
+}
+
+.footer p {
+	color: value(colorGray1);
+	font-size: rel(20, 24);
+}
+
+@media (max-width: value(sizeScreenMdMax)) {
+
+	.article {
+		margin: 0;
+	}
+
+	.footer {
+		margin-top: rel(17, 16);
+	}
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.root h2 {
+		font-size: rel(30, 16);
+	}
+}

@@ -209,5 +209,10 @@
 	},
 	"profile": {
 		"view": "View profile"
+	},
+	"conduct": {
+		"title": "Code Of Conduct",
+		"email": "Email",
+		"phone": "Phone"
 	}
 }
