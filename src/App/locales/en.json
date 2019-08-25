@@ -206,10 +206,24 @@
 				"badge": "GDE"
 			}
 		],
-		"all": "All",
-		"mobile": "Mobile",
-		"web": "Web",
-		"ai": "AI"
+		"nav": [
+			{
+				"type": "all",
+				"label": "All"
+			},
+			{
+				"type": "mobile",
+				"label": "Mobile"
+			},
+			{
+				"type": "web",
+				"label": "Web"
+			},
+			{
+				"type": "ai",
+				"label": "AI"
+			}
+		]
 	},
 	"profile": {
 		"view": "View profile"

@@ -34,7 +34,8 @@ export default class Speakers extends Component<ISectionProps> {
 		} = this;
 		const {
 			speakers: {
-				speakers
+				speakers,
+				nav
 			}
 		} = this.context.getCatalog(
 			context.getLocale()
@@ -67,26 +68,14 @@ export default class Speakers extends Component<ISectionProps> {
 				<ToggleNav
 					{...stylesheet('nav')}
 				>
-					<ToggleNavLink
-						to='/all'
-					>
-						{__x`speakers.all`}
-					</ToggleNavLink>
-					<ToggleNavLink
-						to='/mobile'
-					>
-						{__x`speakers.mobile`}
-					</ToggleNavLink>
-					<ToggleNavLink
-						to='/web'
-					>
-						{__x`speakers.web`}
-					</ToggleNavLink>
-					<ToggleNavLink
-						to='/ai'
-					>
-						{__x`speakers.ai`}
-					</ToggleNavLink>
+					{nav.map(item => (
+						<ToggleNavLink
+							key={item.type}
+							to={`/speakers/${item.type}`}
+						>
+							{item.label}
+						</ToggleNavLink>
+					))}
 				</ToggleNav>
 				<ul
 					{...stylesheet('list')}
