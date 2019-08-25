@@ -7,6 +7,7 @@
 :import {
 	-st-from: '~/components/variables.st.css';
 	-st-named:
+		sizeScreenSmMax,
 		sizeGap,
 		sizeGapLg;
 }
@@ -31,4 +32,11 @@
 
 .root li {
 	flex: 1 1 25%;
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.root ul {
+		margin: 0;
+	}
 }

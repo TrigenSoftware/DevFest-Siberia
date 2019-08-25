@@ -8,6 +8,7 @@
 	-st-from: '~/components/variables.st.css';
 	-st-named:
 		sizeScreenMdMax,
+		sizeScreenSmMax,
 		sizeGap,
 		sizeGapLg;
 }
@@ -46,4 +47,11 @@
 	.link {
 		display: none;
 	}/* stylelint-enable */
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.list {
+		margin: 0;
+	}
 }
