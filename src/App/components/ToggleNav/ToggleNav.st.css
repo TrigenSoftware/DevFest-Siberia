@@ -58,7 +58,7 @@
 		font-size: rel(14, 16);
 	}
 
-	.item:not(:last-child) {
+	.item {
 		margin-right: rel(20, 16);
 	}
 }
