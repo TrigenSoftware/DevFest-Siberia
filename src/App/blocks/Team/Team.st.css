@@ -7,6 +7,7 @@
 :import {
 	-st-from: '~/components/variables.st.css';
 	-st-named:
+		sizeScreenSmMax,
 		sizeGap,
 		sizeGapLg;
 }
@@ -21,15 +22,21 @@
 	padding-bottom: value(sizeGapLg);
 }
 
-.root ul {
+.list {
 	display: flex;
 	flex-wrap: wrap;
-	margin: 0;
+	margin: 0 rel(-25, 24);
 	padding: 0;
 	list-style: none;
 }
 
-.root li {
+.list li {
 	flex: 1 1 25%;
-	margin: 0 value(sizeGap) value(sizeGapLg) 0;
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.list {
+		margin: 0;
+	}
 }

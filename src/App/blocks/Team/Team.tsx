@@ -42,7 +42,9 @@ export default class Team extends Component<ISectionProps> {
 				<h2>
 					{__x`team.title`}
 				</h2>
-				<ul>
+				<ul
+					{...stylesheet('list')}
+				>
 					{team.map(item => (
 						<li
 							key={item.src}
