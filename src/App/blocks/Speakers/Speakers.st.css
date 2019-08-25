@@ -23,16 +23,16 @@
 	padding-bottom: value(sizeGapLg);
 }
 
-.root li {
-	flex: 1 1 25%;
-}
-
 .list {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 rel(-25, 24);
 	padding: 0;
 	list-style: none;
+}
+
+.list li {
+	flex: 1 1 25%;
 }
 
 .group {

@@ -22,7 +22,7 @@
 	padding-bottom: value(sizeGapLg);
 }
 
-.root ul {
+.list {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 rel(-25, 24);
@@ -30,13 +30,13 @@
 	list-style: none;
 }
 
-.root li {
+.list li {
 	flex: 1 1 25%;
 }
 
 @media (max-width: value(sizeScreenSmMax)) {
 
-	.root ul {
+	.list {
 		margin: 0;
 	}
 }
