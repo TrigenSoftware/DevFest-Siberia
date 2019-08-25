@@ -20,23 +20,20 @@
 .root,
 .list {
 	display: flex;
-	align-items: stretch;
+	align-items: center;
 	justify-content: start;
 }
 
 .root::after {
-	position: absolute;
-	top: 50%;
-	right: 0;
+	display: flex;
 	border: rel(1, 24) dashed value(colorGray1);
 	width: 100%;
+	height: 1px;
 	content: '';
 }
 
 .list {
-	z-index: 1;
 	margin: 0;
-	background: white;
 	padding: 0;
 	list-style: none;
 }
