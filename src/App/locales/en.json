@@ -205,7 +205,11 @@
 				"description": "Member of the family",
 				"badge": "GDE"
 			}
-		]
+		],
+		"all": "All",
+		"mobile": "Mobile",
+		"web": "Web",
+		"ai": "AI"
 	},
 	"profile": {
 		"view": "View profile"

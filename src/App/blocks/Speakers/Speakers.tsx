@@ -9,6 +9,9 @@ import {
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
+import ToggleNav, {
+	ToggleNavLink
+} from '~/components/ToggleNav';
 import Link from '~/components/Link';
 import Button from '~/components/Button';
 import ProfileCard from '~/components/ProfileCard';
@@ -42,6 +45,28 @@ export default class Speakers extends Component<ISectionProps> {
 				{...props}
 				{...stylesheet('root', {}, props)}
 			>
+				<ToggleNav>
+					<ToggleNavLink
+						to='/all'
+					>
+						{__x`speakers.all`}
+					</ToggleNavLink>
+					<ToggleNavLink
+						to='/mobile'
+					>
+						{__x`speakers.mobile`}
+					</ToggleNavLink>
+					<ToggleNavLink
+						to='/web'
+					>
+						{__x`speakers.web`}
+					</ToggleNavLink>
+					<ToggleNavLink
+						to='/ai'
+					>
+						{__x`speakers.ai`}
+					</ToggleNavLink>
+				</ToggleNav>
 				<div
 					{...stylesheet('group')}
 				>
@@ -61,7 +86,9 @@ export default class Speakers extends Component<ISectionProps> {
 						</Button>
 					</Link>
 				</div>
-				<ul>
+				<ul
+					{...stylesheet('list')}
+				>
 					{speakers.map(item => (
 						<li
 							key={item.src}
@@ -75,6 +102,7 @@ export default class Speakers extends Component<ISectionProps> {
 										{item.badge}
 									</Badge>
 								)}
+								to='/some-id'
 							/>
 						</li>
 					))}
