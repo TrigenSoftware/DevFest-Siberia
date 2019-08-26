@@ -26,28 +26,22 @@ export default class CodeOfConduct extends Component<IProps> {
 				{...stylesheet('root', {}, props)}
 			>
 				<h2>
-					{__x`conduct.title`}
+					{__x`coc.title`}
 				</h2>
 				<article
 					{...stylesheet('article')}
 				>
 					<p>
-						Все участники, спикеры, партнёры, волонтеры на конференции DevFest Сибирь
-						обязуются соблюдать правила поведения. Организаторы надеются на вашу сознательность
-						и помощь в соблюдении этих правил.
+						{__x`coc.rules`}
 					</p>
 					<p>
-						DevFest Сибирь - открытая конференция для всех участников, вне зависимости от их пола,
-						сексуальной ориентации, религиозных взглядов, расы, размера тела и т.д. Мы не терпим
-						преследования и неуважительного отношения к участникам в любой форме. Участники,
-						нарушающие правила поведения могут быть лишены возможности участия без возмещения
-						стоимости билета.
+						{__x`coc.about`}
 					</p>
 					<ul
 						{...stylesheet('list')}
 					>
 						<li>
-							{__x`conduct.email`}:{' '}
+							{__x`coc.email`}:{' '}
 							<Link
 								to='mailto:911@gdg-siberia.com'
 							>
@@ -55,7 +49,7 @@ export default class CodeOfConduct extends Component<IProps> {
 							</Link>
 						</li>
 						<li>
-							{__x`conduct.phone`}:{' '}
+							{__x`coc.phone`}:{' '}
 							<Link
 								to='tel:+79538789131'
 							>
