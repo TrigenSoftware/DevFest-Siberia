@@ -3,6 +3,7 @@ import React, {
 	Component,
 	ReactElement
 } from 'react';
+import PropTypes from 'prop-types';
 import {
 	CombinePropsAndAttributes
 } from '@flexis/ui/helpers';
@@ -33,6 +34,22 @@ export type IProps = CombinePropsAndAttributes<
 >;
 
 export default class SpeakerCard extends Component<IProps> {
+
+	static propTypes = {
+		src:            PropTypes.string.isRequired,
+		firstname:      PropTypes.string.isRequired,
+		lastname:       PropTypes.string.isRequired,
+		description:    PropTypes.string,
+		location:       PropTypes.string,
+		contacts:       PropTypes.any,
+		badge:          PropTypes.any,
+		text:           PropTypes.string.isRequired,
+		talkTitle:      PropTypes.string.isRequired,
+		talkLocation:   PropTypes.string.isRequired,
+		talkTime:       PropTypes.string.isRequired,
+		talkTypeBadge:  PropTypes.any,
+		talkLevelBadge: PropTypes.any
+	};
 
 	render() {
 
