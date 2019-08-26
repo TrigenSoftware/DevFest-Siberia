@@ -49,7 +49,6 @@ export default class SpeakerCard extends Component<IProps> {
 			talkTime,
 			talkTypeBadge,
 			talkLevelBadge,
-			children,
 			...props
 		} = this.props;
 
