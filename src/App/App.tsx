@@ -50,7 +50,6 @@ export default class App extends Component<IProps> {
 				/>
 				<Route
 					path={this.path('/speakers')}
-					exact
 					component={Speakers}
 				/>
 				<Footer/>

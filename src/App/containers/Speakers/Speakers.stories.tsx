@@ -30,11 +30,6 @@ storiesOf('Containers|Speakers', module)
 		info: stylableApi
 	})
 	.addDecorator(story => (
-		<MemoryRouter initialEntries={['/speakers']}>
-			{story()}
-		</MemoryRouter>
-	))
-	.addDecorator(story => (
 		<div style={{ margin: '-12px' }}>
 			{story()}
 		</div>
@@ -54,9 +49,8 @@ storiesOf('Containers|Speakers', module)
 	.add(
 		'with default state',
 		() => (
-			<MemoryRouter initialEntries={['/speakers/LeonidKalneus']}>
+			<MemoryRouter initialEntries={['/speakers']}>
 				<Route
-					path='/speakers/:id'
 					component={props => (
 						<>
 							<Header/>

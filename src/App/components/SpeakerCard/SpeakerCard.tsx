@@ -1,7 +1,6 @@
 import React, {
 	HTMLAttributes,
-	Component,
-	ReactElement
+	Component
 } from 'react';
 import PropTypes from 'prop-types';
 import {
@@ -10,6 +9,7 @@ import {
 import ContactLink, {
 	ContactLinkType
 } from '../ContactLink';
+import Badge from '../Badge';
 import stylesheet from './SpeakerCard.st.css';
 
 interface ISelfProps {
@@ -19,13 +19,13 @@ interface ISelfProps {
 	description: string;
 	location: string;
 	contacts?: Record<string, string>;
-	badge?: ReactElement;
+	badge?: string;
 	text: string;
 	talkTitle: string;
 	talkLocation: string;
 	talkTime: string;
-	talkTypeBadge?: ReactElement;
-	talkLevelBadge?: ReactElement;
+	talkTypeBadge?: string;
+	talkLevelBadge?: string;
 }
 
 export type IProps = CombinePropsAndAttributes<
@@ -42,13 +42,13 @@ export default class SpeakerCard extends Component<IProps> {
 		description:    PropTypes.string,
 		location:       PropTypes.string,
 		contacts:       PropTypes.any,
-		badge:          PropTypes.any,
+		badge:          PropTypes.string,
 		text:           PropTypes.string.isRequired,
 		talkTitle:      PropTypes.string.isRequired,
 		talkLocation:   PropTypes.string.isRequired,
 		talkTime:       PropTypes.string.isRequired,
-		talkTypeBadge:  PropTypes.any,
-		talkLevelBadge: PropTypes.any
+		talkTypeBadge:  PropTypes.string,
+		talkLevelBadge: PropTypes.string
 	};
 
 	render() {
@@ -104,7 +104,7 @@ export default class SpeakerCard extends Component<IProps> {
 					</div>
 					<>
 						{this.renderContacts()}
-						{badge}
+						{this.renderBadge(badge)}
 					</>
 				</div>
 				<h3
@@ -143,8 +143,8 @@ export default class SpeakerCard extends Component<IProps> {
 					>
 						{this.renderDate()}
 						<div>
-							{talkTypeBadge}
-							{talkLevelBadge}
+							{this.renderBadge(talkTypeBadge)}
+							{this.renderBadge(talkLevelBadge)}
 						</div>
 					</div>
 				</footer>
@@ -200,5 +200,84 @@ export default class SpeakerCard extends Component<IProps> {
 				)}
 			</div>
 		);
+	}
+
+	private renderBadge(type: string) {
+
+		switch (type) {
+
+			case 'GDE':
+				return (
+					<Badge>
+						{type}
+					</Badge>
+				);
+			case 'All':
+				return (
+					<Badge
+						variant='fill'
+						color='blue'
+					>
+						{type}
+					</Badge>
+				);
+			case 'Mobile':
+				return (
+					<Badge
+						variant='fill'
+						color='pink'
+					>
+						{type}
+					</Badge>
+				);
+			case 'Web':
+				return (
+					<Badge
+						variant='fill'
+						color='aqua'
+					>
+						{type}
+					</Badge>
+				);
+			case 'AI':
+				return (
+					<Badge
+						variant='fill'
+						color='red'
+					>
+						{type}
+					</Badge>
+				);
+			case 'Junior':
+				return (
+					<Badge
+						color='aqua'
+					>
+						{type}
+					</Badge>
+				);
+			case 'Middle':
+				return (
+					<Badge
+						color='pink'
+					>
+						{type}
+					</Badge>
+				);
+			case 'Senior':
+				return (
+					<Badge
+						color='red'
+					>
+						{type}
+					</Badge>
+				);
+			default:
+				return (
+					<Badge>
+						{type}
+					</Badge>
+				);
+		}
 	}
 }

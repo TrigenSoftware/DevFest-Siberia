@@ -152,7 +152,13 @@
 				"contacts": {
 					"telegram": "https://t.me/ManFromSiberia",
 					"email": "mailto:leo@gdg-siberia.com"
-				}
+				},
+				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
+				"talkTitle": "Название Доклада",
+				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
+				"talkTime": "11:21 AM",
+				"talkTypeBadge": "All",
+				"talkLevelBadge": "Senior"
 			},
 			{
 				"id":"AlexeyRomanenko",
@@ -164,7 +170,13 @@
 				"contacts": {
 					"telegram": "https://t.me/slimus",
 					"email": "mailto:alex@gdg-siberia.com"
-				}
+				},
+				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
+				"talkTitle": "Название Доклада",
+				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
+				"talkTime": "11:21 AM",
+				"talkTypeBadge": "AI",
+				"talkLevelBadge": "Middle"
 			},
 			{
 				"id":"YuriyKashnikov",
@@ -175,7 +187,13 @@
 				"badge": "Тест",
 				"contacts": {
 					"site": "http://kayuri.github.io/"
-				}
+				},
+				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
+				"talkTitle": "Название Доклада",
+				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
+				"talkTime": "11:21 AM",
+				"talkTypeBadge": "Web",
+				"talkLevelBadge": "Junior"
 			},
 			{
 				"id":"KirZharov",
@@ -183,7 +201,13 @@
 				"firstname": "Кир",
 				"lastname": "Жаров",
 				"description": "Разработка сайта, frontend",
-				"badge": "Тест"
+				"badge": "Тест",
+				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
+				"talkTitle": "Название Доклада",
+				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
+				"talkTime": "11:21 AM",
+				"talkTypeBadge": "Mobile",
+				"talkLevelBadge": "Junior"
 			},
 			{
 				"id":"IvanKruchkov",
@@ -191,7 +215,13 @@
 				"firstname": "Иван",
 				"lastname": "Крючков",
 				"description": "Разработка сайта, backend",
-				"badge": "Тест"
+				"badge": "Тест",
+				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
+				"talkTitle": "Название Доклада",
+				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
+				"talkTime": "11:21 AM",
+				"talkTypeBadge": "Mobile",
+				"talkLevelBadge": "Junior"
 			},
 			{
 				"id":"AminaKotomanova",
@@ -202,7 +232,13 @@
 				"badge": "Тест",
 				"contacts": {
 					"site": "http://rebelart.ru"
-				}
+				},
+				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
+				"talkTitle": "Название Доклада",
+				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
+				"talkTime": "11:21 AM",
+				"talkTypeBadge": "Mobile",
+				"talkLevelBadge": "Junior"
 			},
 			{
 				"id":"LevNovokreshchenov",
@@ -210,7 +246,13 @@
 				"firstname": "Лев",
 				"lastname": "Новокрещёнов",
 				"description": "Член семьи",
-				"badge": "Тест"
+				"badge": "Тест",
+				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
+				"talkTitle": "Название Доклада",
+				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
+				"talkTime": "11:21 AM",
+				"talkTypeBadge": "Mobile",
+				"talkLevelBadge": "Junior"
 			}
 		],
 		"nav": [
