@@ -93,7 +93,7 @@ export default class Speakers extends Component<ISectionProps> {
 										{item.badge}
 									</Badge>
 								)}
-								to='/some-id'
+								to={`/speakers/${item.id}`}
 							/>
 						</li>
 					))}

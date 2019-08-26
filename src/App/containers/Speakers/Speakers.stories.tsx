@@ -1,7 +1,8 @@
 /* tslint:disable jsx-no-lambda */
 import React from 'react';
 import {
-	MemoryRouter
+	MemoryRouter,
+	Route
 } from 'react-router';
 import {
 	storiesOf
@@ -53,10 +54,20 @@ storiesOf('Containers|Speakers', module)
 	.add(
 		'with default state',
 		() => (
-			<>
-				<Header/>
-				<Speakers/>
-				<Footer/>
-			</>
+			<MemoryRouter initialEntries={['/speakers']}>
+				<Route
+					path='/speakers'
+					component={props => (
+						<>
+							<Header/>
+							<Speakers
+								{...props}
+							/>
+							<Footer/>
+						</>
+						)
+					}
+				/>
+			</MemoryRouter>
 		)
 	);
