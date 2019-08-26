@@ -15,14 +15,16 @@ import {
 	Bind,
 	Debounce
 } from '@flexis/ui/helpers';
-import Modal from '~/components/Modal';
+import Modal, {
+	IProps as IModalProps
+} from '~/components/Modal';
 import SpeakerCard from '~/components/SpeakerCard';
 
 interface IRouteParams {
 	id?: string;
 }
 
-export interface IProps extends RouteComponentProps<IRouteParams> {
+export interface IProps extends IModalProps, RouteComponentProps<IRouteParams> {
 	history: History;
 }
 
