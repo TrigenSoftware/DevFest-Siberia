@@ -33,22 +33,14 @@
 }
 
 .img {
-	position: relative;
 	margin-right: 3em;
-	background-size: cover;
-	width: 25em;
-	height: 25em;
-}
-
-.img::before {
-	position: absolute;
 	border-top: 1em solid value(colorPink0);
 	border-right: 1em solid value(colorPink0);
 	border-bottom: 1em solid value(colorPink0);
 	border-left: 1em solid value(colorPink0);
-	width: 100%;
-	height: 100%;
-	content: '';
+	background-size: cover;
+	width: 25em;
+	height: 25em;
 }
 
 .profile {
@@ -66,19 +58,17 @@
 	font-size: 2em;
 }
 
-/* stylelint-disable a11y/no-display-none */
-.mobName {
-	display: none;
-	color: value(colorBlue9);
-	font-family: value(fontFamily);
-	font-size: 3.8em;
-}/* stylelint-enable */
-
 .name {
+	-st-states: mobile;
 	color: value(colorBlue9);
 	font-family: value(fontFamily);
 	font-size: 3.8em;
 }
+
+/* stylelint-disable a11y/no-display-none */
+.name:mobile {
+	display: none;
+}/* stylelint-enable */
 
 .text {
 	font-size: 2.1em;
@@ -163,7 +153,7 @@
 		display: none;
 	}/* stylelint-enable */
 
-	.mobName {
+	.name:mobile {
 		display: block;
 	}
 

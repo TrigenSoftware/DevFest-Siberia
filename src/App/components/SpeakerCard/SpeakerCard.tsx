@@ -6,7 +6,6 @@ import React, {
 import {
 	CombinePropsAndAttributes
 } from '@flexis/ui/helpers';
-import Badge from '../Badge';
 import ContactLink, {
 	ContactLinkType
 } from '../ContactLink';
@@ -24,8 +23,8 @@ interface ISelfProps {
 	talkTitle: string;
 	talkLocation: string;
 	talkTime: string;
-	talkTypeBadge?: string;
-	talkLevelBadge?: string;
+	talkTypeBadge?: ReactElement;
+	talkLevelBadge?: ReactElement;
 }
 
 export type IProps = CombinePropsAndAttributes<
@@ -69,7 +68,9 @@ export default class SpeakerCard extends Component<IProps> {
 						}}
 					/>
 					<h3
-						{...stylesheet('mobName')}
+						{...stylesheet('name', {
+							mobile: true
+						})}
 					>
 						{firstname}
 						<br />
@@ -129,21 +130,8 @@ export default class SpeakerCard extends Component<IProps> {
 						>
 							{talkTime}<span>AM</span>
 						</div>
-						{talkTypeBadge && (
-							<Badge
-								variant='fill'
-								color='pink'
-							>
-								{talkTypeBadge}
-							</Badge>
-						)}
-						{talkLevelBadge && (
-							<Badge
-								color='aqua'
-							>
-								{talkLevelBadge}
-							</Badge>
-						)}
+						{talkTypeBadge}
+						{talkLevelBadge}
 					</div>
 				</footer>
 			</article>
