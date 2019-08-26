@@ -185,8 +185,10 @@ export default class SpeakerCard extends Component<IProps> {
 		const {
 			talkTime
 		} = this.props;
-
-		const [time, format] = talkTime.split(' ');
+		const [
+			time,
+			format
+		] = talkTime.split(' ');
 
 		return (
 			<div
