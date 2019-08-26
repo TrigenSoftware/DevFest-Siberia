@@ -9,6 +9,9 @@ import {
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
+import ToggleNav, {
+	ToggleNavLink
+} from '~/components/ToggleNav';
 import Link from '~/components/Link';
 import Button from '~/components/Button';
 import ProfileCard from '~/components/ProfileCard';
@@ -31,7 +34,8 @@ export default class Speakers extends Component<ISectionProps> {
 		} = this;
 		const {
 			speakers: {
-				speakers
+				speakers,
+				nav
 			}
 		} = this.context.getCatalog(
 			context.getLocale()
@@ -61,7 +65,21 @@ export default class Speakers extends Component<ISectionProps> {
 						</Button>
 					</Link>
 				</div>
-				<ul>
+				<ToggleNav
+					{...stylesheet('nav')}
+				>
+					{nav.map(item => (
+						<ToggleNavLink
+							key={item.type}
+							to={`/speakers/${item.type}`}
+						>
+							{item.label}
+						</ToggleNavLink>
+					))}
+				</ToggleNav>
+				<ul
+					{...stylesheet('list')}
+				>
 					{speakers.map(item => (
 						<li
 							key={item.src}
@@ -75,6 +93,7 @@ export default class Speakers extends Component<ISectionProps> {
 										{item.badge}
 									</Badge>
 								)}
+								to='/some-id'
 							/>
 						</li>
 					))}

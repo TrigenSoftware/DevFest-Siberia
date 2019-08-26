@@ -205,6 +205,24 @@
 				"description": "Член семьи",
 				"badge": "Тест"
 			}
+		],
+		"nav": [
+			{
+				"type": "all",
+				"label": "Все"
+			},
+			{
+				"type": "mobile",
+				"label": "Мобильные"
+			},
+			{
+				"type": "web",
+				"label": "Веб"
+			},
+			{
+				"type": "ai",
+				"label": "ИИ"
+			}
 		]
 	},
 	"profile": {
