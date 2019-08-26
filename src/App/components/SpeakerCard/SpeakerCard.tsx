@@ -129,8 +129,10 @@ export default class SpeakerCard extends Component<IProps> {
 						>
 							{talkTime}<span>AM</span>
 						</div>
-						{talkTypeBadge}
-						{talkLevelBadge}
+						<div>
+							{talkTypeBadge}
+							{talkLevelBadge}
+						</div>
 					</div>
 				</footer>
 			</article>
