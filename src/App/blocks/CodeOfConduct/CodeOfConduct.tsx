@@ -64,9 +64,7 @@ export default class CodeOfConduct extends Component<IProps> {
 							© Copyright
 						</h3>
 						<p>
-							Вольный перевод правил поведения, взятый с конференции Codemotion,
-							распространяемый под лицензией Creative Commons Attribution 3.0
-							Unported License.
+							{__x`coc.copyright`}
 						</p>
 					</footer>
 				</article>
