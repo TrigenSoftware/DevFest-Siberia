@@ -102,6 +102,7 @@
 }
 
 .title {
+	margin-bottom: rel(21, 30);
 	color: value(colorBlue10);
 	font-size: 3em;
 }
@@ -112,6 +113,7 @@
 }
 
 .date {
+	margin-bottom: rel(17, 40);
 	color: value(colorBlue4);
 	font-family: value(fontFamilyMono);
 	font-size: 4em;
@@ -176,6 +178,6 @@
 	}
 
 	.date {
-		margin-right: 16px;
+		margin: 0 16px 0 0;
 	}
 }
