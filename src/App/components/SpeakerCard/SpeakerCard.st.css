@@ -34,10 +34,7 @@
 
 .img {
 	margin-right: 3em;
-	border-top: 1em solid value(colorPink0);
-	border-right: 1em solid value(colorPink0);
-	border-bottom: 1em solid value(colorPink0);
-	border-left: 1em solid value(colorPink0);
+	border: 1em solid value(colorPink0);
 	background-size: cover;
 	width: 25em;
 	height: 25em;

@@ -141,11 +141,7 @@ export default class SpeakerCard extends Component<IProps> {
 					<div
 						{...stylesheet('group')}
 					>
-						<div
-							{...stylesheet('date')}
-						>
-							{talkTime}<span>AM</span>
-						</div>
+						{this.renderDate()}
 						<div>
 							{talkTypeBadge}
 							{talkLevelBadge}
@@ -180,6 +176,26 @@ export default class SpeakerCard extends Component<IProps> {
 						{type}
 					</ContactLink>
 				))}
+			</div>
+		);
+	}
+
+	private renderDate() {
+
+		const {
+			talkTime
+		} = this.props;
+
+		const [time, format] = talkTime.split(' ');
+
+		return (
+			<div
+				{...stylesheet('date')}
+			>
+				{time}
+				{format && (
+					<span>{format}</span>
+				)}
 			</div>
 		);
 	}

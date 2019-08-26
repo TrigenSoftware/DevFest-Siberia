@@ -73,7 +73,7 @@ storiesOf('Components|SpeakerCard', module)
 				text={text('Text', testText)}
 				talkTitle={text('Talk title', 'Название Доклада')}
 				talkLocation={text('Talk location', '543 аудитория, 3 этаж | Академпарк')}
-				talkTime={text('Talk time', '11:21')}
+				talkTime={text('Talk time', '11:21 AM')}
 				talkTypeBadge={
 					<Badge
 						color='pink'
