@@ -26,13 +26,16 @@ import ProfileCard from './';
 const stylableApi = `
 Stylable API
 ---
+- ::info
+- ::label
 - ::img
 - ::name
 - ::description
 - ::location
 - ::footer
-- ::contacts
 - ::link
+- ::contacts
+- ::contactLink
 `;
 
 storiesOf('Components|ProfileCard', module)

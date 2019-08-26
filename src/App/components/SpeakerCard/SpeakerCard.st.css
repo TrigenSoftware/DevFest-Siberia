@@ -1,0 +1,171 @@
+
+:import {
+	-st-from: '@flexis/ui/components/Link/Link.st.css';
+	-st-named: icon;
+}
+
+:import {
+	-st-from: '@flexis/ui/components/Badge/Badge.st.css';
+	-st-default: Badge;
+}
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named:
+		sizeScreenSmMax,
+		fontFamily,
+		fontFamilyMono,
+		colorBlack,
+		colorBlue4,
+		colorBlue9,
+		colorBlue10,
+		colorGray1,
+		colorPink0;
+}
+
+.root {
+	font-size: 1rem;
+}
+
+.img {
+	margin-right: 3em;
+	border: 1em solid value(colorPink0);
+	background-size: cover;
+	width: 25em;
+	height: 25em;
+}
+
+.profile {
+	float: left;
+	margin-bottom: 2.6em;
+}
+
+.description {
+	color: value(colorBlue4);
+	font-size: 2.4em;
+}
+
+.location {
+	color: value(colorGray1);
+	font-size: 2em;
+}
+
+.name {
+	-st-states: mobile;
+	color: value(colorBlue9);
+	font-family: value(fontFamily);
+	font-size: 3.8em;
+}
+
+/* stylelint-disable a11y/no-display-none */
+.name:mobile {
+	display: none;
+}/* stylelint-enable */
+
+.text {
+	font-size: 2.1em;
+}
+
+.contacts {
+	padding-bottom: 1em;
+}
+
+.contactLink {
+	color: value(colorBlack);
+}
+
+.contactLink:not(:last-child) {
+	margin-right: .6em;
+}
+
+.contactLink .icon {
+	width: 24px;
+	height: 24px;
+}
+
+.title {
+	margin-bottom: rel(21, 30);
+	color: value(colorBlue10);
+	font-size: 3em;
+}
+
+.talkLocation {
+	color: value(colorGray1);
+	font-size: 1.5em;
+}
+
+.date {
+	margin-bottom: rel(17, 40);
+	color: value(colorBlue4);
+	font-family: value(fontFamilyMono);
+	font-size: 4em;
+}
+
+.date span {
+	color: value(colorBlue9);
+	font-size: rel(24, 40);
+	font-weight: 100;
+}
+
+.footer {
+	display: flex;
+	align-items: baseline;
+	clear: both;
+	margin-top: 3.3em;
+	border-top: 1px dashed value(colorGray1);
+	padding-top: 2em;
+}
+
+.footer .Badge:not(:last-child) {
+	margin-right: rel(16, 14);
+}
+
+.footer .group:nth-of-type(1) {
+	order: 2;
+}
+
+.footer .group:nth-of-type(2) {
+	order: 1;
+	margin-right: 3.6em;
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.profile {
+		float: none;
+	}
+
+	.img {
+		width: 290px;
+		height: 290px;
+	}
+
+	/* stylelint-disable a11y/no-display-none */
+	.name {
+		display: none;
+	}/* stylelint-enable */
+
+	.name:mobile {
+		display: block;
+	}
+
+	.footer {
+		display: block;
+	}
+
+	.footer .group:nth-of-type(2) {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 0;
+	}
+
+	.date {
+		margin: 0;
+	}
+}
