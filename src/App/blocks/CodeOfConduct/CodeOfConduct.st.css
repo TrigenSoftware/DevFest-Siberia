@@ -33,7 +33,7 @@
 }
 
 .list {
-	margin: 0;
+	margin: 0 0 rel(17, 24);
 	padding-left: rel(22, 24);
 }
 
@@ -52,10 +52,6 @@
 
 	.article {
 		margin: 0;
-	}
-
-	.footer {
-		margin-top: rel(17, 16);
 	}
 }
 
