@@ -10,47 +10,43 @@ import {
 	text
 } from '@storybook/addon-knobs/react';
 import {
-	select
-} from '@storybook/addon-knobs';
-import {
-	I18nProvider
-} from 'i18n-for-react';
-import ru from '~/locales/ru.json';
-import en from '~/locales/en.json';
-import {
 	imageUrl
 } from '@flexis/ui/components/ImageSelect/ImageSelect.stories';
 import Badge from '../Badge';
 import SpeakerCard from './';
 
+const testText = `Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo,
+quis tempor ligula. Quisque quis pharetra felis. Ut quis consequat orci, at
+consequat felis. Suspendisse auctor laoreet placerat. Nam et risus non lacus
+dignissim lacinia sit amet nec eros. Nulla vel urna quis libero pharetra varius.
+Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo,
+quis tempor ligula. Quisque quis pharetra felis. Ut quis consequat orci, at
+consequat felis. Suspendisse auctor laoreet placerat. Nam et risus non lacus
+dignissim lacinia sit amet nec eros. Nulla vel urna quis libero pharetra varius.`;
+
 const stylableApi = `
 Stylable API
 ---
+- ::profile
 - ::img
+- ::mobName
 - ::name
 - ::description
 - ::location
+- ::text
 - ::footer
+- ::group
+- ::title
+- ::talkLocation
+- ::date
 - ::contacts
-- ::link
+- ::contactLink
 `;
 
 storiesOf('Components|SpeakerCard', module)
 	.addParameters({
 		info: stylableApi
 	})
-	.addDecorator(story => (
-		<I18nProvider
-			locale={select('Locale', ['en', 'ru'], 'en')}
-			locales={{
-				ru,
-				en
-			}}
-			objectNotation
-		>
-			{story()}
-		</I18nProvider>
-	))
 	.addDecorator(story => (
 		<MemoryRouter initialEntries={['/']}>
 			{story()}
@@ -74,24 +70,12 @@ storiesOf('Components|SpeakerCard', module)
 					vk:      faker.internet.url()
 				}}
 				badge={<Badge>GDG</Badge>}
+				text={text('Text', testText)}
 				talkTitle={text('Talk title', 'Название Доклада')}
 				talkLocation={text('Talk location', '543 аудитория, 3 этаж | Академпарк')}
 				talkTime={text('Talk time', '11:21')}
 				talkTypeBadge='Mobile'
 				talkLevelBadge='Junior'
-			>
-				<p>
-					Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo,
-					quis tempor ligula. Quisque quis pharetra felis. Ut quis consequat orci, at
-					consequat felis. Suspendisse auctor laoreet placerat. Nam et risus non lacus
-					dignissim lacinia sit amet nec eros. Nulla vel urna quis libero pharetra varius.
-				</p>
-				<p>
-					Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo,
-					quis tempor ligula. Quisque quis pharetra felis. Ut quis consequat orci, at
-					consequat felis. Suspendisse auctor laoreet placerat. Nam et risus non lacus
-					dignissim lacinia sit amet nec eros. Nulla vel urna quis libero pharetra varius.
-				</p>
-			</SpeakerCard>
+			/>
 		)
 	);

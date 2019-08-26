@@ -20,6 +20,7 @@ interface ISelfProps {
 	location: string;
 	contacts?: Record<string, string>;
 	badge?: ReactElement;
+	text: string;
 	talkTitle: string;
 	talkLocation: string;
 	talkTime: string;
@@ -43,6 +44,7 @@ export default class SpeakerCard extends Component<IProps> {
 			description,
 			location,
 			badge,
+			text,
 			talkTitle,
 			talkLocation,
 			talkTime,
@@ -98,7 +100,9 @@ export default class SpeakerCard extends Component<IProps> {
 				<div
 					{...stylesheet('text')}
 				>
-					{children}
+					<p>
+						{text}
+					</p>
 				</div>
 				<footer
 					{...stylesheet('footer')}
