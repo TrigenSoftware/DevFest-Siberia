@@ -1,0 +1,45 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named:
+		sizeGap,
+		sizeBorderRadius,
+		colorGray1,
+		colorBlue9;
+}
+
+.root {
+	box-shadow: 0 0 rel(20, 24) 0 rgba(0, 0, 0, .32);
+	border-radius: value(sizeBorderRadius);
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	margin: 0;
+	border-bottom: 1px dashed value(colorGray1);
+	padding: value(sizeGap);
+}
+
+.info {
+	padding: rel(16, 24) value(sizeGap) value(sizeGap);
+}
+
+.title {
+	font-size: 30px;
+}
+
+.link {
+	font-size: 17px;
+}
+
+.text {
+	margin-top: rel(18, 24);
+	color: value(colorBlue9);
+	font-size: 14px;
+}
