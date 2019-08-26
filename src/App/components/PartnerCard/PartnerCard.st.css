@@ -21,9 +21,15 @@
 .logo {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	margin: 0;
 	border-bottom: 1px dashed value(colorGray1);
 	padding: value(sizeGap);
+}
+
+.logo img {
+	width: 100%;
+	max-width: 350px;
 }
 
 .info {
