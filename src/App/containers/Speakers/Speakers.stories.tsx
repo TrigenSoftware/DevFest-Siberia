@@ -54,9 +54,9 @@ storiesOf('Containers|Speakers', module)
 	.add(
 		'with default state',
 		() => (
-			<MemoryRouter initialEntries={['/speakers']}>
+			<MemoryRouter initialEntries={['/speakers/LeonidKalneus']}>
 				<Route
-					path='/speakers'
+					path='/speakers/:id'
 					component={props => (
 						<>
 							<Header/>
