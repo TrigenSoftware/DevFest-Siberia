@@ -55,7 +55,7 @@ export default class SpeakerCard extends Component<IProps> {
 		} = this.props;
 
 		return (
-			<div
+			<article
 				{...props}
 				{...stylesheet('root', {}, props)}
 			>
@@ -146,7 +146,7 @@ export default class SpeakerCard extends Component<IProps> {
 						)}
 					</div>
 				</footer>
-			</div>
+			</article>
 		);
 	}
 

@@ -66,12 +66,13 @@
 	font-size: 2em;
 }
 
+/* stylelint-disable a11y/no-display-none */
 .mobName {
 	display: none;
 	color: value(colorBlue9);
 	font-family: value(fontFamily);
 	font-size: 3.8em;
-}
+}/* stylelint-enable */
 
 .name {
 	color: value(colorBlue9);
@@ -126,6 +127,9 @@
 	display: flex;
 	align-items: baseline;
 	clear: both;
+	margin-top: 3.3em;
+	border-top: 1px dashed value(colorGray1);
+	padding-top: 2em;
 }
 
 .footer .Badge:not(:last-child) {
@@ -152,9 +156,10 @@
 		height: 290px;
 	}
 
+	/* stylelint-disable a11y/no-display-none */
 	.name {
 		display: none;
-	}
+	}/* stylelint-enable */
 
 	.mobName {
 		display: block;
