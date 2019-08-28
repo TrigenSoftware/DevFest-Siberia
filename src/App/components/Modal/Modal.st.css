@@ -26,7 +26,7 @@
 		durationTransition,
 		sizeBorderRadius,
 		colorWhite,
-		colorBlue7,
+		colorBlue4,
 		colorPink0;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .root:active {
-	background: opacity(value(colorBlue7), 70%);
+	background: opacity(value(colorBlue4), 70%);
 }
 
 .root .window {

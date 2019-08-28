@@ -210,13 +210,6 @@ export default class SpeakerCard extends Component<IProps> {
 
 		switch (type.toLocaleLowerCase()) {
 
-			case 'all':
-				props = {
-					variant: 'fill',
-					color:   'blue'
-				};
-				break;
-
 			case 'mobile':
 				props = {
 					variant: 'fill',

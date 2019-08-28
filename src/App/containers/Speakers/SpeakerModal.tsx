@@ -33,6 +33,7 @@ export interface IProps extends IModalProps, RouteComponentProps<IRouteParams> {
 
 interface IState {
 	active: boolean;
+	currentId: string;
 }
 
 const {
@@ -48,17 +49,31 @@ export default class SpeakerModal extends Component<IProps, IState> {
 			match: {
 				params
 			}
-		}: IProps
+		}: IProps,
+		{ currentId }: IState
 	) {
-		return {
-			active: Boolean(params.id)
+
+		let nextState: Partial<IState> = null;
+
+		nextState = {
+			active: false
 		};
+
+		if (params.id !== currentId && params.id) {
+			nextState = {
+				active:    true,
+				currentId: params.id
+			};
+		}
+
+		return nextState;
 	}
 
 	context!: ContextType<typeof I18nContext>;
 
 	state = {
-		active: false
+		active:    false,
+		currentId: null
 	};
 
 	render() {
@@ -73,6 +88,8 @@ export default class SpeakerModal extends Component<IProps, IState> {
 			active
 		} = this.state;
 		const speaker = getSpeaker(context, id);
+		console.log(this.props);
+		console.log(id);
 
 		return (
 			<Modal

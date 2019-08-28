@@ -144,11 +144,12 @@
 		"speakers": [
 			{
 				"id":"LeonidKalneus",
-				"type": "mobile",
+				"type": "web",
 				"src": "https://gdg-siberia.com/img/team/LeonidKalneus.jpg",
 				"firstname": "Леонид",
 				"lastname": "Кальнеус",
 				"description": "Человек-конференция",
+				"location": "США",
 				"badge": "Тест",
 				"contacts": {
 					"telegram": "https://t.me/ManFromSiberia",
@@ -158,7 +159,7 @@
 				"talkTitle": "Название Доклада",
 				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
 				"talkTime": "11:21 AM",
-				"talkTypeBadge": "All",
+				"talkTypeBadge": "Web",
 				"talkLevelBadge": "Senior"
 			},
 			{
@@ -168,6 +169,7 @@
 				"firstname": "Алексей",
 				"lastname": "Романенко",
 				"description": "Координатор волонтеров",
+				"location": "США",
 				"badge": "Тест",
 				"contacts": {
 					"telegram": "https://t.me/slimus",
@@ -187,6 +189,7 @@
 				"firstname": "Юрий",
 				"lastname": "Кашников",
 				"description": "Программный комитет",
+				"location": "США",
 				"badge": "Тест",
 				"contacts": {
 					"site": "http://kayuri.github.io/"
@@ -205,6 +208,7 @@
 				"firstname": "Кир",
 				"lastname": "Жаров",
 				"description": "Разработка сайта, frontend",
+				"location": "США",
 				"badge": "Тест",
 				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
 				"talkTitle": "Название Доклада",
@@ -220,6 +224,7 @@
 				"firstname": "Иван",
 				"lastname": "Крючков",
 				"description": "Разработка сайта, backend",
+				"location": "США",
 				"badge": "Тест",
 				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
 				"talkTitle": "Название Доклада",
@@ -235,6 +240,7 @@
 				"firstname": "Амина",
 				"lastname": "Котоманова",
 				"description": "Дизайнер",
+				"location": "США",
 				"badge": "Тест",
 				"contacts": {
 					"site": "http://rebelart.ru"
@@ -253,6 +259,7 @@
 				"firstname": "Лев",
 				"lastname": "Новокрещёнов",
 				"description": "Член семьи",
+				"location": "США",
 				"badge": "Тест",
 				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
 				"talkTitle": "Название Доклада",

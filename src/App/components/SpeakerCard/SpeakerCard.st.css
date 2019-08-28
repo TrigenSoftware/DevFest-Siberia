@@ -91,6 +91,7 @@
 .title {
 	margin-bottom: rel(21, 30);
 	color: value(colorBlue10);
+	font-family: value(fontFamilyMono);
 	font-size: 3em;
 }
 

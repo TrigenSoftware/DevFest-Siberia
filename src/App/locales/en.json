@@ -144,11 +144,12 @@
 		"speakers": [
 			{
 				"id":"LeonidKalneus",
-				"type": "mobile",
+				"type": "web",
 				"src": "https://gdg-siberia.com/img/team/LeonidKalneus.jpg",
 				"firstname": "Leonid",
 				"lastname": "Kalneus",
 				"description": "Head of the team",
+				"location": "USA",
 				"badge": "GDE",
 				"contacts": {
 					"telegram": "https://t.me/ManFromSiberia",
@@ -158,7 +159,7 @@
 				"talkTitle": "Название Доклада",
 				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
 				"talkTime": "11:21 AM",
-				"talkTypeBadge": "All",
+				"talkTypeBadge": "Web",
 				"talkLevelBadge": "Senior"
 			},
 			{
@@ -168,6 +169,7 @@
 				"firstname": "Alexey",
 				"lastname": "Romanenko",
 				"description": "Volunteer coordinator",
+				"location": "USA",
 				"badge": "GDE",
 				"contacts": {
 					"telegram": "https://t.me/slimus",
@@ -187,6 +189,7 @@
 				"firstname": "Yuriy",
 				"lastname": "Kashnikov",
 				"description": "Program committee member",
+				"location": "USA",
 				"badge": "GDE",
 				"contacts": {
 					"site": "http://kayuri.github.io/"
@@ -205,6 +208,7 @@
 				"firstname": "Kir",
 				"lastname": "Zharov",
 				"description": "Website team, frontend",
+				"location": "USA",
 				"badge": "GDE",
 				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
 				"talkTitle": "Название Доклада",
@@ -220,6 +224,7 @@
 				"firstname": "Ivan",
 				"lastname": "Kruchkov",
 				"description": "Website team, backend",
+				"location": "USA",
 				"badge": "GDE",
 				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
 				"talkTitle": "Название Доклада",
@@ -235,6 +240,7 @@
 				"firstname": "Amina",
 				"lastname": "Kotomanova",
 				"description": "Illustrator",
+				"location": "USA",
 				"badge": "GDE",
 				"contacts": {
 					"site": "http://rebelart.ru"
@@ -253,6 +259,7 @@
 				"firstname": "Lev",
 				"lastname": "Novokreshchenov",
 				"description": "Member of the family",
+				"location": "USA",
 				"badge": "GDE",
 				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
 				"talkTitle": "Название Доклада",
