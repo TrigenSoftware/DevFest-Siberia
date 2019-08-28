@@ -144,6 +144,7 @@
 		"speakers": [
 			{
 				"id":"LeonidKalneus",
+				"type": "mobile",
 				"src": "https://gdg-siberia.com/img/team/LeonidKalneus.jpg",
 				"firstname": "Леонид",
 				"lastname": "Кальнеус",
@@ -214,7 +215,7 @@
 			},
 			{
 				"id":"IvanKruchkov",
-				"type": "mobile",
+				"type": "ai",
 				"src": "https://gdg-siberia.com/img/team/IvanKruchkov.png",
 				"firstname": "Иван",
 				"lastname": "Крючков",
@@ -224,7 +225,7 @@
 				"talkTitle": "Название Доклада",
 				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
 				"talkTime": "11:21 AM",
-				"talkTypeBadge": "Mobile",
+				"talkTypeBadge": "AI",
 				"talkLevelBadge": "Junior"
 			},
 			{
