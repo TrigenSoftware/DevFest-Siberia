@@ -6,6 +6,9 @@ import {
 	I18nContext,
 	__x
 } from 'i18n-for-react';
+import {
+	getTeam
+} from '~/components/common/i18n';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -26,13 +29,7 @@ export default class Team extends Component<ISectionProps> {
 			context,
 			props
 		} = this;
-		const {
-			team: {
-				team
-			}
-		} = this.context.getCatalog(
-			context.getLocale()
-		) as any;
+		const team = getTeam(context);
 
 		return (
 			<Section

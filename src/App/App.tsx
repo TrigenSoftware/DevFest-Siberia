@@ -13,6 +13,9 @@ import {
 import {
 	I18nContext
 } from 'i18n-for-react';
+import {
+	getPath
+} from '~/components/common/i18n';
 import ScrollToTop from '~/components/ScrollToTop';
 import Header from '~/blocks/Header';
 import Index from '~/containers/Index';
@@ -39,17 +42,17 @@ export default class App extends Component<IProps> {
 				<ScrollToTop/>
 				<Header/>
 				<Route
-					path={this.path('/')}
+					path={getPath(this.context, '/')}
 					exact
 					component={Index}
 				/>
 				<Route
-					path={this.path('/team')}
+					path={getPath(this.context, '/team')}
 					exact
 					component={Team}
 				/>
 				<Route
-					path={this.path('/speakers')}
+					path={getPath(this.context, '/speakers')}
 					component={Speakers}
 				/>
 				<Footer/>
@@ -72,14 +75,5 @@ export default class App extends Component<IProps> {
 				{children}
 			</Router>
 		);
-	}
-
-	private path(path: string) {
-
-		const locale = this.context.getLocale();
-
-		return locale === 'en'
-			? path
-			: `/ru${path}`;
 	}
 }

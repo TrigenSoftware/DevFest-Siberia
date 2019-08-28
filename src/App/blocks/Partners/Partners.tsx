@@ -6,6 +6,9 @@ import {
 	I18nContext,
 	__x
 } from 'i18n-for-react';
+import {
+	getPartners
+} from '~/components/common/i18n';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -30,13 +33,7 @@ export default class Partners extends Component<IProps> {
 			context,
 			props
 		} = this;
-		const {
-			partners: {
-				partners
-			}
-		} = this.context.getCatalog(
-			context.getLocale()
-		) as any;
+		const partners = getPartners(context);
 
 		return (
 			<Section

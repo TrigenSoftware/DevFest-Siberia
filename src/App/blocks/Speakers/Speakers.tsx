@@ -6,6 +6,9 @@ import {
 	I18nContext,
 	__x
 } from 'i18n-for-react';
+import {
+	getSpeakers
+} from '~/components/common/i18n';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -32,9 +35,9 @@ export default class Speakers extends Component<ISectionProps> {
 			context,
 			props
 		} = this;
+		const speakers = getSpeakers(context);
 		const {
 			speakers: {
-				speakers,
 				nav
 			}
 		} = this.context.getCatalog(

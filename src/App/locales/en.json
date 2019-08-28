@@ -144,6 +144,7 @@
 		"speakers": [
 			{
 				"id":"LeonidKalneus",
+				"type": "all",
 				"src": "https://gdg-siberia.com/img/team/LeonidKalneus.jpg",
 				"firstname": "Leonid",
 				"lastname": "Kalneus",
@@ -162,6 +163,7 @@
 			},
 			{
 				"id":"AlexeyRomanenko",
+				"type": "mobile",
 				"src": "https://gdg-siberia.com/img/team/AlexeyRomanenko.jpg",
 				"firstname": "Alexey",
 				"lastname": "Romanenko",
@@ -180,6 +182,7 @@
 			},
 			{
 				"id":"YuriyKashnikov",
+				"type": "mobile",
 				"src": "https://gdg-siberia.com/img/team/YuriyKashnikov.jpg",
 				"firstname": "Yuriy",
 				"lastname": "Kashnikov",
@@ -197,6 +200,7 @@
 			},
 			{
 				"id":"KirZharov",
+				"type": "web",
 				"src": "https://gdg-siberia.com/img/team/KirZharov.jpg",
 				"firstname": "Kir",
 				"lastname": "Zharov",
@@ -211,6 +215,7 @@
 			},
 			{
 				"id":"IvanKruchkov",
+				"type": "ai",
 				"src": "https://gdg-siberia.com/img/team/IvanKruchkov.png",
 				"firstname": "Ivan",
 				"lastname": "Kruchkov",
@@ -225,6 +230,7 @@
 			},
 			{
 				"id":"AminaKotomanova",
+				"type": "mobile",
 				"src": "https://gdg-siberia.com/img/team/AminaKotomanova.jpg",
 				"firstname": "Amina",
 				"lastname": "Kotomanova",
@@ -242,6 +248,7 @@
 			},
 			{
 				"id":"LevNovokreshchenov",
+				"type": "mobile",
 				"src": "https://gdg-siberia.com/img/team/LevNovokreshchenov.jpg",
 				"firstname": "Lev",
 				"lastname": "Novokreshchenov",

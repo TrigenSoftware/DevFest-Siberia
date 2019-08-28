@@ -144,6 +144,7 @@
 		"speakers": [
 			{
 				"id":"LeonidKalneus",
+				"type": "all",
 				"src": "https://gdg-siberia.com/img/team/LeonidKalneus.jpg",
 				"firstname": "Леонид",
 				"lastname": "Кальнеус",
@@ -162,6 +163,7 @@
 			},
 			{
 				"id":"AlexeyRomanenko",
+				"type": "mobile",
 				"src": "https://gdg-siberia.com/img/team/AlexeyRomanenko.jpg",
 				"firstname": "Алексей",
 				"lastname": "Романенко",
@@ -175,11 +177,12 @@
 				"talkTitle": "Название Доклада",
 				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
 				"talkTime": "11:21 AM",
-				"talkTypeBadge": "AI",
+				"talkTypeBadge": "Mobile",
 				"talkLevelBadge": "Middle"
 			},
 			{
 				"id":"YuriyKashnikov",
+				"type": "mobile",
 				"src": "https://gdg-siberia.com/img/team/YuriyKashnikov.jpg",
 				"firstname": "Юрий",
 				"lastname": "Кашников",
@@ -192,11 +195,12 @@
 				"talkTitle": "Название Доклада",
 				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
 				"talkTime": "11:21 AM",
-				"talkTypeBadge": "Web",
+				"talkTypeBadge": "Mobile",
 				"talkLevelBadge": "Junior"
 			},
 			{
 				"id":"KirZharov",
+				"type": "web",
 				"src": "https://gdg-siberia.com/img/team/KirZharov.jpg",
 				"firstname": "Кир",
 				"lastname": "Жаров",
@@ -206,11 +210,12 @@
 				"talkTitle": "Название Доклада",
 				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
 				"talkTime": "11:21 AM",
-				"talkTypeBadge": "Mobile",
+				"talkTypeBadge": "Web",
 				"talkLevelBadge": "Junior"
 			},
 			{
 				"id":"IvanKruchkov",
+				"type": "mobile",
 				"src": "https://gdg-siberia.com/img/team/IvanKruchkov.png",
 				"firstname": "Иван",
 				"lastname": "Крючков",
@@ -225,6 +230,7 @@
 			},
 			{
 				"id":"AminaKotomanova",
+				"type": "mobile",
 				"src": "https://gdg-siberia.com/img/team/AminaKotomanova.jpg",
 				"firstname": "Амина",
 				"lastname": "Котоманова",
@@ -242,6 +248,7 @@
 			},
 			{
 				"id":"LevNovokreshchenov",
+				"type": "mobile",
 				"src": "https://gdg-siberia.com/img/team/LevNovokreshchenov.jpg",
 				"firstname": "Лев",
 				"lastname": "Новокрещёнов",

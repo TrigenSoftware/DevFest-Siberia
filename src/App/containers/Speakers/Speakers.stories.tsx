@@ -59,8 +59,7 @@ storiesOf('Containers|Speakers', module)
 							/>
 							<Footer/>
 						</>
-						)
-					}
+					)}
 				/>
 			</MemoryRouter>
 		)

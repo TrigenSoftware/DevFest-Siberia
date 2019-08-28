@@ -9,7 +9,9 @@ import {
 import ContactLink, {
 	ContactLinkType
 } from '../ContactLink';
-import Badge from '../Badge';
+import Badge, {
+	IProps as IBadgeProps
+} from '../Badge';
 import stylesheet from './SpeakerCard.st.css';
 
 interface ISelfProps {
@@ -204,80 +206,65 @@ export default class SpeakerCard extends Component<IProps> {
 
 	private renderBadge(type: string) {
 
-		switch (type) {
+		let props: Partial<IBadgeProps> = {};
 
-			case 'GDE':
-				return (
-					<Badge>
-						{type}
-					</Badge>
-				);
-			case 'All':
-				return (
-					<Badge
-						variant='fill'
-						color='blue'
-					>
-						{type}
-					</Badge>
-				);
-			case 'Mobile':
-				return (
-					<Badge
-						variant='fill'
-						color='pink'
-					>
-						{type}
-					</Badge>
-				);
-			case 'Web':
-				return (
-					<Badge
-						variant='fill'
-						color='aqua'
-					>
-						{type}
-					</Badge>
-				);
-			case 'AI':
-				return (
-					<Badge
-						variant='fill'
-						color='red'
-					>
-						{type}
-					</Badge>
-				);
-			case 'Junior':
-				return (
-					<Badge
-						color='aqua'
-					>
-						{type}
-					</Badge>
-				);
-			case 'Middle':
-				return (
-					<Badge
-						color='pink'
-					>
-						{type}
-					</Badge>
-				);
-			case 'Senior':
-				return (
-					<Badge
-						color='red'
-					>
-						{type}
-					</Badge>
-				);
+		switch (type.toLocaleLowerCase()) {
+
+			case 'all':
+				props = {
+					variant: 'fill',
+					color:   'blue'
+				};
+				break;
+
+			case 'mobile':
+				props = {
+					variant: 'fill',
+					color:   'pink'
+				};
+				break;
+
+			case 'web':
+				props = {
+					variant: 'fill',
+					color:   'aqua'
+				};
+				break;
+
+			case 'ai':
+				props = {
+					variant: 'fill',
+					color:   'red'
+				};
+				break;
+
+			case 'junior':
+				props = {
+					color: 'aqua'
+				};
+				break;
+
+			case 'middle':
+				props = {
+					color: 'pink'
+				};
+				break;
+
+			case 'senior':
+				props = {
+					color: 'red'
+				};
+				break;
+
 			default:
-				return (
-					<Badge>
-						{type}
-					</Badge>
-				);
 		}
+
+		return (
+			<Badge
+				{...props}
+			>
+				{type}
+			</Badge>
+		);
 	}
 }

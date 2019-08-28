@@ -8,6 +8,9 @@ import {
 import {
 	I18nContext
 } from 'i18n-for-react';
+import {
+	getPath
+} from '~/components/common/i18n';
 import Speakers from '~/blocks/Speakers';
 import SpeakerModal from './SpeakerModal';
 
@@ -22,19 +25,10 @@ export default class SpeakersContainer extends Component {
 			<>
 				<Speakers />
 				<Route
-					path={this.path('/speakers/:id')}
+					path={getPath(this.context, '/speakers/:id')}
 					component={SpeakerModal}
 				/>
 			</>
 		);
-	}
-
-	private path(path: string) {
-
-		const locale = this.context.getLocale();
-
-		return locale === 'en'
-			? path
-			: `/ru${path}`;
 	}
 }

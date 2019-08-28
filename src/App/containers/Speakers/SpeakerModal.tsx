@@ -15,6 +15,9 @@ import {
 	Bind,
 	Debounce
 } from '@flexis/ui/helpers';
+import {
+	getSpeaker
+} from '~/components/common/i18n';
 import Modal, {
 	IProps as IModalProps
 } from '~/components/Modal';
@@ -47,7 +50,6 @@ export default class SpeakerModal extends Component<IProps, IState> {
 			}
 		}: IProps
 	) {
-
 		return {
 			active: Boolean(params.id)
 		};
@@ -70,14 +72,7 @@ export default class SpeakerModal extends Component<IProps, IState> {
 		const {
 			active
 		} = this.state;
-		const {
-			speakers: {
-				speakers
-			}
-		} = this.context.getCatalog(
-			context.getLocale()
-		) as any;
-		const speaker = speakers.find(speaker => speaker.id === id);
+		const speaker = getSpeaker(context, id);
 
 		return (
 			<Modal
@@ -93,7 +88,6 @@ export default class SpeakerModal extends Component<IProps, IState> {
 
 	@Bind()
 	private onClose() {
-
 		this.setState(() => ({
 			active: false
 		}), this.goBack);
