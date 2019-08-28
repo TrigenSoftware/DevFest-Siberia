@@ -88,8 +88,6 @@ export default class SpeakerModal extends Component<IProps, IState> {
 			active
 		} = this.state;
 		const speaker = getSpeaker(context, id);
-		console.log(this.props);
-		console.log(id);
 
 		return (
 			<Modal
