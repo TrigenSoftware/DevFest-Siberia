@@ -38,19 +38,6 @@ export function getSpeakers(context) {
 	return speakers;
 }
 
-export function getPartners(context) {
-
-	const {
-		partners: {
-			partners
-		}
-	} = context.getCatalog(
-		context.getLocale()
-	) as any;
-
-	return partners;
-}
-
 export function getSpeaker(context, id) {
 
 	const {
@@ -62,4 +49,17 @@ export function getSpeaker(context, id) {
 	) as any;
 
 	return speakers.find(speaker => speaker.id === id);
+}
+
+export function getPartners(context) {
+
+	const {
+		partners: {
+			partners
+		}
+	} = context.getCatalog(
+		context.getLocale()
+	) as any;
+
+	return partners;
 }
