@@ -8,9 +8,7 @@ import {
 import {
 	I18nContext
 } from 'i18n-for-react';
-import {
-	getPath
-} from '~/components/common/i18n';
+import getPath from '~/components/common/i18n';
 import Speakers from '~/blocks/Speakers';
 import SpeakerModal from './SpeakerModal';
 

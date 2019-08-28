@@ -17,7 +17,7 @@ import {
 } from '@flexis/ui/helpers';
 import {
 	getSpeaker
-} from '~/components/common/i18n';
+} from '~/blocks/common/i18n';
 import Modal, {
 	IProps as IModalProps
 } from '~/components/Modal';

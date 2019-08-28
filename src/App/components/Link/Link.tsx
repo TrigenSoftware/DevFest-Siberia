@@ -15,9 +15,7 @@ import {
 import FlexisLink, {
 	IProps as IFlexisLinkProps
 } from '@flexis/ui/components/Link';
-import {
-	getPath
-} from '../common/i18n';
+import getPath from '../common/i18n';
 import unsetSize from '../common/unsetSize';
 import stylesheet from './Link.st.css';
 

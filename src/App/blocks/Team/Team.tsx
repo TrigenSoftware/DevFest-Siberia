@@ -6,13 +6,13 @@ import {
 	I18nContext,
 	__x
 } from 'i18n-for-react';
-import {
-	getTeam
-} from '~/components/common/i18n';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
 import ProfileCard from '~/components/ProfileCard';
+import {
+	getTeam
+} from '../common/i18n';
 import stylesheet from './Team.st.css';
 
 export type IProps = ISectionProps;

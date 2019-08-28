@@ -144,7 +144,6 @@
 		"speakers": [
 			{
 				"id":"LeonidKalneus",
-				"type": "all",
 				"src": "https://gdg-siberia.com/img/team/LeonidKalneus.jpg",
 				"firstname": "Leonid",
 				"lastname": "Kalneus",
