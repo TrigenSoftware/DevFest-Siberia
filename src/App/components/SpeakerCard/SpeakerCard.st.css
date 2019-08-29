@@ -37,6 +37,13 @@
 	padding: value(sizeGapLg) value(sizeGapLg) 0;
 }
 
+.info::after {
+	display: block;
+	clear: both;
+	height: 3.3em;
+	content: '';
+}
+
 .profile {
 	float: left;
 }
@@ -55,7 +62,7 @@
 }
 
 .location {
-	padding-bottom: .5em;
+	padding-bottom: .4em;
 	color: value(colorGray1);
 	font-size: 2em;
 }
@@ -116,11 +123,6 @@
 	color: value(colorBlue9);
 	font-size: rel(24, 40);
 	font-weight: 100;
-}
-
-.separator {
-	clear: both;
-	height: 3.3em;
 }
 
 .footer {

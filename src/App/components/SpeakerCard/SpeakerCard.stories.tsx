@@ -33,7 +33,6 @@ Stylable API
 - ::description
 - ::location
 - ::text
-- ::separator
 - ::footer
 - ::group
 - ::title

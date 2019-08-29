@@ -77,7 +77,7 @@ export default class ContactLink extends Component<IProps> {
 				{...props}
 				{...stylesheet('root', {}, props)}
 				icon={<Icon/>}
-				target={type !== ContactLinkTypeVariant.Email && '_black'}
+				target={type !== ContactLinkTypeVariant.Email && '_blank'}
 			>
 				{children && (
 					<SROnly>

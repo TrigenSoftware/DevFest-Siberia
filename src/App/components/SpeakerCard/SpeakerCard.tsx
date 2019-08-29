@@ -127,9 +127,6 @@ export default class SpeakerCard extends Component<IProps> {
 						</p>
 					</div>
 				</div>
-				<div
-					{...stylesheet('separator')}
-				/>
 				<footer
 					{...stylesheet('footer')}
 				>
