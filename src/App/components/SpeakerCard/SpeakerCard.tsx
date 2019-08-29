@@ -77,51 +77,55 @@ export default class SpeakerCard extends Component<IProps> {
 				{...stylesheet('root', {}, props)}
 			>
 				<div
-					{...stylesheet('profile')}
+					{...stylesheet('info')}
 				>
-					<figure
-						{...stylesheet('img')}
-						style={{
-							backgroundImage: `url(${src})`
-						}}
-					/>
+					<div
+						{...stylesheet('profile')}
+					>
+						<figure
+							{...stylesheet('img')}
+							style={{
+								backgroundImage: `url(${src})`
+							}}
+						/>
+						<h3
+							{...stylesheet('name', {
+								mobile: true
+							})}
+						>
+							{firstname}
+							<br />
+							{lastname}
+						</h3>
+						<div
+							{...stylesheet('description')}
+						>
+							{description}
+						</div>
+						<div
+							{...stylesheet('location')}
+						>
+							{location}
+						</div>
+						<>
+							{this.renderContacts()}
+							{this.renderBadge(badge)}
+						</>
+					</div>
 					<h3
-						{...stylesheet('name', {
-							mobile: true
-						})}
+						{...stylesheet('name')}
 					>
 						{firstname}
 						<br />
 						{lastname}
 					</h3>
 					<div
-						{...stylesheet('description')}
+						{...stylesheet('text')}
 					>
-						{description}
+						<p>
+							{text}
+						</p>
 					</div>
-					<div
-						{...stylesheet('location')}
-					>
-						{location}
-					</div>
-					<>
-						{this.renderContacts()}
-						{this.renderBadge(badge)}
-					</>
-				</div>
-				<h3
-					{...stylesheet('name')}
-				>
-					{firstname}
-					<br />
-					{lastname}
-				</h3>
-				<div
-					{...stylesheet('text')}
-				>
-					<p>
-						{text}
-					</p>
 				</div>
 				<footer
 					{...stylesheet('footer')}
@@ -196,7 +200,7 @@ export default class SpeakerCard extends Component<IProps> {
 			<div
 				{...stylesheet('date')}
 			>
-				{time}
+				{time}{' '}
 				{format && (
 					<span>{format}</span>
 				)}

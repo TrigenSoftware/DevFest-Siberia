@@ -1,0 +1,9 @@
+
+:import {
+	-st-from: '@flexis/ui/components/Modal/Modal.st.css';
+	-st-named: window;
+}
+
+.root .window {
+	padding: 0;
+}

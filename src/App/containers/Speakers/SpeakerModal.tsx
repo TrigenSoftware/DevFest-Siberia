@@ -22,6 +22,7 @@ import Modal, {
 	IProps as IModalProps
 } from '~/components/Modal';
 import SpeakerCard from '~/components/SpeakerCard';
+import stylesheet from './SpeakerModal.st.css';
 
 interface IRouteParams {
 	id?: string;
@@ -79,7 +80,8 @@ export default class SpeakerModal extends Component<IProps, IState> {
 	render() {
 
 		const {
-			context
+			context,
+			...props
 		} = this;
 		const {
 			id
@@ -91,6 +93,8 @@ export default class SpeakerModal extends Component<IProps, IState> {
 
 		return (
 			<Modal
+				{...props}
+				{...stylesheet('root', {}, props)}
 				onClose={this.onClose}
 				active={active}
 			>
