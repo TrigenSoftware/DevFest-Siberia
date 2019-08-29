@@ -21,9 +21,7 @@ export default class SpeakersContainer extends Component {
 	render() {
 		return (
 			<>
-				<Route
-					component={Speakers}
-				/>
+				<Speakers/>
 				<Route
 					path={getPath(this.context, '/speakers/:id')}
 					component={SpeakerModal}

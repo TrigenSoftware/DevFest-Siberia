@@ -76,11 +76,17 @@ export default class SpeakerModal extends Component<IProps, IState> {
 
 		const {
 			context,
-			...props
+			props: {
+				history,
+				location,
+				match,
+				staticContext,
+				...props
+			}
 		} = this;
 		const {
 			id
-		} = this.props.match.params;
+		} = match.params;
 		const {
 			active
 		} = this.state;
@@ -88,6 +94,7 @@ export default class SpeakerModal extends Component<IProps, IState> {
 
 		return (
 			<Modal
+				{...props}
 				{...stylesheet('root', {}, props)}
 				onClose={this.onClose}
 				active={active}

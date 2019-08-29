@@ -7,8 +7,7 @@ import {
 	select
 } from '@storybook/addon-knobs';
 import {
-	MemoryRouter,
-	Route
+	MemoryRouter
 } from 'react-router';
 import {
 	I18nProvider
@@ -27,6 +26,11 @@ storiesOf('Blocks|Speakers', module)
 	.addParameters({
 		info: stylableApi
 	})
+	.addDecorator(story => (
+		<MemoryRouter initialEntries={['/speakers']}>
+			{story()}
+		</MemoryRouter>
+	))
 	.addDecorator(story => (
 		<div style={{ margin: '-12px' }}>
 			{story()}
@@ -47,14 +51,6 @@ storiesOf('Blocks|Speakers', module)
 	.add(
 		'with basic state',
 		() => (
-			<MemoryRouter initialEntries={['/speakers']}>
-				<Route
-					component={props => (
-						<Speakers
-							{...props}
-						/>
-					)}
-				/>
-			</MemoryRouter>
+			<Speakers/>
 		)
 	);

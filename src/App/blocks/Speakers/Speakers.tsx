@@ -3,7 +3,8 @@ import React, {
 	Component
 } from 'react';
 import {
-	RouteComponentProps
+	RouteComponentProps,
+	withRouter
 } from 'react-router-dom';
 import {
 	I18nContext,
@@ -20,13 +21,14 @@ import Button from '~/components/Button';
 import ProfileCard from '~/components/ProfileCard';
 import Badge from '~/components/Badge';
 import {
-	getSpeakers
+	getSpeakers,
+	getTalkTypes
 } from '../common/i18n';
 import stylesheet from './Speakers.st.css';
 
 export interface IProps extends ISectionProps, RouteComponentProps {}
 
-export default class Speakers extends Component<IProps> {
+export class Speakers extends Component<IProps> {
 
 	static contextType = I18nContext;
 
@@ -36,36 +38,21 @@ export default class Speakers extends Component<IProps> {
 
 		const {
 			context,
-			props
-		} = this;
-		const speakers = getSpeakers(context);
-		const {
-			speakers: {
-				nav
+			props: {
+				history,
+				location,
+				match,
+				staticContext,
+				...props
 			}
-		} = this.context.getCatalog(
-			context.getLocale()
-		) as any;
-		const {
-			search
-		} = this.props.location;
-		const type = new URLSearchParams(search).get('type');
-		let filtredSpeakers = null;
-
-		switch (type) {
-
-			case 'mobile':
-			case 'web':
-			case 'ai':
-				filtredSpeakers = speakers.filter(speaker => speaker.type === type);
-				break;
-
-			default:
-				filtredSpeakers = speakers;
-		}
+		} = this;
+		const type = new URLSearchParams(location.search).get('type');
+		const nav = getTalkTypes(context);
+		const speakers = getSpeakers(context, type);
 
 		return (
 			<Section
+				{...props}
 				{...stylesheet('root', {}, props)}
 			>
 				<div
@@ -102,7 +89,7 @@ export default class Speakers extends Component<IProps> {
 				<ul
 					{...stylesheet('list')}
 				>
-					{filtredSpeakers.map(item => (
+					{speakers.map(item => (
 						<li
 							key={item.src}
 						>
@@ -124,3 +111,5 @@ export default class Speakers extends Component<IProps> {
 		);
 	}
 }
+
+export default withRouter(Speakers);
