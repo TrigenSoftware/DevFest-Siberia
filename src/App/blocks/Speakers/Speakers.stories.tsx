@@ -1,4 +1,4 @@
-/* tslint:disable:no-magic-numbers */
+/* tslint:disable:no-magic-numbers jsx-no-lambda */
 import React from 'react';
 import {
 	storiesOf
@@ -7,7 +7,8 @@ import {
 	select
 } from '@storybook/addon-knobs';
 import {
-	MemoryRouter
+	MemoryRouter,
+	Route
 } from 'react-router';
 import {
 	I18nProvider
@@ -26,11 +27,6 @@ storiesOf('Blocks|Speakers', module)
 	.addParameters({
 		info: stylableApi
 	})
-	.addDecorator(story => (
-		<MemoryRouter initialEntries={['/']}>
-			{story()}
-		</MemoryRouter>
-	))
 	.addDecorator(story => (
 		<div style={{ margin: '-12px' }}>
 			{story()}
@@ -51,6 +47,14 @@ storiesOf('Blocks|Speakers', module)
 	.add(
 		'with basic state',
 		() => (
-			<Speakers/>
+			<MemoryRouter initialEntries={['/speakers']}>
+				<Route
+					component={props => (
+						<Speakers
+							{...props}
+						/>
+					)}
+				/>
+			</MemoryRouter>
 		)
 	);

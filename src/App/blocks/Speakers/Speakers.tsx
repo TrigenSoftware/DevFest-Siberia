@@ -23,7 +23,7 @@ import stylesheet from './Speakers.st.css';
 
 export type IProps = ISectionProps;
 
-export default class Speakers extends Component<ISectionProps> {
+export default class Speakers extends Component<IProps> {
 
 	static contextType = I18nContext;
 
@@ -43,6 +43,20 @@ export default class Speakers extends Component<ISectionProps> {
 		} = this.context.getCatalog(
 			context.getLocale()
 		) as any;
+		const type = new URLSearchParams(location.search).get('type');
+		let filtredSpeakers = null;
+
+		switch (type) {
+
+			case 'mobile':
+			case 'web':
+			case 'ai':
+				filtredSpeakers = speakers.filter(speaker => speaker.type === type);
+				break;
+
+			default:
+				filtredSpeakers = speakers;
+		}
 
 		return (
 			<Section
@@ -74,7 +88,7 @@ export default class Speakers extends Component<ISectionProps> {
 					{nav.map(item => (
 						<ToggleNavLink
 							key={item.type}
-							to={`/speakers/${item.type}`}
+							to={`/speakers?type=${item.type}`}
 						>
 							{item.label}
 						</ToggleNavLink>
@@ -83,7 +97,7 @@ export default class Speakers extends Component<ISectionProps> {
 				<ul
 					{...stylesheet('list')}
 				>
-					{speakers.map(item => (
+					{filtredSpeakers.map(item => (
 						<li
 							key={item.src}
 						>

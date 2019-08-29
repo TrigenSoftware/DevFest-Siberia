@@ -6,9 +6,6 @@ import {
 	RouteComponentProps
 } from 'react-router-dom';
 import {
-	History
-} from 'history';
-import {
 	I18nContext
 } from 'i18n-for-react';
 import {
@@ -28,9 +25,7 @@ interface IRouteParams {
 	id?: string;
 }
 
-export interface IProps extends IModalProps, RouteComponentProps<IRouteParams> {
-	history: History;
-}
+export interface IProps extends IModalProps, RouteComponentProps<IRouteParams> {}
 
 interface IState {
 	active: boolean;
