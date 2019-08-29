@@ -88,7 +88,6 @@ export default class SpeakerModal extends Component<IProps, IState> {
 
 		return (
 			<Modal
-				{...props}
 				{...stylesheet('root', {}, props)}
 				onClose={this.onClose}
 				active={active}

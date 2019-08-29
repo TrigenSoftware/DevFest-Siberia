@@ -3,6 +3,9 @@ import React, {
 	Component
 } from 'react';
 import {
+	RouteComponentProps
+} from 'react-router-dom';
+import {
 	I18nContext,
 	__x
 } from 'i18n-for-react';
@@ -21,7 +24,7 @@ import {
 } from '../common/i18n';
 import stylesheet from './Speakers.st.css';
 
-export type IProps = ISectionProps;
+export interface IProps extends ISectionProps, RouteComponentProps {}
 
 export default class Speakers extends Component<IProps> {
 
@@ -43,7 +46,10 @@ export default class Speakers extends Component<IProps> {
 		} = this.context.getCatalog(
 			context.getLocale()
 		) as any;
-		const type = new URLSearchParams(location.search).get('type');
+		const {
+			search
+		} = this.props.location;
+		const type = new URLSearchParams(search).get('type');
 		let filtredSpeakers = null;
 
 		switch (type) {
@@ -60,7 +66,6 @@ export default class Speakers extends Component<IProps> {
 
 		return (
 			<Section
-				{...props}
 				{...stylesheet('root', {}, props)}
 			>
 				<div
