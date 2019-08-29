@@ -19,18 +19,13 @@ export default class SpeakersContainer extends Component {
 	context!: ContextType<typeof I18nContext>;
 
 	render() {
-
-		const {
-			context
-		} = this;
-
 		return (
 			<>
 				<Route
 					component={Speakers}
 				/>
 				<Route
-					path={getPath(context, '/speakers/:id')}
+					path={getPath(this.context, '/speakers/:id')}
 					component={SpeakerModal}
 				/>
 			</>
