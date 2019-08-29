@@ -18,6 +18,7 @@
 	-st-from: '../variables.st.css';
 	-st-named:
 		sizeScreenSmMax,
+		sizeGapLg,
 		fontFamily,
 		fontFamilyMono,
 		colorBlack,
@@ -32,6 +33,21 @@
 	font-size: 1rem;
 }
 
+.info {
+	padding: value(sizeGapLg) value(sizeGapLg) 0;
+}
+
+.info::after {
+	display: block;
+	clear: both;
+	height: 3.3em;
+	content: '';
+}
+
+.profile {
+	float: left;
+}
+
 .img {
 	margin-right: 3em;
 	border: 1em solid value(colorPink0);
@@ -40,17 +56,13 @@
 	height: 25em;
 }
 
-.profile {
-	float: left;
-	margin-bottom: 2.6em;
-}
-
 .description {
 	color: value(colorBlue4);
 	font-size: 2.4em;
 }
 
 .location {
+	padding-bottom: .4em;
 	color: value(colorGray1);
 	font-size: 2em;
 }
@@ -91,6 +103,7 @@
 .title {
 	margin-bottom: rel(21, 30);
 	color: value(colorBlue10);
+	font-family: value(fontFamilyMono);
 	font-size: 3em;
 }
 
@@ -116,9 +129,8 @@
 	display: flex;
 	align-items: baseline;
 	clear: both;
-	margin-top: 3.3em;
 	border-top: 1px dashed value(colorGray1);
-	padding-top: 2em;
+	padding: 2em value(sizeGapLg) value(sizeGapLg);
 }
 
 .footer .Badge:not(:last-child) {
@@ -136,8 +148,13 @@
 
 @media (max-width: value(sizeScreenSmMax)) {
 
+	.info {
+		padding: 57px 15px 0;
+	}
+
 	.profile {
 		float: none;
+		margin-bottom: 17px;
 	}
 
 	.img {
@@ -156,6 +173,7 @@
 
 	.footer {
 		display: block;
+		padding: 15px;
 	}
 
 	.footer .group:nth-of-type(2) {

@@ -143,67 +143,130 @@
 		"cfp": "Стать спикером",
 		"speakers": [
 			{
+				"id":"LeonidKalneus",
+				"type": "web",
 				"src": "https://gdg-siberia.com/img/team/LeonidKalneus.jpg",
 				"firstname": "Леонид",
 				"lastname": "Кальнеус",
 				"description": "Человек-конференция",
+				"location": "США",
 				"badge": "Тест",
 				"contacts": {
 					"telegram": "https://t.me/ManFromSiberia",
 					"email": "mailto:leo@gdg-siberia.com"
-				}
+				},
+				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
+				"talkTitle": "Название Доклада",
+				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
+				"talkTime": "11:21 AM",
+				"talkTypeBadge": "Web",
+				"talkLevelBadge": "Senior"
 			},
 			{
+				"id":"AlexeyRomanenko",
+				"type": "mobile",
 				"src": "https://gdg-siberia.com/img/team/AlexeyRomanenko.jpg",
 				"firstname": "Алексей",
 				"lastname": "Романенко",
 				"description": "Координатор волонтеров",
+				"location": "США",
 				"badge": "Тест",
 				"contacts": {
 					"telegram": "https://t.me/slimus",
 					"email": "mailto:alex@gdg-siberia.com"
-				}
+				},
+				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
+				"talkTitle": "Название Доклада",
+				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
+				"talkTime": "11:21 AM",
+				"talkTypeBadge": "Mobile",
+				"talkLevelBadge": "Middle"
 			},
 			{
+				"id":"YuriyKashnikov",
+				"type": "mobile",
 				"src": "https://gdg-siberia.com/img/team/YuriyKashnikov.jpg",
 				"firstname": "Юрий",
 				"lastname": "Кашников",
 				"description": "Программный комитет",
+				"location": "США",
 				"badge": "Тест",
 				"contacts": {
 					"site": "http://kayuri.github.io/"
-				}
+				},
+				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
+				"talkTitle": "Название Доклада",
+				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
+				"talkTime": "11:21 AM",
+				"talkTypeBadge": "Mobile",
+				"talkLevelBadge": "Junior"
 			},
 			{
+				"id":"KirZharov",
+				"type": "web",
 				"src": "https://gdg-siberia.com/img/team/KirZharov.jpg",
 				"firstname": "Кир",
 				"lastname": "Жаров",
 				"description": "Разработка сайта, frontend",
-				"badge": "Тест"
+				"location": "США",
+				"badge": "Тест",
+				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
+				"talkTitle": "Название Доклада",
+				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
+				"talkTime": "11:21 AM",
+				"talkTypeBadge": "Web",
+				"talkLevelBadge": "Junior"
 			},
 			{
+				"id":"IvanKruchkov",
+				"type": "ai",
 				"src": "https://gdg-siberia.com/img/team/IvanKruchkov.png",
 				"firstname": "Иван",
 				"lastname": "Крючков",
 				"description": "Разработка сайта, backend",
-				"badge": "Тест"
+				"location": "США",
+				"badge": "Тест",
+				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
+				"talkTitle": "Название Доклада",
+				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
+				"talkTime": "11:21 AM",
+				"talkTypeBadge": "AI",
+				"talkLevelBadge": "Junior"
 			},
 			{
+				"id":"AminaKotomanova",
+				"type": "mobile",
 				"src": "https://gdg-siberia.com/img/team/AminaKotomanova.jpg",
 				"firstname": "Амина",
 				"lastname": "Котоманова",
 				"description": "Дизайнер",
+				"location": "США",
 				"badge": "Тест",
 				"contacts": {
 					"site": "http://rebelart.ru"
-				}
+				},
+				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
+				"talkTitle": "Название Доклада",
+				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
+				"talkTime": "11:21 AM",
+				"talkTypeBadge": "Mobile",
+				"talkLevelBadge": "Junior"
 			},
 			{
+				"id":"LevNovokreshchenov",
+				"type": "mobile",
 				"src": "https://gdg-siberia.com/img/team/LevNovokreshchenov.jpg",
 				"firstname": "Лев",
 				"lastname": "Новокрещёнов",
 				"description": "Член семьи",
-				"badge": "Тест"
+				"location": "США",
+				"badge": "Тест",
+				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
+				"talkTitle": "Название Доклада",
+				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
+				"talkTime": "11:21 AM",
+				"talkTypeBadge": "Mobile",
+				"talkLevelBadge": "Junior"
 			}
 		],
 		"nav": [

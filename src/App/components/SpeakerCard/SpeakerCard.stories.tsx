@@ -12,7 +12,6 @@ import {
 import {
 	imageUrl
 } from '@flexis/ui/components/ImageSelect/ImageSelect.stories';
-import Badge from '../Badge';
 import SpeakerCard from './';
 
 const testText = `Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo,
@@ -27,9 +26,9 @@ dignissim lacinia sit amet nec eros. Nulla vel urna quis libero pharetra varius.
 const stylableApi = `
 Stylable API
 ---
+- ::info
 - ::profile
 - ::img
-- ::mobName
 - ::name
 - ::description
 - ::location
@@ -69,26 +68,13 @@ storiesOf('Components|SpeakerCard', module)
 					twitter: faker.internet.url(),
 					vk:      faker.internet.url()
 				}}
-				badge={<Badge>GDG</Badge>}
+				badge='GDG'
 				text={text('Text', testText)}
 				talkTitle={text('Talk title', 'Название Доклада')}
 				talkLocation={text('Talk location', '543 аудитория, 3 этаж | Академпарк')}
 				talkTime={text('Talk time', '11:21 AM')}
-				talkTypeBadge={
-					<Badge
-						color='pink'
-						variant='fill'
-					>
-						{text('Type Badge', 'Mobile')}
-					</Badge>
-				}
-				talkLevelBadge={
-					<Badge
-						color='aqua'
-					>
-						{text('Level Badge', 'Junior')}
-					</Badge>
-				}
+				talkTypeBadge='Mobile'
+				talkLevelBadge='Junior'
 			/>
 		)
 	);

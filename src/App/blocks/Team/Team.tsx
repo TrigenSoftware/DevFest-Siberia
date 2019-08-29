@@ -10,6 +10,9 @@ import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
 import ProfileCard from '~/components/ProfileCard';
+import {
+	getTeam
+} from '../common/i18n';
 import stylesheet from './Team.st.css';
 
 export type IProps = ISectionProps;
@@ -26,13 +29,7 @@ export default class Team extends Component<ISectionProps> {
 			context,
 			props
 		} = this;
-		const {
-			team: {
-				team
-			}
-		} = this.context.getCatalog(
-			context.getLocale()
-		) as any;
+		const team = getTeam(context);
 
 		return (
 			<Section

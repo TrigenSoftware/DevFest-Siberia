@@ -16,6 +16,9 @@ import Link from '~/components/Link';
 import Button from '~/components/Button';
 import ProfileCard from '~/components/ProfileCard';
 import Badge from '~/components/Badge';
+import {
+	getSpeakers
+} from '../common/i18n';
 import stylesheet from './Speakers.st.css';
 
 export type IProps = ISectionProps;
@@ -32,9 +35,9 @@ export default class Speakers extends Component<ISectionProps> {
 			context,
 			props
 		} = this;
+		const speakers = getSpeakers(context);
 		const {
 			speakers: {
-				speakers,
 				nav
 			}
 		} = this.context.getCatalog(
@@ -93,7 +96,7 @@ export default class Speakers extends Component<ISectionProps> {
 										{item.badge}
 									</Badge>
 								)}
-								to='/some-id'
+								to={`/speakers/${item.id}`}
 							/>
 						</li>
 					))}

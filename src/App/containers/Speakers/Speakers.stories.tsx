@@ -1,7 +1,8 @@
 /* tslint:disable jsx-no-lambda */
 import React from 'react';
 import {
-	MemoryRouter
+	MemoryRouter,
+	Route
 } from 'react-router';
 import {
 	storiesOf
@@ -29,11 +30,6 @@ storiesOf('Containers|Speakers', module)
 		info: stylableApi
 	})
 	.addDecorator(story => (
-		<MemoryRouter initialEntries={['/speakers']}>
-			{story()}
-		</MemoryRouter>
-	))
-	.addDecorator(story => (
 		<div style={{ margin: '-12px' }}>
 			{story()}
 		</div>
@@ -53,10 +49,18 @@ storiesOf('Containers|Speakers', module)
 	.add(
 		'with default state',
 		() => (
-			<>
-				<Header/>
-				<Speakers/>
-				<Footer/>
-			</>
+			<MemoryRouter initialEntries={['/speakers']}>
+				<Route
+					component={props => (
+						<>
+							<Header/>
+							<Speakers
+								{...props}
+							/>
+							<Footer/>
+						</>
+					)}
+				/>
+			</MemoryRouter>
 		)
 	);
