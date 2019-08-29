@@ -200,9 +200,9 @@ export default class SpeakerCard extends Component<IProps> {
 			<div
 				{...stylesheet('date')}
 			>
-				{time}{' '}
+				{time}
 				{format && (
-					<span>{format}</span>
+					<span>{' '}{format}</span>
 				)}
 			</div>
 		);
