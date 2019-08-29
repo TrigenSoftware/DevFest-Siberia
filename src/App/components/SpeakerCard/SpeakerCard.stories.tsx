@@ -26,9 +26,9 @@ dignissim lacinia sit amet nec eros. Nulla vel urna quis libero pharetra varius.
 const stylableApi = `
 Stylable API
 ---
+- ::info
 - ::profile
 - ::img
-- ::mobName
 - ::name
 - ::description
 - ::location
