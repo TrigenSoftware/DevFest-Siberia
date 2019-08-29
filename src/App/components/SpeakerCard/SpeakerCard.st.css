@@ -39,7 +39,6 @@
 
 .profile {
 	float: left;
-	margin-bottom: 2.6em;
 }
 
 .img {
@@ -56,6 +55,7 @@
 }
 
 .location {
+	padding-bottom: .5em;
 	color: value(colorGray1);
 	font-size: 2em;
 }
@@ -77,7 +77,7 @@
 }
 
 .contacts {
-	padding: .5em 0 1em;
+	padding-bottom: 1em;
 }
 
 .contactLink {
@@ -118,11 +118,15 @@
 	font-weight: 100;
 }
 
+.separator {
+	clear: both;
+	height: 3.3em;
+}
+
 .footer {
 	display: flex;
 	align-items: baseline;
 	clear: both;
-	margin-top: 3.3em;
 	border-top: 1px dashed value(colorGray1);
 	padding: 2em value(sizeGapLg) value(sizeGapLg);
 }
@@ -142,8 +146,13 @@
 
 @media (max-width: value(sizeScreenSmMax)) {
 
+	.info {
+		padding: 57px 15px 0;
+	}
+
 	.profile {
 		float: none;
+		margin-bottom: 17px;
 	}
 
 	.img {
@@ -162,6 +171,7 @@
 
 	.footer {
 		display: block;
+		padding: 15px;
 	}
 
 	.footer .group:nth-of-type(2) {
