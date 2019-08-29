@@ -10,7 +10,8 @@ import {
 } from 'i18n-for-react';
 import {
 	Bind,
-	Debounce
+	Debounce,
+	omit
 } from '@flexis/ui/helpers';
 import {
 	getSpeaker
@@ -76,25 +77,21 @@ export default class SpeakerModal extends Component<IProps, IState> {
 
 		const {
 			context,
-			props: {
-				history,
-				location,
-				match,
-				staticContext,
-				...props
-			}
+			props
 		} = this;
 		const {
-			id
-		} = match.params;
+			match: {
+				params
+			}
+		} = props;
 		const {
 			active
 		} = this.state;
-		const speaker = getSpeaker(context, id);
+		const speaker = getSpeaker(context, params.id);
 
 		return (
 			<Modal
-				{...props}
+				{...omit(props, ['history', 'location', 'match', 'staticContext'])}
 				{...stylesheet('root', {}, props)}
 				onClose={this.onClose}
 				active={active}

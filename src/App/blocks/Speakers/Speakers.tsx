@@ -10,6 +10,9 @@ import {
 	I18nContext,
 	__x
 } from 'i18n-for-react';
+import {
+	omit
+} from '@flexis/ui/helpers';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -38,21 +41,20 @@ export class Speakers extends Component<IProps> {
 
 		const {
 			context,
-			props: {
-				history,
-				location,
-				match,
-				staticContext,
-				...props
-			}
+			props
 		} = this;
-		const type = new URLSearchParams(location.search).get('type');
+		const {
+			location: {
+				search
+			}
+		} = props;
+		const type = new URLSearchParams(search).get('type');
 		const nav = getTalkTypes(context);
 		const speakers = getSpeakers(context, type);
 
 		return (
 			<Section
-				{...props}
+				{...omit(props, ['history', 'location', 'match', 'staticContext'])}
 				{...stylesheet('root', {}, props)}
 			>
 				<div
