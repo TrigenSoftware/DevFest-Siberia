@@ -1,4 +1,4 @@
-/* tslint:disable:no-magic-numbers */
+/* tslint:disable: no-magic-numbers */
 import React from 'react';
 import {
 	storiesOf
@@ -27,7 +27,7 @@ storiesOf('Blocks|Speakers', module)
 		info: stylableApi
 	})
 	.addDecorator(story => (
-		<MemoryRouter initialEntries={['/']}>
+		<MemoryRouter initialEntries={['/speakers']}>
 			{story()}
 		</MemoryRouter>
 	))

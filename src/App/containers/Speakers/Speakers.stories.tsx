@@ -1,8 +1,7 @@
 /* tslint:disable jsx-no-lambda */
 import React from 'react';
 import {
-	MemoryRouter,
-	Route
+	MemoryRouter
 } from 'react-router';
 import {
 	storiesOf
@@ -35,6 +34,11 @@ storiesOf('Containers|Speakers', module)
 		</div>
 	))
 	.addDecorator(story => (
+		<MemoryRouter initialEntries={['/speakers']}>
+			{story()}
+		</MemoryRouter>
+	))
+	.addDecorator(story => (
 		<I18nProvider
 			locale={select('Locale', ['en', 'ru'], 'en')}
 			locales={{
@@ -49,18 +53,10 @@ storiesOf('Containers|Speakers', module)
 	.add(
 		'with default state',
 		() => (
-			<MemoryRouter initialEntries={['/speakers']}>
-				<Route
-					component={props => (
-						<>
-							<Header/>
-							<Speakers
-								{...props}
-							/>
-							<Footer/>
-						</>
-					)}
-				/>
-			</MemoryRouter>
+			<>
+				<Header/>
+				<Speakers/>
+				<Footer/>
+			</>
 		)
 	);

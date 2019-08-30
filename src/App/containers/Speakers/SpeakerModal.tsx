@@ -6,18 +6,19 @@ import {
 	RouteComponentProps
 } from 'react-router-dom';
 import {
-	History
-} from 'history';
-import {
 	I18nContext
 } from 'i18n-for-react';
 import {
 	Bind,
-	Debounce
+	Debounce,
+	omit
 } from '@flexis/ui/helpers';
 import {
 	getSpeaker
 } from '~/blocks/common/i18n';
+import {
+	routeProps
+} from '~/blocks/common/router';
 import Modal, {
 	IProps as IModalProps
 } from '~/components/Modal';
@@ -28,9 +29,7 @@ interface IRouteParams {
 	id?: string;
 }
 
-export interface IProps extends IModalProps, RouteComponentProps<IRouteParams> {
-	history: History;
-}
+export interface IProps extends IModalProps, RouteComponentProps<IRouteParams> {}
 
 interface IState {
 	active: boolean;
@@ -81,19 +80,21 @@ export default class SpeakerModal extends Component<IProps, IState> {
 
 		const {
 			context,
-			...props
+			props
 		} = this;
 		const {
-			id
-		} = this.props.match.params;
+			match: {
+				params
+			}
+		} = props;
 		const {
 			active
 		} = this.state;
-		const speaker = getSpeaker(context, id);
+		const speaker = getSpeaker(context, params.id);
 
 		return (
 			<Modal
-				{...props}
+				{...omit(props, routeProps)}
 				{...stylesheet('root', {}, props)}
 				onClose={this.onClose}
 				active={active}
@@ -116,9 +117,15 @@ export default class SpeakerModal extends Component<IProps, IState> {
 	private goBack() {
 
 		const {
-			history
+			history,
+			location: {
+				search
+			}
 		} = this.props;
 
-		history.push('/speakers');
+		history.push({
+			pathname: '/speakers',
+			search
+		});
 	}
 }
