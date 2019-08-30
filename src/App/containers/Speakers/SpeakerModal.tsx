@@ -117,9 +117,10 @@ export default class SpeakerModal extends Component<IProps, IState> {
 	private goBack() {
 
 		const {
-			history
+			history,
+			location
 		} = this.props;
 
-		history.push('/speakers');
+		history.push(`/speakers${location.search}`);
 	}
 }

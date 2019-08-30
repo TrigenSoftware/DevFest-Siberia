@@ -12,7 +12,7 @@ export function getTeam(context) {
 	return team;
 }
 
-export function getSpeakers(context, type) {
+export function getSpeakers(context, type?) {
 
 	const {
 		speakers: {

@@ -34,51 +34,24 @@ import stylesheet from './Speakers.st.css';
 
 export interface IProps extends ISectionProps, RouteComponentProps {}
 
-interface IState {
-	type: string;
-}
-
-export class Speakers extends Component<IProps, IState> {
+export class Speakers extends Component<IProps> {
 
 	static contextType = I18nContext;
 
-	static getDerivedStateFromProps(
-		{
-			location: {
-				search
-			}
-		}: IProps
-	) {
-
-		let nextState: Partial<IState> = null;
-
-		const type = new URLSearchParams(search).get('type');
-
-		if (type) {
-			nextState = {
-				type
-			};
-		}
-
-		return nextState;
-	}
-
 	context!: ContextType<typeof I18nContext>;
-
-	state = {
-		type: null
-	};
 
 	render() {
 
 		const {
 			context,
-			props,
-			state
+			props
 		} = this;
 		const {
-			type
-		} = state;
+			location: {
+				search
+			}
+		} = props;
+		const type = new URLSearchParams(search).get('type');
 		const nav = getTalkTypes(context);
 		const speakers = getSpeakers(context, type);
 
@@ -134,7 +107,7 @@ export class Speakers extends Component<IProps, IState> {
 										{item.badge}
 									</Badge>
 								)}
-								to={`/speakers/${item.id}`}
+								to={`/speakers/${item.id}${type ? `/?type=${type}` : ''}`}
 							/>
 						</li>
 					))}
