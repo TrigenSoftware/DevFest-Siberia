@@ -7,15 +7,15 @@
 :import {
 	-st-from: '../variables.st.css';
 	-st-named:
+		durationTransition,
+		sizeBorderRadiusSm,
 		colorWhite,
 		colorRed,
-		colorGray2,
 		colorBlue1,
 		colorBlue2,
 		colorBlue3,
 		colorBlue5,
-		durationTransition,
-		sizeBorderRadiusSm;
+		colorGray2;
 }
 
 :import {
