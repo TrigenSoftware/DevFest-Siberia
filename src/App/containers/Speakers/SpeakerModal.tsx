@@ -118,9 +118,11 @@ export default class SpeakerModal extends Component<IProps, IState> {
 
 		const {
 			history,
-			location
+			location: {
+				search
+			}
 		} = this.props;
 
-		history.push(`/speakers${location.search}`);
+		history.push(`/speakers${search}`);
 	}
 }
