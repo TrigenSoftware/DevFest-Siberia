@@ -27,14 +27,10 @@ import {
 	getSpeakers,
 	getTalkTypes
 } from '../common/i18n';
+import {
+	routeProps
+} from '../common/router';
 import stylesheet from './Speakers.st.css';
-
-const routerProps = [
-	'history',
-	'location',
-	'match',
-	'staticContext'
-];
 
 export interface IProps extends ISectionProps, RouteComponentProps {}
 
@@ -61,7 +57,7 @@ export class Speakers extends Component<IProps> {
 
 		return (
 			<Section
-				{...omit(props, routerProps)}
+				{...omit(props, routeProps)}
 				{...stylesheet('root', {}, props)}
 			>
 				<div
