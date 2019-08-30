@@ -38,24 +38,51 @@ const routerProps = [
 
 export interface IProps extends ISectionProps, RouteComponentProps {}
 
-export class Speakers extends Component<IProps> {
+interface IState {
+	type: string;
+}
+
+export class Speakers extends Component<IProps, IState> {
 
 	static contextType = I18nContext;
 
+	static getDerivedStateFromProps(
+		{
+			location: {
+				search
+			}
+		}: IProps
+	) {
+
+		let nextState: Partial<IState> = null;
+
+		const type = new URLSearchParams(search).get('type');
+
+		if (type) {
+			nextState = {
+				type
+			};
+		}
+
+		return nextState;
+	}
+
 	context!: ContextType<typeof I18nContext>;
+
+	state = {
+		type: null
+	};
 
 	render() {
 
 		const {
 			context,
-			props
+			props,
+			state
 		} = this;
 		const {
-			location: {
-				search
-			}
-		} = props;
-		const type = new URLSearchParams(search).get('type');
+			type
+		} = state;
 		const nav = getTalkTypes(context);
 		const speakers = getSpeakers(context, type);
 
