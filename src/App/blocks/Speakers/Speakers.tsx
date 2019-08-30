@@ -107,7 +107,10 @@ export class Speakers extends Component<IProps> {
 										{item.badge}
 									</Badge>
 								)}
-								to={`/speakers/${item.id}${type ? `/?type=${type}` : ''}`}
+								to={{
+									pathname: `/speakers/${item.id}`,
+									search
+								}}
 							/>
 						</li>
 					))}

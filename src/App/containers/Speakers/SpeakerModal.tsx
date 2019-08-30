@@ -123,6 +123,9 @@ export default class SpeakerModal extends Component<IProps, IState> {
 			}
 		} = this.props;
 
-		history.push(`/speakers${search}`);
+		history.push({
+			pathname: '/speakers',
+			search
+		});
 	}
 }
