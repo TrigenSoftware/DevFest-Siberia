@@ -29,6 +29,13 @@ import {
 } from '../common/i18n';
 import stylesheet from './Speakers.st.css';
 
+const routerProps = [
+	'history',
+	'location',
+	'match',
+	'staticContext'
+];
+
 export interface IProps extends ISectionProps, RouteComponentProps {}
 
 export class Speakers extends Component<IProps> {
@@ -54,7 +61,7 @@ export class Speakers extends Component<IProps> {
 
 		return (
 			<Section
-				{...omit(props, ['history', 'location', 'match', 'staticContext'])}
+				{...omit(props, routerProps)}
 				{...stylesheet('root', {}, props)}
 			>
 				<div
