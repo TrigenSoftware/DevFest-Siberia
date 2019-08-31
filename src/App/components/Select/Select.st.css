@@ -1,5 +1,10 @@
 
 :import {
+	-st-from: '@flexis/ui/components/Select/mixins.st.css';
+	-st-named: arrows;
+}
+
+:import {
 	-st-from: '@flexis/ui/stylable/rel';
 	-st-default: rel;
 }
@@ -22,6 +27,7 @@
 }
 
 .root {
+	-st-mixin: arrows;
 	will-change:
 		border-color,
 		box-shadow;
@@ -35,7 +41,7 @@
 	background-color: value(colorBlue1);
 	background-position: right rel(11, 24) center;
 	background-size: rel(7, 24) auto;
-	padding: rel(6, 24) rel(17, 24);
+	padding: rel(6, 24) rel(25, 24) rel(6, 24) rel(17, 24);
 	color: value(colorGray2);
 	font-size: 2.4rem;
 }
