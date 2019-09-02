@@ -113,6 +113,8 @@ export class PartnersInfo extends Component<IProps> {
 						>
 							<PartnerCard
 								{...item}
+								to={item.href}
+								name={item.title}
 							/>
 						</li>
 					))}

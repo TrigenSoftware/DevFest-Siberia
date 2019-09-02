@@ -66,21 +66,21 @@ export function getPartners(context, type?) {
 	) as any;
 
 	if (type && type !== 'all') {
-		return partners.reduce((acc, { items }) => {
-			items.filter((item) => {
+		return partners.reduce((partners, { items }) => {
+			items.map((item) => {
 				if (item.type === type) {
-					acc.push(item);
+					partners.push(item);
 				}
 			});
-			return acc;
+			return partners;
 		}, []);
 	}
 
-	return partners.reduce((acc, { items }) => {
-		items.map((item) => {
-			acc.push(item);
+	return partners.reduce((partners, { items }) => {
+		items.forEach((item) => {
+			partners.push(item);
 		});
-		return acc;
+		return partners;
 	}, []);
 }
 

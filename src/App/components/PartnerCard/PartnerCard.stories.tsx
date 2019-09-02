@@ -36,8 +36,8 @@ storiesOf('Components|PartnerCard', module)
 		() => (
 			<PartnerCard
 				src={text('Source', 'https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/google.svg')}
-				title={text('Name', 'Google')}
-				href={faker.internet.url()}
+				name={text('Name', 'Google')}
+				to={faker.internet.url()}
 				text={text('Text', faker.lorem.paragraph(10))}
 			/>
 		)
@@ -47,8 +47,8 @@ storiesOf('Components|PartnerCard', module)
 		() => (
 			<PartnerCard
 				src={text('Source', 'https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/google.svg')}
-				title={text('Name', 'Google')}
-				href={faker.internet.url()}
+				name={text('Name', 'Google')}
+				to={faker.internet.url()}
 			/>
 		)
 	);
