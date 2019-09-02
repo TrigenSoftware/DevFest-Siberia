@@ -1,3 +1,4 @@
+/* tslint:disable no-magic-numbers */
 import faker from 'faker';
 import React from 'react';
 import {
@@ -37,7 +38,7 @@ storiesOf('Components|PartnerCard', module)
 				src={text('Source', 'https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/google.svg')}
 				name={text('Name', 'Google')}
 				to={faker.internet.url()}
-				text={text('Text', faker.lorem.paragraph())}
+				text={text('Text', faker.lorem.paragraph(10))}
 			/>
 		)
 	)
