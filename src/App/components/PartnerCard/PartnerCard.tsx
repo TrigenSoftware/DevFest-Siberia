@@ -63,6 +63,7 @@ export default class PartnerCard extends Component<IProps> {
 					<Link
 						{...stylesheet('link')}
 						to={to}
+						target='_blank'
 					>
 						{to}
 					</Link>
