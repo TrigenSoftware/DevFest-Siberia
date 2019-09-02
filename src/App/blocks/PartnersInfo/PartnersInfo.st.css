@@ -1,0 +1,91 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named:
+		sizeScreenMdMax,
+		sizeScreenSmMax,
+		sizeGap,
+		sizeGapLg;
+}
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+.root .center {
+	padding-top: value(sizeGapLg);
+	padding-bottom: value(sizeGapLg);
+}
+
+.link {
+	-st-states: mobile;
+}
+
+/* stylelint-disable a11y/no-display-none */
+.link:mobile {
+	display: none;
+	margin-bottom: rel(30, 24);
+}/* stylelint-enable */
+
+.nav {
+	margin-bottom: rel(30, 24);
+}
+
+.list {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 rel(-14, 24);
+	padding: 0;
+	list-style: none;
+}
+
+.list li {
+	flex: 1 1 25%;
+	padding: 0 rel(14, 24) rel(30, 24);
+}
+
+.group {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+@media (max-width: value(sizeScreenMdMax)) {
+
+	/* stylelint-disable a11y/no-display-none */
+	.link {
+		display: none;
+	}/* stylelint-enable */
+
+	.link:mobile {
+		display: block;
+	}
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.list {
+		display: block;
+		margin: 0;
+	}
+
+	.list li {
+		padding: 0 0 rel(26, 16);
+	}
+
+	.link:mobile {
+		text-align: center;
+	}
+
+	.link:mobile button {
+		display: block;
+		margin: auto;
+		width: 90%;
+	}
+}

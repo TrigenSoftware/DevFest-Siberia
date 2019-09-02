@@ -14,8 +14,8 @@ import stylesheet from './PartnerCard.st.css';
 
 interface ISelfProps {
 	src: string;
-	name: string;
-	to: LocationDescriptor;
+	title: string;
+	href: LocationDescriptor;
 	text?: string;
 }
 
@@ -27,18 +27,18 @@ export type IProps = CombinePropsAndAttributes<
 export default class PartnerCard extends Component<IProps> {
 
 	static propTypes = {
-		src:  PropTypes.string.isRequired,
-		name: PropTypes.string.isRequired,
-		to:   PropTypes.any.isRequired,
-		text: PropTypes.string
+		src:   PropTypes.string.isRequired,
+		title: PropTypes.string.isRequired,
+		href:  PropTypes.any.isRequired,
+		text:  PropTypes.string
 	};
 
 	render() {
 
 		const {
 			src,
-			name,
-			to,
+			title,
+			href,
 			text,
 			...props
 		} = this.props;
@@ -58,14 +58,14 @@ export default class PartnerCard extends Component<IProps> {
 					<h3
 						{...stylesheet('title')}
 					>
-						{name}
+						{title}
 					</h3>
 					<Link
 						{...stylesheet('link')}
-						to={to}
+						to={href}
 						target='_blank'
 					>
-						{to}
+						{href}
 					</Link>
 					{text && (
 						<p

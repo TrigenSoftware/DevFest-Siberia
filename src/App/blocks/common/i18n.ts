@@ -55,7 +55,7 @@ export function getTalkTypes(context) {
 	return nav;
 }
 
-export function getPartners(context) {
+export function getPartners(context, type?) {
 
 	const {
 		partners: {
@@ -65,5 +65,34 @@ export function getPartners(context) {
 		context.getLocale()
 	) as any;
 
-	return partners;
+	if (type && type !== 'all') {
+		return partners.reduce((acc, { items }) => {
+			items.filter((item) => {
+				if (item.type === type) {
+					acc.push(item);
+				}
+			});
+			return acc;
+		}, []);
+	}
+
+	return partners.reduce((acc, { items }) => {
+		items.map((item) => {
+			acc.push(item);
+		});
+		return acc;
+	}, []);
+}
+
+export function getPartnersTypes(context) {
+
+	const {
+		partners: {
+			nav
+		}
+	} = context.getCatalog(
+		context.getLocale()
+	) as any;
+
+	return nav;
 }
