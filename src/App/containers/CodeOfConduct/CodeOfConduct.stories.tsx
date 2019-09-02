@@ -1,5 +1,8 @@
-/* tslint:disable: no-magic-numbers */
+/* tslint:disable jsx-no-lambda */
 import React from 'react';
+import {
+	MemoryRouter
+} from 'react-router';
 import {
 	storiesOf
 } from '@storybook/react';
@@ -7,14 +10,13 @@ import {
 	select
 } from '@storybook/addon-knobs';
 import {
-	MemoryRouter
-} from 'react-router';
-import {
 	I18nProvider
 } from 'i18n-for-react';
+import Header from '~/blocks/Header';
+import Footer from '~/blocks/Footer';
 import ru from '~/locales/ru.json';
 import en from '~/locales/en.json';
-import Speakers from './';
+import CodeOfConduct from './';
 
 const stylableApi = `
 Stylable API
@@ -22,12 +24,12 @@ Stylable API
 _empty_
 `;
 
-storiesOf('Blocks|Speakers', module)
+storiesOf('Containers|CodeOfConduct', module)
 	.addParameters({
 		info: stylableApi
 	})
 	.addDecorator(story => (
-		<MemoryRouter initialEntries={['/speakers']}>
+		<MemoryRouter initialEntries={['/']}>
 			{story()}
 		</MemoryRouter>
 	))
@@ -49,8 +51,12 @@ storiesOf('Blocks|Speakers', module)
 		</I18nProvider>
 	))
 	.add(
-		'with basic state',
+		'with default state',
 		() => (
-			<Speakers/>
+			<>
+				<Header/>
+				<CodeOfConduct/>
+				<Footer/>
+			</>
 		)
 	);

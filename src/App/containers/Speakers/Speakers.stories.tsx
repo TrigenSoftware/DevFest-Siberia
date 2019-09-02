@@ -29,14 +29,14 @@ storiesOf('Containers|Speakers', module)
 		info: stylableApi
 	})
 	.addDecorator(story => (
-		<MemoryRouter initialEntries={['/speakers']}>
-			{story()}
-		</MemoryRouter>
-	))
-	.addDecorator(story => (
 		<div style={{ margin: '-12px' }}>
 			{story()}
 		</div>
+	))
+	.addDecorator(story => (
+		<MemoryRouter initialEntries={['/speakers']}>
+			{story()}
+		</MemoryRouter>
 	))
 	.addDecorator(story => (
 		<I18nProvider

@@ -3,9 +3,16 @@ import React, {
 	Component
 } from 'react';
 import {
+	RouteComponentProps,
+	withRouter
+} from 'react-router-dom';
+import {
 	I18nContext,
 	__x
 } from 'i18n-for-react';
+import {
+	omit
+} from '@flexis/ui/helpers';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -16,11 +23,18 @@ import Link from '~/components/Link';
 import Button from '~/components/Button';
 import ProfileCard from '~/components/ProfileCard';
 import Badge from '~/components/Badge';
+import {
+	getSpeakers,
+	getTalkTypes
+} from '../common/i18n';
+import {
+	routeProps
+} from '../common/router';
 import stylesheet from './Speakers.st.css';
 
-export type IProps = ISectionProps;
+export interface IProps extends ISectionProps, RouteComponentProps {}
 
-export default class Speakers extends Component<ISectionProps> {
+export class Speakers extends Component<IProps> {
 
 	static contextType = I18nContext;
 
@@ -33,17 +47,17 @@ export default class Speakers extends Component<ISectionProps> {
 			props
 		} = this;
 		const {
-			speakers: {
-				speakers,
-				nav
+			location: {
+				search
 			}
-		} = this.context.getCatalog(
-			context.getLocale()
-		) as any;
+		} = props;
+		const type = new URLSearchParams(search).get('type');
+		const nav = getTalkTypes(context);
+		const speakers = getSpeakers(context, type);
 
 		return (
 			<Section
-				{...props}
+				{...omit(props, routeProps)}
 				{...stylesheet('root', {}, props)}
 			>
 				<div
@@ -71,7 +85,7 @@ export default class Speakers extends Component<ISectionProps> {
 					{nav.map(item => (
 						<ToggleNavLink
 							key={item.type}
-							to={`/speakers/${item.type}`}
+							to={`/speakers?type=${item.type}`}
 						>
 							{item.label}
 						</ToggleNavLink>
@@ -93,7 +107,10 @@ export default class Speakers extends Component<ISectionProps> {
 										{item.badge}
 									</Badge>
 								)}
-								to='/some-id'
+								to={{
+									pathname: `/speakers/${item.id}`,
+									search
+								}}
 							/>
 						</li>
 					))}
@@ -102,3 +119,5 @@ export default class Speakers extends Component<ISectionProps> {
 		);
 	}
 }
+
+export default withRouter(Speakers);

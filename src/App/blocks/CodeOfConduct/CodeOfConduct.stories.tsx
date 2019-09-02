@@ -1,4 +1,4 @@
-/* tslint:disable: no-magic-numbers */
+/* tslint:disable:no-magic-numbers */
 import React from 'react';
 import {
 	storiesOf
@@ -14,7 +14,7 @@ import {
 } from 'i18n-for-react';
 import ru from '~/locales/ru.json';
 import en from '~/locales/en.json';
-import Speakers from './';
+import CodeOfConduct from './';
 
 const stylableApi = `
 Stylable API
@@ -22,15 +22,10 @@ Stylable API
 _empty_
 `;
 
-storiesOf('Blocks|Speakers', module)
+storiesOf('Blocks|CodeOfConduct', module)
 	.addParameters({
 		info: stylableApi
 	})
-	.addDecorator(story => (
-		<MemoryRouter initialEntries={['/speakers']}>
-			{story()}
-		</MemoryRouter>
-	))
 	.addDecorator(story => (
 		<div style={{ margin: '-12px' }}>
 			{story()}
@@ -48,9 +43,14 @@ storiesOf('Blocks|Speakers', module)
 			{story()}
 		</I18nProvider>
 	))
+	.addDecorator(story => (
+		<MemoryRouter initialEntries={['/']}>
+			{story()}
+		</MemoryRouter>
+	))
 	.add(
 		'with basic state',
 		() => (
-			<Speakers/>
+			<CodeOfConduct/>
 		)
 	);

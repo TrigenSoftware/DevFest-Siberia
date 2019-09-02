@@ -15,6 +15,7 @@ import {
 import FlexisLink, {
 	IProps as IFlexisLinkProps
 } from '@flexis/ui/components/Link';
+import getPath from '../common/i18n';
 import unsetSize from '../common/unsetSize';
 import stylesheet from './Link.st.css';
 
@@ -69,7 +70,7 @@ export default class Link extends Component<IProps> {
 			: {
 				...linkElementCustomPropsProp,
 				to: typeof to === 'string'
-					? this.path(to)
+					? getPath(this.context, to)
 					: to
 			};
 		const tabIndex = typeof tabIndexProp !== 'undefined'
@@ -93,22 +94,5 @@ export default class Link extends Component<IProps> {
 				{children}
 			</FlexisLink>
 		);
-	}
-
-	private path(path: string) {
-
-		const {
-			context
-		} = this;
-
-		if (!context) {
-			return path;
-		}
-
-		const locale = context.getLocale();
-
-		return locale === 'en'
-			? path
-			: `/ru${path}`;
 	}
 }
