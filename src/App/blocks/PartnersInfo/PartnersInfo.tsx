@@ -1,3 +1,4 @@
+/* tslint:disable:no-magic-numbers */
 import React, {
 	ContextType,
 	Component
@@ -53,6 +54,17 @@ export class PartnersInfo extends Component<IProps> {
 		const type = new URLSearchParams(search).get('type');
 		const nav = getPartnersTypes(context);
 		const partners = getPartners(context, type);
+		const columns = [[], [], []];
+
+		partners.forEach((item, i) => {
+			if (i % 3 === 0) {
+				columns[2].push(item);
+			} else if (i % 2 === 0) {
+				columns[1].push(item);
+			} else {
+				columns[0].push(item);
+			}
+		});
 
 		return (
 			<Section
@@ -107,17 +119,25 @@ export class PartnersInfo extends Component<IProps> {
 				<ul
 					{...stylesheet('list')}
 				>
-					{partners.map(item => (
-						<li
-							key={item.href}
-						>
-							<PartnerCard
-								{...item}
-								to={item.href}
-								name={item.title}
-							/>
-						</li>
-					))}
+					{columns.map((item, i) => {
+						if (item.length !== 0) {
+							return (
+								<li
+									key={i}
+								>
+									{item.map(partner => (
+										<PartnerCard
+											{...stylesheet('card')}
+											key={partner.href}
+											{...partner}
+											to={partner.href}
+											name={partner.title}
+										/>
+									))}
+								</li>
+							);
+						}
+					})}
 				</ul>
 			</Section>
 		);

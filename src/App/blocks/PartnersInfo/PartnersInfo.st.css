@@ -46,7 +46,7 @@
 }
 
 .list li {
-	flex: 1 1 25%;
+	flex: 1;
 	padding: 0 rel(14, 24) rel(30, 24);
 }
 
@@ -54,6 +54,10 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+.card {
+	margin-bottom: rel(30, 24);
 }
 
 @media (max-width: value(sizeScreenMdMax)) {
@@ -86,6 +90,6 @@
 	.link:mobile button {
 		display: block;
 		margin: auto;
-		width: 90%;
+		width: 95%;
 	}
 }
