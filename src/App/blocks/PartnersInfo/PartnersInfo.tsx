@@ -126,8 +126,8 @@ export class PartnersInfo extends Component<IProps> {
 				<ul
 					{...stylesheet('list')}
 				>
-					{columns.map((item, i) => (
-						item.length !== 0 ? (
+					{columns.map((item, i) =>
+						item.length !== 0 && (
 							<li
 								key={i}
 							>
@@ -141,8 +141,8 @@ export class PartnersInfo extends Component<IProps> {
 									/>
 								))}
 							</li>
-						) : null
-					))}
+						)
+					)}
 				</ul>
 			</Section>
 		);
