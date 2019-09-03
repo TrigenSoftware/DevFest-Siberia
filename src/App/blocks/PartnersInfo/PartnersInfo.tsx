@@ -57,12 +57,19 @@ export class PartnersInfo extends Component<IProps> {
 		const columns = [[], [], []];
 
 		partners.forEach((item, i) => {
-			if (i % 3 === 0) {
-				columns[2].push(item);
-			} else if (i % 2 === 0) {
-				columns[1].push(item);
-			} else {
-				columns[0].push(item);
+
+			switch (true) {
+
+				case i % 3 === 0:
+					columns[2].push(item);
+					break;
+
+				case i % 2 === 0:
+					columns[1].push(item);
+					break;
+
+				default:
+					columns[0].push(item);
 			}
 		});
 
@@ -120,7 +127,8 @@ export class PartnersInfo extends Component<IProps> {
 					{...stylesheet('list')}
 				>
 					{columns.map((item, i) => {
-						if (item.length !== 0) {
+
+						if (item.length > 0) {
 							return (
 								<li
 									key={i}
