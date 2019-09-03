@@ -30,11 +30,11 @@
 /* stylelint-disable a11y/no-display-none */
 .link:mobile {
 	display: none;
-	margin-bottom: rel(30, 24);
+	margin-bottom: rel(65, 24);
 }/* stylelint-enable */
 
 .nav {
-	margin-bottom: rel(30, 24);
+	margin-bottom: rel(65, 24);
 }
 
 .list {
@@ -48,6 +48,7 @@
 .list li {
 	flex: 1;
 	padding: 0 rel(14, 24) rel(30, 24);
+	min-width: 290px;
 }
 
 .group {
@@ -74,6 +75,10 @@
 
 @media (max-width: value(sizeScreenSmMax)) {
 
+	.nav {
+		margin-bottom: rel(20, 16);
+	}
+
 	.list {
 		display: block;
 		margin: 0;
@@ -84,6 +89,7 @@
 	}
 
 	.link:mobile {
+		margin-bottom: rel(20, 16);
 		text-align: center;
 	}
 
