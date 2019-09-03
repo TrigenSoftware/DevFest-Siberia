@@ -66,10 +66,20 @@ export function getPartners(context, type?) {
 	) as any;
 
 	if (type && type !== 'all') {
-		return partners.reduce((partners, { items }) => [...partners, ...items.filter(item => item.type === type)], []);
+		return partners.reduce((partners, { items }) =>
+			[
+				...partners,
+				...items.filter(
+					item => item.type === type
+				)
+			], []);
 	}
 
-	return partners.reduce((partners, { items }) => [...partners, ...items], []);
+	return partners.reduce((partners, { items }) =>
+		[
+			...partners,
+			...items
+		], []);
 }
 
 export function getPartnersTypes(context) {

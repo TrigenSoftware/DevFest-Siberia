@@ -126,26 +126,23 @@ export class PartnersInfo extends Component<IProps> {
 				<ul
 					{...stylesheet('list')}
 				>
-					{columns.map((item, i) => {
-
-						if (item.length > 0) {
-							return (
-								<li
-									key={i}
-								>
-									{item.map(partner => (
-										<PartnerCard
-											{...stylesheet('card')}
-											key={partner.href}
-											{...partner}
-											to={partner.href}
-											name={partner.title}
-										/>
-									))}
-								</li>
-							);
-						}
-					})}
+					{columns.map((item, i) => (
+						item.length !== 0 ? (
+							<li
+								key={i}
+							>
+								{item.map(partner => (
+									<PartnerCard
+										{...stylesheet('card')}
+										key={partner.href}
+										{...partner}
+										to={partner.href}
+										name={partner.title}
+									/>
+								))}
+							</li>
+						) : null
+					))}
 				</ul>
 			</Section>
 		);
