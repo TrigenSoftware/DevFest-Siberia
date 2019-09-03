@@ -1,4 +1,3 @@
-/* tslint:disable jsx-no-lambda */
 import React from 'react';
 import {
 	MemoryRouter

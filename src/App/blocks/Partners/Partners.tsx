@@ -14,9 +14,6 @@ import Brands, {
 	BrandsRow,
 	BrandsItem
 } from '~/components/Brands';
-import {
-	getPartners
-} from '../common/i18n';
 import stylesheet from './Partners.st.css';
 
 export type IProps = ISectionProps;
@@ -33,7 +30,13 @@ export default class Partners extends Component<IProps> {
 			context,
 			props
 		} = this;
-		const partners = getPartners(context);
+		const {
+			partners: {
+				partners
+			}
+		} = context.getCatalog(
+			context.getLocale()
+		) as any;
 
 		return (
 			<Section
