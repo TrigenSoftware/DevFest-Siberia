@@ -57,12 +57,52 @@
 						"href": "https://developers.google.com",
 						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/google.svg",
 						"title": "Google"
+					},
+					{
+						"type": "general",
+						"href": "https://academpark.com",
+						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/academpark.svg",
+						"title": "Academpark",
+						"text": "Академпарк – комплексный технологический парк, обладающий уникальной технологической и деловой инфраструктурой, позволяющей создать наилучшие условия для генерации и развития инновационных компаний и успешного развития действующих высокотехнологичных предприятий."
+					},
+					{
+						"type": "general",
+						"href": "https://academpark.com",
+						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/academpark.svg",
+						"title": "Academpark",
+						"text": "Академпарк – комплексный технологический парк, обладающий уникальной технологической и деловой инфраструктурой, позволяющей создать наилучшие условия для генерации и развития инновационных компаний и успешного развития действующих высокотехнологичных предприятий."
+					},
+					{
+						"type": "others",
+						"href": "https://developers.google.com",
+						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/google.svg",
+						"title": "Google"
+					},
+					{
+						"type": "others",
+						"href": "https://developers.google.com",
+						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/google.svg",
+						"title": "Google"
 					}
 				]
 			},
 			{
 				"title": "Media Partners",
 				"items": [
+					{
+						"type": "info",
+						"href": "https://androiddev.apptractor.ru/",
+						"src": "https://res.cloudinary.com/trigen/image/upload/v1565857597/devfest2019/android.svg",
+						"title": "Android Dev Podcast",
+						"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus."
+					},
+					{
+						"type": "info",
+						"href": "https://androiddev.apptractor.ru/",
+						"src": "https://res.cloudinary.com/trigen/image/upload/v1565857597/devfest2019/android.svg",
+						"title": "Android Dev Podcast",
+						"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus."
+					},
 					{
 						"type": "info",
 						"href": "https://androiddev.apptractor.ru/",

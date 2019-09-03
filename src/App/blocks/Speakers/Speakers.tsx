@@ -96,7 +96,7 @@ export class Speakers extends Component<IProps> {
 				>
 					{speakers.map(item => (
 						<li
-							key={item.src}
+							key={item.id}
 						>
 							<ProfileCard
 								{...item}
