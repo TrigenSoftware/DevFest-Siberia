@@ -4,7 +4,6 @@ import React, {
 import FlexisFormGroup, {
 	IProps
 } from '@flexis/ui/components/FormGroup';
-import unsetSize from '../common/unsetSize';
 import stylesheet from './FormGroup.st.css';
 
 export {
@@ -19,7 +18,7 @@ export default class FormGroup extends Component<IProps> {
 	render() {
 
 		const {
-			icon,
+			description,
 			children,
 			...props
 		} = this.props;
@@ -28,10 +27,30 @@ export default class FormGroup extends Component<IProps> {
 			<FlexisFormGroup
 				{...props}
 				{...stylesheet('root', {}, props)}
-				icon={unsetSize(icon)}
+				label={this.renderLabel()}
+				description=''
 			>
 				{children}
 			</FlexisFormGroup>
 		);
+	}
+
+	private renderLabel() {
+
+		const {
+			label,
+			description
+		} = this.props;
+
+		if (label && description) {
+			return (
+				<>
+					<span>{label}</span>
+					<span>{description}</span>
+				</>
+			);
+		}
+
+		return label;
 	}
 }

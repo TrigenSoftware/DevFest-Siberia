@@ -15,9 +15,6 @@
 :import {
 	-st-from: '../variables.st.css';
 	-st-named:
-		opacityDisabled,
-		durationTransition,
-		colorRed,
 		colorBlue3,
 		colorBlue4;
 }
@@ -27,29 +24,12 @@
 }
 
 .root .label {
+	display: flex;
+	justify-content: space-between;
 	padding-bottom: rel(5, 24);
 	color: value(colorBlue4);
 }
 
-.root .description {
-	will-change: color;
-	transition: color value(durationTransition);
+.root .label span:nth-child(2) {
 	color: value(colorBlue3);
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-	.root .description {
-		will-change: none;
-		transition: none;
-	}
-}
-
-.root .input:required ~ .label::after {
-	color: value(colorRed);
-	content: '\00a0*';
-}
-
-.root .input:invalid ~ .description {
-	color: value(colorRed);
 }
