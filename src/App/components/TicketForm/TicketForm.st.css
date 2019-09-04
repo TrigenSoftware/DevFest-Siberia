@@ -1,0 +1,54 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named:
+		sizeScreenSmMax,
+		fontFamilyMono,
+		colorBlue4,
+		colorPink0;
+}
+
+.root {
+	padding: rel(25, 24) rel(100, 24) rel(58, 24);
+}
+
+.group {
+	display: flex;
+	align-items: center;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+}
+
+.label {
+	margin-left: rel(15, 24);
+	color: value(colorBlue4);
+}
+
+.label span {
+	color: value(colorPink0);
+	font-family: value(fontFamilyMono);
+	font-size: rel(30, 24);
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.root {
+		padding: rel(20, 16) rel(15, 16);
+	}
+
+	.row {
+		display: block;
+	}
+
+	.group {
+		width: 100%;
+	}
+}
