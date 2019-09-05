@@ -7,13 +7,16 @@
 :import {
 	-st-from: '../variables.st.css';
 	-st-named:
+		sizeScreenSmMax,
 		fontFamilyMono,
 		colorWhite,
 		colorPink0,
-		colorBlue4;
+		colorBlue4,
+		colorBlue7;
 }
 
 .root {
+	display: flex;
 	position: relative;
 	border: rel(10, 24) solid value(colorPink0);
 }
@@ -36,7 +39,9 @@
 }
 
 .content {
+	display: flex;
 	position: relative;
+	flex: 1;
 	margin: rel(7, 24);
 	overflow: hidden;
 }
@@ -55,6 +60,7 @@
 }
 
 .info {
+	flex: 1;
 	border: rel(5, 24) solid value(colorPink0);
 }
 
@@ -92,4 +98,96 @@
 	color: value(colorBlue4);
 	font-family: value(fontFamilyMono);
 	font-weight: bold;
+}
+
+.afterparty {
+	position: relative;
+	margin-left: rel(7, 26);
+	border: rel(5, 26) solid value(colorBlue7);
+	padding: rel(15, 26);
+	text-align: center;
+	color: value(colorBlue7);
+	font-size: rel(26, 24);
+	font-weight: bold;
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+}
+
+.afterparty::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px dashed value(colorBlue7);
+	width: 90%;
+	height: 95%;
+	content: '';
+}
+
+.ticket {
+	border-left: 2px dashed value(colorPink0);
+	padding: rel(7, 24);
+}
+
+.single {
+	border: rel(5, 26) solid value(colorPink0);
+	text-align: center;
+	color: value(colorPink0);
+	font-size: rel(26, 24);
+	font-weight: bold;
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.root {
+		flex-direction: column-reverse;
+	}
+
+	.root::before {
+		top: 100%;
+		left: 50%;
+		transform: translate(-50%, -67%) rotate(-90deg);
+	}
+
+	.content {
+		flex-direction: column-reverse;
+	}
+
+	.content::before {
+		top: 100%;
+		left: 50%;
+		transform: translate(-50%, -40%) rotate(-90deg);
+	}
+
+	.infoContent {
+		display: block;
+		margin: 0 0 100px;
+		border: none;
+		border-bottom: 2px dashed value(colorPink0);
+		padding: 30px;
+	}
+
+	.infoContent .list {
+		margin: 0;
+	}
+
+	.ticket {
+		border: none;
+		border-bottom: 2px dashed value(colorPink0);
+	}
+
+	.afterparty {
+		margin: 0 0 5px;
+		writing-mode: horizontal-tb;
+	}
+
+	.afterparty::before {
+		display: none;
+	}
+
+	.single {
+		writing-mode: horizontal-tb;
+	}
 }
