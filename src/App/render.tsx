@@ -19,6 +19,7 @@ import {
 import ru from '~/locales/ru.json';
 import en from '~/locales/en.json';
 import App from './App';
+import sprite from 'svg-sprite-loader/runtime/sprite.build';
 import {
 	RoutesList
 } from './routes';
@@ -50,6 +51,7 @@ function render(locale: string, location: string) {
 async function createTemplate() {
 
 	const template = await fs.readFile('build/index.html', 'utf8');
+	const spriteHtml = sprite.stringify();
 	const enstr = jsesc(JSON.stringify({
 		locale:  'en',
 		locales: { en }
@@ -68,7 +70,7 @@ async function createTemplate() {
 	});
 
 	return (html, locale) => template
-		.replace(/(<div id=view>)(<\/div>)/, `$1${html}$2`)
+		.replace(/(<div id=view>)(<\/div>)/, `${spriteHtml}$1${html}$2`)
 		.replace('<script', `<script>var I18N=${locale === 'en' ? enstr : rustr};</script><script`);
 }
 
