@@ -55,6 +55,8 @@ export default class SpeakerModal extends Component<IProps, IState> {
 
 		let nextState: Partial<IState> = null;
 
+		console.log('here');
+
 		nextState = {
 			active: false
 		};

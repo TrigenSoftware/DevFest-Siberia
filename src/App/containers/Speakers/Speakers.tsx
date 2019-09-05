@@ -3,7 +3,8 @@ import React, {
 	Component
 } from 'react';
 import {
-	Route
+	Route,
+	BrowserRouter
 } from 'react-router-dom';
 import {
 	I18nContext
@@ -22,13 +23,13 @@ export default class SpeakersContainer extends Component {
 
 	render() {
 		return (
-			<>
+			<BrowserRouter>
 				<Speakers/>
 				<Route
 					path={getLocalizedPath(this.context, '/speakers?id=:id')}
 					component={SpeakerModal}
 				/>
-			</>
+			</BrowserRouter>
 		);
 	}
 }
