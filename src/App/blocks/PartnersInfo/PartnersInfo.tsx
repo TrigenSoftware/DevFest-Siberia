@@ -14,6 +14,10 @@ import {
 import {
 	omit
 } from '@flexis/ui/helpers';
+import {
+	getPartnersTypes,
+	getPartnersInfo
+} from '~/services/i18n';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -23,10 +27,6 @@ import ToggleNav, {
 	ToggleNavLink
 } from '~/components/ToggleNav';
 import PartnerCard from '~/components/PartnerCard';
-import {
-	getPartnersTypes,
-	getPartnersInfo
-} from '../common/i18n';
 import {
 	routeProps
 } from '../common/router';
@@ -86,8 +86,7 @@ export class PartnersInfo extends Component<IProps> {
 					</h2>
 					<Link
 						{...stylesheet('link')}
-						href='https://www.papercall.io/dfsiberia19'
-						target='_blank'
+						href='mailto:devfest@gdg-siberia.com'
 						disguised
 					>
 						<Button
@@ -113,8 +112,7 @@ export class PartnersInfo extends Component<IProps> {
 					{...stylesheet('link', {
 						mobile: true
 					})}
-					href='https://www.papercall.io/dfsiberia19'
-					target='_blank'
+					href='mailto:devfest@gdg-siberia.com'
 					disguised
 				>
 					<Button

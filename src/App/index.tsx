@@ -8,6 +8,9 @@ import {
 	IConfig,
 	I18nProvider
 } from 'i18n-for-react';
+import {
+	getLocaleFromPath
+} from './services/i18n';
 // import {
 // 	Provider
 // } from '@flexis/redux';
@@ -22,13 +25,36 @@ async function getI18nConfig(): Promise<IConfig> {
 		return JSON.parse(I18N);
 	}
 
-	const {
-		default: en
-	} = await import(/* webpackChunkName: 'en' */ '~/locales/en.json');
+	const locale = getLocaleFromPath(location.pathname);
 	const config = {
-		locale:  'en',
-		locales: { en }
+		locale,
+		locales: {
+			en: {},
+			ru: {}
+		}
 	};
+
+	switch (locale) {
+
+		case 'ru': {
+
+			const {
+				default: ru
+			} = await import(/* webpackChunkName: 'ru' */ '~/locales/ru.json');
+
+			config.locales.ru = ru;
+			break;
+		}
+
+		default: {
+
+			const {
+				default: en
+			} = await import(/* webpackChunkName: 'en' */ '~/locales/en.json');
+
+			config.locales.en = en;
+		}
+	}
 
 	return config;
 }

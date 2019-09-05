@@ -8,7 +8,9 @@ import {
 import {
 	I18nContext
 } from 'i18n-for-react';
-import getPath from '~/components/common/i18n';
+import {
+	getLocalizedPath
+} from '~/services/i18n';
 import Speakers from '~/blocks/Speakers';
 import SpeakerModal from './SpeakerModal';
 
@@ -23,7 +25,7 @@ export default class SpeakersContainer extends Component {
 			<>
 				<Speakers/>
 				<Route
-					path={getPath(this.context, '/speakers/:id')}
+					path={getLocalizedPath(this.context, '/speakers/:id')}
 					component={SpeakerModal}
 				/>
 			</>

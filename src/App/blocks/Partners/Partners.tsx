@@ -6,6 +6,9 @@ import {
 	I18nContext,
 	__x
 } from 'i18n-for-react';
+import {
+	getPartners
+} from '~/services/i18n';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -14,9 +17,6 @@ import Brands, {
 	BrandsRow,
 	BrandsItem
 } from '~/components/Brands';
-import {
-	getPartners
-} from '../common/i18n';
 import stylesheet from './Partners.st.css';
 
 export type IProps = ISectionProps;
