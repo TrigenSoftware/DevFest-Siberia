@@ -134,12 +134,48 @@
 	},
 	"footer": {
 		"visitors": "Участникам",
-		"students": "Студентам",
-		"coc": "Правила поведения",
+		"visitorsLinks": [
+			{
+				"link": "/code-of-conduct",
+				"label": "Правила поведения"
+			},
+			{
+				"link": "/students",
+				"label": "Студентам"
+			}
+		],
+		"devFestsLinks": [
+			{
+				"link": "https://2018.gdg-siberia.com/",
+				"label": "DevFest Siberia 2018"
+			},
+			{
+				"link": "https://2017.gdg-siberia.com/",
+				"label": "DevFest Siberia 2017"
+			},
+			{
+				"link": "https://2016.gdg-siberia.com/",
+				"label": "DevFest Siberia 2016"
+			}
+		],
 		"companies": "Компаниям",
 		"partner": "Стать партнером",
 		"contact": "Контакты",
-		"socials": "Мы в соцсетях"
+		"socials": "Мы в соцсетях",
+		"socialLinks": [
+			{
+				"link": "https://t.me/DevFestSiberia",
+				"label": "Telegram"
+			},
+			{
+				"link": "https://twitter.com/intent/user?screen_name=GDGNsk",
+				"label": "Twitter"
+			},
+			{
+				"link": "https://vk.com/gdgnsk",
+				"label": "VK"
+			}
+		]
 	},
 	"team": {
 		"title": "Команда",

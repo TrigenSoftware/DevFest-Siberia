@@ -1,9 +1,16 @@
 import React, {
+	ContextType,
 	Component
 } from 'react';
 import {
+	I18nContext,
 	__x
 } from 'i18n-for-react';
+import {
+	getFooterVisitorsLinks,
+	getFooterDevFestsLinks,
+	getFooterSocialLinks
+} from '~/services/i18n';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -16,11 +23,19 @@ export type IProps = ISectionProps;
 
 export default class Footer extends Component<IProps> {
 
+	static contextType = I18nContext;
+
+	context!: ContextType<typeof I18nContext>;
+
 	render() {
 
 		const {
+			context,
 			props
 		} = this;
+		const visitorsLinks = getFooterVisitorsLinks(context);
+		const devFestsLinks = getFooterDevFestsLinks(context);
+		const socialLinks = getFooterSocialLinks(context);
 
 		return (
 			<footer
@@ -38,49 +53,36 @@ export default class Footer extends Component<IProps> {
 								{__x`footer.visitors`}
 							</h3>
 						</li>
-						<li>
-							<Link
-								{...stylesheet('link')}
-								to='/rules'
-							>
-								{__x`footer.coc`}
-							</Link>
-						</li>
-						<li>
-							<Link
-								{...stylesheet('link')}
-								to='/students'
-							>
-								{__x`footer.students`}
-							</Link>
-						</li>
+						{visitorsLinks.map(({
+							link,
+							label
+						}) => (
+							<li key={link}>
+								<Link
+									{...stylesheet('link')}
+									to={link}
+								>
+									{label}
+								</Link>
+							</li>
+						))}
 						<li
 							{...stylesheet('separator')}
 						/>
-						<li>
-							<Link
-								{...stylesheet('link')}
-								to='/devfest2018'
-							>
-								DevFest 2018
-							</Link>
-						</li>
-						<li>
-							<Link
-								{...stylesheet('link')}
-								to='/devfest2017'
-							>
-								DevFest 2017
-							</Link>
-						</li>
-						<li>
-							<Link
-								{...stylesheet('link')}
-								to='/devfest2016'
-							>
-								DevFest 2016
-							</Link>
-						</li>
+						{devFestsLinks.map(({
+							link,
+							label
+						}) => (
+							<li key={link}>
+								<Link
+									{...stylesheet('link')}
+									to={link}
+									target='_blank'
+								>
+									{label}
+								</Link>
+							</li>
+						))}
 					</ul>
 					<ul
 						{...stylesheet('list')}
@@ -93,7 +95,7 @@ export default class Footer extends Component<IProps> {
 						<li>
 							<Link
 								{...stylesheet('link')}
-								to='/partners'
+								href='mailto:devfest@gdg-siberia.com'
 							>
 								{__x`footer.partner`}
 							</Link>
@@ -110,7 +112,7 @@ export default class Footer extends Component<IProps> {
 						<li>
 							<Link
 								icon={<EnvelopeIcon/>}
-								to='/contacts'
+								href='mailto:devfest@gdg-siberia.com'
 							>
 								devfest@gdg-siberia.com
 							</Link>
@@ -124,27 +126,19 @@ export default class Footer extends Component<IProps> {
 							</h3>
 						</li>
 						<li>
-							<ContactLink
-								{...stylesheet('contactLink')}
-								type='telegram'
-								to='/telegram'
-							>
-								Telegram
-							</ContactLink>
-							<ContactLink
-								{...stylesheet('contactLink')}
-								type='twitter'
-								to='/twitter'
-							>
-								Twitter
-							</ContactLink>
-							<ContactLink
-								{...stylesheet('contactLink')}
-								type='vk'
-								to='/vk'
-							>
-								VK
-							</ContactLink>
+							{socialLinks.map(({
+								link,
+								label
+							}) => (
+								<ContactLink
+									key={link}
+									{...stylesheet('contactLink')}
+									title={label}
+									type={label.toLowerCase()}
+									href={link}
+									target='_blank'
+								/>
+							))}
 						</li>
 					</ul>
 				</Section>
