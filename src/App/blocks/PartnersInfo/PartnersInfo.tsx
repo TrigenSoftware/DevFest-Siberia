@@ -1,3 +1,4 @@
+/* tslint:disable:no-magic-numbers */
 import React, {
 	ContextType,
 	Component
@@ -16,25 +17,24 @@ import {
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
+import Link from '~/components/Link';
+import Button from '~/components/Button';
 import ToggleNav, {
 	ToggleNavLink
 } from '~/components/ToggleNav';
-import Link from '~/components/Link';
-import Button from '~/components/Button';
-import ProfileCard from '~/components/ProfileCard';
-import Badge from '~/components/Badge';
+import PartnerCard from '~/components/PartnerCard';
 import {
-	getSpeakers,
-	getTalkTypes
+	getPartnersTypes,
+	getPartnersInfo
 } from '../common/i18n';
 import {
 	routeProps
 } from '../common/router';
-import stylesheet from './Speakers.st.css';
+import stylesheet from './PartnersInfo.st.css';
 
 export interface IProps extends ISectionProps, RouteComponentProps {}
 
-export class Speakers extends Component<IProps> {
+export class PartnersInfo extends Component<IProps> {
 
 	static contextType = I18nContext;
 
@@ -52,8 +52,26 @@ export class Speakers extends Component<IProps> {
 			}
 		} = props;
 		const type = new URLSearchParams(search).get('type');
-		const nav = getTalkTypes(context);
-		const speakers = getSpeakers(context, type);
+		const nav = getPartnersTypes(context);
+		const partners = getPartnersInfo(context, type);
+		const columns = [[], [], []];
+
+		partners.forEach((item, i) => {
+
+			switch (true) {
+
+				case i % 3 === 0:
+					columns[2].push(item);
+					break;
+
+				case i % 2 === 0:
+					columns[1].push(item);
+					break;
+
+				default:
+					columns[0].push(item);
+			}
+		});
 
 		return (
 			<Section
@@ -64,7 +82,7 @@ export class Speakers extends Component<IProps> {
 					{...stylesheet('group')}
 				>
 					<h2>
-						{__x`speakers.title`}
+						{__x`partners.title`}
 					</h2>
 					<Link
 						{...stylesheet('link')}
@@ -75,7 +93,7 @@ export class Speakers extends Component<IProps> {
 						<Button
 							variant='secondary'
 						>
-							{__x`speakers.cfp`}
+							{__x`partners.cfp`}
 						</Button>
 					</Link>
 				</div>
@@ -85,39 +103,50 @@ export class Speakers extends Component<IProps> {
 					{nav.map(item => (
 						<ToggleNavLink
 							key={item.type}
-							to={`/speakers?type=${item.type}`}
+							to={`/partners?type=${item.type}`}
 						>
 							{item.label}
 						</ToggleNavLink>
 					))}
 				</ToggleNav>
+				<Link
+					{...stylesheet('link', {
+						mobile: true
+					})}
+					href='https://www.papercall.io/dfsiberia19'
+					target='_blank'
+					disguised
+				>
+					<Button
+						variant='secondary'
+					>
+						{__x`partners.cfp`}
+					</Button>
+				</Link>
 				<ul
 					{...stylesheet('list')}
 				>
-					{speakers.map(item => (
-						<li
-							key={item.id}
-						>
-							<ProfileCard
-								{...item}
-								badge={item.badge && (
-									<Badge
-										color='pink'
-									>
-										{item.badge}
-									</Badge>
-								)}
-								to={{
-									pathname: `/speakers/${item.id}`,
-									search
-								}}
-							/>
-						</li>
-					))}
+					{columns.map((item, i) =>
+						item.length !== 0 && (
+							<li
+								key={i}
+							>
+								{item.map(partner => (
+									<PartnerCard
+										{...stylesheet('card')}
+										key={partner.href}
+										{...partner}
+										to={partner.href}
+										name={partner.title}
+									/>
+								))}
+							</li>
+						)
+					)}
 				</ul>
 			</Section>
 		);
 	}
 }
 
-export default withRouter(Speakers);
+export default withRouter(PartnersInfo);

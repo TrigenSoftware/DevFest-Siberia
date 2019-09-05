@@ -45,7 +45,7 @@
 
 .root:clickable:hover,
 .root:clickable:focus-within {
-	box-shadow: 0 0 rel(20, 24) 0 rgba(0, 0, 0, .32);
+	box-shadow: 0 0 rel(20, 10) 0 rgba(0, 0, 0, .32);
 }
 
 .link {
