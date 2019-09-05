@@ -15,7 +15,7 @@ import Header from '~/blocks/Header';
 import Footer from '~/blocks/Footer';
 import ru from '~/locales/ru.json';
 import en from '~/locales/en.json';
-import PartnersInfo from './';
+import Partners from './';
 
 const stylableApi = `
 Stylable API
@@ -23,7 +23,7 @@ Stylable API
 _empty_
 `;
 
-storiesOf('Containers|PartnersInfo', module)
+storiesOf('Containers|Partners', module)
 	.addParameters({
 		info: stylableApi
 	})
@@ -54,7 +54,7 @@ storiesOf('Containers|PartnersInfo', module)
 		() => (
 			<>
 				<Header/>
-				<PartnersInfo/>
+				<Partners/>
 				<Footer/>
 			</>
 		)

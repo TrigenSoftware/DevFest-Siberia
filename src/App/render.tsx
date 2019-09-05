@@ -13,14 +13,16 @@ import jsesc from 'jsesc';
 import {
 	StaticRouter
 } from 'react-router';
+import {
+	getLocaleFromPath
+} from './services/i18n';
 import ru from '~/locales/ru.json';
 import en from '~/locales/en.json';
 import App from './App';
-
-interface IPage {
-	location: string;
-	locale: string;
-}
+import sprite from 'svg-sprite-loader/runtime/sprite.build';
+import {
+	RoutesList
+} from './routes';
 
 function render(locale: string, location: string) {
 
@@ -49,6 +51,7 @@ function render(locale: string, location: string) {
 async function createTemplate() {
 
 	const template = await fs.readFile('build/index.html', 'utf8');
+	const spriteHtml = sprite.stringify();
 	const enstr = jsesc(JSON.stringify({
 		locale:  'en',
 		locales: { en }
@@ -67,48 +70,29 @@ async function createTemplate() {
 	});
 
 	return (html, locale) => template
-		.replace(/(<div id=view>)(<\/div>)/, `$1${html}$2`)
+		.replace(/(<div id=view>)(<\/div>)/, `${spriteHtml}$1${html}$2`)
 		.replace('<script', `<script>var I18N=${locale === 'en' ? enstr : rustr};</script><script`);
 }
 
-async function renderAll(pages: IPage[]) {
+async function renderAll(pages: string[]) {
 
 	const wrap = await createTemplate();
 
-	await Promise.all(pages.map(async ({
-		location,
-		locale
-	}) => {
+	await Promise.all(pages.map(async (routePath) => {
 
-		const html = wrap(render(locale, location), locale);
+		const locale = getLocaleFromPath(routePath);
+		const html = wrap(render(locale, routePath), locale);
 
 		await fs.mkdir(
-			path.join('build', location),
+			path.join('build', routePath),
 			{ recursive: true }
 		);
 
 		await fs.writeFile(
-			path.join('build', location, 'index.html'),
+			path.join('build', routePath, 'index.html'),
 			html
 		);
 	}));
 }
 
-renderAll([
-	{
-		location: '/',
-		locale:   'en'
-	},
-	{
-		location: '/team',
-		locale:   'en'
-	},
-	{
-		location: '/ru',
-		locale:   'ru'
-	},
-	{
-		location: '/ru/team',
-		locale:   'ru'
-	}
-]);
+renderAll(RoutesList);
