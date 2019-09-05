@@ -23,7 +23,7 @@ export default class SpeakersContainer extends Component {
 			<>
 				<Speakers/>
 				<Route
-					path={getPath(this.context, '/speakers/:id')}
+					path={getPath(this.context, '/speakers?id=:id')}
 					component={SpeakerModal}
 				/>
 			</>

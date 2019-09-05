@@ -13,6 +13,7 @@ import {
 import {
 	omit
 } from '@flexis/ui/helpers';
+import getPath from '~/components/common/i18n';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -108,7 +109,7 @@ export class Speakers extends Component<IProps> {
 									</Badge>
 								)}
 								to={{
-									pathname: `/speakers/${item.id}`,
+									pathname: getPath(this.context, `/speakers?id=${item.id}`),
 									search
 								}}
 							/>
