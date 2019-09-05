@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 import {
 	CombinePropsAndAttributes
 } from '@flexis/ui/helpers';
+import Link from '../Link';
+import Button from '../Button';
 import stylesheet from './TicketPreview.st.css';
 
 interface ISelfProps {
@@ -122,22 +124,35 @@ export default class TicketPreview extends Component<IProps> {
 							</ul>
 						</div>
 					</div>
-					{afterparty && (
+					{afterparty ? (
 						<div
 							{...stylesheet('afterparty')}
 						>
 							Аффтепати
+						</div>
+					) : (
+						<div
+							{...stylesheet('buyTicket')}
+						>
+							<Link
+								to='/some-url'
+								disguised
+							>
+								<Button
+									variant='secondary'
+								>
+									Купить билет на Аффтепати
+								</Button>
+							</Link>
 						</div>
 					)}
 				</div>
 				<div
 					{...stylesheet('ticket')}
 				>
-					<div
-						{...stylesheet('single')}
-					>
+					<h3>
 						Один Билет
-					</div>
+					</h3>
 				</div>
 			</div>
 		);

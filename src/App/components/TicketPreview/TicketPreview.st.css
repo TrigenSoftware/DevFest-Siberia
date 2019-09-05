@@ -102,27 +102,16 @@
 }
 
 .afterparty {
-	position: relative;
+	display: flex;
+	justify-content: center;
 	margin-left: rel(7, 26);
 	border: rel(5, 26) solid value(colorBlue7);
 	padding: rel(15, 26);
-	text-align: center;
 	color: value(colorBlue7);
 	font-size: rel(26, 24);
 	font-weight: bold;
 	writing-mode: vertical-rl;
 	text-orientation: mixed;
-}
-
-.afterparty::before {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	border: 1px dashed value(colorBlue7);
-	width: 90%;
-	height: 95%;
-	content: '';
 }
 
 .ticket {
@@ -133,17 +122,22 @@
 	text-orientation: mixed;
 }
 
-.single {
+.ticket h3 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin: 0;
 	border: rel(5, 26) solid value(colorPink0);
 	height: 100%;
-	text-align: center;
 	color: value(colorPink0);
 	font-size: rel(26, 24);
 	font-weight: bold;
 }
+
+/* stylelint-disable a11y/no-display-none */
+.buyTicket {
+	display: none;
+}/* stylelint-enable */
 
 @media (max-width: value(sizeScreenSmMax)) {
 
@@ -188,11 +182,15 @@
 		margin: 0 0 81px;
 		border: none;
 		border-bottom: 2px dashed value(colorPink0);
-		padding: 30px;
+		padding: rel(30, 16) rel(30, 16) 0;
 	}
 
 	.infoContent .list {
 		margin: 0;
+	}
+
+	.item {
+		margin-bottom: rel(23, 16);
 	}
 
 	.afterparty {
@@ -200,20 +198,18 @@
 		writing-mode: horizontal-tb;
 	}
 
-	/* stylelint-disable a11y/no-display-none */
-	.afterparty::before {
-		display: none;
-	}/* stylelint-enable */
-
 	.ticket {
 		display: block;
 		border: none;
 		border-bottom: 2px dashed value(colorPink0);
+		writing-mode: horizontal-tb;
 	}
 
-	.single {
+	.buyTicket {
 		display: block;
-		width: 100%;
-		writing-mode: horizontal-tb;
+		margin-bottom: 5px;
+		border: 5px solid value(colorBlue7);
+		padding: 7px;
+		text-align: center;
 	}
 }

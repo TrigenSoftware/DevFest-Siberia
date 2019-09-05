@@ -3,6 +3,9 @@ import {
 	storiesOf
 } from '@storybook/react';
 import {
+	MemoryRouter
+} from 'react-router';
+import {
 	boolean,
 	text
 } from '@storybook/addon-knobs/react';
@@ -17,6 +20,11 @@ storiesOf('Components|TicketPreview', module)
 	.addParameters({
 		info: stylableApi
 	})
+	.addDecorator(story => (
+		<MemoryRouter initialEntries={['/']}>
+			{story()}
+		</MemoryRouter>
+	))
 	.add(
 		'with content',
 		() => (
