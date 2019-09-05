@@ -23,8 +23,6 @@
 }
 
 .root .label {
-	display: flex;
-	justify-content: space-between;
 	padding-bottom: rel(5, 24);
 	color: value(colorBlue4);
 }
@@ -34,7 +32,12 @@
 	color: value(colorBlue4);
 }
 
-.root .label span:nth-child(2) {
+.root .notice {
+	display: flex;
+	justify-content: space-between;
+}
+
+.root .notice span:nth-child(2) {
 	padding-left: rel(5, 24);
 	color: value(colorBlue3);
 }

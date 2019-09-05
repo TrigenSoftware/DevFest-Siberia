@@ -47,10 +47,12 @@ export default class FormGroup extends Component<IProps> {
 
 		if (label && notice) {
 			return (
-				<>
+				<span
+					{...stylesheet('notice')}
+				>
 					<span>{label}</span>
 					<span>{notice}</span>
-				</>
+				</span>
 			);
 		}
 
