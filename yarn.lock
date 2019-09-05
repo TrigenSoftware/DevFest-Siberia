@@ -2275,10 +2275,10 @@
     typedoc "^0.15.0"
     typescript "3.6.2"
 
-"@trigen/scripts-preset-react-app@^2.13.5":
-  version "2.13.5"
-  resolved "https://registry.yarnpkg.com/@trigen/scripts-preset-react-app/-/scripts-preset-react-app-2.13.5.tgz#5211a6487dda9d91f800184bf95a85ab03319b63"
-  integrity sha512-rMxL8faCc9TpPRj6sI2avQlmSPzfEbNlFnUfFD2m0DYXda5Vg7lOcivmPbdRQ1crGtZWR6udLRaUXRymNC2DsA==
+"@trigen/scripts-preset-react-app@^2.13.6":
+  version "2.13.6"
+  resolved "https://registry.yarnpkg.com/@trigen/scripts-preset-react-app/-/scripts-preset-react-app-2.13.6.tgz#2c99b83f86a94698850c6ae8648c5fd474851b57"
+  integrity sha512-OAS5sRPFcRDG3iiVwkaUoxdVJEKI4bXfHzoDq4gf2hn+9hKHtN9b/N6Lq4Jx1vupTmKTHjp7teIyfZ7fLbD9pg==
   dependencies:
     "@babel/register" "^7.4.0"
     "@flexis/favicons" "^1.3.4"

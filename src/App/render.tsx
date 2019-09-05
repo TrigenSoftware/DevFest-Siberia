@@ -86,10 +86,19 @@ async function createTemplate() {
 	return (
 		[scripts, view]: [string, string],
 		locale: string
-	) => template
-		.replace(/<script[^>]*src.*<\/script>/, scripts)
-		.replace('<script', `<script>var I18N=${locale === 'en' ? enstr : rustr};</script><script`)
-		.replace(/(<div id=view>)(<\/div>)/, `${spriteHtml}$1${view}$2`);
+	) => {
+
+		let result = template
+			.replace(/<script[^>]*src.*<\/script>/, scripts)
+			.replace('<script', `<script>var I18N=${locale === 'en' ? enstr : rustr};</script><script`)
+			.replace(/(<div id=view>)(<\/div>)/, `${spriteHtml}$1${view}$2`);
+
+		if (process.env.BASE_URL) {
+			result = result.replace(/(<head>)/, `$1<base href=${process.env.BASE_URL} >`);
+		}
+
+		return result;
+	};
 }
 
 async function renderAll(pages: string[]) {
