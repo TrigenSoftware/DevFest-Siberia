@@ -1,0 +1,95 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named:
+		fontFamilyMono,
+		colorWhite,
+		colorPink0,
+		colorBlue4;
+}
+
+.root {
+	position: relative;
+	border: rel(10, 24) solid value(colorPink0);
+}
+
+.root::before {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	z-index: 1;
+	transform: translate(-16%, -50%);
+	border-top: rel(10, 24) solid value(colorPink0);
+	border-right: rel(10, 24) solid value(colorPink0);
+	border-bottom: rel(10, 24) solid value(colorPink0);
+	border-top-right-radius: rel(130, 24);
+	border-bottom-right-radius: rel(130, 24);
+	background: value(colorWhite);
+	width: rel(65, 24);
+	height: rel(130, 24);
+	content: '';
+}
+
+.content {
+	position: relative;
+	margin: rel(7, 24);
+	overflow: hidden;
+}
+
+.content::before {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translate(-60%, -50%);
+	border: rel(5, 24) solid value(colorPink0);
+	border-radius: 50%;
+	background: value(colorWhite);
+	width: rel(150, 24);
+	height: rel(150, 24);
+	content: '';
+}
+
+.info {
+	border: rel(5, 24) solid value(colorPink0);
+}
+
+.infoContent {
+	display: flex;
+	justify-content: start;
+	margin-left: rel(74, 24);
+	border-left: 2px dashed value(colorPink0);
+	padding: rel(21, 24) rel(35, 24) rel(21, 24) 0;
+}
+
+.list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.list:first-child {
+	margin-left: rel(35, 24);
+}
+
+.list:not(:last-child) {
+	margin-right: rel(68, 24);
+}
+
+.item {
+	margin-bottom: rel(8, 24);
+}
+
+.title {
+	font-size: rel(21, 24);
+}
+
+.text {
+	color: value(colorBlue4);
+	font-family: value(fontFamilyMono);
+	font-weight: bold;
+}
