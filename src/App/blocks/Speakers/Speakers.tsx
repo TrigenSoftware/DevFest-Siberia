@@ -13,7 +13,11 @@ import {
 import {
 	omit
 } from '@flexis/ui/helpers';
-import getPath from '~/components/common/i18n';
+import {
+	getLocalizedPath,
+	getSpeakers,
+	getTalkTypes
+} from '~/services/i18n';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -24,10 +28,6 @@ import Link from '~/components/Link';
 import Button from '~/components/Button';
 import ProfileCard from '~/components/ProfileCard';
 import Badge from '~/components/Badge';
-import {
-	getSpeakers,
-	getTalkTypes
-} from '../common/i18n';
 import {
 	routeProps
 } from '../common/router';
@@ -109,7 +109,7 @@ export class Speakers extends Component<IProps> {
 									</Badge>
 								)}
 								to={{
-									pathname: getPath(this.context, `/speakers?id=${item.id}`),
+									pathname: getLocalizedPath(context, `/speakers?id=${item.id}`),
 									search
 								}}
 							/>

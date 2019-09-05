@@ -15,7 +15,7 @@ import {
 } from '@flexis/ui/helpers';
 import {
 	getSpeaker
-} from '~/blocks/common/i18n';
+} from '~/services/i18n';
 import {
 	routeProps
 } from '~/blocks/common/router';
