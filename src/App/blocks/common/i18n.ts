@@ -55,7 +55,20 @@ export function getTalkTypes(context) {
 	return nav;
 }
 
-export function getPartners(context, type?) {
+export function getPartners(context) {
+
+	const {
+		partners: {
+			partners
+		}
+	} = context.getCatalog(
+		context.getLocale()
+	) as any;
+
+	return partners;
+}
+
+export function getPartnersInfo(context, type?) {
 
 	const {
 		partners: {
