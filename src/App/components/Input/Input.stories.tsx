@@ -1,3 +1,4 @@
+// tslint:disable: no-magic-numbers jsx-no-lambda
 import React from 'react';
 import {
 	storiesOf
@@ -20,6 +21,17 @@ storiesOf('Components|Input', module)
 				{...events}
 				placeholder={text('Placeholder', '')}
 				disabled={boolean('Disabled', false)}
+			/>
+		)
+	)
+	.add(
+		'with invalid state',
+		() => (
+			<Input
+				{...events}
+				type='number'
+				defaultValue={10}
+				max={5}
 			/>
 		)
 	)

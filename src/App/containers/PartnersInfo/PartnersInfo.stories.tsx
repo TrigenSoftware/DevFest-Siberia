@@ -15,7 +15,7 @@ import Header from '~/blocks/Header';
 import Footer from '~/blocks/Footer';
 import ru from '~/locales/ru.json';
 import en from '~/locales/en.json';
-import Speakers from './';
+import PartnersInfo from './';
 
 const stylableApi = `
 Stylable API
@@ -23,19 +23,19 @@ Stylable API
 _empty_
 `;
 
-storiesOf('Containers|Speakers', module)
+storiesOf('Containers|PartnersInfo', module)
 	.addParameters({
 		info: stylableApi
 	})
 	.addDecorator(story => (
+		<MemoryRouter initialEntries={['/partners']}>
+			{story()}
+		</MemoryRouter>
+	))
+	.addDecorator(story => (
 		<div style={{ margin: '-12px' }}>
 			{story()}
 		</div>
-	))
-	.addDecorator(story => (
-		<MemoryRouter initialEntries={['/speakers']}>
-			{story()}
-		</MemoryRouter>
 	))
 	.addDecorator(story => (
 		<I18nProvider
@@ -54,7 +54,7 @@ storiesOf('Containers|Speakers', module)
 		() => (
 			<>
 				<Header/>
-				<Speakers/>
+				<PartnersInfo/>
 				<Footer/>
 			</>
 		)

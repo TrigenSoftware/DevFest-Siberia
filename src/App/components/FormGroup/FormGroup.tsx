@@ -1,24 +1,28 @@
 import React, {
 	Component
 } from 'react';
+import PropTypes from 'prop-types';
 import FlexisFormGroup, {
-	IProps
+	IProps as IFlexisFormGroupProps
 } from '@flexis/ui/components/FormGroup';
 import stylesheet from './FormGroup.st.css';
 
-export {
-	IProps
-};
+export interface IProps extends IFlexisFormGroupProps {
+	notice?: string;
+}
 
 export default class FormGroup extends Component<IProps> {
 
-	static propTypes = FlexisFormGroup.propTypes;
+	static propTypes = {
+		...FlexisFormGroup.propTypes,
+		notice: PropTypes.string
+	};
+
 	static defaultProps = FlexisFormGroup.defaultProps;
 
 	render() {
 
 		const {
-			description,
 			children,
 			...props
 		} = this.props;
@@ -28,7 +32,6 @@ export default class FormGroup extends Component<IProps> {
 				{...props}
 				{...stylesheet('root', {}, props)}
 				label={this.renderLabel()}
-				description=''
 			>
 				{children}
 			</FlexisFormGroup>
@@ -39,14 +42,14 @@ export default class FormGroup extends Component<IProps> {
 
 		const {
 			label,
-			description
+			notice
 		} = this.props;
 
-		if (label && description) {
+		if (label && notice) {
 			return (
 				<>
 					<span>{label}</span>
-					<span>{description}</span>
+					<span>{notice}</span>
 				</>
 			);
 		}

@@ -25,7 +25,7 @@ import ToggleNav, {
 import PartnerCard from '~/components/PartnerCard';
 import {
 	getPartnersTypes,
-	getPartners
+	getPartnersInfo
 } from '../common/i18n';
 import {
 	routeProps
@@ -53,7 +53,7 @@ export class PartnersInfo extends Component<IProps> {
 		} = props;
 		const type = new URLSearchParams(search).get('type');
 		const nav = getPartnersTypes(context);
-		const partners = getPartners(context, type);
+		const partners = getPartnersInfo(context, type);
 		const columns = [[], [], []];
 
 		partners.forEach((item, i) => {

@@ -49,6 +49,22 @@ storiesOf('Components|FormGroup', module)
 		)
 	)
 	.add(
+		'with notice',
+		() => (
+			<FormGroup
+				id='input-id'
+				label={text('Label', 'Text label')}
+				description={text('Description', 'Text description')}
+				notice={text('Notice', 'Text notice')}
+			>
+				<Input
+					{...events}
+					defaultValue=''
+				/>
+			</FormGroup>
+		)
+	)
+	.add(
 		'with required state',
 		() => (
 			<FormGroup

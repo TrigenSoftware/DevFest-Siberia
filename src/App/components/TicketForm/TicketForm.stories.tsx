@@ -108,7 +108,7 @@ storiesOf('Components|TicketForm', module)
 				<FormGroup
 					id='email'
 					label='Почта'
-					description={text('Description', 'Сюда мы пришлем билет : )')}
+					notice={text('Description', 'Сюда мы пришлем билет : )')}
 				>
 					<Input
 						{...events}
