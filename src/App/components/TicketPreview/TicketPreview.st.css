@@ -143,12 +143,21 @@
 
 	.root {
 		flex-direction: column-reverse;
+		border: 6px solid value(colorPink0);
 	}
 
 	.root::before {
 		top: 100%;
 		left: 50%;
-		transform: translate(-50%, -67%) rotate(-90deg);
+		transform: translate(-50%, -70%) rotate(-90deg);
+		border-top: 6px solid value(colorPink0);
+		border-right: 6px solid value(colorPink0);
+		border-bottom: 6px solid value(colorPink0);
+		border-top-right-radius: 131px;
+		border-bottom-right-radius: 131px;
+		background: value(colorWhite);
+		width: 65px;
+		height: 131px;
 	}
 
 	.content {
@@ -158,12 +167,19 @@
 	.content::before {
 		top: 100%;
 		left: 50%;
-		transform: translate(-50%, -40%) rotate(-90deg);
+		transform: translate(-50%, -43%) rotate(-90deg);
+		border: 5px solid value(colorPink0);
+		width: 150px;
+		height: 150px;
+	}
+
+	.info {
+		border: 5px solid value(colorPink0);
 	}
 
 	.infoContent {
 		display: block;
-		margin: 0 0 100px;
+		margin: 0 0 81px;
 		border: none;
 		border-bottom: 2px dashed value(colorPink0);
 		padding: 30px;
