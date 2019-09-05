@@ -3,7 +3,8 @@ import {
 	storiesOf
 } from '@storybook/react';
 import {
-	boolean
+	boolean,
+	text
 } from '@storybook/addon-knobs/react';
 import TicketPreview from './';
 
@@ -20,10 +21,10 @@ storiesOf('Components|TicketPreview', module)
 		'with content',
 		() => (
 			<TicketPreview
-				id='2231'
-				name='Василий Петров'
-				location='Академпарк, 18'
-				date='29 ноября – 1 декабря'
+				id={text('id', '123123123')}
+				name={text('Name', 'Jhon Doe')}
+				location={text('Location', 'Academ')}
+				date={text('Date', '29 ноября – 1 декабря')}
 				afterparty={boolean('Afterparty', false)}
 			/>
 		)

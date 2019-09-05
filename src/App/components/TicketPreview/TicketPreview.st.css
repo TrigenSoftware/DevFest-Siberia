@@ -95,6 +95,7 @@
 }
 
 .text {
+	display: flex;
 	color: value(colorBlue4);
 	font-family: value(fontFamilyMono);
 	font-weight: bold;
@@ -125,18 +126,23 @@
 }
 
 .ticket {
+	display: flex;
 	border-left: 2px dashed value(colorPink0);
 	padding: rel(7, 24);
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
 }
 
 .single {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	border: rel(5, 26) solid value(colorPink0);
+	height: 100%;
 	text-align: center;
 	color: value(colorPink0);
 	font-size: rel(26, 24);
 	font-weight: bold;
-	writing-mode: vertical-rl;
-	text-orientation: mixed;
 }
 
 @media (max-width: value(sizeScreenSmMax)) {
@@ -189,21 +195,25 @@
 		margin: 0;
 	}
 
-	.ticket {
-		border: none;
-		border-bottom: 2px dashed value(colorPink0);
-	}
-
 	.afterparty {
 		margin: 0 0 5px;
 		writing-mode: horizontal-tb;
 	}
 
+	/* stylelint-disable a11y/no-display-none */
 	.afterparty::before {
 		display: none;
+	}/* stylelint-enable */
+
+	.ticket {
+		display: block;
+		border: none;
+		border-bottom: 2px dashed value(colorPink0);
 	}
 
 	.single {
+		display: block;
+		width: 100%;
 		writing-mode: horizontal-tb;
 	}
 }
