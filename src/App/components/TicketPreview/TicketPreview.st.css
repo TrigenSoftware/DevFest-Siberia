@@ -95,7 +95,6 @@
 }
 
 .text {
-	display: flex;
 	color: value(colorBlue4);
 	font-family: value(fontFamilyMono);
 	font-weight: bold;
@@ -104,14 +103,26 @@
 .afterparty {
 	display: flex;
 	justify-content: center;
-	margin-left: rel(7, 26);
-	border: rel(5, 26) solid value(colorBlue7);
-	padding: rel(15, 26);
+	margin-left: rel(7, 24);
+	border: rel(5, 24) solid value(colorBlue7);
+	padding: rel(3, 24);
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+}
+
+.afterpartyContent {
+	border: 1px dashed value(colorBlue7);
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+.afterparty h3 {
+	margin: 0;
+	padding: rel(12, 26);
 	color: value(colorBlue7);
 	font-size: rel(26, 24);
 	font-weight: bold;
-	writing-mode: vertical-rl;
-	text-orientation: mixed;
 }
 
 .ticket {
@@ -195,7 +206,14 @@
 
 	.afterparty {
 		margin: 0 0 5px;
+		padding: 4px;
 		writing-mode: horizontal-tb;
+	}
+
+	.afterparty h3 {
+		margin: 4px;
+		background-color: value(colorBlue7);
+		color: value(colorWhite);
 	}
 
 	.ticket {

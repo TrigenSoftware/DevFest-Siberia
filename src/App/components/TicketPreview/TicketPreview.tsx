@@ -128,7 +128,13 @@ export default class TicketPreview extends Component<IProps> {
 						<div
 							{...stylesheet('afterparty')}
 						>
-							Аффтепати
+							<div
+								{...stylesheet('afterpartyContent')}
+							>
+								<h3>
+									Аффтепати
+								</h3>
+							</div>
 						</div>
 					) : (
 						<div
