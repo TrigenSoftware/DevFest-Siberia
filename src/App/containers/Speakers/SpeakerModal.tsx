@@ -3,7 +3,8 @@ import React, {
 	Component
 } from 'react';
 import {
-	RouteComponentProps
+	RouteComponentProps,
+	withRouter
 } from 'react-router-dom';
 import {
 	I18nContext
@@ -19,52 +20,36 @@ import {
 import {
 	routeProps
 } from '~/blocks/common/router';
-import Modal, {
-	IProps as IModalProps
-} from '~/components/Modal';
+import Modal from '~/components/Modal';
 import SpeakerCard from '~/components/SpeakerCard';
 import stylesheet from './SpeakerModal.st.css';
 
-interface IRouteParams {
-	id?: string;
-}
-
-export interface IProps extends IModalProps, RouteComponentProps<IRouteParams> {}
+export interface IProps extends RouteComponentProps {}
 
 interface IState {
 	active: boolean;
-	currentId: string;
 }
 
 const {
 	transitionDuration
 } = Modal.defaultProps;
 
-export default class SpeakerModal extends Component<IProps, IState> {
+export class SpeakerModal extends Component<IProps, IState> {
 
 	static contextType = I18nContext;
 
 	static getDerivedStateFromProps(
 		{
-			match: {
-				params
+			location: {
+				search
 			}
-		}: IProps,
-		{ currentId }: IState
+		}: IProps
 	) {
 
-		let nextState: Partial<IState> = null;
-
-		nextState = {
-			active: false
+		const searchWithParam = search.includes('id');
+		const nextState: Partial<IState> = {
+			active: searchWithParam
 		};
-
-		if (params.id !== currentId && params.id) {
-			nextState = {
-				active:    true,
-				currentId: params.id
-			};
-		}
 
 		return nextState;
 	}
@@ -72,8 +57,7 @@ export default class SpeakerModal extends Component<IProps, IState> {
 	context!: ContextType<typeof I18nContext>;
 
 	state = {
-		active:    false,
-		currentId: null
+		active: false
 	};
 
 	render() {
@@ -83,14 +67,15 @@ export default class SpeakerModal extends Component<IProps, IState> {
 			props
 		} = this;
 		const {
-			match: {
-				params
+			location: {
+				search
 			}
 		} = props;
 		const {
 			active
 		} = this.state;
-		const speaker = getSpeaker(context, params.id);
+		const id = new URLSearchParams(search).get('id');
+		const speaker = getSpeaker(context, id);
 
 		return (
 			<Modal
@@ -99,9 +84,11 @@ export default class SpeakerModal extends Component<IProps, IState> {
 				onClose={this.onClose}
 				active={active}
 			>
-				<SpeakerCard
-					{...speaker}
-				/>
+				{speaker && (
+					<SpeakerCard
+						{...speaker}
+					/>
+				)}
 			</Modal>
 		);
 	}
@@ -122,10 +109,13 @@ export default class SpeakerModal extends Component<IProps, IState> {
 				search
 			}
 		} = this.props;
+		const type = new URLSearchParams(search).get('type');
 
 		history.push({
 			pathname: '/speakers',
-			search
+			search: `${type ? `type=${type}` : ''}`
 		});
 	}
 }
+
+export default withRouter(SpeakerModal);

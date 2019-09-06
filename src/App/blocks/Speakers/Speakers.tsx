@@ -109,8 +109,8 @@ export class Speakers extends Component<IProps> {
 									</Badge>
 								)}
 								to={{
-									pathname: getLocalizedPath(context, `/speakers?id=${item.id}`),
-									search
+									pathname: getLocalizedPath(context, '/speakers'),
+									search: `${type ? `type=${type}&` : ''}id=${item.id}`
 								}}
 							/>
 						</li>
