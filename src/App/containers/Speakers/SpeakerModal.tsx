@@ -77,6 +77,10 @@ export class SpeakerModal extends Component<IProps, IState> {
 		const id = new URLSearchParams(search).get('id');
 		const speaker = getSpeaker(context, id);
 
+		if (!speaker) {
+			return null;
+		}
+
 		return (
 			<Modal
 				{...omit(props, routeProps)}
@@ -84,11 +88,9 @@ export class SpeakerModal extends Component<IProps, IState> {
 				onClose={this.onClose}
 				active={active}
 			>
-				{speaker && (
-					<SpeakerCard
-						{...speaker}
-					/>
-				)}
+				<SpeakerCard
+					{...speaker}
+				/>
 			</Modal>
 		);
 	}

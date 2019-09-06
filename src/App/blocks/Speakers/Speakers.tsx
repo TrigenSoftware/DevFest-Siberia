@@ -29,7 +29,8 @@ import Button from '~/components/Button';
 import ProfileCard from '~/components/ProfileCard';
 import Badge from '~/components/Badge';
 import {
-	routeProps
+	routeProps,
+	addSearchParams
 } from '../common/router';
 import stylesheet from './Speakers.st.css';
 
@@ -110,7 +111,10 @@ export class Speakers extends Component<IProps> {
 								)}
 								to={{
 									pathname: getLocalizedPath(context, '/speakers'),
-									search: `${type ? `type=${type}&` : ''}id=${item.id}`
+									search: addSearchParams(search, {
+										id: item.id,
+										type
+									})
 								}}
 							/>
 						</li>
