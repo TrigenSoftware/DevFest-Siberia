@@ -30,7 +30,10 @@ import PartnerCard from '~/components/PartnerCard';
 import {
 	routeProps
 } from '../common/router';
-import stylesheet from './PartnersInfo.st.css';
+import {
+	style,
+	classes
+} from './PartnersInfo.st.css';
 
 export interface IProps extends ISectionProps, RouteComponentProps {}
 
@@ -43,14 +46,15 @@ export class PartnersInfo extends Component<IProps> {
 	render() {
 
 		const {
-			context,
-			props
-		} = this;
-		const {
+			className,
 			location: {
 				search
-			}
-		} = props;
+			},
+			...props
+		} = this.props;
+		const {
+			context
+		} = this;
 		const type = new URLSearchParams(search).get('type');
 		const nav = getPartnersTypes(context);
 		const partners = getPartnersInfo(context, type);
@@ -76,16 +80,16 @@ export class PartnersInfo extends Component<IProps> {
 		return (
 			<Section
 				{...omit(props, routeProps)}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			>
 				<div
-					{...stylesheet('group')}
+					className={classes.group}
 				>
 					<h2>
 						{__x`partners.title`}
 					</h2>
 					<Link
-						{...stylesheet('link')}
+						className={classes.link}
 						href='mailto:devfest@gdg-siberia.com'
 						disguised
 					>
@@ -97,7 +101,7 @@ export class PartnersInfo extends Component<IProps> {
 					</Link>
 				</div>
 				<ToggleNav
-					{...stylesheet('nav')}
+					className={classes.nav}
 				>
 					{nav.map(item => (
 						<ToggleNavLink
@@ -109,7 +113,7 @@ export class PartnersInfo extends Component<IProps> {
 					))}
 				</ToggleNav>
 				<Link
-					{...stylesheet('link', {
+					className={style(classes.link, {
 						mobile: true
 					})}
 					href='mailto:devfest@gdg-siberia.com'
@@ -122,7 +126,7 @@ export class PartnersInfo extends Component<IProps> {
 					</Button>
 				</Link>
 				<ul
-					{...stylesheet('list')}
+					className={classes.list}
 				>
 					{columns.map((item, i) =>
 						item.length !== 0 && (
@@ -131,7 +135,7 @@ export class PartnersInfo extends Component<IProps> {
 							>
 								{item.map(partner => (
 									<PartnerCard
-										{...stylesheet('card')}
+										className={classes.card}
 										key={partner.href}
 										{...partner}
 										to={partner.href}

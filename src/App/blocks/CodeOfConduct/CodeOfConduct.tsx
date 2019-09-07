@@ -8,7 +8,10 @@ import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
 import Link from '~/components/Link';
-import stylesheet from './CodeOfConduct.st.css';
+import {
+	style,
+	classes
+} from './CodeOfConduct.st.css';
 
 export type IProps = ISectionProps;
 
@@ -17,19 +20,20 @@ export default class CodeOfConduct extends Component<IProps> {
 	render() {
 
 		const {
-			props
-		} = this;
+			className,
+			...props
+		} = this.props;
 
 		return (
 			<Section
 				{...props}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			>
 				<h2>
 					{__x`coc.title`}
 				</h2>
 				<article
-					{...stylesheet('article')}
+					className={classes.article}
 				>
 					<p>
 						{__x`coc.rules`}
@@ -38,7 +42,7 @@ export default class CodeOfConduct extends Component<IProps> {
 						{__x`coc.about`}
 					</p>
 					<ul
-						{...stylesheet('list')}
+						className={classes.list}
 					>
 						<li>
 							{__x`coc.email`}:{' '}
@@ -58,7 +62,7 @@ export default class CodeOfConduct extends Component<IProps> {
 						</li>
 					</ul>
 					<footer
-						{...stylesheet('footer')}
+						className={classes.footer}
 					>
 						<h3>
 							© Copyright

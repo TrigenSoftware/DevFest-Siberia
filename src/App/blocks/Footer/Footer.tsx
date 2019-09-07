@@ -17,7 +17,10 @@ import Section, {
 import Link from '~/components/Link';
 import ContactLink from '~/components/ContactLink';
 import EnvelopeIcon from '~/icons/envelope.svg';
-import stylesheet from './Footer.st.css';
+import {
+	style,
+	classes
+} from './Footer.st.css';
 
 export type IProps = ISectionProps;
 
@@ -30,8 +33,11 @@ export default class Footer extends Component<IProps> {
 	render() {
 
 		const {
-			context,
-			props
+			className,
+			...props
+		} = this.props;
+		const {
+			context
 		} = this;
 		const visitorsLinks = getFooterVisitorsLinks(context);
 		const devFestsLinks = getFooterDevFestsLinks(context);
@@ -39,14 +45,14 @@ export default class Footer extends Component<IProps> {
 
 		return (
 			<footer
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			>
 				<Section
 					{...props}
-					{...stylesheet('section')}
+					className={classes.section}
 				>
 					<ul
-						{...stylesheet('list')}
+						className={classes.list}
 					>
 						<li>
 							<h3>
@@ -59,7 +65,7 @@ export default class Footer extends Component<IProps> {
 						}) => (
 							<li key={link}>
 								<Link
-									{...stylesheet('link')}
+									className={classes.link}
 									to={link}
 								>
 									{label}
@@ -67,7 +73,7 @@ export default class Footer extends Component<IProps> {
 							</li>
 						))}
 						<li
-							{...stylesheet('separator')}
+							className={classes.separator}
 						/>
 						{devFestsLinks.map(({
 							link,
@@ -75,7 +81,7 @@ export default class Footer extends Component<IProps> {
 						}) => (
 							<li key={link}>
 								<Link
-									{...stylesheet('link')}
+									className={classes.link}
 									to={link}
 									target='_blank'
 								>
@@ -85,7 +91,7 @@ export default class Footer extends Component<IProps> {
 						))}
 					</ul>
 					<ul
-						{...stylesheet('list')}
+						className={classes.list}
 					>
 						<li>
 							<h3>
@@ -94,7 +100,7 @@ export default class Footer extends Component<IProps> {
 						</li>
 						<li>
 							<Link
-								{...stylesheet('link')}
+								className={classes.link}
 								href='mailto:devfest@gdg-siberia.com'
 							>
 								{__x`footer.partner`}
@@ -102,7 +108,7 @@ export default class Footer extends Component<IProps> {
 						</li>
 					</ul>
 					<ul
-						{...stylesheet('list')}
+						className={classes.list}
 					>
 						<li>
 							<h3>
@@ -118,7 +124,7 @@ export default class Footer extends Component<IProps> {
 							</Link>
 						</li>
 						<li
-							{...stylesheet('separator')}
+							className={classes.separator}
 						/>
 						<li>
 							<h3>
@@ -132,7 +138,7 @@ export default class Footer extends Component<IProps> {
 							}) => (
 								<ContactLink
 									key={link}
-									{...stylesheet('contactLink')}
+									className={classes.contactLink}
 									title={label}
 									type={label.toLowerCase()}
 									href={link}

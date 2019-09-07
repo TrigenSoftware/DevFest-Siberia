@@ -20,7 +20,10 @@ import PinIcon from '~/icons/pin.svg';
 import {
 	googleMaps
 } from '~/data';
-import stylesheet from './Location.st.css';
+import {
+	style,
+	classes
+} from './Location.st.css';
 
 export type IProps = ISectionProps;
 
@@ -37,14 +40,15 @@ export default class Location extends Component<IProps> {
 	render() {
 
 		const {
-			props
-		} = this;
+			className,
+			...props
+		} = this.props;
 		const locale = this.context.getLocale();
 
 		return (
 			<Section
 				{...props}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			>
 				<GoogleMapReact
 					bootstrapURLKeys={{
@@ -57,10 +61,10 @@ export default class Location extends Component<IProps> {
 					onGoogleApiLoaded={this.renderMarkers}
 				/>
 				<article
-					{...stylesheet('info')}
+					className={classes.info}
 				>
 					<PinIcon
-						{...stylesheet('icon')}
+						className={classes.icon}
 						{...noSize}
 					/>
 					<address>

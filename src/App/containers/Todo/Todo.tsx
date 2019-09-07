@@ -10,7 +10,9 @@ import {
 import TodoList, {
 	TodoListItem
 } from '~/components/TodoList';
-import stylesheet from './Todo.st.css';
+import {
+	classes
+} from './Todo.st.css';
 
 export interface IProps extends ITodoStateProps {
 	add(payload: AddTodoPayload);
@@ -41,7 +43,7 @@ export class TodoContainer extends Component<IProps> {
 
 		return (
 			<main
-				{...stylesheet('root')}
+				className={classes.root}
 			>
 				<TodoList
 					onAdd={this.onAdd}
