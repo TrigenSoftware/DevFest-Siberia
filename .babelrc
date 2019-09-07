@@ -8,6 +8,9 @@
 			}
 		]
 	],
+	"plugins": [
+		"@loadable/babel-plugin"
+	],
 	"env": {
 		"test": {
 			"presets": [

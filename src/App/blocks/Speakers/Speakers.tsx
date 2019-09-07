@@ -14,6 +14,7 @@ import {
 	omit
 } from '@flexis/ui/helpers';
 import {
+	getLocalizedPath,
 	getSpeakers,
 	getTalkTypes
 } from '~/services/i18n';
@@ -112,7 +113,7 @@ export class Speakers extends Component<IProps> {
 									</Badge>
 								)}
 								to={{
-									pathname: `/speakers/${item.id}`,
+									pathname: getLocalizedPath(context, `/speakers/${item.id}`),
 									search
 								}}
 							/>

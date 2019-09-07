@@ -89,7 +89,9 @@ export default class App extends Component<IProps> {
 		}
 
 		return (
-			<Router>
+			<Router
+				basename={process.env.BASE_URL || null}
+			>
 				{children}
 			</Router>
 		);

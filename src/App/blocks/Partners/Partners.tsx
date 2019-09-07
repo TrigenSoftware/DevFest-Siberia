@@ -60,9 +60,9 @@ export default class Partners extends Component<IProps> {
 							{title}
 						</BrandsTitle>
 						<BrandsRow>
-							{items.map(item => (
+							{items.map((item, i) => (
 								<BrandsItem
-									key={item.title}
+									key={i}
 									{...item}
 								/>
 							))}

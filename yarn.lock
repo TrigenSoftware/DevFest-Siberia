@@ -1435,6 +1435,13 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
+"@loadable/babel-plugin@^5.10.0":
+  version "5.10.0"
+  resolved "https://registry.yarnpkg.com/@loadable/babel-plugin/-/babel-plugin-5.10.0.tgz#9d2b83649c910404214ae0da4c4a84a2a3f583ed"
+  integrity sha512-6hbsDIuHSjgATLK7m/Y7WwZ1t6vmZ22AYTtYsjK5L17KxiPm9v1hvUoheLs3jnDFUTHS6mgzD8vliZJdfsLLQA==
+  dependencies:
+    "@babel/plugin-syntax-dynamic-import" "^7.2.0"
+
 "@loadable/component@^5.10.2":
   version "5.10.2"
   resolved "https://registry.yarnpkg.com/@loadable/component/-/component-5.10.2.tgz#1f51e7a0064cc0f59604b1933bbc7a1bbfd84d18"
@@ -1442,6 +1449,20 @@
   dependencies:
     "@babel/runtime" "^7.4.4"
     hoist-non-react-statics "^3.3.0"
+
+"@loadable/server@^5.10.2":
+  version "5.10.2"
+  resolved "https://registry.yarnpkg.com/@loadable/server/-/server-5.10.2.tgz#044feee9026eb104ebcbfb9e35dbfe4e7976523a"
+  integrity sha512-6B0/LxiX4iWhucSHEAgiDfQthFjRfd7cfifNv/rlvbRN+KVJh0mJwmAAlRLee3n7bDfEhoRIH3v/7p7O7OfgWw==
+  dependencies:
+    lodash "^4.17.11"
+
+"@loadable/webpack-plugin@^5.7.1":
+  version "5.7.1"
+  resolved "https://registry.yarnpkg.com/@loadable/webpack-plugin/-/webpack-plugin-5.7.1.tgz#9fe4b19c347eaa72f8ff366ae9a9d2b724f86124"
+  integrity sha512-tURNYwPUahbM4Miz/mwMD+PZGnMpknRukwt4RViVX6tYOt06a5U92xJTv7t54C4tHdtCIEOmDrqCo97sfIu4mg==
+  dependencies:
+    mkdirp "^0.5.1"
 
 "@mapbox/point-geometry@^0.1.0":
   version "0.1.0"
@@ -17323,9 +17344,9 @@ webpack-sources@^1.1.0, webpack-sources@^1.4.0, webpack-sources@^1.4.1, webpack-
     source-map "~0.6.1"
 
 webpack@^4.26.1, webpack@^4.33.0, webpack@^4.38.0:
-  version "4.39.1"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.39.1.tgz#60ed9fb2b72cd60f26ea526c404d2a4cc97a1bd8"
-  integrity sha512-/LAb2TJ2z+eVwisldp3dqTEoNhzp/TLCZlmZm3GGGAlnfIWDgOEE758j/9atklNLfRyhKbZTCOIoPqLJXeBLbQ==
+  version "4.39.3"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.39.3.tgz#a02179d1032156b713b6ec2da7e0df9d037def50"
+  integrity sha512-BXSI9M211JyCVc3JxHWDpze85CvjC842EvpRsVTc/d15YJGlox7GIDd38kJgWrb3ZluyvIjgenbLDMBQPDcxYQ==
   dependencies:
     "@webassemblyjs/ast" "1.8.5"
     "@webassemblyjs/helper-module-context" "1.8.5"
