@@ -8,7 +8,10 @@ import Link, {
 import {
 	NavLink
 } from '~/components/Nav';
-import stylesheet from './Header.st.css';
+import {
+	style,
+	classes
+} from './Header.st.css';
 
 export interface IProps extends ILinkProps {
 	separated?: boolean;
@@ -29,6 +32,7 @@ export class HeaderLink extends Component<IProps> {
 	render() {
 
 		const {
+			className,
 			separated,
 			children,
 			...props
@@ -37,9 +41,9 @@ export class HeaderLink extends Component<IProps> {
 		return (
 			<NavLink
 				{...props}
-				{...stylesheet('link', {
+				className={style(classes.link, {
 					separated
-				}, props)}
+				}, className)}
 			>
 				{children}
 			</NavLink>

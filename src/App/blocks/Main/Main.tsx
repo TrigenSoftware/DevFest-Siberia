@@ -14,7 +14,10 @@ import TimerCat from '~/components/TimerCat/loadable';
 import {
 	startTime
 } from '~/data';
-import stylesheet from './Main.st.css';
+import {
+	style,
+	classes
+} from './Main.st.css';
 
 export type IProps = ISectionProps;
 
@@ -33,17 +36,18 @@ export default class Main extends Component<IProps> {
 	render() {
 
 		const {
-			props
-		} = this;
+			className,
+			...props
+		} = this.props;
 		const locale = this.context.getLocale();
 
 		return (
 			<Section
 				{...props}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			>
 				<article
-					{...stylesheet('info')}
+					className={classes.info}
 				>
 					<SROnly>
 						<h1>
@@ -67,7 +71,7 @@ export default class Main extends Component<IProps> {
 					</h2>
 				</article>
 				<TimerCat
-					{...stylesheet('svg')}
+					className={classes.svg}
 					aria-hidden
 					locale={locale}
 					start={startTime}

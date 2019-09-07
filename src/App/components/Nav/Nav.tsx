@@ -7,7 +7,10 @@ import {
 	Bind
 } from '@flexis/ui/helpers';
 import BurgerButton from '../BurgerButton';
-import stylesheet from './Nav.st.css';
+import {
+	style,
+	classes
+} from './Nav.st.css';
 
 export * from './NavLink';
 
@@ -26,6 +29,7 @@ export default class Nav extends Component<IProps, IState> {
 	render() {
 
 		const {
+			className,
 			children,
 			...props
 		} = this.props;
@@ -36,23 +40,23 @@ export default class Nav extends Component<IProps, IState> {
 		return (
 			<nav
 				{...props}
-				{...stylesheet('root', {
+				className={style(classes.root, {
 					active
-				}, props)}
+				}, className)}
 			>
 				<BurgerButton
-					{...stylesheet('toggle')}
+					className={classes.toggle}
 					onClick={this.onClick}
 					active={active}
 				/>
 				<ul
-					{...stylesheet('list')}
+					className={classes.list}
 					onClick={this.onLinkClick}
 				>
 					{children}
 				</ul>
 				<button
-					{...stylesheet('close')}
+					className={classes.close}
 					onClick={this.onClick}
 				/>
 			</nav>

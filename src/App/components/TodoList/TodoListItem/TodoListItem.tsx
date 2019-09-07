@@ -3,9 +3,13 @@ import React, {
 	ChangeEvent,
 	PureComponent
 } from 'react';
-import stylesheet from './TodoListItem.st.css';
+import {
+	style,
+	classes
+} from './TodoListItem.st.css';
 
 export interface ITodoListItemProps {
+	className?: string;
 	id: string;
 	value: string;
 	onSubmit?(id: string, value: string);
@@ -53,6 +57,9 @@ export class TodoListItem extends PureComponent<ITodoListItemProps, IState> {
 	render() {
 
 		const {
+			className
+		} = this.props;
+		const {
 			originalValue,
 			value
 		} = this.state;
@@ -61,23 +68,23 @@ export class TodoListItem extends PureComponent<ITodoListItemProps, IState> {
 		return (
 			<form
 				onSubmit={this.onSubmit}
-				{...stylesheet('root', {}, this.props)}
+				className={style(classes.root, className)}
 			>
 				<input
-					{...stylesheet('input')}
+					className={classes.input}
 					type='text'
 					onChange={this.onChange}
 					value={value}
 				/>
 				{valueWasChanged && (
 					<button
-						{...stylesheet('button')}
+						className={classes.button}
 					>
 						Save
 					</button>
 				)}
 				<button
-					{...stylesheet('button')}
+					className={classes.button}
 					type='button'
 					onClick={this.onDelete}
 				>

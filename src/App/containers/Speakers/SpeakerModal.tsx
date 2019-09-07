@@ -24,7 +24,10 @@ import Modal, {
 	IProps as IModalProps
 } from '~/components/Modal';
 import SpeakerCard from '~/components/SpeakerCard';
-import stylesheet from './SpeakerModal.st.css';
+import {
+	style,
+	classes
+} from './SpeakerModal.st.css';
 
 interface IRouteParams {
 	id?: string;
@@ -80,23 +83,24 @@ export default class SpeakerModal extends Component<IProps, IState> {
 	render() {
 
 		const {
-			context,
-			props
-		} = this;
-		const {
+			className,
 			match: {
 				params
-			}
-		} = props;
+			},
+			...props
+		} = this.props;
 		const {
 			active
 		} = this.state;
+		const {
+			context
+		} = this;
 		const speaker = getSpeaker(context, params.id);
 
 		return (
 			<Modal
 				{...omit(props, routeProps)}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 				onClose={this.onClose}
 				active={active}
 			>

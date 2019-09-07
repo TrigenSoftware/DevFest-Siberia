@@ -6,7 +6,10 @@ import FlexisButton, {
 	IProps as IFlexisButtonProps
 } from '@flexis/ui/components/Button';
 import unsetSize from '../common/unsetSize';
-import stylesheet from './Button.st.css';
+import {
+	style,
+	classes
+} from './Button.st.css';
 
 export enum VariantVariant {
 	Primary = 'primary',
@@ -37,6 +40,7 @@ export default class Button extends Component<IProps> {
 	render() {
 
 		const {
+			className,
 			variant,
 			icon,
 			children,
@@ -46,9 +50,9 @@ export default class Button extends Component<IProps> {
 		return(
 			<FlexisButton
 				{...props}
-				{...stylesheet('root', {
+				className={style(classes.root, {
 					[variant]: Boolean(variant)
-				}, props)}
+				}, className)}
 				icon={unsetSize(icon)}
 			>
 				{children}

@@ -3,7 +3,10 @@ import React, {
 	Children,
 	Component
 } from 'react';
-import stylesheet from './ToggleNav.st.css';
+import {
+	style,
+	classes
+} from './ToggleNav.st.css';
 
 export * from './ToggleNavLink';
 
@@ -14,6 +17,7 @@ export default class ToggleNav extends Component<IProps> {
 	render() {
 
 		const {
+			className,
 			color,
 			children,
 			...props
@@ -22,14 +26,14 @@ export default class ToggleNav extends Component<IProps> {
 		return (
 			<nav
 				{...props}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			>
 				<ul
-					{...stylesheet('list')}
+					className={classes.list}
 				>
 					{Children.map(children, child => child && (
 						<li
-							{...stylesheet('item')}
+							className={classes.item}
 						>
 							{child}
 						</li>

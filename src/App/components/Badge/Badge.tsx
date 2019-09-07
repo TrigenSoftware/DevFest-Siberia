@@ -5,7 +5,10 @@ import PropTypes from 'prop-types';
 import FlexisBadge, {
 	IProps as IFlexisBadgeProps
 } from '@flexis/ui/components/Badge';
-import stylesheet from './Badge.st.css';
+import {
+	style,
+	classes
+} from './Badge.st.css';
 
 export {
 	default as BadgeContainer
@@ -51,6 +54,7 @@ export default class Badge extends Component<IProps> {
 	render() {
 
 		const {
+			className,
 			variant,
 			color,
 			children,
@@ -60,10 +64,10 @@ export default class Badge extends Component<IProps> {
 		return (
 			<FlexisBadge
 				{...props}
-				{...stylesheet('root', {
+				className={style(classes.root, {
 					[variant]: Boolean(variant),
 					[color]:   Boolean(color)
-				}, props)}
+				}, className)}
 			>
 				{children}
 			</FlexisBadge>

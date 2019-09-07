@@ -5,11 +5,15 @@ import React, {
 	cloneElement
 } from 'react';
 import TodoListForm from './TodoListForm';
-import stylesheet from './TodoList.st.css';
+import {
+	style,
+	classes
+} from './TodoList.st.css';
 
 export * from './TodoListItem';
 
 export interface IProps {
+	className?: string;
 	children: ReactElement<any>|ReactElement<any>[];
 	onAdd?(text: string);
 	onChange?(id: string, text: string);
@@ -34,22 +38,23 @@ export default class TodoList extends PureComponent<IProps, IState> {
 	render() {
 
 		const {
+			className,
 			children
 		} = this.props;
 
 		return (
 			<div
-				{...stylesheet('root', {}, this.props)}
+				className={style(classes.root, className)}
 			>
 				<TodoListForm
-					{...stylesheet('form')}
+					className={classes.form}
 					onSubmit={this.onAdd}
 				/>
 				{Children.map(children, (child: ReactElement<any>) => child && (
 					cloneElement(child, {
-						...stylesheet('item', {}, child.props),
-						onSubmit: this.onChange,
-						onDelete: this.onDelete
+						className: style(classes.item, child.props.className),
+						onSubmit:  this.onChange,
+						onDelete:  this.onDelete
 					})
 				))}
 			</div>
