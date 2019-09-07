@@ -8,7 +8,10 @@ import {
 } from '@flexis/ui/helpers';
 import Link from '../Link';
 import Button from '../Button';
-import stylesheet from './TicketPreview.st.css';
+import {
+	style,
+	classes
+} from './TicketPreview.st.css';
 
 interface ISelfProps {
 	id: string;
@@ -36,6 +39,7 @@ export default class TicketPreview extends Component<IProps> {
 	render() {
 
 		const {
+			className,
 			id,
 			name,
 			location,
@@ -47,76 +51,76 @@ export default class TicketPreview extends Component<IProps> {
 		return (
 			<div
 				{...props}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			>
 				<div
-					{...stylesheet('content')}
+					className={classes.content}
 				>
 					<div
-						{...stylesheet('info')}
+						className={classes.info}
 					>
 						<div
-							{...stylesheet('infoContent')}
+							className={classes.infoContent}
 						>
 							<ul
-								{...stylesheet('list')}
+								className={classes.list}
 							>
 								<li
-									{...stylesheet('item')}
+									className={classes.item}
 								>
 									<h2
-										{...stylesheet('title')}
+										className={classes.title}
 									>
 										Номер Билета
 									</h2>
 									<div
-										{...stylesheet('text')}
+										className={classes.text}
 									>
 										ID {id}
 									</div>
 								</li>
 								<li
-									{...stylesheet('item')}
+									className={classes.item}
 								>
 									<h2
-										{...stylesheet('title')}
+										className={classes.title}
 									>
 										Для
 									</h2>
 									<div
-										{...stylesheet('text')}
+										className={classes.text}
 									>
 										{name}
 									</div>
 								</li>
 							</ul>
 							<ul
-								{...stylesheet('list')}
+								className={classes.list}
 							>
 								<li
-									{...stylesheet('item')}
+									className={classes.item}
 								>
 									<h2
-										{...stylesheet('title')}
+										className={classes.title}
 									>
 										Где
 									</h2>
 									<div
-										{...stylesheet('text')}
+										className={classes.text}
 									>
 										{location}
 									</div>
 								</li>
 								<li
-									{...stylesheet('item')}
+									className={classes.item}
 								>
 									<h2
-										{...stylesheet('title')}
+										className={classes.title}
 									>
 										Когда
 									</h2>
 									<div
-										{...stylesheet('text')}
+										className={classes.text}
 									>
 										{date}
 									</div>
@@ -126,10 +130,10 @@ export default class TicketPreview extends Component<IProps> {
 					</div>
 					{afterparty ? (
 						<div
-							{...stylesheet('afterparty')}
+							className={classes.afterparty}
 						>
 							<div
-								{...stylesheet('afterpartyContent')}
+								className={classes.afterpartyContent}
 							>
 								<h3>
 									Аффтепати
@@ -138,7 +142,7 @@ export default class TicketPreview extends Component<IProps> {
 						</div>
 					) : (
 						<div
-							{...stylesheet('buyTicket')}
+							className={classes.buyTicket}
 						>
 							<Link
 								to='/some-url'
@@ -154,7 +158,7 @@ export default class TicketPreview extends Component<IProps> {
 					)}
 				</div>
 				<div
-					{...stylesheet('ticket')}
+					className={classes.ticket}
 				>
 					<h3>
 						Один Билет
