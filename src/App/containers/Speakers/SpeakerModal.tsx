@@ -2,6 +2,7 @@ import React, {
 	ContextType,
 	Component
 } from 'react';
+import PropTypes from 'prop-types';
 import {
 	RouteComponentProps,
 	withRouter
@@ -27,7 +28,9 @@ import {
 	classes
 } from './SpeakerModal.st.css';
 
-export interface IProps extends RouteComponentProps {}
+export interface IProps extends RouteComponentProps {
+	className?: string;
+}
 
 interface IState {
 	active: boolean;
@@ -38,6 +41,10 @@ const {
 } = Modal.defaultProps;
 
 export class SpeakerModal extends Component<IProps, IState> {
+
+	static propTypes = {
+		className: PropTypes.string
+	};
 
 	static contextType = I18nContext;
 
@@ -70,6 +77,7 @@ export class SpeakerModal extends Component<IProps, IState> {
 			props
 		} = this;
 		const {
+			className,
 			location: {
 				search
 			}
@@ -87,7 +95,7 @@ export class SpeakerModal extends Component<IProps, IState> {
 		return (
 			<Modal
 				{...omit(props, routeProps)}
-				className={style(classes.root)}
+				className={style(classes.root, className)}
 				onClose={this.onClose}
 				active={active}
 			>
