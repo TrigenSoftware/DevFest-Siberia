@@ -32,7 +32,10 @@ import {
 	routeProps,
 	addSearchParams
 } from '../common/router';
-import stylesheet from './Speakers.st.css';
+import {
+	style,
+	classes
+} from './Speakers.st.css';
 
 export interface IProps extends ISectionProps, RouteComponentProps {}
 
@@ -45,14 +48,15 @@ export class Speakers extends Component<IProps> {
 	render() {
 
 		const {
-			context,
-			props
-		} = this;
-		const {
+			className,
 			location: {
 				search
-			}
-		} = props;
+			},
+			...props
+		} = this.props;
+		const {
+			context
+		} = this;
 		const type = new URLSearchParams(search).get('type');
 		const nav = getTalkTypes(context);
 		const speakers = getSpeakers(context, type);
@@ -60,16 +64,16 @@ export class Speakers extends Component<IProps> {
 		return (
 			<Section
 				{...omit(props, routeProps)}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			>
 				<div
-					{...stylesheet('group')}
+					className={classes.group}
 				>
 					<h2>
 						{__x`speakers.title`}
 					</h2>
 					<Link
-						{...stylesheet('link')}
+						className={classes.link}
 						href='https://www.papercall.io/dfsiberia19'
 						target='_blank'
 						disguised
@@ -82,7 +86,7 @@ export class Speakers extends Component<IProps> {
 					</Link>
 				</div>
 				<ToggleNav
-					{...stylesheet('nav')}
+					className={classes.nav}
 				>
 					{nav.map(item => (
 						<ToggleNavLink
@@ -94,7 +98,7 @@ export class Speakers extends Component<IProps> {
 					))}
 				</ToggleNav>
 				<ul
-					{...stylesheet('list')}
+					className={classes.list}
 				>
 					{speakers.map(item => (
 						<li

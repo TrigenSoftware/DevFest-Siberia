@@ -1,9 +1,13 @@
 import React, {
 	PureComponent
 } from 'react';
-import stylesheet from './Weather.st.css';
+import {
+	style,
+	classes
+} from './Weather.st.css';
 
 export interface IProps {
+	className?: string;
 	size?: 'sm';
 	date: string;
 	temp: number;
@@ -18,55 +22,55 @@ export default class Weather extends PureComponent<IProps> {
 	render() {
 
 		const {
+			className,
 			size,
 			date,
 			temp,
 			description,
 			humidity,
 			clouds,
-			precipitation,
-			...props
+			precipitation
 		} = this.props;
 
 		return (
 			<div
-				{...stylesheet('root', {
-					[`${size}Size`]: size
-				}, props)}
+				className={style(classes.root, {
+					[`${size}Size`]: Boolean(size)
+				}, className)}
 			>
 				{size && (
 					<div
-						{...stylesheet('date')}
+						className={classes.date}
 					>
 						{date}
 					</div>
 				)}
 				<div
-					{...stylesheet('temp')}
+					className={classes.temp}
 				>
 					{temp}
 					<sup>&#8451;</sup>
 				</div>
 				<div
-					{...stylesheet('description')}
+					className={classes.description}
 				>
 					{description}
 				</div>
 				<ul
-					{...stylesheet('params')}
+					className={classes.params}
 				>
 					<li
-						{...stylesheet('param')}
+						className={classes.param}
 					>
 						Humidity: {humidity}%
 					</li>
 					<li
-						{...stylesheet('param')}
+						className={classes.param}
 					>
 						Cloudiness: {clouds}%
 					</li>
 					<li
-						{...stylesheet('param')}
+						className={classes.param}
 					>
 						Recipitation: {precipitation}
 					</li>

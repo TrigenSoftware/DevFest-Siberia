@@ -32,11 +32,16 @@ export function addSearchParams(search: string, params: Record<string, any>) {
 				strval = String(value);
 				break;
 
+			case 'object':
+				break;
+
 			default:
 				strval = JSON.stringify(value);
 		}
 
-		searchParams.set(key, strval);
+		if (strval) {
+			searchParams.set(key, strval);
+		}
 	});
 
 	return formatSearch(searchParams.toString());

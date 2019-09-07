@@ -16,6 +16,7 @@ import {
 } from './types';
 
 export interface IProps {
+	className?: string;
 	start: Date;
 	locale: string;
 }

@@ -11,7 +11,10 @@ import Section, {
 import Button from '~/components/Button';
 import Checkbox from '~/components/Checkbox';
 import Link from '~/components/Link';
-import stylesheet from './Subscribe.st.css';
+import {
+	style,
+	classes
+} from './Subscribe.st.css';
 
 export type IProps = ISectionProps;
 
@@ -19,7 +22,7 @@ const policy = [
 	(
 		<Link
 			key='link'
-			{...stylesheet('link')}
+			className={classes.link}
 			to='/policy'
 		/>
 	)
@@ -30,16 +33,17 @@ export default class Subscribe extends Component<IProps> {
 	render() {
 
 		const {
-			props
-		} = this;
+			className,
+			...props
+		} = this.props;
 
 		return (
 			<Section
 				{...props}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			>
 				<h2
-					{...stylesheet('title')}
+					className={classes.title}
 				>
 					{__x`subscribe.title`}
 				</h2>
@@ -49,13 +53,13 @@ export default class Subscribe extends Component<IProps> {
 					target='_blank'
 				>
 					<div
-						{...stylesheet('group')}
+						className={classes.group}
 					>
 						<SROnly>
 							<label htmlFor='email'>Email</label>
 						</SROnly>
 						<input
-							{...stylesheet('input')}
+							className={classes.input}
 							required
 							id='email'
 							type='email'
@@ -63,17 +67,17 @@ export default class Subscribe extends Component<IProps> {
 							placeholder='Email'
 						/>
 						<Button
-							{...stylesheet('button')}
+							className={classes.button}
 							variant='secondary'
 						>
 							{__x`subscribe.button`}
 						</Button>
 					</div>
 					<footer
-						{...stylesheet('footer')}
+						className={classes.footer}
 					>
 						<Checkbox
-							{...stylesheet('checkbox')}
+							className={classes.checkbox}
 							required
 							id='policy'
 							name='policy'

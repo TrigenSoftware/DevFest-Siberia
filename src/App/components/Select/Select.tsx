@@ -4,7 +4,10 @@ import React, {
 import FlexisSelect, {
 	IProps
 } from '@flexis/ui/components/Select';
-import stylesheet from './Select.st.css';
+import {
+	style,
+	classes
+} from './Select.st.css';
 
 export {
     IProps
@@ -19,6 +22,7 @@ export default class Select extends Component<IProps> {
 	render() {
 
 		const {
+			className,
 			children,
 			...props
 		} = this.props;
@@ -26,7 +30,7 @@ export default class Select extends Component<IProps> {
 		return (
 			<FlexisSelect
 				{...props}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			>
 				{children}
 			</FlexisSelect>

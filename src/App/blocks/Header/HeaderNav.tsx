@@ -4,13 +4,17 @@ import React, {
 import Nav, {
 	IProps
 } from '~/components/Nav';
-import stylesheet from './Header.st.css';
+import {
+	style,
+	classes
+} from './Header.st.css';
 
 export class HeaderNav extends Component<IProps> {
 
 	render() {
 
 		const {
+			className,
 			children,
 			...props
 		} = this.props;
@@ -18,7 +22,7 @@ export class HeaderNav extends Component<IProps> {
 		return (
 			<Nav
 				{...props}
-				{...stylesheet('nav', {}, props)}
+				className={style(classes.nav, className)}
 			>
 				{children}
 			</Nav>

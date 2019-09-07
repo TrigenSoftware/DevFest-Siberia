@@ -22,7 +22,10 @@ import {
 } from '~/blocks/common/router';
 import Modal from '~/components/Modal';
 import SpeakerCard from '~/components/SpeakerCard';
-import stylesheet from './SpeakerModal.st.css';
+import {
+	style,
+	classes
+} from './SpeakerModal.st.css';
 
 export interface IProps extends RouteComponentProps {}
 
@@ -84,7 +87,7 @@ export class SpeakerModal extends Component<IProps, IState> {
 		return (
 			<Modal
 				{...omit(props, routeProps)}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root)}
 				onClose={this.onClose}
 				active={active}
 			>
