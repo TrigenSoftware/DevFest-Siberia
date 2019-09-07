@@ -2,7 +2,9 @@ import React, {
 	HTMLAttributes,
 	Component
 } from 'react';
-import stylesheet from './TicketForm.st.css';
+import {
+	classes
+} from './TicketForm.st.css';
 
 export type ITicketFormRowProps = HTMLAttributes<HTMLDivElement>;
 
@@ -18,7 +20,7 @@ export class TicketFormRow extends Component<ITicketFormRowProps> {
 		return (
 			<div
 				{...props}
-				{...stylesheet('row')}
+				className={classes.row}
 			>
 				{children}
 			</div>

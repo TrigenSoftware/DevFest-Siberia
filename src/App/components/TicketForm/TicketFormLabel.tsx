@@ -2,7 +2,9 @@ import React, {
 	LabelHTMLAttributes,
 	Component
 } from 'react';
-import stylesheet from './TicketForm.st.css';
+import {
+	classes
+} from './TicketForm.st.css';
 
 export type ITicketFormLabelProps = LabelHTMLAttributes<HTMLLabelElement>;
 
@@ -18,7 +20,7 @@ export class TicketFormLabel extends Component<ITicketFormLabelProps> {
 		return (
 			<label
 				{...props}
-				{...stylesheet('label')}
+				className={classes.label}
 			>
 				{children}
 			</label>

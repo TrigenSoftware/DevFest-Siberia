@@ -2,7 +2,10 @@ import React, {
 	FormHTMLAttributes,
 	Component
 } from 'react';
-import stylesheet from './TicketForm.st.css';
+import {
+	style,
+	classes
+} from './TicketForm.st.css';
 
 export * from './TicketFormGroup';
 export * from './TicketFormRow';
@@ -16,6 +19,7 @@ export default class TicketForm extends Component<IProps> {
 	render() {
 
 		const {
+			className,
 			children,
 			...props
 		} = this.props;
@@ -23,7 +27,7 @@ export default class TicketForm extends Component<IProps> {
 		return (
 			<form
 				{...props}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			>
 				{children}
 			</form>

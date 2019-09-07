@@ -5,7 +5,10 @@ import PropTypes from 'prop-types';
 import FlexisFormGroup, {
 	IProps as IFlexisFormGroupProps
 } from '@flexis/ui/components/FormGroup';
-import stylesheet from './FormGroup.st.css';
+import {
+	style,
+	classes
+} from './FormGroup.st.css';
 
 export interface IProps extends IFlexisFormGroupProps {
 	notice?: string;
@@ -23,6 +26,7 @@ export default class FormGroup extends Component<IProps> {
 	render() {
 
 		const {
+			className,
 			children,
 			...props
 		} = this.props;
@@ -30,7 +34,7 @@ export default class FormGroup extends Component<IProps> {
 		return (
 			<FlexisFormGroup
 				{...props}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 				label={this.renderLabel()}
 			>
 				{children}
@@ -48,7 +52,7 @@ export default class FormGroup extends Component<IProps> {
 		if (label && notice) {
 			return (
 				<span
-					{...stylesheet('notice')}
+					className={classes.notice}
 				>
 					<span>{label}</span>
 					<span>{notice}</span>

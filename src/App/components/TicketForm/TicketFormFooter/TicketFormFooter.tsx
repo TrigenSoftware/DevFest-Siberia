@@ -2,7 +2,10 @@ import React, {
 	HTMLAttributes,
 	Component
 } from 'react';
-import stylesheet from './TicketFormFooter.st.css';
+import {
+	style,
+	classes
+} from './TicketFormFooter.st.css';
 
 export type ITicketFormFooterProps = HTMLAttributes<HTMLElement>;
 
@@ -11,6 +14,7 @@ export class TicketFormFooter extends Component<ITicketFormFooterProps> {
 	render() {
 
 		const {
+			className,
 			children,
 			...props
 		} = this.props;
@@ -18,7 +22,7 @@ export class TicketFormFooter extends Component<ITicketFormFooterProps> {
 		return (
 			<footer
 				{...props}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			>
 				{children}
 			</footer>

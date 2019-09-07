@@ -2,7 +2,9 @@ import React, {
 	HTMLAttributes,
 	Component
 } from 'react';
-import stylesheet from './TicketForm.st.css';
+import {
+	classes
+} from './TicketForm.st.css';
 
 export type ITicketFormGroupProps = HTMLAttributes<HTMLDivElement>;
 
@@ -18,7 +20,7 @@ export class TicketFormGroup extends Component<ITicketFormGroupProps> {
 		return (
 			<div
 				{...props}
-				{...stylesheet('group')}
+				className={classes.group}
 			>
 				{children}
 			</div>
