@@ -56,13 +56,11 @@ export default class ProfileCard extends Component<IProps> {
 		const {
 			className,
 			badge,
-			to,
-			...props
+			to
 		} = this.props;
 
 		return (
 			<article
-				{...props}
 				className={style(classes.root, {
 					clickable: Boolean(to)
 				}, className)}
