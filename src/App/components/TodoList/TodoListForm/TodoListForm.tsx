@@ -3,9 +3,13 @@ import React, {
 	ChangeEvent,
 	PureComponent
  } from 'react';
-import stylesheet from './TodoListForm.st.css';
+import {
+	style,
+	classes
+} from './TodoListForm.st.css';
 
 export interface ITodoListFormProps {
+	className?: string;
 	onSubmit?(value: string);
 }
 
@@ -30,22 +34,25 @@ export default class TodoListForm extends PureComponent<ITodoListFormProps, ISta
 	render() {
 
 		const {
+			className
+		} = this.props;
+		const {
 			value
 		} = this.state;
 
 		return (
 			<form
-				{...stylesheet('root', {}, this.props)}
+				className={style(classes.root, className)}
 				onSubmit={this.onSubmit}
 			>
 				<input
-					{...stylesheet('input')}
+					className={classes.input}
 					type='text'
 					onChange={this.onChange}
 					value={value}
 				/>
 				<button
-					{...stylesheet('button')}
+					className={classes.button}
 				>
 					Add
 				</button>

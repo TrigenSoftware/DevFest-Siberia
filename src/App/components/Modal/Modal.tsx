@@ -8,7 +8,10 @@ import {
 import FlexisModal, {
 	IProps as IFlexisModalProps
 } from '@flexis/ui/components/Modal';
-import stylesheet from './Modal.st.css';
+import {
+	style,
+	classes
+} from './Modal.st.css';
 
 export type IProps = IFlexisModalProps;
 
@@ -26,6 +29,7 @@ export default class Modal extends Component<IProps> {
 	render() {
 
 		const {
+			className,
 			children,
 			...props
 		} = this.props;
@@ -33,7 +37,7 @@ export default class Modal extends Component<IProps> {
 		return (
 			<FlexisModal
 				{...props}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			>
 				{children}
 			</FlexisModal>

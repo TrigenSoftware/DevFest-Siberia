@@ -12,7 +12,10 @@ import ContactLink, {
 import Badge, {
 	IProps as IBadgeProps
 } from '../Badge';
-import stylesheet from './SpeakerCard.st.css';
+import {
+	style,
+	classes
+} from './SpeakerCard.st.css';
 
 interface ISelfProps {
 	src: string;
@@ -56,6 +59,7 @@ export default class SpeakerCard extends Component<IProps> {
 	render() {
 
 		const {
+			className,
 			src,
 			firstname,
 			lastname,
@@ -74,22 +78,22 @@ export default class SpeakerCard extends Component<IProps> {
 		return (
 			<article
 				{...props}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			>
 				<div
-					{...stylesheet('info')}
+					className={classes.info}
 				>
 					<div
-						{...stylesheet('profile')}
+						className={classes.profile}
 					>
 						<figure
-							{...stylesheet('img')}
+							className={classes.img}
 							style={{
 								backgroundImage: `url(${src})`
 							}}
 						/>
 						<h3
-							{...stylesheet('name', {
+							className={style(classes.name, {
 								mobile: true
 							})}
 						>
@@ -98,12 +102,12 @@ export default class SpeakerCard extends Component<IProps> {
 							{lastname}
 						</h3>
 						<div
-							{...stylesheet('description')}
+							className={classes.description}
 						>
 							{description}
 						</div>
 						<div
-							{...stylesheet('location')}
+							className={classes.location}
 						>
 							{location}
 						</div>
@@ -113,14 +117,14 @@ export default class SpeakerCard extends Component<IProps> {
 						</>
 					</div>
 					<h3
-						{...stylesheet('name')}
+						className={classes.name}
 					>
 						{firstname}
 						<br />
 						{lastname}
 					</h3>
 					<div
-						{...stylesheet('text')}
+						className={classes.text}
 					>
 						<p>
 							{text}
@@ -128,24 +132,24 @@ export default class SpeakerCard extends Component<IProps> {
 					</div>
 				</div>
 				<footer
-					{...stylesheet('footer')}
+					className={classes.footer}
 				>
 					<div
-						{...stylesheet('group')}
+						className={classes.group}
 					>
 						<div
-							{...stylesheet('title')}
+							className={classes.title}
 						>
 							{talkTitle}
 						</div>
 						<div
-							{...stylesheet('talkLocation')}
+							className={classes.talkLocation}
 						>
 							{talkLocation}
 						</div>
 					</div>
 					<div
-						{...stylesheet('group')}
+						className={classes.group}
 					>
 						{this.renderDate()}
 						<div>
@@ -170,11 +174,11 @@ export default class SpeakerCard extends Component<IProps> {
 
 		return (
 			<div
-				{...stylesheet('contacts')}
+				className={classes.contacts}
 			>
 				{Object.entries(contacts).map(([type, href]) => (
 					<ContactLink
-						{...stylesheet('contactLink')}
+						className={classes.contactLink}
 						key={href}
 						type={type as ContactLinkType}
 						href={href}
@@ -198,7 +202,7 @@ export default class SpeakerCard extends Component<IProps> {
 
 		return (
 			<div
-				{...stylesheet('date')}
+				className={classes.date}
 			>
 				{time}
 				{format && (

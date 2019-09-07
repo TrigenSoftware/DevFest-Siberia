@@ -4,7 +4,10 @@ import React, {
 import FlexisCheckbox, {
 	IProps
 } from '@flexis/ui/components/Checkbox';
-import stylesheet from './Checkbox.st.css';
+import {
+	style,
+	classes
+} from './Checkbox.st.css';
 
 export {
     IProps
@@ -17,13 +20,14 @@ export default class Checkbox extends Component<IProps> {
 	render() {
 
 		const {
-			props
-		} = this;
+			className,
+			...props
+		} = this.props;
 
 		return (
 			<FlexisCheckbox
 				{...props}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			/>
 		);
 	}

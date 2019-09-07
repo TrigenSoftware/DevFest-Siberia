@@ -10,7 +10,10 @@ import Section, {
 } from '~/components/Section';
 import Link from '~/components/Link';
 import Button from '~/components/Button';
-import stylesheet from './Photos.st.css';
+import {
+	style,
+	classes
+} from './Photos.st.css';
 
 export type IProps = ISectionProps;
 
@@ -19,28 +22,30 @@ export default class Photos extends Component<IProps> {
 	render() {
 
 		const {
-			props
-		} = this;
+			className,
+			...props
+		} = this.props;
 
 		return (
 			<Section
-				{...stylesheet('root', {}, props)}
+				{...props}
+				className={style(classes.root, className)}
 			>
 				<article
-					{...stylesheet('info')}
+					className={classes.info}
 				>
 					<h2
-						{...stylesheet('title')}
+						className={classes.title}
 					>
 						DevFest 2018
 					</h2>
 					<p
-						{...stylesheet('text')}
+						className={classes.text}
 					>
 						{__x`photos.description`}
 					</p>
 					<footer
-						{...stylesheet('footer')}
+						className={classes.footer}
 					>
 						<Link
 							to='https://photos.google.com/share/AF1QipOPbiE4-pBJ0FsGr6t7_htpI1IoNY0seA7S5bYW-Cg-szV7B4GX8c-812JByf6FvQ?key=eWg2VGJZc0dnX1RYTHhmT2pNZTV0dE1VbURIc1RR'
@@ -56,42 +61,42 @@ export default class Photos extends Component<IProps> {
 					</footer>
 				</article>
 				<figure
-					{...stylesheet('photo')}
+					className={classes.photo}
 				>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/7.jpg'/>
 				</figure>
 				<figure
-					{...stylesheet('photo')}
+					className={classes.photo}
 				>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/3.jpg'/>
 				</figure>
 				<figure
-					{...stylesheet('photo')}
+					className={classes.photo}
 				>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/2.jpg'/>
 				</figure>
 				<figure
-					{...stylesheet('photo')}
+					className={classes.photo}
 				>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/4.jpg'/>
 				</figure>
 				<figure
-					{...stylesheet('photo')}
+					className={classes.photo}
 				>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/1.jpg'/>
 				</figure>
 				<figure
-					{...stylesheet('photo')}
+					className={classes.photo}
 				>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131705/devfest2019/photos/6.jpg'/>
 				</figure>
 				<figure
-					{...stylesheet('photo')}
+					className={classes.photo}
 				>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/8.jpg'/>
 				</figure>
 				<figure
-					{...stylesheet('photo')}
+					className={classes.photo}
 				>
 					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/5.jpg'/>
 				</figure>

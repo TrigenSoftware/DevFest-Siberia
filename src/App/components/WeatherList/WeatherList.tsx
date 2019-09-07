@@ -4,9 +4,13 @@ import React, {
 	Children,
 	cloneElement
 } from 'react';
-import stylesheet from './WeatherList.st.css';
+import {
+	style,
+	classes
+} from './WeatherList.st.css';
 
 export interface IProps {
+	className?: string;
 	children: ReactElement<any>[];
 }
 
@@ -15,17 +19,17 @@ export default class WeatherList extends PureComponent<IProps> {
 	render() {
 
 		const {
-			children,
-			...props
+			className,
+			children
 		} = this.props;
 
 		return (
 			<ul
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			>
 				{Children.map(children, (child: ReactElement<any>) => child && (
 					<li
-						{...stylesheet('item')}
+						className={classes.item}
 					>
 						{cloneElement(child, {
 							size: 'sm'

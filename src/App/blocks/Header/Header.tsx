@@ -23,7 +23,10 @@ import {
 import {
 	HeaderSpacer
 } from './HeaderSpacer';
-import stylesheet from './Header.st.css';
+import {
+	style,
+	classes
+} from './Header.st.css';
 
 export type IProps = ISectionProps;
 
@@ -36,8 +39,11 @@ export default class Header extends Component<IProps> {
 	render() {
 
 		const {
-			context,
-			props
+			className,
+			...props
+		} = this.props;
+		const {
+			context
 		} = this;
 		const locale = context.getLocale();
 		const __ = context.bind(tr);
@@ -45,13 +51,13 @@ export default class Header extends Component<IProps> {
 		return (
 			<header
 				{...props}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			>
 				<Section
-					{...stylesheet('section')}
+					className={classes.section}
 				>
 					<Link
-						{...stylesheet('logo')}
+						className={classes.logo}
 						to='/'
 						icon={<Logo/>}
 						title={__`header.home`}
@@ -83,7 +89,7 @@ export default class Header extends Component<IProps> {
 						</HeaderLink>
 					</HeaderNav>
 					<ul
-						{...stylesheet('controls')}
+						className={classes.controls}
 					>
 						<HeaderLink
 							to='/buy'
