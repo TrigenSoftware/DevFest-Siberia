@@ -4,7 +4,10 @@ import React, {
 import FlexisInput, {
 	IProps
 } from '@flexis/ui/components/Input';
-import stylesheet from './Input.st.css';
+import {
+	style,
+	classes
+} from './Input.st.css';
 
 export default class Input extends Component<IProps> {
 
@@ -14,13 +17,14 @@ export default class Input extends Component<IProps> {
 	render() {
 
 		const {
-			props
-		} = this;
+			className,
+			...props
+		} = this.props;
 
 		return (
 			<FlexisInput
 				{...props}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			/>
 		);
 	}

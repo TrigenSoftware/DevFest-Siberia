@@ -6,6 +6,9 @@ import {
 	I18nContext,
 	__x
 } from 'i18n-for-react';
+import {
+	getPartners
+} from '~/services/i18n';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -15,9 +18,9 @@ import Brands, {
 	BrandsItem
 } from '~/components/Brands';
 import {
-	getPartners
-} from '../common/i18n';
-import stylesheet from './Partners.st.css';
+	style,
+	classes
+} from './Partners.st.css';
 
 export type IProps = ISectionProps;
 
@@ -30,18 +33,21 @@ export default class Partners extends Component<IProps> {
 	render() {
 
 		const {
-			context,
-			props
+			className,
+			...props
+		} = this.props;
+		const {
+			context
 		} = this;
 		const partners = getPartners(context);
 
 		return (
 			<Section
 				{...props}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			>
 				<h2
-					{...stylesheet('title')}
+					className={classes.title}
 				>
 					{__x`partners.title`}
 				</h2>

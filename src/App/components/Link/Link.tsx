@@ -15,9 +15,14 @@ import {
 import FlexisLink, {
 	IProps as IFlexisLinkProps
 } from '@flexis/ui/components/Link';
-import getPath from '../common/i18n';
+import {
+	getLocalizedPath
+} from '~/services/i18n';
 import unsetSize from '../common/unsetSize';
-import stylesheet from './Link.st.css';
+import {
+	style,
+	classes
+} from './Link.st.css';
 
 export interface IProps extends IFlexisLinkProps {
 	disabled?: boolean;
@@ -50,6 +55,7 @@ export default class Link extends Component<IProps> {
 	render() {
 
 		const {
+			className,
 			linkElement: linkElementProp,
 			linkElementCustomProps: linkElementCustomPropsProp,
 			tabIndex: tabIndexProp,
@@ -70,7 +76,7 @@ export default class Link extends Component<IProps> {
 			: {
 				...linkElementCustomPropsProp,
 				to: typeof to === 'string'
-					? getPath(this.context, to)
+					? getLocalizedPath(this.context, to)
 					: to
 			};
 		const tabIndex = typeof tabIndexProp !== 'undefined'
@@ -82,10 +88,10 @@ export default class Link extends Component<IProps> {
 		return (
 			<FlexisLink
 				{...props}
-				{...stylesheet('root', {
+				className={style(classes.root, {
 					disabled:  Boolean(disabled),
 					disguised: Boolean(disguised)
-				}, props)}
+				}, className)}
 				linkElement={linkElement}
 				linkElementCustomProps={linkElementCustomProps}
 				icon={unsetSize(icon)}

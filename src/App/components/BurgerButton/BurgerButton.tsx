@@ -7,7 +7,10 @@ import {
 	CombinePropsAndAttributes
 } from '@flexis/ui/helpers';
 import SROnly from '@flexis/ui/components/SROnly';
-import stylesheet from './BurgerButton.st.css';
+import {
+	style,
+	classes
+} from './BurgerButton.st.css';
 
 interface ISelfProps {
 	active: boolean;
@@ -27,6 +30,7 @@ export default class BurgerButton extends Component<IProps> {
 	render() {
 
 		const {
+			className,
 			active,
 			children,
 			...props
@@ -35,9 +39,9 @@ export default class BurgerButton extends Component<IProps> {
 		return (
 			<button
 				{...props}
-				{...stylesheet('root', {
+				className={style(classes.root, {
 					active
-				}, props)}
+				}, className)}
 			>
 				{children && (
 					<SROnly>

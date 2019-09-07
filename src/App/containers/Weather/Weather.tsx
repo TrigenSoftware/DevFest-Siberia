@@ -8,7 +8,9 @@ import {
 import CITIES from '~/store/cities';
 import Weather from '~/components/Weather';
 import WeatherList from '~/components/WeatherList';
-import stylesheet from './Weather.st.css';
+import {
+	classes
+} from './Weather.st.css';
 
 export interface IProps extends IWeatherStateProps {
 	loadWeatherInfo(city: string);
@@ -25,6 +27,7 @@ export class WatherContainer extends Component<IProps> {
 		super(props);
 
 		this.onCityChange = this.onCityChange.bind(this);
+		this.loadWeatherInfo = this.loadWeatherInfo.bind(this);
 	}
 
 	render() {
@@ -40,15 +43,15 @@ export class WatherContainer extends Component<IProps> {
 
 		return (
 			<main
-				{...stylesheet('root')}
+				className={classes.root}
 			>
 				{this.citySelect()}
 				<Weather
-					{...stylesheet('mainWeather')}
+					className={classes.mainWeather}
 					{...currentWeather.toJS()}
 				/>
 				<WeatherList
-					{...stylesheet('mainList')}
+					className={classes.mainList}
 				>
 					{weatherForecast.map((weatherInfo, i) => (
 						<Weather
@@ -64,10 +67,10 @@ export class WatherContainer extends Component<IProps> {
 	private citySelect() {
 		return (
 			<div
-				{...stylesheet('citySelectContainer')}
+				className={classes.citySelectContainer}
 			>
 				<select
-					{...stylesheet('citySelect')}
+					className={classes.citySelect}
 					defaultValue={CITIES[0]}
 					onChange={this.onCityChange}
 				>
@@ -82,16 +85,8 @@ export class WatherContainer extends Component<IProps> {
 	}
 
 	componentDidMount() {
-
-		this.updateIntervalId = setInterval(() => {
-
-			const {
-				city
-			} = this.props;
-
-			this.props.loadWeatherInfo(city);
-
-		}, UPDATE_INTERVAL);
+		this.loadWeatherInfo();
+		this.updateIntervalId = setInterval(this.loadWeatherInfo, UPDATE_INTERVAL);
 	}
 
 	componentWillUnmount() {
@@ -100,5 +95,14 @@ export class WatherContainer extends Component<IProps> {
 
 	private onCityChange({ currentTarget: { value } }: ChangeEvent<HTMLSelectElement>) {
 		this.props.loadWeatherInfo(value);
+	}
+
+	private loadWeatherInfo() {
+
+		const {
+			city
+		} = this.props;
+
+		this.props.loadWeatherInfo(city);
 	}
 }

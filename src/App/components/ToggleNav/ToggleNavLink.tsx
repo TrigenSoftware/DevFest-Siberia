@@ -11,7 +11,10 @@ import {
 import Link, {
 	IProps as ILinkProps
 } from '../Link';
-import stylesheet from './ToggleNav.st.css';
+import {
+	style,
+	classes
+} from './ToggleNav.st.css';
 
 export interface IProps extends ILinkProps {
 	exact?: boolean;
@@ -19,9 +22,7 @@ export interface IProps extends ILinkProps {
 	isActive?(match: boolean, location: Location): boolean;
 }
 
-const {
-	className: activeClassName
-} = stylesheet('active');
+const activeClassName = style(classes.active);
 
 export class ToggleNavLink extends Component<IProps> {
 
@@ -48,7 +49,7 @@ export class ToggleNavLink extends Component<IProps> {
 		return (
 			<Link
 				{...props}
-				{...stylesheet('link')}
+				className={classes.link}
 				linkElement={RouterNavLink}
 				linkElementCustomProps={{
 					activeClassName,

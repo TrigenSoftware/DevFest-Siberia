@@ -6,14 +6,17 @@ import {
 	I18nContext,
 	__x
 } from 'i18n-for-react';
+import {
+	getTeam
+} from '~/services/i18n';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
 import ProfileCard from '~/components/ProfileCard';
 import {
-	getTeam
-} from '../common/i18n';
-import stylesheet from './Team.st.css';
+	style,
+	classes
+} from './Team.st.css';
 
 export type IProps = ISectionProps;
 
@@ -26,21 +29,24 @@ export default class Team extends Component<ISectionProps> {
 	render() {
 
 		const {
-			context,
-			props
+			className,
+			...props
+		} = this.props;
+		const {
+			context
 		} = this;
 		const team = getTeam(context);
 
 		return (
 			<Section
 				{...props}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			>
 				<h2>
 					{__x`team.title`}
 				</h2>
 				<ul
-					{...stylesheet('list')}
+					className={classes.list}
 				>
 					{team.map(item => (
 						<li

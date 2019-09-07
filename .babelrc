@@ -23,6 +23,9 @@
 						"transformDynamicImport": true
 					}
 				]
+			],
+			"plugins": [
+				"require-context-hook"
 			]
 		}
 	}

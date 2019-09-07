@@ -2,7 +2,10 @@ import React, {
 	HTMLAttributes,
 	Component
 } from 'react';
-import stylesheet from './Section.st.css';
+import {
+	style,
+	classes
+} from './Section.st.css';
 
 export type IProps = HTMLAttributes<HTMLElement>;
 
@@ -11,6 +14,7 @@ export default class Section extends Component<IProps> {
 	render() {
 
 		const {
+			className,
 			children,
 			...props
 		} = this.props;
@@ -18,10 +22,10 @@ export default class Section extends Component<IProps> {
 		return (
 			<section
 				{...props}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			>
 				<main
-					{...stylesheet('center')}
+					className={classes.center}
 				>
 					{children}
 				</main>

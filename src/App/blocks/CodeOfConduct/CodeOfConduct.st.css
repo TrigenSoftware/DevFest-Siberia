@@ -28,13 +28,14 @@
 	margin-right: 35%;
 }
 
-.article p {
-	color: value(colorBlack);
-}
-
 .list {
 	margin: 0 0 rel(17, 24);
 	padding-left: rel(22, 24);
+}
+
+.list,
+.article > p {
+	line-height: 2em;
 }
 
 .footer h3 {

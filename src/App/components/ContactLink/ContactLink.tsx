@@ -11,7 +11,10 @@ import EmailIcon from '~/icons/email.svg';
 import TwitterIcon from '~/icons/twitter.svg';
 import VkIcon from '~/icons/vk.svg';
 import SiteIcon from '~/icons/site.svg';
-import stylesheet from './ContactLink.st.css';
+import {
+	style,
+	classes
+} from './ContactLink.st.css';
 
 export enum ContactLinkTypeVariant {
 	Telegram = 'telegram',
@@ -41,6 +44,7 @@ export default class ContactLink extends Component<IProps> {
 	render() {
 
 		const {
+			className,
 			type,
 			children,
 			...props
@@ -75,7 +79,7 @@ export default class ContactLink extends Component<IProps> {
 		return (
 			<Link
 				{...props}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 				icon={<Icon/>}
 				target={type !== ContactLinkTypeVariant.Email ? '_blank' : null}
 			>

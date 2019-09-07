@@ -2,7 +2,10 @@ import React, {
 	HTMLAttributes,
 	Component
 } from 'react';
-import stylesheet from './Brands.st.css';
+import {
+	style,
+	classes
+} from './Brands.st.css';
 
 export type IBrandsTitleProps = HTMLAttributes<HTMLHeadingElement>;
 
@@ -11,6 +14,7 @@ export class BrandsTitle extends Component<IBrandsTitleProps> {
 	render() {
 
 		const {
+			className,
 			children,
 			...props
 		} = this.props;
@@ -18,7 +22,7 @@ export class BrandsTitle extends Component<IBrandsTitleProps> {
 		return (
 			<h3
 				{...props}
-				{...stylesheet('title', {}, props)}
+				className={style(classes.title, className)}
 			>
 				{children}
 			</h3>

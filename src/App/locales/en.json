@@ -134,12 +134,48 @@
 	},
 	"footer": {
 		"visitors": "For Visitors",
-		"students": "For Students",
-		"coc": "Code of conduct",
+		"visitorsLinks": [
+			{
+				"link": "/code-of-conduct",
+				"label": "Code of conduct"
+			},
+			{
+				"link": "/students",
+				"label": "For students"
+			}
+		],
+		"devFestsLinks": [
+			{
+				"link": "https://2018.gdg-siberia.com/",
+				"label": "DevFest Siberia 2018"
+			},
+			{
+				"link": "https://2017.gdg-siberia.com/",
+				"label": "DevFest Siberia 2017"
+			},
+			{
+				"link": "https://2016.gdg-siberia.com/",
+				"label": "DevFest Siberia 2016"
+			}
+		],
 		"companies": "For Companies",
 		"partner": "Become a partner",
 		"contact": "Contact us",
-		"socials": "We are in social networks"
+		"socials": "We are in social networks",
+		"socialLinks": [
+			{
+				"link": "https://t.me/DevFestSiberia",
+				"label": "Telegram"
+			},
+			{
+				"link": "https://twitter.com/intent/user?screen_name=GDGNsk",
+				"label": "Twitter"
+			},
+			{
+				"link": "https://vk.com/gdgnsk",
+				"label": "VK"
+			}
+		]
 	},
 	"team": {
 		"title": "Team",
@@ -357,8 +393,8 @@
 	},
 	"coc": {
 		"title": "Code Of Conduct",
-		"rules": "Все участники, speakers, партнёры, волонтеры на конференции DevFest Сибирь обязуются соблюдать правила поведения. Организаторы надеются на вашу сознательность и помощь в соблюдении этих правил.",
-		"about": "DevFest Сибирь - открытая конференция для всех участников, вне зависимости от их пола, сексуальной ориентации, религиозных взглядов, расы, размера тела и т.д. Мы не терпим преследования и неуважительного отношения к участникам в любой форме. Участники, нарушающие правила поведения могут быть лишены возможности участия без возмещения стоимости билета.",
+		"rules": "All attendees, speakers, sponsors and volunteers at DevFest Siberia are required to agree with the following code of conduct. Organisers will enforce this code throughout the event. We are expecting cooperation from all participants to help ensuring a safe environment for everybody.",
+		"about": "DevFest Siberia is dedicated to providing a harassment-free conference experience for everyone, regardless of gender, sexual orientation, disability, physical appearance, body size, race, or religion. We do not tolerate harassment of conference participants in any form. Sexual language and imagery is not appropriate for any conference venue, including talks, workshops, parties, Twitter and other online communication channels. Conference participants violating these rules may be sanctioned or expelled from the conference without a refund at the discretion of the conference organisers.",
 		"email": "Email",
 		"phone": "Phone",
 		"copyright": "Need normal translate, взятый с конференции Codemotion, распространяемый под лицензией Creative Commons Attribution 3.0 Unported License."

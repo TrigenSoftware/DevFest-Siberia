@@ -2,7 +2,10 @@ import React, {
 	HTMLAttributes,
 	Component
 } from 'react';
-import stylesheet from './Brands.st.css';
+import {
+	style,
+	classes
+} from './Brands.st.css';
 
 export * from './BrandsTitle';
 export * from './BrandsRow';
@@ -15,6 +18,7 @@ export default class Brands extends Component<IProps> {
 	render() {
 
 		const {
+			className,
 			children,
 			...props
 		} = this.props;
@@ -22,7 +26,7 @@ export default class Brands extends Component<IProps> {
 		return (
 			<div
 				{...props}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			>
 				{children}
 			</div>
