@@ -2,7 +2,9 @@ import React, {
 	LiHTMLAttributes,
 	Component
 } from 'react';
-import stylesheet from './Header.st.css';
+import {
+	classes
+} from './Header.st.css';
 
 export type IProps = LiHTMLAttributes<HTMLLIElement>;
 
@@ -17,7 +19,7 @@ export class HeaderSpacer extends Component<IProps> {
 		return (
 			<li
 				{...props}
-				{...stylesheet('spacer')}
+				className={classes.spacer}
 			/>
 		);
 	}

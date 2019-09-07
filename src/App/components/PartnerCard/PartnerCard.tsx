@@ -10,7 +10,10 @@ import {
 	CombinePropsAndAttributes
 } from '@flexis/ui/helpers';
 import Link from '../Link';
-import stylesheet from './PartnerCard.st.css';
+import {
+	style,
+	classes
+} from './PartnerCard.st.css';
 
 interface ISelfProps {
 	src: string;
@@ -36,6 +39,7 @@ export default class PartnerCard extends Component<IProps> {
 	render() {
 
 		const {
+			className,
 			src,
 			name,
 			to,
@@ -45,23 +49,24 @@ export default class PartnerCard extends Component<IProps> {
 
 		return (
 			<article
-				{...stylesheet('root', {}, props)}
+				{...props}
+				className={style(classes.root, className)}
 			>
 				<figure
-					{...stylesheet('logo')}
+					className={classes.logo}
 				>
 					<img src={src}/>
 				</figure>
 				<div
-					{...stylesheet('info')}
+					className={classes.info}
 				>
 					<h3
-						{...stylesheet('title')}
+						className={classes.title}
 					>
 						{name}
 					</h3>
 					<Link
-						{...stylesheet('link')}
+						className={classes.link}
 						to={to}
 						target='_blank'
 					>
@@ -69,7 +74,7 @@ export default class PartnerCard extends Component<IProps> {
 					</Link>
 					{text && (
 						<p
-							{...stylesheet('text')}
+							className={classes.text}
 						>
 							{text}
 						</p>

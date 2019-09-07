@@ -4,7 +4,10 @@ import React, {
 import Link, {
 	IProps
 } from '../Link';
-import stylesheet from './Nav.st.css';
+import {
+	style,
+	classes
+} from './Nav.st.css';
 
 export class NavLink extends Component<IProps> {
 
@@ -14,17 +17,18 @@ export class NavLink extends Component<IProps> {
 	render() {
 
 		const {
+			className,
 			children,
 			...props
 		} = this.props;
 
 		return (
 			<li
-				{...stylesheet('item')}
+				className={classes.item}
 			>
 				<Link
 					{...props}
-					{...stylesheet('link', {}, props)}
+					className={style(classes.link, className)}
 				>
 					{children}
 				</Link>

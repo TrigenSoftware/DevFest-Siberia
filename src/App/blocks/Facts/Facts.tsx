@@ -7,7 +7,10 @@ import {
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
-import stylesheet from './Facts.st.css';
+import {
+	style,
+	classes
+} from './Facts.st.css';
 
 export type IProps = ISectionProps;
 
@@ -21,23 +24,24 @@ export default class Facts extends Component<IProps> {
 	render() {
 
 		const {
-			props
-		} = this;
+			className,
+			...props
+		} = this.props;
 
 		return (
 			<Section
 				{...props}
-				{...stylesheet('root', {}, props)}
+				className={style(classes.root, className)}
 			>
 				<h3
-					{...stylesheet('title', {
+					className={style(classes.title, {
 						alt: true
 					})}
 				>
 					{__x`facts.title`}
 				</h3>
 				<article
-					{...stylesheet('article')}
+					className={classes.article}
 				>
 					<h4>
 						{__x`facts.topics`}
@@ -47,7 +51,7 @@ export default class Facts extends Component<IProps> {
 					</p>
 				</article>
 				<article
-					{...stylesheet('article')}
+					className={classes.article}
 				>
 					<h4>
 						{__x`facts.workshops`}
@@ -57,12 +61,12 @@ export default class Facts extends Component<IProps> {
 					</p>
 				</article>
 				<h2
-					{...stylesheet('title')}
+					className={classes.title}
 				>
 					{__x`facts.also`}
 				</h2>
 				<ul
-					{...stylesheet('numbers')}
+					className={classes.numbers}
 				>
 					<li>
 						{__x('facts.attendees', numbers)}

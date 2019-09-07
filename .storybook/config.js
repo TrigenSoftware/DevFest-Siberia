@@ -1,18 +1,19 @@
-import React from 'react';
 import './injectTestIcon';
+import faker from 'faker';
 import {
 	configure
 } from '@trigen/scripts-preset-react-app/storybook/config';
-import {
-	addDecorator
-} from '@storybook/react';
 import '@flexis/ui/reboot.st.css';
 import '../src/App/App.st.css';
 
-addDecorator(story => (
-	<div>
-		{story()}
-	</div>
-));
+if (process.env.SEED) {
+	faker.seed(parseInt(process.env.SEED));
+}
 
-configure(module);
+const stories = require.context(
+	process.env.PROJECT_SRC,
+	true,
+	/\.stories\.tsx$/
+);
+
+configure(module, stories);

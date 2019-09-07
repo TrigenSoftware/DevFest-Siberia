@@ -17,7 +17,10 @@ import Link from '../Link';
 import ContactLink, {
 	ContactLinkType
 } from '../ContactLink';
-import stylesheet from './ProfileCard.st.css';
+import {
+	style,
+	classes
+} from './ProfileCard.st.css';
 
 interface ISelfProps {
 	src: string;
@@ -51,6 +54,7 @@ export default class ProfileCard extends Component<IProps> {
 	render() {
 
 		const {
+			className,
 			badge,
 			to,
 			...props
@@ -58,13 +62,14 @@ export default class ProfileCard extends Component<IProps> {
 
 		return (
 			<article
-				{...stylesheet('root', {
+				{...props}
+				className={style(classes.root, {
 					clickable: Boolean(to)
-				}, props)}
+				}, className)}
 			>
 				{to ? (
 					<Link
-						{...stylesheet('link')}
+						className={classes.link}
 						to={to}
 					>
 						{this.renderProfileInfo()}
@@ -73,7 +78,7 @@ export default class ProfileCard extends Component<IProps> {
 					this.renderProfileInfo()
 				)}
 				<footer
-					{...stylesheet('footer')}
+					className={classes.footer}
 				>
 					{this.renderContacts()}
 					{badge}
@@ -95,10 +100,10 @@ export default class ProfileCard extends Component<IProps> {
 
 		return (
 			<div
-				{...stylesheet('info')}
+				className={classes.info}
 			>
 				<figure
-					{...stylesheet('img')}
+					className={classes.img}
 					aria-hidden
 					style={{
 						backgroundImage: `url(${src})`
@@ -106,26 +111,26 @@ export default class ProfileCard extends Component<IProps> {
 				>
 					{to && (
 						<div
-							{...stylesheet('label')}
+							className={classes.label}
 						>
 							{__x`profile.view`}
 						</div>
 					)}
 				</figure>
 				<h3
-					{...stylesheet('name')}
+					className={classes.name}
 				>
 					{firstname}
 					<br />
 					{lastname}
 				</h3>
 				<div
-					{...stylesheet('description')}
+					className={classes.description}
 				>
 					{description}
 				</div>
 				<div
-					{...stylesheet('location')}
+					className={classes.location}
 				>
 					{location}
 				</div>
@@ -145,11 +150,11 @@ export default class ProfileCard extends Component<IProps> {
 
 		return (
 			<div
-				{...stylesheet('contacts')}
+				className={classes.contacts}
 			>
 				{Object.entries(contacts).map(([type, href]) => (
 					<ContactLink
-						{...stylesheet('contactLink')}
+						className={classes.contactLink}
 						key={href}
 						type={type as ContactLinkType}
 						href={href}
