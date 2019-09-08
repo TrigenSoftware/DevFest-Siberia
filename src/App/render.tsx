@@ -7,6 +7,9 @@ import {
 	renderToString
 } from 'react-dom/server';
 import {
+	ChunkExtractor
+} from '@loadable/server';
+import {
 	I18nProvider
 } from 'i18n-for-react';
 import jsesc from 'jsesc';
@@ -24,9 +27,15 @@ import {
 	RoutesList
 } from './routes';
 
-function render(locale: string, location: string) {
+const extractorOptions = {
+	statsFile:   path.resolve('build/loadable-stats.json'),
+	entrypoints: ['index']
+};
 
-	const html = renderToString(
+function render(locale: string, location: string): [string, string] {
+
+	const extractor = new ChunkExtractor(extractorOptions);
+	const jsx = extractor.collectChunks(
 		<I18nProvider
 			locale={locale}
 			locales={{
@@ -44,8 +53,13 @@ function render(locale: string, location: string) {
 			</StaticRouter>
 		</I18nProvider>
 	);
+	const view: string = renderToString(jsx);
+	const scripts: string = extractor.getScriptTags().replace(/\n/g, '');
 
-	return html;
+	return [
+		scripts,
+		view
+	];
 }
 
 async function createTemplate() {
@@ -69,9 +83,22 @@ async function createTemplate() {
 		wrap:            true
 	});
 
-	return (html, locale) => template
-		.replace(/(<div id=view>)(<\/div>)/, `${spriteHtml}$1${html}$2`)
-		.replace('<script', `<script>var I18N=${locale === 'en' ? enstr : rustr};</script><script`);
+	return (
+		[scripts, view]: [string, string],
+		locale: string
+	) => {
+
+		let result = template
+			.replace(/<script[^>]*src.*<\/script>/, scripts)
+			.replace('<script', `<script>var I18N=${locale === 'en' ? enstr : rustr};</script><script`)
+			.replace(/(<div id=view>)(<\/div>)/, `${spriteHtml}$1${view}$2`);
+
+		if (process.env.BASE_URL) {
+			result = result.replace(/(<head>)/, `$1<base href=${process.env.BASE_URL} >`);
+		}
+
+		return result;
+	};
 }
 
 async function renderAll(pages: string[]) {
@@ -81,7 +108,8 @@ async function renderAll(pages: string[]) {
 	await Promise.all(pages.map(async (routePath) => {
 
 		const locale = getLocaleFromPath(routePath);
-		const html = wrap(render(locale, routePath), locale);
+		const parts = render(locale, routePath);
+		const html = wrap(parts, locale);
 
 		await fs.mkdir(
 			path.join('build', routePath),

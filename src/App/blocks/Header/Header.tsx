@@ -77,7 +77,11 @@ export default class Header extends Component<IProps> {
 						</HeaderLink>
 						<HeaderSpacer/>
 						<HeaderLink
-							href={`/${locale === 'en' ? 'ru' : ''}`}
+							href={`${
+								process.env.BASE_URL ? '' : '/'
+							}${
+								locale === 'en' ? 'ru' : ''
+							}`}
 							separated
 						>
 							{__x`header.lang`}

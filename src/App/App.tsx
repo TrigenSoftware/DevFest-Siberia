@@ -13,6 +13,8 @@ import {
 import {
 	I18nContext
 } from 'i18n-for-react';
+import '@flexis/ui/reboot.st.css';
+import './App.st.css';
 import {
 	getLocalizedPath
 } from '~/services/i18n';
@@ -27,8 +29,6 @@ import Footer from '~/blocks/Footer';
 import {
 	Routes
 } from './routes';
-import '@flexis/ui/reboot.st.css';
-import './App.st.css';
 
 export interface IProps {
 	disableRouter?: boolean;
@@ -89,7 +89,9 @@ export default class App extends Component<IProps> {
 		}
 
 		return (
-			<Router>
+			<Router
+				basename={process.env.BASE_URL || null}
+			>
 				{children}
 			</Router>
 		);

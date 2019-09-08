@@ -2,7 +2,7 @@ import faker from 'faker';
 
 export function getFakeData() {
 	return {
-		date:          faker.date.future(1).toDateString(),
+		date:          new Date('2018.04.04').toDateString(),
 		temp:          faker.random.number({
 			min: -30,
 			max: 25

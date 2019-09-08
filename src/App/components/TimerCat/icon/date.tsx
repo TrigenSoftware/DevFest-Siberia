@@ -12,7 +12,7 @@ export default function date({
 	const isEN = locale === 'en';
 
 	return (
-		<g id="Date" style={{ opacity: 0 }}>
+		<g id="Date" style={{ opacity: 1 }}>
 			<g id="Group_30">
 				<path
 					id="Vector_1203"
