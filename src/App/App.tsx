@@ -20,11 +20,11 @@ import {
 } from '~/services/i18n';
 import ScrollToTop from '~/components/ScrollToTop';
 import Header from '~/blocks/Header';
-import Index from '~/containers/Index';
-import Team from '~/containers/Team';
-import Speakers from '~/containers/Speakers';
-import Partners from '~/containers/Partners';
-import CodeOfConduct from '~/containers/CodeOfConduct';
+import Index from '~/containers/Index/loadable';
+import Team from '~/containers/Team/loadable';
+import Speakers from '~/containers/Speakers/loadable';
+import Partners from '~/containers/Partners/loadable';
+import CodeOfConduct from '~/containers/CodeOfConduct/loadable';
 import Footer from '~/blocks/Footer';
 import {
 	Routes

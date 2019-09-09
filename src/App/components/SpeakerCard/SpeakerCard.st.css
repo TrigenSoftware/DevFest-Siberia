@@ -29,6 +29,11 @@
 		colorPink0;
 }
 
+:import {
+	-st-from: '../Link/Link.st.css';
+	-st-default: Link;
+}
+
 .root {
 	font-size: 1rem;
 }

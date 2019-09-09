@@ -10,6 +10,11 @@
 }
 
 :import {
+	-st-from: '~/components/Link/Link.st.css';
+	-st-default: Link;
+}
+
+:import {
 	-st-from: '../variables.st.css';
 	-st-named:
 		fontFamily,
