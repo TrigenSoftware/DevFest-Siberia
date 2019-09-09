@@ -18,17 +18,13 @@ storiesOf('Components|Loading', module)
 	.add(
 		'with default state',
 		() => (
-			<Loading
-				style={{ height: '50rem' }}
-			/>
+			<Loading/>
 		)
 	)
 	.add(
 		'with children',
 		() => (
-			<Loading
-				style={{ height: '50rem' }}
-			>
+			<Loading>
 				<SROnly>
 					<span>Loading...</span>
 				</SROnly>
