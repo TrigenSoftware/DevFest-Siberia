@@ -2,7 +2,6 @@ import React, {
 	ContextType,
 	Component
 } from 'react';
-import PropTypes from 'prop-types';
 import {
 	RouteComponentProps,
 	withRouter
@@ -20,18 +19,21 @@ import {
 	getSpeaker
 } from '~/services/i18n';
 import {
-	routeProps
+	routeProps,
+	deleteSearchParams
 } from '~/blocks/common/router';
-import Modal from '~/components/Modal';
+import Modal, {
+	IProps as IModalProps
+} from '~/components/Modal';
 import SpeakerCard from '~/components/SpeakerCard';
 import {
 	style,
 	classes
 } from './SpeakerModal.st.css';
 
-export interface IProps extends RouteComponentProps {
-	className?: string;
-}
+type IOmitModalProps = Omit<IModalProps, 'children'>;
+
+export interface IProps extends IOmitModalProps, RouteComponentProps {}
 
 interface IState {
 	active: boolean;
@@ -42,10 +44,6 @@ const {
 } = Modal.defaultProps;
 
 export class SpeakerModal extends Component<IProps, IState> {
-
-	static propTypes = {
-		className: PropTypes.string
-	};
 
 	static contextType = I18nContext;
 
@@ -74,18 +72,18 @@ export class SpeakerModal extends Component<IProps, IState> {
 	render() {
 
 		const {
-			context,
-			props
-		} = this;
-		const {
 			className,
 			location: {
 				search
-			}
-		} = props;
+			},
+			...props
+		} = this.props;
 		const {
 			active
 		} = this.state;
+		const {
+			context
+		} = this;
 		const id = new URLSearchParams(search).get('id');
 		const speaker = getSpeaker(context, id);
 
@@ -127,11 +125,10 @@ export class SpeakerModal extends Component<IProps, IState> {
 				search
 			}
 		} = props;
-		const type = new URLSearchParams(search).get('type');
 
 		history.push({
 			pathname: getLocalizedPath(context, '/speakers'),
-			search: `${type ? `type=${type}` : ''}`
+			search: deleteSearchParams(search, 'id')
 		});
 	}
 }

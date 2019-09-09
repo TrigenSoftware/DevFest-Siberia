@@ -6,6 +6,14 @@ export const routeProps = [
 	'staticContext'
 ];
 
+function matchSomePattern(target: string, patterns: (string | RegExp)[]) {
+	return patterns.some(_ => (
+		_ instanceof RegExp
+			? _.test(target)
+			: _ === target
+	));
+}
+
 function formatSearch(search: string) {
 
 	const trimmed = search.trim();
@@ -41,6 +49,21 @@ export function addSearchParams(search: string, params: Record<string, any>) {
 
 		if (strval) {
 			searchParams.set(key, strval);
+		}
+	});
+
+	return formatSearch(searchParams.toString());
+}
+
+export function deleteSearchParams(search: string, ...queryParams: (string | RegExp)[]) {
+
+	const searchParams = new URLSearchParams(search);
+	const keys: string[] = Array.from((searchParams as any).keys());
+
+	keys.forEach((key) => {
+
+		if (matchSomePattern(key, queryParams)) {
+			searchParams.delete(key);
 		}
 	});
 

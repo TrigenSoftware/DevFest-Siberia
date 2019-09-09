@@ -115,7 +115,7 @@ export class Speakers extends Component<IProps> {
 								)}
 								to={{
 									pathname: getLocalizedPath(context, '/speakers'),
-									search: addSearchParams(search, {
+									search:   addSearchParams(search, {
 										id: item.id,
 										type
 									})
