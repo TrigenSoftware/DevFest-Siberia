@@ -91,6 +91,7 @@ export default class SpeakerCard extends Component<IProps> {
 						>
 							<img
 								src={src}
+								loading='lazy'
 							/>
 						</figure>
 						<h3
