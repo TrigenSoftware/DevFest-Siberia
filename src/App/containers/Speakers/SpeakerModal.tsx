@@ -128,7 +128,7 @@ export class SpeakerModal extends Component<IProps, IState> {
 
 		history.push({
 			pathname: getLocalizedPath(context, '/speakers'),
-			search: deleteSearchParams(search, 'id')
+			search:   deleteSearchParams(search, 'id')
 		});
 	}
 }
