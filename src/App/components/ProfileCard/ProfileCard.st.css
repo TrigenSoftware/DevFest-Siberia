@@ -10,11 +10,6 @@
 }
 
 :import {
-	-st-from: '~/components/Link/Link.st.css';
-	-st-default: Link;
-}
-
-:import {
 	-st-from: '../variables.st.css';
 	-st-named:
 		fontFamily,
@@ -26,6 +21,11 @@
 		colorBlue9,
 		colorGray1,
 		colorPink0;
+}
+
+:import {
+	-st-from: '../Link/Link.st.css';
+	-st-default: Link;
 }
 
 .root {
