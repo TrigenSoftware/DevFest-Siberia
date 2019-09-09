@@ -1,0 +1,81 @@
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named:
+		colorBlue4,
+		colorBlue7,
+		colorBlue8,
+		colorBlue10,
+		colorBlue11,
+		colorPink0,
+		colorPink2,
+		colorRed;
+}
+
+@keyframes rotatingAnimation {
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes color {
+
+	0% {
+		border-color: value(colorBlue10);
+		border-right-color: transparent;
+	}
+
+	15% {
+		border-color: value(colorBlue11);
+		border-right-color: transparent;
+	}
+
+	30% {
+		border-color: value(colorBlue8);
+		border-right-color: transparent;
+	}
+
+	45% {
+		border-color: value(colorPink0);
+		border-right-color: transparent;
+	}
+
+	60% {
+		border-color: value(colorPink3);
+		border-right-color: transparent;
+	}
+
+	75% {
+		border-color: value(colorRed);
+		border-right-color: transparent;
+	}
+
+	90% {
+		border-color: value(colorBlue4);
+		border-right-color: transparent;
+	}
+
+	100% {
+		border-color: value(colorBlue10);
+		border-right-color: transparent;
+	}
+}
+
+.root {
+	display: inline-block;
+	animation: rotatingAnimation 1s linear infinite, color 10s ease-in-out infinite;
+	border: .25em solid value(colorBlue10);
+	border-radius: 50%;
+	border-right-color: transparent;
+	width: 2em;
+	height: 2em;
+	font-size: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.root {
+		animation: none;
+	}
+}

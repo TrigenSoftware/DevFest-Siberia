@@ -2,15 +2,14 @@ import React, {
 	HTMLAttributes,
 	Component
 } from 'react';
-import Spinner from '../Spinner';
 import {
 	style,
 	classes
-} from './Loading.st.css';
+} from './Spinner.st.css';
 
 export type IProps = HTMLAttributes<HTMLDivElement>;
 
-export default class Loading extends Component<IProps> {
+export default class Spinner extends Component<IProps> {
 
 	render() {
 
@@ -25,11 +24,7 @@ export default class Loading extends Component<IProps> {
 				{...props}
 				className={style(classes.root, className)}
 			>
-				<Spinner
-					className={classes.spinner}
-				>
-					{children}
-				</Spinner>
+				{children}
 			</div>
 		);
 	}
