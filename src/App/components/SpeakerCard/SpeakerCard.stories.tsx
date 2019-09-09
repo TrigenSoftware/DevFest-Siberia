@@ -9,9 +9,6 @@ import {
 import {
 	text
 } from '@storybook/addon-knobs/react';
-import {
-	imageUrl
-} from '@flexis/ui/components/ImageSelect/ImageSelect.stories';
 import SpeakerCard from './';
 
 const testText = `Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo,
@@ -59,7 +56,7 @@ storiesOf('Components|SpeakerCard', module)
 					width:    '100%',
 					maxWidth: '700px'
 				}}
-				src={text('Source', imageUrl)}
+				src={text('Source', faker.image.imageUrl())}
 				firstname={text('Firstname', 'Ангва')}
 				lastname={text('Lastname', 'Кэррот')}
 				description={text('Description', 'iOs, Android, Tech')}

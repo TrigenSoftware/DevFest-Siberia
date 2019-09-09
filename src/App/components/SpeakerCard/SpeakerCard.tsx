@@ -88,10 +88,11 @@ export default class SpeakerCard extends Component<IProps> {
 					>
 						<figure
 							className={classes.img}
-							style={{
-								backgroundImage: `url(${src})`
-							}}
-						/>
+						>
+							<img
+								src={src}
+							/>
+						</figure>
 						<h3
 							className={style(classes.name, {
 								mobile: true
