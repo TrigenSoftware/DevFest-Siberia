@@ -31,9 +31,9 @@ import {
 	classes
 } from './SpeakerModal.st.css';
 
-type IOmitModalProps = Omit<IModalProps, 'children'>;
+type ISpeakerModalProps = Omit<IModalProps, 'children'>;
 
-export interface IProps extends IOmitModalProps, RouteComponentProps {}
+export interface IProps extends ISpeakerModalProps, RouteComponentProps {}
 
 interface IState {
 	active: boolean;
@@ -55,7 +55,7 @@ export class SpeakerModal extends Component<IProps, IState> {
 		}: IProps
 	) {
 
-		const searchWithParam = search.includes('id');
+		const searchWithParam = /[^\w]id=/.test(search);
 		const nextState: Partial<IState> = {
 			active: searchWithParam
 		};
