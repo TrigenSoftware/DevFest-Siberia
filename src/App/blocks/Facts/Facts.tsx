@@ -44,12 +44,12 @@ export default class Facts extends Component<IProps> {
 				>
 					{__x`facts.title`}
 				</h3>
+				{unsetSize(<TopicsImg
+					className={classes.topicsImg}
+				/>)}
 				<article
 					className={classes.article}
 				>
-					{unsetSize(<TopicsImg
-						className={classes.img}
-					/>)}
 					<h4>
 						{__x`facts.topics`}
 					</h4>
