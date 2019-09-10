@@ -19,6 +19,11 @@
 }
 
 :import {
+	-st-from: './LoginModalFooter/LoginModalFooter.st.css';
+	-st-default: Footer as footer;
+}
+
+:import {
 	-st-from: '../Link/Link.st.css';
 	-st-default: Link;
 }
@@ -51,7 +56,5 @@
 
 	.root .window {
 		padding-top: rel(30, 16);
-		width: 100%;
-		overflow: hidden;
 	}
 }
