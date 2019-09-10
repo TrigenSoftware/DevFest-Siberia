@@ -3,6 +3,9 @@ import React, {
 	Component
 } from 'react';
 import PropTypes from 'prop-types';
+import {
+	omit
+} from '@flexis/ui/helpers';
 import FlexisFormGroup, {
 	IProps as IFlexisFormGroupProps
 } from '@flexis/ui/components/FormGroup';
@@ -34,7 +37,7 @@ export default class FormGroup extends Component<IProps> {
 
 		return (
 			<FlexisFormGroup
-				{...props}
+				{...omit(props, ['notice'])}
 				className={style(classes.root, className)}
 				label={this.renderLabel()}
 			>
