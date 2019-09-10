@@ -58,10 +58,13 @@
     "redux": "^4.0.4"
   },
   "devDependencies": {
+    "@loadable/babel-plugin": "^5.10.0",
+    "@loadable/server": "^5.10.2",
+    "@loadable/webpack-plugin": "^5.7.1",
     "@storybook/addon-viewport": "^5.1.11",
     "@trigen/scripts": "3.1.0",
     "@trigen/scripts-plugin-eslint": "3.1.0",
-    "@trigen/scripts-preset-react-app": "^3.1.0",
+    "@trigen/scripts-preset-react-app": "^3.1.1",
     "@types/faker": "^4.1.4",
     "faker": "^4.1.0",
     "jsesc": "^2.5.2",

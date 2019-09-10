@@ -8,11 +8,13 @@ import {
 import {
 	Location
 } from 'history';
+import {
+	Bind
+} from '@flexis/ui/helpers';
 import Link, {
 	IProps as ILinkProps
 } from '../Link';
 import {
-	style,
 	classes
 } from './ToggleNav.st.css';
 
@@ -22,7 +24,9 @@ export interface IProps extends ILinkProps {
 	isActive?(match: boolean, location: Location): boolean;
 }
 
-const activeClassName = style(classes.active);
+const {
+	active: activeClassName
+} = classes;
 
 export class ToggleNavLink extends Component<IProps> {
 
@@ -55,12 +59,25 @@ export class ToggleNavLink extends Component<IProps> {
 					activeClassName,
 					exact,
 					strict,
-					isActive,
+					'isActive':     isActive || this.isActive,
 					'aria-current': ariaCurrent
 				}}
 			>
 				{children}
 			</Link>
 		);
+	}
+
+	@Bind()
+	private isActive(_, {
+		pathname,
+		search
+	}) {
+
+		const {
+			to
+		} = this.props;
+
+		return to === `${pathname}${search}`;
 	}
 }

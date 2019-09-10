@@ -5,6 +5,9 @@ import {
 	hydrate
 } from 'react-dom';
 import {
+	loadableReady
+} from '@loadable/component';
+import {
 	IConfig,
 	I18nProvider
 } from 'i18n-for-react';
@@ -85,4 +88,4 @@ async function main() {
 	}
 }
 
-main();
+loadableReady(main);
