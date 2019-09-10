@@ -64,7 +64,7 @@
     "@storybook/addon-viewport": "^5.1.11",
     "@trigen/scripts": "3.1.0",
     "@trigen/scripts-plugin-eslint": "3.1.0",
-    "@trigen/scripts-preset-react-app": "^3.1.0",
+    "@trigen/scripts-preset-react-app": "^3.1.1",
     "@types/faker": "^4.1.4",
     "faker": "^4.1.0",
     "jsesc": "^2.5.2",
