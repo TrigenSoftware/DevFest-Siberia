@@ -6,6 +6,9 @@ import {
 	storiesOf
 } from '@storybook/react';
 import {
+	boolean
+} from '@storybook/addon-knobs/react';
+import {
 	action
 } from '@storybook/addon-actions';
 import {
@@ -44,7 +47,7 @@ storiesOf('Components|LoginModal', module)
 		'with registration',
 		() => (
 			<LoginModal
-				active
+				active={boolean('Active', true)}
 				centered
 			>
 				<LoginModalForm
