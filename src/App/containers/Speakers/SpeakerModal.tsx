@@ -37,6 +37,7 @@ export interface IProps extends ISpeakerModalProps, RouteComponentProps {}
 
 interface IState {
 	active: boolean;
+	prevSearch: string;
 }
 
 const {
@@ -52,12 +53,20 @@ export class SpeakerModal extends Component<IProps, IState> {
 			location: {
 				search
 			}
-		}: IProps
+		}: IProps,
+		{
+			prevSearch
+		}: IState
 	) {
+
+		if (prevSearch === search) {
+			return null;
+		}
 
 		const searchWithParam = /[^\w]id=/.test(search);
 		const nextState: Partial<IState> = {
-			active: searchWithParam
+			active:     searchWithParam,
+			prevSearch: search
 		};
 
 		return nextState;
@@ -66,7 +75,8 @@ export class SpeakerModal extends Component<IProps, IState> {
 	context!: ContextType<typeof I18nContext>;
 
 	state = {
-		active: false
+		active:     false,
+		prevSearch: ''
 	};
 
 	render() {
