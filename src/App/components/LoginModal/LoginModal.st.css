@@ -1,0 +1,57 @@
+
+:import {
+	-st-from: '@flexis/ui/components/Modal/Modal.st.css';
+	-st-named: window;
+}
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named:
+		sizeScreenSmMax,
+		sizeBorderRadius,
+		colorWhite,
+		colorBlue10;
+}
+
+:import {
+	-st-from: '../Link/Link.st.css';
+	-st-default: Link;
+}
+
+.root .window {
+	padding: 0;
+}
+
+.form {
+	padding: rel(36, 24) rel(50, 24) 0;
+}
+
+.title {
+	font-size: rel(42, 24);
+}
+
+.link {
+	display: block;
+	margin-top: rel(29, 24);
+	border-bottom-left-radius: value(sizeBorderRadius);
+	border-bottom-right-radius: value(sizeBorderRadius);
+	background-color: value(colorBlue10);
+	padding: rel(15, 24) rel(50, 24);
+	width: 100%;
+	text-align: center;
+	color: value(colorWhite);
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.root .window {
+		padding-top: rel(30, 16);
+		width: 100%;
+		overflow: hidden;
+	}
+}

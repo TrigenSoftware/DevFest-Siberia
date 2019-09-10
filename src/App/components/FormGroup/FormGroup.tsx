@@ -1,4 +1,5 @@
 import React, {
+	ReactElement,
 	Component
 } from 'react';
 import PropTypes from 'prop-types';
@@ -11,14 +12,14 @@ import {
 } from './FormGroup.st.css';
 
 export interface IProps extends IFlexisFormGroupProps {
-	notice?: string;
+	notice?: string|ReactElement<any>;
 }
 
 export default class FormGroup extends Component<IProps> {
 
 	static propTypes = {
 		...FlexisFormGroup.propTypes,
-		notice: PropTypes.string
+		notice: PropTypes.any
 	};
 
 	static defaultProps = FlexisFormGroup.defaultProps;
