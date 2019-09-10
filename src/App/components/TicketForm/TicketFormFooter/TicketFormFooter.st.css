@@ -11,12 +11,22 @@
 		colorGray1;
 }
 
+:import {
+	-st-from: '../../FormGroup/FormGroup.st.css';
+	-st-default: Group;
+}
+
 .root {
 	display: flex;
 	align-items: center;
 	margin-top: rel(43, 24);
 	border-top: 1px dashed value(colorGray1);
 	padding-top: rel(43, 24);
+}
+
+.root .Group {
+	margin: 0;
+	width: 100%;
 }
 
 .root button {

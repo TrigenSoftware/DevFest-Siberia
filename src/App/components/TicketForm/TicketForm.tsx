@@ -7,9 +7,8 @@ import {
 	classes
 } from './TicketForm.st.css';
 
-export * from './TicketFormGroup';
 export * from './TicketFormRow';
-export * from './TicketFormLabel';
+export * from './TicketFormCheckbox';
 export * from './TicketFormFooter';
 
 export type IProps = FormHTMLAttributes<HTMLFormElement>;

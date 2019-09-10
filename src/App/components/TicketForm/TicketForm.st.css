@@ -6,11 +6,7 @@
 
 :import {
 	-st-from: '../variables.st.css';
-	-st-named:
-		sizeScreenSmMax,
-		fontFamilyMono,
-		colorBlue4,
-		colorPink0;
+	-st-named: sizeScreenSmMax;
 }
 
 .root {
@@ -25,17 +21,6 @@
 .row {
 	display: flex;
 	align-items: center;
-}
-
-.label {
-	margin-left: rel(15, 24);
-	color: value(colorBlue4);
-}
-
-.label span {
-	color: value(colorPink0);
-	font-family: value(fontFamilyMono);
-	font-size: rel(30, 24);
 }
 
 @media (max-width: value(sizeScreenSmMax)) {

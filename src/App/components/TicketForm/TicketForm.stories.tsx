@@ -20,19 +20,20 @@ import {
 import FormGroup from '../FormGroup';
 import Input from '../Input';
 import Button from '../Button';
-import Checkbox from '../Checkbox';
 import Link from '../Link';
 import TicketForm, {
-	TicketFormGroup,
 	TicketFormRow,
-	TicketFormLabel,
+	TicketFormCheckbox,
 	TicketFormFooter
 } from './';
 
 const stylableApi = `
 Stylable API
 ---
-_empty_
+- ::row
+- ::label
+- ::group
+- ::footer
 `;
 
 storiesOf('Components|TicketForm', module)
@@ -43,11 +44,6 @@ storiesOf('Components|TicketForm', module)
 		<MemoryRouter initialEntries={['/']}>
 			{story()}
 		</MemoryRouter>
-	))
-	.addDecorator(story => (
-		<div style={{ margin: '-12px' }}>
-			{story()}
-		</div>
 	))
 	.add(
 		'with buy one ticket',
@@ -120,17 +116,12 @@ storiesOf('Components|TicketForm', module)
 					label='Аффтепати'
 					flex={false}
 				>
-					<TicketFormGroup>
-						<Checkbox
-							{...events}
-							id='party'
-						/>
-						<TicketFormLabel
-							htmlFor='party'
-						>
-							Я пойду <span>+1500Р</span>
-						</TicketFormLabel>
-					</TicketFormGroup>
+					<TicketFormCheckbox
+						{...events}
+						id='afterparty'
+					>
+						Я пойду <span>+1500Р</span>
+					</TicketFormCheckbox>
 				</FormGroup>
 				<TicketFormFooter>
 					<Button
@@ -139,17 +130,16 @@ storiesOf('Components|TicketForm', module)
 					>
 						Купить
 					</Button>
-					<TicketFormGroup>
-						<Checkbox
+					<FormGroup
+						flex={false}
+					>
+						<TicketFormCheckbox
 							{...events}
 							id='policy'
-						/>
-						<TicketFormLabel
-							htmlFor='policy'
 						>
 							Accept <Link to='/terms'>Terms</Link>
-						</TicketFormLabel>
-					</TicketFormGroup>
+						</TicketFormCheckbox>
+					</FormGroup>
 				</TicketFormFooter>
 			</TicketForm>
 		)
@@ -195,17 +185,12 @@ storiesOf('Components|TicketForm', module)
 						label='Аффтепати'
 						flex={false}
 					>
-						<TicketFormGroup>
-							<Checkbox
-								{...events}
-								id='party'
-							/>
-							<TicketFormLabel
-								htmlFor='party'
-							>
-								Добавить
-							</TicketFormLabel>
-						</TicketFormGroup>
+						<TicketFormCheckbox
+							{...events}
+							id='party'
+						>
+							Добавить
+						</TicketFormCheckbox>
 					</FormGroup>
 				</TicketFormRow>
 				<TicketFormFooter>
@@ -215,17 +200,16 @@ storiesOf('Components|TicketForm', module)
 					>
 						Запросить счет
 					</Button>
-					<TicketFormGroup>
-						<Checkbox
+					<FormGroup
+						flex={false}
+					>
+						<TicketFormCheckbox
 							{...events}
 							id='policy'
-						/>
-						<TicketFormLabel
-							htmlFor='policy'
 						>
 							Accept <Link to='/terms'>Terms</Link>
-						</TicketFormLabel>
-					</TicketFormGroup>
+						</TicketFormCheckbox>
+					</FormGroup>
 				</TicketFormFooter>
 			</TicketForm>
 		)
