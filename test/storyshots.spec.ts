@@ -1,7 +1,5 @@
 import initStoryshots from '@trigen/scripts-plugin-storybook/jest/storyshots';
 
-jest.setTimeout(5000);
-
 if (process.platform === 'darwin') {
 	initStoryshots({
 		customizePage(page) {
