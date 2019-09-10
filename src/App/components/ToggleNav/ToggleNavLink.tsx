@@ -1,7 +1,11 @@
 import React, {
+	ContextType,
 	Component
 } from 'react';
 import PropTypes from 'prop-types';
+import {
+	I18nContext
+} from 'i18n-for-react';
 import {
 	NavLink as RouterNavLink
 } from 'react-router-dom';
@@ -11,6 +15,9 @@ import {
 import {
 	Bind
 } from '@flexis/ui/helpers';
+import {
+	getLocalizedPath
+} from '~/services/i18n';
 import Link, {
 	IProps as ILinkProps
 } from '../Link';
@@ -38,6 +45,10 @@ export class ToggleNavLink extends Component<IProps> {
 	};
 
 	static defaultProps = Link.defaultProps;
+
+	static contextType = I18nContext;
+
+	context!: ContextType<typeof I18nContext>;
 
 	render() {
 
@@ -78,6 +89,11 @@ export class ToggleNavLink extends Component<IProps> {
 			to
 		} = this.props;
 
-		return to === `${pathname}${search}`;
+		if (typeof to === 'string') {
+			return getLocalizedPath(this.context, to) === `${pathname}${search}`;
+		}
+
+		return getLocalizedPath(this.context, to.pathname) === pathname
+			&& to.search === search;
 	}
 }
