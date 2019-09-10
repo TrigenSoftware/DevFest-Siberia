@@ -1,4 +1,5 @@
 {
+	"preset": "jest-puppeteer",
 	"setupFiles": [
 		"@trigen/scripts-plugin-storybook/jest/registerContext"
 	],
