@@ -9,6 +9,20 @@
 	-st-named: sizeScreenSmMax;
 }
 
+/**
+ * Re-exports
+ */
+
+:import {
+	-st-from: './TicketFormCheckbox/TicketFormCheckbox.st.css';
+	-st-default: Checkbox as checkbox;
+}
+
+:import {
+	-st-from: './TicketFormFooter/TicketFormFooter.st.css';
+	-st-default: Footer as footer;
+}
+
 .root {
 	padding: rel(25, 24) rel(100, 24) rel(58, 24);
 }
