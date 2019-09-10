@@ -26,7 +26,6 @@
 
 .root .Group {
 	margin: 0;
-	width: 100%;
 }
 
 .root button {
@@ -37,6 +36,10 @@
 
 	.root {
 		flex-direction: column-reverse;
+	}
+
+	.root .Group {
+		width: 100%;
 	}
 
 	.root button {
