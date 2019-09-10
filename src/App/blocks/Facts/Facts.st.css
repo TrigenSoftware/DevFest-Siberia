@@ -155,10 +155,34 @@
 		font-size: 54px;
 	}
 
-	/* stylelint-disable a11y/no-display-none */
+	.group {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
 	.group .img {
-		display: none;
-	}/* stylelint-enable */
+		display: block;
+		position: static;
+		margin: auto;
+		width: 306px;
+		height: 153px;
+	}
+
+	.article:nth-of-type(1) .img {
+		display: block;
+		position: static;
+		margin: auto;
+		width: 270px;
+		height: 270px;
+	}
+
+	.article:nth-of-type(2) .img {
+		display: block;
+		position: static;
+		margin: auto;
+		width: 270px;
+		height: 270px;
+	}
 }
 
 @media (max-width: value(sizeScreenSmMax)) {
