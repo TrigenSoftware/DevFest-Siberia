@@ -42,6 +42,7 @@
 }
 
 .link {
+	-st-extends: Link;
 	color: value(colorBlue4);
 	font-size: rel(32, 24);
 }
