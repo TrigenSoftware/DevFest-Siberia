@@ -7,6 +7,7 @@ import {
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
+import unsetSize from '~/components/common/unsetSize';
 import TopicsImg from '~/icons/topics.svg';
 import WorkshopsImg from '~/icons/workshops.svg';
 import AlsoImg from '~/icons/also.svg';
@@ -14,7 +15,6 @@ import {
 	style,
 	classes
 } from './Facts.st.css';
-import unsetSize from '~/components/common/unsetSize';
 
 export type IProps = ISectionProps;
 

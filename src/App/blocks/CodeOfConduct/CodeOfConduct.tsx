@@ -8,6 +8,8 @@ import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
 import Link from '~/components/Link';
+import unsetSize from '~/components/common/unsetSize';
+import CocImg from '~/icons/coc.svg';
 import {
 	style,
 	classes
@@ -38,6 +40,9 @@ export default class CodeOfConduct extends Component<IProps> {
 					<p>
 						{__x`coc.rules`}
 					</p>
+					{unsetSize(<CocImg
+						className={classes.img}
+					/>)}
 					<p>
 						{__x`coc.about`}
 					</p>

@@ -7,6 +7,7 @@
 :import {
 	-st-from: '~/components/variables.st.css';
 	-st-named:
+		sizeScreenLgMax,
 		sizeScreenMdMax,
 		sizeScreenSmMax,
 		colorBlack,
@@ -19,7 +20,12 @@
 	-st-named: center;
 }
 
+.root {
+	overflow: hidden;
+}
+
 .root .center {
+	position: relative;
 	padding-top: rel(32, 24);
 	padding-bottom: rel(113, 24);
 }
@@ -38,6 +44,14 @@
 	line-height: 2em;
 }
 
+.img {
+	position: absolute;
+	top: 85px;
+	right: -204px;
+	width: 717px;
+	height: 717px;
+}
+
 .footer h3 {
 	text-transform: uppercase;
 	color: value(colorBlue5);
@@ -49,10 +63,29 @@
 	font-size: rel(20, 24);
 }
 
+@media (max-width: value(sizeScreenLgMax)) {
+
+	.article {
+		margin-right: 43%;
+	}
+
+	.img {
+		top: 100px;
+	}
+}
+
 @media (max-width: value(sizeScreenMdMax)) {
 
 	.article {
 		margin: 0;
+	}
+
+	.img {
+		display: block;
+		position: static;
+		margin: auto;
+		width: 250px;
+		height: 250px;
 	}
 }
 
