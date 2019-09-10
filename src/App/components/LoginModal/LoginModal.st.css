@@ -43,8 +43,8 @@
 .link {
 	display: block;
 	margin-top: rel(29, 24);
-	border-bottom-left-radius: value(sizeBorderRadius);
-	border-bottom-right-radius: value(sizeBorderRadius);
+	border-bottom-left-radius: rel(8, 24);
+	border-bottom-right-radius: rel(8, 24);
 	background-color: value(colorBlue10);
 	padding: rel(15, 24) rel(50, 24);
 	width: 100%;
