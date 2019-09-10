@@ -17,9 +17,6 @@ import {
 } from 'i18n-for-react';
 import ru from '~/locales/ru.json';
 import en from '~/locales/en.json';
-import {
-	imageUrl
-} from '@flexis/ui/components/ImageSelect/ImageSelect.stories';
 import Badge from '../Badge';
 import ProfileCard from './';
 
@@ -63,7 +60,7 @@ storiesOf('Components|ProfileCard', module)
 		'with default data',
 		() => (
 			<ProfileCard
-				src={text('Source', imageUrl)}
+				src={text('Source', faker.image.avatar())}
 				firstname={text('Firstname', 'Jhon')}
 				lastname={text('Lastname', 'Doe')}
 				description={text('Description', 'iOs, Android, Tech')}
@@ -75,7 +72,7 @@ storiesOf('Components|ProfileCard', module)
 		'with badge',
 		() => (
 			<ProfileCard
-				src={text('Source', imageUrl)}
+				src={text('Source', faker.image.avatar())}
 				firstname={text('Firstname', 'Jhon')}
 				lastname={text('Lastname', 'Doe')}
 				description={text('Description', 'iOs, Android, Tech')}
@@ -88,7 +85,7 @@ storiesOf('Components|ProfileCard', module)
 		'with badge and contacts',
 		() => (
 			<ProfileCard
-				src={text('Source', imageUrl)}
+				src={text('Source', faker.image.avatar())}
 				firstname={text('Firstname', 'Jhon')}
 				lastname={text('Lastname', 'Doe')}
 				description={text('Description', 'iOs, Android, Tech')}
@@ -105,7 +102,7 @@ storiesOf('Components|ProfileCard', module)
 		'with link',
 		() => (
 			<ProfileCard
-				src={text('Source', imageUrl)}
+				src={text('Source', faker.image.avatar())}
 				firstname={text('Firstname', 'Jhon')}
 				lastname={text('Lastname', 'Doe')}
 				description={text('Description', 'iOs, Android, Tech')}

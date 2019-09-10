@@ -7,16 +7,7 @@ import {
 	text
 } from '@storybook/addon-knobs/react';
 
-const stylableApi = `
-Stylable API
----
-_empty_
-`;
-
-storiesOf('Components|Typography', module)
-	.addParameters({
-		info: stylableApi
-	})
+storiesOf('App|Typography', module)
 	.add(
 		'typography',
 		() => (
