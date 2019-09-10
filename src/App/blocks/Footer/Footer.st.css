@@ -63,11 +63,13 @@
 }
 
 .link {
+	-st-extends: Link;
 	text-decoration: none;
 	color: value(colorBlue6);
 }
 
 .contactLink {
+	-st-extends: Link;
 	color: value(colorGray2);
 }
 

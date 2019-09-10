@@ -93,6 +93,7 @@
 }
 
 .contactLink {
+	-st-extends: Link;
 	color: value(colorBlack);
 }
 
