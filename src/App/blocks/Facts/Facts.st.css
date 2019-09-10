@@ -36,6 +36,10 @@
 	color: value(colorPink0);
 }
 
+.group {
+	position: relative;
+}
+
 .group .img {
 	position: absolute;
 	top: -50%;
@@ -96,10 +100,6 @@
 	font-family: value(fontFamilyMono);
 }
 
-.group {
-	position: relative;
-}
-
 @media (min-width: value(sizeScreenMdMin)) {
 
 	.title:alt {
@@ -155,9 +155,10 @@
 		font-size: 54px;
 	}
 
+	/* stylelint-disable a11y/no-display-none */
 	.group .img {
 		display: none;
-	}
+	}/* stylelint-enable */
 }
 
 @media (max-width: value(sizeScreenSmMax)) {
