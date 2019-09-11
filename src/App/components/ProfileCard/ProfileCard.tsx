@@ -103,10 +103,10 @@ export default class ProfileCard extends Component<IProps> {
 				<figure
 					className={classes.img}
 					aria-hidden
-					style={{
-						backgroundImage: `url(${src})`
-					}}
 				>
+					<img
+						src={src}
+					/>
 					{to && (
 						<div
 							className={classes.label}
