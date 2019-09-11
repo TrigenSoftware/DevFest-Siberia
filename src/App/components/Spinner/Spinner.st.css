@@ -4,8 +4,8 @@
 	-st-named:
 		colorBlue4,
 		colorPink0,
-		colorRed,
-		colorGray0;
+		colorBlue11,
+		colorRed;
 }
 
 @keyframes rotatingAnimation {
@@ -50,7 +50,7 @@
 
 	80%,
 	90% {
-		stroke: value(colorGray0);
+		stroke: value(colorBlue11);
 	}
 }
 
