@@ -23,11 +23,6 @@
 		colorPink0;
 }
 
-:import {
-	-st-from: '../Link/Link.st.css';
-	-st-default: Link;
-}
-
 .root {
 	-st-states: clickable;
 	font-size: 1rem;
@@ -150,7 +145,6 @@
 }
 
 .contactLink {
-	-st-extends: Link;
 	color: value(colorBlack);
 }
 

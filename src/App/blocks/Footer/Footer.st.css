@@ -21,11 +21,6 @@
 	-st-named: center;
 }
 
-:import {
-	-st-from: '~/components/Link/Link.st.css';
-	-st-default: Link;
-}
-
 .root {
 	background-color: value(colorBlue12);
 }
@@ -63,13 +58,11 @@
 }
 
 .link {
-	-st-extends: Link;
 	text-decoration: none;
 	color: value(colorBlue6);
 }
 
 .contactLink {
-	-st-extends: Link;
 	color: value(colorGray2);
 }
 

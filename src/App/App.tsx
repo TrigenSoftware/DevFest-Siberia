@@ -18,6 +18,9 @@ import './App.st.css';
 import {
 	getLocalizedPath
 } from '~/services/i18n';
+import {
+	setAppElement
+} from '~/components/Modal';
 import ScrollToTop from '~/components/ScrollToTop';
 import Header from '~/blocks/Header';
 import Index from '~/containers/Index/loadable';
@@ -95,5 +98,9 @@ export default class App extends Component<IProps> {
 				{children}
 			</Router>
 		);
+	}
+
+	componentDidMount() {
+		setAppElement('#view');
 	}
 }

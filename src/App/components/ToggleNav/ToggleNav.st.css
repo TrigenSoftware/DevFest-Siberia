@@ -13,11 +13,6 @@
 		colorPink0;
 }
 
-:import {
-	-st-from: '../Link/Link.st.css';
-	-st-default: Link;
-}
-
 .root,
 .list {
 	display: flex;
@@ -42,7 +37,6 @@
 }
 
 .link {
-	-st-extends: Link;
 	color: value(colorBlue4);
 	font-size: rel(32, 24);
 }

@@ -9,15 +9,6 @@
 	-st-named: icon;
 }
 
-:import {
-	-st-from: '../Link/Link.st.css';
-	-st-default: Link;
-}
-
-.root {
-	-st-extends: Link;
-}
-
 .root .icon {
 	width: rel(40, 24);
 	height: rel(40, 24);

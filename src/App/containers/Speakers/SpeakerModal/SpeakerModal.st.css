@@ -4,15 +4,6 @@
 	-st-named: window;
 }
 
-:import {
-	-st-from: '~/components/Modal/Modal.st.css';
-	-st-default: Modal;
-}
-
-.root {
-	-st-extends: Modal;
-}
-
 .root .window {
 	padding: 0;
 }
