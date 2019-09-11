@@ -18,7 +18,7 @@
     "lint:styles": "trigen-scripts lint:styles",
     "lint:scripts": "trigen-scripts lint:scripts",
     "lint": "trigen-scripts lint",
-    "jest": "SEED=584 trigen-scripts jest",
+    "jest": "trigen-scripts jest",
     "test": "SEED=584 npm run build:storybook && trigen-scripts test",
     "build:docs": "trigen-scripts build:docs",
     "start:storybook": "trigen-scripts start:storybook -c .storybook",

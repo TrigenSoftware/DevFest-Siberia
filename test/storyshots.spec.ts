@@ -6,6 +6,7 @@ import {
 
 if (process.platform === 'darwin') {
 
+	process.env.SEED = JSON.stringify(584);
 	jest.setTimeout(30000);
 
 	const config = {
