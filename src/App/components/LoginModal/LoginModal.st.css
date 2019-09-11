@@ -23,11 +23,6 @@
 	-st-default: Footer as footer;
 }
 
-:import {
-	-st-from: '../Link/Link.st.css';
-	-st-default: Link;
-}
-
 .root .window {
 	padding: 0;
 }
