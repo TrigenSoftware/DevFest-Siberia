@@ -106,6 +106,7 @@ export default class ProfileCard extends Component<IProps> {
 				>
 					<img
 						src={src}
+						loading='lazy'
 					/>
 					{to && (
 						<div
