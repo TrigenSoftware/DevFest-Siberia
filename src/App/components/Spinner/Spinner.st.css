@@ -3,13 +3,9 @@
 	-st-from: '../variables.st.css';
 	-st-named:
 		colorBlue4,
-		colorBlue7,
-		colorBlue8,
-		colorBlue10,
-		colorBlue11,
 		colorPink0,
-		colorPink2,
-		colorRed;
+		colorRed,
+		colorGray0;
 }
 
 @keyframes rotatingAnimation {
@@ -19,63 +15,70 @@
 	}
 }
 
-@keyframes color {
+@keyframes dash {
 
 	0% {
-		border-color: value(colorBlue10);
-		border-right-color: transparent;
+		stroke-dasharray: 1, 200;
+		stroke-dashoffset: 0;
 	}
 
-	15% {
-		border-color: value(colorBlue11);
-		border-right-color: transparent;
-	}
-
-	30% {
-		border-color: value(colorBlue8);
-		border-right-color: transparent;
-	}
-
-	45% {
-		border-color: value(colorPink0);
-		border-right-color: transparent;
-	}
-
-	60% {
-		border-color: value(colorPink3);
-		border-right-color: transparent;
-	}
-
-	75% {
-		border-color: value(colorRed);
-		border-right-color: transparent;
-	}
-
-	90% {
-		border-color: value(colorBlue4);
-		border-right-color: transparent;
+	50% {
+		stroke-dasharray: 89, 200;
+		stroke-dashoffset: -35px;
 	}
 
 	100% {
-		border-color: value(colorBlue10);
-		border-right-color: transparent;
+		stroke-dasharray: 89, 200;
+		stroke-dashoffset: -124px;
+	}
+}
+
+@keyframes color {
+
+	100%,
+	0% {
+		stroke: value(colorBlue4);
+	}
+
+	40% {
+		stroke: value(colorPink0);
+	}
+
+	66% {
+		stroke: value(colorRed);
+	}
+
+	80%,
+	90% {
+		stroke: value(colorGray0);
 	}
 }
 
 .root {
 	display: inline-block;
-	animation: rotatingAnimation 1s linear infinite, color 10s ease-in-out infinite;
-	border: .25em solid value(colorBlue10);
-	border-radius: 50%;
-	border-right-color: transparent;
-	width: 2em;
-	height: 2em;
-	font-size: 1rem;
+	width: 5em;
+	height: 5em;
+	font-size: 1em;
 }
+
+/* stylelint-disable a11y/media-prefers-reduced-motion */
+.root .circular {
+	animation: rotatingAnimation 2s linear infinite;
+	transform-origin: center center;
+}/* stylelint-enable */
+
+/* stylelint-disable a11y/media-prefers-reduced-motion */
+.root .path {
+	animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+	stroke-dasharray: 1, 200;
+	stroke-dashoffset: 0;
+	stroke-linecap: round;
+}/* stylelint-enable */
 
 @media (prefers-reduced-motion: reduce) {
 
-	.root {
+	.root .path,
+	.root .circular {
 		animation: none;
 	}
 }

@@ -24,6 +24,20 @@ export default class Spinner extends Component<IProps> {
 				{...props}
 				className={style(classes.root, className)}
 			>
+				<svg
+					className={classes.circular}
+					viewBox='25 25 50 50'
+				>
+					<circle
+						className={classes.path}
+						cx='50'
+						cy='50'
+						r='20'
+						fill='none'
+						stroke-width='2'
+						stroke-miterlimit='10'
+					/>
+				</svg>
 				{children}
 			</div>
 		);
