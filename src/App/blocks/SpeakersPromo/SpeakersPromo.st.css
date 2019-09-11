@@ -7,7 +7,7 @@
 :import {
 	-st-from: '~/components/variables.st.css';
 	-st-named:
-		sizeScreenMdMax,
+		sizeScreenLgMax,
 		fontFamilyMono,
 		sizeGap,
 		sizeGapLg,
@@ -87,7 +87,7 @@
 	flex: 1 1 25%;
 }
 
-@media (max-width: value(sizeScreenMdMax)) {
+@media (max-width: value(sizeScreenLgMax)) {
 
 	.root {
 		background: value(colorPink0);
