@@ -60,7 +60,7 @@ storiesOf('Components|ProfileCard', module)
 		'with default data',
 		() => (
 			<ProfileCard
-				src={text('Source', faker.image.imageUrl())}
+				src={text('Source', faker.image.avatar())}
 				firstname={text('Firstname', 'Jhon')}
 				lastname={text('Lastname', 'Doe')}
 				description={text('Description', 'iOs, Android, Tech')}
@@ -72,7 +72,7 @@ storiesOf('Components|ProfileCard', module)
 		'with badge',
 		() => (
 			<ProfileCard
-				src={text('Source', faker.image.imageUrl())}
+				src={text('Source', faker.image.avatar())}
 				firstname={text('Firstname', 'Jhon')}
 				lastname={text('Lastname', 'Doe')}
 				description={text('Description', 'iOs, Android, Tech')}
@@ -85,7 +85,7 @@ storiesOf('Components|ProfileCard', module)
 		'with badge and contacts',
 		() => (
 			<ProfileCard
-				src={text('Source', faker.image.imageUrl())}
+				src={text('Source', faker.image.avatar())}
 				firstname={text('Firstname', 'Jhon')}
 				lastname={text('Lastname', 'Doe')}
 				description={text('Description', 'iOs, Android, Tech')}
@@ -102,7 +102,7 @@ storiesOf('Components|ProfileCard', module)
 		'with link',
 		() => (
 			<ProfileCard
-				src={text('Source', faker.image.imageUrl())}
+				src={text('Source', faker.image.avatar())}
 				firstname={text('Firstname', 'Jhon')}
 				lastname={text('Lastname', 'Doe')}
 				description={text('Description', 'iOs, Android, Tech')}

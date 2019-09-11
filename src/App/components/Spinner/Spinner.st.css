@@ -1,0 +1,84 @@
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named:
+		colorBlue4,
+		colorPink0,
+		colorBlue11,
+		colorRed;
+}
+
+@keyframes rotatingAnimation {
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes dash {
+
+	0% {
+		stroke-dasharray: 1, 200;
+		stroke-dashoffset: 0;
+	}
+
+	50% {
+		stroke-dasharray: 89, 200;
+		stroke-dashoffset: -35px;
+	}
+
+	100% {
+		stroke-dasharray: 89, 200;
+		stroke-dashoffset: -124px;
+	}
+}
+
+@keyframes color {
+
+	100%,
+	0% {
+		stroke: value(colorBlue4);
+	}
+
+	40% {
+		stroke: value(colorPink0);
+	}
+
+	66% {
+		stroke: value(colorRed);
+	}
+
+	80%,
+	90% {
+		stroke: value(colorBlue11);
+	}
+}
+
+.root {
+	display: inline-block;
+	width: 5em;
+	height: 5em;
+	font-size: 1em;
+}
+
+/* stylelint-disable a11y/media-prefers-reduced-motion */
+.root .circular {
+	animation: rotatingAnimation 2s linear infinite;
+	transform-origin: center center;
+}/* stylelint-enable */
+
+/* stylelint-disable a11y/media-prefers-reduced-motion */
+.root .path {
+	animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+	stroke-dasharray: 1, 200;
+	stroke-dashoffset: 0;
+	stroke-linecap: round;
+}/* stylelint-enable */
+
+@media (prefers-reduced-motion: reduce) {
+
+	.root .path,
+	.root .circular {
+		animation: none;
+	}
+}
