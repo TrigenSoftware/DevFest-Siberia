@@ -8,7 +8,8 @@ import Spinner from './';
 const stylableApi = `
 Stylable API
 ---
-_empty_
+- ::circular
+- ::path
 `;
 
 storiesOf('Components|Spinner', module)
