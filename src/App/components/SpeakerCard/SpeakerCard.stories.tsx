@@ -56,7 +56,7 @@ storiesOf('Components|SpeakerCard', module)
 					width:    '100%',
 					maxWidth: '700px'
 				}}
-				src={text('Source', faker.image.imageUrl())}
+				src={text('Source', faker.image.avatar())}
 				firstname={text('Firstname', 'Ангва')}
 				lastname={text('Lastname', 'Кэррот')}
 				description={text('Description', 'iOs, Android, Tech')}
