@@ -8,7 +8,7 @@ import Loading from './';
 const stylableApi = `
 Stylable API
 ---
-- ::spinner
+_empty_
 `;
 
 storiesOf('Components|Loading', module)

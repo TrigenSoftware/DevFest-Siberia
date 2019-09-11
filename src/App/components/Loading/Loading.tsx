@@ -25,9 +25,7 @@ export default class Loading extends Component<IProps> {
 				{...props}
 				className={style(classes.root, className)}
 			>
-				<Spinner
-					className={classes.spinner}
-				>
+				<Spinner>
 					{children}
 				</Spinner>
 			</div>
