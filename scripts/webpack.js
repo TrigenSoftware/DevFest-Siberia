@@ -1,4 +1,19 @@
 import LoadablePlugin from '@loadable/webpack-plugin';
+import {
+	StylableImportOrderPlugin
+} from '@trigen/scripts-preset-react-app/webpack/StylableImportOrderPlugin';
+
+export function dev(config) {
+	return {
+		...config,
+		plugins: [
+			...config.plugins,
+			new StylableImportOrderPlugin({
+				fullControl: true
+			})
+		]
+	};
+}
 
 export function build(config) {
 	return {
@@ -11,6 +26,9 @@ export function build(config) {
 		},
 		plugins: [
 			...config.plugins,
+			new StylableImportOrderPlugin({
+				fullControl: true
+			}),
 			new LoadablePlugin()
 		]
 	};
