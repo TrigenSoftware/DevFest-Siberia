@@ -5,6 +5,10 @@ import {
 
 export default function animate() {
 
+	if (process.env.SEED) {
+		return;
+	}
+
 	const tlcDate = new TimelineMax();
 	const tlcScreenNoise = new TimelineMax();
 	const tlcCatThinking1 = new TimelineMax();
