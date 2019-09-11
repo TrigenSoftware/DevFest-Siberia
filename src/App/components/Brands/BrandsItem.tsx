@@ -37,6 +37,7 @@ export class BrandsItem extends Component<IBrandsItemProps> {
 					className={classes.img}
 					src={src}
 					title={title}
+					loading='lazy'
 				/>
 			</Link>
 		);

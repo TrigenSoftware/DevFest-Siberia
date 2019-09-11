@@ -63,42 +63,66 @@ export default class Photos extends Component<IProps> {
 				<figure
 					className={classes.photo}
 				>
-					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/7.jpg'/>
+					<img
+						src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/7.jpg'
+						loading='lazy'
+					/>
 				</figure>
 				<figure
 					className={classes.photo}
 				>
-					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/3.jpg'/>
+					<img
+						src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/3.jpg'
+						loading='lazy'
+					/>
 				</figure>
 				<figure
 					className={classes.photo}
 				>
-					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/2.jpg'/>
+					<img
+						src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/2.jpg'
+						loading='lazy'
+					/>
 				</figure>
 				<figure
 					className={classes.photo}
 				>
-					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/4.jpg'/>
+					<img
+						src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/4.jpg'
+						loading='lazy'
+					/>
 				</figure>
 				<figure
 					className={classes.photo}
 				>
-					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/1.jpg'/>
+					<img
+						src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/1.jpg'
+						loading='lazy'
+					/>
 				</figure>
 				<figure
 					className={classes.photo}
 				>
-					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131705/devfest2019/photos/6.jpg'/>
+					<img
+						src='https://res.cloudinary.com/trigen/image/upload/v1566131705/devfest2019/photos/6.jpg'
+						loading='lazy'
+					/>
 				</figure>
 				<figure
 					className={classes.photo}
 				>
-					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/8.jpg'/>
+					<img
+						src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/8.jpg'
+						loading='lazy'
+					/>
 				</figure>
 				<figure
 					className={classes.photo}
 				>
-					<img src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/5.jpg'/>
+					<img
+						src='https://res.cloudinary.com/trigen/image/upload/v1566131704/devfest2019/photos/5.jpg'
+						loading='lazy'
+					/>
 				</figure>
 			</Section>
 		);

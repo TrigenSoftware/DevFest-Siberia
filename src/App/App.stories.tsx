@@ -7,7 +7,7 @@ import {
 	text
 } from '@storybook/addon-knobs/react';
 
-storiesOf('App|Typography', module)
+storiesOf('Components|Typography', module)
 	.add(
 		'typography',
 		() => (

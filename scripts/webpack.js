@@ -9,7 +9,7 @@ export function dev(config) {
 		plugins: [
 			...config.plugins,
 			new StylableImportOrderPlugin({
-				fullControl: false
+				fullControl: true
 			})
 		]
 	};
@@ -27,7 +27,7 @@ export function build(config) {
 		plugins: [
 			...config.plugins,
 			new StylableImportOrderPlugin({
-				fullControl: false
+				fullControl: true
 			}),
 			new LoadablePlugin()
 		]
