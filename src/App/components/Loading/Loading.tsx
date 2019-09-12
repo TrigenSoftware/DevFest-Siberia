@@ -1,12 +1,34 @@
 import React, {
-	PureComponent
+	HTMLAttributes,
+	Component
 } from 'react';
+import Spinner from '../Spinner';
+import {
+	style,
+	classes
+} from './Loading.st.css';
 
-export default class Loading extends PureComponent {
+export type IProps = HTMLAttributes<HTMLDivElement>;
+
+export default class Loading extends Component<IProps> {
 
 	render() {
+
+		const {
+			className,
+			children,
+			...props
+		} = this.props;
+
 		return (
-			<h3>Loading...</h3>
+			<div
+				{...props}
+				className={style(classes.root, className)}
+			>
+				<Spinner>
+					{children}
+				</Spinner>
+			</div>
 		);
 	}
 }

@@ -14,7 +14,7 @@ RoutesList = [
 	...RoutesList,
 	...RoutesList.reduce((routes, path) => {
 
-		if (path !== Routes.Ru) {
+		if (path !== Routes.Ru && path !== Routes.Index) {
 			routes.push(`${Routes.Ru}${path}`);
 		}
 

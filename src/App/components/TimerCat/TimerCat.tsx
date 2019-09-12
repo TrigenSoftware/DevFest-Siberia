@@ -9,6 +9,9 @@ import {
 	PureComponent
 } from 'react';
 import PropTypes from 'prop-types';
+import {
+	omit
+} from '@flexis/ui/helpers';
 import icon from './icon';
 import animate from './animate';
 import {
@@ -58,7 +61,13 @@ export default class TimerCat extends PureComponent<IProps, IIconProps> {
 	};
 
 	render() {
-		return icon(this.state, this.props);
+		return icon(
+			this.state,
+			omit(this.props, [
+				'locale',
+				'start'
+			])
+		);
 	}
 
 	componentDidMount() {

@@ -6,12 +6,17 @@ import {
 	Bind
 } from '@flexis/ui/helpers';
 import FlexisModal, {
-	IProps as IFlexisModalProps
+	IProps as IFlexisModalProps,
+	setAppElement
 } from '@flexis/ui/components/Modal';
 import {
 	style,
 	classes
 } from './Modal.st.css';
+
+export {
+	setAppElement
+};
 
 export type IProps = IFlexisModalProps;
 

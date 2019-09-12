@@ -56,4 +56,31 @@ storiesOf('Components|ToggleNav', module)
 				</ToggleNavLink>
 			</ToggleNav>
 		)
+	)
+	.add(
+		'with query param',
+		() => (
+			<ToggleNav>
+				<ToggleNavLink
+					to='/speakers?type=all'
+				>
+					Все
+				</ToggleNavLink>
+				<ToggleNavLink
+					to='/speakers?type=mobile'
+				>
+					Мобильные
+				</ToggleNavLink>
+				<ToggleNavLink
+					to='/speakers?type=web'
+				>
+					Веб
+				</ToggleNavLink>
+				<ToggleNavLink
+					to='/speakers?type=ai'
+				>
+					ИИ
+				</ToggleNavLink>
+			</ToggleNav>
+		)
 	);

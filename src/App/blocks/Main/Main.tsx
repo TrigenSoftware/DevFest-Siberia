@@ -10,7 +10,7 @@ import {
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
-import TimerCat from '~/components/TimerCat';
+import TimerCat from '~/components/TimerCat/loadable';
 import {
 	startTime
 } from '~/data';

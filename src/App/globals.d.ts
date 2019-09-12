@@ -14,3 +14,10 @@ declare module '*.svg' {
 	const svg: typeof import('@trigen/scripts-preset-react-app/helpers/IconComponent').default;
 	export default svg;
 }
+
+declare namespace React {
+	// tslint:disable-next-line
+	interface ImgHTMLAttributes<T> {
+		loading?: string;
+	}
+}

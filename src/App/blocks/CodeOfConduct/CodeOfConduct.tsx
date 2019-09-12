@@ -9,6 +9,10 @@ import Section, {
 } from '~/components/Section';
 import Link from '~/components/Link';
 import {
+	noSize
+} from '~/components/common/unsetSize';
+import CocImg from '~/icons/coc.svg';
+import {
 	style,
 	classes
 } from './CodeOfConduct.st.css';
@@ -38,6 +42,10 @@ export default class CodeOfConduct extends Component<IProps> {
 					<p>
 						{__x`coc.rules`}
 					</p>
+					<CocImg
+						className={classes.img}
+						{...noSize}
+					/>
 					<p>
 						{__x`coc.about`}
 					</p>

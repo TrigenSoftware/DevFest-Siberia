@@ -14,6 +14,7 @@ import {
 	omit
 } from '@flexis/ui/helpers';
 import {
+	getLocalizedPath,
 	getSpeakers,
 	getTalkTypes
 } from '~/services/i18n';
@@ -28,7 +29,8 @@ import Button from '~/components/Button';
 import ProfileCard from '~/components/ProfileCard';
 import Badge from '~/components/Badge';
 import {
-	routeProps
+	routeProps,
+	addSearchParams
 } from '../common/router';
 import {
 	style,
@@ -112,8 +114,11 @@ export class Speakers extends Component<IProps> {
 									</Badge>
 								)}
 								to={{
-									pathname: `/speakers/${item.id}`,
-									search
+									pathname: getLocalizedPath(context, '/speakers'),
+									search:   addSearchParams(search, {
+										id: item.id,
+										type
+									})
 								}}
 							/>
 						</li>

@@ -55,7 +55,10 @@ export default class PartnerCard extends Component<IProps> {
 				<figure
 					className={classes.logo}
 				>
-					<img src={src}/>
+					<img
+						src={src}
+						loading='lazy'
+					/>
 				</figure>
 				<div
 					className={classes.info}
