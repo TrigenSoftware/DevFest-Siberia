@@ -2,7 +2,7 @@ import React, {
 	Component
 } from 'react';
 import {
-	default as NukaCarousel,
+	default as Slider,
 	CarouselProps
 } from 'nuka-carousel';
 import {
@@ -23,12 +23,12 @@ export default class Carousel extends Component<IProps> {
 		} = this.props;
 
 		return (
-			<NukaCarousel
+			<Slider
 				{...props}
 				className={style(classes.root, className)}
 			>
 				{children}
-			</NukaCarousel>
+			</Slider>
 		);
 	}
 }
