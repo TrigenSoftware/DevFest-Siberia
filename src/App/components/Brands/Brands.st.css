@@ -1,6 +1,6 @@
 
 :import {
-	-st-from: '~/components/variables.st.css';
+	-st-from: '../variables.st.css';
 	-st-named:
 		sizeScreenMdMax,
 		colorBlue6;

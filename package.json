@@ -50,6 +50,7 @@
     "i18n-for-browser": "^1.2.1",
     "i18n-for-react": "^2.0.2",
     "immutable": "4.0.0-rc.12",
+    "nuka-carousel": "^4.5.11",
     "prop-types": "^15.6.0",
     "qs": "^6.8.0",
     "react": "^16.9.0",

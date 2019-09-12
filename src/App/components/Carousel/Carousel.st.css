@@ -1,0 +1,27 @@
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named:
+		colorPink0,
+		colorBlue3;
+}
+
+/* stylelint-disable a11y/no-display-none */
+:global(.slider-control-centerleft),
+:global(.slider-control-centerright) {
+	display: none;
+}/* stylelint-enable */
+
+:global(.paging-dot) {
+	background: value(colorBlue3) !important;
+	width: 10px !important;
+	height: 10px !important;
+}
+
+:global(.slider-control-bottomcenter > ul) {
+	top: 0 !important;
+}
+
+:global(.paging-item.active .paging-dot) {
+	background: value(colorPink0) !important;
+}
