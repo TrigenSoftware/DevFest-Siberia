@@ -8,6 +8,12 @@ import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
 import {
+	noSize
+} from '~/components/common/unsetSize';
+import TopicsImg from '~/icons/topics.svg';
+import WorkshopsImg from '~/icons/workshops.svg';
+import AlsoImg from '~/icons/also.svg';
+import {
 	style,
 	classes
 } from './Facts.st.css';
@@ -40,6 +46,10 @@ export default class Facts extends Component<IProps> {
 				>
 					{__x`facts.title`}
 				</h3>
+				<TopicsImg
+					className={classes.topicsImg}
+					{...noSize}
+				/>
 				<article
 					className={classes.article}
 				>
@@ -53,6 +63,10 @@ export default class Facts extends Component<IProps> {
 				<article
 					className={classes.article}
 				>
+					<WorkshopsImg
+						className={classes.img}
+						{...noSize}
+					/>
 					<h4>
 						{__x`facts.workshops`}
 					</h4>
@@ -60,11 +74,19 @@ export default class Facts extends Component<IProps> {
 						{__x`facts.workshopsDescription`}
 					</p>
 				</article>
-				<h2
-					className={classes.title}
+				<div
+					className={classes.group}
 				>
-					{__x`facts.also`}
-				</h2>
+					<h2
+						className={classes.title}
+					>
+						{__x`facts.also`}
+					</h2>
+					<AlsoImg
+						className={classes.img}
+						{...noSize}
+					/>
+				</div>
 				<ul
 					className={classes.numbers}
 				>
