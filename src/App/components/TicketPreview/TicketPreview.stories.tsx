@@ -12,6 +12,14 @@ import TicketPreview, {
 const stylableApi = `
 Stylable API
 ---
+- ::primary
+	- :content
+	- :group
+- ::auxiliary
+	- :content
+- ::field
+	- ::label
+	- ::value
 `;
 
 storiesOf('Components|TicketPreview', module)
