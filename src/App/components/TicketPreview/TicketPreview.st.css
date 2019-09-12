@@ -8,50 +8,39 @@
 	-st-from: '../variables.st.css';
 	-st-named:
 		sizeScreenSmMax,
-		fontFamilyMono,
 		colorWhite,
-		colorPink0,
-		colorBlue4,
-		colorBlue7;
+		colorPink0;
 }
 
 .root {
-	display: flex;
 	position: relative;
-	border: rel(10, 24) solid value(colorPink0);
+	margin: 0;
+	padding: rel(11, 24);
+	overflow: hidden;
 }
 
 .root::before {
 	position: absolute;
-	top: 50%;
+	top: 0;
+	right: 0;
+	bottom: 0;
 	left: 0;
-	z-index: 1;
-	transform: translate(-16%, -50%);
-	border-top: rel(10, 24) solid value(colorPink0);
-	border-right: rel(10, 24) solid value(colorPink0);
-	border-bottom: rel(10, 24) solid value(colorPink0);
-	border-top-right-radius: rel(130, 24);
-	border-bottom-right-radius: rel(130, 24);
-	background: value(colorWhite);
-	width: rel(65, 24);
-	height: rel(130, 24);
+	border: rel(11, 24) solid value(colorPink0);
 	content: '';
 }
 
 .content {
 	display: flex;
 	position: relative;
-	flex: 1;
-	margin: rel(7, 24);
-	overflow: hidden;
 }
 
 .content::before {
 	position: absolute;
 	top: 50%;
 	left: 0;
-	transform: translate(-60%, -50%);
-	border: rel(5, 24) solid value(colorPink0);
+	z-index: 2;
+	transform: translate(-67%, -50%);
+	border: rel(11, 24) solid value(colorPink0);
 	border-radius: 50%;
 	background: value(colorWhite);
 	width: rel(150, 24);
@@ -59,116 +48,14 @@
 	content: '';
 }
 
-.info {
-	flex: 1;
-	border: rel(5, 24) solid value(colorPink0);
-}
-
-.infoContent {
-	display: flex;
-	justify-content: start;
-	margin-left: rel(74, 24);
-	border-left: 2px dashed value(colorPink0);
-	padding: rel(21, 24) rel(35, 24) rel(21, 24) 0;
-}
-
-.list {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-.list:first-child {
-	margin-left: rel(35, 24);
-}
-
-.list:not(:last-child) {
+.group:not(:last-child) {
 	margin-right: rel(68, 24);
 }
 
-.item {
-	margin-bottom: rel(8, 24);
-}
-
-.title {
-	font-size: rel(21, 24);
-}
-
-.text {
-	color: value(colorBlue4);
-	font-family: value(fontFamilyMono);
-	font-weight: bold;
-}
-
-.afterparty {
-	display: flex;
-	justify-content: center;
-	margin-left: rel(7, 24);
-	border: rel(5, 24) solid value(colorBlue7);
-	padding: rel(3, 24);
-	writing-mode: vertical-rl;
-	text-orientation: mixed;
-}
-
-.afterpartyContent {
-	border: 1px dashed value(colorBlue7);
-	width: 100%;
-	height: 100%;
-	text-align: center;
-}
-
-.afterparty h3 {
-	margin: 0;
-	padding: rel(12, 26);
-	color: value(colorBlue7);
-	font-size: rel(26, 24);
-	font-weight: bold;
-}
-
-.ticket {
-	display: flex;
-	border-left: 2px dashed value(colorPink0);
-	padding: rel(7, 24);
-	writing-mode: vertical-rl;
-	text-orientation: mixed;
-}
-
-.ticket h3 {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 0;
-	border: rel(5, 26) solid value(colorPink0);
-	height: 100%;
-	color: value(colorPink0);
-	font-size: rel(26, 24);
-	font-weight: bold;
-}
-
-/* stylelint-disable a11y/no-display-none */
-.buyTicket {
-	display: none;
-}/* stylelint-enable */
-
 @media (max-width: value(sizeScreenSmMax)) {
 
-	.root {
-		flex-direction: column-reverse;
-		border: 6px solid value(colorPink0);
-	}
-
 	.root::before {
-		top: 100%;
-		left: 50%;
-		transform: translate(-50%, -70%) rotate(-90deg);
-		border-top: 6px solid value(colorPink0);
-		border-right: 6px solid value(colorPink0);
-		border-bottom: 6px solid value(colorPink0);
-		border-top-right-radius: 131px;
-		border-bottom-right-radius: 131px;
-		background: value(colorWhite);
-		width: 65px;
-		height: 131px;
+		border-width: 6px;
 	}
 
 	.content {
@@ -178,56 +65,9 @@
 	.content::before {
 		top: 100%;
 		left: 50%;
-		transform: translate(-50%, -43%) rotate(-90deg);
-		border: 5px solid value(colorPink0);
-		width: 150px;
-		height: 150px;
-	}
-
-	.info {
-		border: 5px solid value(colorPink0);
-	}
-
-	.infoContent {
-		display: block;
-		margin: 0 0 81px;
-		border: none;
-		border-bottom: 2px dashed value(colorPink0);
-		padding: rel(30, 16) rel(30, 16) 0;
-	}
-
-	.infoContent .list {
-		margin: 0;
-	}
-
-	.item {
-		margin-bottom: rel(23, 16);
-	}
-
-	.afterparty {
-		margin: 0 0 5px;
-		padding: 4px;
-		writing-mode: horizontal-tb;
-	}
-
-	.afterparty h3 {
-		margin: 4px;
-		background-color: value(colorBlue7);
-		color: value(colorWhite);
-	}
-
-	.ticket {
-		display: block;
-		border: none;
-		border-bottom: 2px dashed value(colorPink0);
-		writing-mode: horizontal-tb;
-	}
-
-	.buyTicket {
-		display: block;
-		margin-bottom: 5px;
-		border: 5px solid value(colorBlue7);
-		padding: 7px;
-		text-align: center;
+		transform: translate(-50%, -35%);
+		border-width: 6px;
+		width: 140px;
+		height: 140px;
 	}
 }

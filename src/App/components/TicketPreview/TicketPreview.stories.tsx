@@ -2,14 +2,12 @@ import React from 'react';
 import {
 	storiesOf
 } from '@storybook/react';
-import {
-	MemoryRouter
-} from 'react-router';
-import {
-	boolean,
-	text
-} from '@storybook/addon-knobs/react';
-import TicketPreview from './';
+import TicketPreview, {
+	TickerPreviewPrimary,
+	TickerPreviewGroup,
+	TickerPreviewField,
+	TicketPreviewAuxiliary
+} from './';
 
 const stylableApi = `
 Stylable API
@@ -20,20 +18,35 @@ storiesOf('Components|TicketPreview', module)
 	.addParameters({
 		info: stylableApi
 	})
-	.addDecorator(story => (
-		<MemoryRouter initialEntries={['/']}>
-			{story()}
-		</MemoryRouter>
-	))
 	.add(
 		'with content',
 		() => (
-			<TicketPreview
-				id={text('id', '123123123')}
-				name={text('Name', 'Jhon Doe')}
-				location={text('Location', 'Academ')}
-				date={text('Date', '29 ноября – 1 декабря')}
-				afterparty={boolean('Afterparty', false)}
-			/>
+			<TicketPreview>
+				<TickerPreviewPrimary>
+					<TickerPreviewGroup>
+						<TickerPreviewField
+							label='Номер Билета'
+							value='ID 123123'
+						/>
+						<TickerPreviewField
+							label='Для'
+							value='Jhon Doe'
+						/>
+					</TickerPreviewGroup>
+					<TickerPreviewGroup>
+						<TickerPreviewField
+							label='Где'
+							value='Academ, 18'
+						/>
+						<TickerPreviewField
+							label='Когда'
+							value='29 ноября – 1 декабря'
+						/>
+					</TickerPreviewGroup>
+				</TickerPreviewPrimary>
+				<TicketPreviewAuxiliary>
+					Один Билет
+				</TicketPreviewAuxiliary>
+			</TicketPreview>
 		)
 	);

@@ -5,16 +5,11 @@ import React, {
 import {
 	style,
 	classes
-} from './TicketPreview.st.css';
+} from './TicketPreviewAuxiliary.st.css';
 
-export * from './TickerPreviewPrimary';
-export * from './TickerPreviewGroup';
-export * from './TickerPreviewField';
-export * from './TicketPreviewAuxiliary';
+export type ITicketPreviewAuxiliaryProps = HTMLAttributes<HTMLElement>;
 
-export type IProps = HTMLAttributes<HTMLElement>;
-
-export default class TicketPreview extends Component<IProps> {
+export class TicketPreviewAuxiliary extends Component<ITicketPreviewAuxiliaryProps> {
 
 	render() {
 
@@ -25,7 +20,7 @@ export default class TicketPreview extends Component<IProps> {
 		} = this.props;
 
 		return (
-			<figure
+			<section
 				{...props}
 				className={style(classes.root, className)}
 			>
@@ -34,7 +29,7 @@ export default class TicketPreview extends Component<IProps> {
 				>
 					{children}
 				</div>
-			</figure>
+			</section>
 		);
 	}
 }
