@@ -1,0 +1,53 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named: sizeScreenSmMax;
+}
+
+/**
+ * Re-exports
+ */
+
+:import {
+	-st-from: './TicketFormCheckbox/TicketFormCheckbox.st.css';
+	-st-default: Checkbox as checkbox;
+}
+
+:import {
+	-st-from: './TicketFormFooter/TicketFormFooter.st.css';
+	-st-default: Footer as footer;
+}
+
+.root {
+	padding: rel(25, 24) rel(100, 24) rel(58, 24);
+}
+
+.group {
+	display: flex;
+	align-items: center;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.root {
+		padding: rel(20, 16) rel(15, 16);
+	}
+
+	.row {
+		display: block;
+	}
+
+	.group {
+		width: 100%;
+	}
+}

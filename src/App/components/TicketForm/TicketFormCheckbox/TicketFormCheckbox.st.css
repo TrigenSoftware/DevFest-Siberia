@@ -1,0 +1,24 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../../variables.st.css';
+	-st-named:
+		fontFamilyMono,
+		colorBlue4,
+		colorPink0;
+}
+
+.label {
+	margin-left: rel(15, 24);
+	color: value(colorBlue4);
+}
+
+.label span {
+	color: value(colorPink0);
+	font-family: value(fontFamilyMono);
+	font-size: rel(30, 24);
+}
