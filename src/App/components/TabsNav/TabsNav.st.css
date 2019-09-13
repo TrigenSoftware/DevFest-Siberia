@@ -68,14 +68,16 @@
 	border-bottom-right-radius: value(sizeBorderRadius);
 }
 
-.root .item:nth-of-type(1) .link {
+.root .item:first-child .link {
 	border-top-left-radius: value(sizeBorderRadius);
+	border-bottom-left-radius: 0;
 	border-bottom-right-radius: value(sizeBorderRadius);
 }
 
 .root .item:last-child .link {
 	border-top-right-radius: value(sizeBorderRadius);
 	border-bottom-left-radius: value(sizeBorderRadius);
+	border-bottom-right-radius: 0;
 }
 
 .root .link.active {
