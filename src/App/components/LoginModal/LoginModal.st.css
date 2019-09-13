@@ -13,9 +13,9 @@
 	-st-from: '../variables.st.css';
 	-st-named:
 		sizeScreenSmMax,
-		sizeBorderRadius,
 		colorWhite,
-		colorBlue10;
+		colorBlue10,
+		colorGray4;
 }
 
 :import {
@@ -45,6 +45,11 @@
 	width: 100%;
 	text-align: center;
 	color: value(colorWhite);
+}
+
+.link:hover,
+.link:focus {
+	color: value(colorGray4);
 }
 
 @media (max-width: value(sizeScreenSmMax)) {

@@ -1,0 +1,21 @@
+
+:import {
+	-st-from: '../../variables.st.css';
+	-st-named:
+		fontFamilyMono,
+		colorBlue4,
+		colorPink0;
+}
+
+.label {
+	color: value(colorPink0);
+	font-size: 21px;
+	font-weight: normal;
+}
+
+.value {
+	color: value(colorBlue4);
+	font-family: value(fontFamilyMono);
+	font-size: 24px;
+	font-weight: bold;
+}

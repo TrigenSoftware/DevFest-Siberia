@@ -1,0 +1,75 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../../variables.st.css';
+	-st-named:
+		sizeScreenSmMax,
+		colorWhite,
+		colorPink0;
+}
+
+.root {
+	position: relative;
+	flex: 1;
+	margin: rel(7, 24);
+	overflow: hidden;
+}
+
+.root::before {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	z-index: 1;
+	transform: translate(-67%, -50%);
+	border: rel(5, 24) solid value(colorPink0);
+	border-radius: 50%;
+	background: value(colorWhite);
+	width: rel(180, 24);
+	height: rel(180, 24);
+	content: '';
+}
+
+.root::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border: rel(5, 24) solid value(colorPink0);
+	content: '';
+}
+
+.info {
+	display: flex;
+	margin-left: rel(75, 24);
+	border-left: 2px dashed value(colorPink0);
+	padding: rel(26, 24) rel(33, 24);
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.info {
+		display: block;
+		margin: 0 0 81px;
+		border: none;
+		border-bottom: 2px dashed value(colorPink0);
+		padding: 24px 30px 44px;
+	}
+
+	.root::before {
+		top: 100%;
+		left: 50%;
+		transform: translate(-50%, -35%);
+		border-width: 5px;
+		width: 160px;
+		height: 160px;
+	}
+
+	.root::after {
+		border-width: 5px;
+	}
+}
