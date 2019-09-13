@@ -393,8 +393,8 @@
 	},
 	"buy": {
 		"oneTicket": "One Ticket - 100$",
-		"firstname": "First name",
-		"lastname": "Last name",
+		"firstname": "First Name",
+		"lastname": "Last Name",
 		"position": "Position",
 		"company": "Company",
 		"city": "City",
