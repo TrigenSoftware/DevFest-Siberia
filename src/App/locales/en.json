@@ -393,6 +393,10 @@
 	},
 	"cabinet": {
 		"title": "Participant",
+		"id": "Ticket ID",
+		"for": "For",
+		"where": "Where",
+		"when": "When",
 		"ticket": "One ticket"
 	},
 	"coc": {

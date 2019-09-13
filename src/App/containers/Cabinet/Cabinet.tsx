@@ -4,6 +4,7 @@ import React, {
 } from 'react';
 import {
 	I18nContext,
+	__ as tr,
 	__x
 } from 'i18n-for-react';
 import Section, {
@@ -34,6 +35,10 @@ export default class CabinetContainer extends Component<IProps> {
 			className,
 			...props
 		} = this.props;
+		const {
+			context
+		} = this;
+		const __ = context.bind(tr);
 
 		return (
 			<Section
@@ -50,21 +55,21 @@ export default class CabinetContainer extends Component<IProps> {
 						<TickerPreviewPrimary>
 							<TickerPreviewGroup>
 								<TickerPreviewField
-									label='Номер Билета'
+									label={__`cabinet.id`}
 									value='ID 123123'
 								/>
 								<TickerPreviewField
-									label='Для'
+									label={__`cabinet.for`}
 									value='Jhon Doe'
 								/>
 							</TickerPreviewGroup>
 							<TickerPreviewGroup>
 								<TickerPreviewField
-									label='Где'
+									label={__`cabinet.where`}
 									value='Academ, 18'
 								/>
 								<TickerPreviewField
-									label='Когда'
+									label={__`cabinet.when`}
 									value='29 ноября – 1 декабря'
 								/>
 							</TickerPreviewGroup>
