@@ -1,6 +1,11 @@
 import React, {
+	ContextType,
 	Component
 } from 'react';
+import {
+	I18nContext,
+	__x
+} from 'i18n-for-react';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -19,6 +24,10 @@ export type IProps = ISectionProps;
 
 export default class CabinetContainer extends Component<IProps> {
 
+	static contextType = I18nContext;
+
+	context!: ContextType<typeof I18nContext>;
+
 	render() {
 
 		const {
@@ -32,7 +41,7 @@ export default class CabinetContainer extends Component<IProps> {
 				className={style(classes.root, className)}
 			>
 				<h2>
-					Участник
+					{__x`cabinet.title`}
 				</h2>
 				<article
 					className={classes.article}
@@ -61,7 +70,7 @@ export default class CabinetContainer extends Component<IProps> {
 							</TickerPreviewGroup>
 						</TickerPreviewPrimary>
 						<TicketPreviewAuxiliary>
-							Один Билет
+							{__x`cabinet.ticket`}
 						</TicketPreviewAuxiliary>
 					</TicketPreview>
 				</article>
