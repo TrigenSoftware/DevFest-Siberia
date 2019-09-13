@@ -63,12 +63,17 @@
 	}
 }
 
+.root .item .link {
+	border-bottom-left-radius: value(sizeBorderRadius);
+	border-bottom-right-radius: value(sizeBorderRadius);
+}
+
 .root .item:nth-of-type(1) .link {
 	border-top-left-radius: value(sizeBorderRadius);
 	border-bottom-right-radius: value(sizeBorderRadius);
 }
 
-.root .item:nth-of-type(2) .link {
+.root .item:last-child .link {
 	border-top-right-radius: value(sizeBorderRadius);
 	border-bottom-left-radius: value(sizeBorderRadius);
 }

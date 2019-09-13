@@ -45,4 +45,23 @@ storiesOf('Components|TabsNav', module)
 				/>
 			</TabsNav>
 		)
+	)
+	.add(
+		'with 3 items',
+		() => (
+			<TabsNav>
+				<TabsNavItem
+					to='/one'
+					label='1 Билет – 1000₽'
+				/>
+				<TabsNavItem
+					to='/two'
+					label='1 Билет – 2000₽'
+				/>
+				<TabsNavItem
+					to='/three'
+					label='1 Билет – 3000₽'
+				/>
+			</TabsNav>
+		)
 	);
