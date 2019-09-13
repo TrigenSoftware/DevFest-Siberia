@@ -28,7 +28,7 @@ storiesOf('Containers|Buy', module)
 		info: stylableApi
 	})
 	.addDecorator(story => (
-		<MemoryRouter initialEntries={['/']}>
+		<MemoryRouter initialEntries={['/buy']}>
 			{story()}
 		</MemoryRouter>
 	))

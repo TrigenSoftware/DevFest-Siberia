@@ -391,6 +391,18 @@
 	"profile": {
 		"view": "View profile"
 	},
+	"buy": {
+		"oneTicket": "One Ticket - 100$",
+		"firstname": "First name",
+		"lastname": "Last name",
+		"position": "Position",
+		"company": "Company",
+		"city": "City",
+		"email": "Email",
+		"notice": "We will send a ticket here : )",
+		"buy": "Buy",
+		"terms": "Accept <>Terms</>"
+	},
 	"coc": {
 		"title": "Code Of Conduct",
 		"rules": "All attendees, speakers, sponsors and volunteers at DevFest Siberia are required to agree with the following code of conduct. Organisers will enforce this code throughout the event. We are expecting cooperation from all participants to help ensuring a safe environment for everybody.",

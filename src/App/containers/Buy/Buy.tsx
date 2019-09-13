@@ -1,7 +1,13 @@
 import React, {
+	ContextType,
 	ChangeEvent,
 	Component
 } from 'react';
+import {
+	I18nContext,
+	__ as tr,
+	__x
+} from 'i18n-for-react';
 import {
 	Bind
 } from '@flexis/ui/helpers';
@@ -26,6 +32,16 @@ import {
 
 export type IProps = ISectionProps;
 
+const terms = [
+	(
+		<Link
+			key='link'
+			className={classes.link}
+			to='/terms'
+		/>
+	)
+];
+
 interface IState {
 	firstname: string;
 	lastname: string;
@@ -36,6 +52,10 @@ interface IState {
 }
 
 export default class BuyContainer extends Component<IProps, IState> {
+
+	static contextType = I18nContext;
+
+	context!: ContextType<typeof I18nContext>;
 
 	state = {
 		firstname: '',
@@ -60,6 +80,10 @@ export default class BuyContainer extends Component<IProps, IState> {
 			city,
 			email
 		} = this.state;
+		const {
+			context
+		} = this;
+		const __ = context.bind(tr);
 
 		return (
 			<Section
@@ -71,8 +95,8 @@ export default class BuyContainer extends Component<IProps, IState> {
 				>
 					<TabsNav>
 						<TabsNavItem
-							label='1 Билет – 5000₽'
-							to='/'
+							label={__`buy.oneTicket`}
+							to='/buy'
 						/>
 					</TabsNav>
 					<TicketForm
@@ -80,11 +104,11 @@ export default class BuyContainer extends Component<IProps, IState> {
 					>
 						<FormGroup
 							id='firstname'
-							label='Имя'
+							label={__`buy.firstname`}
 						>
 							<Input
 								id='firstname'
-								placeholder='Имя'
+								placeholder={__`buy.firstname`}
 								name='firstname'
 								onChange={this.onInputChange}
 								value={firstname}
@@ -92,11 +116,11 @@ export default class BuyContainer extends Component<IProps, IState> {
 						</FormGroup>
 						<FormGroup
 							id='lastname'
-							label='Фамилия'
+							label={__`buy.lastname`}
 						>
 							<Input
 								id='lastname'
-								placeholder='Фамилия'
+								placeholder={__`buy.lastname`}
 								name='lastname'
 								onChange={this.onInputChange}
 								value={lastname}
@@ -104,11 +128,11 @@ export default class BuyContainer extends Component<IProps, IState> {
 						</FormGroup>
 						<FormGroup
 							id='position'
-							label='Должность'
+							label={__`buy.position`}
 						>
 							<Input
 								id='position'
-								placeholder='Должность'
+								placeholder={__`buy.position`}
 								name='position'
 								onChange={this.onInputChange}
 								value={position}
@@ -116,11 +140,11 @@ export default class BuyContainer extends Component<IProps, IState> {
 						</FormGroup>
 						<FormGroup
 							id='company'
-							label='Компания'
+							label={__`buy.company`}
 						>
 							<Input
 								id='company'
-								placeholder='Компания'
+								placeholder={__`buy.company`}
 								name='company'
 								onChange={this.onInputChange}
 								value={company}
@@ -128,11 +152,11 @@ export default class BuyContainer extends Component<IProps, IState> {
 						</FormGroup>
 						<FormGroup
 							id='city'
-							label='Город'
+							label={__`buy.city`}
 						>
 							<Input
 								id='city'
-								placeholder='Город'
+								placeholder={__`buy.city`}
 								name='city'
 								onChange={this.onInputChange}
 								value={city}
@@ -140,13 +164,13 @@ export default class BuyContainer extends Component<IProps, IState> {
 						</FormGroup>
 						<FormGroup
 							id='email'
-							label='Почта'
-							notice='Сюда мы пришлем билет : )'
+							label={__`buy.email`}
+							notice={__`buy.notice`}
 						>
 							<Input
 								id='email'
 								type='email'
-								placeholder='Почта'
+								placeholder={__`buy.email`}
 								name='email'
 								onChange={this.onInputChange}
 								value={email}
@@ -157,7 +181,7 @@ export default class BuyContainer extends Component<IProps, IState> {
 								variant='secondary'
 								type='submit'
 							>
-								Купить
+								{__x`buy.buy`}
 							</Button>
 							<FormGroup
 								flex={false}
@@ -166,7 +190,7 @@ export default class BuyContainer extends Component<IProps, IState> {
 									id='policy'
 									required
 								>
-									Accept <Link to='/terms'>Terms</Link>
+									{__x('buy.terms', terms)}
 								</TicketFormCheckbox>
 							</FormGroup>
 						</TicketFormFooter>
