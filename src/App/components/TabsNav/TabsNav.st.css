@@ -13,7 +13,7 @@
 		sizeBorderRadius,
 		durationTransition,
 		colorWhite,
-		colorBlue2,
+		colorGray0,
 		colorPink0;
 }
 
@@ -98,13 +98,15 @@
 }
 
 .description {
+	margin-top: rel(3, 16);
+	padding-top: rel(5, 16);
 	font-size: rel(16, 24);
 }
 
 @media (min-width: value(sizeScreenMdMin)) {
 
 	.description {
-		border-top: 1px dashed value(colorBlue2);
+		border-top: 1px dashed value(colorGray0);
 	}
 
 	.root .link.active .description {
@@ -127,6 +129,7 @@
 	}
 
 	.description {
+		margin: 0;
 		text-transform: uppercase;
 		font-size: 10px;
 	}
