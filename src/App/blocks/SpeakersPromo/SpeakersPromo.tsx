@@ -17,6 +17,7 @@ import {
 import {
 	getSpeakers
 } from '~/services/i18n';
+import SpeakerModal from '~/containers/Speakers/SpeakerModal';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -55,47 +56,50 @@ export class SpeakersPromo extends Component<IProps> {
 		const speakers = getSpeakers(context);
 
 		return (
-			<Section
-				{...omit(props, routeProps)}
-				className={style(classes.root, className)}
-			>
-				<Link
-					className={classes.title}
-					to='/speakers'
+			<>
+				<Section
+					{...omit(props, routeProps)}
+					className={style(classes.root, className)}
 				>
-					{__x`speakers.title`}
-				</Link>
-				<ul
-					className={classes.list}
-				>
-					{speakers.slice(0, 3).map(item => (
-						<li
-							key={item.id}
-						>
-							<ProfileCard
-								src={item.src}
-								firstname={item.firstname}
-								lastname={item.lastname}
-								description={item.description}
-								location={item.location}
-								badge={item.badge && (
-									<Badge
-										color='pink'
-									>
-										{item.badge}
-									</Badge>
-								)}
-								to={{
-									pathname: '/',
-									search:   addSearchParams(search, {
-										id: item.id
-									})
-								}}
-							/>
-						</li>
-					))}
-				</ul>
-			</Section>
+					<Link
+						className={classes.title}
+						to='/speakers'
+					>
+						{__x`speakers.title`}
+					</Link>
+					<ul
+						className={classes.list}
+					>
+						{speakers.slice(0, 3).map(item => (
+							<li
+								key={item.id}
+							>
+								<ProfileCard
+									src={item.src}
+									firstname={item.firstname}
+									lastname={item.lastname}
+									description={item.description}
+									location={item.location}
+									badge={item.badge && (
+										<Badge
+											color='pink'
+										>
+											{item.badge}
+										</Badge>
+									)}
+									to={{
+										pathname: '/',
+										search:   addSearchParams(search, {
+											id: item.id
+										})
+									}}
+								/>
+							</li>
+						))}
+					</ul>
+				</Section>
+				<SpeakerModal/>
+			</>
 		);
 	}
 }

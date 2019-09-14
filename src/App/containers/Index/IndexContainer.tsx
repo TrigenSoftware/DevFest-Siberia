@@ -2,6 +2,7 @@ import React, {
 	Component
 } from 'react';
 import Main from '~/blocks/Main';
+import SpeakersPromo from '~/blocks/SpeakersPromo';
 import Facts from '~/blocks/Facts';
 import Photos from '~/blocks/Photos';
 import Subscribe from '~/blocks/Subscribe';
@@ -15,6 +16,7 @@ export default class IndexContainer extends Component {
 			<>
 				<Main/>
 				<Facts/>
+				<SpeakersPromo/>
 				<Photos/>
 				<Subscribe/>
 				<Location/>

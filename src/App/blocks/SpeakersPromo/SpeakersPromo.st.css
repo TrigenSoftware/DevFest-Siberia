@@ -36,7 +36,7 @@
 }
 
 .root .center {
-	padding-top: value(sizeGapLg);
+	padding-top: value(sizeGap);
 	padding-bottom: value(sizeGapLg);
 }
 
@@ -69,6 +69,7 @@
 	color: value(colorWhite);
 	font-family: value(fontFamilyMono);
 	font-size: rel(82, 24);
+	font-weight: bold;
 }
 
 .title:hover,
@@ -88,10 +89,6 @@
 }
 
 @media (max-width: value(sizeScreenLgMax)) {
-
-	.root {
-		background: value(colorPink0);
-	}
 
 	.root .ProfileCard {
 		margin-bottom: 20px;
