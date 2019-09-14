@@ -1,0 +1,60 @@
+
+:import {
+	-st-from: '@flexis/ui/components/Modal/Modal.st.css';
+	-st-named: window;
+}
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named:
+		sizeScreenSmMax,
+		colorWhite,
+		colorBlue10,
+		colorPink4;
+}
+
+:import {
+	-st-from: './LoginModalFooter/LoginModalFooter.st.css';
+	-st-default: Footer as footer;
+}
+
+.root .window {
+	padding: 0;
+}
+
+.form {
+	padding: rel(36, 24) rel(50, 24) 0;
+}
+
+.title {
+	font-size: rel(42, 24);
+}
+
+.link {
+	display: block;
+	margin-top: rel(29, 24);
+	border-bottom-left-radius: rel(8, 24);
+	border-bottom-right-radius: rel(8, 24);
+	background-color: value(colorBlue10);
+	padding: rel(15, 24) rel(50, 24);
+	width: 100%;
+	text-align: center;
+	color: value(colorWhite);
+}
+
+.link:hover,
+.link:focus {
+	color: value(colorPink4);
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.root .window {
+		padding-top: rel(30, 16);
+	}
+}
