@@ -97,7 +97,7 @@ export function getPromoSpeakers(context: I18nConfig): any[] {
 		context.getLocale()
 	) as any;
 
-	return speakers.filter(speaker => speaker.promo === true);
+	return speakers.filter(speaker => speaker.promo === 'true');
 }
 
 /**

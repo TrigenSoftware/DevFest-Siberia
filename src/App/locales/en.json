@@ -245,7 +245,7 @@
 			{
 				"id":"LeonidKalneus",
 				"type": "web",
-				"promo": true,
+				"promo": "true",
 				"src": "https://gdg-siberia.com/img/team/LeonidKalneus.jpg",
 				"firstname": "Leonid",
 				"lastname": "Kalneus",
@@ -266,7 +266,7 @@
 			{
 				"id":"AlexeyRomanenko",
 				"type": "mobile",
-				"promo": true,
+				"promo": "true",
 				"src": "https://gdg-siberia.com/img/team/AlexeyRomanenko.jpg",
 				"firstname": "Alexey",
 				"lastname": "Romanenko",
@@ -287,7 +287,7 @@
 			{
 				"id":"YuriyKashnikov",
 				"type": "mobile",
-				"promo": true,
+				"promo": "true",
 				"src": "https://gdg-siberia.com/img/team/YuriyKashnikov.jpg",
 				"firstname": "Yuriy",
 				"lastname": "Kashnikov",
