@@ -51,7 +51,9 @@ export default class CabinetContainer extends Component<IProps> {
 				<article
 					className={classes.article}
 				>
-					<TicketPreview>
+					<TicketPreview
+						className={classes.ticket}
+					>
 						<TickerPreviewPrimary>
 							<TickerPreviewGroup>
 								<TickerPreviewField

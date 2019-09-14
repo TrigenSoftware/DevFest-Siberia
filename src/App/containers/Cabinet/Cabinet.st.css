@@ -13,3 +13,7 @@
 	padding-top: rel(32, 24);
 	padding-bottom: rel(113, 24);
 }
+
+.ticket {
+	max-width: 762px;
+}
