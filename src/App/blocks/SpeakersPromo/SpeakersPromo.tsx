@@ -15,6 +15,7 @@ import {
 	omit
 } from '@flexis/ui/helpers';
 import {
+	getLocalizedPath,
 	getPromoSpeakers
 } from '~/services/i18n';
 import SpeakerModal from '~/containers/Speakers/SpeakerModal';
@@ -88,7 +89,7 @@ export class SpeakersPromo extends Component<IProps> {
 										</Badge>
 									)}
 									to={{
-										pathname: '/',
+										pathname: getLocalizedPath(context, '/'),
 										search:   addSearchParams(search, {
 											id: item.id
 										})
