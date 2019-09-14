@@ -1,7 +1,11 @@
 import React, {
+	ReactElement,
 	Component
 } from 'react';
 import PropTypes from 'prop-types';
+import {
+	omit
+} from '@flexis/ui/helpers';
 import FlexisFormGroup, {
 	IProps as IFlexisFormGroupProps
 } from '@flexis/ui/components/FormGroup';
@@ -11,14 +15,14 @@ import {
 } from './FormGroup.st.css';
 
 export interface IProps extends IFlexisFormGroupProps {
-	notice?: string;
+	notice?: string|ReactElement<any>;
 }
 
 export default class FormGroup extends Component<IProps> {
 
 	static propTypes = {
 		...FlexisFormGroup.propTypes,
-		notice: PropTypes.string
+		notice: PropTypes.any
 	};
 
 	static defaultProps = FlexisFormGroup.defaultProps;
@@ -33,7 +37,7 @@ export default class FormGroup extends Component<IProps> {
 
 		return (
 			<FlexisFormGroup
-				{...props}
+				{...omit(props, ['notice'])}
 				className={style(classes.root, className)}
 				label={this.renderLabel()}
 			>
