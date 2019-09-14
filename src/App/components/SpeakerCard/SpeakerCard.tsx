@@ -4,7 +4,8 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import {
-	CombinePropsAndAttributes
+	CombinePropsAndAttributes,
+	omit
 } from '@flexis/ui/helpers';
 import ContactLink, {
 	ContactLinkType
@@ -77,7 +78,11 @@ export default class SpeakerCard extends Component<IProps> {
 
 		return (
 			<article
-				{...props}
+				{...omit(props, [
+					'id',
+					'contacts',
+					'type'
+				])}
 				className={style(classes.root, className)}
 			>
 				<div
@@ -88,10 +93,12 @@ export default class SpeakerCard extends Component<IProps> {
 					>
 						<figure
 							className={classes.img}
-							style={{
-								backgroundImage: `url(${src})`
-							}}
-						/>
+						>
+							<img
+								src={src}
+								loading='lazy'
+							/>
+						</figure>
 						<h3
 							className={style(classes.name, {
 								mobile: true

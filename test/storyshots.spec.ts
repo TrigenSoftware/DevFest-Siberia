@@ -7,7 +7,8 @@ import {
 if (process.platform === 'darwin') {
 
 	process.env.SEED = JSON.stringify(584);
-	jest.setTimeout(30000);
+	process.env.DISABLE_BROWSER_SYNC = JSON.stringify(true);
+	jest.setTimeout(60000);
 
 	const config = {
 		customizePage(page) {
