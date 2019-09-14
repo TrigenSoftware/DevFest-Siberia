@@ -39,13 +39,13 @@ export default class TermsOfService extends Component<IProps> {
 						className={classes.group}
 					>
 						<h3>
-							Согласие на обработку персональных данных
+							{__x`terms.consent`}
 						</h3>
 						<Link
 							className={classes.link}
 							to='/some-link'
 						>
-							Публичная оферта
+							{__x`terms.offer`}
 						</Link>
 					</div>
 					<p>

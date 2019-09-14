@@ -9,6 +9,7 @@
 	-st-named:
 		sizeScreenMdMax,
 		sizeScreenSmMax,
+		fontFamilyMono,
 		colorBlack,
 		colorBlue4,
 		colorPink0,
@@ -39,7 +40,7 @@
 }
 
 .group h3 {
-	margin-right: rel(20, 32);
+	margin: 0 rel(20, 32) 0 0;
 	color: value(colorPink0);
 	font-size: rel(32, 24);
 }
@@ -53,6 +54,7 @@
 .link {
 	margin: 0 rel(20, 32) 0 0;
 	color: value(colorBlue4);
+	font-family: value(fontFamilyMono);
 	font-size: rel(32, 24);
 }
 

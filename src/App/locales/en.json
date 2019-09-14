@@ -424,6 +424,8 @@
 	},
 	"terms": {
 		"title": "Terms Of Service",
+		"consent": "Consent to the processing of personal data",
+		"offer": "Public offer",
 		"rules": "All attendees, speakers, sponsors and volunteers at DevFest Siberia are required to agree with the following code of conduct. Organisers will enforce this code throughout the event. We are expecting cooperation from all participants to help ensuring a safe environment for everybody.",
 		"about": "DevFest Siberia is dedicated to providing a harassment-free conference experience for everyone, regardless of gender, sexual orientation, disability, physical appearance, body size, race, or religion. We do not tolerate harassment of conference participants in any form. Sexual language and imagery is not appropriate for any conference venue, including talks, workshops, parties, Twitter and other online communication channels. Conference participants violating these rules may be sanctioned or expelled from the conference without a refund at the discretion of the conference organisers."
 	}
