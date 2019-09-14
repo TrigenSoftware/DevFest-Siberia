@@ -21,10 +21,19 @@
 	-st-named: center;
 }
 
+:import {
+	-st-from: '~/components/ToggleNav/ToggleNav.st.css';
+	-st-default: ToggleNav;
+}
+
 .root .center {
 	position: relative;
 	padding-top: rel(32, 24);
 	padding-bottom: rel(247, 24);
+}
+
+.root .ToggleNav::after {
+	flex: 1;
 }
 
 .article > p {
@@ -32,46 +41,8 @@
 	color: value(colorBlack);
 }
 
-.group {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: baseline;
+.nav {
 	margin-bottom: rel(30, 24);
-}
-
-.group h3 {
-	margin: 0 rel(20, 32) 0 0;
-	color: value(colorPink0);
-	font-size: rel(32, 24);
-}
-
-.group::after {
-	border: rel(1, 24) dashed value(colorGray1);
-	width: rel(60, 24);
-	content: '';
-}
-
-.link {
-	margin: 0 rel(20, 32) 0 0;
-	color: value(colorBlue4);
-	font-family: value(fontFamilyMono);
-	font-size: rel(32, 24);
-}
-
-@media (max-width: value(sizeScreenMdMax)) {
-
-	.group {
-		display: block;
-	}
-
-	/* stylelint-disable a11y/no-display-none */
-	.group::after {
-		display: none;
-	}/* stylelint-enable */
-
-	.link {
-		margin: 0;
-	}
 }
 
 @media (max-width: value(sizeScreenSmMax)) {

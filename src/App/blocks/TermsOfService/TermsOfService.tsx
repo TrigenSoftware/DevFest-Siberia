@@ -7,7 +7,9 @@ import {
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
-import Link from '~/components/Link';
+import ToggleNav, {
+	ToggleNavLink
+} from '~/components/ToggleNav';
 import {
 	style,
 	classes
@@ -32,22 +34,23 @@ export default class TermsOfService extends Component<IProps> {
 				<h2>
 					{__x`terms.title`}
 				</h2>
+				<ToggleNav
+					className={classes.nav}
+				>
+					<ToggleNavLink
+						to='/consent'
+					>
+						{__x`terms.consent`}
+					</ToggleNavLink>
+					<ToggleNavLink
+						to='/offer'
+					>
+						{__x`terms.offer`}
+					</ToggleNavLink>
+				</ToggleNav>
 				<article
 					className={classes.article}
 				>
-					<div
-						className={classes.group}
-					>
-						<h3>
-							{__x`terms.consent`}
-						</h3>
-						<Link
-							className={classes.link}
-							to='/some-link'
-						>
-							{__x`terms.offer`}
-						</Link>
-					</div>
 					<p>
 						{__x`terms.rules`}
 					</p>
