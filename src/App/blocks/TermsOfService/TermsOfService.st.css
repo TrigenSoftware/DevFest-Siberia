@@ -21,19 +21,10 @@
 	-st-named: center;
 }
 
-:import {
-	-st-from: '~/components/ToggleNav/ToggleNav.st.css';
-	-st-default: ToggleNav;
-}
-
 .root .center {
 	position: relative;
 	padding-top: rel(32, 24);
 	padding-bottom: rel(247, 24);
-}
-
-.root .ToggleNav::after {
-	flex: 1;
 }
 
 .article > p {
