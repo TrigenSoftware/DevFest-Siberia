@@ -87,7 +87,7 @@
 }
 
 .root .link.active {
-	background-color: value(colorWhite);
+	background-color: transparent;
 	color: value(colorPink0);
 }
 
