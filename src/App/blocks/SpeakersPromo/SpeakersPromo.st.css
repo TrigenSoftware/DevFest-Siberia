@@ -1,0 +1,96 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named:
+		sizeScreenLgMax,
+		fontFamilyMono,
+		sizeGap,
+		sizeGapLg,
+		colorWhite,
+		colorPink0,
+		colorGray4;
+}
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+:import {
+	-st-from: '~/components/ProfileCard/ProfileCard.st.css';
+	-st-default: ProfileCard;
+	-st-named:
+		info,
+		img,
+		footer;
+}
+
+.root {
+	background: linear-gradient(180deg, value(colorPink0) 50%, value(colorWhite) 50%);
+	height: 100%;
+}
+
+.root .center {
+	padding-top: value(sizeGap);
+	padding-bottom: value(sizeGapLg);
+}
+
+.root .ProfileCard {
+	border-radius: 0;
+	background-color: value(colorWhite);
+}
+
+.root .ProfileCard .info {
+	padding: rel(15, 10) rel(15, 10) 0;
+}
+
+.root .ProfileCard .footer {
+	padding: rel(15, 10);
+}
+
+.root .ProfileCard .img::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border: 1em solid value(colorPink0);
+	content: '';
+}
+
+.title {
+	margin-bottom: rel(30, 82);
+	text-decoration: none;
+	color: value(colorWhite);
+	font-family: value(fontFamilyMono);
+	font-size: rel(82, 24);
+	font-weight: bold;
+}
+
+.title:hover,
+.title:focus {
+	color: value(colorGray4);
+}
+
+.list {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	list-style: none;
+}
+
+.list li {
+	flex: 1 1 25%;
+}
+
+@media (max-width: value(sizeScreenLgMax)) {
+
+	.root .ProfileCard {
+		margin-bottom: 20px;
+	}
+}

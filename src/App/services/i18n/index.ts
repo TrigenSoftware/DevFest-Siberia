@@ -87,6 +87,19 @@ export function getSpeaker(context: I18nConfig, id: string): any {
 	return speakers.find(speaker => speaker.id === id);
 }
 
+export function getPromoSpeakers(context: I18nConfig): any[] {
+
+	const {
+		speakers: {
+			speakers
+		}
+	} = context.getCatalog(
+		context.getLocale()
+	) as any;
+
+	return speakers.filter(speaker => speaker.promo === 'true');
+}
+
 /**
  * Get talk types from locales.
  */
