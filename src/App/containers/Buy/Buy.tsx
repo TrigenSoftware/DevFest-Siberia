@@ -25,6 +25,9 @@ import FormGroup from '~/components/FormGroup';
 import Input from '~/components/Input';
 import Button from '~/components/Button';
 import Link from '~/components/Link';
+import validate, {
+	noAroundSpacesPattern
+} from './validate';
 import {
 	style,
 	classes
@@ -110,6 +113,7 @@ export default class BuyContainer extends Component<IProps, IState> {
 								id='firstname'
 								placeholder={__`buy.firstname`}
 								name='firstname'
+								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={firstname}
 							/>
@@ -122,6 +126,7 @@ export default class BuyContainer extends Component<IProps, IState> {
 								id='lastname'
 								placeholder={__`buy.lastname`}
 								name='lastname'
+								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={lastname}
 							/>
@@ -134,6 +139,7 @@ export default class BuyContainer extends Component<IProps, IState> {
 								id='position'
 								placeholder={__`buy.position`}
 								name='position'
+								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={position}
 							/>
@@ -146,6 +152,7 @@ export default class BuyContainer extends Component<IProps, IState> {
 								id='company'
 								placeholder={__`buy.company`}
 								name='company'
+								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={company}
 							/>
@@ -158,6 +165,7 @@ export default class BuyContainer extends Component<IProps, IState> {
 								id='city'
 								placeholder={__`buy.city`}
 								name='city'
+								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={city}
 							/>
@@ -172,6 +180,7 @@ export default class BuyContainer extends Component<IProps, IState> {
 								type='email'
 								placeholder={__`buy.email`}
 								name='email'
+								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={email}
 							/>
@@ -207,6 +216,8 @@ export default class BuyContainer extends Component<IProps, IState> {
 			name
 		} = event.target;
 
+		this.validate(event.target);
+
 		this.setState<any>(() => ({
 			[name]: value
 		}));
@@ -217,5 +228,12 @@ export default class BuyContainer extends Component<IProps, IState> {
 		event.preventDefault();
 
 		console.log('submited');
+	}
+
+	private validate(input: HTMLInputElement) {
+
+		const validityMessage = validate(input);
+
+		input.setCustomValidity(validityMessage);
 	}
 }
