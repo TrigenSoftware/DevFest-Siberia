@@ -1,0 +1,27 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../../variables.st.css';
+	-st-named: colorBlue9;
+}
+
+.root {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding-top: rel(20, 24);
+	width: 100%;
+}
+
+.root button {
+	margin-left: rel(25, 24);
+}
+
+.root a {
+	text-decoration: none;
+	color: value(colorBlue9);
+}
