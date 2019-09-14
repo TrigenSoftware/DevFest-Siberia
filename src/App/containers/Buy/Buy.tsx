@@ -25,9 +25,10 @@ import FormGroup from '~/components/FormGroup';
 import Input from '~/components/Input';
 import Button from '~/components/Button';
 import Link from '~/components/Link';
-import validate, {
+import {
 	noAroundSpacesPattern
-} from './validate';
+} from '../common';
+import validate from './validate';
 import {
 	style,
 	classes

@@ -1,6 +1,8 @@
 
 type IValidator = (input: HTMLInputElement) => string|undefined;
 
+export const noAroundSpacesPattern = '\\S.*\\S';
+
 export function createValidator(validators: IValidator[]) {
 	return (input: HTMLInputElement) => {
 

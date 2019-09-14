@@ -3,8 +3,6 @@ import {
 	checkPattern
 } from '../common';
 
-export const noAroundSpacesPattern = '\\S.*\\S';
-
 export default createValidator([
 	checkPattern
 ]);
