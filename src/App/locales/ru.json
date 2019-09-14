@@ -245,6 +245,7 @@
 			{
 				"id":"LeonidKalneus",
 				"type": "web",
+				"promo": true,
 				"src": "https://gdg-siberia.com/img/team/LeonidKalneus.jpg",
 				"firstname": "Леонид",
 				"lastname": "Кальнеус",
@@ -265,6 +266,7 @@
 			{
 				"id":"AlexeyRomanenko",
 				"type": "mobile",
+				"promo": true,
 				"src": "https://gdg-siberia.com/img/team/AlexeyRomanenko.jpg",
 				"firstname": "Алексей",
 				"lastname": "Романенко",
@@ -285,6 +287,7 @@
 			{
 				"id":"YuriyKashnikov",
 				"type": "mobile",
+				"promo": true,
 				"src": "https://gdg-siberia.com/img/team/YuriyKashnikov.jpg",
 				"firstname": "Юрий",
 				"lastname": "Кашников",
@@ -390,6 +393,26 @@
 	},
 	"profile": {
 		"view": "Посмотреть профиль"
+	},
+	"buy": {
+		"oneTicket": "1 Билет - 5000Р",
+		"firstname": "Имя",
+		"lastname": "Фамилия",
+		"position": "Должность",
+		"company": "Компания",
+		"city": "Город",
+		"email": "Почта",
+		"notice": "Сюда мы пришлем билет : )",
+		"buy": "Купить",
+		"terms": "Принять <>условия</>"
+	},
+	"cabinet": {
+		"title": "Участник",
+		"id": "Номер Билета",
+		"for": "Для",
+		"where": "Где",
+		"when": "Когда",
+		"ticket": "Один билет"
 	},
 	"coc": {
 		"title": "Правила поведения",

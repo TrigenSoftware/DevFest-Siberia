@@ -15,7 +15,7 @@ import {
 	omit
 } from '@flexis/ui/helpers';
 import {
-	getSpeakers
+	getPromoSpeakers
 } from '~/services/i18n';
 import SpeakerModal from '~/containers/Speakers/SpeakerModal';
 import Section, {
@@ -53,7 +53,7 @@ export class SpeakersPromo extends Component<IProps> {
 			},
 			...props
 		} = this.props;
-		const speakers = getSpeakers(context);
+		const speakers = getPromoSpeakers(context);
 
 		return (
 			<>
@@ -70,7 +70,7 @@ export class SpeakersPromo extends Component<IProps> {
 					<ul
 						className={classes.list}
 					>
-						{speakers.slice(0, 3).map(item => (
+						{speakers.map(item => (
 							<li
 								key={item.id}
 							>

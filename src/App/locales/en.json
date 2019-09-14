@@ -245,6 +245,7 @@
 			{
 				"id":"LeonidKalneus",
 				"type": "web",
+				"promo": true,
 				"src": "https://gdg-siberia.com/img/team/LeonidKalneus.jpg",
 				"firstname": "Leonid",
 				"lastname": "Kalneus",
@@ -265,6 +266,7 @@
 			{
 				"id":"AlexeyRomanenko",
 				"type": "mobile",
+				"promo": true,
 				"src": "https://gdg-siberia.com/img/team/AlexeyRomanenko.jpg",
 				"firstname": "Alexey",
 				"lastname": "Romanenko",
@@ -285,6 +287,7 @@
 			{
 				"id":"YuriyKashnikov",
 				"type": "mobile",
+				"promo": true,
 				"src": "https://gdg-siberia.com/img/team/YuriyKashnikov.jpg",
 				"firstname": "Yuriy",
 				"lastname": "Kashnikov",
@@ -390,6 +393,26 @@
 	},
 	"profile": {
 		"view": "View profile"
+	},
+	"buy": {
+		"oneTicket": "One Ticket - 100$",
+		"firstname": "First Name",
+		"lastname": "Last Name",
+		"position": "Position",
+		"company": "Company",
+		"city": "City",
+		"email": "Email",
+		"notice": "We will send a ticket here : )",
+		"buy": "Buy",
+		"terms": "Accept <>Terms</>"
+	},
+	"cabinet": {
+		"title": "Participant",
+		"id": "Ticket ID",
+		"for": "For",
+		"where": "Where",
+		"when": "When",
+		"ticket": "One ticket"
 	},
 	"coc": {
 		"title": "Code Of Conduct",
