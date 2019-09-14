@@ -1,0 +1,80 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named:
+		sizeScreenMdMax,
+		sizeScreenSmMax,
+		colorBlack,
+		colorBlue4,
+		colorPink0,
+		colorGray1;
+}
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+.root .center {
+	position: relative;
+	padding-top: rel(32, 24);
+	padding-bottom: rel(247, 24);
+}
+
+.article > p {
+	line-height: 2em;
+	color: value(colorBlack);
+}
+
+.group {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	margin-bottom: rel(30, 24);
+}
+
+.group h3 {
+	margin-right: rel(20, 32);
+	color: value(colorPink0);
+	font-size: rel(32, 24);
+}
+
+.group::after {
+	border: rel(1, 24) dashed value(colorGray1);
+	width: rel(60, 24);
+	content: '';
+}
+
+.link {
+	margin: 0 rel(20, 32) 0 0;
+	color: value(colorBlue4);
+	font-size: rel(32, 24);
+}
+
+@media (max-width: value(sizeScreenMdMax)) {
+
+	.group {
+		display: block;
+	}
+
+	/* stylelint-disable a11y/no-display-none */
+	.group::after {
+		display: none;
+	}/* stylelint-enable */
+
+	.link {
+		margin: 0;
+	}
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.root h2 {
+		font-size: rel(30, 16);
+	}
+}
