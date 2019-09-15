@@ -1,0 +1,27 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named: sizeBorderRadius;
+}
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+.root .center {
+	padding-top: rel(40, 24);
+	padding-bottom: rel(66, 24);
+}
+
+.content {
+	margin: auto;
+	box-shadow: 0 0 rel(20, 24) 0 rgba(0, 0, 0, .32);
+	border-radius: value(sizeBorderRadius);
+	max-width: 1000px;
+}

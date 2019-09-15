@@ -28,6 +28,7 @@ import Team from '~/containers/Team/loadable';
 import Speakers from '~/containers/Speakers/loadable';
 import Partners from '~/containers/Partners/loadable';
 import CodeOfConduct from '~/containers/CodeOfConduct/loadable';
+import Buy from '~/containers/Buy/loadable';
 import Cabinet from '~/containers/Cabinet/loadable';
 import Footer from '~/blocks/Footer';
 import {
@@ -80,6 +81,10 @@ export default class App extends Component<IProps> {
 				<Route
 					path={getLocalizedPath(context, Routes.Cabinet)}
 					component={Cabinet}
+				/>
+				<Route
+					path={getLocalizedPath(context, Routes.Buy)}
+					component={Buy}
 				/>
 				<Footer/>
 			</>
