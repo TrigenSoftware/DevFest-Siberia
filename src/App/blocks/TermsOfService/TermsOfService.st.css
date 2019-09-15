@@ -36,6 +36,12 @@
 	margin-bottom: rel(30, 24);
 }
 
+.title {
+	margin: 0;
+	color: value(colorPink0);
+	font-size: rel(32, 24);
+}
+
 @media (max-width: value(sizeScreenSmMax)) {
 
 	.root h2 {
