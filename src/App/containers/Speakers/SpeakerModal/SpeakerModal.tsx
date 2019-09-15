@@ -15,7 +15,6 @@ import {
 	omit
 } from '@flexis/ui/helpers';
 import {
-	getLocalizedPath,
 	getSpeaker
 } from '~/services/i18n';
 import {
@@ -126,7 +125,6 @@ export class SpeakerModal extends Component<IProps, IState> {
 	private goBack() {
 
 		const {
-			context,
 			props
 		} = this;
 		const {
@@ -137,8 +135,7 @@ export class SpeakerModal extends Component<IProps, IState> {
 		} = props;
 
 		history.push({
-			pathname: getLocalizedPath(context, '/speakers'),
-			search:   deleteSearchParams(search, 'id')
+			search: deleteSearchParams(search, 'id')
 		});
 	}
 }

@@ -37,11 +37,11 @@ export default class TermsOfService extends Component<IProps> {
 				<ToggleNav
 					className={classes.nav}
 				>
-					<h3
-						className={classes.title}
+					<ToggleNavLink
+						to='/terms'
 					>
 						{__x`terms.consent`}
-					</h3>
+					</ToggleNavLink>
 					<ToggleNavLink
 						href='/some.pdf'
 					>
