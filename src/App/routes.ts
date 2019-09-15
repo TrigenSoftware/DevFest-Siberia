@@ -5,6 +5,7 @@ export enum Routes {
 	Speakers = '/speakers',
 	Partners = '/partners',
 	CodeOfConduct = '/code-of-conduct',
+	Buy = '/buy',
 	Cabinet = '/cabinet',
 	TermsOfService = '/terms',
 	Ru = '/ru'

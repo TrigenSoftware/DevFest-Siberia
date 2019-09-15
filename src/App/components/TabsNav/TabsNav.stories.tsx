@@ -14,7 +14,7 @@ import TabsNav, {
 
 storiesOf('Components|TabsNav', module)
 	.addDecorator(story => (
-		<MemoryRouter initialEntries={['/']}>
+		<MemoryRouter initialEntries={['/one']}>
 			{story()}
 		</MemoryRouter>
 	))
