@@ -2,8 +2,15 @@ import React, {
 	Component
 } from 'react';
 import {
+	RouteComponentProps,
+	withRouter
+} from 'react-router-dom';
+import {
 	__x
 } from 'i18n-for-react';
+import {
+	omit
+} from '@flexis/ui/helpers';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -11,24 +18,30 @@ import ToggleNav, {
 	ToggleNavLink
 } from '~/components/ToggleNav';
 import {
+	routeProps
+} from '../common/router';
+import {
 	style,
 	classes
 } from './TermsOfService.st.css';
 
-export type IProps = ISectionProps;
+export interface IProps extends ISectionProps, RouteComponentProps {}
 
-export default class TermsOfService extends Component<IProps> {
+export class TermsOfService extends Component<IProps> {
 
 	render() {
 
 		const {
 			className,
+			location: {
+				search
+			},
 			...props
 		} = this.props;
 
 		return (
 			<Section
-				{...props}
+				{...omit(props, routeProps)}
 				className={style(classes.root, className)}
 			>
 				<h2>
@@ -38,12 +51,15 @@ export default class TermsOfService extends Component<IProps> {
 					className={classes.nav}
 				>
 					<ToggleNavLink
-						to='/terms'
+						to={{
+							pathname: '/terms',
+							search
+						}}
 					>
 						{__x`terms.consent`}
 					</ToggleNavLink>
 					<ToggleNavLink
-						to='/some.pdf'
+						href='/some.pdf'
 					>
 						{__x`terms.offer`}
 					</ToggleNavLink>
@@ -62,3 +78,5 @@ export default class TermsOfService extends Component<IProps> {
 		);
 	}
 }
+
+export default withRouter(TermsOfService);
