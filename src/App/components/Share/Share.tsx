@@ -3,7 +3,9 @@ import React, {
 	Component
 } from 'react';
 import OutsideClickHandler from 'react-outside-click-handler';
+import PropTypes from 'prop-types';
 import {
+	omit,
 	CombinePropsAndAttributes,
 	Bind
 } from '@flexis/ui/helpers';
@@ -33,6 +35,10 @@ interface IState {
 
 export default class Share extends Component<IProps, IState> {
 
+	static propTypes = {
+		links: PropTypes.any.isRequired
+	};
+
 	state = {
 		active: false
 	};
@@ -54,7 +60,7 @@ export default class Share extends Component<IProps, IState> {
 				onOutsideClick={this.close}
 			>
 				<div
-					{...props}
+					{...omit(props, ['links'])}
 					className={style(classes.root, className)}
 				>
 					<Button
