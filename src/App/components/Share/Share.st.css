@@ -71,6 +71,8 @@
 	-st-states: active;
 	position: absolute;
 	top: 0;
+	left: 50%;
+	transform: translate(-50%, 0%);
 	will-change: opacity;
 	transition: opacity value(durationTransition);
 	margin: 0;
