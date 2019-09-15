@@ -4,11 +4,9 @@ import React, {
 } from 'react';
 import {
 	I18nContext,
+	__ as tr,
 	__x
 } from 'i18n-for-react';
-import {
-	getLocalizedPath
-} from '~/services/i18n';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -37,6 +35,7 @@ export default class TermsOfService extends Component<IProps> {
 		const {
 			context
 		} = this;
+		const __ = context.bind(tr);
 
 		return (
 			<Section
@@ -55,7 +54,7 @@ export default class TermsOfService extends Component<IProps> {
 						{__x`terms.consent`}
 					</ToggleNavLink>
 					<ToggleNavLink
-						href={getLocalizedPath(context, '/some.pdf')}
+						href={__`terms.url`}
 					>
 						{__x`terms.offer`}
 					</ToggleNavLink>
