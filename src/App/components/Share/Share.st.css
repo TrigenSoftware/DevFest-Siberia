@@ -1,0 +1,98 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named:
+		durationTransition,
+		colorWhite,
+		colorPink0,
+		colorPink3,
+		colorBlue4,
+		colorBlue5;
+}
+
+:import {
+	-st-from: '@flexis/ui/components/Button/Button.st.css';
+	-st-named: icon;
+}
+
+.root {
+	position: relative;
+}
+
+.root .toggle {
+	border-radius: 0;
+	background-color: transparent;
+	padding: 10px 15px;
+}
+
+.root .toggle:hover,
+.root .toggle:focus {
+	background-color: transparent;
+}
+
+.root .contactLink {
+	color: value(colorBlue4);
+}
+
+.root .contactLink:hover,
+.root .contactLink:focus {
+	color: value(colorBlue5);
+}
+
+.root .close {
+	border: 0;
+	border-radius: 50%;
+	background: transparent;
+	padding: 0;
+	color: value(colorPink0);
+}
+
+.root .close:hover,
+.root .close:focus {
+	color: value(colorPink3);
+}
+
+.root .close .icon {
+	width: rel(40, 24);
+	height: rel(40, 24);
+}
+
+.root .close .icon:leftAlign,
+.root .close .icon:rightAlign {
+	margin: 0;
+}
+
+.list {
+	-st-states: active;
+	position: absolute;
+	top: 0;
+	will-change: opacity;
+	transition: opacity value(durationTransition);
+	margin: 0;
+	border-radius: 30px;
+	background-color: value(colorWhite);
+	padding: 10px;
+	list-style: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+	.list {
+		will-change: none;
+		transition: none;
+	}
+}
+
+.list:not(:active) {
+	pointer-events: none;
+	opacity: 0;
+}
+
+.item:not(:last-child) {
+	margin-bottom: rel(18, 24);
+}
