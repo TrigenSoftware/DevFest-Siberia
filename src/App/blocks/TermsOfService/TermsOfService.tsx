@@ -1,9 +1,14 @@
 import React, {
+	ContextType,
 	Component
 } from 'react';
 import {
+	I18nContext,
 	__x
 } from 'i18n-for-react';
+import {
+	getLocalizedPath
+} from '~/services/i18n';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -19,12 +24,19 @@ export type IProps = ISectionProps;
 
 export default class TermsOfService extends Component<IProps> {
 
+	static contextType = I18nContext;
+
+	context!: ContextType<typeof I18nContext>;
+
 	render() {
 
 		const {
 			className,
 			...props
 		} = this.props;
+		const {
+			context
+		} = this;
 
 		return (
 			<Section
@@ -43,7 +55,7 @@ export default class TermsOfService extends Component<IProps> {
 						{__x`terms.consent`}
 					</ToggleNavLink>
 					<ToggleNavLink
-						href='/some.pdf'
+						href={getLocalizedPath(context, '/some.pdf')}
 					>
 						{__x`terms.offer`}
 					</ToggleNavLink>

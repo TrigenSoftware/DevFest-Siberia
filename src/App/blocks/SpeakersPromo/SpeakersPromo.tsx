@@ -88,7 +88,7 @@ export class SpeakersPromo extends Component<IProps> {
 										</Badge>
 									)}
 									to={{
-										search:   addSearchParams(search, {
+										search: addSearchParams(search, {
 											id: item.id
 										})
 									}}
