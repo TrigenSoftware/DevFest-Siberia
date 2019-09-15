@@ -41,6 +41,7 @@ const terms = [
 		<Link
 			key='link'
 			className={classes.link}
+			target='_blank'
 			to='/terms'
 		/>
 	)
