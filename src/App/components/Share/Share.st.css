@@ -15,11 +15,6 @@
 		colorBlue5;
 }
 
-:import {
-	-st-from: '@flexis/ui/components/Button/Button.st.css';
-	-st-named: icon;
-}
-
 .root {
 	display: inline-block;
 	position: relative;
@@ -43,29 +38,6 @@
 .root .contactLink:hover,
 .root .contactLink:focus {
 	color: value(colorBlue5);
-}
-
-.root .close {
-	border: 0;
-	border-radius: 50%;
-	background: transparent;
-	padding: 0;
-	color: value(colorPink0);
-}
-
-.root .close:hover,
-.root .close:focus {
-	color: value(colorPink3);
-}
-
-.root .close .icon {
-	width: rel(40, 24);
-	height: rel(40, 24);
-}
-
-.root .close .icon:leftAlign,
-.root .close .icon:rightAlign {
-	margin: 0;
 }
 
 .list {
@@ -98,4 +70,39 @@
 
 .item:not(:last-child) {
 	margin-bottom: rel(18, 24);
+}
+
+.close {
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	border: 0;
+	border-radius: 50%;
+	background-color: value(colorPink0);
+	padding: 0;
+	width: rel(40, 24);
+	height: rel(40, 24);
+	color: value(colorWhite);
+}
+
+.close::before,
+.close::after {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background-color: currentColor;
+	width: 80%;
+	height: 2px;
+}
+
+.close::before {
+	transform: translate(-50%, -50%) rotate(45deg);
+	content: '';
+}
+
+.close::after {
+	transform: translate(-50%, -50%) rotate(-45deg);
+	content: '';
 }

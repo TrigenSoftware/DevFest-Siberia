@@ -6,14 +6,14 @@ import PropTypes from 'prop-types';
 import {
 	omit,
 	CombinePropsAndAttributes,
-	Bind
+	Bind,
+	subscribeEvent
 } from '@flexis/ui/helpers';
 import Button from '../Button';
 import ContactLink, {
 	ContactLinkType
 } from '../ContactLink';
 import IconShare from '~/icons/share.svg';
-import IconClose from '~/icons/close.svg';
 import {
 	style,
 	classes
@@ -42,6 +42,8 @@ export default class Share extends Component<IProps, IState> {
 		active: false
 	};
 
+	private unsubscribeFromOutsideClick: () => void = null;
+
 	render() {
 
 		const {
@@ -62,7 +64,7 @@ export default class Share extends Component<IProps, IState> {
 					className={classes.toggle}
 					icon={<IconShare/>}
 					title={String(children)}
-					onClick={this.open}
+					onClick={this.onToggle}
 				/>
 				<ul
 					className={style(classes.list, {
@@ -75,8 +77,7 @@ export default class Share extends Component<IProps, IState> {
 					>
 						<Button
 							className={classes.close}
-							icon={<IconClose/>}
-							onClick={this.close}
+							onClick={this.onToggle}
 						/>
 					</li>
 				</ul>
@@ -84,18 +85,92 @@ export default class Share extends Component<IProps, IState> {
 		);
 	}
 
-	@Bind()
-	private open() {
-		this.setState(() => ({
-			active: true
-		}));
+	componentDidMount() {
+		this.toggleEffects();
+	}
+
+	componentWillUnmount() {
+		this.removeEffects();
+	}
+
+	componentDidUpdate(_, { active: prevActive }: IState) {
+
+		const {
+			active
+		} = this.state;
+
+		if (prevActive !== active) {
+			this.toggleEffects();
+		}
 	}
 
 	@Bind()
-	private close() {
+	private onToggle() {
+		this.toggleActiveState(null);
+	}
+
+	@Bind()
+	private onOutsideClick() {
+
+		const {
+			active
+		} = this.state;
+
+		if (active) {
+			this.toggleActiveState(false);
+		}
+	}
+
+	toggleActiveState(forceState?: boolean) {
+
+		const {
+			active
+		} = this.state;
+		const nextActive = typeof forceState === 'boolean'
+			? forceState
+			: !active;
+
+		if (nextActive === active) {
+			return;
+		}
+
 		this.setState(() => ({
-			active: false
+			active: nextActive
 		}));
+	}
+
+	private toggleEffects() {
+
+		const {
+			active
+		} = this.state;
+		const outsideClickSubscribed = typeof this.unsubscribeFromOutsideClick === 'function';
+
+		if (active) {
+
+			if (!outsideClickSubscribed) {
+				this.unsubscribeFromOutsideClick = subscribeEvent(
+					document,
+					'click',
+					this.onOutsideClick
+				);
+			}
+
+		} else {
+
+			if (outsideClickSubscribed) {
+				this.unsubscribeFromOutsideClick();
+				this.unsubscribeFromOutsideClick = null;
+			}
+		}
+	}
+
+	private removeEffects() {
+
+		if (typeof this.unsubscribeFromOutsideClick === 'function') {
+			this.unsubscribeFromOutsideClick();
+			this.unsubscribeFromOutsideClick = null;
+		}
 	}
 
 	private renderShareLinks() {
