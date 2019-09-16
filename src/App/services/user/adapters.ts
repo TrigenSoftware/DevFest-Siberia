@@ -1,7 +1,7 @@
 import User from '~/models/User';
 import Order from '~/models/Order';
 
-export function loginDataFromResponseData(responseData) {
+export function userFromResponseData(responseData) {
 	return User({
 		userId:    responseData.userId,
 		email:     responseData.email,
@@ -12,7 +12,7 @@ export function loginDataFromResponseData(responseData) {
 	});
 }
 
-export function fetchOrderDataFromResponseData(responseData) {
+export function orderDataFromResponseData(responseData) {
 	return Order({
 		status: responseData.status,
 		paymentLink: responseData.paymentLink,

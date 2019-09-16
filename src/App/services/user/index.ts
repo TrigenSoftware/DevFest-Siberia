@@ -1,9 +1,8 @@
 import createLogger from '~/services/logger';
 import client from './client';
 import {
-
-	loginDataFromResponseData,
-	fetchOrderDataFromResponseData
+	userFromResponseData,
+	orderDataFromResponseData
 } from './adapters';
 
 const logger = createLogger('App::services::user');
@@ -36,7 +35,7 @@ export async function login(email: string, password: string) {
 
 	logger.debug('login', 'Response:', loginData);
 
-	return loginDataFromResponseData(loginData);
+	return userFromResponseData(loginData);
 }
 
 export async function fetchOrders() {
@@ -49,7 +48,7 @@ export async function fetchOrders() {
 
 	logger.debug('fetchOrders', 'Response:', ordersData);
 
-	return fetchOrderDataFromResponseData(ordersData);
+	return orderDataFromResponseData(ordersData);
 }
 
 export function saveToken(token: string) {
