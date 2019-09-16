@@ -22,7 +22,7 @@ const OrderItem = Record<IOrderItemProps>({
 	price:              -1,
 	originalPrice:      -1,
 	promocode:          '',
-	ticket:             null
+	ticket:             Ticket()
 });
 
 export default OrderItem;

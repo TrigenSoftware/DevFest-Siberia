@@ -15,7 +15,7 @@ type Order = ReturnType<Record.Factory<IOrderProps>>;
 const Order = Record<IOrderProps>({
 	status:      '',
 	paymentLink: '',
-	items:       null
+	items:       List()
 });
 
 export default Order;
