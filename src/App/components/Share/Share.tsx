@@ -2,7 +2,6 @@ import React, {
 	HTMLAttributes,
 	Component
 } from 'react';
-import OutsideClickHandler from 'react-outside-click-handler';
 import PropTypes from 'prop-types';
 import {
 	omit,
@@ -55,38 +54,33 @@ export default class Share extends Component<IProps, IState> {
 		} = this.state;
 
 		return (
-			<OutsideClickHandler
-				display='inline-block'
-				onOutsideClick={this.close}
+			<div
+				{...omit(props, ['links'])}
+				className={style(classes.root, className)}
 			>
-				<div
-					{...omit(props, ['links'])}
-					className={style(classes.root, className)}
+				<Button
+					className={classes.toggle}
+					icon={<IconShare/>}
+					title={String(children)}
+					onClick={this.open}
+				/>
+				<ul
+					className={style(classes.list, {
+						active
+					})}
 				>
-					<Button
-						className={classes.toggle}
-						icon={<IconShare/>}
-						title={String(children)}
-						onClick={this.open}
-					/>
-					<ul
-						className={style(classes.list, {
-							active
-						})}
+					{this.renderShareLinks()}
+					<li
+						className={classes.item}
 					>
-						{this.renderShareLinks()}
-						<li
-							className={classes.item}
-						>
-							<Button
-								className={classes.close}
-								icon={<IconClose/>}
-								onClick={this.close}
-							/>
-						</li>
-					</ul>
-				</div>
-			</OutsideClickHandler>
+						<Button
+							className={classes.close}
+							icon={<IconClose/>}
+							onClick={this.close}
+						/>
+					</li>
+				</ul>
+			</div>
 		);
 	}
 
