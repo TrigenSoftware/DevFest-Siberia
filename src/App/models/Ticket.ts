@@ -3,13 +3,13 @@ import {
 } from 'immutable';
 
 export interface ITicketProps {
-	ticketUID: string;
+	ticketUid: string;
 }
 
 type Ticket = ReturnType<Record.Factory<ITicketProps>>;
 
 const Ticket = Record<ITicketProps>({
-	ticketUID: null
+	ticketUid: ''
 });
 
 export default Ticket;

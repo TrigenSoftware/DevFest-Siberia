@@ -1,18 +1,20 @@
 import {
-	Record
+	Record,
+	List
 } from 'immutable';
+import OrderItem from './OrderItem';
 
 export interface IOrderProps {
 	status: string;
 	paymentLink: string;
-	items: any[];
+	items: List<OrderItem>;
 }
 
 type Order = ReturnType<Record.Factory<IOrderProps>>;
 
 const Order = Record<IOrderProps>({
-	status:      null,
-	paymentLink: null,
+	status:      '',
+	paymentLink: '',
 	items:       null
 });
 

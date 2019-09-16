@@ -5,8 +5,8 @@ import {
 export interface IUserProps {
 	userId: number;
 	email: string;
-	firstName: string;
-	lastName: string;
+	firstname: string;
+	lastname: string;
 	company: string;
 	city: string;
 }
@@ -14,12 +14,12 @@ export interface IUserProps {
 type User = ReturnType<Record.Factory<IUserProps>>;
 
 const User = Record<IUserProps>({
-	userId:    null,
-	email:     null,
-	firstName: null,
-	lastName:  null,
-	company:   null,
-	city:      null
+	userId:    -1,
+	email:     '',
+	firstname: '',
+	lastname:  '',
+	company:   '',
+	city:      ''
 });
 
 export default User;
