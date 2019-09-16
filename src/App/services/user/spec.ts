@@ -98,7 +98,7 @@ describe('API', () => {
 
 				const buyResponse = await buy(MOCK_BUY_DATA);
 
-				expect(typeof buyResponse.redirectUrl).toBe('string');
+				expect(typeof buyResponse.paymentDetails).toBe('object');
 			});
 		});
 

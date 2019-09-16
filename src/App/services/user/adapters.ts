@@ -15,7 +15,7 @@ export function loginDataFromResponseData(responseData) {
 
 export function buyDataFromResponseData(responseData) {
 	return Payment({
-		redirectUrl: responseData.redirectUrl
+		paymentDetails: responseData.paymentDetails
 	});
 }
 

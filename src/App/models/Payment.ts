@@ -3,13 +3,13 @@ import {
 } from 'immutable';
 
 export interface IPaymentProps {
-	redirectUrl: string;
+	paymentDetails: object;
 }
 
 type Payment = ReturnType<Record.Factory<IPaymentProps>>;
 
 const Payment = Record<IPaymentProps>({
-	redirectUrl: ''
+	paymentDetails: null
 });
 
 export default Payment;
