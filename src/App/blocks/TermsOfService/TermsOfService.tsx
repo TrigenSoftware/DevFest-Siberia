@@ -54,7 +54,7 @@ export default class TermsOfService extends Component<IProps> {
 						{__x`terms.consent`}
 					</ToggleNavLink>
 					<ToggleNavLink
-						href={__`terms.url`}
+						href={__`terms.offerUrl`}
 					>
 						{__x`terms.offer`}
 					</ToggleNavLink>
