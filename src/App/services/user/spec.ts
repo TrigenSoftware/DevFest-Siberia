@@ -93,7 +93,7 @@ describe('API', () => {
 
 			it('should get correct buy data', async () => {
 
-				moxios.stubRequest(/\/buy/, {
+				moxios.stubRequest(/\/register/, {
 					status:   200,
 					response: MOCK_BUY_RESPONSE
 				});
