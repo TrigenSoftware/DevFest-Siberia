@@ -16,7 +16,9 @@ const MOCK_LOGIN_RESPONSE = {
 	city:      'city'
 };
 const MOCK_BUY_RESPONSE = {
-	redirectUrl: 'string'
+	paymentDetails: {
+		redirectUrl: 'string'
+	}
 };
 const MOCK_BUY_DATA = {
 	email:          'user@example.com',
@@ -98,7 +100,7 @@ describe('API', () => {
 
 				const buyResponse = await buy(MOCK_BUY_DATA);
 
-				expect(typeof buyResponse.paymentDetails).toBe('object');
+				expect(typeof buyResponse).toBe('string');
 			});
 		});
 

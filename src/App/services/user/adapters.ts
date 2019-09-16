@@ -1,5 +1,4 @@
 import User from '~/models/User';
-import Payment from '~/models/Payment';
 import Order from '~/models/Order';
 
 export function loginDataFromResponseData(responseData) {
@@ -10,12 +9,6 @@ export function loginDataFromResponseData(responseData) {
 		lastname:  responseData.lastName,
 		company:   responseData.company,
 		city:      responseData.city
-	});
-}
-
-export function buyDataFromResponseData(responseData) {
-	return Payment({
-		paymentDetails: responseData.paymentDetails
 	});
 }
 

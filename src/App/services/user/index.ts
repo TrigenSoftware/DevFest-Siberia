@@ -1,7 +1,7 @@
 import createLogger from '~/services/logger';
 import client from './client';
 import {
-	buyDataFromResponseData,
+
 	loginDataFromResponseData,
 	fetchOrderDataFromResponseData
 } from './adapters';
@@ -20,7 +20,7 @@ export async function buy(registrationData) {
 
 	logger.debug('buy', 'Response:', buyData);
 
-	return buyDataFromResponseData(buyData);
+	return buyData.paymentDetails.redirectUrl;
 }
 
 export async function login(email: string, password: string) {
