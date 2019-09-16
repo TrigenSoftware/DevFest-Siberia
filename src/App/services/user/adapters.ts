@@ -12,7 +12,7 @@ export function userFromResponseData(responseData) {
 	});
 }
 
-export function orderDataFromResponseData(responseData) {
+export function orderFromResponseData(responseData) {
 	return Order({
 		status: responseData.status,
 		paymentLink: responseData.paymentLink,

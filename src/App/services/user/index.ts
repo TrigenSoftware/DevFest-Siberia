@@ -2,7 +2,7 @@ import createLogger from '~/services/logger';
 import client from './client';
 import {
 	userFromResponseData,
-	orderDataFromResponseData
+	orderFromResponseData
 } from './adapters';
 
 const logger = createLogger('App::services::user');
@@ -48,7 +48,7 @@ export async function fetchOrders() {
 
 	logger.debug('fetchOrders', 'Response:', ordersData);
 
-	return orderDataFromResponseData(ordersData);
+	return orderFromResponseData(ordersData);
 }
 
 export function saveToken(token: string) {
