@@ -21,8 +21,8 @@
 }
 
 .root::after {
+	flex: 1;
 	border: rel(1, 24) dashed value(colorGray1);
-	width: 100%;
 	content: '';
 }
 

@@ -30,6 +30,7 @@ import Partners from '~/containers/Partners/loadable';
 import CodeOfConduct from '~/containers/CodeOfConduct/loadable';
 import Buy from '~/containers/Buy/loadable';
 import Cabinet from '~/containers/Cabinet/loadable';
+import TermsOfService from '~/containers/TermsOfService/loadable';
 import Footer from '~/blocks/Footer';
 import {
 	Routes
@@ -85,6 +86,10 @@ export default class App extends Component<IProps> {
 				<Route
 					path={getLocalizedPath(context, Routes.Buy)}
 					component={Buy}
+				/>
+				<Route
+					path={getLocalizedPath(context, Routes.TermsOfService)}
+					component={TermsOfService}
 				/>
 				<Footer/>
 			</>

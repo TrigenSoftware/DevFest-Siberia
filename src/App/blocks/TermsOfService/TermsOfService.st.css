@@ -1,0 +1,44 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named:
+		sizeScreenMdMax,
+		sizeScreenSmMax,
+		fontFamilyMono,
+		colorBlack,
+		colorBlue4,
+		colorPink0,
+		colorGray1;
+}
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+.root .center {
+	position: relative;
+	padding-top: rel(32, 24);
+	padding-bottom: rel(110, 24);
+}
+
+.article > p {
+	line-height: 2em;
+	color: value(colorBlack);
+}
+
+.nav {
+	margin-bottom: rel(30, 24);
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.root h2 {
+		font-size: rel(30, 16);
+	}
+}
