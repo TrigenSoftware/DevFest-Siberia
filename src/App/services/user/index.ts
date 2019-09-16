@@ -1,7 +1,9 @@
 import createLogger from '~/services/logger';
 import client from './client';
 import {
-	loginDataFromResponseData
+	buyDataFromResponseData,
+	loginDataFromResponseData,
+	fetchOrderDataFromResponseData
 } from './adapters';
 
 const logger = createLogger('App::services::user');
@@ -10,13 +12,15 @@ export async function buy(registrationData) {
 
 	logger.debug('buy', 'Input user:', registrationData);
 
-	const response = await client.post('auth/register', {
+	const {
+		data: buyData
+	} = await client.post('auth/register', {
 		registrationData
 	});
 
-	logger.debug('buy', 'Response:', response);
+	logger.debug('buy', 'Response:', buyData);
 
-	return response.data;
+	return buyDataFromResponseData(buyData);
 }
 
 export async function login(email: string, password: string) {
@@ -35,17 +39,17 @@ export async function login(email: string, password: string) {
 	return loginDataFromResponseData(loginData);
 }
 
-export async function fetchOrders(userId: number) {
+export async function fetchOrders() {
 
-	logger.debug('fetchOrders', 'Input id:', userId);
+	logger.debug('fetchOrders');
 
 	const {
 		data: ordersData
-	} = await client.get(`api/${userId}/orders`);
+	} = await client.get('api/profile/orders');
 
 	logger.debug('fetchOrders', 'Response:', ordersData);
 
-	return ordersData;
+	return fetchOrderDataFromResponseData(ordersData);
 }
 
 export function saveToken(token: string) {
