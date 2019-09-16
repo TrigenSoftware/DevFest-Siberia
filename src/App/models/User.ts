@@ -14,12 +14,12 @@ export interface IUserProps {
 type User = ReturnType<Record.Factory<IUserProps>>;
 
 const User = Record<IUserProps>({
-	userId:    -1,
-	email:     '',
-	firstname: '',
-	lastname:  '',
-	company:   '',
-	city:      ''
+	userId:        -1,
+	email:         '',
+	firstname:     '',
+	lastname:      '',
+	company:       '',
+	city:          ''
 });
 
 export default User;

@@ -3,6 +3,6 @@ import Axios, {
 } from '~/services/axios';
 
 export default Axios.create({
-	baseURL:          'https://yoba.gdg-siberia.com',
+	baseURL:          'https://yoba.gdg-siberia.com/',
 	paramsSerializer: params => qs.stringify(params, { indices: false })
 });

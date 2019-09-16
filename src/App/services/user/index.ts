@@ -1,37 +1,57 @@
+import createLogger from '~/services/logger';
 import client from './client';
+import {
+	loginDataFromResponseData
+} from './adapters';
 
-export async function buy() {
+const logger = createLogger('App::services::user');
 
-	console.log('buy');
+export async function buy(registrationData) {
+
+	logger.debug('buy', 'Input user:', registrationData);
+
+	const response = await client.post('auth/register', {
+		registrationData
+	});
+
+	logger.debug('buy', 'Response:', response);
+
+	return response.data;
 }
 
 export async function login(email: string, password: string) {
 
-	const response = await client.post('auth/login', {
+	logger.debug('login', 'Input email:', email);
+
+	const {
+		data: loginData
+	} = await client.post('auth/login', {
 		email,
 		password
 	});
 
-	return response.data;
+	logger.debug('login', 'Response:', loginData);
+
+	return loginDataFromResponseData(loginData);
 }
 
-export async function fetchOrders() {
+export async function fetchOrders(userId: number) {
 
-	const response = await client.get('api/profile/orders');
+	logger.debug('fetchOrders', 'Input id:', userId);
 
-	return response.data;
+	const {
+		data: ordersData
+	} = await client.get(`api/${userId}/orders`);
+
+	logger.debug('fetchOrders', 'Response:', ordersData);
+
+	return ordersData;
 }
 
 export function saveToken(token: string) {
-
 	localStorage.setItem('authToken', token);
 }
 
-export async function getToken(email: string, password: string) {
-
-	const response = await login(email, password);
-
-	const authKey = response.data.authKey;
-
-	return authKey;
+export function getToken() {
+	return localStorage.getItem('authToken');
 }
