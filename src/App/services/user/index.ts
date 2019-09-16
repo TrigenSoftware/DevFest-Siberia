@@ -22,11 +22,9 @@ export async function fetchOrders() {
 	return response.data;
 }
 
-export async function saveToken(email: string, password: string) {
+export function saveToken(token: string) {
 
-	const response = await getToken(email, password);
-
-	localStorage.setItem('authKey', response.data);
+	localStorage.setItem('authToken', token);
 }
 
 export async function getToken(email: string, password: string) {
