@@ -8,12 +8,15 @@ import {
 } from './';
 
 const MOCK_LOGIN_RESPONSE = {
-	userId:    123,
-	email:     'test@mail.ru',
-	firstname: 'firstname',
-	lastname:  'lastname',
-	company:   'company',
-	city:      'city'
+	authKey: 'string',
+	profile: {
+		userId:    123,
+		email:     'test@mail.ru',
+		firstname: 'firstname',
+		lastname:  'lastname',
+		company:   'company',
+		city:      'city'
+	}
 };
 const MOCK_BUY_RESPONSE = {
 	paymentDetails: {
@@ -81,11 +84,11 @@ describe('API', () => {
 
 				const loginResponse = await login('test@mail.ru', 'some-password');
 
-				expect(typeof loginResponse.userId).toBe('number');
-				expect(typeof loginResponse.firstname).toBe('string');
-				expect(typeof loginResponse.lastname).toBe('string');
-				expect(typeof loginResponse.company).toBe('string');
-				expect(typeof loginResponse.city).toBe('string');
+				expect(typeof loginResponse.user.userId).toBe('number');
+				expect(typeof loginResponse.user.firstname).toBe('string');
+				expect(typeof loginResponse.user.lastname).toBe('string');
+				expect(typeof loginResponse.user.company).toBe('string');
+				expect(typeof loginResponse.user.city).toBe('string');
 			});
 		});
 

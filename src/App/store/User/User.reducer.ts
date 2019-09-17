@@ -7,7 +7,6 @@ import {
 	UserState,
 	ISetUserAction,
 	ISetOrderAction,
-	ISetRedirectUrlAction,
 	ISetUserErrorAction
 } from './User.types';
 
@@ -32,14 +31,6 @@ export class UserReducer extends Reducer {
 		return state.set(
 			'order',
 			order
-		);
-	}
-
-	setRedirectUrl(state: UserState, { payload }: ISetRedirectUrlAction) {
-
-		return state.set(
-			'redirectUrl',
-			payload
 		);
 	}
 

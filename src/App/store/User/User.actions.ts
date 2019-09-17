@@ -6,7 +6,6 @@ import {
 import {
 	SetUserPayload,
 	SetOrderPayload,
-	SetRedirectUrlPayload,
 	SetUserErrorPayload,
 	UserState
 } from './User.types';
@@ -18,27 +17,20 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 
 	async buy(registrationData) {
 
-		try {
+		const redirectUrl = await userService.buy(registrationData);
 
-			const redirectUrl = await userService.buy(registrationData);
-
-			this.setRedirectUrl(redirectUrl);
-
-		} catch (error) {
-			this.setError({
-				type: this.buy,
-				error
-			});
-		}
+		return redirectUrl;
 	}
 
 	async login(email: string, password: string) {
 
 		try {
 
-			const user = await userService.login(email, password);
+			const response = await userService.login(email, password);
 
-			this.setUser(user);
+			userService.saveToken(response.authKey);
+
+			this.setUser(response.user);
 
 		} catch (error) {
 			this.setUser(null);
@@ -66,6 +58,5 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 
 	abstract setUser(payload: SetUserPayload);
 	abstract setOrder(payload: SetOrderPayload);
-	abstract setRedirectUrl(payload: SetRedirectUrlPayload);
 	abstract setError(payload: SetUserErrorPayload);
 }

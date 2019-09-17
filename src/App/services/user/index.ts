@@ -35,7 +35,10 @@ export async function login(email: string, password: string) {
 
 	logger.debug('login', 'Response:', loginData);
 
-	return userFromResponseData(loginData);
+	return {
+		authKey: loginData.authKey,
+		user:    userFromResponseData(loginData.profile)
+	};
 }
 
 export async function fetchOrders() {

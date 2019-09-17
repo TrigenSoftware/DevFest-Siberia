@@ -16,17 +16,15 @@ import Order, {
 export interface IUserStateProps {
 	user: User;
 	order: Order;
-	redirectUrl: string;
 	errors: Map<any, Error>;
 }
 
 type UserState = ReturnType<Record.Factory<IUserStateProps>>;
 
 const UserState = Record<IUserStateProps>({
-	user:        null,
-	order:       null,
-	redirectUrl: '',
-	errors:      Map()
+	user:   null,
+	order:  null,
+	errors: Map()
 });
 
 export {
@@ -51,16 +49,6 @@ export type SetOrderPayload = IOrderProps;
 
 export interface ISetOrderAction {
 	payload: SetOrderPayload;
-}
-
-/**
- * SetRedirectUrl action.
- */
-
-export type SetRedirectUrlPayload = string;
-
-export interface ISetRedirectUrlAction {
-	payload: SetRedirectUrlPayload;
 }
 
 /**
