@@ -93,6 +93,9 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 	render() {
 
 		const {
+			location: {
+				search
+			},
 			...props
 		} = this.props;
 		const {
@@ -146,7 +149,7 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 					</FormGroup>
 					<LoginModalFooter>
 						<Link
-							to='/'
+							to={deleteSearchParams(search, 'login')}
 						>
 							{__x`login.cancel`}
 						</Link>
@@ -158,7 +161,7 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 					</LoginModalFooter>
 				</LoginModalForm>
 				<LoginModalLink
-					to='/some-link'
+					to='/buy'
 				>
 					{__x`login.link`}
 				</LoginModalLink>
