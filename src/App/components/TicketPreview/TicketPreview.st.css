@@ -12,7 +12,20 @@
 		colorPink0;
 }
 
+:import {
+	-st-from: './TickerPreviewPrimary/TickerPreviewPrimary.st.css';
+	-st-default: Primary;
+	-st-named: info;
+}
+
+:import {
+	-st-from: './TicketPreviewAuxiliary/TicketPreviewAuxiliary.st.css';
+	-st-default: Auxiliary;
+	-st-named: content as auxiliaryContent;
+}
+
 .root {
+	-st-states: vertical;
 	position: relative;
 	margin: 0;
 	padding: rel(11, 24);
@@ -48,8 +61,72 @@
 	content: '';
 }
 
+.root:vertical .content {
+	flex-direction: column-reverse;
+}
+
+.root:vertical .info {
+	display: block;
+	margin: 0 0 81px;
+	border: none;
+	padding: 23px 0 0;
+	text-align: center;
+}
+
+.root:vertical .Auxiliary {
+	border: none;
+	border-bottom: 2px dashed value(colorPink0);
+	writing-mode: horizontal-tb;
+}
+
+.root:vertical .auxiliaryContent {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+.root:vertical .Primary::before {
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, -35%);
+}
+
+.root:vertical .content::before {
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, -35%);
+}
+
 .group:not(:last-child) {
 	margin-right: rel(68, 24);
+}
+
+.price {
+	font-size: rel(51, 24);
+}
+
+.sale {
+	margin: 0 24px;
+	border: 3px dashed value(colorPink0);
+	padding: 13px;
+	text-align: center;
+	color: value(colorPink0);
+	font-weight: bold;
+}
+
+.button {
+	position: relative;
+	z-index: 1;
+	margin: 17px auto;
+}
+
+.description {
+	margin-bottom: 8px;
+	border-top: 2px dashed value(colorPink0);
+	padding-top: 8px;
+	text-align: center;
+	color: value(colorPink0);
+	font-size: 14px;
 }
 
 @media (max-width: value(sizeScreenSmMax)) {

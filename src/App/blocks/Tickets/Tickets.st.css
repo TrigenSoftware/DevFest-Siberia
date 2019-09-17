@@ -1,0 +1,48 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named:
+		colorWhite,
+		colorPink0,
+		colorBlue7;
+}
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+.root .center {
+	position: relative;
+	padding-top: rel(32, 24);
+	padding-bottom: rel(110, 24);
+}
+
+.list {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	list-style: none;
+}
+
+.list li {
+	display: flex;
+	flex: 1 1 25%;
+	justify-content: center;
+}
+
+.ticket {
+	background: value(colorWhite);
+	max-width: 292px;
+}
+
+.priceType {
+	margin: 13px 24px 0;
+	color: value(colorBlue7);
+	font-size: 18px;
+}

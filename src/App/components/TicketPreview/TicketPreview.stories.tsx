@@ -2,11 +2,18 @@ import React from 'react';
 import {
 	storiesOf
 } from '@storybook/react';
+import {
+	MemoryRouter
+} from 'react-router';
 import TicketPreview, {
 	TickerPreviewPrimary,
 	TickerPreviewGroup,
 	TickerPreviewField,
-	TicketPreviewAuxiliary
+	TicketPreviewAuxiliary,
+	TicketPreviewPrice,
+	TicketPreviewSale,
+	TicketPreviewButton,
+	TicketPreviewDescription
 } from './';
 
 const stylableApi = `
@@ -20,12 +27,18 @@ Stylable API
 - ::field
 	- ::label
 	- ::value
+- ::price
 `;
 
 storiesOf('Components|TicketPreview', module)
 	.addParameters({
 		info: stylableApi
 	})
+	.addDecorator(story => (
+		<MemoryRouter initialEntries={['/']}>
+			{story()}
+		</MemoryRouter>
+	))
 	.add(
 		'with content',
 		() => (
@@ -51,6 +64,34 @@ storiesOf('Components|TicketPreview', module)
 							value='29 ноября – 1 декабря'
 						/>
 					</TickerPreviewGroup>
+				</TickerPreviewPrimary>
+				<TicketPreviewAuxiliary>
+					Один Билет
+				</TicketPreviewAuxiliary>
+			</TicketPreview>
+		)
+	)
+	.add(
+		'with vertical state',
+		() => (
+			<TicketPreview
+				vertical
+			>
+				<TickerPreviewPrimary>
+					<TicketPreviewPrice>
+						5 000 ₽
+					</TicketPreviewPrice>
+					<TicketPreviewSale>
+						Количество билетов ограниченно
+					</TicketPreviewSale>
+					<TicketPreviewButton
+						to='/buy'
+					>
+						Купить
+					</TicketPreviewButton>
+					<TicketPreviewDescription>
+						Для всех
+					</TicketPreviewDescription>
 				</TickerPreviewPrimary>
 				<TicketPreviewAuxiliary>
 					Один Билет

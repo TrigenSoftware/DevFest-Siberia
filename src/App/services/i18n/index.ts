@@ -177,6 +177,22 @@ export function getPartnersTypes(context: I18nConfig): any[] {
 }
 
 /**
+ * Get tickets types from locales.
+ */
+export function getTickets(context: I18nConfig): any[] {
+
+	const {
+		tickets: {
+			items
+		}
+	} = context.getCatalog(
+		context.getLocale()
+	) as any;
+
+	return items;
+}
+
+/**
  * Get footer links for visitors from context.
  */
 export function getFooterVisitorsLinks(context: I18nConfig): any[] {
