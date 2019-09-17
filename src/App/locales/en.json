@@ -414,6 +414,16 @@
 		"when": "When",
 		"ticket": "One ticket"
 	},
+	"login": {
+		"title": "SIGN IN",
+		"email": "E-mail:",
+		"emailPlaceholder": "Enter e-mail",
+		"password": "Password",
+		"passwordPlaceholder": "Enter password",
+		"cancel": "Cancel",
+		"submit": "Let me in!",
+		"link": "Don't have account? Buy ticket and join!"
+	},
 	"coc": {
 		"title": "Code Of Conduct",
 		"rules": "All attendees, speakers, sponsors and volunteers at DevFest Siberia are required to agree with the following code of conduct. Organisers will enforce this code throughout the event. We are expecting cooperation from all participants to help ensuring a safe environment for everybody.",
@@ -421,5 +431,13 @@
 		"email": "Email",
 		"phone": "Phone",
 		"copyright": "Need normal translate, взятый с конференции Codemotion, распространяемый под лицензией Creative Commons Attribution 3.0 Unported License."
+	},
+	"terms": {
+		"title": "Terms Of Service",
+		"consent": "Consent to the processing of personal data",
+		"offer": "Public offer",
+		"offerUrl": "/some.pdf",
+		"rules": "All attendees, speakers, sponsors and volunteers at DevFest Siberia are required to agree with the following code of conduct. Organisers will enforce this code throughout the event. We are expecting cooperation from all participants to help ensuring a safe environment for everybody.",
+		"about": "DevFest Siberia is dedicated to providing a harassment-free conference experience for everyone, regardless of gender, sexual orientation, disability, physical appearance, body size, race, or religion. We do not tolerate harassment of conference participants in any form. Sexual language and imagery is not appropriate for any conference venue, including talks, workshops, parties, Twitter and other online communication channels. Conference participants violating these rules may be sanctioned or expelled from the conference without a refund at the discretion of the conference organisers."
 	}
 }

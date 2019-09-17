@@ -48,7 +48,6 @@ storiesOf('Components|LoginModal', module)
 		() => (
 			<LoginModal
 				active={boolean('Active', true)}
-				centered
 			>
 				<LoginModalForm
 					onSubmit={action('submit')}
