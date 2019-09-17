@@ -185,11 +185,11 @@ export default class Share extends Component<IProps, IState> {
 					className={classes.item}
 				>
 					<ContactLink
-						title={type}
 						className={classes.contactLink}
 						key={href}
 						type={type as ContactLinkType}
 						href={href}
+						title={type}
 					>
 						{type}
 					</ContactLink>
