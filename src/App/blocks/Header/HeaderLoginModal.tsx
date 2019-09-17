@@ -133,7 +133,13 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 					<FormGroup
 						id='password'
 						label={__`login.password`}
-						notice={<Link>{__x`login.notice`}</Link>}
+						notice={
+							<Link
+								to='/some-link'
+							>
+								{__x`login.notice`}
+							</Link>
+						}
 					>
 						<Input
 							id='password'
@@ -146,7 +152,9 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 						/>
 					</FormGroup>
 					<LoginModalFooter>
-						<Link>
+						<Link
+							to='/'
+						>
 							{__x`login.cancel`}
 						</Link>
 						<Button
