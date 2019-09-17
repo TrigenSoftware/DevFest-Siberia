@@ -30,6 +30,7 @@ export default class LoginModal extends Component<IProps> {
 			<Modal
 				{...props}
 				className={style(classes.root, className)}
+				centered
 			>
 				{children}
 			</Modal>
