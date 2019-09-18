@@ -72,7 +72,7 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 	static propTypes = {
 		login:       PropTypes.func.isRequired,
 		clearErrors: PropTypes.func.isRequired,
-		errors:      PropTypes.func.isRequired
+		errors:      PropTypes.any.isRequired
 	};
 
 	static getDerivedStateFromProps(
@@ -130,7 +130,9 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 			<LoginModal
 				{...omit(props, [
 					...routeProps,
-					'errors'
+					'login',
+					'errors',
+					'clearErrors'
 				])}
 				onClose={this.onClose}
 				active={active}

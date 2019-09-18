@@ -50,7 +50,7 @@ export async function fetchOrders() {
 
 	logger.debug('fetchOrders', 'Response:', ordersData);
 
-	return orderFromResponseData(ordersData);
+	return orderFromResponseData(ordersData[0]);
 }
 
 export function logout() {

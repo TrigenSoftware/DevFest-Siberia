@@ -83,7 +83,10 @@ export class Header extends Component<IProps> {
 		return (
 			<>
 				<header
-					{...omit(props, routeProps)}
+					{...omit(props, [
+						...routeProps,
+						'logout'
+					])}
 					className={style(classes.root, className)}
 				>
 					<Section

@@ -50,16 +50,27 @@ export class CabinetContainer extends Component<IProps> {
 
 		const {
 			className,
+			user,
+			order,
 			...props
 		} = this.props;
 		const {
 			context
 		} = this;
 		const __ = context.bind(tr);
+		let tickets = [];
+
+		if (order) {
+			tickets = order.toJS().items;
+		}
 
 		return (
 			<Section
-				{...omit(props, routeProps)}
+				{...omit(props, [
+					...routeProps,
+					'fetchOrders',
+					'isLogged'
+				])}
 				className={style(classes.root, className)}
 			>
 				<h2>
@@ -68,35 +79,38 @@ export class CabinetContainer extends Component<IProps> {
 				<article
 					className={classes.article}
 				>
-					<TicketPreview
-						className={classes.ticket}
-					>
-						<TickerPreviewPrimary>
-							<TickerPreviewGroup>
-								<TickerPreviewField
-									label={__`cabinet.id`}
-									value='ID 123123'
-								/>
-								<TickerPreviewField
-									label={__`cabinet.for`}
-									value='Jhon Doe'
-								/>
-							</TickerPreviewGroup>
-							<TickerPreviewGroup>
-								<TickerPreviewField
-									label={__`cabinet.where`}
-									value='Academ, 18'
-								/>
-								<TickerPreviewField
-									label={__`cabinet.when`}
-									value='29 ноября – 1 декабря'
-								/>
-							</TickerPreviewGroup>
-						</TickerPreviewPrimary>
-						<TicketPreviewAuxiliary>
-							{__x`cabinet.ticket`}
-						</TicketPreviewAuxiliary>
-					</TicketPreview>
+					{tickets.map(ticket => (
+						<TicketPreview
+							className={classes.ticket}
+							key={ticket.ticket.ticketUID}
+						>
+							<TickerPreviewPrimary>
+								<TickerPreviewGroup>
+									<TickerPreviewField
+										label={__`cabinet.id`}
+										value={ticket.ticket.ticketUID}
+									/>
+									<TickerPreviewField
+										label={__`cabinet.for`}
+										value='Jhon Doe'
+									/>
+								</TickerPreviewGroup>
+								<TickerPreviewGroup>
+									<TickerPreviewField
+										label={__`cabinet.where`}
+										value={__`cabinet.location`}
+									/>
+									<TickerPreviewField
+										label={__`cabinet.when`}
+										value='29 ноября – 1 декабря'
+									/>
+								</TickerPreviewGroup>
+							</TickerPreviewPrimary>
+							<TicketPreviewAuxiliary>
+								{ticket.productName}
+							</TicketPreviewAuxiliary>
+						</TicketPreview>
+					))}
 				</article>
 			</Section>
 		);

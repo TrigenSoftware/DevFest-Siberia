@@ -70,7 +70,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 
 		userService.logout();
 
-		this.setUser(null);
+		location.reload();
 	}
 
 	abstract setUser(payload: SetUserPayload);
