@@ -9,7 +9,8 @@
 	-st-named:
 		colorWhite,
 		colorPink0,
-		colorBlue7;
+		colorBlue7,
+		colorBlue10;
 }
 
 :import {
@@ -45,4 +46,19 @@
 	margin: 13px 24px 0;
 	color: value(colorBlue7);
 	font-size: 18px;
+}
+
+.сontact {
+	margin: rel(47, 24) 0 rel(55, 24);
+	padding: rel(10, 24);
+	text-align: center;
+}
+
+.сontact h3 {
+	color: value(colorBlue7);
+	font-size: rel(35, 24);
+}
+
+.content {
+	border: 5px solid value(colorBlue10);
 }

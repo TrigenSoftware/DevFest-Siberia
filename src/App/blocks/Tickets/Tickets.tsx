@@ -3,7 +3,8 @@ import React, {
 	Component
 } from 'react';
 import {
-	I18nContext
+	I18nContext,
+	__x
 } from 'i18n-for-react';
 import {
 	getTickets
@@ -87,6 +88,17 @@ export default class Tickets extends Component<IProps> {
 						</li>
 					))}
 				</ul>
+				<div
+					className={classes.сontact}
+				>
+					<div
+						className={classes.content}
+					>
+						<h3>
+							{__x`tickets.сontact`}
+						</h3>
+					</div>
+				</div>
 			</Section>
 		);
 	}
