@@ -183,10 +183,10 @@ export default class Share extends Component<IProps, IState> {
 			Object.entries(links).map(([type, href]) => (
 				<li
 					className={classes.item}
+					key={href}
 				>
 					<ContactLink
 						className={classes.contactLink}
-						key={href}
 						type={type as ContactLinkType}
 						href={href}
 						title={type}

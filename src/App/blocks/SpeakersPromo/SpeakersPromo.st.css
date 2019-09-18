@@ -12,9 +12,8 @@
 		sizeGap,
 		sizeGapLg,
 		colorWhite,
-		colorBlue10,
 		colorPink0,
-		colorGray4;
+		colorBlue7;
 }
 
 :import {
@@ -75,7 +74,7 @@
 
 .title:hover,
 .title:focus {
-	color: value(colorBlue10);
+	color: value(colorBlue7);
 }
 
 .list {
