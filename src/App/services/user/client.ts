@@ -9,7 +9,7 @@ import {
 const authKey = getToken();
 
 export default Axios.create({
-	baseURL:          process.env.HOST_URL,
+	baseURL:          process.env.API_URL,
 	paramsSerializer: params => qs.stringify(params, { indices: false }),
 	transformRequest: [
 		...axios.transformRequest,
