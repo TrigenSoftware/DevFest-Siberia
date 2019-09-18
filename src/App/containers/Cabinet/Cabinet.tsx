@@ -2,12 +2,18 @@ import React, {
 	ContextType,
 	Component
 } from 'react';
+import {
+	withRouter
+} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
 	I18nContext,
 	__ as tr,
 	__x
 } from 'i18n-for-react';
+import {
+	getLocalizedPath
+} from '~/services/i18n';
 import {
 	omit
 } from '@flexis/ui/helpers';
@@ -34,7 +40,8 @@ export class CabinetContainer extends Component<IProps> {
 	static contextType = I18nContext;
 
 	static propTypes = {
-		fetchOrders: PropTypes.func.isRequired
+		fetchOrders: PropTypes.func.isRequired,
+		isLogged:    PropTypes.func.isRequired
 	};
 
 	context!: ContextType<typeof I18nContext>;
@@ -98,9 +105,20 @@ export class CabinetContainer extends Component<IProps> {
 	componentDidMount() {
 
 		const {
-			fetchOrders
+			history,
+			fetchOrders,
+			isLogged
 		} = this.props;
+		const {
+			context
+		} = this;
 
-		fetchOrders();
+		if (isLogged()) {
+			fetchOrders();
+		} else {
+			history.push(getLocalizedPath(context, '/'));
+		}
 	}
 }
+
+export default withRouter(CabinetContainer);
