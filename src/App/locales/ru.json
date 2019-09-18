@@ -12,7 +12,14 @@
 		"lang": "En",
 		"login": "Войти",
 		"buyTicket": "Купить Билет",
-		"share": "Поделиться"
+		"share": "Поделиться",
+		"links": {
+			"twitter": "https:/twitter.com",
+			"facebook": "https:/facebook.com",
+			"vk": "https:/vk.com",
+			"telegram": "https:/telegram.com",
+			"site": "https:/site.com"
+		}
 	},
 	"facts": {
 		"title": "DevFest Siberia это –",

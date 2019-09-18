@@ -14,6 +14,9 @@ import {
 import {
 	omit
 } from '@flexis/ui/helpers';
+import {
+	getShareLinks
+} from '~/services/i18n';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -62,6 +65,7 @@ export class Header extends Component<IProps> {
 		} = this;
 		const locale = context.getLocale();
 		const __ = context.bind(tr);
+		const links = getShareLinks(context);
 
 		return (
 			<>
@@ -124,13 +128,7 @@ export class Header extends Component<IProps> {
 								</Button>
 							</HeaderLink>
 							<Share
-								links={{
-									twitter:  'https:/twitter.com',
-									facebook: 'https:/facebook.com',
-									vk:       'https:/vk.com',
-									telegram: 'https:/telegram.com',
-									site:     'https:/site.com'
-								}}
+								links={links as any}
 							>
 								{__`header.share`}
 							</Share>
