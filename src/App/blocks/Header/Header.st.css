@@ -16,7 +16,8 @@
 		colorBlack,
 		colorBlue1,
 		colorBlue2,
-		colorBlue4;
+		colorBlue4,
+		colorRed;
 }
 
 :import {
@@ -114,6 +115,14 @@
 
 .controls > button {
 	margin: 0 -14px;
+}
+
+.error {
+	color: value(colorRed);
+}
+
+.error::before {
+	content: '\200B';
 }
 
 @media (min-width: value(sizeScreenMdMin)) {

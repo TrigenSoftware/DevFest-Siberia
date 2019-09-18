@@ -58,4 +58,5 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 	abstract setUser(payload: SetUserPayload);
 	abstract setOrder(payload: SetOrderPayload);
 	abstract setError(payload: SetUserErrorPayload);
+	abstract clearErrors();
 }

@@ -9,20 +9,19 @@ import {
 	UserSegment
 } from '~/store/segments';
 import Loading from '~/components/Loading';
-import {
-	BuyContainer
-} from './Buy';
+import Header from './Header';
 
 export function mapStateToProps({ user }: State) {
 	return {
-		user:  user.user,
-		order: user.order
+		user:   user.user,
+		errors: user.errors
 	};
 }
 
 export function mapActionsToProps({ user }: IActions) {
 	return {
-		buy: user.buy
+		login:       user.login,
+		clearErrors: user.clearErrors
 	};
 }
 
@@ -31,4 +30,4 @@ export default Connect({
 	loading:   Loading,
 	mapStateToProps,
 	mapActionsToProps
-})(BuyContainer);
+})(Header);

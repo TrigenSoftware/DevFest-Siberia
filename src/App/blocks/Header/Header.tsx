@@ -3,9 +3,9 @@ import React, {
 	Component
 } from 'react';
 import {
-	RouteComponentProps,
 	withRouter
 } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import {
 	I18nContext,
 	__ as tr,
@@ -17,9 +17,7 @@ import {
 import {
 	getShareLinks
 } from '~/services/i18n';
-import Section, {
-	IProps as ISectionProps
-} from '~/components/Section';
+import Section from '~/components/Section';
 import Link from '~/components/Link';
 import Button from '~/components/Button';
 import Share from '~/components/Share';
@@ -39,15 +37,22 @@ import {
 } from './HeaderSpacer';
 import HeaderLoginModal from './HeaderLoginModal';
 import {
+	IProps
+} from './types';
+import {
 	style,
 	classes
 } from './Header.st.css';
 
-export interface IProps extends ISectionProps, RouteComponentProps {}
-
 export class Header extends Component<IProps> {
 
 	static contextType = I18nContext;
+
+	static propTypes = {
+		login:       PropTypes.func.isRequired,
+		clearErrors: PropTypes.func.isRequired,
+		user:        PropTypes.any
+	};
 
 	context!: ContextType<typeof I18nContext>;
 
@@ -55,6 +60,9 @@ export class Header extends Component<IProps> {
 
 		const {
 			className,
+			login,
+			errors,
+			clearErrors,
 			location: {
 				search
 			},
@@ -135,7 +143,11 @@ export class Header extends Component<IProps> {
 						</ul>
 					</Section>
 				</header>
-				<HeaderLoginModal/>
+				<HeaderLoginModal
+					login={login}
+					errors={errors}
+					clearErrors={clearErrors}
+				/>
 			</>
 		);
 	}

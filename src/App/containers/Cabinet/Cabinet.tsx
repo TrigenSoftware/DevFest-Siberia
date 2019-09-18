@@ -7,9 +7,13 @@ import {
 	__ as tr,
 	__x
 } from 'i18n-for-react';
-import Section, {
-	IProps as ISectionProps
-} from '~/components/Section';
+import {
+	omit
+} from '@flexis/ui/helpers';
+import {
+	routeProps
+} from '~/blocks/common/router';
+import Section from '~/components/Section';
 import TicketPreview, {
 	TickerPreviewPrimary,
 	TickerPreviewGroup,
@@ -17,13 +21,14 @@ import TicketPreview, {
 	TicketPreviewAuxiliary
 } from '~/components/TicketPreview';
 import {
+	IProps
+} from './types';
+import {
 	style,
 	classes
 } from './Cabinet.st.css';
 
-export type IProps = ISectionProps;
-
-export default class CabinetContainer extends Component<IProps> {
+export class CabinetContainer extends Component<IProps> {
 
 	static contextType = I18nContext;
 
@@ -42,7 +47,7 @@ export default class CabinetContainer extends Component<IProps> {
 
 		return (
 			<Section
-				{...props}
+				{...omit(props, routeProps)}
 				className={style(classes.root, className)}
 			>
 				<h2>

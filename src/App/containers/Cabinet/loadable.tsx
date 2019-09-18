@@ -4,6 +4,6 @@ import loadable from '@loadable/component';
 import Loading from '~/components/Loading';
 
 export default loadable(
-	() => import(/* webpackChunkName: 'cabinet' */ './index'),
+	() => import(/* webpackChunkName: 'cabinet' */ './connected'),
 	{ fallback: <Loading/> }
 );

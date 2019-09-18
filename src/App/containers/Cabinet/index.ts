@@ -1,2 +1,2 @@
-export { default } from './Cabinet';
+export { default } from './connected';
 export * from './Cabinet';

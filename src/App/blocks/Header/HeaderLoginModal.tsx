@@ -1,3 +1,6 @@
+import {
+	Map
+} from 'immutable';
 import React, {
 	ChangeEvent,
 	ContextType,
@@ -7,6 +10,7 @@ import {
 	RouteComponentProps,
 	withRouter
 } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import {
 	I18nContext,
 	__ as tr,
@@ -31,16 +35,24 @@ import Button from '~/components/Button';
 import Modal from '~/components/Modal';
 import {
 	routeProps,
-	deleteSearchParams
-} from '../common/router';
+	deleteSearchParams,
+	getErrorMessage
+} from '../common';
 import {
 	noAroundSpacesPattern
 } from '~/containers/common';
 import validate from './validate';
+import {
+	classes
+} from './Header.st.css';
 
 type IHeaderLoginModalProps = Omit<ILoginModalProps, 'children'>;
 
-export interface IProps extends IHeaderLoginModalProps, RouteComponentProps {}
+export interface IProps extends IHeaderLoginModalProps, RouteComponentProps {
+	errors: Map<any, Error>;
+	login(email: string, password: string);
+	clearErrors();
+}
 
 interface IState {
 	email: string;
@@ -56,6 +68,12 @@ const {
 export class HeaderLoginModal extends Component<IProps, IState> {
 
 	static contextType = I18nContext;
+
+	static propTypes = {
+		login:       PropTypes.func.isRequired,
+		clearErrors: PropTypes.func.isRequired,
+		errors:      PropTypes.func.isRequired
+	};
 
 	static getDerivedStateFromProps(
 		{
@@ -147,6 +165,11 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 							value={password}
 						/>
 					</FormGroup>
+					<div
+						className={classes.error}
+					>
+						{this.error()}
+					</div>
 					<LoginModalFooter>
 						<Link
 							to={deleteSearchParams(search, 'login')}
@@ -208,11 +231,12 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 		});
 	}
 
+	@Bind()
 	private onSubmit(event: ChangeEvent<HTMLFormElement>) {
 
 		event.preventDefault();
 
-		console.log('submited');
+		this.login();
 	}
 
 	private validate(input: HTMLInputElement) {
@@ -220,6 +244,40 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 		const validityMessage = validate(input);
 
 		input.setCustomValidity(validityMessage);
+	}
+
+	private login() {
+
+		const {
+			login,
+			errors,
+			clearErrors
+		} = this.props;
+		const {
+			email,
+			password
+		} = this.state;
+
+		clearErrors();
+		login(email, password);
+
+		if (errors.size === 0) {
+			this.setState(() => ({
+				active: false
+			}), this.goBack);
+		}
+	}
+
+	private error() {
+
+		const {
+			login,
+			errors
+		} = this.props;
+		const error = errors.get(login);
+		const message = getErrorMessage(error);
+
+		return message;
 	}
 }
 

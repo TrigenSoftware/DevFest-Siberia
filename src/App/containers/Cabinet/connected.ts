@@ -2,7 +2,6 @@ import {
 	Connect
 } from '@flexis/redux';
 import {
-	IActions,
 	State
 } from '~/store/types';
 import {
@@ -10,25 +9,18 @@ import {
 } from '~/store/segments';
 import Loading from '~/components/Loading';
 import {
-	BuyContainer
-} from './Buy';
+	CabinetContainer
+} from './Cabinet';
 
 export function mapStateToProps({ user }: State) {
 	return {
-		user:  user.user,
+		user: user.user,
 		order: user.order
-	};
-}
-
-export function mapActionsToProps({ user }: IActions) {
-	return {
-		buy: user.buy
 	};
 }
 
 export default Connect({
 	dependsOn: UserSegment,
 	loading:   Loading,
-	mapStateToProps,
-	mapActionsToProps
-})(BuyContainer);
+	mapStateToProps
+})(CabinetContainer);

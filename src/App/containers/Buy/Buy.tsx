@@ -10,8 +10,12 @@ import {
 	__x
 } from 'i18n-for-react';
 import {
-	Bind
+	Bind,
+	omit
 } from '@flexis/ui/helpers';
+import {
+	routeProps
+} from '~/blocks/common/router';
 import Section from '~/components/Section';
 import TabsNav, {
 	TabsNavItem
@@ -88,7 +92,7 @@ export class BuyContainer extends Component<IProps, IState> {
 
 		return (
 			<Section
-				{...props}
+				{...omit(props, routeProps)}
 				className={style(classes.root, className)}
 			>
 				<div
@@ -221,6 +225,7 @@ export class BuyContainer extends Component<IProps, IState> {
 		}));
 	}
 
+	@Bind()
 	private onSubmit(event: ChangeEvent<HTMLFormElement>) {
 
 		event.preventDefault();
@@ -229,11 +234,9 @@ export class BuyContainer extends Component<IProps, IState> {
 			buy
 		} = this.props;
 
-		buy({
-			asdasd: 'asd'
-		});
+		const userData = this.getUserData();
 
-		console.log('submit');
+		buy(userData);
 	}
 
 	private validate(input: HTMLInputElement) {
@@ -241,5 +244,27 @@ export class BuyContainer extends Component<IProps, IState> {
 		const validityMessage = validate(input);
 
 		input.setCustomValidity(validityMessage);
+	}
+
+	private getUserData() {
+
+		const {
+			firstname,
+			lastname,
+			position,
+			company,
+			city,
+			email
+		} = this.state;
+		const userData = {
+			firstname,
+			lastname,
+			position,
+			company,
+			city,
+			email
+		};
+
+		return userData;
 	}
 }

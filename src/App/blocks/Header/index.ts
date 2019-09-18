@@ -1,2 +1,2 @@
-export { default } from './Header';
+export { default } from './connected';
 export * from './Header';
