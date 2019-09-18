@@ -102,7 +102,7 @@ export class CabinetContainer extends Component<IProps> {
 									/>
 									<TickerPreviewField
 										label={__`cabinet.when`}
-										value='29 ноября – 1 декабря'
+										value={__`cabinet.data`}
 									/>
 								</TickerPreviewGroup>
 							</TickerPreviewPrimary>
