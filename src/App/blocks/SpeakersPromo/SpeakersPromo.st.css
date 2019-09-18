@@ -12,6 +12,7 @@
 		sizeGap,
 		sizeGapLg,
 		colorWhite,
+		colorBlue10,
 		colorPink0,
 		colorGray4;
 }
@@ -74,7 +75,7 @@
 
 .title:hover,
 .title:focus {
-	color: value(colorGray4);
+	color: value(colorBlue10);
 }
 
 .list {

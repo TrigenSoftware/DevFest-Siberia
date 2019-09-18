@@ -44,15 +44,9 @@ export async function fetchOrders() {
 
 	logger.debug('fetchOrders');
 
-	const authKey = getToken();
-
 	const {
 		data: ordersData
-	} = await client.get('api/profile/orders', {
-		'headers': {
-			'X-Auth-Key': authKey
-		}
-	});
+	} = await client.get('api/profile/orders');
 
 	logger.debug('fetchOrders', 'Response:', ordersData);
 
