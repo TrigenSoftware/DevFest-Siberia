@@ -14,13 +14,16 @@ import {
 import {
 	omit
 } from '@flexis/ui/helpers';
+import {
+	getShareLinks
+} from '~/services/i18n';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
 import Link from '~/components/Link';
 import Button from '~/components/Button';
+import Share from '~/components/Share';
 import Logo from '~/icons/logo.svg';
-import Share from '~/icons/share.svg';
 import {
 	routeProps,
 	addSearchParams
@@ -62,6 +65,7 @@ export class Header extends Component<IProps> {
 		} = this;
 		const locale = context.getLocale();
 		const __ = context.bind(tr);
+		const links = getShareLinks(context);
 
 		return (
 			<>
@@ -123,11 +127,11 @@ export class Header extends Component<IProps> {
 									{__x`header.buyTicket`}
 								</Button>
 							</HeaderLink>
-							<HeaderLink
-								to='/share'
-								icon={<Share/>}
-								title={__`header.share`}
-							/>
+							<Share
+								links={links as any}
+							>
+								{__`header.share`}
+							</Share>
 						</ul>
 					</Section>
 				</header>
