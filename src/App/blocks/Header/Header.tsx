@@ -43,6 +43,9 @@ import {
 	style,
 	classes
 } from './Header.st.css';
+import {
+	getToken
+} from '~/services/user';
 
 export class Header extends Component<IProps> {
 
@@ -74,6 +77,7 @@ export class Header extends Component<IProps> {
 		const locale = context.getLocale();
 		const __ = context.bind(tr);
 		const links = getShareLinks(context);
+		const token = getToken();
 
 		return (
 			<>
@@ -115,26 +119,32 @@ export class Header extends Component<IProps> {
 								{__x`header.lang`}
 							</HeaderLink>
 							<HeaderLink
-								to={{
+								to={token ? '/cabinet' : {
 									search: addSearchParams(search, {
 										login: true
 									})
 								}}
 							>
-								{__x`header.login`}
+								{token ? __x`header.profile` : __x`header.login`}
 							</HeaderLink>
 						</HeaderNav>
 						<ul
 							className={classes.controls}
 						>
-							<HeaderLink
-								to='/buy'
-								disguised
-							>
+							{!token ? (
+								<HeaderLink
+									to='/buy'
+									disguised
+								>
+									<Button>
+										{__x`header.buyTicket`}
+									</Button>
+								</HeaderLink>
+							) : (
 								<Button>
-									{__x`header.buyTicket`}
+									{__x`header.logout`}
 								</Button>
-							</HeaderLink>
+							)}
 							<Share
 								links={links as any}
 							>

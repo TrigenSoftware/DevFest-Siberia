@@ -9,14 +9,13 @@ import {
 	UserSegment
 } from '~/store/segments';
 import Loading from '~/components/Loading';
-import {
-	BuyContainer
-} from './Buy';
+import BuyContainer from './Buy';
 
 export function mapStateToProps({ user }: State) {
 	return {
-		user:  user.user,
-		order: user.order
+		user:   user.user,
+		order:  user.order,
+		errors: user.errors
 	};
 }
 

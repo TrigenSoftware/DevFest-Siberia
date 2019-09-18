@@ -3,6 +3,9 @@ import React, {
 	ChangeEvent,
 	Component
 } from 'react';
+import {
+	withRouter
+} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
 	I18nContext,
@@ -10,12 +13,15 @@ import {
 	__x
 } from 'i18n-for-react';
 import {
+	getLocaleFromPath
+} from '~/services/i18n';
+import {
 	Bind,
 	omit
 } from '@flexis/ui/helpers';
 import {
 	routeProps
-} from '~/blocks/common/router';
+} from '~/blocks/common';
 import Section from '~/components/Section';
 import TabsNav, {
 	TabsNavItem
@@ -236,7 +242,9 @@ export class BuyContainer extends Component<IProps, IState> {
 
 		const userData = this.getUserData();
 
-		buy(userData);
+		buy(userData).then((redurectUrl) => {
+			console.log(redurectUrl);
+		});
 	}
 
 	private validate(input: HTMLInputElement) {
@@ -256,15 +264,28 @@ export class BuyContainer extends Component<IProps, IState> {
 			city,
 			email
 		} = this.state;
+		const locale = getLocaleFromPath(location.pathname);
 		const userData = {
-			firstname,
-			lastname,
-			position,
+			email,
+			firstName: firstname,
+			lastName: lastname,
 			company,
+			position,
 			city,
-			email
+			termsAccepted: true,
+			paymentRequest: {
+				locale,
+				products: [
+					{
+						productId: 'ticket'
+					}
+				],
+				promocode: ''
+			}
 		};
 
 		return userData;
 	}
 }
+
+export default withRouter(BuyContainer);

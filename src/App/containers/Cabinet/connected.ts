@@ -2,7 +2,8 @@ import {
 	Connect
 } from '@flexis/redux';
 import {
-	State
+	State,
+	IActions
 } from '~/store/types';
 import {
 	UserSegment
@@ -19,8 +20,15 @@ export function mapStateToProps({ user }: State) {
 	};
 }
 
+export function mapActionsToProps({ user }: IActions) {
+	return {
+		fetchOrders: user.fetchOrders
+	};
+}
+
 export default Connect({
 	dependsOn: UserSegment,
 	loading:   Loading,
-	mapStateToProps
+	mapStateToProps,
+	mapActionsToProps
 })(CabinetContainer);

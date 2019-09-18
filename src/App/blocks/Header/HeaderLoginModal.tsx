@@ -128,7 +128,10 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 
 		return (
 			<LoginModal
-				{...omit(props, routeProps)}
+				{...omit(props, [
+					...routeProps,
+					'errors'
+				])}
 				onClose={this.onClose}
 				active={active}
 			>

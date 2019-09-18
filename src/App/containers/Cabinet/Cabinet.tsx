@@ -2,6 +2,7 @@ import React, {
 	ContextType,
 	Component
 } from 'react';
+import PropTypes from 'prop-types';
 import {
 	I18nContext,
 	__ as tr,
@@ -31,6 +32,10 @@ import {
 export class CabinetContainer extends Component<IProps> {
 
 	static contextType = I18nContext;
+
+	static propTypes = {
+		fetchOrders: PropTypes.func.isRequired
+	};
 
 	context!: ContextType<typeof I18nContext>;
 
@@ -88,5 +93,14 @@ export class CabinetContainer extends Component<IProps> {
 				</article>
 			</Section>
 		);
+	}
+
+	componentDidMount() {
+
+		const {
+			fetchOrders
+		} = this.props;
+
+		fetchOrders();
 	}
 }

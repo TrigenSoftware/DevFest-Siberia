@@ -5,4 +5,6 @@ import {
 	IProps as ISectionProps
 } from '~/components/Section';
 
-export interface IProps extends ISectionProps, IUserStateProps {}
+export interface IProps extends ISectionProps, IUserStateProps {
+	fetchOrders();
+}
