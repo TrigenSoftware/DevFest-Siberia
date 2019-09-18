@@ -12,6 +12,7 @@ import {
 	__x
 } from 'i18n-for-react';
 import {
+	Bind,
 	omit
 } from '@flexis/ui/helpers';
 import {
@@ -131,7 +132,14 @@ export class Header extends Component<IProps> {
 						<ul
 							className={classes.controls}
 						>
-							{!token ? (
+							{token ? (
+								<Button
+									onClick={this.logout}
+								>
+									{__x`header.logout`}
+								</Button>
+							) : (
+
 								<HeaderLink
 									to='/buy'
 									disguised
@@ -140,10 +148,6 @@ export class Header extends Component<IProps> {
 										{__x`header.buyTicket`}
 									</Button>
 								</HeaderLink>
-							) : (
-								<Button>
-									{__x`header.logout`}
-								</Button>
 							)}
 							<Share
 								links={links as any}
@@ -160,6 +164,11 @@ export class Header extends Component<IProps> {
 				/>
 			</>
 		);
+	}
+
+	@Bind()
+	private logout() {
+		localStorage.removeItem('authToken');
 	}
 }
 
