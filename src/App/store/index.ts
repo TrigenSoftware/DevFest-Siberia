@@ -11,6 +11,9 @@ import {
 import {
 	registerTodoSegment
 } from './Todo/register';
+import {
+	registerUserSegment
+} from './User/register';
 
 const {
 	__REDUX_DEVTOOLS_EXTENSION__
@@ -26,6 +29,7 @@ export default function createStore() {
 
 	registerWeatherSegment(store);
 	registerTodoSegment(store);
+	registerUserSegment(store);
 
 	return store;
 }

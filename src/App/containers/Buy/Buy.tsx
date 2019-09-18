@@ -3,6 +3,7 @@ import React, {
 	ChangeEvent,
 	Component
 } from 'react';
+import PropTypes from 'prop-types';
 import {
 	I18nContext,
 	__ as tr,
@@ -11,9 +12,7 @@ import {
 import {
 	Bind
 } from '@flexis/ui/helpers';
-import Section, {
-	IProps as ISectionProps
-} from '~/components/Section';
+import Section from '~/components/Section';
 import TabsNav, {
 	TabsNavItem
 } from '~/components/TabsNav';
@@ -28,13 +27,15 @@ import Link from '~/components/Link';
 import {
 	noAroundSpacesPattern
 } from '../common';
+import {
+	IProps,
+	IState
+} from './types';
 import validate from './validate';
 import {
 	style,
 	classes
 } from './Buy.st.css';
-
-export type IProps = ISectionProps;
 
 const terms = [
 	(
@@ -47,18 +48,13 @@ const terms = [
 	)
 ];
 
-interface IState {
-	firstname: string;
-	lastname: string;
-	position: string;
-	company: string;
-	city: string;
-	email: string;
-}
-
-export default class BuyContainer extends Component<IProps, IState> {
+export class BuyContainer extends Component<IProps, IState> {
 
 	static contextType = I18nContext;
+
+	static propTypes = {
+		buy: PropTypes.func.isRequired
+	};
 
 	context!: ContextType<typeof I18nContext>;
 
@@ -229,7 +225,15 @@ export default class BuyContainer extends Component<IProps, IState> {
 
 		event.preventDefault();
 
-		console.log('submited');
+		const {
+			buy
+		} = this.props;
+
+		buy({
+			asdasd: 'asd'
+		});
+
+		console.log('submit');
 	}
 
 	private validate(input: HTMLInputElement) {

@@ -4,3 +4,6 @@ export {
 export {
 	TodoSegment
 } from './Todo/register';
+export {
+	UserSegment
+} from './User/register';
