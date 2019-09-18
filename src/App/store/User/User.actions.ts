@@ -26,11 +26,9 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 
 		try {
 
-			const response = await userService.login(email, password);
+			const user = await userService.login(email, password);
 
-			userService.saveToken(response.authKey);
-
-			this.setUser(response.user);
+			this.setUser(user);
 
 		} catch (error) {
 			this.setUser(null);
@@ -44,6 +42,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 	async fetchOrders() {
 
 		try {
+
 			const order = await userService.fetchOrders();
 
 			this.setOrder(order);

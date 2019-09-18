@@ -35,19 +35,24 @@ export async function login(email: string, password: string) {
 
 	logger.debug('login', 'Response:', loginData);
 
-	return {
-		authKey: loginData.authKey,
-		user:    userFromResponseData(loginData.profile)
-	};
+	saveToken(loginData.authKey);
+
+	return userFromResponseData(loginData.profile);
 }
 
 export async function fetchOrders() {
 
 	logger.debug('fetchOrders');
 
+	const authKey = getToken();
+
 	const {
 		data: ordersData
-	} = await client.get('api/profile/orders');
+	} = await client.get('api/profile/orders', {
+		'headers': {
+			'X-Auth-Key': authKey
+		}
+	});
 
 	logger.debug('fetchOrders', 'Response:', ordersData);
 
