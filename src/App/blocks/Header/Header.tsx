@@ -132,7 +132,7 @@ export class Header extends Component<IProps> {
 									site:     'https:/site.com'
 								}}
 							>
-								{__x`header.share`}
+								{__`header.share`}
 							</Share>
 						</ul>
 					</Section>
