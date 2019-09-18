@@ -55,6 +55,24 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 		}
 	}
 
+	isLogged() {
+
+		const token = userService.getToken();
+
+		if (token) {
+			return true;
+		}
+
+		return false;
+	}
+
+	logout() {
+
+		userService.logout();
+
+		this.setUser(null);
+	}
+
 	abstract setUser(payload: SetUserPayload);
 	abstract setOrder(payload: SetOrderPayload);
 	abstract setError(payload: SetUserErrorPayload);

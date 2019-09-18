@@ -53,6 +53,13 @@ export async function fetchOrders() {
 	return orderFromResponseData(ordersData);
 }
 
+export function logout() {
+
+	logger.debug('logout');
+
+	localStorage.removeItem('authToken');
+}
+
 export function saveToken(token: string) {
 	localStorage.setItem('authToken', token);
 }

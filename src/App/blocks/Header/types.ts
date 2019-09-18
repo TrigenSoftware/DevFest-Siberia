@@ -10,5 +10,7 @@ import {
 
 export interface IProps extends ISectionProps, IUserStateProps, RouteComponentProps {
 	login(email: string, password: string);
+	logout();
+	isLogged();
 	clearErrors();
 }

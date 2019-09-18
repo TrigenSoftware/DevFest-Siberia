@@ -44,9 +44,6 @@ import {
 	style,
 	classes
 } from './Header.st.css';
-import {
-	getToken
-} from '~/services/user';
 
 export class Header extends Component<IProps> {
 
@@ -54,6 +51,8 @@ export class Header extends Component<IProps> {
 
 	static propTypes = {
 		login:       PropTypes.func.isRequired,
+		logout:      PropTypes.func.isRequired,
+		isLogged:    PropTypes.func.isRequired,
 		clearErrors: PropTypes.func.isRequired,
 		user:        PropTypes.any
 	};
@@ -66,6 +65,7 @@ export class Header extends Component<IProps> {
 			className,
 			login,
 			errors,
+			isLogged,
 			clearErrors,
 			location: {
 				search
@@ -78,7 +78,7 @@ export class Header extends Component<IProps> {
 		const locale = context.getLocale();
 		const __ = context.bind(tr);
 		const links = getShareLinks(context);
-		const token = getToken();
+		const logged = isLogged();
 
 		return (
 			<>
@@ -120,19 +120,19 @@ export class Header extends Component<IProps> {
 								{__x`header.lang`}
 							</HeaderLink>
 							<HeaderLink
-								to={token ? '/cabinet' : {
+								to={logged ? '/cabinet' : {
 									search: addSearchParams(search, {
 										login: true
 									})
 								}}
 							>
-								{token ? __x`header.profile` : __x`header.login`}
+								{logged ? __x`header.profile` : __x`header.login`}
 							</HeaderLink>
 						</HeaderNav>
 						<ul
 							className={classes.controls}
 						>
-							{token ? (
+							{logged ? (
 								<Button
 									onClick={this.logout}
 								>
@@ -168,7 +168,12 @@ export class Header extends Component<IProps> {
 
 	@Bind()
 	private logout() {
-		localStorage.removeItem('authToken');
+
+		const {
+			logout
+		} = this.props;
+
+		logout();
 	}
 }
 
