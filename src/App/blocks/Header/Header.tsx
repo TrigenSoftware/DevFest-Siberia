@@ -19,8 +19,8 @@ import Section, {
 } from '~/components/Section';
 import Link from '~/components/Link';
 import Button from '~/components/Button';
+import Share from '~/components/Share';
 import Logo from '~/icons/logo.svg';
-import Share from '~/icons/share.svg';
 import {
 	routeProps,
 	addSearchParams
@@ -123,11 +123,17 @@ export class Header extends Component<IProps> {
 									{__x`header.buyTicket`}
 								</Button>
 							</HeaderLink>
-							<HeaderLink
-								to='/share'
-								icon={<Share/>}
-								title={__`header.share`}
-							/>
+							<Share
+								links={{
+									twitter:  'https:/twitter.com',
+									facebook: 'https:/facebook.com',
+									vk:       'https:/vk.com',
+									telegram: 'https:/telegram.com',
+									site:     'https:/site.com'
+								}}
+							>
+								{__x`header.share`}
+							</Share>
 						</ul>
 					</Section>
 				</header>

@@ -112,7 +112,7 @@
 	padding: 0;
 }
 
-.controls button {
+.controls > button {
 	margin: 0 -14px;
 }
 
@@ -139,7 +139,7 @@
 		height: 70px;
 	}
 
-	.root .Button {
+	.root > .Button {
 		border-radius: value(sizeBorderRadiusSm);
 		white-space: nowrap;
 		font-size: 16px;
@@ -163,7 +163,7 @@
 @media (max-width: value(sizeScreenSmMax)) {
 
 	/* stylelint-disable a11y/font-size-is-readable */
-	.root .Button {
+	.root .controls > li .Button {
 		font-size: 12px;
 	}/* stylelint-enable */
 }
