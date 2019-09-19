@@ -16,7 +16,8 @@
 		colorBlack,
 		colorBlue1,
 		colorBlue2,
-		colorBlue4;
+		colorBlue4,
+		colorRed;
 }
 
 :import {
@@ -57,6 +58,20 @@
 .root .Toggle {
 	left: 1.2rem;
 	color: value(colorWhite);
+}
+
+.root .logout {
+	margin: 0;
+	border-radius: 0;
+	background: transparent;
+	padding: 0;
+	font-size: 2rem;
+	font-weight: normal;
+}
+
+.root .logout:hover,
+.root .logout:focus {
+	background: transparent;
 }
 
 .section {

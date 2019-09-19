@@ -49,4 +49,16 @@ export class UserReducer extends Reducer {
 			errors.set(type, error)
 		);
 	}
+
+	clearErrors(state: UserState) {
+
+		const {
+			errors
+		} = state;
+
+		return state.set(
+			'errors',
+			errors.clear()
+		);
+	}
 }

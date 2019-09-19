@@ -1,3 +1,6 @@
+import {
+	Map
+} from 'immutable';
 import React, {
 	ChangeEvent,
 	ContextType,
@@ -7,6 +10,7 @@ import {
 	RouteComponentProps,
 	withRouter
 } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import {
 	I18nContext,
 	__ as tr,
@@ -17,6 +21,9 @@ import {
 	Debounce,
 	omit
 } from '@flexis/ui/helpers';
+import {
+	UserFieldsSpec
+} from '~/models/User';
 import FormGroup from '~/components/FormGroup';
 import LoginModal, {
 	IProps as ILoginModalProps,
@@ -29,18 +36,21 @@ import Input from '~/components/Input';
 import Link from '~/components/Link';
 import Button from '~/components/Button';
 import Modal from '~/components/Modal';
+import ErrorMessage from '~/components/ErrorMessage';
 import {
 	routeProps,
-	deleteSearchParams
-} from '../common/router';
-import {
-	noAroundSpacesPattern
-} from '~/containers/common';
+	deleteSearchParams,
+	getErrorMessage
+} from '../common';
 import validate from './validate';
 
 type IHeaderLoginModalProps = Omit<ILoginModalProps, 'children'>;
 
-export interface IProps extends IHeaderLoginModalProps, RouteComponentProps {}
+export interface IProps extends IHeaderLoginModalProps, RouteComponentProps {
+	errors: Map<any, Error>;
+	login(email: string, password: string);
+	clearErrors();
+}
 
 interface IState {
 	email: string;
@@ -56,6 +66,12 @@ const {
 export class HeaderLoginModal extends Component<IProps, IState> {
 
 	static contextType = I18nContext;
+
+	static propTypes = {
+		login:       PropTypes.func.isRequired,
+		clearErrors: PropTypes.func.isRequired,
+		errors:      PropTypes.any.isRequired
+	};
 
 	static getDerivedStateFromProps(
 		{
@@ -110,7 +126,12 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 
 		return (
 			<LoginModal
-				{...omit(props, routeProps)}
+				{...omit(props, [
+					...routeProps,
+					'login',
+					'errors',
+					'clearErrors'
+				])}
 				onClose={this.onClose}
 				active={active}
 			>
@@ -125,8 +146,8 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 						label={__`login.email`}
 					>
 						<Input
+							{...UserFieldsSpec.email}
 							id='email'
-							type='email'
 							placeholder={__`login.emailPlaceholder`}
 							name='email'
 							onChange={this.onInputChange}
@@ -138,15 +159,17 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 						label={__`login.password`}
 					>
 						<Input
+							{...UserFieldsSpec.password}
 							id='password'
-							type='password'
 							placeholder={__`login.passwordPlaceholder`}
 							name='password'
-							pattern={noAroundSpacesPattern}
 							onChange={this.onInputChange}
 							value={password}
 						/>
 					</FormGroup>
+					<ErrorMessage>
+						{this.error()}
+					</ErrorMessage>
 					<LoginModalFooter>
 						<Link
 							to={deleteSearchParams(search, 'login')}
@@ -208,11 +231,12 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 		});
 	}
 
+	@Bind()
 	private onSubmit(event: ChangeEvent<HTMLFormElement>) {
 
 		event.preventDefault();
 
-		console.log('submited');
+		this.login();
 	}
 
 	private validate(input: HTMLInputElement) {
@@ -220,6 +244,39 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 		const validityMessage = validate(input);
 
 		input.setCustomValidity(validityMessage);
+	}
+
+	private async login() {
+
+		const {
+			login,
+			clearErrors
+		} = this.props;
+		const {
+			email,
+			password
+		} = this.state;
+
+		const isLogged = await login(email, password);
+
+		if (isLogged) {
+			clearErrors();
+			this.setState(() => ({
+				active: false
+			}), this.goBack);
+		}
+	}
+
+	private error() {
+
+		const {
+			login,
+			errors
+		} = this.props;
+		const error = errors.get(login);
+		const message = getErrorMessage(error);
+
+		return message;
 	}
 }
 

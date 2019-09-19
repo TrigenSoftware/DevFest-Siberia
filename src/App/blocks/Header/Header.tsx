@@ -3,9 +3,9 @@ import React, {
 	Component
 } from 'react';
 import {
-	RouteComponentProps,
 	withRouter
 } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import {
 	I18nContext,
 	__ as tr,
@@ -17,9 +17,7 @@ import {
 import {
 	getShareLinks
 } from '~/services/i18n';
-import Section, {
-	IProps as ISectionProps
-} from '~/components/Section';
+import Section from '~/components/Section';
 import Link from '~/components/Link';
 import Button from '~/components/Button';
 import Share from '~/components/Share';
@@ -39,15 +37,24 @@ import {
 } from './HeaderSpacer';
 import HeaderLoginModal from './HeaderLoginModal';
 import {
+	IProps
+} from './types';
+import {
 	style,
 	classes
 } from './Header.st.css';
 
-export interface IProps extends ISectionProps, RouteComponentProps {}
-
 export class Header extends Component<IProps> {
 
 	static contextType = I18nContext;
+
+	static propTypes = {
+		login:       PropTypes.func.isRequired,
+		logout:      PropTypes.func.isRequired,
+		isLogged:    PropTypes.func.isRequired,
+		clearErrors: PropTypes.func.isRequired,
+		user:        PropTypes.any
+	};
 
 	context!: ContextType<typeof I18nContext>;
 
@@ -55,6 +62,11 @@ export class Header extends Component<IProps> {
 
 		const {
 			className,
+			login,
+			logout,
+			errors,
+			isLogged,
+			clearErrors,
 			location: {
 				search
 			},
@@ -66,6 +78,7 @@ export class Header extends Component<IProps> {
 		const locale = context.getLocale();
 		const __ = context.bind(tr);
 		const links = getShareLinks(context);
+		const logged = isLogged();
 
 		return (
 			<>
@@ -107,26 +120,39 @@ export class Header extends Component<IProps> {
 								{__x`header.lang`}
 							</HeaderLink>
 							<HeaderLink
-								to={{
+								to={logged ? '/cabinet' : {
 									search: addSearchParams(search, {
 										login: true
 									})
 								}}
 							>
-								{__x`header.login`}
+								{logged
+									? __x`header.profile`
+									: __x`header.login`
+								}
 							</HeaderLink>
 						</HeaderNav>
 						<ul
 							className={classes.controls}
 						>
-							<HeaderLink
-								to='/buy'
-								disguised
-							>
-								<Button>
-									{__x`header.buyTicket`}
+							{logged ? (
+								<Button
+									className={classes.logout}
+									onClick={logout}
+								>
+									{__x`header.logout`}
 								</Button>
-							</HeaderLink>
+							) : (
+
+								<HeaderLink
+									to='/buy'
+									disguised
+								>
+									<Button>
+										{__x`header.buyTicket`}
+									</Button>
+								</HeaderLink>
+							)}
 							<Share
 								links={links as any}
 							>
@@ -135,7 +161,11 @@ export class Header extends Component<IProps> {
 						</ul>
 					</Section>
 				</header>
-				<HeaderLoginModal/>
+				<HeaderLoginModal
+					login={login}
+					errors={errors}
+					clearErrors={clearErrors}
+				/>
 			</>
 		);
 	}

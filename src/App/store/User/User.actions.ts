@@ -19,7 +19,15 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 
 		const redirectUrl = await userService.buy(registrationData);
 
-		return redirectUrl;
+		if (redirectUrl === process.env.API_URL) {
+			this.setError({
+				type:  this.buy,
+				error: new Error('User already exist')
+			});
+		} else {
+			this.clearErrors();
+			window.location.href = redirectUrl;
+		}
 	}
 
 	async login(email: string, password: string) {
@@ -30,12 +38,16 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 
 			this.setUser(user);
 
+			return true;
+
 		} catch (error) {
 			this.setUser(null);
 			this.setError({
 				type: this.login,
 				error
 			});
+
+			return false;
 		}
 	}
 
@@ -55,7 +67,42 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 		}
 	}
 
+	async getProfile() {
+
+		try {
+
+			const profile = await userService.getProfile();
+
+			this.setUser(profile);
+
+		} catch (error) {
+			this.setError({
+				type: this.getProfile,
+				error
+			});
+		}
+	}
+
+	isLogged() {
+
+		const token = userService.getToken();
+
+		if (token) {
+			return true;
+		}
+
+		return false;
+	}
+
+	logout() {
+
+		userService.logout();
+
+		location.reload();
+	}
+
 	abstract setUser(payload: SetUserPayload);
 	abstract setOrder(payload: SetOrderPayload);
 	abstract setError(payload: SetUserErrorPayload);
+	abstract clearErrors();
 }

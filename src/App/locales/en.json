@@ -11,6 +11,8 @@
 		"cfp": "Become a speaker",
 		"lang": "Ru",
 		"login": "Log In",
+		"logout": "Log out",
+		"profile": "Profile",
 		"buyTicket": "Buy ticket",
 		"share": "Share",
 		"links": {
@@ -418,7 +420,9 @@
 		"id": "Ticket ID",
 		"for": "For",
 		"where": "Where",
+		"location": "Academpark, 18",
 		"when": "When",
+		"data": "29 november – 1 december",
 		"ticket": "One ticket"
 	},
 	"login": {

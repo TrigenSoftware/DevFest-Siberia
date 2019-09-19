@@ -56,12 +56,12 @@ export default class Subscribe extends Component<IProps> {
 						className={classes.group}
 					>
 						<SROnly>
-							<label htmlFor='email'>Email</label>
+							<label htmlFor='emailSubscribe'>Email</label>
 						</SROnly>
 						<input
 							className={classes.input}
 							required
-							id='email'
+							id='emailSubscribe'
 							type='email'
 							name='EMAIL'
 							placeholder='Email'

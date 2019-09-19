@@ -1,0 +1,13 @@
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named: colorRed;
+}
+
+.root {
+	color: value(colorRed);
+}
+
+.root::before {
+	content: '\200B';
+}

@@ -14,11 +14,11 @@ import {
 import {
 	getLocaleFromPath
 } from './services/i18n';
-// import {
-// 	Provider
-// } from '@flexis/redux';
+import {
+	Provider
+} from '@flexis/redux';
 import App from './App';
-// import createStore from './store';
+import createStore from './store';
 
 declare const I18N: string;
 
@@ -66,15 +66,15 @@ async function main() {
 
 	const root = document.querySelector('#view');
 	const i18n = await getI18nConfig();
-	// const store = createStore();
+	const store = createStore();
 	const app = (
 		<I18nProvider
 			{...i18n}
 			objectNotation
 		>
-		{/* <Provider store={store}> */}
-			<App/>
-		{/* </Provider> */}
+			<Provider store={store}>
+				<App/>
+			</Provider>
 		</I18nProvider>
 	);
 
