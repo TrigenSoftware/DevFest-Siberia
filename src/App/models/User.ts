@@ -1,6 +1,9 @@
 import {
 	Record
 } from 'immutable';
+import {
+	noAroundSpacesPattern
+} from '~/containers/common';
 
 export interface IUserProps {
 	userId: number;
@@ -23,3 +26,35 @@ const User = Record<IUserProps>({
 });
 
 export default User;
+
+export const UserFieldsSpec = {
+	firstname: {
+		required: true,
+		pattern:  noAroundSpacesPattern
+	},
+	lastname: {
+		required: true,
+		pattern:  noAroundSpacesPattern
+	},
+	position: {
+		required: true,
+		pattern:  noAroundSpacesPattern
+	},
+	company: {
+		required: true,
+		pattern:  noAroundSpacesPattern
+	},
+	city: {
+		required: true,
+		pattern:  noAroundSpacesPattern
+	},
+	email: {
+		type:     'email',
+		required: true
+	},
+	password: {
+		type:      'password',
+		required:  true,
+		pattern:   noAroundSpacesPattern
+	}
+};

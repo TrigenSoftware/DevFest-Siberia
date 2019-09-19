@@ -20,6 +20,9 @@ import {
 	omit
 } from '@flexis/ui/helpers';
 import {
+	UserFieldsSpec
+} from '~/models/User';
+import {
 	routeProps,
 	getErrorMessage
 } from '~/blocks/common';
@@ -35,9 +38,6 @@ import FormGroup from '~/components/FormGroup';
 import Input from '~/components/Input';
 import Button from '~/components/Button';
 import Link from '~/components/Link';
-import {
-	noAroundSpacesPattern
-} from '../common';
 import {
 	IProps,
 	IState
@@ -123,11 +123,10 @@ export class BuyContainer extends Component<IProps, IState> {
 							label={__`buy.firstname`}
 						>
 							<Input
+								{...UserFieldsSpec.firstname}
 								id='firstname'
 								placeholder={__`buy.firstname`}
 								name='firstname'
-								required
-								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={firstname}
 							/>
@@ -137,11 +136,10 @@ export class BuyContainer extends Component<IProps, IState> {
 							label={__`buy.lastname`}
 						>
 							<Input
+								{...UserFieldsSpec.lastname}
 								id='lastname'
 								placeholder={__`buy.lastname`}
 								name='lastname'
-								required
-								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={lastname}
 							/>
@@ -151,11 +149,10 @@ export class BuyContainer extends Component<IProps, IState> {
 							label={__`buy.position`}
 						>
 							<Input
+								{...UserFieldsSpec.position}
 								id='position'
 								placeholder={__`buy.position`}
 								name='position'
-								required
-								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={position}
 							/>
@@ -165,11 +162,10 @@ export class BuyContainer extends Component<IProps, IState> {
 							label={__`buy.company`}
 						>
 							<Input
+								{...UserFieldsSpec.company}
 								id='company'
 								placeholder={__`buy.company`}
 								name='company'
-								required
-								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={company}
 							/>
@@ -179,11 +175,10 @@ export class BuyContainer extends Component<IProps, IState> {
 							label={__`buy.city`}
 						>
 							<Input
+								{...UserFieldsSpec.city}
 								id='city'
 								placeholder={__`buy.city`}
 								name='city'
-								required
-								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={city}
 							/>
@@ -194,12 +189,10 @@ export class BuyContainer extends Component<IProps, IState> {
 							notice={__`buy.notice`}
 						>
 							<Input
+								{...UserFieldsSpec.email}
 								id='email'
-								type='email'
 								placeholder={__`buy.email`}
 								name='email'
-								required
-								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={email}
 							/>

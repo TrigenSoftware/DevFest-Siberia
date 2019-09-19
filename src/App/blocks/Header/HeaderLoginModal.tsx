@@ -21,6 +21,9 @@ import {
 	Debounce,
 	omit
 } from '@flexis/ui/helpers';
+import {
+	UserFieldsSpec
+} from '~/models/User';
 import FormGroup from '~/components/FormGroup';
 import LoginModal, {
 	IProps as ILoginModalProps,
@@ -148,8 +151,8 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 						label={__`login.email`}
 					>
 						<Input
+							{...UserFieldsSpec.email}
 							id='email'
-							type='email'
 							placeholder={__`login.emailPlaceholder`}
 							name='email'
 							onChange={this.onInputChange}
@@ -161,8 +164,8 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 						label={__`login.password`}
 					>
 						<Input
+							{...UserFieldsSpec.password}
 							id='password'
-							type='password'
 							placeholder={__`login.passwordPlaceholder`}
 							name='password'
 							pattern={noAroundSpacesPattern}

@@ -25,7 +25,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				error: new Error('User already exist')
 			});
 		} else {
-			this.setError(null);
+			this.clearErrors();
 			window.location.href = redirectUrl;
 		}
 	}
