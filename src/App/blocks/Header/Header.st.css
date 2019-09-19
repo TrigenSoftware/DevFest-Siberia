@@ -60,6 +60,19 @@
 	color: value(colorWhite);
 }
 
+.root .logout {
+	margin: 0;
+	background: transparent;
+	padding: 0;
+	font-size: 2rem;
+	font-weight: normal;
+}
+
+.root .logout:hover,
+.root .logout:focus {
+	background: transparent;
+}
+
 .section {
 	display: flex;
 	position: fixed;

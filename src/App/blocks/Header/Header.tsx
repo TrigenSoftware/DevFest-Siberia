@@ -137,6 +137,7 @@ export class Header extends Component<IProps> {
 						>
 							{logged ? (
 								<Button
+									className={classes.logout}
 									onClick={this.logout}
 								>
 									{__x`header.logout`}
