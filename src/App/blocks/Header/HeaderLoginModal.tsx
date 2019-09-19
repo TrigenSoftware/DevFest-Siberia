@@ -168,7 +168,6 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 							id='password'
 							placeholder={__`login.passwordPlaceholder`}
 							name='password'
-							pattern={noAroundSpacesPattern}
 							onChange={this.onInputChange}
 							value={password}
 						/>
