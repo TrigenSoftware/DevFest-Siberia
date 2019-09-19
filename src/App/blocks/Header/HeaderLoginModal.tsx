@@ -41,9 +41,6 @@ import {
 	deleteSearchParams,
 	getErrorMessage
 } from '../common';
-import {
-	noAroundSpacesPattern
-} from '~/containers/common';
 import validate from './validate';
 import {
 	classes
