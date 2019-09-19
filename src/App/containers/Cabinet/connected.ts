@@ -13,7 +13,7 @@ import CabinetContainer from './Cabinet';
 
 export function mapStateToProps({ user }: State) {
 	return {
-		user: user.user,
+		user:  user.user,
 		order: user.order
 	};
 }

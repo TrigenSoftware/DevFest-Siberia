@@ -13,9 +13,7 @@ import BuyContainer from './Buy';
 
 export function mapStateToProps({ user }: State) {
 	return {
-		user:   user.user,
-		order:  user.order,
-		errors: user.errors
+		user: user.user
 	};
 }
 
