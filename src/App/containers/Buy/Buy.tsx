@@ -98,7 +98,10 @@ export class BuyContainer extends Component<IProps, IState> {
 
 		return (
 			<Section
-				{...omit(props, routeProps)}
+				{...omit(props, [
+					...routeProps,
+					'buy'
+				])}
 				className={style(classes.root, className)}
 			>
 				<div
