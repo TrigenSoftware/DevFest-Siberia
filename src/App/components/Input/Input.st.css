@@ -61,7 +61,7 @@
 	-st-mixin: outline;
 }
 
-.root:focus:invalid {
+/* .root:focus:invalid {
 	border: 1px solid value(colorRed);
 	color: value(colorRed);
-}
+} */
