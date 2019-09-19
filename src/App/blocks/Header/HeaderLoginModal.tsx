@@ -262,9 +262,9 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 			password
 		} = this.state;
 
-		const response = await login(email, password);
+		const isLogged = await login(email, password);
 
-		if (response) {
+		if (isLogged) {
 			clearErrors();
 			this.setState(() => ({
 				active: false
