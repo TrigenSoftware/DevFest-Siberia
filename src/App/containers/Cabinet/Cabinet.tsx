@@ -41,6 +41,7 @@ export class CabinetContainer extends Component<IProps> {
 
 	static propTypes = {
 		fetchOrders: PropTypes.func.isRequired,
+		getProfile:  PropTypes.func.isRequired,
 		isLogged:    PropTypes.func.isRequired
 	};
 
@@ -50,7 +51,7 @@ export class CabinetContainer extends Component<IProps> {
 
 		const {
 			className,
-			user,
+			user: userFromProps,
 			order,
 			...props
 		} = this.props;
@@ -58,7 +59,12 @@ export class CabinetContainer extends Component<IProps> {
 			context
 		} = this;
 		const __ = context.bind(tr);
+		let user;
 		let tickets = [];
+
+		if (userFromProps) {
+			user = userFromProps.toJS();
+		}
 
 		if (order) {
 			tickets = order.toJS().items;
@@ -69,6 +75,7 @@ export class CabinetContainer extends Component<IProps> {
 				{...omit(props, [
 					...routeProps,
 					'fetchOrders',
+					'getProfile',
 					'isLogged'
 				])}
 				className={style(classes.root, className)}
@@ -79,20 +86,23 @@ export class CabinetContainer extends Component<IProps> {
 				<article
 					className={classes.article}
 				>
-					{tickets && tickets.map(ticket => (
+					{user && tickets && tickets.map(({
+						ticket,
+						productName
+					}) => (
 						<TicketPreview
 							className={classes.ticket}
-							key={ticket.ticket.ticketUID}
+							key={ticket.ticketUID}
 						>
 							<TickerPreviewPrimary>
 								<TickerPreviewGroup>
 									<TickerPreviewField
 										label={__`cabinet.id`}
-										value={ticket.ticket.ticketUID}
+										value={ticket.ticketUID}
 									/>
 									<TickerPreviewField
 										label={__`cabinet.for`}
-										value='Jhon Doe'
+										value={`${user.firstname} ${user.lastname}`}
 									/>
 								</TickerPreviewGroup>
 								<TickerPreviewGroup>
@@ -107,7 +117,7 @@ export class CabinetContainer extends Component<IProps> {
 								</TickerPreviewGroup>
 							</TickerPreviewPrimary>
 							<TicketPreviewAuxiliary>
-								{ticket.productName}
+								{productName}
 							</TicketPreviewAuxiliary>
 						</TicketPreview>
 					))}
@@ -120,6 +130,7 @@ export class CabinetContainer extends Component<IProps> {
 
 		const {
 			history,
+			getProfile,
 			fetchOrders,
 			isLogged
 		} = this.props;
@@ -129,6 +140,7 @@ export class CabinetContainer extends Component<IProps> {
 
 		if (isLogged()) {
 			fetchOrders();
+			getProfile();
 		} else {
 			history.push(getLocalizedPath(context, '/'));
 		}

@@ -30,6 +30,8 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 
 			this.setUser(user);
 
+			location.reload();
+
 		} catch (error) {
 			this.setUser(null);
 			this.setError({
@@ -50,6 +52,22 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 		} catch (error) {
 			this.setError({
 				type: this.fetchOrders,
+				error
+			});
+		}
+	}
+
+	async getProfile() {
+
+		try {
+
+			const profile = await userService.getProfile();
+
+			this.setUser(profile);
+
+		} catch (error) {
+			this.setError({
+				type: this.getProfile,
 				error
 			});
 		}

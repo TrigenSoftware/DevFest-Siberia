@@ -40,6 +40,19 @@ export async function login(email: string, password: string) {
 	return userFromResponseData(loginData.profile);
 }
 
+export async function getProfile() {
+
+	logger.debug('getProfile');
+
+	const {
+		data: profileData
+	} = await client.get('api/profile');
+
+	logger.debug('getProfile', 'Response:', profileData);
+
+	return userFromResponseData(profileData);
+}
+
 export async function fetchOrders() {
 
 	logger.debug('fetchOrders');

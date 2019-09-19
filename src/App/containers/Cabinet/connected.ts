@@ -21,6 +21,7 @@ export function mapStateToProps({ user }: State) {
 export function mapActionsToProps({ user }: IActions) {
 	return {
 		fetchOrders: user.fetchOrders,
+		getProfile:  user.getProfile,
 		isLogged:    user.isLogged
 	};
 }
