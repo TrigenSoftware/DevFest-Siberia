@@ -38,6 +38,7 @@ import FormGroup from '~/components/FormGroup';
 import Input from '~/components/Input';
 import Button from '~/components/Button';
 import Link from '~/components/Link';
+import ErrorMessage from '~/components/ErrorMessage';
 import {
 	IProps,
 	IState
@@ -197,11 +198,9 @@ export class BuyContainer extends Component<IProps, IState> {
 								value={email}
 							/>
 						</FormGroup>
-						<div
-							className={classes.error}
-						>
+						<ErrorMessage>
 							{this.error()}
-						</div>
+						</ErrorMessage>
 						<TicketFormFooter>
 							<Button
 								variant='secondary'

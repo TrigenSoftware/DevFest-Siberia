@@ -36,15 +36,13 @@ import Input from '~/components/Input';
 import Link from '~/components/Link';
 import Button from '~/components/Button';
 import Modal from '~/components/Modal';
+import ErrorMessage from '~/components/ErrorMessage';
 import {
 	routeProps,
 	deleteSearchParams,
 	getErrorMessage
 } from '../common';
 import validate from './validate';
-import {
-	classes
-} from './Header.st.css';
 
 type IHeaderLoginModalProps = Omit<ILoginModalProps, 'children'>;
 
@@ -169,11 +167,9 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 							value={password}
 						/>
 					</FormGroup>
-					<div
-						className={classes.error}
-					>
+					<ErrorMessage>
 						{this.error()}
-					</div>
+					</ErrorMessage>
 					<LoginModalFooter>
 						<Link
 							to={deleteSearchParams(search, 'login')}
