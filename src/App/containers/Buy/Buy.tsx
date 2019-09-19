@@ -232,7 +232,7 @@ export class BuyContainer extends Component<IProps, IState> {
 	}
 
 	@Bind()
-	private onSubmit(event: ChangeEvent<HTMLFormElement>) {
+	private async onSubmit(event: ChangeEvent<HTMLFormElement>) {
 
 		event.preventDefault();
 
@@ -242,7 +242,9 @@ export class BuyContainer extends Component<IProps, IState> {
 
 		const userData = this.getUserData();
 
-		buy(userData).then(redurectUrl => window.location.href = redurectUrl);
+		const redurectUrl = await buy(userData);
+
+		window.location.href = redurectUrl;
 	}
 
 	private validate(input: HTMLInputElement) {

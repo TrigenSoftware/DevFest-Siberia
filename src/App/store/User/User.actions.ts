@@ -30,7 +30,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 
 			this.setUser(user);
 
-			location.reload();
+			return true;
 
 		} catch (error) {
 			this.setUser(null);
@@ -38,6 +38,8 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				type: this.login,
 				error
 			});
+
+			return false;
 		}
 	}
 

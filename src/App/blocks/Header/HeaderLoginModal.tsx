@@ -251,11 +251,10 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 		input.setCustomValidity(validityMessage);
 	}
 
-	private login() {
+	private async login() {
 
 		const {
 			login,
-			errors,
 			clearErrors
 		} = this.props;
 		const {
@@ -263,10 +262,10 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 			password
 		} = this.state;
 
-		clearErrors();
-		login(email, password);
+		const response = await login(email, password);
 
-		if (errors.size === 0) {
+		if (response) {
+			clearErrors();
 			this.setState(() => ({
 				active: false
 			}), this.goBack);
