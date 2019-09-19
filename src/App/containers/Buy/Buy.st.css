@@ -6,7 +6,9 @@
 
 :import {
 	-st-from: '~/components/variables.st.css';
-	-st-named: sizeBorderRadius;
+	-st-named:
+		sizeBorderRadius,
+		colorRed;
 }
 
 :import {
@@ -24,4 +26,12 @@
 	box-shadow: 0 0 rel(20, 24) 0 rgba(0, 0, 0, .32);
 	border-radius: value(sizeBorderRadius);
 	max-width: 1000px;
+}
+
+.error {
+	color: value(colorRed);
+}
+
+.error::before {
+	content: '\200B';
 }

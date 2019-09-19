@@ -57,11 +57,11 @@
 	color: value(colorBlue3);
 }
 
-.root:invalid {
-	border: 1px solid value(colorRed);
-	color: value(colorRed);
-}
-
 .root:focus {
 	-st-mixin: outline;
+}
+
+.root:focus:invalid {
+	border: 1px solid value(colorRed);
+	color: value(colorRed);
 }

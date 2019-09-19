@@ -20,7 +20,8 @@ import {
 	omit
 } from '@flexis/ui/helpers';
 import {
-	routeProps
+	routeProps,
+	getErrorMessage
 } from '~/blocks/common';
 import Section from '~/components/Section';
 import TabsNav, {
@@ -63,7 +64,8 @@ export class BuyContainer extends Component<IProps, IState> {
 	static contextType = I18nContext;
 
 	static propTypes = {
-		buy: PropTypes.func.isRequired
+		buy:    PropTypes.func.isRequired,
+		errors: PropTypes.any.isRequired
 	};
 
 	context!: ContextType<typeof I18nContext>;
@@ -124,6 +126,7 @@ export class BuyContainer extends Component<IProps, IState> {
 								id='firstname'
 								placeholder={__`buy.firstname`}
 								name='firstname'
+								required
 								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={firstname}
@@ -137,6 +140,7 @@ export class BuyContainer extends Component<IProps, IState> {
 								id='lastname'
 								placeholder={__`buy.lastname`}
 								name='lastname'
+								required
 								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={lastname}
@@ -150,6 +154,7 @@ export class BuyContainer extends Component<IProps, IState> {
 								id='position'
 								placeholder={__`buy.position`}
 								name='position'
+								required
 								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={position}
@@ -163,6 +168,7 @@ export class BuyContainer extends Component<IProps, IState> {
 								id='company'
 								placeholder={__`buy.company`}
 								name='company'
+								required
 								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={company}
@@ -176,6 +182,7 @@ export class BuyContainer extends Component<IProps, IState> {
 								id='city'
 								placeholder={__`buy.city`}
 								name='city'
+								required
 								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={city}
@@ -191,11 +198,17 @@ export class BuyContainer extends Component<IProps, IState> {
 								type='email'
 								placeholder={__`buy.email`}
 								name='email'
+								required
 								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={email}
 							/>
 						</FormGroup>
+						<div
+							className={classes.error}
+						>
+							{this.error()}
+						</div>
 						<TicketFormFooter>
 							<Button
 								variant='secondary'
@@ -285,6 +298,18 @@ export class BuyContainer extends Component<IProps, IState> {
 		};
 
 		return userData;
+	}
+
+	private error() {
+
+		const {
+			buy,
+			errors
+		} = this.props;
+		const error = errors.get(buy);
+		const message = getErrorMessage(error);
+
+		return message;
 	}
 }
 
