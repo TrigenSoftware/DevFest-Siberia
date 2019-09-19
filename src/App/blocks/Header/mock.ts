@@ -45,15 +45,6 @@ export const actions = {
 			: action;
 	},
 
-	logout() {
-
-		const {
-			user
-		} = store.actions;
-
-		user.logout();
-	},
-
 	async setError() {
 
 		const {
