@@ -242,12 +242,9 @@ export class BuyContainer extends Component<IProps, IState> {
 		const {
 			buy
 		} = this.props;
-
 		const userData = this.getUserData();
 
-		const redurectUrl = await buy(userData);
-
-		window.location.href = redurectUrl;
+		buy(userData);
 	}
 
 	private validate(input: HTMLInputElement) {

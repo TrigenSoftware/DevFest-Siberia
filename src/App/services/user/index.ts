@@ -13,9 +13,7 @@ export async function buy(registrationData) {
 
 	const {
 		data: buyData
-	} = await client.post('auth/register', {
-		...registrationData
-	});
+	} = await client.post('auth/register', registrationData);
 
 	logger.debug('buy', 'Response:', buyData);
 

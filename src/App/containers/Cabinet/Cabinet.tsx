@@ -51,7 +51,7 @@ export class CabinetContainer extends Component<IProps> {
 
 		const {
 			className,
-			user: userFromProps,
+			user,
 			order,
 			...props
 		} = this.props;
@@ -59,16 +59,6 @@ export class CabinetContainer extends Component<IProps> {
 			context
 		} = this;
 		const __ = context.bind(tr);
-		let user;
-		let tickets = [];
-
-		if (userFromProps) {
-			user = userFromProps.toJS();
-		}
-
-		if (order) {
-			tickets = order.toJS().items;
-		}
 
 		return (
 			<Section
@@ -86,7 +76,7 @@ export class CabinetContainer extends Component<IProps> {
 				<article
 					className={classes.article}
 				>
-					{user && tickets && tickets.map(({
+					{user && order && order.items.map(({
 						ticket,
 						productName
 					}) => (

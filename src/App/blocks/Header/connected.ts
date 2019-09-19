@@ -21,7 +21,7 @@ export function mapStateToProps({ user }: State) {
 export function mapActionsToProps({ user }: IActions) {
 	return {
 		login:       user.login,
-		logout:		 user.logout,
+		logout:      user.logout,
 		isLogged:    user.isLogged,
 		clearErrors: user.clearErrors
 	};

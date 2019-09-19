@@ -12,7 +12,6 @@ import {
 	__x
 } from 'i18n-for-react';
 import {
-	Bind,
 	omit
 } from '@flexis/ui/helpers';
 import {
@@ -64,6 +63,7 @@ export class Header extends Component<IProps> {
 		const {
 			className,
 			login,
+			logout,
 			errors,
 			isLogged,
 			clearErrors,
@@ -83,10 +83,7 @@ export class Header extends Component<IProps> {
 		return (
 			<>
 				<header
-					{...omit(props, [
-						...routeProps,
-						'logout'
-					])}
+					{...omit(props, routeProps)}
 					className={style(classes.root, className)}
 				>
 					<Section
@@ -129,7 +126,10 @@ export class Header extends Component<IProps> {
 									})
 								}}
 							>
-								{logged ? __x`header.profile` : __x`header.login`}
+								{logged
+									? __x`header.profile`
+									: __x`header.login`
+								}
 							</HeaderLink>
 						</HeaderNav>
 						<ul
@@ -138,7 +138,7 @@ export class Header extends Component<IProps> {
 							{logged ? (
 								<Button
 									className={classes.logout}
-									onClick={this.logout}
+									onClick={logout}
 								>
 									{__x`header.logout`}
 								</Button>
@@ -168,16 +168,6 @@ export class Header extends Component<IProps> {
 				/>
 			</>
 		);
-	}
-
-	@Bind()
-	private logout() {
-
-		const {
-			logout
-		} = this.props;
-
-		logout();
 	}
 }
 

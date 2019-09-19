@@ -62,6 +62,7 @@
 
 .root .logout {
 	margin: 0;
+	border-radius: 0;
 	background: transparent;
 	padding: 0;
 	font-size: 2rem;

@@ -19,6 +19,8 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 
 		const redirectUrl = await userService.buy(registrationData);
 
+		window.location.href = redirectUrl;
+
 		return redirectUrl;
 	}
 
