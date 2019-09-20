@@ -12,7 +12,6 @@ import {
 	__x
 } from 'i18n-for-react';
 import {
-	Bind,
 	omit
 } from '@flexis/ui/helpers';
 import ConfirmModal, {
@@ -22,8 +21,6 @@ import {
 	routeProps,
 	deleteSearchParams
 } from '../common';
-
-let confirmRef = null;
 
 type IPaidMessageModalProps = Omit<IConfirmModalProps, 'children'>;
 
@@ -35,6 +32,8 @@ export class PaidMessageModal extends Component<IProps> {
 
 	context!: ContextType<typeof I18nContext>;
 
+	confirmRef = null;
+
 	render() {
 
 		const {
@@ -45,32 +44,15 @@ export class PaidMessageModal extends Component<IProps> {
 			<ConfirmModal
 				{...omit(props, routeProps)}
 				elementRef={(ref) => {
-					confirmRef = ref;
+					this.confirmRef = ref;
 				}}
-				onClose={this.onClose}
 			>
 				{__x`confirm.message`}
 			</ConfirmModal>
 		);
 	}
 
-	componentDidMount() {
-
-		const {
-			search
-		} = this.props.location;
-
-		const searchWithParam = /[^\w]paid=/.test(search);
-
-		if (searchWithParam) {
-			confirmRef.show();
-		} else {
-			confirmRef.hide();
-		}
-	}
-
-	@Bind()
-	private onClose() {
+	async componentDidMount() {
 
 		const {
 			props
@@ -82,9 +64,15 @@ export class PaidMessageModal extends Component<IProps> {
 			}
 		} = props;
 
-		history.push({
-			search: deleteSearchParams(search, 'paid')
-		});
+		const searchWithParam = /[^\w]paid=/.test(search);
+
+		if (searchWithParam) {
+			await this.confirmRef.show();
+
+			history.push({
+				search: deleteSearchParams(search, 'paid')
+			});
+		}
 	}
 }
 
