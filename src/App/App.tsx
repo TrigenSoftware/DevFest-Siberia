@@ -35,6 +35,7 @@ import Footer from '~/blocks/Footer';
 import {
 	Routes
 } from './routes';
+import initAnalytics from './analytics';
 
 export interface IProps {
 	disableRouter?: boolean;
@@ -117,5 +118,6 @@ export default class App extends Component<IProps> {
 
 	componentDidMount() {
 		setAppElement('#view');
+		initAnalytics();
 	}
 }
