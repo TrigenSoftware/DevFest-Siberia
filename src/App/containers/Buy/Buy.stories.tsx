@@ -16,6 +16,8 @@ import {
 import {
 	I18nProvider
 } from 'i18n-for-react';
+import Header from '~/blocks/Header/mock';
+import Footer from '~/blocks/Footer';
 import ru from '~/locales/ru.json';
 import en from '~/locales/en.json';
 import Buy, {
@@ -53,17 +55,21 @@ storiesOf('Containers|Buy', module)
 		'with default state',
 		() => (
 			<MemoryRouter initialEntries={['/buy']}>
-			<Route
-				exact
-				path='/buy'
-				component={props => (
-					<Provider store={store}>
-						<Buy
-							{...props}
-						/>
-					</Provider>
-				)}
-			/>
-		</MemoryRouter>
+				<Route
+					exact
+					path='/buy'
+					component={props => (
+						<>
+							<Provider store={store}>
+								<Header/>
+								<Buy
+									{...props}
+								/>
+							</Provider>
+							<Footer/>
+						</>
+					)}
+				/>
+			</MemoryRouter>
 		)
 	);

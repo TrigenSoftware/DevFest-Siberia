@@ -3,6 +3,9 @@ import {
 	MemoryRouter
 } from 'react-router';
 import {
+	Provider
+} from '@flexis/redux';
+import {
 	storiesOf
 } from '@storybook/react';
 import {
@@ -11,6 +14,10 @@ import {
 import {
 	I18nProvider
 } from 'i18n-for-react';
+import Header, {
+	store
+} from '~/blocks/Header/mock';
+import Footer from '~/blocks/Footer';
 import ru from '~/locales/ru.json';
 import en from '~/locales/en.json';
 import CodeOfConduct from './';
@@ -26,14 +33,14 @@ storiesOf('Containers|CodeOfConduct', module)
 		info: stylableApi
 	})
 	.addDecorator(story => (
-		<MemoryRouter initialEntries={['/']}>
-			{story()}
-		</MemoryRouter>
-	))
-	.addDecorator(story => (
 		<div style={{ margin: '-12px' }}>
 			{story()}
 		</div>
+	))
+	.addDecorator(story => (
+		<MemoryRouter initialEntries={['/code-of-conduct']}>
+			{story()}
+		</MemoryRouter>
 	))
 	.addDecorator(story => (
 		<I18nProvider
@@ -50,6 +57,12 @@ storiesOf('Containers|CodeOfConduct', module)
 	.add(
 		'with default state',
 		() => (
-			<CodeOfConduct/>
+			<>
+				<Provider store={store}>
+					<Header/>
+				</Provider>
+				<CodeOfConduct/>
+				<Footer/>
+			</>
 		)
 	);
