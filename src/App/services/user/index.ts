@@ -1,4 +1,3 @@
-import axiosDefaults from 'axios/lib/defaults';
 import createLogger from '~/services/logger';
 import client from './client';
 import {
@@ -73,15 +72,6 @@ export function logout() {
 }
 
 export function saveToken(token: string) {
-
-	client.defaults.transformRequest = [
-		...axiosDefaults.transformRequest,
-		(data, headers) => {
-			headers['X-Auth-Key'] = token;
-			return data;
-		}
-	];
-
 	localStorage.setItem('authToken', token);
 }
 
