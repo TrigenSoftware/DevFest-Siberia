@@ -63,7 +63,6 @@ export class PaidMessageModal extends Component<IProps> {
 				search
 			}
 		} = props;
-
 		const searchWithParam = /[^\w]paid=/.test(search);
 
 		if (searchWithParam) {
