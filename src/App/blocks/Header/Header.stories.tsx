@@ -96,4 +96,22 @@ storiesOf('Blocks|Header', module)
 				/>
 			</MemoryRouter>
 		)
+	)
+	.add(
+		'with paid modal',
+		() => (
+			<MemoryRouter initialEntries={['/?paid=true']}>
+				<Route
+					exact
+					path='/'
+					component={props => (
+						<Provider store={store}>
+							<Header
+								{...props}
+							/>
+						</Provider>
+					)}
+				/>
+			</MemoryRouter>
+		)
 	);
