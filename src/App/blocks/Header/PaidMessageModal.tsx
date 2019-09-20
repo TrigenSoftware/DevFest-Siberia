@@ -1,3 +1,4 @@
+/* tslint:disable jsx-no-lambda */
 import React, {
 	ContextType,
 	Component
@@ -12,10 +13,8 @@ import {
 } from 'i18n-for-react';
 import {
 	Bind,
-	Debounce,
 	omit
 } from '@flexis/ui/helpers';
-import Modal from '~/components/Modal';
 import ConfirmModal, {
 	IProps as IConfirmModalProps
 } from '~/components/ConfirmModal';
@@ -24,51 +23,15 @@ import {
 	deleteSearchParams
 } from '../common';
 
+let confirmRef = null;
+
 type IPaidMessageModalProps = Omit<IConfirmModalProps, 'children'>;
 
 export interface IProps extends IPaidMessageModalProps, RouteComponentProps {}
 
-interface IState {
-	active: boolean;
-	prevSearch: string;
-}
-
-const {
-	transitionDuration
-} = Modal.defaultProps;
-
-export class PaidMessageModal extends Component<IProps, IState> {
+export class PaidMessageModal extends Component<IProps> {
 
 	static contextType = I18nContext;
-
-	static getDerivedStateFromProps(
-		{
-			location: {
-				search
-			}
-		}: IProps,
-		{
-			prevSearch
-		}: IState
-	) {
-
-		if (prevSearch === search) {
-			return null;
-		}
-
-		const searchWithParam = /[^\w]paid=/.test(search);
-		const nextState: Partial<IState> = {
-			active:     searchWithParam,
-			prevSearch: search
-		};
-
-		return nextState;
-	}
-
-	state = {
-		active:     false,
-		prevSearch: ''
-	};
 
 	context!: ContextType<typeof I18nContext>;
 
@@ -77,30 +40,37 @@ export class PaidMessageModal extends Component<IProps, IState> {
 		const {
 			...props
 		} = this.props;
-		const {
-			active
-		} = this.state;
 
 		return (
 			<ConfirmModal
 				{...omit(props, routeProps)}
+				elementRef={(ref) => {
+					confirmRef = ref;
+				}}
 				onClose={this.onClose}
-				active={active}
 			>
 				{__x`confirm.message`}
 			</ConfirmModal>
 		);
 	}
 
-	@Bind()
-	private onClose() {
-		this.setState(() => ({
-			active: false
-		}), this.goBack);
+	componentDidMount() {
+
+		const {
+			search
+		} = this.props.location;
+
+		const searchWithParam = /[^\w]paid=/.test(search);
+
+		if (searchWithParam) {
+			confirmRef.show();
+		} else {
+			confirmRef.hide();
+		}
 	}
 
-	@Debounce(transitionDuration)
-	private goBack() {
+	@Bind()
+	private onClose() {
 
 		const {
 			props
