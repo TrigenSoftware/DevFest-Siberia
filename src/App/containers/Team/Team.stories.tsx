@@ -3,9 +3,6 @@ import {
 	MemoryRouter
 } from 'react-router';
 import {
-	Provider
-} from '@flexis/redux';
-import {
 	storiesOf
 } from '@storybook/react';
 import {
@@ -14,10 +11,6 @@ import {
 import {
 	I18nProvider
 } from 'i18n-for-react';
-import Header, {
-	store
-} from '~/blocks/Header/mock';
-import Footer from '~/blocks/Footer';
 import ru from '~/locales/ru.json';
 import en from '~/locales/en.json';
 import Team from './';
@@ -57,12 +50,6 @@ storiesOf('Containers|Team', module)
 	.add(
 		'with default state',
 		() => (
-			<>
-				<Provider store={store}>
-					<Header/>
-				</Provider>
-				<Team/>
-				<Footer/>
-			</>
+			<Team/>
 		)
 	);

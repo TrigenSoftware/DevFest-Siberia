@@ -16,8 +16,6 @@ import {
 import {
 	I18nProvider
 } from 'i18n-for-react';
-import Header from '~/blocks/Header/mock';
-import Footer from '~/blocks/Footer';
 import ru from '~/locales/ru.json';
 import en from '~/locales/en.json';
 import Cabinet, {
@@ -55,21 +53,17 @@ storiesOf('Containers|Cabinet', module)
 		'with default state',
 		() => (
 			<MemoryRouter initialEntries={['/cabinet']}>
-			<Route
-				exact
-				path='/cabinet'
-				component={props => (
-					<>
+				<Route
+					exact
+					path='/cabinet'
+					component={props => (
 						<Provider store={store}>
-							<Header/>
 							<Cabinet
 								{...props}
 							/>
 						</Provider>
-						<Footer/>
-					</>
-				)}
-			/>
-		</MemoryRouter>
+					)}
+				/>
+			</MemoryRouter>
 		)
 	);
