@@ -56,13 +56,18 @@ storiesOf('Containers|Cabinet', module)
 				<Route
 					exact
 					path='/cabinet'
-					component={props => (
-						<Provider store={store}>
-							<Cabinet
-								{...props}
-							/>
-						</Provider>
-					)}
+					component={(props) => {
+
+						store.actions.user.login('test', 'test');
+
+						return (
+							<Provider store={store}>
+								<Cabinet
+									{...props}
+								/>
+							</Provider>
+						);
+					}}
 				/>
 			</MemoryRouter>
 		)
