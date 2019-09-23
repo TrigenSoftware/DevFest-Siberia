@@ -1,7 +1,12 @@
+/* tslint:disable jsx-no-lambda */
 import React from 'react';
 import {
-	MemoryRouter
+	MemoryRouter,
+	Route
 } from 'react-router';
+import {
+	Provider
+} from '@flexis/redux';
 import {
 	storiesOf
 } from '@storybook/react';
@@ -11,11 +16,13 @@ import {
 import {
 	I18nProvider
 } from 'i18n-for-react';
-import Header from '~/blocks/Header';
+import Header from '~/blocks/Header/mock';
 import Footer from '~/blocks/Footer';
 import ru from '~/locales/ru.json';
 import en from '~/locales/en.json';
-import Buy from './';
+import Buy, {
+	store
+} from './mock';
 
 const stylableApi = `
 Stylable API
@@ -27,11 +34,6 @@ storiesOf('Containers|Buy', module)
 	.addParameters({
 		info: stylableApi
 	})
-	.addDecorator(story => (
-		<MemoryRouter initialEntries={['/buy']}>
-			{story()}
-		</MemoryRouter>
-	))
 	.addDecorator(story => (
 		<div style={{ margin: '-12px' }}>
 			{story()}
@@ -52,10 +54,22 @@ storiesOf('Containers|Buy', module)
 	.add(
 		'with default state',
 		() => (
-			<>
-				<Header/>
-				<Buy/>
-				<Footer/>
-			</>
+			<MemoryRouter initialEntries={['/buy']}>
+				<Route
+					exact
+					path='/buy'
+					component={props => (
+						<>
+							<Provider store={store}>
+								<Header/>
+								<Buy
+									{...props}
+								/>
+							</Provider>
+							<Footer/>
+						</>
+					)}
+				/>
+			</MemoryRouter>
 		)
 	);

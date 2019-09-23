@@ -24,6 +24,8 @@ export * from './Weather/Weather.types';
 export * from './Todo/Todo.types';
 export * from './User/User.types';
 
+export * from './User/User.actions';
+
 export interface IStateProps {
 	weather: WeatherState;
 	todo: TodoState;
