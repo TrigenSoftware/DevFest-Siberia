@@ -242,6 +242,19 @@ export function getFooterSocialLinks(context: I18nConfig): any[] {
 }
 
 /**
+ * Get location data from context.
+ */
+export function getLocation(context: I18nConfig) {
+	const {
+		location
+	} = context.getCatalog(
+		context.getLocale()
+	) as any;
+
+	return location;
+}
+
+/**
  * Get meta data from context.
  */
 export function getMetaData(context: I18nConfig): any[] {
@@ -255,18 +268,8 @@ export function getMetaData(context: I18nConfig): any[] {
 }
 
 /**
- * Get location data from context.
+ * Get schema data.
  */
-export function getLocation(context: I18nConfig) {
-	const {
-		location
-	} = context.getCatalog(
-		context.getLocale()
-	) as any;
-
-	return location;
-}
-
 export function getSchemaData(context: I18nConfig) {
 
 	const metaData = getMetaData(context);
