@@ -76,7 +76,7 @@ export class PaidMessageModal extends Component<IProps> {
 	}
 
 	@Bind()
-	private onModalRef(ref) {
+	private onModalRef(ref: FlexisConfirmModal) {
 		this.confirmRef = ref;
 	}
 }
