@@ -12,8 +12,10 @@ import {
 	__x
 } from 'i18n-for-react';
 import {
+	Bind,
 	omit
 } from '@flexis/ui/helpers';
+import FlexisConfirmModal from '@flexis/ui/components/ConfirmModal';
 import ConfirmModal, {
 	IProps as IConfirmModalProps
 } from '~/components/ConfirmModal';
@@ -32,7 +34,7 @@ export class PaidMessageModal extends Component<IProps> {
 
 	context!: ContextType<typeof I18nContext>;
 
-	confirmRef = null;
+	private confirmRef: FlexisConfirmModal = null;
 
 	render() {
 
@@ -43,9 +45,7 @@ export class PaidMessageModal extends Component<IProps> {
 		return (
 			<ConfirmModal
 				{...omit(props, routeProps)}
-				elementRef={(ref) => {
-					this.confirmRef = ref;
-				}}
+				elementRef={this.onModalRef}
 			>
 				{__x`confirm.message`}
 			</ConfirmModal>
@@ -66,12 +66,18 @@ export class PaidMessageModal extends Component<IProps> {
 		const searchWithParam = /[^\w]paid=/.test(search);
 
 		if (searchWithParam) {
+
 			await this.confirmRef.show();
 
 			history.push({
 				search: deleteSearchParams(search, 'paid')
 			});
 		}
+	}
+
+	@Bind()
+	private onModalRef(ref) {
+		this.confirmRef = ref;
 	}
 }
 

@@ -12,10 +12,7 @@ export default Axios.create({
 	transformRequest: [
 		...axiosDefaults.transformRequest,
 		(data, headers) => {
-
-			const authKey = getToken();
-
-			headers['X-Auth-Key'] = authKey;
+			headers['X-Auth-Key'] = getToken();
 			return data;
 		}
 	]
