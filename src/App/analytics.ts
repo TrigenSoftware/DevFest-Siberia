@@ -6,10 +6,10 @@ export default function initAnalytics() {
 		// @ts-ignore
 		window.dataLayer = window.dataLayer || [];
 		const newScript = document.createElement("script");
-        newScript.type = "text/javascript";
-        newScript.setAttribute("async", "true");
-        newScript.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=UA-80072831-4");
-        document.documentElement.firstChild.appendChild(newScript);
+		newScript.type = "text/javascript";
+		newScript.setAttribute("async", "true");
+		newScript.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=UA-80072831-4");
+		document.documentElement.firstChild.appendChild(newScript);
 		// @ts-ignore
 		function gtag(){dataLayer.push(arguments);}
 		// @ts-ignore
