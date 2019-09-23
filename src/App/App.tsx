@@ -60,11 +60,6 @@ export default class App extends Component<IProps> {
 			context
 		} = this;
 		const metaData = getMetaData(context);
-		const scripts = [];
-		scripts.push({
-			type: 'application/ld+json',
-			innerHTML: JSON.stringify(getSchemaData(context))
-		});
 
 		return this.router(
 			<>
@@ -77,6 +72,9 @@ export default class App extends Component<IProps> {
 							content={meta.value}
 						/>
 					))}
+					<script type='text/javascript'>
+						{JSON.stringify(getSchemaData(context))}
+					</script>
 				</Helmet>
 				<ScrollToTop/>
 				<Header/>
