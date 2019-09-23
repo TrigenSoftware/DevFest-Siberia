@@ -278,45 +278,43 @@ export function getSchemaData(context: I18nConfig) {
 
 	/* tslint:disable */
 	return {
-		structuredData: [{
-			'@context': 'http://schema.org',
-			'@type': 'Event',
-			name: metaData[6].value,
-			description: metaData[0].value,
-			image: 'https://gdg-siberia.com/img/seo/sharing-google-plus.png',
-			url: process.env.BASE_URL,
-			startDate: '2019-11-29',
-			doorTime: '',
-			endDate: '2019-12-01',
-			location: {
-				'@type': 'Place',
-				name: location.name,
-				address: {
-					'@type': 'PostalAddress',
-					streetAddress: location.streetAddress,
-					addressLocality: location.addressLocality,
-					addressRegion: location.addressRegion,
-					postalCode: location.postalCode,
-					addressCountry: location.addressCountry
-				},
-				geo: {
-					'@type': 'GeoCoordinates',
-					latitude: '54.857755',
-					longitude: '83.111595'
-				}
+		'@context': 'http://schema.org',
+		'@type':    'Event',
+		name:        metaData[6].value,
+		description: metaData[0].value,
+		image:       'https://gdg-siberia.com/img/seo/sharing-google-plus.png',
+		url:         process.env.BASE_URL,
+		startDate:   '2019-11-29',
+		doorTime:    '',
+		endDate:     '2019-12-01',
+		location: {
+			'@type': 'Place',
+			name:    location.name,
+			address: {
+				'@type':         'PostalAddress',
+				streetAddress:   location.streetAddress,
+				addressLocality: location.addressLocality,
+				addressRegion:   location.addressRegion,
+				postalCode:      location.postalCode,
+				addressCountry:  location.addressCountry
 			},
-			performer: speakers.map(speaker => [
-				{
-					'@type': 'Person',
-					name: `${speaker.firstname} ${speaker.lastname}`,
-					image: speaker.src,
-					jobTitle: speaker.talkTitle,
-					sameAs: speaker.contacts
-				}
-			]),
-			eventStatus: 'EventScheduled',
-			typicalAgeRange: '16+'
-		}]
-	};
+			geo: {
+				'@type':   'GeoCoordinates',
+				latitude:  '54.857755',
+				longitude: '83.111595'
+			}
+		},
+		performer: speakers.map(speaker => [
+			{
+				'@type': 'Person',
+				name:     `${speaker.firstname} ${speaker.lastname}`,
+				image:    speaker.src,
+				jobTitle: speaker.talkTitle,
+				sameAs:   speaker.contacts
+			}
+		]),
+		eventStatus:     'EventScheduled',
+		typicalAgeRange: '16+'
+	}
 	/* tslint:enable */
 }

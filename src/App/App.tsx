@@ -1,3 +1,4 @@
+// tslint:disable space-in-parens
 import React, {
 	ReactChild,
 	ContextType,
@@ -20,7 +21,6 @@ import '@flexis/ui/reboot.st.css';
 import './App.st.css';
 import {
 	getLocalizedPath,
-	getLocaleFromPath,
 	getMetaData,
 	getSchemaData
 } from '~/services/i18n';
@@ -41,7 +41,6 @@ import Footer from '~/blocks/Footer';
 import {
 	Routes
 } from './routes';
-import initAnalytics from './analytics';
 
 export interface IProps {
 	disableRouter?: boolean;
@@ -64,7 +63,7 @@ export default class App extends Component<IProps> {
 		return this.router(
 			<>
 				<Helmet>
-					<html lang={getLocaleFromPath(location.pathname)}/>
+					<html lang={context.getLocale()}/>
 					{metaData.map(meta => (
 						<meta
 							key={meta.key}
@@ -72,7 +71,7 @@ export default class App extends Component<IProps> {
 							content={meta.value}
 						/>
 					))}
-					<script type='text/javascript'>
+					<script type='application/ld+json'>
 						{JSON.stringify(getSchemaData(context))}
 					</script>
 				</Helmet>
@@ -136,8 +135,13 @@ export default class App extends Component<IProps> {
 		);
 	}
 
-	componentDidMount() {
+	async componentDidMount() {
 		setAppElement('#view');
-		initAnalytics();
+
+		const {
+			default: analytics
+		} = await import(/* ... */ './analytics');
+
+		analytics();
 	}
 }
