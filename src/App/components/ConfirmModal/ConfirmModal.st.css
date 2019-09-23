@@ -1,0 +1,27 @@
+
+:import {
+	-st-from: '@flexis/ui/components/Modal/Modal.st.css';
+	-st-named: window;
+}
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../variables.st.css';
+	-st-named: sizeGap;
+}
+
+.root .window {
+	max-width: 35em;
+}
+
+.root footer {
+	margin-top: value(sizeGap);
+}
+
+.root footer button:not(:first-child) {
+	margin-left: value(sizeGap);
+}

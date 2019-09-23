@@ -36,6 +36,7 @@ import {
 	HeaderSpacer
 } from './HeaderSpacer';
 import HeaderLoginModal from './HeaderLoginModal';
+import PaidMessageModal from './PaidMessageModal';
 import {
 	IProps
 } from './types';
@@ -166,6 +167,7 @@ export class Header extends Component<IProps> {
 					errors={errors}
 					clearErrors={clearErrors}
 				/>
+				<PaidMessageModal/>
 			</>
 		);
 	}
