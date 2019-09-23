@@ -3,7 +3,14 @@
 export default function initAnalytics() {
 
 	if (process.env.GOOGLE_ANALYTICS_ID) {
-
+		// @ts-ignore
+		window.dataLayer = window.dataLayer || [];
+		// @ts-ignore
+		function gtag(){dataLayer.push(arguments);}
+		// @ts-ignore
+		gtag('js', new Date());
+		// @ts-ignore
+		gtag('config', '{code}');
 	}
 
 	if (process.env.YANDEX_METRIKA_ID) {
