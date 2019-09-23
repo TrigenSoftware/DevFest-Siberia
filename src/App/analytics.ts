@@ -8,14 +8,14 @@ export default function initAnalytics() {
 		const newScript = document.createElement("script");
 		newScript.type = "text/javascript";
 		newScript.setAttribute("async", "true");
-		newScript.setAttribute("src", "https://www.googletagmanager.com/gtag/js?id=UA-80072831-4");
+		newScript.setAttribute("src", `https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_ID}`);
 		document.documentElement.firstChild.appendChild(newScript);
 		// @ts-ignore
 		function gtag(){dataLayer.push(arguments);}
 		// @ts-ignore
 		gtag('js', new Date());
 		// @ts-ignore
-		gtag('config', 'UA-80072831-4');
+		gtag('config', process.env.GOOGLE_ANALYTICS_ID);
 	}
 
 	if (process.env.YANDEX_METRIKA_ID) {

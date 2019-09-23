@@ -64,11 +64,11 @@ export default class App extends Component<IProps> {
 			<>
 				<Helmet>
 					<html lang={context.getLocale()}/>
-					{metaData.map(meta => (
+					{Object.entries(metaData).map(([key, value]) => (
 						<meta
-							key={meta.key}
-							name={meta.key}
-							content={meta.value}
+							key={key}
+							name={key}
+							content={value as string}
 						/>
 					))}
 					<script type='application/ld+json'>
@@ -136,6 +136,7 @@ export default class App extends Component<IProps> {
 	}
 
 	async componentDidMount() {
+
 		setAppElement('#view');
 
 		const {

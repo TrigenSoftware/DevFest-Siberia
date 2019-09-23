@@ -460,46 +460,16 @@
 		"rules": "All attendees, speakers, sponsors and volunteers at DevFest Siberia are required to agree with the following code of conduct. Organisers will enforce this code throughout the event. We are expecting cooperation from all participants to help ensuring a safe environment for everybody.",
 		"about": "DevFest Siberia is dedicated to providing a harassment-free conference experience for everyone, regardless of gender, sexual orientation, disability, physical appearance, body size, race, or religion. We do not tolerate harassment of conference participants in any form. Sexual language and imagery is not appropriate for any conference venue, including talks, workshops, parties, Twitter and other online communication channels. Conference participants violating these rules may be sanctioned or expelled from the conference without a refund at the discretion of the conference organisers."
 	},
-	"meta": [
-		{
-			"key": "description",
-			"value": "DevFest Siberia - conference for developers and IT geeks. Main topics: Mobile Development, IoT, Google Cloud и Google APIs, Virtual and Augmented Reality, Modern Web Application Development, Firebase Interaction from experts around the world. Awesome speakers and lots of fun!"
-		},
-		{
-			"key": "keywords",
-			"value'": "event, devfest, devfest siberia, devfest-siberia, google, programming, android, chrome, developers, siberia, novosibirsk"
-		},
-		{
-			"key": "twitter:site",
-			"value": "@GDGNsk"
-		},
-		{
-			"key": "twitter:image:src",
-			"value": "https://gdg-siberia.com/img/seo/sharing-twitter.png"
-		},
-		{
-			"key": "twitter:title",
-			"value": "DevFest Siberia 2019"
-		},
-		{
-			"key": "twitter-description",
-			"value": "DevFest Siberia - conference for developers and IT geeks. Main topics: Mobile Development, Modern Web Application Development, Machine Learning and Blockchain development from experts around the world. Awesome speakers and lots of fun!"
-		},
-		{
-			"key": "og:site_name",
-			"value": "DevFest Siberia 2019"
-		},
-		{
-			"key": "og:description",
-			"value": "DevFest Siberia 2019"
-		},
-		{
-			"key": "og:url",
-			"value": "https://gdg-siberia.com"
-		},
-		{
-			"key": "og:image",
-			"value": "https://gdg-siberia.com/img/seo/sharing-facebook.png"
-		}
-	]
+	"meta": {
+		"description": "DevFest Siberia - conference for developers and IT geeks. Main topics: Mobile Development, IoT, Google Cloud и Google APIs, Virtual and Augmented Reality, Modern Web Application Development, Firebase Interaction from experts around the world. Awesome speakers and lots of fun!",
+		"keywords": "event, devfest, devfest siberia, devfest-siberia, google, programming, android, chrome, developers, siberia, novosibirsk",
+		"twitter:site": "@GDGNsk",
+		"twitter:image:src": "https://gdg-siberia.com/img/seo/sharing-twitter.png",
+		"twitter:title": "DevFest Siberia 2019",
+		"twitter-description": "DevFest Siberia - conference for developers and IT geeks. Main topics: Mobile Development, Modern Web Application Development, Machine Learning and Blockchain development from experts around the world. Awesome speakers and lots of fun!",
+		"og:site_name": "DevFest Siberia 2019",
+		"og:description": "DevFest Siberia 2019",
+		"og:url": "https://gdg-siberia.com",
+		"og:image": "https://gdg-siberia.com/img/seo/sharing-facebook.png"
+	}
 }
