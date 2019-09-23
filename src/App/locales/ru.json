@@ -45,7 +45,13 @@
 		"policy": "Я ознакомился с <>политикой конфиденциальности</>"
 	},
 	"location": {
-		"address": "<>Технопарк Новосибирского Академгородка</>ул. Николаева д. 12, г. Новосибирск"
+		"address": "<>Технопарк Новосибирского Академгородка</>ул. Николаева д. 12, г. Новосибирск",
+		"name": "Технопарк",
+		"streetAddress": "ул. Николаева",
+		"addressLocality": "Россия, Новосибирск",
+		"addressRegion": "Новосибирск",
+		"postalCode": "630000",
+		"addressCountry": "Россия"
 	},
 	"partners": {
 		"title": "Партнеры",
@@ -450,5 +456,47 @@
 		"offerUrl": "/файл.pdf",
 		"rules": "Все участники, спикеры, партнёры, волонтеры на конференции DevFest Сибирь обязуются соблюдать правила поведения. Организаторы надеются на вашу сознательность и помощь в соблюдении этих правил.",
 		"about": "DevFest Сибирь - открытая конференция для всех участников, вне зависимости от их пола, сексуальной ориентации, религиозных взглядов, расы, размера тела и т.д. Мы не терпим преследования и неуважительного отношения к участникам в любой форме. Участники, нарушающие правила поведения могут быть лишены возможности участия без возмещения стоимости билета."
-	}
+	},
+	"meta": [
+		{
+			"key": "description",
+			"value": "DevFest Сибирь - это конференция для разработчиков и всех интересующихся новинками технологий. Самые горячие темы про Android, Web, ML, Blockchain от ведущих экспертов со всего мира!"
+		},
+		{
+			"key": "keywords",
+			"value'": "event, devfest, devfest siberia, devfest-siberia, google, programming, android, chrome, developers, siberia, novosibirsk"
+		},
+		{
+			"key": "twitter:site",
+			"value": "@GDGNsk"
+		},
+		{
+			"key": "twitter:image:src",
+			"value": "https://gdg-siberia.com/img/seo/sharing-twitter.png"
+		},
+		{
+			"key": "twitter:title",
+			"value": "DevFest Сибирь 2019"
+		},
+		{
+			"key": "twitter-description",
+			"value": "DevFest Сибирь - это конференция для разработчиков и всех интересующихся новинками технологий. Самые горячие темы про Android, Web, ML, Blockchain от ведущих экспертов со всего мира!"
+		},
+		{
+			"key": "og:site_name",
+			"value": "DevFest Сибирь 2019"
+		},
+		{
+			"key": "og:description",
+			"value": "DevFest Сибирь 2019"
+		},
+		{
+			"key": "og:url",
+			"value": "https://gdg-siberia.com"
+		},
+		{
+			"key": "og:image",
+			"value": "https://gdg-siberia.com/img/seo/sharing-facebook.png"
+		}
+	]
 }

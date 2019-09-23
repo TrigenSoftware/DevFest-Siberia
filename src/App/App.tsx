@@ -4,6 +4,9 @@ import React, {
 	Component
 } from 'react';
 import {
+	Helmet
+} from 'react-helmet';
+import {
 	hot
 } from 'react-hot-loader';
 import {
@@ -16,7 +19,10 @@ import {
 import '@flexis/ui/reboot.st.css';
 import './App.st.css';
 import {
-	getLocalizedPath
+	getLocalizedPath,
+	getLocaleFromPath,
+	getMetaData,
+	getSchemaData
 } from '~/services/i18n';
 import {
 	setAppElement
@@ -53,9 +59,25 @@ export default class App extends Component<IProps> {
 		const {
 			context
 		} = this;
+		const metaData = getMetaData(context);
+		const scripts = [];
+		scripts.push({
+			type: 'application/ld+json',
+			innerHTML: JSON.stringify(getSchemaData(context))
+		});
 
 		return this.router(
 			<>
+				<Helmet>
+					<html lang={getLocaleFromPath(location.pathname)}/>
+					{metaData.map(meta => (
+						<meta
+							key={meta.key}
+							name={meta.key}
+							content={meta.value}
+						/>
+					))}
+				</Helmet>
 				<ScrollToTop/>
 				<Header/>
 				<Route
