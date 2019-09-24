@@ -2,46 +2,66 @@ import LoadablePlugin from '@loadable/webpack-plugin';
 import {
 	StylableImportOrderPlugin
 } from '@trigen/scripts-preset-react-app/webpack/StylableImportOrderPlugin';
+import findIndex from '@trigen/scripts-preset-react-app/helpers/findIndex';
+import update from 'immutability-helper';
 
 export function dev(config) {
-	return {
-		...config,
-		plugins: [
-			...config.plugins,
-			new StylableImportOrderPlugin({
-				fullControl: true
-			})
-		]
-	};
+	return update(config, {
+		plugins: {
+			$push: [
+				new StylableImportOrderPlugin({
+					fullControl: true
+				})
+			]
+		}
+	});
 }
 
 export function build(config) {
-	return {
-		...config,
+	return update(config, {
 		output: {
-			...config.output,
-			publicPath: process.env.BASE_URL
-				? './'
-				: config.output.publicPath
+			publicPath: {
+				$set: process.env.BASE_URL
+					? './'
+					: config.output.publicPath
+			}
 		},
-		plugins: [
-			...config.plugins,
-			new StylableImportOrderPlugin({
-				fullControl: true
-			}),
-			new LoadablePlugin()
-		]
-	};
+		module: {
+			rules: {
+				[findIndex('test', '/\\.svg$/', config.module.rules)]: {
+					use: {
+						0: {
+							options: {
+								runtimeOptions: {
+									skipSymbol: {
+										$set: Boolean(process.env.RENDERING)
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		plugins: {
+			$push: [
+				new StylableImportOrderPlugin({
+					fullControl: true
+				}),
+				new LoadablePlugin()
+			]
+		}
+	});
 }
 
 export function render(config) {
-	return {
-		...config,
+	return update(config, {
 		output: {
-			...config.output,
-			publicPath: process.env.BASE_URL
-				? './'
-				: config.output.publicPath
+			publicPath: {
+				$set: process.env.BASE_URL
+					? './'
+					: config.output.publicPath
+			}
 		}
-	};
+	});
 }

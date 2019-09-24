@@ -50,16 +50,18 @@ export default class Location extends Component<IProps> {
 				{...props}
 				className={style(classes.root, className)}
 			>
-				<GoogleMapReact
-					bootstrapURLKeys={{
-						...googleMaps.keys,
-						language: locale
-					}}
-					defaultCenter={googleMaps.center}
-					defaultZoom={googleMaps.zoom}
-					options={googleMaps.options}
-					onGoogleApiLoaded={this.renderMarkers}
-				/>
+				{typeof window !== 'undefined' && (
+					<GoogleMapReact
+						bootstrapURLKeys={{
+							...googleMaps.keys,
+							language: locale
+						}}
+						defaultCenter={googleMaps.center}
+						defaultZoom={googleMaps.zoom}
+						options={googleMaps.options}
+						onGoogleApiLoaded={this.renderMarkers}
+					/>
+				)}
 				<article
 					className={classes.info}
 				>

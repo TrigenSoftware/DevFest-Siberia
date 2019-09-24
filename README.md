@@ -37,7 +37,12 @@ yarn serve
 To be able to build this app, you should provide some environment variables:
 
 ```bash
-OPENWEATHER_APPID=XXX # OpenWeather API App ID; not set by default
+SITE_URL=xxx # for meta info
+BASE_URL=xxx # build for subdirectory; <base href=$> and etc.
+API_URL=xxx
+YANDEX_METRIKA_ID=XXX
+GOOGLE_ANALYTICS_ID=XXX
+GOOGLE_MAPS_KEY=XXX
 ```
 
 Optional variables:
@@ -45,6 +50,7 @@ Optional variables:
 ```bash
 PROXY_API_URI='' # valid URI; not set by default
 DISABLE_BROWSER_SYNC=false # boolean; `false` by default
+DISABLE_HISTORY_FALLBACK=false # boolean; `false` by default
 ```
 
 You can create `.env` in project root with this variables.

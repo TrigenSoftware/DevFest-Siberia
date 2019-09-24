@@ -12,11 +12,11 @@ import {
 	I18nProvider
 } from 'i18n-for-react';
 import {
-	getLocaleFromPath
-} from './services/i18n';
-import {
 	Provider
 } from '@flexis/redux';
+import {
+	getLocaleFromPath
+} from './services/i18n';
 import App from './App';
 import createStore from './store';
 
@@ -81,6 +81,7 @@ async function main() {
 	if (root !== null) {
 
 		if (root.hasChildNodes()) {
+			await store.loadAllSegments();
 			hydrate(app, root);
 		} else {
 			render(app, root);
