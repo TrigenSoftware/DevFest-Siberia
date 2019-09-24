@@ -3,6 +3,9 @@ import {
 } from 'fs';
 import path from 'path';
 import React from 'react';
+import Store, {
+	Provider
+} from '@flexis/redux';
 import {
 	Helmet,
 	HelmetData
@@ -26,6 +29,7 @@ import {
 import ru from '~/locales/ru.json';
 import en from '~/locales/en.json';
 import App from './App';
+import createStore from './store';
 import sprite from 'svg-sprite-loader/runtime/sprite.build';
 import {
 	RoutesList
@@ -36,7 +40,11 @@ const extractorOptions = {
 	entrypoints: ['index']
 };
 
-function render(locale: string, location: string): [HelmetData, string, string] {
+function render(
+	store: Store,
+	locale: string,
+	location: string
+): [HelmetData, string, string] {
 
 	const extractor = new ChunkExtractor(extractorOptions);
 	const jsx = extractor.collectChunks(
@@ -51,9 +59,11 @@ function render(locale: string, location: string): [HelmetData, string, string] 
 			<StaticRouter
 				location={location}
 			>
-				<App
-					disableRouter
-				/>
+				<Provider store={store}>
+					<App
+						disableRouter
+					/>
+				</Provider>
 			</StaticRouter>
 		</I18nProvider>
 	);
@@ -113,11 +123,14 @@ async function createTemplate() {
 async function renderAll(pages: string[]) {
 
 	const wrap = await createTemplate();
+	const store = createStore();
+
+	await store.loadAllSegments();
 
 	await Promise.all(pages.map(async (routePath) => {
 
 		const locale = getLocaleFromPath(routePath);
-		const parts = render(locale, routePath);
+		const parts = render(store, locale, routePath);
 		const html = wrap(parts, locale);
 
 		await fs.mkdir(
