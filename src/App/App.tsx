@@ -67,10 +67,10 @@ export default class App extends Component<IProps> {
 			<>
 				<Helmet>
 					<html lang={context.getLocale()}/>
-					<title>{title}</title>
-					{process.env.SITE_URL && (
-						<base href={process.env.SITE_URL}/>
+					{process.env.BASE_URL && (
+						<base href={process.env.BASE_URL}/>
 					)}
+					<title>{title}</title>
 					{Object.entries(metaData).map(([key, value]: [string, string]) => (
 						<meta
 							key={key}

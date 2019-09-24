@@ -4,7 +4,8 @@ import {
 import path from 'path';
 import React from 'react';
 import {
-	Helmet
+	Helmet,
+	HelmetData
 } from 'react-helmet';
 import {
 	renderToString
@@ -35,7 +36,7 @@ const extractorOptions = {
 	entrypoints: ['index']
 };
 
-function render(locale: string, location: string): [string, string] {
+function render(locale: string, location: string): [HelmetData, string, string] {
 
 	const extractor = new ChunkExtractor(extractorOptions);
 	const jsx = extractor.collectChunks(
@@ -59,23 +60,11 @@ function render(locale: string, location: string): [string, string] {
 	const view: string = renderToString(jsx);
 	const scripts: string = extractor.getScriptTags().replace(/\n/g, '');
 	const helmet = Helmet.renderStatic();
-	const html = `
-		<!doctype html>
-		<html ${helmet.htmlAttributes.toString()}>
-			<head>
-				${helmet.title.toString()}
-				${helmet.meta.toString()}
-				${helmet.link.toString()}
-			</head>
-			<body ${helmet.bodyAttributes.toString()}>
-				${view}
-			</body>
-		</html>
-	`;
 
 	return [
+		helmet,
 		scripts,
-		html
+		view
 	];
 }
 
@@ -101,11 +90,18 @@ async function createTemplate() {
 	});
 
 	return (
-		[scripts, view]: [string, string],
+		[helmet, scripts, view]: [HelmetData, string, string],
 		locale: string
 	) => {
 
 		const result = template
+			.replace(/<html([^>]*)>/, `<html$1 ${helmet.htmlAttributes.toString()}>`)
+			.replace(/(<head[^>]*>)/, `$1${[
+				helmet.base.toString(),
+				helmet.title.toString(),
+				helmet.meta.toString(),
+				helmet.script.toString()
+			].join('')}`)
 			.replace(/<script[^>]*src.*<\/script>/, scripts)
 			.replace('<script', `<script>var I18N=${locale === 'en' ? enstr : rustr};</script><script`)
 			.replace(/(<div id=view>)(<\/div>)/, `${spriteHtml}$1${view}$2`);
