@@ -7,8 +7,9 @@ import {
 	startTime,
 	endTime,
 	keywords,
+	title,
 	twitterSite,
-	ogUrl,
+	baseUrl,
 	sharingImages,
 	ageRange
 } from '~/data';
@@ -279,9 +280,12 @@ export function getMetaData(context: I18nConfig) {
 	return {
 		...meta,
 		'keywords':          keywords,
+		'twitter:title':     title,
 		'twitter:site':      twitterSite,
 		'twitter:image:src': sharingImages.twitter,
-		'og:url':            ogUrl,
+		'og:site_name':      title,
+		'og:url':            baseUrl,
+		'og:description':    title,
 		'og:image':          sharingImages.facebook
 	};
 }
@@ -298,7 +302,7 @@ export function getSchemaData(context: I18nConfig) {
 	return {
 		'@context':    'http://schema.org',
 		'@type':       'Event',
-		'name':        metaData['og:site_name'],
+		'name':        title,
 		'description': metaData.description,
 		'image':       sharingImages.image,
 		'url':         process.env.BASE_URL,

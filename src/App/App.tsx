@@ -25,6 +25,9 @@ import {
 	getSchemaData
 } from '~/services/i18n';
 import {
+	title
+} from './data';
+import {
 	setAppElement
 } from '~/components/Modal';
 import ScrollToTop from '~/components/ScrollToTop';
@@ -64,6 +67,7 @@ export default class App extends Component<IProps> {
 			<>
 				<Helmet>
 					<html lang={context.getLocale()}/>
+					<title>{title}</title>
 					{Object.entries(metaData).map(([key, value]: [string, string]) => (
 						<meta
 							key={key}
@@ -141,7 +145,7 @@ export default class App extends Component<IProps> {
 
 		const {
 			default: analytics
-		} = await import(/* ... */ './analytics');
+		} = await import(/* webpackChunkName: 'analytics' */ './analytics');
 
 		analytics();
 	}

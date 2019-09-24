@@ -462,9 +462,6 @@
 	},
 	"meta": {
 		"description": "DevFest Siberia - conference for developers and IT geeks. Main topics: Mobile Development, IoT, Google Cloud и Google APIs, Virtual and Augmented Reality, Modern Web Application Development, Firebase Interaction from experts around the world. Awesome speakers and lots of fun!",
-		"twitter:title": "DevFest Siberia 2019",
-		"twitter-description": "DevFest Siberia - conference for developers and IT geeks. Main topics: Mobile Development, Modern Web Application Development, Machine Learning and Blockchain development from experts around the world. Awesome speakers and lots of fun!",
-		"og:site_name": "DevFest Siberia 2019",
-		"og:description": "DevFest Siberia 2019"
+		"twitter-description": "DevFest Siberia - conference for developers and IT geeks. Main topics: Mobile Development, Modern Web Application Development, Machine Learning and Blockchain development from experts around the world. Awesome speakers and lots of fun!"
 	}
 }
