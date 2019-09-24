@@ -9,7 +9,7 @@ import {
 	keywords,
 	title,
 	twitterSite,
-	baseUrl,
+	siteUrl,
 	sharingImages,
 	ageRange
 } from '~/data';
@@ -284,7 +284,7 @@ export function getMetaData(context: I18nConfig) {
 		'twitter:site':      twitterSite,
 		'twitter:image:src': sharingImages.twitter,
 		'og:site_name':      title,
-		'og:url':            baseUrl,
+		'og:url':            siteUrl,
 		'og:description':    title,
 		'og:image':          sharingImages.facebook
 	};
@@ -305,7 +305,7 @@ export function getSchemaData(context: I18nConfig) {
 		'name':        title,
 		'description': metaData.description,
 		'image':       sharingImages.image,
-		'url':         process.env.BASE_URL,
+		'url':         process.env.SITE_URL,
 		'startDate':   startTime,
 		'doorTime':    '',
 		'endDate':     endTime,

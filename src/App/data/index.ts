@@ -26,7 +26,7 @@ export const title = 'DevFest Siberia 2019';
 
 export const twitterSite = '@GDGNsk';
 
-export const baseUrl = process.env.BASE_URL;
+export const siteUrl = process.env.SITE_URL;
 
 export const sharingImages = {
 	image:    'https://gdg-siberia.com/img/seo/sharing-google-plus.png',
