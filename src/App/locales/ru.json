@@ -462,14 +462,9 @@
 	},
 	"meta": {
 		"description": "DevFest Сибирь - это конференция для разработчиков и всех интересующихся новинками технологий. Самые горячие темы про Android, Web, ML, Blockchain от ведущих экспертов со всего мира!",
-		"keywords": "event, devfest, devfest siberia, devfest-siberia, google, programming, android, chrome, developers, siberia, novosibirsk",
-		"twitter:site": "@GDGNsk",
-		"twitter:image:src": "https://gdg-siberia.com/img/seo/sharing-twitter.png",
 		"twitter:title": "DevFest Сибирь 2019",
 		"twitter-description": "DevFest Сибирь - это конференция для разработчиков и всех интересующихся новинками технологий. Самые горячие темы про Android, Web, ML, Blockchain от ведущих экспертов со всего мира!",
 		"og:site_name": "DevFest Сибирь 2019",
-		"og:description": "DevFest Сибирь 2019",
-		"og:url": "https://gdg-siberia.com",
-		"og:image": "https://gdg-siberia.com/img/seo/sharing-facebook.png"
+		"og:description": "DevFest Сибирь 2019"
 	}
 }

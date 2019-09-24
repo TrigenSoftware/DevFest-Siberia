@@ -64,11 +64,11 @@ export default class App extends Component<IProps> {
 			<>
 				<Helmet>
 					<html lang={context.getLocale()}/>
-					{Object.entries(metaData).map(([key, value]) => (
+					{Object.entries(metaData).map(([key, value]: [string, string]) => (
 						<meta
 							key={key}
 							name={key}
-							content={value as string}
+							content={value}
 						/>
 					))}
 					<script type='application/ld+json'>

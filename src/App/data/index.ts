@@ -8,7 +8,18 @@ export const end = `2019-12-01T14:00:00${timezone}`;
 
 export const endTime = new Date(end);
 
-export const image = 'https://gdg-siberia.com/img/seo/sharing-google-plus.png';
+// tslint:disable-next-line:max-line-length
+export const keywords = 'event, devfest, devfest siberia, devfest-siberia, google, programming, android, chrome, developers, siberia, novosibirsk';
+
+export const twitterSite = '@GDGNsk';
+
+export const ogUrl = 'https://gdg-siberia.com';
+
+export const sharingImages = {
+	image:    'https://gdg-siberia.com/img/seo/sharing-google-plus.png',
+	twitter:  'https://gdg-siberia.com/img/seo/sharing-twitter.png',
+	facebook: 'https://gdg-siberia.com/img/seo/sharing-facebook.png'
+};
 
 export const ageRange = '16+';
 

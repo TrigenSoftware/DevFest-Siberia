@@ -6,7 +6,10 @@ import {
 	coordinates,
 	startTime,
 	endTime,
-	image,
+	keywords,
+	twitterSite,
+	ogUrl,
+	sharingImages,
 	ageRange
 } from '~/data';
 
@@ -273,7 +276,14 @@ export function getMetaData(context: I18nConfig) {
 		context.getLocale()
 	) as any;
 
-	return meta;
+	return {
+		...meta,
+		'keywords':          keywords,
+		'twitter:site':      twitterSite,
+		'twitter:image:src': sharingImages.twitter,
+		'og:url':            ogUrl,
+		'og:image':          sharingImages.image
+	};
 }
 
 /**
@@ -290,7 +300,7 @@ export function getSchemaData(context: I18nConfig) {
 		'@type':       'Event',
 		'name':        metaData['og:site_name'],
 		'description': metaData.description,
-		'image':       image,
+		'image':       sharingImages.image,
 		'url':         process.env.BASE_URL,
 		'startDate':   startTime,
 		'doorTime':    '',
