@@ -28,6 +28,8 @@ yarn build:storybook
 yarn start
 # Build our bundle for production
 yarn build
+# Render static pages
+yarn render
 # Serve files from `build` directory
 yarn serve
 ```
