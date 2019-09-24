@@ -4,6 +4,9 @@ import {
 import path from 'path';
 import React from 'react';
 import {
+	Helmet
+} from 'react-helmet';
+import {
 	renderToString
 } from 'react-dom/server';
 import {
@@ -55,10 +58,24 @@ function render(locale: string, location: string): [string, string] {
 	);
 	const view: string = renderToString(jsx);
 	const scripts: string = extractor.getScriptTags().replace(/\n/g, '');
+	const helmet = Helmet.renderStatic();
+	const html = `
+		<!doctype html>
+		<html ${helmet.htmlAttributes.toString()}>
+			<head>
+				${helmet.title.toString()}
+				${helmet.meta.toString()}
+				${helmet.link.toString()}
+			</head>
+			<body ${helmet.bodyAttributes.toString()}>
+				${view}
+			</body>
+		</html>
+	`;
 
 	return [
 		scripts,
-		view
+		html
 	];
 }
 
@@ -88,14 +105,10 @@ async function createTemplate() {
 		locale: string
 	) => {
 
-		let result = template
+		const result = template
 			.replace(/<script[^>]*src.*<\/script>/, scripts)
 			.replace('<script', `<script>var I18N=${locale === 'en' ? enstr : rustr};</script><script`)
 			.replace(/(<div id=view>)(<\/div>)/, `${spriteHtml}$1${view}$2`);
-
-		if (process.env.BASE_URL) {
-			result = result.replace(/(<head>)/, `$1<base href=${process.env.BASE_URL} >`);
-		}
 
 		return result;
 	};
