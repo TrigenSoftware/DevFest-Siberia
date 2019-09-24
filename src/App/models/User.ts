@@ -29,32 +29,39 @@ export default User;
 
 export const UserFieldsSpec = {
 	firstname: {
-		required: true,
-		pattern:  noAroundSpacesPattern
+		required:     true,
+		pattern:      noAroundSpacesPattern,
+		autoComplete: 'given-name'
 	},
 	lastname: {
-		required: true,
-		pattern:  noAroundSpacesPattern
+		required:     true,
+		pattern:      noAroundSpacesPattern,
+		autoComplete: 'family-name'
 	},
 	position: {
-		required: true,
-		pattern:  noAroundSpacesPattern
+		required:     true,
+		pattern:      noAroundSpacesPattern,
+		autoComplete: 'organization-title'
 	},
 	company: {
-		required: true,
-		pattern:  noAroundSpacesPattern
+		required:     true,
+		pattern:      noAroundSpacesPattern,
+		autoComplete: 'organization'
 	},
 	city: {
-		required: true,
-		pattern:  noAroundSpacesPattern
+		required:     true,
+		pattern:      noAroundSpacesPattern,
+		autoComplete: 'address-level2'
 	},
 	email: {
-		type:     'email',
-		required: true
+		type:         'email',
+		required:     true,
+		autoComplete: 'email'
 	},
 	password: {
-		type:      'password',
-		required:  true,
-		pattern:   noAroundSpacesPattern
+		type:         'password',
+		required:     true,
+		pattern:      noAroundSpacesPattern,
+		autoComplete: 'current-password'
 	}
 };
