@@ -3,13 +3,24 @@ import React, {
 	Component
 } from 'react';
 import {
+	withRouter
+} from 'react-router-dom';
+import PropTypes from 'prop-types';
+import {
 	I18nContext,
 	__ as tr,
 	__x
 } from 'i18n-for-react';
-import Section, {
-	IProps as ISectionProps
-} from '~/components/Section';
+import {
+	getLocalizedPath
+} from '~/services/i18n';
+import {
+	omit
+} from '@flexis/ui/helpers';
+import {
+	routeProps
+} from '~/blocks/common/router';
+import Section from '~/components/Section';
 import TicketPreview, {
 	TickerPreviewPrimary,
 	TickerPreviewGroup,
@@ -17,15 +28,22 @@ import TicketPreview, {
 	TicketPreviewAuxiliary
 } from '~/components/TicketPreview';
 import {
+	IProps
+} from './types';
+import {
 	style,
 	classes
 } from './Cabinet.st.css';
 
-export type IProps = ISectionProps;
-
-export default class CabinetContainer extends Component<IProps> {
+export class CabinetContainer extends Component<IProps> {
 
 	static contextType = I18nContext;
+
+	static propTypes = {
+		fetchOrders: PropTypes.func.isRequired,
+		getProfile:  PropTypes.func.isRequired,
+		isLogged:    PropTypes.func.isRequired
+	};
 
 	context!: ContextType<typeof I18nContext>;
 
@@ -33,6 +51,8 @@ export default class CabinetContainer extends Component<IProps> {
 
 		const {
 			className,
+			user,
+			order,
 			...props
 		} = this.props;
 		const {
@@ -42,7 +62,12 @@ export default class CabinetContainer extends Component<IProps> {
 
 		return (
 			<Section
-				{...props}
+				{...omit(props, [
+					...routeProps,
+					'fetchOrders',
+					'getProfile',
+					'isLogged'
+				])}
 				className={style(classes.root, className)}
 			>
 				<h2>
@@ -51,37 +76,65 @@ export default class CabinetContainer extends Component<IProps> {
 				<article
 					className={classes.article}
 				>
-					<TicketPreview
-						className={classes.ticket}
-					>
-						<TickerPreviewPrimary>
-							<TickerPreviewGroup>
-								<TickerPreviewField
-									label={__`cabinet.id`}
-									value='ID 123123'
-								/>
-								<TickerPreviewField
-									label={__`cabinet.for`}
-									value='Jhon Doe'
-								/>
-							</TickerPreviewGroup>
-							<TickerPreviewGroup>
-								<TickerPreviewField
-									label={__`cabinet.where`}
-									value='Academ, 18'
-								/>
-								<TickerPreviewField
-									label={__`cabinet.when`}
-									value='29 ноября – 1 декабря'
-								/>
-							</TickerPreviewGroup>
-						</TickerPreviewPrimary>
-						<TicketPreviewAuxiliary>
-							{__x`cabinet.ticket`}
-						</TicketPreviewAuxiliary>
-					</TicketPreview>
+					{user && order && order.items.map(({
+						ticket,
+						productName
+					}) => (
+						<TicketPreview
+							className={classes.ticket}
+							key={ticket.ticketUID}
+						>
+							<TickerPreviewPrimary>
+								<TickerPreviewGroup>
+									<TickerPreviewField
+										label={__`cabinet.id`}
+										value={ticket.ticketUID}
+									/>
+									<TickerPreviewField
+										label={__`cabinet.for`}
+										value={`${user.firstname} ${user.lastname}`}
+									/>
+								</TickerPreviewGroup>
+								<TickerPreviewGroup>
+									<TickerPreviewField
+										label={__`cabinet.where`}
+										value={__`cabinet.location`}
+									/>
+									<TickerPreviewField
+										label={__`cabinet.when`}
+										value={__`cabinet.data`}
+									/>
+								</TickerPreviewGroup>
+							</TickerPreviewPrimary>
+							<TicketPreviewAuxiliary>
+								{productName}
+							</TicketPreviewAuxiliary>
+						</TicketPreview>
+					))}
 				</article>
 			</Section>
 		);
 	}
+
+	componentDidMount() {
+
+		const {
+			history,
+			getProfile,
+			fetchOrders,
+			isLogged
+		} = this.props;
+		const {
+			context
+		} = this;
+
+		if (isLogged()) {
+			fetchOrders();
+			getProfile();
+		} else {
+			history.push(getLocalizedPath(context, '/'));
+		}
+	}
 }
+
+export default withRouter(CabinetContainer);

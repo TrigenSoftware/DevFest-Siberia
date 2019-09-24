@@ -4,16 +4,29 @@ import React, {
 	Component
 } from 'react';
 import {
+	withRouter
+} from 'react-router-dom';
+import PropTypes from 'prop-types';
+import {
 	I18nContext,
 	__ as tr,
 	__x
 } from 'i18n-for-react';
 import {
-	Bind
+	getLocaleFromPath
+} from '~/services/i18n';
+import {
+	Bind,
+	omit
 } from '@flexis/ui/helpers';
-import Section, {
-	IProps as ISectionProps
-} from '~/components/Section';
+import {
+	UserFieldsSpec
+} from '~/models/User';
+import {
+	routeProps,
+	getErrorMessage
+} from '~/blocks/common';
+import Section from '~/components/Section';
 import TabsNav, {
 	TabsNavItem
 } from '~/components/TabsNav';
@@ -25,16 +38,16 @@ import FormGroup from '~/components/FormGroup';
 import Input from '~/components/Input';
 import Button from '~/components/Button';
 import Link from '~/components/Link';
+import ErrorMessage from '~/components/ErrorMessage';
 import {
-	noAroundSpacesPattern
-} from '../common';
+	IProps,
+	IState
+} from './types';
 import validate from './validate';
 import {
 	style,
 	classes
 } from './Buy.st.css';
-
-export type IProps = ISectionProps;
 
 const terms = [
 	(
@@ -47,18 +60,14 @@ const terms = [
 	)
 ];
 
-interface IState {
-	firstname: string;
-	lastname: string;
-	position: string;
-	company: string;
-	city: string;
-	email: string;
-}
-
-export default class BuyContainer extends Component<IProps, IState> {
+export class BuyContainer extends Component<IProps, IState> {
 
 	static contextType = I18nContext;
+
+	static propTypes = {
+		buy:    PropTypes.func.isRequired,
+		errors: PropTypes.any.isRequired
+	};
 
 	context!: ContextType<typeof I18nContext>;
 
@@ -92,7 +101,10 @@ export default class BuyContainer extends Component<IProps, IState> {
 
 		return (
 			<Section
-				{...props}
+				{...omit(props, [
+					...routeProps,
+					'buy'
+				])}
 				className={style(classes.root, className)}
 			>
 				<div
@@ -112,10 +124,10 @@ export default class BuyContainer extends Component<IProps, IState> {
 							label={__`buy.firstname`}
 						>
 							<Input
+								{...UserFieldsSpec.firstname}
 								id='firstname'
 								placeholder={__`buy.firstname`}
 								name='firstname'
-								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={firstname}
 							/>
@@ -125,10 +137,10 @@ export default class BuyContainer extends Component<IProps, IState> {
 							label={__`buy.lastname`}
 						>
 							<Input
+								{...UserFieldsSpec.lastname}
 								id='lastname'
 								placeholder={__`buy.lastname`}
 								name='lastname'
-								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={lastname}
 							/>
@@ -138,10 +150,10 @@ export default class BuyContainer extends Component<IProps, IState> {
 							label={__`buy.position`}
 						>
 							<Input
+								{...UserFieldsSpec.position}
 								id='position'
 								placeholder={__`buy.position`}
 								name='position'
-								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={position}
 							/>
@@ -151,10 +163,10 @@ export default class BuyContainer extends Component<IProps, IState> {
 							label={__`buy.company`}
 						>
 							<Input
+								{...UserFieldsSpec.company}
 								id='company'
 								placeholder={__`buy.company`}
 								name='company'
-								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={company}
 							/>
@@ -164,10 +176,10 @@ export default class BuyContainer extends Component<IProps, IState> {
 							label={__`buy.city`}
 						>
 							<Input
+								{...UserFieldsSpec.city}
 								id='city'
 								placeholder={__`buy.city`}
 								name='city'
-								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={city}
 							/>
@@ -178,15 +190,17 @@ export default class BuyContainer extends Component<IProps, IState> {
 							notice={__`buy.notice`}
 						>
 							<Input
+								{...UserFieldsSpec.email}
 								id='email'
-								type='email'
 								placeholder={__`buy.email`}
 								name='email'
-								pattern={noAroundSpacesPattern}
 								onChange={this.onInputChange}
 								value={email}
 							/>
 						</FormGroup>
+						<ErrorMessage>
+							{this.error()}
+						</ErrorMessage>
 						<TicketFormFooter>
 							<Button
 								variant='secondary'
@@ -225,11 +239,17 @@ export default class BuyContainer extends Component<IProps, IState> {
 		}));
 	}
 
-	private onSubmit(event: ChangeEvent<HTMLFormElement>) {
+	@Bind()
+	private async onSubmit(event: ChangeEvent<HTMLFormElement>) {
 
 		event.preventDefault();
 
-		console.log('submited');
+		const {
+			buy
+		} = this.props;
+		const userData = this.getUserData();
+
+		buy(userData);
 	}
 
 	private validate(input: HTMLInputElement) {
@@ -238,4 +258,51 @@ export default class BuyContainer extends Component<IProps, IState> {
 
 		input.setCustomValidity(validityMessage);
 	}
+
+	private getUserData() {
+
+		const {
+			firstname,
+			lastname,
+			position,
+			company,
+			city,
+			email
+		} = this.state;
+		const locale = getLocaleFromPath(location.pathname);
+		const userData = {
+			email,
+			firstName: firstname,
+			lastName: lastname,
+			company,
+			position,
+			city,
+			termsAccepted: true,
+			paymentRequest: {
+				locale,
+				products: [
+					{
+						productId: 'ticket'
+					}
+				],
+				promocode: ''
+			}
+		};
+
+		return userData;
+	}
+
+	private error() {
+
+		const {
+			buy,
+			errors
+		} = this.props;
+		const error = errors.get(buy);
+		const message = getErrorMessage(error);
+
+		return message;
+	}
 }
+
+export default withRouter(BuyContainer);

@@ -16,7 +16,8 @@
 		colorBlack,
 		colorBlue1,
 		colorBlue2,
-		colorBlue4;
+		colorBlue4,
+		colorRed;
 }
 
 :import {
@@ -57,6 +58,20 @@
 .root .Toggle {
 	left: 1.2rem;
 	color: value(colorWhite);
+}
+
+.root .logout {
+	margin: 0;
+	border-radius: 0;
+	background: transparent;
+	padding: 0;
+	font-size: 2rem;
+	font-weight: normal;
+}
+
+.root .logout:hover,
+.root .logout:focus {
+	background: transparent;
 }
 
 .section {
@@ -112,7 +127,7 @@
 	padding: 0;
 }
 
-.controls button {
+.controls > button {
 	margin: 0 -14px;
 }
 
@@ -139,7 +154,7 @@
 		height: 70px;
 	}
 
-	.root .Button {
+	.root > .Button {
 		border-radius: value(sizeBorderRadiusSm);
 		white-space: nowrap;
 		font-size: 16px;
@@ -163,7 +178,7 @@
 @media (max-width: value(sizeScreenSmMax)) {
 
 	/* stylelint-disable a11y/font-size-is-readable */
-	.root .Button {
+	.root .controls > li .Button {
 		font-size: 12px;
 	}/* stylelint-enable */
 }

@@ -193,6 +193,22 @@ export function getTickets(context: I18nConfig): any[] {
 }
 
 /**
+ * Get share links from locales.
+ */
+export function getShareLinks(context: I18nConfig): any[] {
+
+	const {
+		header: {
+			links
+		}
+	} = context.getCatalog(
+		context.getLocale()
+	) as any;
+
+	return links;
+}
+
+/**
  * Get footer links for visitors from context.
  */
 export function getFooterVisitorsLinks(context: I18nConfig): any[] {

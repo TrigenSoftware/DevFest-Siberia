@@ -43,6 +43,7 @@ export default class Tickets extends Component<IProps> {
 			context
 		} = this;
 		const tickets = getTickets(context);
+		console.log(tickets);
 
 		return (
 			<Section

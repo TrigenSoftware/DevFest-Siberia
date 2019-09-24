@@ -1,2 +1,2 @@
-export { default } from './Buy';
+export { default } from './connected';
 export * from './Buy';

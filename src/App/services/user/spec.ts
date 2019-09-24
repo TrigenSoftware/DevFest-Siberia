@@ -8,12 +8,15 @@ import {
 } from './';
 
 const MOCK_LOGIN_RESPONSE = {
-	userId:    123,
-	email:     'test@mail.ru',
-	firstname: 'firstname',
-	lastname:  'lastname',
-	company:   'company',
-	city:      'city'
+	authKey: 'string',
+	profile: {
+		userId:    123,
+		email:     'test@mail.ru',
+		firstname: 'firstname',
+		lastname:  'lastname',
+		company:   'company',
+		city:      'city'
+	}
 };
 const MOCK_BUY_RESPONSE = {
 	paymentDetails: {

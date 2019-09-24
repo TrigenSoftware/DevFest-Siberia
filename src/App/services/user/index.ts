@@ -13,9 +13,7 @@ export async function buy(registrationData) {
 
 	const {
 		data: buyData
-	} = await client.post('auth/register', {
-		registrationData
-	});
+	} = await client.post('auth/register', registrationData);
 
 	logger.debug('buy', 'Response:', buyData);
 
@@ -35,7 +33,22 @@ export async function login(email: string, password: string) {
 
 	logger.debug('login', 'Response:', loginData);
 
-	return userFromResponseData(loginData);
+	saveToken(loginData.authKey);
+
+	return userFromResponseData(loginData.profile);
+}
+
+export async function getProfile() {
+
+	logger.debug('getProfile');
+
+	const {
+		data: profileData
+	} = await client.get('api/profile');
+
+	logger.debug('getProfile', 'Response:', profileData);
+
+	return userFromResponseData(profileData);
 }
 
 export async function fetchOrders() {
@@ -48,7 +61,14 @@ export async function fetchOrders() {
 
 	logger.debug('fetchOrders', 'Response:', ordersData);
 
-	return orderFromResponseData(ordersData);
+	return orderFromResponseData(ordersData[0]);
+}
+
+export function logout() {
+
+	logger.debug('logout');
+
+	localStorage.removeItem('authToken');
 }
 
 export function saveToken(token: string) {

@@ -11,8 +11,17 @@
 		"cfp": "Стать спикером",
 		"lang": "En",
 		"login": "Войти",
+		"logout": "Выход",
+		"profile": "Личный кабинет",
 		"buyTicket": "Купить Билет",
-		"share": "Поделиться"
+		"share": "Поделиться",
+		"links": {
+			"twitter": "https:/twitter.com",
+			"facebook": "https:/facebook.com",
+			"vk": "https:/vk.com",
+			"telegram": "https:/telegram.com",
+			"site": "https:/site.com"
+		}
 	},
 	"facts": {
 		"title": "DevFest Siberia это –",
@@ -35,7 +44,7 @@
 				"sale": "Количество билетов ограниченно",
 				"buy": "Купить",
 				"priceType": "Три дня конференции по специальной цене",
-				"description:": "Для тех, кто хочет успеть первым"
+				"description": "Для тех, кто хочет успеть первым"
 			},
 			{
 				"type": "General Pass",
@@ -43,7 +52,7 @@
 				"sale": "Продажа открыта до 15 ноября",
 				"buy": "Купить",
 				"priceType": "Три дня конференции по стандартной цене",
-				"description:": "Для всех"
+				"description": "Для всех"
 			},
 			{
 				"type": "Late Birds",
@@ -51,7 +60,7 @@
 				"sale": "Продажа открыта до 15 ноября",
 				"buy": "Купить",
 				"priceType": "Три дня конференции по внезапной цене",
-				"description:": "Успеть в последний момент"
+				"description": "Успеть в последний момент"
 			}
 		]
 	},
@@ -440,8 +449,23 @@
 		"id": "Номер Билета",
 		"for": "Для",
 		"where": "Где",
+		"location": "Академпарк, 18",
 		"when": "Когда",
+		"data": "29 ноября – 1 декабря",
 		"ticket": "Один билет"
+	},
+	"login": {
+		"title": "Войти",
+		"email": "Почта:",
+		"emailPlaceholder": "Введите почту",
+		"password": "Пароль",
+		"passwordPlaceholder": "Введите пароль",
+		"cancel": "Отмена",
+		"submit": "Впусти меня!",
+		"link": "Нет аккаунта? Купи билет и входи!"
+	},
+	"confirm": {
+		"message": "Спасибо за покупку. Проверьте ваш имейл."
 	},
 	"coc": {
 		"title": "Правила поведения",
