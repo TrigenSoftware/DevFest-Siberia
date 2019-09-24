@@ -53,12 +53,17 @@ export class CabinetContainer extends Component<IProps> {
 			className,
 			user,
 			order,
+			isLogged,
 			...props
 		} = this.props;
 		const {
 			context
 		} = this;
 		const __ = context.bind(tr);
+
+		if (!isLogged()) {
+			return null;
+		}
 
 		return (
 			<Section

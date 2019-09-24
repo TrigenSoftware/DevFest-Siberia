@@ -68,13 +68,23 @@ export function logout() {
 
 	logger.debug('logout');
 
-	localStorage.removeItem('authToken');
+	if (typeof localStorage !== 'undefined') {
+		localStorage.removeItem('authToken');
+	}
 }
 
 export function saveToken(token: string) {
-	localStorage.setItem('authToken', token);
+
+	if (typeof localStorage !== 'undefined') {
+		localStorage.setItem('authToken', token);
+	}
 }
 
 export function getToken() {
+
+	if (typeof localStorage === 'undefined') {
+		return null;
+	}
+
 	return localStorage.getItem('authToken');
 }

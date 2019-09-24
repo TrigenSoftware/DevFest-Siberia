@@ -45,7 +45,13 @@
 		"policy": "I agree to accept <>The Privacy Policy</>"
 	},
 	"location": {
-		"address": "<>Academpark</>12, Nikolaeva, Novosibirsk"
+		"address": "<>Academpark</>12, Nikolaeva, Novosibirsk",
+		"name": "Academpark",
+		"streetAddress": "Nikolaeva",
+		"addressLocality": "Russia, Novosibirsk",
+		"addressRegion": "Novosibirsk",
+		"postalCode": "630000",
+		"addressCountry": "Russia"
 	},
 	"partners": {
 		"title": "Partners",
@@ -453,5 +459,9 @@
 		"offerUrl": "/some.pdf",
 		"rules": "All attendees, speakers, sponsors and volunteers at DevFest Siberia are required to agree with the following code of conduct. Organisers will enforce this code throughout the event. We are expecting cooperation from all participants to help ensuring a safe environment for everybody.",
 		"about": "DevFest Siberia is dedicated to providing a harassment-free conference experience for everyone, regardless of gender, sexual orientation, disability, physical appearance, body size, race, or religion. We do not tolerate harassment of conference participants in any form. Sexual language and imagery is not appropriate for any conference venue, including talks, workshops, parties, Twitter and other online communication channels. Conference participants violating these rules may be sanctioned or expelled from the conference without a refund at the discretion of the conference organisers."
+	},
+	"meta": {
+		"description": "DevFest Siberia - conference for developers and IT geeks. Main topics: Mobile Development, IoT, Google Cloud и Google APIs, Virtual and Augmented Reality, Modern Web Application Development, Firebase Interaction from experts around the world. Awesome speakers and lots of fun!",
+		"twitter-description": "DevFest Siberia - conference for developers and IT geeks. Main topics: Mobile Development, Modern Web Application Development, Machine Learning and Blockchain development from experts around the world. Awesome speakers and lots of fun!"
 	}
 }

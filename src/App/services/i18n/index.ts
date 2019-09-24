@@ -1,6 +1,18 @@
+/* tslint:disable:no-magic-numbers */
 import {
 	I18nConfig
 } from 'i18n-for-react';
+import {
+	coordinates,
+	startTime,
+	endTime,
+	keywords,
+	title,
+	twitterSite,
+	siteUrl,
+	sharingImages,
+	ageRange
+} from '~/data';
 
 /**
  * Routing methods:
@@ -238,4 +250,92 @@ export function getFooterSocialLinks(context: I18nConfig): any[] {
 	) as any;
 
 	return socialLinks;
+}
+
+/**
+ * Get location data from context.
+ */
+export function getLocation(context: I18nConfig) {
+
+	const {
+		location
+	} = context.getCatalog(
+		context.getLocale()
+	) as any;
+
+	return location;
+}
+
+/**
+ * Get meta data from context.
+ */
+export function getMetaData(context: I18nConfig) {
+
+	const {
+		meta
+	} = context.getCatalog(
+		context.getLocale()
+	) as any;
+
+	return {
+		...meta,
+		'keywords':          keywords,
+		'twitter:title':     title,
+		'twitter:site':      twitterSite,
+		'twitter:image:src': sharingImages.twitter,
+		'og:site_name':      title,
+		'og:url':            siteUrl,
+		'og:description':    title,
+		'og:image':          sharingImages.facebook
+	};
+}
+
+/**
+ * Get schema data.
+ */
+export function getSchemaData(context: I18nConfig) {
+
+	const metaData = getMetaData(context);
+	const speakers = getSpeakers(context);
+	const location = getLocation(context);
+
+	return {
+		'@context':    'http://schema.org',
+		'@type':       'Event',
+		'name':        title,
+		'description': metaData.description,
+		'image':       sharingImages.image,
+		'url':         process.env.SITE_URL,
+		'startDate':   startTime,
+		'doorTime':    '',
+		'endDate':     endTime,
+		'location': {
+			'@type':   'Place',
+			'name':    location.name,
+			'address': {
+				'@type':          'PostalAddress',
+				'streetAddress':   location.streetAddress,
+				'addressLocality': location.addressLocality,
+				'addressRegion':   location.addressRegion,
+				'postalCode':      location.postalCode,
+				'addressCountry':  location.addressCountry
+			},
+			'geo': {
+				'@type':     'GeoCoordinates',
+				'latitude':  coordinates.lat,
+				'longitude': coordinates.lng
+			}
+		},
+		'performer': speakers.map(speaker => [
+			{
+				'@type':    'Person',
+				'name':     `${speaker.firstname} ${speaker.lastname}`,
+				'image':    speaker.src,
+				'jobTitle': speaker.talkTitle,
+				'sameAs':   speaker.contacts
+			}
+		]),
+		'eventStatus':     'EventScheduled',
+		'typicalAgeRange': ageRange
+	};
 }
