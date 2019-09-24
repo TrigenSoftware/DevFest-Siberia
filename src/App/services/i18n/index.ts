@@ -282,7 +282,7 @@ export function getMetaData(context: I18nConfig) {
 		'twitter:site':      twitterSite,
 		'twitter:image:src': sharingImages.twitter,
 		'og:url':            ogUrl,
-		'og:image':          sharingImages.image
+		'og:image':          sharingImages.facebook
 	};
 }
 
