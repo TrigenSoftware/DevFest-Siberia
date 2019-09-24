@@ -183,6 +183,10 @@
 			{
 				"link": "https://vk.com/gdgnsk",
 				"label": "VK"
+			},
+			{
+				"link": "https://www.meetup.com/GDGNsk",
+				"label": "Meetup"
 			}
 		]
 	},
