@@ -1,6 +1,9 @@
 import Logger from 'js-logger';
 
 Logger.useDefaults({
+	defaultLevel: process.env.NODE_ENV === 'test'
+		? Logger.WARN
+		: Logger.DEBUG,
 	formatter(messages, { name }) {
 
 		const contextPart = messages.shift();
