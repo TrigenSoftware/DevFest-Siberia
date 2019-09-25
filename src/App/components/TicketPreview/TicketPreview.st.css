@@ -61,6 +61,10 @@
 	content: '';
 }
 
+.root:vertical::before {
+	border-width: 6px;
+}
+
 .root:vertical .content {
 	flex-direction: column-reverse;
 }
@@ -81,6 +85,7 @@
 
 .root:vertical .auxiliaryContent {
 	display: block;
+	border-width: 5px;
 	width: 100%;
 	text-align: center;
 }
@@ -89,12 +94,18 @@
 	top: 100%;
 	left: 50%;
 	transform: translate(-50%, -35%);
+	border-width: 5px;
+}
+
+.root:vertical .Primary::after {
+	border-width: 5px;
 }
 
 .root:vertical .content::before {
 	top: 100%;
 	left: 50%;
 	transform: translate(-50%, -35%);
+	border-width: 6px;
 }
 
 .group:not(:last-child) {
