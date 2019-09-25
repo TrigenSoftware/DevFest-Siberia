@@ -103,7 +103,8 @@ export class BuyContainer extends Component<IProps, IState> {
 			<Section
 				{...omit(props, [
 					...routeProps,
-					'buy'
+					'buy',
+					'errors'
 				])}
 				className={style(classes.root, className)}
 			>

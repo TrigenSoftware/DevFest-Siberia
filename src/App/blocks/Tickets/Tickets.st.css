@@ -23,6 +23,7 @@
 	position: relative;
 	background: linear-gradient(180deg, value(colorPink0) 50%, value(colorBlue10) 50%);
 	height: 100%;
+	overflow: hidden;
 }
 
 .root::before {
@@ -73,7 +74,6 @@
 	margin-top: rel(47, 24);
 	background-color: value(colorWhite);
 	padding: 10px;
-	overflow: hidden;
 	text-align: center;
 }
 
@@ -153,6 +153,26 @@
 .content .circle:nth-of-type(4) {
 	right: -30px;
 	bottom: -30px;
+}
+
+.line {
+	position: absolute;
+	margin: 20px 0;
+	border: 8px solid value(colorWhite);
+	background-color: value(colorPink0);
+	width: 100vw;
+}
+
+.line:nth-of-type(5) {
+	top: 0;
+	right: 100%;
+	bottom: 0;
+}
+
+.line:nth-of-type(6) {
+	top: 0;
+	bottom: 0;
+	left: 100%;
 }
 
 @media (max-width: value(sizeScreenMdMax)) {
