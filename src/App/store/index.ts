@@ -5,12 +5,12 @@ import {
 	State,
 	IActions
 } from './types';
-import {
-	registerWeatherSegment
-} from './Weather/register';
-import {
-	registerTodoSegment
-} from './Todo/register';
+// import {
+// 	registerWeatherSegment
+// } from './Weather/register';
+// import {
+// 	registerTodoSegment
+// } from './Todo/register';
 import {
 	registerUserSegment
 } from './User/register';
@@ -27,8 +27,8 @@ export default function createStore() {
 		enhancer: __REDUX_DEVTOOLS_EXTENSION__ && __REDUX_DEVTOOLS_EXTENSION__()
 	});
 
-	registerWeatherSegment(store);
-	registerTodoSegment(store);
+	// registerWeatherSegment(store);
+	// registerTodoSegment(store);
 	registerUserSegment(store);
 
 	return store;

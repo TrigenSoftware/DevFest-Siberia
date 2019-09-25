@@ -1,8 +1,12 @@
+// tslint:disable space-in-parens
 import React, {
 	ReactChild,
 	ContextType,
 	Component
 } from 'react';
+import {
+	Helmet
+} from 'react-helmet';
 import {
 	hot
 } from 'react-hot-loader';
@@ -16,8 +20,13 @@ import {
 import '@flexis/ui/reboot.st.css';
 import './App.st.css';
 import {
-	getLocalizedPath
+	getLocalizedPath,
+	getMetaData,
+	getSchemaData
 } from '~/services/i18n';
+import {
+	title
+} from './data';
 import {
 	setAppElement
 } from '~/components/Modal';
@@ -52,9 +61,27 @@ export default class App extends Component<IProps> {
 		const {
 			context
 		} = this;
+		const metaData = getMetaData(context);
 
 		return this.router(
 			<>
+				<Helmet>
+					<html lang={context.getLocale()}/>
+					{process.env.BASE_URL && (
+						<base href={process.env.BASE_URL}/>
+					)}
+					<title>{title}</title>
+					{Object.entries(metaData).map(([key, value]: [string, string]) => (
+						<meta
+							key={key}
+							name={key}
+							content={value}
+						/>
+					))}
+					<script type='application/ld+json'>
+						{JSON.stringify(getSchemaData(context))}
+					</script>
+				</Helmet>
 				<ScrollToTop/>
 				<Header/>
 				<Route
@@ -115,7 +142,14 @@ export default class App extends Component<IProps> {
 		);
 	}
 
-	componentDidMount() {
+	async componentDidMount() {
+
 		setAppElement('#view');
+
+		const {
+			default: analytics
+		} = await import(/* webpackChunkName: 'analytics' */ './analytics');
+
+		analytics();
 	}
 }

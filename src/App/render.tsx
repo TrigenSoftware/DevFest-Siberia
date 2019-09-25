@@ -10,8 +10,15 @@ import {
 	ChunkExtractor
 } from '@loadable/server';
 import {
+	Helmet,
+	HelmetData
+} from 'react-helmet';
+import {
 	I18nProvider
 } from 'i18n-for-react';
+import Store, {
+	Provider
+} from '@flexis/redux';
 import jsesc from 'jsesc';
 import {
 	StaticRouter
@@ -23,6 +30,7 @@ import ru from '~/locales/ru.json';
 import en from '~/locales/en.json';
 import App from './App';
 import sprite from 'svg-sprite-loader/runtime/sprite.build';
+import createStore from './store';
 import {
 	RoutesList
 } from './routes';
@@ -32,7 +40,11 @@ const extractorOptions = {
 	entrypoints: ['index']
 };
 
-function render(locale: string, location: string): [string, string] {
+function render(
+	store: Store,
+	locale: string,
+	location: string
+): [HelmetData, string, string] {
 
 	const extractor = new ChunkExtractor(extractorOptions);
 	const jsx = extractor.collectChunks(
@@ -47,16 +59,22 @@ function render(locale: string, location: string): [string, string] {
 			<StaticRouter
 				location={location}
 			>
-				<App
-					disableRouter
-				/>
+				<Provider store={store}>
+					<App
+						disableRouter
+					/>
+				</Provider>
 			</StaticRouter>
 		</I18nProvider>
 	);
 	const view: string = renderToString(jsx);
-	const scripts: string = extractor.getScriptTags().replace(/\n/g, '');
+	const scripts: string = extractor.getScriptTags()
+		.replace(/\n/g, '')
+		.replace(/async/g, 'defer');
+	const helmet = Helmet.renderStatic();
 
 	return [
+		helmet,
 		scripts,
 		view
 	];
@@ -65,7 +83,6 @@ function render(locale: string, location: string): [string, string] {
 async function createTemplate() {
 
 	const template = await fs.readFile('build/index.html', 'utf8');
-	const spriteHtml = sprite.stringify();
 	const enstr = jsesc(JSON.stringify({
 		locale:  'en',
 		locales: { en }
@@ -84,18 +101,22 @@ async function createTemplate() {
 	});
 
 	return (
-		[scripts, view]: [string, string],
+		[helmet, scripts, view]: [HelmetData, string, string],
 		locale: string
 	) => {
 
-		let result = template
+		const spriteHtml = sprite.stringify();
+		const result = template
+			.replace(/<html([^>]*)>/, `<html$1 ${helmet.htmlAttributes.toString()}>`)
+			.replace(/(<head[^>]*>)/, `$1${[
+				helmet.base.toString(),
+				helmet.title.toString(),
+				helmet.meta.toString(),
+				helmet.script.toString()
+			].join('')}`)
 			.replace(/<script[^>]*src.*<\/script>/, scripts)
 			.replace('<script', `<script>var I18N=${locale === 'en' ? enstr : rustr};</script><script`)
 			.replace(/(<div id=view>)(<\/div>)/, `${spriteHtml}$1${view}$2`);
-
-		if (process.env.BASE_URL) {
-			result = result.replace(/(<head>)/, `$1<base href=${process.env.BASE_URL} >`);
-		}
 
 		return result;
 	};
@@ -104,11 +125,14 @@ async function createTemplate() {
 async function renderAll(pages: string[]) {
 
 	const wrap = await createTemplate();
+	const store = createStore();
+
+	await store.loadAllSegments();
 
 	await Promise.all(pages.map(async (routePath) => {
 
 		const locale = getLocaleFromPath(routePath);
-		const parts = render(locale, routePath);
+		const parts = render(store, locale, routePath);
 		const html = wrap(parts, locale);
 
 		await fs.mkdir(
