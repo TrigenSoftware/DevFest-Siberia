@@ -93,8 +93,32 @@ export default class Tickets extends Component<IProps> {
 					className={classes.сontact}
 				>
 					<div
+						className={classes.circle}
+					/>
+					<div
+						className={classes.circle}
+					/>
+					<div
+						className={classes.circle}
+					/>
+					<div
+						className={classes.circle}
+					/>
+					<div
 						className={classes.content}
 					>
+						<div
+							className={classes.circle}
+						/>
+						<div
+							className={classes.circle}
+						/>
+						<div
+							className={classes.circle}
+						/>
+						<div
+							className={classes.circle}
+						/>
 						<h3>
 							{__x`tickets.сontact`}
 						</h3>
