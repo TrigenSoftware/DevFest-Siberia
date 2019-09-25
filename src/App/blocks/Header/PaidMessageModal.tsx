@@ -47,7 +47,7 @@ export class PaidMessageModal extends Component<IProps> {
 				{...omit(props, routeProps)}
 				elementRef={this.onModalRef}
 			>
-				{__x`confirm.message`}
+				{__x`header.confirm.message`}
 			</ConfirmModal>
 		);
 	}

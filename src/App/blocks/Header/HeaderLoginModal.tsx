@@ -143,7 +143,7 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 					</LoginModalTitle>
 					<FormGroup
 						id='email'
-						label={__`login.email`}
+						label={`${__`login.email`}:`}
 					>
 						<Input
 							{...UserFieldsSpec.email}
@@ -156,7 +156,7 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 					</FormGroup>
 					<FormGroup
 						id='password'
-						label={__`login.password`}
+						label={`${__`login.password`}:`}
 					>
 						<Input
 							{...UserFieldsSpec.password}
