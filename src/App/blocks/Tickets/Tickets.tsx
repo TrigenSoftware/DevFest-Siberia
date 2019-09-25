@@ -27,6 +27,11 @@ import {
 
 export type IProps = ISectionProps;
 
+const priceType = [
+	<b key='bold'/>,
+	<span key='highlight'/>
+];
+
 export default class Tickets extends Component<IProps> {
 
 	static contextType = I18nContext;
@@ -70,7 +75,7 @@ export default class Tickets extends Component<IProps> {
 									<div
 										className={classes.priceType}
 									>
-										{item.priceType}
+										{__x(item.priceType, priceType)}
 									</div>
 									<TicketPreviewButton
 										to='/buy'

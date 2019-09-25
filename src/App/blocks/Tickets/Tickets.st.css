@@ -69,6 +69,10 @@
 	font-size: 18px;
 }
 
+.priceType span {
+	color: value(colorPink0);
+}
+
 .сontact {
 	position: relative;
 	margin-top: rel(47, 24);
