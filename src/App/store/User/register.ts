@@ -1,3 +1,4 @@
+// tslint:disable space-in-parens
 import Store from '@flexis/redux';
 
 export const UserSegment = Symbol('user');
@@ -7,7 +8,7 @@ async function loadUserSegmentConfig() {
 	const {
 		UserReducer,
 		UserActions
-	} = await import('./');
+	} = await import(/* webpackChunkName: 'user.segment' */ './');
 
 	return {
 		reducer: UserReducer,

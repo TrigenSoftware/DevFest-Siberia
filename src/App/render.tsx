@@ -3,13 +3,6 @@ import {
 } from 'fs';
 import path from 'path';
 import React from 'react';
-import Store, {
-	Provider
-} from '@flexis/redux';
-import {
-	Helmet,
-	HelmetData
-} from 'react-helmet';
 import {
 	renderToString
 } from 'react-dom/server';
@@ -17,8 +10,15 @@ import {
 	ChunkExtractor
 } from '@loadable/server';
 import {
+	Helmet,
+	HelmetData
+} from 'react-helmet';
+import {
 	I18nProvider
 } from 'i18n-for-react';
+import Store, {
+	Provider
+} from '@flexis/redux';
 import jsesc from 'jsesc';
 import {
 	StaticRouter
@@ -29,8 +29,8 @@ import {
 import ru from '~/locales/ru.json';
 import en from '~/locales/en.json';
 import App from './App';
-import createStore from './store';
 import sprite from 'svg-sprite-loader/runtime/sprite.build';
+import createStore from './store';
 import {
 	RoutesList
 } from './routes';
@@ -68,7 +68,9 @@ function render(
 		</I18nProvider>
 	);
 	const view: string = renderToString(jsx);
-	const scripts: string = extractor.getScriptTags().replace(/\n/g, '');
+	const scripts: string = extractor.getScriptTags()
+		.replace(/\n/g, '')
+		.replace(/async/g, 'defer');
 	const helmet = Helmet.renderStatic();
 
 	return [
@@ -81,7 +83,6 @@ function render(
 async function createTemplate() {
 
 	const template = await fs.readFile('build/index.html', 'utf8');
-	const spriteHtml = sprite.stringify();
 	const enstr = jsesc(JSON.stringify({
 		locale:  'en',
 		locales: { en }
@@ -104,6 +105,7 @@ async function createTemplate() {
 		locale: string
 	) => {
 
+		const spriteHtml = sprite.stringify();
 		const result = template
 			.replace(/<html([^>]*)>/, `<html$1 ${helmet.htmlAttributes.toString()}>`)
 			.replace(/(<head[^>]*>)/, `$1${[
