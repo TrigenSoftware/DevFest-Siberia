@@ -64,7 +64,7 @@
 }
 
 .priceType {
-	margin: 13px 24px 0;
+	margin-top: 13px;
 	color: value(colorBlue7);
 	font-size: 18px;
 }

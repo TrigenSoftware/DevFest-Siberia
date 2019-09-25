@@ -4,7 +4,8 @@ import React, {
 } from 'react';
 import {
 	I18nContext,
-	__x
+	__x,
+	rprintf
 } from 'i18n-for-react';
 import {
 	getTickets
@@ -75,7 +76,7 @@ export default class Tickets extends Component<IProps> {
 									<div
 										className={classes.priceType}
 									>
-										{__x(item.priceType, priceType)}
+										{rprintf(item.priceType, priceType)}
 									</div>
 									<TicketPreviewButton
 										to='/buy'
