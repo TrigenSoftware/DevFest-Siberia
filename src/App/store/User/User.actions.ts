@@ -19,7 +19,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 
 		const redirectUrl = await userService.buy(registrationData);
 
-		if (redirectUrl === process.env.API_URL) {
+		if (redirectUrl === `${process.env.API_URL}buy?login=true`) {
 			this.setError({
 				type:  this.buy,
 				error: new Error('User already exist')
