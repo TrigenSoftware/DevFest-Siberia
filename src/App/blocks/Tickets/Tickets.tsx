@@ -4,12 +4,14 @@ import React, {
 } from 'react';
 import {
 	I18nContext,
+	__ as tr,
 	__x,
 	rprintf
 } from 'i18n-for-react';
 import {
 	getTickets
 } from '~/services/i18n';
+import Link from '~/components/Link';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -49,6 +51,8 @@ export default class Tickets extends Component<IProps> {
 			context
 		} = this;
 		const tickets = getTickets(context);
+		const __ = context.bind(tr);
+		const email = __`tickets.contactEmail`;
 
 		return (
 			<Section
@@ -127,9 +131,12 @@ export default class Tickets extends Component<IProps> {
 						<div
 							className={classes.circle}
 						/>
-						<h3>
-							{__x`tickets.сontact`}
-						</h3>
+						{__x('tickets.сontact', email, [(
+							<Link
+								key='contact'
+								href={`mailto:${email}`}
+							/>
+						)])}
 					</div>
 				</div>
 			</Section>

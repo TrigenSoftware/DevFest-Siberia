@@ -105,7 +105,7 @@ export default class SpeakerCard extends Component<IProps> {
 							})}
 						>
 							{firstname}
-							<br />
+							<br/>
 							{lastname}
 						</h3>
 						<div
@@ -127,15 +127,17 @@ export default class SpeakerCard extends Component<IProps> {
 						className={classes.name}
 					>
 						{firstname}
-						<br />
+						<br/>
 						{lastname}
 					</h3>
 					<div
 						className={classes.text}
 					>
-						<p>
-							{text}
-						</p>
+						<p
+							dangerouslySetInnerHTML={{
+								__html: text
+							}}
+						/>
 					</div>
 				</div>
 				<footer

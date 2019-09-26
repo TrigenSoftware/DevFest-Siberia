@@ -29,9 +29,9 @@ if (process.platform === 'darwin') {
 	initRouteshots([
 		...RoutesList,
 		'/speakers?type=all',
-		'/speakers?id=LeonidKalneus',
+		'/speakers?id=BaruchSadogursky',
 		'/ru/speakers?type=all',
-		'/ru/speakers?id=LeonidKalneus',
+		'/ru/speakers?id=BaruchSadogursky',
 		'/partners?type=all',
 		'/ru/partners?type=all'
 	], config);

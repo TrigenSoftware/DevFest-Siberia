@@ -25,6 +25,7 @@
 	-st-from: '~/components/ProfileCard/ProfileCard.st.css';
 	-st-default: ProfileCard;
 	-st-named:
+		sizeInfo,
 		info,
 		img,
 		footer;
@@ -47,6 +48,7 @@
 
 .root .ProfileCard .info {
 	padding: rel(15, 10) rel(15, 10) 0;
+	width: calc(value(sizeInfo) + rel(15, 10) * 2);
 }
 
 .root .ProfileCard .footer {

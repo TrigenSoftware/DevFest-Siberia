@@ -29,6 +29,10 @@
 		colorPink0;
 }
 
+:vars {
+	sizeProfile: 25em;
+}
+
 .root {
 	font-size: 1rem;
 }
@@ -46,13 +50,14 @@
 
 .profile {
 	float: left;
+	margin-right: 3em;
+	width: value(sizeProfile);
 }
 
 .img {
-	margin-right: 3em;
 	border: 1em solid value(colorPink0);
-	width: 25em;
-	height: 25em;
+	width: value(sizeProfile);
+	height: value(sizeProfile);
 }
 
 .img img {
@@ -160,11 +165,7 @@
 	.profile {
 		float: none;
 		margin-bottom: 17px;
-	}
-
-	.img {
-		width: 290px;
-		height: 290px;
+		width: 100%;
 	}
 
 	/* stylelint-disable a11y/no-display-none */

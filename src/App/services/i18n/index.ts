@@ -75,12 +75,16 @@ export function getSpeakers(context: I18nConfig, type?: string): any[] {
 	} = context.getCatalog(
 		context.getLocale()
 	) as any;
+	const safeSpeakers = speakers.map(speaker => ({
+		...speaker,
+		text: speaker.text.replace(/(href=)/g, 'rel="noopener noreferrer" $1')
+	}));
 
 	if (type && type !== 'all') {
-		return speakers.filter(speaker => speaker.type === type);
+		return safeSpeakers.filter(speaker => speaker.type === type);
 	}
 
-	return speakers;
+	return safeSpeakers;
 }
 
 /**
@@ -88,26 +92,14 @@ export function getSpeakers(context: I18nConfig, type?: string): any[] {
  */
 export function getSpeaker(context: I18nConfig, id: string): any {
 
-	const {
-		speakers: {
-			speakers
-		}
-	} = context.getCatalog(
-		context.getLocale()
-	) as any;
+	const speakers = getSpeakers(context);
 
 	return speakers.find(speaker => speaker.id === id);
 }
 
 export function getPromoSpeakers(context: I18nConfig): any[] {
 
-	const {
-		speakers: {
-			speakers
-		}
-	} = context.getCatalog(
-		context.getLocale()
-	) as any;
+	const speakers = getSpeakers(context);
 
 	return speakers.filter(speaker => speaker.promo === 'true');
 }
@@ -149,13 +141,7 @@ export function getPartners(context: I18nConfig): any[] {
  */
 export function getPartnersInfo(context: I18nConfig, type?: string): any[] {
 
-	const {
-		partners: {
-			partners
-		}
-	} = context.getCatalog(
-		context.getLocale()
-	) as any;
+	const partners = getPartners(context);
 
 	if (type && type !== 'all') {
 		return partners.reduce((partners, { items }) => [

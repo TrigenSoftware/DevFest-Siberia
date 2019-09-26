@@ -23,6 +23,10 @@
 		colorPink0;
 }
 
+:vars {
+	sizeInfo: 35em;
+}
+
 .root {
 	-st-states: clickable;
 	font-size: 1rem;
@@ -54,12 +58,13 @@
 
 .info {
 	padding: rel(25, 10) rel(25, 10) 0;
+	width: calc(value(sizeInfo) + rel(25, 10) * 2);
 }
 
 .img {
 	position: relative;
-	width: 35em;
-	height: 35em;
+	width: value(sizeInfo);
+	height: value(sizeInfo);
 }
 
 .img img {

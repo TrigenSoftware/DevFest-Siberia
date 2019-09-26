@@ -97,10 +97,3 @@
 .link:focus {
 	color: value(colorBlue10);
 }
-
-@media (min-width: value(sizeScreenMdMin)) {
-
-	.input {
-		padding-left: rel(88, 24);
-	}
-}

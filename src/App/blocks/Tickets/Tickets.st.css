@@ -27,6 +27,7 @@
 }
 
 .root::before {
+	pointer-events: none;
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -75,12 +76,15 @@
 
 .сontact {
 	position: relative;
-	margin-top: rel(47, 24);
+	margin-top: rel(47, 30);
 	padding: 10px;
 	text-align: center;
+	color: value(colorBlue7);
+	font-size: rel(30, 24);
 }
 
 .сontact::before {
+	pointer-events: none;
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -91,18 +95,15 @@
 	content: '';
 }
 
-.сontact h3 {
-	color: value(colorBlue7);
-	font-size: rel(35, 24);
-}
-
 .content {
 	position: relative;
 	background-color: value(colorWhite);
+	padding: 20px;
 	overflow: hidden;
 }
 
 .content::before {
+	pointer-events: none;
 	position: absolute;
 	top: 0;
 	right: 0;

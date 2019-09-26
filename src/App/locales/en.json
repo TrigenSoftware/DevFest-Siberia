@@ -37,31 +37,32 @@
 		"tracks": "<>4</><>Tracks</>plus workshops and codelabs"
 	},
 	"tickets": {
-		"сontact": "Для покупки на юридическое лицо свяжитесь с нами: devfest@gdg-siberia.com",
+		"contactEmail": "devfest@gdg-siberia.com",
+		"сontact": "If you'd like to purchase corporate tickets, for which we can provide an invoice, please reach out to us at <>%s</>. Corporate tickets incur a 500₽ processing fee on top of individual ticket prices.",
 		"items": [
 			{
-				"type": "Early Birds",
-				"price": "100$",
-				"sale": "The number of tickets is limited",
+				"type": "Early Bird",
+				"price": "4500₽",
+				"sale": "Early bird conference pass",
 				"buy": "Buy",
-				"priceType": "Three days of the conference at a <><>special</> price</>",
-				"description": "For those who want to be in time first"
+				"priceType": "Limited stock tickets for our first delegates :)",
+				"description": ""
 			},
 			{
-				"type": "General Pass",
-				"price": "120$",
-				"sale": "Sale is open until November 15",
+				"type": "General Admission",
+				"price": "5000₽",
+				"sale": "Standard conference pass",
 				"buy": "Buy",
-				"priceType": "Three days of the conference at a <><>standart</> price</>",
-				"description": "For all"
+				"priceType": "Our main batch of tickets for anyone and everyone",
+				"description": "Available until 15th November"
 			},
 			{
-				"type": "Late Birds",
-				"price": "150$",
-				"sale": "Sale is open until November 15",
+				"type": "Later Gator",
+				"price": "7999₽",
+				"sale": "Last chance conference pass",
 				"buy": "Buy",
-				"priceType": "Three days of the conference at a <><>sudden</> price</>",
-				"description": "Catch up at the last moment"
+				"priceType": "Last chance to grab tickets for our awesome conference",
+				"description": "On sale from 15th November"
 			}
 		]
 	},
@@ -443,6 +444,7 @@
 			{
 				"id": "AndrewMihin",
 				"type": "mobile",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569453678/speakers/AndrewMihin_lbbrqs.jpg",
 				"firstname": "Andrew",
 				"lastname": "Mihin",
 				"description": "Android Engineer at Bolt",
