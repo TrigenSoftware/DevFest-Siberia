@@ -444,14 +444,14 @@
 		"view": "View profile"
 	},
 	"buy": {
-		"oneTicket": "One Ticket - 100$",
+		"oneTicket": "General Pass - 5000₽",
 		"firstname": "First Name",
 		"lastname": "Last Name",
 		"position": "Position",
 		"company": "Company",
 		"city": "City",
 		"email": "Email",
-		"notice": "We will send a ticket here : )",
+		"notice": "This is where we'll send your ticket details :)",
 		"buy": "Buy",
 		"terms": "Accept <>Terms</>"
 	},
@@ -462,7 +462,7 @@
 		"where": "Where",
 		"location": "Academpark, 18",
 		"when": "When",
-		"data": "29 november – 1 december",
+		"date": "29 November – 1 December",
 		"ticket": "One ticket"
 	},
 	"login": {
@@ -473,7 +473,7 @@
 		"passwordPlaceholder": "Enter password",
 		"cancel": "Cancel",
 		"submit": "Let me in!",
-		"link": "Don't have account? Buy ticket and join!"
+		"link": "Don't have account? Buy a ticket to join!"
 	},
 	"coc": {
 		"title": "Code Of Conduct",
