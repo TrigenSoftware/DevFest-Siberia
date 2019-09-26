@@ -207,7 +207,7 @@ export function getTickets(context: I18nConfig): any[] {
 /**
  * Get share links from locales.
  */
-export function getShareLinks(context: I18nConfig): any[] {
+export function getShareLinks(context: I18nConfig): Record<string, string> {
 
 	const {
 		header: {
@@ -216,6 +216,10 @@ export function getShareLinks(context: I18nConfig): any[] {
 	} = context.getCatalog(
 		context.getLocale()
 	) as any;
+
+	for (const key in links) {
+		links[key] = links[key].replace(/\{SITE_URL\}/g, process.env.SITE_URL);
+	}
 
 	return links;
 }

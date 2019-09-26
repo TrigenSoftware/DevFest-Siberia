@@ -2,7 +2,7 @@
 	"main": {
 		"title": "DevFest Siberia 2019",
 		"address": "Novosibirsk",
-		"dates": "29<>november</><>-</>01<>december</>",
+		"dates": "29<>November</><>-</>01<>December</>",
 		"year": "2019"
 	},
 	"header": {
@@ -16,12 +16,13 @@
 		"buyTicket": "Buy ticket",
 		"share": "Share",
 		"links": {
-			"twitter": "https:/twitter.com",
-			"facebook": "https:/facebook.com",
-			"vk": "https:/vk.com",
-			"telegram": "https:/telegram.com",
-			"site": "https:/site.com"
-		}
+			"twitter": "https://twitter.com/intent/tweet?screen_name=@GDGNsk&text=Spreading the love - #DevFestSiberia2019, the largest community conference in Russia this winter: {SITE_URL}",
+			"facebook": "https://www.facebook.com/dialog/share?app_id=1326280610740824&display=popup&href={SITE_URL}&redirect_uri={SITE_URL}",
+			"vk": "https://vk.com/share.php?url={SITE_URL}",
+			"telegram": "https://telegram.me/share/url?url={SITE_URL}&text=DevFest Siberia 2019",
+			"meetup": "https://meetup.com"
+		},
+		"confirmMessage": "Thank you for your purchase. Check your email."
 	},
 	"facts": {
 		"title": "DevFest Siberia -",
@@ -177,15 +178,11 @@
 		]
 	},
 	"footer": {
-		"visitors": "For Visitors",
+		"visitors": "Visitors",
 		"visitorsLinks": [
 			{
 				"link": "/code-of-conduct",
 				"label": "Code of conduct"
-			},
-			{
-				"link": "/students",
-				"label": "For students"
 			}
 		],
 		"devFestsLinks": [
@@ -202,24 +199,32 @@
 				"label": "DevFest Siberia 2016"
 			}
 		],
-		"companies": "For Companies",
+		"companies": "Companies",
 		"partner": "Become a partner",
 		"contact": "Contact us",
-		"socials": "We are in social networks",
+		"socials": "We are on social media",
 		"socialLinks": [
 			{
 				"link": "https://t.me/DevFestSiberia",
 				"label": "Telegram"
 			},
 			{
-				"link": "https://twitter.com/intent/user?screen_name=GDGNsk",
+				"link": "https://twitter.com/GDGNsk",
 				"label": "Twitter"
 			},
 			{
 				"link": "https://vk.com/gdgnsk",
 				"label": "VK"
+			},
+			{
+				"link": "https://www.meetup.com/GDGNsk",
+				"label": "Meetup"
 			}
-		]
+		],
+		"termsOfService": {
+			"link": "https://termsofservice.com/",
+			"label": "Terms of service"
+		}
 	},
 	"team": {
 		"title": "Team",
@@ -462,16 +467,13 @@
 	},
 	"login": {
 		"title": "SIGN IN",
-		"email": "E-mail:",
+		"email": "E-mail",
 		"emailPlaceholder": "Enter e-mail",
 		"password": "Password",
 		"passwordPlaceholder": "Enter password",
 		"cancel": "Cancel",
 		"submit": "Let me in!",
 		"link": "Don't have account? Buy ticket and join!"
-	},
-	"confirm": {
-		"message": "Thank you for your purchase. Check your email."
 	},
 	"coc": {
 		"title": "Code Of Conduct",
@@ -490,7 +492,7 @@
 		"about": "DevFest Siberia is dedicated to providing a harassment-free conference experience for everyone, regardless of gender, sexual orientation, disability, physical appearance, body size, race, or religion. We do not tolerate harassment of conference participants in any form. Sexual language and imagery is not appropriate for any conference venue, including talks, workshops, parties, Twitter and other online communication channels. Conference participants violating these rules may be sanctioned or expelled from the conference without a refund at the discretion of the conference organisers."
 	},
 	"meta": {
-		"description": "DevFest Siberia - conference for developers and IT geeks. Main topics: Mobile Development, IoT, Google Cloud и Google APIs, Virtual and Augmented Reality, Modern Web Application Development, Firebase Interaction from experts around the world. Awesome speakers and lots of fun!",
-		"twitter-description": "DevFest Siberia - conference for developers and IT geeks. Main topics: Mobile Development, Modern Web Application Development, Machine Learning and Blockchain development from experts around the world. Awesome speakers and lots of fun!"
+		"description": "DevFest Siberia - a people-first conference for developers and IT enthusiasts. Main topics: Mobile Development, IoT, Google Cloud, Google APIs, Virtual and Augmented Reality, Modern Web Application Development, Firebase Interaction from experts around the world. Awesome speakers and lots of fun!",
+		"twitter-description": "DevFest Siberia - a people-first conference for developers and IT enthusiasts. Main topics: Mobile Development, Modern Web Application Development, Machine Learning and Blockchain development from experts around the world. Awesome speakers and lots of fun!"
 	}
 }

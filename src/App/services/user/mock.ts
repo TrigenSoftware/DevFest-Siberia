@@ -15,7 +15,9 @@ export async function buy(registrationData) {
 
 	logger.debug('buy', 'Input user:', registrationData);
 
-	await delay(1000);
+	if (!process.env.SEED) {
+		await delay(1000);
+	}
 
 	return '/';
 }
@@ -24,7 +26,9 @@ export async function login(email: string, password: string) {
 
 	logger.debug('login', 'Input email:', email, '; password:', password);
 
-	await delay(1000);
+	if (!process.env.SEED) {
+		await delay(1000);
+	}
 
 	const response = mockUser();
 

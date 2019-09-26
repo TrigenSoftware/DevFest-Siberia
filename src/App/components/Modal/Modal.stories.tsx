@@ -17,7 +17,6 @@ import en from '~/locales/en.json';
 import ModalStories, {
 	events
 } from '@flexis/ui/components/Modal/Modal.stories';
-import Header from '~/blocks/Header';
 import Modal from './';
 import {
 	setAppElement
@@ -94,19 +93,5 @@ storiesOf('Components|Modal', module)
 			>
 				Modal content.
 			</Modal>
-		)
-	)
-	.add(
-		'with header',
-		() => (
-			<>
-				<Header/>
-				<Modal
-					{...events}
-					active={boolean('Active', true)}
-				>
-					Modal content.
-				</Modal>
-			</>
 		)
 	);

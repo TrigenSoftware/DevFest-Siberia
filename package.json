@@ -20,6 +20,7 @@
     "lint": "trigen-scripts lint",
     "jest": "trigen-scripts jest",
     "test": "trigen-scripts test",
+    "build:favicons": "trigen-scripts build:favicons --androidOffset 15 --appleOffset 15 --appleStartupOffset 15 --androidBackground white -m src/manifest.json",
     "build:docs": "trigen-scripts build:docs",
     "start:storybook": "trigen-scripts start:storybook -c .storybook",
     "build:storybook": "trigen-scripts build:storybook -c .storybook",

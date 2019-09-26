@@ -221,9 +221,13 @@ export default class SpeakerCard extends Component<IProps> {
 
 	private renderBadge(type: string) {
 
+		if (!type) {
+			return null;
+		}
+
 		let props: Partial<IBadgeProps> = {};
 
-		switch (type.toLocaleLowerCase()) {
+		switch (type.toLowerCase()) {
 
 			case 'mobile':
 				props = {

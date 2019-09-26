@@ -11,6 +11,7 @@ import EmailIcon from '~/icons/email.svg';
 import TwitterIcon from '~/icons/twitter.svg';
 import VkIcon from '~/icons/vk.svg';
 import FacebookIcon from '~/icons/facebook.svg';
+import MeetupIcon from '~/icons/meetup.svg';
 import SiteIcon from '~/icons/site.svg';
 import {
 	style,
@@ -23,10 +24,11 @@ export enum ContactLinkTypeVariant {
 	Twitter = 'twitter',
 	Vk = 'vk',
 	Facebook = 'facebook',
+	Meetup = 'meetup',
 	Site = 'site'
 }
 
-export type ContactLinkType = 'telegram' | 'email' | 'twitter' | 'vk' | 'facebook' | 'site';
+export type ContactLinkType = 'telegram' | 'email' | 'twitter' | 'vk' | 'facebook' | 'meetup' | 'site';
 
 export interface IProps extends ILinkProps {
 	type: ContactLinkType;
@@ -73,6 +75,10 @@ export default class ContactLink extends Component<IProps> {
 
 			case ContactLinkTypeVariant.Facebook:
 				Icon = FacebookIcon;
+				break;
+
+			case ContactLinkTypeVariant.Meetup:
+				Icon = MeetupIcon;
 				break;
 
 			case ContactLinkTypeVariant.Site:

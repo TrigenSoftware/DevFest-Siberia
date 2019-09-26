@@ -16,12 +16,13 @@
 		"buyTicket": "Купить Билет",
 		"share": "Поделиться",
 		"links": {
-			"twitter": "https:/twitter.com",
-			"facebook": "https:/facebook.com",
-			"vk": "https:/vk.com",
-			"telegram": "https:/telegram.com",
-			"site": "https:/site.com"
-		}
+			"twitter": "https://twitter.com",
+			"facebook": "https://facebook.com",
+			"vk": "https://vk.com",
+			"telegram": "https://telegram.com",
+			"meetup": "https://meetup.com"
+		},
+		"confirmMessage": "Спасибо за покупку. Проверьте ваш имейл."
 	},
 	"facts": {
 		"title": "DevFest Siberia это –",
@@ -182,10 +183,6 @@
 			{
 				"link": "/code-of-conduct",
 				"label": "Правила поведения"
-			},
-			{
-				"link": "/students",
-				"label": "Студентам"
 			}
 		],
 		"devFestsLinks": [
@@ -218,8 +215,16 @@
 			{
 				"link": "https://vk.com/gdgnsk",
 				"label": "VK"
+			},
+			{
+				"link": "https://www.meetup.com/GDGNsk",
+				"label": "Meetup"
 			}
-		]
+		],
+		"termsOfService": {
+			"link": "https://termsofservice.ru/",
+			"label": "Договор оферты"
+		}
 	},
 	"team": {
 		"title": "Команда",
@@ -462,16 +467,13 @@
 	},
 	"login": {
 		"title": "Войти",
-		"email": "Почта:",
+		"email": "Почта",
 		"emailPlaceholder": "Введите почту",
 		"password": "Пароль",
 		"passwordPlaceholder": "Введите пароль",
 		"cancel": "Отмена",
 		"submit": "Впусти меня!",
 		"link": "Нет аккаунта? Купи билет и входи!"
-	},
-	"confirm": {
-		"message": "Спасибо за покупку. Проверьте ваш имейл."
 	},
 	"coc": {
 		"title": "Правила поведения",
