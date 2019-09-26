@@ -50,13 +50,13 @@ export async function fetchOrders() {
 	return Order(response);
 }
 
-export async function getProfile() {
+export async function fetchProfile() {
 
-	logger.debug('getProfile');
+	logger.debug('fetchProfile');
 
 	const response = mockUser();
 
-	logger.debug('getProfile', 'Response:', response);
+	logger.debug('fetchProfile', 'Response:', response);
 
 	return User(response.profile);
 }

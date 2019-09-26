@@ -38,15 +38,15 @@ export async function login(email: string, password: string) {
 	return userFromResponseData(loginData.profile);
 }
 
-export async function getProfile() {
+export async function fetchProfile() {
 
-	logger.debug('getProfile');
+	logger.debug('fetchProfile');
 
 	const {
 		data: profileData
 	} = await client.get('api/profile');
 
-	logger.debug('getProfile', 'Response:', profileData);
+	logger.debug('fetchProfile', 'Response:', profileData);
 
 	return userFromResponseData(profileData);
 }

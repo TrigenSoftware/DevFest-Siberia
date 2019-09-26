@@ -40,9 +40,9 @@ export class CabinetContainer extends Component<IProps> {
 	static contextType = I18nContext;
 
 	static propTypes = {
-		fetchOrders: PropTypes.func.isRequired,
-		getProfile:  PropTypes.func.isRequired,
-		isLogged:    PropTypes.func.isRequired
+		fetchOrders:  PropTypes.func.isRequired,
+		fetchProfile: PropTypes.func.isRequired,
+		isLogged:     PropTypes.func.isRequired
 	};
 
 	context!: ContextType<typeof I18nContext>;
@@ -70,7 +70,7 @@ export class CabinetContainer extends Component<IProps> {
 				{...omit(props, [
 					...routeProps,
 					'fetchOrders',
-					'getProfile',
+					'fetchProfile',
 					'isLogged'
 				])}
 				className={style(classes.root, className)}
@@ -125,7 +125,7 @@ export class CabinetContainer extends Component<IProps> {
 
 		const {
 			history,
-			getProfile,
+			fetchProfile,
 			fetchOrders,
 			isLogged
 		} = this.props;
@@ -135,7 +135,7 @@ export class CabinetContainer extends Component<IProps> {
 
 		if (isLogged()) {
 			fetchOrders();
-			getProfile();
+			fetchProfile();
 		} else {
 			history.push(getLocalizedPath(context, '/'));
 		}

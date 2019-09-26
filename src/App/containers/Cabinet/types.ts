@@ -10,6 +10,6 @@ import {
 
 export interface IProps extends ISectionProps, IUserStateProps, RouteComponentProps {
 	fetchOrders();
-	getProfile();
+	fetchProfile();
 	isLogged();
 }

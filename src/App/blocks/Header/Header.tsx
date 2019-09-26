@@ -24,7 +24,8 @@ import Share from '~/components/Share';
 import Logo from '~/icons/logo.svg';
 import {
 	routeProps,
-	addSearchParams
+	addSearchParams,
+	deleteSearchParams
 } from '../common/router';
 import {
 	HeaderNav
@@ -52,6 +53,7 @@ export class Header extends Component<IProps> {
 	static propTypes = {
 		login:       PropTypes.func.isRequired,
 		logout:      PropTypes.func.isRequired,
+		setToken:    PropTypes.func.isRequired,
 		isLogged:    PropTypes.func.isRequired,
 		clearErrors: PropTypes.func.isRequired,
 		user:        PropTypes.any
@@ -172,6 +174,27 @@ export class Header extends Component<IProps> {
 				<PaidMessageModal/>
 			</>
 		);
+	}
+
+	async componentDidMount() {
+
+		const {
+			setToken,
+			history,
+			location: {
+				search
+			}
+		} = this.props;
+		const searchWithParam = /[^\w]authToken=/.test(search);
+
+		if (searchWithParam) {
+
+			await setToken();
+
+			history.push({
+				search: deleteSearchParams(search, 'authToken')
+			});
+		}
 	}
 }
 

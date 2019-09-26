@@ -22,6 +22,7 @@ export function mapActionsToProps({ user }: IActions) {
 	return {
 		login:       user.login,
 		logout:      user.logout,
+		setToken:    user.setToken,
 		isLogged:    user.isLogged,
 		clearErrors: user.clearErrors
 	};
