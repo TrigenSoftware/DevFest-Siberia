@@ -183,6 +183,10 @@
 			{
 				"link": "/code-of-conduct",
 				"label": "Code of conduct"
+			},
+			{
+				"link": "/terms",
+				"label": "Terms of service"
 			}
 		],
 		"devFestsLinks": [
@@ -220,11 +224,7 @@
 				"link": "https://www.meetup.com/GDGNsk",
 				"label": "Meetup"
 			}
-		],
-		"termsOfService": {
-			"link": "https://termsofservice.com/",
-			"label": "Terms of service"
-		}
+		]
 	},
 	"team": {
 		"title": "Team",

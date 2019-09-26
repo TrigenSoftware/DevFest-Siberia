@@ -51,6 +51,10 @@
 	height: rel(37, 24);
 }
 
+.empty::before {
+	content: '\200B';
+}
+
 .list h3 {
 	color: value(colorBlack);
 	font-family: value(fontFamily);

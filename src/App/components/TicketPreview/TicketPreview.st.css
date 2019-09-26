@@ -26,6 +26,7 @@
 
 .root {
 	-st-states: vertical;
+	display: flex;
 	position: relative;
 	margin: 0;
 	padding: rel(11, 24);
@@ -133,12 +134,12 @@
 }
 
 .description {
-	margin-bottom: 8px;
+	margin: 0 8px 8px;
 	border-top: 2px dashed value(colorPink0);
 	padding-top: 8px;
 	text-align: center;
 	color: value(colorPink0);
-	font-size: 14px;
+	font-size: 15px;
 }
 
 @media (max-width: value(sizeScreenSmMax)) {

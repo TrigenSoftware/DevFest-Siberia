@@ -183,6 +183,10 @@
 			{
 				"link": "/code-of-conduct",
 				"label": "Правила поведения"
+			},
+			{
+				"link": "/terms",
+				"label": "Договор оферты"
 			}
 		],
 		"devFestsLinks": [
@@ -220,11 +224,7 @@
 				"link": "https://www.meetup.com/GDGNsk",
 				"label": "Meetup"
 			}
-		],
-		"termsOfService": {
-			"link": "https://termsofservice.ru/",
-			"label": "Договор оферты"
-		}
+		]
 	},
 	"team": {
 		"title": "Команда",
