@@ -26,7 +26,6 @@
 
 .root {
 	-st-states: vertical;
-	display: flex;
 	position: relative;
 	margin: 0;
 	padding: rel(11, 24);
@@ -46,6 +45,7 @@
 .content {
 	display: flex;
 	position: relative;
+	height: 100%;
 }
 
 .content::before {
