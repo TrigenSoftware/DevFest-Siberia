@@ -88,44 +88,17 @@
 		"cfp": "Become a Partner",
 		"partners": [
 			{
-				"title": "With support of",
+				"title": "Lovingly supported by",
 				"items": [
 					{
 						"type": "general",
 						"href": "https://academpark.com",
 						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/academpark.svg",
-						"title": "Academpark",
-						"text": "Академпарк – комплексный технологический парк, обладающий уникальной технологической и деловой инфраструктурой, позволяющей создать наилучшие условия для генерации и развития инновационных компаний и успешного развития действующих высокотехнологичных предприятий."
+						"title": "Academpark"
 					},
 					{
-						"type": "others",
+						"type": "general",
 						"href": "https://developers.google.com",
-						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/google.svg",
-						"title": "Google"
-					},
-					{
-						"type": "general",
-						"href": "https://test.com",
-						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/academpark.svg",
-						"title": "Academpark",
-						"text": "Академпарк – комплексный технологический парк, обладающий уникальной технологической и деловой инфраструктурой, позволяющей создать наилучшие условия для генерации и развития инновационных компаний и успешного развития действующих высокотехнологичных предприятий."
-					},
-					{
-						"type": "general",
-						"href": "https://test1.com",
-						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/academpark.svg",
-						"title": "Academpark",
-						"text": "Академпарк – комплексный технологический парк, обладающий уникальной технологической и деловой инфраструктурой, позволяющей создать наилучшие условия для генерации и развития инновационных компаний и успешного развития действующих высокотехнологичных предприятий."
-					},
-					{
-						"type": "others",
-						"href": "https://test.google.com",
-						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/google.svg",
-						"title": "Google"
-					},
-					{
-						"type": "others",
-						"href": "https://test1.google.com",
 						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/google.svg",
 						"title": "Google"
 					}
@@ -136,24 +109,10 @@
 				"items": [
 					{
 						"type": "info",
-						"href": "https://test.apptractor.ru/",
+						"href": "https://androiddev.apptractor.ru/",
 						"src": "https://res.cloudinary.com/trigen/image/upload/v1565857597/devfest2019/android.svg",
 						"title": "Android Dev Podcast",
-						"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus."
-					},
-					{
-						"type": "info",
-						"href": "https://test1.apptractor.ru/",
-						"src": "https://res.cloudinary.com/trigen/image/upload/v1565857597/devfest2019/android.svg",
-						"title": "Android Dev Podcast",
-						"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus."
-					},
-					{
-						"type": "info",
-						"href": "https://test2.apptractor.ru/",
-						"src": "https://res.cloudinary.com/trigen/image/upload/v1565857597/devfest2019/android.svg",
-						"title": "Android Dev Podcast",
-						"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus."
+						"text": "Android Dev - is a podcast about apps development for Android and anything around. Our guests - experienced developers, who knows Android since version 1.5"
 					}
 				]
 			}
@@ -292,132 +251,250 @@
 		"cfp": "Become a speaker",
 		"speakers": [
 			{
-				"id":"LeonidKalneus",
+				"id": "BaruchSadogursky",
+				"type": "devops",
+				"promo": "true",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569428936/speakers/Baruch_h2g05o.jpg",
+				"firstname": "Baruch",
+				"lastname": "Sadogursky",
+				"description": "Head of DevRel and Developer Advocate at JFrog",
+				"location": "🇺🇸",
+				"contacts": {
+					"twitter": "https://twitter.com/jbaruch"
+				},
+				"text": "Baruch’s passion is speaking about technology. Well, speaking in general, but doing it about technology makes him look smart, and 17 years of hi-tech experience sure helps. When he’s not on stage (or on a plane to get there), he learns about technology, people and how they work, or more precisely, don’t work together.\nBaruch is a Head of DevRel and a Developer Advocate at JFrog, a CNCF Ambassador, a passionate conference speaker on DevOps, Java and Groovy topics, and is a regular at the industry’s most prestigious events including JavaOne (where he was awarded a Rock Star award), DockerCon, Devoxx, DevOps Days, OSCON, Qcon and many others. Follow him on Twitter (as he's a very entertaining guy!) at @jbaruch.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "DevOps",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"id": "ValarieRegas",
+				"type": "devops",
+				"promo": "true",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569442521/speakers/ValarieRegas_f1kzkd.jpg",
+				"firstname": "Valarie",
+				"lastname": "Regas",
+				"description": "Jr. DevOps at Airbus Aerial",
+				"location": "🇺🇸",
+				"contacts": {
+					"twitter": "https://twitter.com/ValarieRegas"
+				},
+				"text": "Valarie Regas is a youngling developer, a Georgia Tech coding bootcamp graduate, and a veteran mommy. She holds a BA in Psychology and currently works as a Jr. DevOps Engineer. After years being a stay-at-home mom, she decided to change her life by entering Tech, and has learned a lot along the way. She enjoys mixed martial arts fighting, table-top role playing games, public speaking, creating tiny humans, and political activism.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "DevOps",
+				"talkLevelBadge": "Junior"
+			},
+			{
+				"id": "WillMendes",
 				"type": "web",
 				"promo": "true",
-				"src": "https://gdg-siberia.com/img/team/LeonidKalneus.jpg",
-				"firstname": "Leonid",
-				"lastname": "Kalneus",
-				"description": "Head of the team",
-				"location": "USA",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569442270/speakers/WillMendes_ktwltk.jpg",
+				"firstname": "Will",
+				"lastname": "Mendes",
+				"description": "Senior Software Developer at Atlassian",
+				"location": "🇦🇺",
 				"badge": "GDE",
 				"contacts": {
-					"telegram": "https://t.me/ManFromSiberia",
-					"email": "mailto:leo@gdg-siberia.com"
+					"twitter": "https://twitter.com/willmendesneto"
 				},
-				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo Duis sit amet accumsan justo",
-				"talkTitle": "Название Доклада",
-				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
-				"talkTime": "11:21 AM",
+				"text": "Google Developer Expert Angular & Web Technologies, Google certified Sprint Master, international speaker in conferences such as JSConf, QCon, Devfest and others conferences around the world. Passionate open source contributor and active in the communities around Webpack, Angular, React, JavaScript, HTML5, CSS3, Web Workflow, Web Performance, security and Internet of things - topic which he published the book “Nodebots - Javascript and robotics in the real world”.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Web",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"id": "IgnatKorchagin",
+				"type": "devops",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569428936/speakers/Ignat_aoseif.jpg",
+				"firstname": "Ignat",
+				"lastname": "Korchagin",
+				"description": "Platform engineer at Cloudflare",
+				"location": "🇬🇧",
+				"text": "Ignat is a platform engineer at Cloudflare, where he works mostly with bare-metal Linux. Ignat’s interests are cryptography, hacking, and low-level programming. Previously, he was a senior security engineer at Samsung Electronics’s Mobile Communications Division, and his solutions can be found in many older Samsung smartphones and tablets. Ignat started his career as a security researcher in the Ukrainian government’s communications services.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "DevOps",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"id": "SebastianDaschner",
+				"type": "web",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569445407/speakers/SebastianDaschner_md2e9j.jpg",
+				"firstname": "Sebastian",
+				"lastname": "Daschner",
+				"description": "Java Developer Advocate at IBM",
+				"location": "🇩🇪",
+				"contacts": {
+					"site":"https://www.sebastian-daschner.com",
+					"twitter":"https://twitter.com/DaschnerS"
+				},
+				"text": "Sebastian Daschner is a Java Developer Advocate at IBM, a consultant, author, and trainer. He is participating in the JCP, helping forming the future standards of Java EE, serving in the JSR 370 and 374 Expert Groups and collaborating on various open source projects. For his contributions in the Java community and ecosystem he was recognized as a Java Champion, Oracle Developer Champion and double 2016 JavaOne Rockstar. He has been working with enterprise Java for more than 8 years. Besides Java, Sebastian is also a heavy user of Linux and container technologies like Docker. He evangelizes computer science practices on <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">his blog</a>, his Newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world — either by plane or motorbike.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
 				"talkTypeBadge": "Web",
 				"talkLevelBadge": "Senior"
 			},
 			{
-				"id":"AlexeyRomanenko",
-				"type": "mobile",
-				"promo": "true",
-				"src": "https://gdg-siberia.com/img/team/AlexeyRomanenko.jpg",
+				"id": "AlexeyRodionov",
+				"type": "web",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569446303/speakers/AlexeyRodionov_gwjorg.jpg",
 				"firstname": "Alexey",
-				"lastname": "Romanenko",
-				"description": "Volunteer coordinator",
-				"location": "USA",
 				"badge": "GDE",
+				"lastname": "Rodionov",
+				"description": "CTO at GdeZerno",
+				"location": "🇷🇺",
 				"contacts": {
-					"telegram": "https://t.me/slimus",
-					"email": "mailto:alex@gdg-siberia.com"
+					"telegram":"https://t.me/FluorescentHallucinogen",
+					"twitter":"https://twitter.com/alexey_rodionov"
 				},
-				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
-				"talkTitle": "Название Доклада",
-				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
-				"talkTime": "11:21 AM",
-				"talkTypeBadge": "Mobile",
+				"text": "Progressive Web Apps Developer. CTO at <a href=\"https://gdezerno.ru\" target=\"_blank\">GdeZerno</a> (“Uber” for grain trucks) start-up. Google Developers Group Krasnodar organizer. PWA, Web Components, GraphQL, Firebase evangelist. PWA Russian-speaking <a href=\"https://t.me/pwa_ru\" target=\"_blank\">community</a> organizer. Cutting edge technology enthusiast.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Web",
 				"talkLevelBadge": "Middle"
 			},
 			{
-				"id":"YuriyKashnikov",
-				"type": "mobile",
-				"promo": "true",
-				"src": "https://gdg-siberia.com/img/team/YuriyKashnikov.jpg",
-				"firstname": "Yuriy",
-				"lastname": "Kashnikov",
-				"description": "Program committee member",
-				"location": "USA",
-				"badge": "GDE",
+				"id": "MaciejTreder",
+				"type": "web",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569449113/speakers/MaciejTreder2_dtairs.jpg",
+				"firstname": "Maciej",
+				"lastname": "Treder",
+				"description": "Senior Engineer at Akamai Technologies",
+				"location": "🇵🇱",
 				"contacts": {
-					"site": "http://kayuri.github.io/"
+					"telegram":"https://t.me/maciejtreder",
+					"twitter":"https://twitter.com/maciejtreder"
 				},
-				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
-				"talkTitle": "Название Доклада",
-				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
-				"talkTime": "11:21 AM",
-				"talkTypeBadge": "Mobile",
-				"talkLevelBadge": "Junior"
+				"text": "Enthusiast of web technologies especially Single Page Apps, Progressive Web Apps, microservices, and Internet of Things. Author of articles about JavaScript, NodeJS, and Angular. Open Source contributor - creator of <a href=\"https://github.com/maciejtreder/ng-toolkit\" target=\"_blank\">@ng-toolkit</a> opensource project - set of tools for expanding existing Angular applications.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Web",
+				"talkLevelBadge": "Middle"
 			},
 			{
-				"id":"KirZharov",
+				"id": "SupratimChakraborty",
+				"type": "mobile",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569449926/speakers/SupratimChakraborty_qbjbmr.jpg",
+				"firstname": "Supratim",
+				"lastname": "Chakraborty",
+				"description": "HCI researcher",
+				"location": "🇨🇦",
+				"contacts": {
+					"telegram":"https://t.me/heysupratim",
+					"twitter":"https://twitter.com/heysupratim"
+				},
+				"text": "Supratim, is a Human-computer interaction researcher at Simon Fraser University, Vancouver. He specializes in developing interactive mobile visualization tools. He has previously worked as an Android developer for NewtonMail, a popular multi-platform email client. He is currently working on a data visualization software called VizInteract, which uses Android Canvas APIs and Multi-Touch interaction framework to provide gesture driven data analysis experiences. He also engages with android developer communities as the organizer for Google Developer Group Surrey. When not talking up Star Wars to Star Trek fans, he likes to build android apps as side projects that solve some utilitarian problem in his daily life. One of his side projects OnTime - Smart Widget got featured on <a href=\"https://www.producthunt.com/posts/ontime\" target=\"_blank\">Product Hunt</a> as well",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Mobile",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"id": "AdriánBolonio",
 				"type": "web",
-				"src": "https://gdg-siberia.com/img/team/KirZharov.jpg",
-				"firstname": "Kir",
-				"lastname": "Zharov",
-				"description": "Website team, frontend",
-				"location": "USA",
-				"badge": "GDE",
-				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
-				"talkTitle": "Название Доклада",
-				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
-				"talkTime": "11:21 AM",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569450946/speakers/Adria%CC%81nBolonio_ecv6ta.jpg",
+				"firstname": "Adrián",
+				"lastname": "Bolonio",
+				"description": "Web Team Lead at @willhabentech",
+				"location": "🇦🇹",
+				"contacts": {
+					"telegram":"https://t.me/bolonio",
+					"twitter":"https://twitter.com/bolonio",
+					"site":"https://github.com/bolonio"
+				},
+				"text": "Adrián is an experienced Frontend developer and Web Team Lead, focusing now in Web Accessibility (a11y), and since 2012 he is living and working in Vienna.\r\nWhen Adrián is not at the office he enjoys a good read, working the way through any delicious recipe, and indulging my love for travelling to new places.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Web",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"id": "MajidHajian",
+				"type": "web",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569451795/speakers/MajidHajian_bswvpa.jpg",
+				"firstname": "Majid",
+				"lastname": "Hajian",
+				"description": "Senior Developer at Telia Norge",
+				"location": "🇳🇴",
+				"contacts": {
+					"telegram":"https://t.me/mhadaily",
+					"twitter":"https://twitter.com/mhadaily",
+					"site":"https://www.majidhajian.com/"
+				},
+				"text": "Majid Hajian is a software developer has developed and architected complex web applications since 2007 after he graduated as a software engineer.\r\nA software developer at heart, Majid is passionate about web platform especially hardware connectivity and performance and in particular Progressive Web Apps.\r\nHe loves sharing his knowledge with the community by writing on his blog majidhajian.com and tweeting @mhadaily, speaking at conferences, visiting developers to help them, contributing to open source and organizing meetups and events.\r\nMajid is the author of \"Progressive web app with Angular\" book published by Apress and \"Progressive Web Apps\" video tutorial published by PacktPub and Udemy. \r\nHe is (co)organizer of a few meetups in Norway dedicated to frontend and mobile in Oslo including Mobile meetup and Vue.js Oslo and Angular Oslo, Framisa and an Organizer of Mobile Era and ngVikings which are the main Nordic conferences for mobile and Angular.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
 				"talkTypeBadge": "Web",
 				"talkLevelBadge": "Junior"
 			},
 			{
-				"id":"IvanKruchkov",
-				"type": "ai",
-				"src": "https://gdg-siberia.com/img/team/IvanKruchkov.png",
-				"firstname": "Ivan",
-				"lastname": "Kruchkov",
-				"description": "Website team, backend",
-				"location": "USA",
-				"badge": "GDE",
-				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
-				"talkTitle": "Название Доклада",
-				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
-				"talkTime": "11:21 AM",
-				"talkTypeBadge": "AI",
-				"talkLevelBadge": "Junior"
-			},
-			{
-				"id":"AminaKotomanova",
+				"id": "AndrewMihin",
 				"type": "mobile",
-				"src": "https://gdg-siberia.com/img/team/AminaKotomanova.jpg",
-				"firstname": "Amina",
-				"lastname": "Kotomanova",
-				"description": "Illustrator",
-				"location": "USA",
-				"badge": "GDE",
+				"firstname": "Andrew",
+				"lastname": "Mihin",
+				"description": "Android Engineer at Bolt",
+				"location": "🇪🇪",
 				"contacts": {
-					"site": "http://rebelart.ru"
+					"twitter":"hhttps://twitter.com/xotta6bl4_/",
+					"site":"https://devindi.com/"
 				},
-				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
-				"talkTitle": "Название Доклада",
-				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
-				"talkTime": "11:21 AM",
+				"text": "Andrew wrote his hello-world for Android in 2012. He worked at big companies such as Yandex, Tinkoff, Revolut and Bolt, so his code is running on tens of millions of devices.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
 				"talkTypeBadge": "Mobile",
-				"talkLevelBadge": "Junior"
+				"talkLevelBadge": "Middle"
 			},
 			{
-				"id":"LevNovokreshchenov",
-				"type": "mobile",
-				"src": "https://gdg-siberia.com/img/team/LevNovokreshchenov.jpg",
-				"firstname": "Lev",
-				"lastname": "Novokreshchenov",
-				"description": "Member of the family",
-				"location": "USA",
-				"badge": "GDE",
-				"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo",
-				"talkTitle": "Название Доклада",
-				"talkLocation": "543 аудитория, 3 этаж | Академпарк",
-				"talkTime": "11:21 AM",
-				"talkTypeBadge": "Mobile",
+				"id": "RafałLeszko",
+				"type": "web",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569454257/speakers/RafalLeszko_bkd3rg.jpg",
+				"firstname": "Rafał",
+				"lastname": "Leszko",
+				"description": "Cloud software engineer at Hazelcast",
+				"location": "🇵🇱",
+				"contacts": {
+					"telegram":"https://t.me/RafalLeszko",
+					"twitter":"https://twitter.com/RafalLeszko",
+					"site":"https://www.linkedin.com/in/rafal-leszko"
+				},
+				"text": "Cloud software engineer at Hazelcast, author of the book \"Continuous Delivery with Docker and Jenkins\", trainer, and conference speaker. He specializes in Java development, Cloud environments, and Continuous Delivery. Former employee in a number of companies and scientific organizations: Google, CERN, AGH University, and more.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Web",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"id": "MikołajDobrucki",
+				"type": "web",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569454834/speakers/Miko%C5%82ajDobrucki_wky1ct.jpg",
+				"firstname": "Mikołaj",
+				"lastname": "Dobrucki",
+				"description": "Lead Designer at ucreate",
+				"location": "🇵🇱",
+				"contacts": {
+					"twitter":"http://www.twitter.com/mikolajdobrucki",
+					"site":"http://mikolajdobrucki.com/"
+				},
+				"text": "Mikolaj is a designer and front-end developer leading a design team at ucreate, a British company specialised in building startups. He's passionate about UI Design and typography, and works a lot with CSS and SVG.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Web",
 				"talkLevelBadge": "Junior"
 			}
 		],
@@ -433,6 +510,10 @@
 			{
 				"type": "web",
 				"label": "Web"
+			},
+			{
+				"type": "devops",
+				"label": "DevOps"
 			},
 			{
 				"type": "ai",
