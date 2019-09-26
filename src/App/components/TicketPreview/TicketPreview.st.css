@@ -73,7 +73,7 @@
 	display: block;
 	margin: 0 0 81px;
 	border: none;
-	padding: 23px 0 0;
+	padding: 18px 0 0;
 	text-align: center;
 }
 
@@ -113,6 +113,7 @@
 }
 
 .price {
+	margin-bottom: 9px;
 	font-size: rel(51, 24);
 }
 
