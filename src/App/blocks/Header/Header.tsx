@@ -191,8 +191,6 @@ export class Header extends Component<IProps> {
 
 			const token = new URLSearchParams(location.search).get('authToken');
 
-			console.log(token);
-
 			await setToken(token);
 
 			history.push({
