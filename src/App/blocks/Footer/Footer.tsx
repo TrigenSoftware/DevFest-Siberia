@@ -111,9 +111,6 @@ export default class Footer extends Component<IProps> {
 						<li
 							className={classes.separator}
 						/>
-						<li
-							className={classes.separator}
-						/>
 						<li>
 							<Link
 								className={classes.link}

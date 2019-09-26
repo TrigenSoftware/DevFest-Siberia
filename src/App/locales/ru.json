@@ -22,9 +22,7 @@
 			"telegram": "https://telegram.com",
 			"meetup": "https://meetup.com"
 		},
-		"confirm": {
-			"message": "Спасибо за покупку. Проверьте ваш имейл."
-		}
+		"confirmMessage": "Спасибо за покупку. Проверьте ваш имейл."
 	},
 	"facts": {
 		"title": "DevFest Siberia это –",
