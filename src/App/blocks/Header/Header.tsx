@@ -189,7 +189,7 @@ export class Header extends Component<IProps> {
 
 		if (searchWithParam) {
 
-			const token = new URLSearchParams(location.search).get('authToken');
+			const token = new URLSearchParams(search).get('authToken');
 
 			await setToken(token);
 
