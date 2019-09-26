@@ -201,6 +201,10 @@ export function getShareLinks(context: I18nConfig): any[] {
 		context.getLocale()
 	) as any;
 
+	for (const key in links) {
+		links[key] = links[key].replace('{SELF_URL}', process.env.SELF_URL);
+	}
+
 	return links;
 }
 
