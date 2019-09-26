@@ -45,6 +45,7 @@ API_URL=xxx
 YANDEX_METRIKA_ID=XXX
 GOOGLE_ANALYTICS_ID=XXX
 GOOGLE_MAPS_KEY=XXX
+DISABLE_RU=false # boolean; `false` by default
 ```
 
 Optional variables:

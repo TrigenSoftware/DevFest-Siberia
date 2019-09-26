@@ -110,16 +110,18 @@ export class Header extends Component<IProps> {
 								{__x`header.cfp`}
 							</HeaderLink>
 							<HeaderSpacer/>
-							<HeaderLink
-								href={`${
-									process.env.BASE_URL ? '' : '/'
-								}${
-									locale === 'en' ? 'ru' : ''
-								}`}
-								separated
-							>
-								{__x`header.lang`}
-							</HeaderLink>
+							{!process.env.DISABLE_RU && (
+								<HeaderLink
+									href={`${
+										process.env.BASE_URL ? '' : '/'
+									}${
+										locale === 'en' ? 'ru' : ''
+									}`}
+									separated
+								>
+									{__x`header.lang`}
+								</HeaderLink>
+							)}
 							<HeaderLink
 								to={logged ? '/cabinet' : {
 									search: addSearchParams(search, {
