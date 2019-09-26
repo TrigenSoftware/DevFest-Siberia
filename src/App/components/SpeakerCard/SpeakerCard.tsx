@@ -118,10 +118,10 @@ export default class SpeakerCard extends Component<IProps> {
 						>
 							{location}
 						</div>
-						<>
-							{this.renderContacts()}
+						{this.renderContacts()}
+						<div>
 							{this.renderBadge(badge)}
-						</>
+						</div>
 					</div>
 					<h3
 						className={classes.name}
@@ -133,9 +133,7 @@ export default class SpeakerCard extends Component<IProps> {
 					<div
 						className={classes.text}
 					>
-						<p>
-							{text}
-						</p>
+						<p dangerouslySetInnerHTML={{ __html: text }} />
 					</div>
 				</div>
 				<footer

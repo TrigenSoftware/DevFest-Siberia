@@ -63,7 +63,7 @@
 	content: '';
 }
 
-.title {
+.root .center .title {
 	margin-bottom: rel(30, 82);
 	text-decoration: none;
 	color: value(colorWhite);
@@ -72,8 +72,8 @@
 	font-weight: bold;
 }
 
-.title:hover,
-.title:focus {
+.root .center .title:hover,
+.root .center .title:focus {
 	color: value(colorBlue7);
 }
 
@@ -86,11 +86,13 @@
 
 .list li {
 	flex: 1 1 25%;
+	padding: 0 1em 1em;
+	min-width: 200px;
 }
 
 @media (max-width: value(sizeScreenLgMax)) {
 
-	.root .ProfileCard {
-		margin-bottom: 20px;
+	.root .ProfileCard img {
+		width: 100%;
 	}
 }

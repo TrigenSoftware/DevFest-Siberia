@@ -12,6 +12,7 @@
 :import {
 	-st-from: '../variables.st.css';
 	-st-named:
+		sizeScreenLgMax,
 		fontFamily,
 		durationTransition,
 		sizeBorderRadius,
@@ -160,4 +161,11 @@
 .contactLink .icon {
 	width: 4.7em;
 	height: 4.7em;
+}
+
+@media (max-width: value(sizeScreenLgMax)) {
+
+	.root .img {
+		width: 100%;
+	}
 }

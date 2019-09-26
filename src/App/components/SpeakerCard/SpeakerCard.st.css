@@ -45,14 +45,15 @@
 }
 
 .profile {
+	display: flex;
+	flex-direction: column;
 	float: left;
+	margin-right: 3em;
+	width: 25em;
 }
 
 .img {
-	margin-right: 3em;
 	border: 1em solid value(colorPink0);
-	width: 25em;
-	height: 25em;
 }
 
 .img img {
@@ -86,6 +87,10 @@
 
 .text {
 	font-size: 2.1em;
+}
+
+.text p {
+	text-indent: 0;
 }
 
 .contacts {
@@ -160,11 +165,7 @@
 	.profile {
 		float: none;
 		margin-bottom: 17px;
-	}
-
-	.img {
-		width: 290px;
-		height: 290px;
+		width: 100%;
 	}
 
 	/* stylelint-disable a11y/no-display-none */
