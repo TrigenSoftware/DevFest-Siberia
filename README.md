@@ -45,7 +45,7 @@ API_URL=xxx
 YANDEX_METRIKA_ID=XXX
 GOOGLE_ANALYTICS_ID=XXX
 GOOGLE_MAPS_KEY=XXX
-DISABLE_RU=false # boolean;
+DISABLE_RU # If there's DISABLE_RU remove language choice;
 ```
 
 Optional variables:

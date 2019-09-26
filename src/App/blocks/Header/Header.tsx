@@ -110,7 +110,7 @@ export class Header extends Component<IProps> {
 								{__x`header.cfp`}
 							</HeaderLink>
 							<HeaderSpacer/>
-							{process.env.DISABLE_RU === 'false' && (
+							{!process.env.DISABLE_RU && (
 								<HeaderLink
 									href={`${
 										process.env.BASE_URL ? '' : '/'
