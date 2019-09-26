@@ -20,17 +20,14 @@
 }
 
 .root h3 {
-	margin: 0;
-	color: value(colorPink0);
-	font-size: rel(26, 24);
-}
-
-.content {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin: 0;
 	border: rel(5, 26) solid value(colorPink0);
 	height: 100%;
+	color: value(colorPink0);
+	font-size: rel(26, 24);
 }
 
 @media (max-width: value(sizeScreenSmMax)) {
@@ -41,7 +38,7 @@
 		writing-mode: horizontal-tb;
 	}
 
-	.content {
+	.root h3 {
 		display: block;
 		border-width: 5px;
 		width: 100%;

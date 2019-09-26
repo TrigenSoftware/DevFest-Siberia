@@ -23,11 +23,13 @@ Stylable API
 	- :content
 	- :group
 - ::auxiliary
-	- :content
 - ::field
 	- ::label
 	- ::value
 - ::price
+- ::description
+- ::button
+- ::sale
 `;
 
 storiesOf('Components|TicketPreview', module)
