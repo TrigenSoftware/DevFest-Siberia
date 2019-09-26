@@ -113,9 +113,6 @@ export default class Tickets extends Component<IProps> {
 						className={classes.line}
 					/>
 					<div
-						className={classes.line}
-					/>
-					<div
 						className={classes.content}
 					>
 						<div

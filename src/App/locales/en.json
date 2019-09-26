@@ -40,27 +40,27 @@
 		"items": [
 			{
 				"type": "Early Birds",
-				"price": "5 000 ₽",
-				"sale": "Количество билетов ограниченно",
+				"price": "100$",
+				"sale": "The number of tickets is limited",
 				"buy": "Buy",
-				"priceType": "Три дня конференции по <><>специальной</> цене</>",
-				"description": "Для тех, кто хочет успеть первым"
+				"priceType": "Three days of the conference at a <><>special</> price</>",
+				"description": "For those who want to be in time first"
 			},
 			{
 				"type": "General Pass",
-				"price": "6 000 ₽",
-				"sale": "Продажа открыта до 15 ноября",
+				"price": "120$",
+				"sale": "Sale is open until November 15",
 				"buy": "Buy",
-				"priceType": "Три дня конференции по <><>стандартной</> цене</>",
-				"description": "Для всех"
+				"priceType": "Three days of the conference at a <><>standart</> price</>",
+				"description": "For all"
 			},
 			{
 				"type": "Late Birds",
-				"price": "7 999 ₽",
-				"sale": "Продажа открыта до 15 ноября",
+				"price": "150$",
+				"sale": "Sale is open until November 15",
 				"buy": "Buy",
-				"priceType": "Три дня конференции по <><>внезапной</> цене</>",
-				"description": "Успеть в последний момент"
+				"priceType": "Three days of the conference at a <><>sudden</> price</>",
+				"description": "Catch up at the last moment"
 			}
 		]
 	},

@@ -119,7 +119,7 @@
 .sale {
 	margin: 0 22px;
 	border: 3px dashed value(colorPink0);
-	padding: 13px;
+	padding: 10px;
 	text-align: center;
 	color: value(colorPink0);
 	font-weight: bold;

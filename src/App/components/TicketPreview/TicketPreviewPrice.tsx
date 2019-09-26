@@ -18,12 +18,12 @@ export class TicketPreviewPrice extends Component<ITicketPreviewPriceProps> {
 		} = this.props;
 
 		return (
-			<h3
+			<h4
 				{...props}
 				className={classes.price}
 			>
 				{children}
-			</h3>
+			</h4>
 		);
 	}
 }

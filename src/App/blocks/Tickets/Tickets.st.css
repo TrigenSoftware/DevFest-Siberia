@@ -64,7 +64,7 @@
 }
 
 .priceType {
-	margin-top: 13px;
+	margin: 13px 20px 0;
 	color: value(colorBlue7);
 	font-size: 18px;
 }
@@ -76,9 +76,19 @@
 .сontact {
 	position: relative;
 	margin-top: rel(47, 24);
-	background-color: value(colorWhite);
 	padding: 10px;
 	text-align: center;
+}
+
+.сontact::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	border: 10px solid value(colorWhite);
+	content: '';
 }
 
 .сontact h3 {
@@ -161,22 +171,15 @@
 
 .line {
 	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
 	margin: 20px 0;
-	border: 8px solid value(colorWhite);
+	border-top: 8px solid value(colorWhite);
+	border-bottom: 8px solid value(colorWhite);
 	background-color: value(colorPink0);
 	width: 100vw;
-}
-
-.line:nth-of-type(5) {
-	top: 0;
-	right: 100%;
-	bottom: 0;
-}
-
-.line:nth-of-type(6) {
-	top: 0;
-	bottom: 0;
-	left: 100%;
 }
 
 @media (max-width: value(sizeScreenMdMax)) {
