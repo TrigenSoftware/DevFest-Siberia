@@ -53,6 +53,7 @@ Optional variables:
 PROXY_API_URI='' # valid URI; not set by default
 DISABLE_BROWSER_SYNC=false # boolean; `false` by default
 DISABLE_HISTORY_FALLBACK=false # boolean; `false` by default
+DISABLE_RU # If there's DISABLE_RU remove language choice;
 ```
 
 You can create `.env` in project root with this variables.

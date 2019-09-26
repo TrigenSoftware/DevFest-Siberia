@@ -23,7 +23,7 @@ const policy = [
 		<Link
 			key='link'
 			className={classes.link}
-			to='/policy'
+			to='/terms'
 		/>
 	)
 ];
