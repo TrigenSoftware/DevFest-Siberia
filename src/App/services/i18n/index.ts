@@ -189,6 +189,22 @@ export function getPartnersTypes(context: I18nConfig): any[] {
 }
 
 /**
+ * Get tickets types from locales.
+ */
+export function getTickets(context: I18nConfig): any[] {
+
+	const {
+		tickets: {
+			items
+		}
+	} = context.getCatalog(
+		context.getLocale()
+	) as any;
+
+	return items;
+}
+
+/**
  * Get share links from locales.
  */
 export function getShareLinks(context: I18nConfig): Record<string, string> {

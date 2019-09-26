@@ -24,11 +24,11 @@ export class TicketPreviewAuxiliary extends Component<ITicketPreviewAuxiliaryPro
 				{...props}
 				className={style(classes.root, className)}
 			>
-				<div
+				<h3
 					className={classes.content}
 				>
 					{children}
-				</div>
+				</h3>
 			</section>
 		);
 	}

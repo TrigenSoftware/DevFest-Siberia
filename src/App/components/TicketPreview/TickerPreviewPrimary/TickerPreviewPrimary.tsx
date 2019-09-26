@@ -23,7 +23,6 @@ export class TickerPreviewPrimary extends Component<ITickerPreviewPrimaryProps> 
 			<main
 				{...props}
 				className={style(classes.root, className)}
-
 			>
 				<div
 					className={classes.info}

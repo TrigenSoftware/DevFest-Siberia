@@ -36,6 +36,35 @@
 		"speakers": "<>48+</><>Speakers</>from Russia and beyond",
 		"tracks": "<>4</><>Tracks</>plus workshops and codelabs"
 	},
+	"tickets": {
+		"сontact": "Для покупки на юридическое лицо свяжитесь с нами: devfest@gdg-siberia.com",
+		"items": [
+			{
+				"type": "Early Birds",
+				"price": "100$",
+				"sale": "The number of tickets is limited",
+				"buy": "Buy",
+				"priceType": "Three days of the conference at a <><>special</> price</>",
+				"description": "For those who want to be in time first"
+			},
+			{
+				"type": "General Pass",
+				"price": "120$",
+				"sale": "Sale is open until November 15",
+				"buy": "Buy",
+				"priceType": "Three days of the conference at a <><>standart</> price</>",
+				"description": "For all"
+			},
+			{
+				"type": "Late Birds",
+				"price": "150$",
+				"sale": "Sale is open until November 15",
+				"buy": "Buy",
+				"priceType": "Three days of the conference at a <><>sudden</> price</>",
+				"description": "Catch up at the last moment"
+			}
+		]
+	},
 	"photos": {
 		"description": "How it all went a year ago",
 		"more": "More photos"

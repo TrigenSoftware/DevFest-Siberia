@@ -1,0 +1,203 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named:
+		sizeScreenMdMax,
+		colorWhite,
+		colorPink0,
+		colorBlue7,
+		colorBlue10;
+}
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+.root {
+	position: relative;
+	background: linear-gradient(180deg, value(colorPink0) 50%, value(colorBlue10) 50%);
+	height: 100%;
+	overflow: hidden;
+}
+
+.root::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	background-color: value(colorWhite);
+	height: 80px;
+	content: '';
+}
+
+.root .center {
+	padding-top: rel(32, 24);
+	padding-bottom: rel(55, 24);
+}
+
+.list {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	list-style: none;
+}
+
+.list li {
+	display: flex;
+	flex: 1 1 25%;
+	justify-content: center;
+}
+
+.ticket {
+	background: value(colorWhite);
+	max-width: 292px;
+}
+
+.ticket > div::before {
+	background: value(colorBlue10);
+}
+
+.priceType {
+	margin: 13px 20px 0;
+	color: value(colorBlue7);
+	font-size: 18px;
+}
+
+.priceType span {
+	color: value(colorPink0);
+}
+
+.сontact {
+	position: relative;
+	margin-top: rel(47, 24);
+	padding: 10px;
+	text-align: center;
+}
+
+.сontact::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	border: 10px solid value(colorWhite);
+	content: '';
+}
+
+.сontact h3 {
+	color: value(colorBlue7);
+	font-size: rel(35, 24);
+}
+
+.content {
+	position: relative;
+	background-color: value(colorWhite);
+	overflow: hidden;
+}
+
+.content::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border: 5px solid value(colorBlue10);
+	content: '';
+}
+
+.circle {
+	position: absolute;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+}
+
+.сontact > .circle {
+	z-index: 1;
+	background: value(colorBlue10);
+}
+
+.content .circle {
+	border: 5px solid value(colorBlue10);
+	background: value(colorWhite);
+}
+
+.сontact > .circle:nth-of-type(1) {
+	top: -30px;
+	left: -30px;
+}
+
+.сontact > .circle:nth-of-type(2) {
+	bottom: -30px;
+	left: -30px;
+}
+
+.сontact > .circle:nth-of-type(3) {
+	top: -30px;
+	right: -30px;
+}
+
+.сontact > .circle:nth-of-type(4) {
+	right: -30px;
+	bottom: -30px;
+}
+
+.content .circle:nth-of-type(1) {
+	top: -30px;
+	left: -30px;
+}
+
+.content .circle:nth-of-type(2) {
+	bottom: -30px;
+	left: -30px;
+}
+
+.content .circle:nth-of-type(3) {
+	top: -30px;
+	right: -30px;
+}
+
+.content .circle:nth-of-type(4) {
+	right: -30px;
+	bottom: -30px;
+}
+
+.line {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	margin: 20px 0;
+	border-top: 8px solid value(colorWhite);
+	border-bottom: 8px solid value(colorWhite);
+	background-color: value(colorPink0);
+	width: 100vw;
+}
+
+@media (max-width: value(sizeScreenMdMax)) {
+
+	.root {
+		background: value(colorBlue10);
+	}
+
+	/* stylelint-disable a11y/no-display-none */
+	.root::before {
+		display: none;
+	}/* stylelint-enable */
+
+	.list {
+		display: block;
+	}
+
+	.list li {
+		margin-bottom: 20px;
+	}
+}

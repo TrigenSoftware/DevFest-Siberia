@@ -19,7 +19,7 @@
 	text-orientation: mixed;
 }
 
-.content {
+.root .content {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -28,7 +28,6 @@
 	height: 100%;
 	color: value(colorPink0);
 	font-size: rel(26, 24);
-	font-weight: bold;
 }
 
 @media (max-width: value(sizeScreenSmMax)) {
@@ -39,7 +38,7 @@
 		writing-mode: horizontal-tb;
 	}
 
-	.content {
+	.root .content {
 		display: block;
 		border-width: 5px;
 		width: 100%;
