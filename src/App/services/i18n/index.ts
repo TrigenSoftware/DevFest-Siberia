@@ -202,7 +202,7 @@ export function getShareLinks(context: I18nConfig): Record<string, string> {
 	) as any;
 
 	for (const key in links) {
-		links[key] = links[key].replace(/\{SITE_URL\}/g, process.env.SELF_URL);
+		links[key] = links[key].replace(/\{SITE_URL\}/g, process.env.SITE_URL);
 	}
 
 	return links;
