@@ -189,7 +189,11 @@ export class Header extends Component<IProps> {
 
 		if (searchWithParam) {
 
-			await setToken();
+			const token = new URLSearchParams(location.search).get('authToken');
+
+			console.log(token);
+
+			await setToken(token);
 
 			history.push({
 				search: deleteSearchParams(search, 'authToken')

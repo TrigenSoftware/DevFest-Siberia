@@ -14,12 +14,6 @@ import {
 import {
 	getLocalizedPath
 } from '~/services/i18n';
-import {
-	omit
-} from '@flexis/ui/helpers';
-import {
-	routeProps
-} from '~/blocks/common/router';
 import Section from '~/components/Section';
 import TicketPreview, {
 	TickerPreviewPrimary,
@@ -53,8 +47,7 @@ export class CabinetContainer extends Component<IProps> {
 			className,
 			user,
 			order,
-			isLogged,
-			...props
+			isLogged
 		} = this.props;
 		const {
 			context
@@ -67,12 +60,6 @@ export class CabinetContainer extends Component<IProps> {
 
 		return (
 			<Section
-				{...omit(props, [
-					...routeProps,
-					'fetchOrders',
-					'fetchProfile',
-					'isLogged'
-				])}
 				className={style(classes.root, className)}
 			>
 				<h2>

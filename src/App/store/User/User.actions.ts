@@ -83,11 +83,9 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 		}
 	}
 
-	async setToken() {
+	async setToken(token: string) {
 
 		try {
-
-			const token = userService.getToken();
 
 			userService.saveToken(token);
 
