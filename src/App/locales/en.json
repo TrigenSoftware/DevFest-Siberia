@@ -25,14 +25,14 @@
 		"confirmMessage": "Thank you for your purchase. Check your email."
 	},
 	"facts": {
-		"title": "DevFest Siberia -",
+		"title": "DevFest Siberia",
 		"topics": "Topics",
-		"topicsDescription": "Mobile Development, IoT, Virtual and Augmented Reality, Modern Web Application Development, Firebase Interaction from experts around the world.",
+		"topicsDescription": "Mobile Development, Modern Web Application Development, Data Science, DevOps, Security and more",
 		"workshops": "Workshops",
 		"workshopsDescription": "Full separated day of workshops, hands-on experience, hacking and debugging. Come and tame your favourite technology!",
-		"also": "As well -",
+		"also": "In a nutshell",
 		"attendees": "<>900+</><>Attendees</>from everywhere",
-		"days": "<>3</><>Days</>of hardcore technical discussions",
+		"days": "<>3</><>Days</>of in-depth technical discussions",
 		"speakers": "<>48+</><>Speakers</>from Russia and beyond",
 		"tracks": "<>4</><>Tracks</>plus workshops and codelabs"
 	},
@@ -66,16 +66,16 @@
 		]
 	},
 	"photos": {
-		"description": "How it all went a year ago",
-		"more": "More photos"
+		"description": "A people-first conference",
+		"more": "Take a peek"
 	},
 	"subscribe": {
 		"title": "Keep me informed",
 		"button": "Subscribe",
-		"policy": "I agree to accept <>The Privacy Policy</>"
+		"policy": "I agree to <>the Privacy Policy</>"
 	},
 	"location": {
-		"address": "<>Academpark</>12, Nikolaeva, Novosibirsk",
+		"address": "<>Academpark</>Nikolaeva St 12, Novosibirsk",
 		"name": "Academpark",
 		"streetAddress": "Nikolaeva",
 		"addressLocality": "Russia, Novosibirsk",
