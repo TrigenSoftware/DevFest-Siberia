@@ -19,7 +19,7 @@
 	text-orientation: mixed;
 }
 
-.root h3 {
+.root .content {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -38,7 +38,7 @@
 		writing-mode: horizontal-tb;
 	}
 
-	.root h3 {
+	.root .content {
 		display: block;
 		border-width: 5px;
 		width: 100%;

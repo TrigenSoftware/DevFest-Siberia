@@ -21,6 +21,7 @@
 :import {
 	-st-from: './TicketPreviewAuxiliary/TicketPreviewAuxiliary.st.css';
 	-st-default: Auxiliary;
+	-st-named: content as AuxiliaryContent;
 }
 
 .root {
@@ -82,7 +83,7 @@
 	writing-mode: horizontal-tb;
 }
 
-.root:vertical .Auxiliary h3 {
+.root:vertical .AuxiliaryContent {
 	display: block;
 	border-width: 5px;
 	width: 100%;

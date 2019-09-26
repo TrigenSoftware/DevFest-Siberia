@@ -23,6 +23,7 @@ Stylable API
 	- :content
 	- :group
 - ::auxiliary
+	- :content
 - ::field
 	- ::label
 	- ::value
