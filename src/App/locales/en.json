@@ -9,17 +9,17 @@
 		"home": "Home",
 		"team": "Team",
 		"cfp": "Become a speaker",
-		"lang": "ru",
+		"lang": "Ru",
 		"login": "Log In",
 		"logout": "Log out",
 		"profile": "Profile",
 		"buyTicket": "Buy ticket",
 		"share": "Share",
 		"links": {
-			"twitter": "https://twitter.com/intent/tweet?screen_name=@GDGNsk&text=Spreading the love - #DevFestSiberia2019, the largest community conference in Russia this winter: {SELF_URL}",
-			"facebook": "https://www.facebook.com/dialog/share?app_id=1326280610740824&display=popup&href={SELF_URL}&redirect_uri={SELF_URL}",
-			"vk": "https://vk.com/share.php?url={SELF_URL}",
-			"telegram": "https://telegram.me/share/url?url={SELF_URL}&text=DevFest Siberia 2019",
+			"twitter": "https://twitter.com/intent/tweet?screen_name=@GDGNsk&text=Spreading the love - #DevFestSiberia2019, the largest community conference in Russia this winter: {SITE_URL}",
+			"facebook": "https://www.facebook.com/dialog/share?app_id=1326280610740824&display=popup&href={SITE_URL}&redirect_uri={SITE_URL}",
+			"vk": "https://vk.com/share.php?url={SITE_URL}",
+			"telegram": "https://telegram.me/share/url?url={SITE_URL}&text=DevFest Siberia 2019",
 			"meetup": "https://meetup.com"
 		},
 		"confirmMessage": "Thank you for your purchase. Check your email."
