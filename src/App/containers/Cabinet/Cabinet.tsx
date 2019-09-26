@@ -14,12 +14,6 @@ import {
 import {
 	getLocalizedPath
 } from '~/services/i18n';
-import {
-	omit
-} from '@flexis/ui/helpers';
-import {
-	routeProps
-} from '~/blocks/common/router';
 import Section from '~/components/Section';
 import TicketPreview, {
 	TickerPreviewPrimary,
@@ -40,9 +34,9 @@ export class CabinetContainer extends Component<IProps> {
 	static contextType = I18nContext;
 
 	static propTypes = {
-		fetchOrders: PropTypes.func.isRequired,
-		getProfile:  PropTypes.func.isRequired,
-		isLogged:    PropTypes.func.isRequired
+		fetchOrders:  PropTypes.func.isRequired,
+		fetchProfile: PropTypes.func.isRequired,
+		isLogged:     PropTypes.func.isRequired
 	};
 
 	context!: ContextType<typeof I18nContext>;
@@ -53,8 +47,7 @@ export class CabinetContainer extends Component<IProps> {
 			className,
 			user,
 			order,
-			isLogged,
-			...props
+			isLogged
 		} = this.props;
 		const {
 			context
@@ -67,12 +60,6 @@ export class CabinetContainer extends Component<IProps> {
 
 		return (
 			<Section
-				{...omit(props, [
-					...routeProps,
-					'fetchOrders',
-					'getProfile',
-					'isLogged'
-				])}
 				className={style(classes.root, className)}
 			>
 				<h2>
@@ -125,7 +112,7 @@ export class CabinetContainer extends Component<IProps> {
 
 		const {
 			history,
-			getProfile,
+			fetchProfile,
 			fetchOrders,
 			isLogged
 		} = this.props;
@@ -135,7 +122,7 @@ export class CabinetContainer extends Component<IProps> {
 
 		if (isLogged()) {
 			fetchOrders();
-			getProfile();
+			fetchProfile();
 		} else {
 			history.push(getLocalizedPath(context, '/'));
 		}

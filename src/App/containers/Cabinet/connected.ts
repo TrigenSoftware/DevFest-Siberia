@@ -20,9 +20,9 @@ export function mapStateToProps({ user }: State) {
 
 export function mapActionsToProps({ user }: IActions) {
 	return {
-		fetchOrders: user.fetchOrders,
-		getProfile:  user.getProfile,
-		isLogged:    user.isLogged
+		fetchOrders:  user.fetchOrders,
+		fetchProfile: user.fetchProfile,
+		isLogged:     user.isLogged
 	};
 }
 

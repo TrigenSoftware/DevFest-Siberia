@@ -67,17 +67,35 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 		}
 	}
 
-	async getProfile() {
+	async fetchProfile() {
 
 		try {
 
-			const profile = await userService.getProfile();
+			const profile = await userService.fetchProfile();
 
 			this.setUser(profile);
 
 		} catch (error) {
 			this.setError({
-				type: this.getProfile,
+				type: this.fetchProfile,
+				error
+			});
+		}
+	}
+
+	async setToken(token: string) {
+
+		try {
+
+			userService.saveToken(token);
+
+			const profile = await userService.fetchProfile();
+
+			this.setUser(profile);
+
+		} catch (error) {
+			this.setError({
+				type: this.setToken,
 				error
 			});
 		}

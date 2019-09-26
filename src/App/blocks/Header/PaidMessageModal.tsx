@@ -55,14 +55,11 @@ export class PaidMessageModal extends Component<IProps> {
 	async componentDidMount() {
 
 		const {
-			props
-		} = this;
-		const {
 			history,
 			location: {
 				search
 			}
-		} = props;
+		} = this.props;
 		const searchWithParam = /[^\w]paid=/.test(search);
 
 		if (searchWithParam) {
