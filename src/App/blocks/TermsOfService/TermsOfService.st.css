@@ -27,9 +27,8 @@
 	padding-bottom: rel(110, 24);
 }
 
-.article > p {
+.article ol {
 	line-height: 2em;
-	color: value(colorBlack);
 }
 
 .nav {

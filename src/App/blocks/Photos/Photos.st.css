@@ -134,9 +134,13 @@
 }
 
 .text {
-	text-indent: 0;
 	color: value(colorWhite);
 }
+
+/* stylelint-disable a11y/no-display-none */
+.text::before {
+	display: none;
+}/* stylelint-enable */
 
 .footer {
 	margin-top: value(sizeGap);

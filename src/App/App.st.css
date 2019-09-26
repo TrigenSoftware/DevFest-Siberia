@@ -75,6 +75,10 @@
 } */
 
 :global(p) {
-	text-indent: rel(50, 24);
 	color: value(colorGray2);
+}
+
+:global(p::before) {
+	margin-right: rel(50, 24);
+	content: '';
 }

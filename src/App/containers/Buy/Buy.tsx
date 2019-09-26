@@ -16,14 +16,12 @@ import {
 	getLocaleFromPath
 } from '~/services/i18n';
 import {
-	Bind,
-	omit
+	Bind
 } from '@flexis/ui/helpers';
 import {
 	UserFieldsSpec
 } from '~/models/User';
 import {
-	routeProps,
 	getErrorMessage
 } from '~/blocks/common';
 import Section from '~/components/Section';
@@ -83,8 +81,7 @@ export class BuyContainer extends Component<IProps, IState> {
 	render() {
 
 		const {
-			className,
-			...props
+			className
 		} = this.props;
 		const {
 			firstname,
@@ -101,11 +98,6 @@ export class BuyContainer extends Component<IProps, IState> {
 
 		return (
 			<Section
-				{...omit(props, [
-					...routeProps,
-					'buy',
-					'errors'
-				])}
 				className={style(classes.root, className)}
 			>
 				<div

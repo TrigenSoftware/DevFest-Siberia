@@ -7,7 +7,7 @@
 		"^.+\\.(jsx?|tsx?)$": "babel-jest"
 	},
 	"moduleNameMapper": {
-		"\\.(css|svg)$": "@trigen/scripts-plugin-storybook/jest/mockFile",
+		"\\.(css|svg|html)$": "@trigen/scripts-plugin-storybook/jest/mockFile",
 		"~(.*)$": "<rootDir>/src/App/$1"
 	},
 	"collectCoverage": true,

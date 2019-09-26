@@ -19,6 +19,21 @@ import {
 
 export type IProps = ISectionProps;
 
+const cocLinks = [
+	(
+		<Link
+			href='https://confcodeofconduct.com'
+			target='_blank'
+		/>
+	),
+	(
+		<Link
+			href='http://creativecommons.org/licenses/by/3.0/deed.en_US'
+			target='_blank'
+		/>
+	)
+];
+
 export default class CodeOfConduct extends Component<IProps> {
 
 	render() {
@@ -73,10 +88,10 @@ export default class CodeOfConduct extends Component<IProps> {
 						className={classes.footer}
 					>
 						<h3>
-							© Copyright
+							&copy; {__x`coc.copyline`}
 						</h3>
 						<p>
-							{__x`coc.copyright`}
+							{__x('coc.copyright', cocLinks)}
 						</p>
 					</footer>
 				</article>

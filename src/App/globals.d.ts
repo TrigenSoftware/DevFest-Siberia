@@ -15,6 +15,11 @@ declare module '*.svg' {
 	export default svg;
 }
 
+declare module 'raw-loader!*' {
+	const str: string;
+	export default str;
+}
+
 declare namespace React {
 	// tslint:disable-next-line
 	interface ImgHTMLAttributes<T> {

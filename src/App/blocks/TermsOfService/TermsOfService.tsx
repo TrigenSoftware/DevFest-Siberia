@@ -13,6 +13,7 @@ import Section, {
 import ToggleNav, {
 	ToggleNavLink
 } from '~/components/ToggleNav';
+import privacyTerms from 'raw-loader!~/data/privacy-policy-en.html';
 import {
 	style,
 	classes
@@ -61,14 +62,10 @@ export default class TermsOfService extends Component<IProps> {
 				</ToggleNav>
 				<article
 					className={classes.article}
-				>
-					<p>
-						{__x`terms.rules`}
-					</p>
-					<p>
-						{__x`terms.about`}
-					</p>
-				</article>
+					dangerouslySetInnerHTML={{
+						__html: privacyTerms.replace(/h3/g, 'h6')
+					}}
+				/>
 			</Section>
 		);
 	}
