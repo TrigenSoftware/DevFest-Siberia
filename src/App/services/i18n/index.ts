@@ -191,7 +191,7 @@ export function getPartnersTypes(context: I18nConfig): any[] {
 /**
  * Get share links from locales.
  */
-export function getShareLinks(context: I18nConfig): any[] {
+export function getShareLinks(context: I18nConfig) {
 
 	const {
 		header: {
