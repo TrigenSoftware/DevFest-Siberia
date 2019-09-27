@@ -4,7 +4,7 @@ import {
 import Ticket from './Ticket';
 
 export interface IOrderItemProps {
-	productId: string;
+	productRef: string;
 	productName: string;
 	productDescription: string;
 	price: number;
@@ -16,7 +16,7 @@ export interface IOrderItemProps {
 type OrderItem = ReturnType<Record.Factory<IOrderItemProps>>;
 
 const OrderItem = Record<IOrderItemProps>({
-	productId:          '',
+	productRef:         '',
 	productName:        '',
 	productDescription: '',
 	price:              -1,

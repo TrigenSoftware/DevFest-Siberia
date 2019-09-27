@@ -3,7 +3,7 @@ import {
 } from 'immutable';
 
 export interface IProductProps {
-	id: string;
+	ref: string;
 	price: number;
 	currency: string;
 	name: string;
@@ -13,7 +13,7 @@ export interface IProductProps {
 type Product = ReturnType<Record.Factory<IProductProps>>;
 
 const Product = Record<IProductProps>({
-	id:         '',
+	ref:         '',
 	price:       0,
 	currency:    '',
 	name:        '',

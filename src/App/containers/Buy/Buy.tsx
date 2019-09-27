@@ -97,7 +97,7 @@ export class BuyContainer extends Component<IProps, IState> {
 			context
 		} = this;
 		const __ = context.bind(tr);
-		let buyLinkText = '';
+		let label = '';
 
 		if (product) {
 
@@ -108,7 +108,7 @@ export class BuyContainer extends Component<IProps, IState> {
 			} = product;
 			const currencyLabel = this.getCurrency(__, currency);
 
-			buyLinkText = `${name} - ${price}${currencyLabel}`;
+			label = `${name} - ${price}${currencyLabel}`;
 		}
 
 		return (
@@ -120,7 +120,7 @@ export class BuyContainer extends Component<IProps, IState> {
 				>
 					<TabsNav>
 						<TabsNavItem
-							label={buyLinkText}
+							label={label}
 							to='/buy'
 						/>
 					</TabsNav>

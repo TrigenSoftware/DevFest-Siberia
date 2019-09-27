@@ -23,7 +23,7 @@ export function orderFromResponseData(responseData) {
 
 export function productFromResponseData(responseData) {
 	return Product({
-		id:          responseData.id,
+		ref:         responseData.ref,
 		price:       responseData.price,
 		currency:    responseData.currency,
 		name:        responseData.name,
