@@ -527,7 +527,11 @@
 		"view": "View profile"
 	},
 	"buy": {
-		"oneTicket": "General Pass - 5000₽",
+		"currency": {
+			"RUB": "RUB",
+			"USD": "$",
+			"EUR": "€"
+		},
 		"firstname": "First Name",
 		"lastname": "Last Name",
 		"position": "Position",

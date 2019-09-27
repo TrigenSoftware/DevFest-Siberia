@@ -35,7 +35,7 @@ const MOCK_BUY_DATA = {
 		locale:    'ru',
 		products:  [
 			{
-				productId: 'string'
+				productRef: 'string'
 			}
 		],
 		promocode: 'string'
@@ -47,7 +47,7 @@ const MOCK_FETCHORDERS_RESPONSE = [
 		paymentLink: 'string',
 		items:       [
 			{
-				productId:          'string',
+				productRef:         'string',
 				productName:        'string',
 				productDescription: 'string',
 				price:              0,

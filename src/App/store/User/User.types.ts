@@ -8,6 +8,9 @@ import User, {
 import Order, {
 	IOrderProps
 } from '~/models/Order';
+import Product, {
+	IProductProps
+} from '~/models/Product';
 
 /**
  * User state.
@@ -16,15 +19,17 @@ import Order, {
 export interface IUserStateProps {
 	user: User;
 	order: Order;
+	product: Product;
 	errors: Map<any, Error>;
 }
 
 type UserState = ReturnType<Record.Factory<IUserStateProps>>;
 
 const UserState = Record<IUserStateProps>({
-	user:   null,
-	order:  null,
-	errors: Map()
+	user:     null,
+	order:    null,
+	product:  null,
+	errors:   Map()
 });
 
 export {
@@ -49,6 +54,16 @@ export type SetOrderPayload = IOrderProps;
 
 export interface ISetOrderAction {
 	payload: SetOrderPayload;
+}
+
+/**
+ * SetProducts action.
+ */
+
+export type SetProductPayload = IProductProps;
+
+export interface ISetProductAction {
+	payload: SetProductPayload;
 }
 
 /**

@@ -1,5 +1,6 @@
 import User from '~/models/User';
 import Order from '~/models/Order';
+import Product from '~/models/Product';
 
 export function userFromResponseData(responseData) {
 	return User({
@@ -14,8 +15,18 @@ export function userFromResponseData(responseData) {
 
 export function orderFromResponseData(responseData) {
 	return Order({
-		status: responseData.status,
+		status:      responseData.status,
 		paymentLink: responseData.paymentLink,
-		items: responseData.items
+		items:       responseData.items
+	});
+}
+
+export function productFromResponseData(responseData) {
+	return Product({
+		ref:         responseData.ref,
+		price:       responseData.price,
+		currency:    responseData.currency,
+		name:        responseData.name,
+		description: responseData.description
 	});
 }

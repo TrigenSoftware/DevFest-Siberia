@@ -2,7 +2,8 @@ import createLogger from '~/services/logger';
 import client from './client';
 import {
 	userFromResponseData,
-	orderFromResponseData
+	orderFromResponseData,
+	productFromResponseData
 } from './adapters';
 
 const logger = createLogger('App::services::user');
@@ -62,6 +63,19 @@ export async function fetchOrders() {
 	logger.debug('fetchOrders', 'Response:', ordersData);
 
 	return orderFromResponseData(ordersData[0]);
+}
+
+export async function fetchProducts() {
+
+	logger.debug('fetchProducts');
+
+	const {
+		data: productsData
+	} = await client.get('api/product/all');
+
+	logger.debug('fetchProducts', 'Response:', productsData);
+
+	return productFromResponseData(productsData[0]);
 }
 
 export function logout() {

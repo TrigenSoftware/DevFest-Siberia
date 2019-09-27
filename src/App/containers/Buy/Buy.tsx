@@ -63,8 +63,10 @@ export class BuyContainer extends Component<IProps, IState> {
 	static contextType = I18nContext;
 
 	static propTypes = {
-		buy:    PropTypes.func.isRequired,
-		errors: PropTypes.any.isRequired
+		buy:           PropTypes.func.isRequired,
+		fetchProducts: PropTypes.func.isRequired,
+		product:       PropTypes.any.isRequired,
+		errors:        PropTypes.any.isRequired
 	};
 
 	context!: ContextType<typeof I18nContext>;
@@ -105,7 +107,7 @@ export class BuyContainer extends Component<IProps, IState> {
 				>
 					<TabsNav>
 						<TabsNavItem
-							label={__`buy.oneTicket`}
+							label={this.getLabel()}
 							to='/buy'
 						/>
 					</TabsNav>
@@ -218,6 +220,15 @@ export class BuyContainer extends Component<IProps, IState> {
 		);
 	}
 
+	componentDidMount() {
+
+		const {
+			fetchProducts
+		} = this.props;
+
+		fetchProducts();
+	}
+
 	@Bind()
 	private onInputChange(value: string, event: ChangeEvent<HTMLInputElement>) {
 
@@ -275,7 +286,7 @@ export class BuyContainer extends Component<IProps, IState> {
 				locale,
 				products: [
 					{
-						productId: 'ticket'
+						productRef: 'ticket'
 					}
 				],
 				promocode: ''
@@ -283,6 +294,44 @@ export class BuyContainer extends Component<IProps, IState> {
 		};
 
 		return userData;
+	}
+
+	private getLabel() {
+
+		const {
+			product
+		} = this.props;
+		const {
+			context
+		} = this;
+		const __ = context.bind(tr);
+
+		if (!product) {
+			return ' - ';
+		}
+
+		const {
+			price,
+			name,
+			currency: currencyFromProps
+		} = product;
+		let currency = '';
+
+		switch (currencyFromProps) {
+
+			case 'USD':
+				currency = __`buy.currency.USD`;
+				break;
+
+			case 'EUR':
+				currency = __`buy.currency.EUR`;
+				break;
+
+			default:
+				currency = __`buy.currency.RUB`;
+		}
+
+		return `${name} - ${price}${currency}`;
 	}
 
 	private error() {

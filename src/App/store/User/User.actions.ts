@@ -6,6 +6,7 @@ import {
 import {
 	SetUserPayload,
 	SetOrderPayload,
+	SetProductPayload,
 	SetUserErrorPayload,
 	UserState
 } from './User.types';
@@ -83,6 +84,22 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 		}
 	}
 
+	async fetchProducts() {
+
+		try {
+
+			const product = await userService.fetchProducts();
+
+			this.setProduct(product);
+
+		} catch (error) {
+			this.setError({
+				type: this.fetchProducts,
+				error
+			});
+		}
+	}
+
 	async setToken(token: string) {
 
 		try {
@@ -121,6 +138,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 
 	abstract setUser(payload: SetUserPayload);
 	abstract setOrder(payload: SetOrderPayload);
+	abstract setProduct(payload: SetProductPayload);
 	abstract setError(payload: SetUserErrorPayload);
 	abstract clearErrors();
 }

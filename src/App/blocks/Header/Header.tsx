@@ -12,9 +12,6 @@ import {
 	__x
 } from 'i18n-for-react';
 import {
-	omit
-} from '@flexis/ui/helpers';
-import {
 	getShareLinks
 } from '~/services/i18n';
 import Section from '~/components/Section';
@@ -23,7 +20,6 @@ import Button from '~/components/Button';
 import Share from '~/components/Share';
 import Logo from '~/icons/logo.svg';
 import {
-	routeProps,
 	addSearchParams,
 	deleteSearchParams
 } from '../common/router';
@@ -72,8 +68,7 @@ export class Header extends Component<IProps> {
 			clearErrors,
 			location: {
 				search
-			},
-			...props
+			}
 		} = this.props;
 		const {
 			context
@@ -86,7 +81,6 @@ export class Header extends Component<IProps> {
 		return (
 			<>
 				<header
-					{...omit(props, routeProps)}
 					className={style(classes.root, className)}
 				>
 					<Section
