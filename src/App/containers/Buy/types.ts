@@ -10,6 +10,7 @@ import {
 
 export interface IProps extends ISectionProps, IUserStateProps, RouteComponentProps {
 	buy(registrationData);
+	fetchProducts();
 }
 
 export interface IState {

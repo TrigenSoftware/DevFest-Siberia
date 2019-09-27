@@ -527,7 +527,11 @@
 		"view": "Посмотреть профиль"
 	},
 	"buy": {
-		"oneTicket": "1 Билет - 5000Р",
+		"currency": {
+			"RUB": "RUB",
+			"USD": "$",
+			"EUR": "€"
+		},
 		"firstname": "Имя",
 		"lastname": "Фамилия",
 		"position": "Должность",

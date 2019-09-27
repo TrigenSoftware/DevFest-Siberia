@@ -86,7 +86,10 @@ export class Header extends Component<IProps> {
 		return (
 			<>
 				<header
-					{...omit(props, routeProps)}
+					{...omit(props, [
+						...routeProps,
+						'setToken'
+					])}
 					className={style(classes.root, className)}
 				>
 					<Section

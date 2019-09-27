@@ -3,10 +3,12 @@ import {
 } from '@flexis/redux';
 import User from '~/models/User';
 import Order from '~/models/Order';
+import Product from '~/models/Product';
 import {
 	UserState,
 	ISetUserAction,
 	ISetOrderAction,
+	ISetProductAction,
 	ISetUserErrorAction
 } from './User.types';
 
@@ -31,6 +33,16 @@ export class UserReducer extends Reducer {
 		return state.set(
 			'order',
 			order
+		);
+	}
+
+	setProduct(state: UserState, { payload }: ISetProductAction) {
+
+		const product = payload && Product(payload);
+
+		return state.set(
+			'product',
+			product
 		);
 	}
 

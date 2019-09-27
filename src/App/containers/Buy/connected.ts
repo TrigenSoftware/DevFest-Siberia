@@ -13,13 +13,15 @@ import BuyContainer from './Buy';
 
 export function mapStateToProps({ user }: State) {
 	return {
-		errors: user.errors
+		product: user.product,
+		errors:  user.errors
 	};
 }
 
 export function mapActionsToProps({ user }: IActions) {
 	return {
-		buy: user.buy
+		buy:           user.buy,
+		fetchProducts: user.fetchProducts
 	};
 }
 

@@ -63,8 +63,9 @@ export class BuyContainer extends Component<IProps, IState> {
 	static contextType = I18nContext;
 
 	static propTypes = {
-		buy:    PropTypes.func.isRequired,
-		errors: PropTypes.any.isRequired
+		buy:           PropTypes.func.isRequired,
+		fetchProducts: PropTypes.func.isRequired,
+		errors:        PropTypes.any.isRequired
 	};
 
 	context!: ContextType<typeof I18nContext>;
@@ -81,6 +82,7 @@ export class BuyContainer extends Component<IProps, IState> {
 	render() {
 
 		const {
+			product,
 			className
 		} = this.props;
 		const {
@@ -95,6 +97,19 @@ export class BuyContainer extends Component<IProps, IState> {
 			context
 		} = this;
 		const __ = context.bind(tr);
+		let buyLinkText = '';
+
+		if (product) {
+
+			const {
+				price,
+				currency,
+				name
+			} = product;
+			const currencyLabel = this.getCurrency(__, currency);
+
+			buyLinkText = `${name} - ${price}${currencyLabel}`;
+		}
 
 		return (
 			<Section
@@ -105,7 +120,7 @@ export class BuyContainer extends Component<IProps, IState> {
 				>
 					<TabsNav>
 						<TabsNavItem
-							label={__`buy.oneTicket`}
+							label={buyLinkText}
 							to='/buy'
 						/>
 					</TabsNav>
@@ -218,6 +233,15 @@ export class BuyContainer extends Component<IProps, IState> {
 		);
 	}
 
+	componentDidMount() {
+
+		const {
+			fetchProducts
+		} = this.props;
+
+		fetchProducts();
+	}
+
 	@Bind()
 	private onInputChange(value: string, event: ChangeEvent<HTMLInputElement>) {
 
@@ -275,7 +299,7 @@ export class BuyContainer extends Component<IProps, IState> {
 				locale,
 				products: [
 					{
-						productId: 'ticket'
+						productRef: 'ticket'
 					}
 				],
 				promocode: ''
@@ -283,6 +307,17 @@ export class BuyContainer extends Component<IProps, IState> {
 		};
 
 		return userData;
+	}
+
+	private getCurrency(__: any, ticketCurrency: string) {
+
+		const currencyMap = {
+			'RUB': __`buy.currency.RUB`,
+			'USD': __`buy.currency.USD`,
+			'EUR': __`buy.currency.EUR`
+		};
+
+		return currencyMap[ticketCurrency];
 	}
 
 	private error() {
