@@ -65,6 +65,7 @@ export class BuyContainer extends Component<IProps, IState> {
 	static propTypes = {
 		buy:           PropTypes.func.isRequired,
 		fetchProducts: PropTypes.func.isRequired,
+		product:       PropTypes.any.isRequired,
 		errors:        PropTypes.any.isRequired
 	};
 
