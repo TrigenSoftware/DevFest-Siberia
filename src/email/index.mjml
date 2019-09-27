@@ -1,6 +1,7 @@
 <mjml>
 	<mj-head>
-		<mj-font name="Roboto" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic"/>
+		<mj-font name="Roboto" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700subset=cyrillic"/>
+		<mj-font name="RobotoMono" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700&display=swap&subset=cyrillic"/>
 	</mj-head>
 	<mj-body background-color='#ffffff'>
 		<mj-section>
@@ -16,19 +17,19 @@
 		<mj-section>
 			<mj-column>
 				<mj-text font-family="Roboto" align="center" font-weight="700" color="#0012be" font-size="16px">
-					Привет,  Иван Петров
+					Привет, Иван Петров
 				</mj-text>
-				<mj-text font-family="Roboto" align="center" color="#000000" font-size="14px" line-height="30px">
+				<mj-text font-family="'Roboto Mono', monospace" align="center" color="#000000" font-size="16px" line-height="30px">
 					DevFest Siberia is a part of the IT conference series around the
 					world for developers, managers, students. It is organised
 					by a non-profit community Google Developers Group. This year,
 					the conference will take place on the 29 rd of November –
 					1th of September in Novosibirsk, Russia.
 				</mj-text>
-				<mj-text font-family="Roboto" align="center" font-weight="700" color="#000000" font-size="14px">
+				<mj-text font-family="'Roboto Mono', monospace" align="center" font-weight="700" color="#000000" font-size="14px">
 					Логин: <span style='color: #0012be'>username@email.com</span>
 				</mj-text>
-				<mj-text font-family="Roboto" align="center" color="#000000" font-size="14px">
+				<mj-text font-family="'Roboto Mono', monospace" align="center" color="#000000" font-size="14px">
 					Пароль: 038t24pqhgqv
 				</mj-text>
 			</mj-column>
@@ -39,15 +40,16 @@
 					<mj-image src="/assets/leftpt.png" padding="0" width="60px"></mj-image>
 				</mj-column>
 				<mj-column>
+					// тут хз что делать
 				</mj-column>
 				<mj-column>
-					<mj-image src="/assets/rightpt.png" padding="0" width="80px"></mj-image>
+					<mj-image src="/assets/rightpt.png" padding="0" width="76px"></mj-image>
 				</mj-column>
 			</mj-group>
 		</mj-section>
 		<mj-section>
 			<mj-column>
-				<mj-text font-family="Roboto" align="center" color="#000000" font-size="14px">
+				<mj-text font-family="'Roboto Mono', monospace" align="center" color="#000000" font-size="14px">
 					И немного еще текста. В общем для этой рассылки нужны тексты
 				</mj-text>
 			</mj-column>
