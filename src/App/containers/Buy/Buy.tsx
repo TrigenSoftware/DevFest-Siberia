@@ -306,31 +306,32 @@ export class BuyContainer extends Component<IProps, IState> {
 		} = this;
 		const __ = context.bind(tr);
 
-		if (product) {
-
-			const {
-				price,
-				name,
-				currency: currencyFromProps
-			} = product;
-			let currency = '';
-
-			switch (currencyFromProps) {
-
-				case 'USD':
-					currency = __`buy.currency.USD`;
-					break;
-
-				case 'EUR':
-					currency = __`buy.currency.EUR`;
-					break;
-
-				default:
-					currency = __`buy.currency.RUB`;
-			}
-
-			return `${name} - ${price}${currency}`;
+		if (!product) {
+			return ' - ';
 		}
+
+		const {
+			price,
+			name,
+			currency: currencyFromProps
+		} = product;
+		let currency = '';
+
+		switch (currencyFromProps) {
+
+			case 'USD':
+				currency = __`buy.currency.USD`;
+				break;
+
+			case 'EUR':
+				currency = __`buy.currency.EUR`;
+				break;
+
+			default:
+				currency = __`buy.currency.RUB`;
+		}
+
+		return `${name} - ${price}${currency}`;
 	}
 
 	private error() {
