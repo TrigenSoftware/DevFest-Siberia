@@ -82,7 +82,6 @@ export class BuyContainer extends Component<IProps, IState> {
 	render() {
 
 		const {
-			product,
 			className
 		} = this.props;
 		const {
@@ -97,18 +96,6 @@ export class BuyContainer extends Component<IProps, IState> {
 			context
 		} = this;
 		const __ = context.bind(tr);
-		let label = '';
-
-		if (product) {
-
-			const {
-				price,
-				name
-			} = product;
-			const currencyLabel = this.getCurrency(__);
-
-			label = `${name} - ${price}${currencyLabel}`;
-		}
 
 		return (
 			<Section
@@ -119,7 +106,7 @@ export class BuyContainer extends Component<IProps, IState> {
 				>
 					<TabsNav>
 						<TabsNavItem
-							label={label}
+							label={this.getLabel()}
 							to='/buy'
 						/>
 					</TabsNav>
@@ -308,22 +295,39 @@ export class BuyContainer extends Component<IProps, IState> {
 		return userData;
 	}
 
-	private getCurrency(__: any) {
+	private getLabel() {
 
 		const {
-			currency
-		} = this.props.product;
+			product
+		} = this.props;
+		const {
+			context
+		} = this;
+		const __ = context.bind(tr);
 
-		switch (currency) {
+		if (product) {
 
-			case 'USD':
-				return __`buy.currency.USD`;
+			const {
+				price,
+				name
+			} = product;
+			let currency = '';
 
-			case 'EUR':
-				return __`buy.currency.EUR`;
+			switch (product.currency) {
 
-			default:
-				return __`buy.currency.RUB`;
+				case 'USD':
+					currency = __`buy.currency.USD`;
+					break;
+
+				case 'EUR':
+					currency = __`buy.currency.EUR`;
+					break;
+
+				default:
+					currency = __`buy.currency.RUB`;
+			}
+
+			return `${name} - ${price}${currency}`;
 		}
 	}
 
