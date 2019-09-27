@@ -1,0 +1,72 @@
+<mjml>
+	<mj-head>
+		<mj-font name="Roboto" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic"/>
+	</mj-head>
+	<mj-body background-color='#ffffff'>
+		<mj-section>
+			<mj-column>
+				<mj-image width="193px" src="/assets/logo.svg"></mj-image>
+			</mj-column>
+		</mj-section>
+		<mj-section>
+			<mj-column width="150px" background-color="#0012be" border-radius="10px">
+				<mj-image src="/assets/cat.png" padding="0"></mj-image>
+			</mj-column>
+		</mj-section>
+		<mj-section>
+			<mj-column>
+				<mj-text font-family="Roboto" align="center" font-weight="700" color="#0012be" font-size="16px">
+					Привет,  Иван Петров
+				</mj-text>
+				<mj-text font-family="Roboto" align="center" color="#000000" font-size="14px" line-height="30px">
+					DevFest Siberia is a part of the IT conference series around the
+					world for developers, managers, students. It is organised
+					by a non-profit community Google Developers Group. This year,
+					the conference will take place on the 29 rd of November –
+					1th of September in Novosibirsk, Russia.
+				</mj-text>
+				<mj-text font-family="Roboto" align="center" font-weight="700" color="#000000" font-size="14px">
+					Логин: <a href="mailto:username@email.com" style='color: #0012be; text-decoration:none'>username@email.com</a>
+				</mj-text>
+				<mj-text font-family="Roboto" align="center" color="#000000" font-size="14px">
+					Пароль: 038t24pqhgqv
+				</mj-text>
+			</mj-column>
+		</mj-section>
+		<mj-section>
+			<mj-group>
+				<mj-column>
+					<mj-image src="/assets/leftpt.png" padding="0" width="60px"></mj-image>
+				</mj-column>
+				<mj-column>
+				</mj-column>
+				<mj-column>
+					<mj-image src="/assets/rightpt.png" padding="0" width="80px"></mj-image>
+				</mj-column>
+			</mj-group>
+		</mj-section>
+		<mj-section>
+			<mj-column>
+				<mj-text font-family="Roboto" align="center" color="#000000" font-size="14px">
+					И немного еще текста. В общем для этой рассылки нужны тексты
+				</mj-text>
+			</mj-column>
+		</mj-section>
+		<mj-section background-color="#d8e1eb">
+			<mj-column>
+				<mj-text font-family="Roboto" align="center" font-weight="700" color="#000000" font-size="16px">
+					Мы в соцсетях
+				</mj-text>
+				<mj-social font-size="15px" icon-size="36px" mode="horizontal">
+					<mj-social-element href="https://twitter.com/GDGNsk" src="/assets/twitter.svg"/>
+					<mj-social-element href="https://t.me/DevFestSiberia" src="/assets/telegram.svg"/>
+					<mj-social-element  href="https://vk.com/gdgnsk"src="/assets/vk.svg"/>
+					<mj-social-element  href="https://www.meetup.com/GDGNsk"src="/assets/meetup.svg"/>
+				</mj-social>
+				<mj-button font-family="Roboto" background-color="transparent" color="#143a57" href="yoba.gdg-siberia.com" font-size="14px">
+          			yoba.gdg-siberia.com
+         		</mj-button>
+			</mj-column>
+		</mj-section>
+	</mj-body>
+</mjml>
