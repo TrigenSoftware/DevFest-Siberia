@@ -26,7 +26,7 @@
 					1th of September in Novosibirsk, Russia.
 				</mj-text>
 				<mj-text font-family="Roboto" align="center" font-weight="700" color="#000000" font-size="14px">
-					Логин: <a href="mailto:username@email.com" style='color: #0012be; text-decoration:none'>username@email.com</a>
+					Логин: <span style='color: #0012be'>username@email.com</span>
 				</mj-text>
 				<mj-text font-family="Roboto" align="center" color="#000000" font-size="14px">
 					Пароль: 038t24pqhgqv
