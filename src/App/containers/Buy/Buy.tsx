@@ -103,10 +103,9 @@ export class BuyContainer extends Component<IProps, IState> {
 
 			const {
 				price,
-				currency,
 				name
 			} = product;
-			const currencyLabel = this.getCurrency(__, currency);
+			const currencyLabel = this.getCurrency(__);
 
 			label = `${name} - ${price}${currencyLabel}`;
 		}
@@ -309,15 +308,23 @@ export class BuyContainer extends Component<IProps, IState> {
 		return userData;
 	}
 
-	private getCurrency(__: any, ticketCurrency: string) {
+	private getCurrency(__: any) {
 
-		const currencyMap = {
-			'RUB': __`buy.currency.RUB`,
-			'USD': __`buy.currency.USD`,
-			'EUR': __`buy.currency.EUR`
-		};
+		const {
+			currency
+		} = this.props.product;
 
-		return currencyMap[ticketCurrency];
+		switch (currency) {
+
+			case 'USD':
+				return __`buy.currency.USD`;
+
+			case 'EUR':
+				return __`buy.currency.EUR`;
+
+			default:
+				return __`buy.currency.RUB`;
+		}
 	}
 
 	private error() {
