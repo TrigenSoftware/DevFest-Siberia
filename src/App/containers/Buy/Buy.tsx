@@ -310,11 +310,12 @@ export class BuyContainer extends Component<IProps, IState> {
 
 			const {
 				price,
-				name
+				name,
+				currency: currencyFromProps
 			} = product;
 			let currency = '';
 
-			switch (product.currency) {
+			switch (currencyFromProps) {
 
 				case 'USD':
 					currency = __`buy.currency.USD`;
