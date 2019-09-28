@@ -181,19 +181,19 @@
 				>
 					<mj-social-element
 						href="https://twitter.com/GDGNsk"
-						src="/assets/twitter.svg"
+						src="/assets/twitter.png"
 					/>
 					<mj-social-element
 						href="https://t.me/DevFestSiberia"
-						src="/assets/telegram.svg"
+						src="/assets/telegram.png"
 					/>
 					<mj-social-element
 						href="https://vk.com/gdgnsk"
-						src="/assets/vk.svg"
+						src="/assets/vk.png"
 					/>
 					<mj-social-element
 						href="https://www.meetup.com/GDGNsk"
-						src="/assets/meetup.svg"
+						src="/assets/meetup.png"
 					/>
 				</mj-social>
 				<mj-button
