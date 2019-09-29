@@ -1,14 +1,12 @@
 import * as userService from '~/services/user/mock';
 import {
-	getToken
-} from '~/services/user';
-import {
 	IActions,
 	State
 } from '../types';
 import {
 	SetUserPayload,
 	SetOrderPayload,
+	SetProductPayload,
 	SetUserErrorPayload,
 	UserState
 } from './User.types';
@@ -17,6 +15,8 @@ import {
 } from './User.reducer';
 
 export abstract class UserActions extends UserReducer.Actions<UserState, State, IActions> {
+
+	private logged = false;
 
 	async buy(registrationData) {
 
@@ -78,26 +78,54 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 		}
 	}
 
-	isLogged() {
+	async fetchProducts() {
 
-		const token = getToken();
+		try {
 
-		if (token) {
-			return true;
+			const product = await userService.fetchProducts();
+
+			this.setProduct(product);
+
+		} catch (error) {
+			this.setError({
+				type: this.fetchProducts,
+				error
+			});
 		}
+	}
 
-		return false;
+	async setToken(_: string) {
+
+		try {
+
+			this.logged = true;
+
+			const profile = await userService.fetchProfile();
+
+			this.setUser(profile);
+
+		} catch (error) {
+			this.setError({
+				type: this.setToken,
+				error
+			});
+		}
+	}
+
+	isLogged() {
+		return this.logged;
 	}
 
 	logout() {
 
-		userService.logout();
+		this.logged = false;
 
 		location.reload();
 	}
 
 	abstract setUser(payload: SetUserPayload);
 	abstract setOrder(payload: SetOrderPayload);
+	abstract setProduct(payload: SetProductPayload);
 	abstract setError(payload: SetUserErrorPayload);
 	abstract clearErrors();
 }

@@ -44,6 +44,7 @@ export const actions = {
 			user
 		} = store.actions;
 
+		user.setToken('token');
 		user.fetchProfile();
 		user.fetchOrders();
 	}
