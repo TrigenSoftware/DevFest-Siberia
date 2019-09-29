@@ -18,6 +18,7 @@ export default function Loadable(props: IProps) {
 			fallback={
 				<img
 					className={props.className}
+					style={{ paddingBottom: 10 }}
 					src={fallback}
 				/>
 			}
