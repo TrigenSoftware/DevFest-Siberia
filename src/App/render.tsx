@@ -129,11 +129,25 @@ async function renderAll(pages: string[]) {
 
 	await store.loadAllSegments();
 
-	await Promise.all(pages.map(async (routePath) => {
+	const renderers = await Promise.all(pages.map(async (routePath) => {
 
 		const locale = getLocaleFromPath(routePath);
 		const parts = render(store, locale, routePath);
-		const html = wrap(parts, locale);
+
+		return () => [
+			routePath,
+			wrap(parts, locale)
+		];
+	}));
+
+	// need to add all SVGs
+
+	await Promise.all(renderers.map(async (render) => {
+
+		const [
+			routePath,
+			html
+		] = render();
 
 		await fs.mkdir(
 			path.join('build', routePath),
