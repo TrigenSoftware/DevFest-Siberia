@@ -107,7 +107,7 @@ export class BuyContainer extends Component<IProps, IState> {
 				>
 					<TabsNav>
 						<TabsNavItem
-							label={this.getLabel()}
+							label={this.renderLabel()}
 							to='/buy'
 						/>
 					</TabsNav>
@@ -220,6 +220,44 @@ export class BuyContainer extends Component<IProps, IState> {
 		);
 	}
 
+	private renderLabel() {
+
+		const {
+			product
+		} = this.props;
+		const {
+			context
+		} = this;
+		const __ = context.bind(tr);
+
+		if (!product) {
+			return ' - ';
+		}
+
+		const {
+			price,
+			name,
+			currency: currencyFromProps
+		} = product;
+		let currency = '';
+
+		switch (currencyFromProps) {
+
+			case 'USD':
+				currency = __`buy.currency.USD`;
+				break;
+
+			case 'EUR':
+				currency = __`buy.currency.EUR`;
+				break;
+
+			default:
+				currency = __`buy.currency.RUB`;
+		}
+
+		return `${name} - ${price}${currency}`;
+	}
+
 	componentDidMount() {
 
 		const {
@@ -294,44 +332,6 @@ export class BuyContainer extends Component<IProps, IState> {
 		};
 
 		return userData;
-	}
-
-	private getLabel() {
-
-		const {
-			product
-		} = this.props;
-		const {
-			context
-		} = this;
-		const __ = context.bind(tr);
-
-		if (!product) {
-			return ' - ';
-		}
-
-		const {
-			price,
-			name,
-			currency: currencyFromProps
-		} = product;
-		let currency = '';
-
-		switch (currencyFromProps) {
-
-			case 'USD':
-				currency = __`buy.currency.USD`;
-				break;
-
-			case 'EUR':
-				currency = __`buy.currency.EUR`;
-				break;
-
-			default:
-				currency = __`buy.currency.RUB`;
-		}
-
-		return `${name} - ${price}${currency}`;
 	}
 
 	private error() {
