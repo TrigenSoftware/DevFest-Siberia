@@ -71,7 +71,6 @@ export default class Share extends Component<IProps, IState> {
 						active
 					})}
 				>
-					{this.renderShareLinks()}
 					<li
 						className={classes.item}
 					>
@@ -80,6 +79,7 @@ export default class Share extends Component<IProps, IState> {
 							onClick={this.onToggle}
 						/>
 					</li>
+					{this.renderShareLinks()}
 				</ul>
 			</div>
 		);
