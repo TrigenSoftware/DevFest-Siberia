@@ -77,76 +77,70 @@
 		</mj-section>
 		<mj-section>
 			<mj-column
-				padding=" 0 20px"
+				width="160px"
 			>
-				<mj-text
-					color="#ff0093"
-					font-size="12px"
-					padding="7px"
-				>
-					Номер Билета
-				</mj-text>
-				<mj-text
-					font-family="'Roboto Mono', monospace"
-					color="#3b008b"
-					font-size="13px"
-					font-weight="700"
-					padding="7px"
-				>
-					ID 343-43
-				</mj-text>
-				<mj-text
-					color="#ff0093"
-					font-size="12px"
-					padding="7px"
-				>
-					Для
-				</mj-text>
-				<mj-text
-					font-family="'Roboto Mono', monospace"
-					color="#3b008b"
-					font-size="13px"
-					font-weight="bold"
-					padding="7px"
-				>
-					Василий Петров
-				</mj-text>
+				<mj-image
+					src="/assets/ticket.png"
+					padding="0"
+				/>
 			</mj-column>
+		</mj-section>
+		<mj-section>
 			<mj-column
-				padding=" 0 20px"
+				width="320px"
 			>
-				<mj-text
-					color="#ff0093"
-					font-size="12px"
-					padding="7px"
+				<mj-table
+					cellpadding="7px"
 				>
-					Где
-				</mj-text>
-				<mj-text
-					font-family="'Roboto Mono', monospace"
-					color="#3b008b"
-					font-size="13px"
-					font-weight="bold"
-					padding="7px"
-				>
-					Академпарк, 18
-				</mj-text>
-				<mj-text
-					color="#ff0093"
-					font-size="12px"
-					padding="7px"
-				>
-					Когда
-				</mj-text>
-				<mj-text
-					font-family="'Roboto Mono', monospace"
-					color="#3b008b"
-					font-size="13px"
-					font-weight="bold"
-					padding="7px"
-				>
-					29 ноября – 1 декабря
-				</mj-text>
+					<tr>
+						<td
+							style="color: #ff0093; font-size:12px; vertical-align: top"
+						>
+							Номер Билета
+						</td>
+						<td
+							style="color: #3b008b; font-size:13px; font-weight: 700;text-align: right; vertical-align: top"
+						>
+							ID 343-43
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="color: #ff0093; font-size:12px; vertical-align: top"
+						>
+							Для
+						</td>
+						<td
+							style="color: #3b008b; font-size:13px; font-weight: 700; text-align: right; vertical-align: top"
+						>
+							Василий Петров
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="color: #ff0093; font-size:12px; vertical-align: top"
+						>
+							Где
+						</td>
+						<td
+							style="color: #3b008b; font-size:13px; font-weight: 700; text-align: right; vertical-align: top"
+						>
+							Академпарк, 18
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="color: #ff0093; font-size:12px; vertical-align: top"
+						>
+							Когда
+						</td>
+						<td
+							style="color: #3b008b; font-size:13px; font-weight: 700; text-align: right; vertical-align: top"
+						>
+							29 ноября – 1 декабря
+						</td>
+					</tr>
+				</mj-table>
 			</mj-column>
 		</mj-section>
 		<mj-section>
