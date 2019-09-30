@@ -28,7 +28,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 			});
 		} else {
 			this.clearErrors();
-			window.location.href = redirectUrl;
+			location.href = redirectUrl;
 		}
 	}
 
@@ -67,9 +67,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				error
 			});
 
-			if (error.code === 401) {
-				window.location.href = `${process.env.API_URL}/login`;
-			}
+			this.refreshToken(error.code);
 		}
 	}
 
@@ -87,9 +85,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				error
 			});
 
-			if (error.code === 401) {
-				window.location.href = `${process.env.API_URL}/login`;
-			}
+			this.refreshToken(error.code);
 		}
 	}
 
@@ -107,9 +103,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				error
 			});
 
-			if (error.code === 401) {
-				window.location.href = `${process.env.API_URL}/login`;
-			}
+			this.refreshToken(error.code);
 		}
 	}
 
@@ -128,6 +122,13 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				type: this.setToken,
 				error
 			});
+		}
+	}
+
+	refreshToken(code: number) {
+
+		if (code === 401) {
+			location.href = `${process.env.BASE_URL}/login`;
 		}
 	}
 
