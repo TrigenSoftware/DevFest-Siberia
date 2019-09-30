@@ -198,7 +198,9 @@ export class BuyContainer extends Component<IProps, IState> {
 							{this.error()}
 						</ErrorMessage>
 						<TicketFormFooter>
-							<Offline>
+							<Offline
+								onChange={this.fetchProducts}
+							>
 								{isOffline => (
 									<Button
 										variant='secondary'
@@ -265,12 +267,7 @@ export class BuyContainer extends Component<IProps, IState> {
 	}
 
 	componentDidMount() {
-
-		const {
-			fetchProducts
-		} = this.props;
-
-		fetchProducts();
+		this.fetchProducts();
 	}
 
 	@Bind()
@@ -298,6 +295,18 @@ export class BuyContainer extends Component<IProps, IState> {
 		const userData = this.getUserData();
 
 		buy(userData);
+	}
+
+	@Bind()
+	fetchProducts(isOffline = false) {
+
+		const {
+			fetchProducts
+		} = this.props;
+
+		if (!isOffline) {
+			fetchProducts();
+		}
 	}
 
 	private validate(input: HTMLInputElement) {

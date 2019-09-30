@@ -30,7 +30,7 @@ export default class Offline extends Component<IProps> {
 		} = this.props;
 
 		return typeof children === 'function'
-			? children(!navigator.onLine)
+			? children(typeof navigator !== 'undefined' && !navigator.onLine)
 			: null;
 	}
 

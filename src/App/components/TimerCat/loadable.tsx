@@ -16,11 +16,18 @@ export default function Loadable(props: IProps) {
 		<TimerCat
 			{...props}
 			fallback={
-				<img
+				<svg
 					className={props.className}
-					style={{ paddingBottom: 10 }}
-					src={fallback}
-				/>
+					xmlns='http://www.w3.org/2000/svg'
+					viewBox='0 0 2900 1200'
+					fill='none'
+				>
+					<image
+						xlinkHref={fallback}
+						width={2900}
+						height={1200}
+					/>
+				</svg>
 			}
 		/>
 	);
