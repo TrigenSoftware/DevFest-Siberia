@@ -1,3 +1,4 @@
+/* tslint:disable:no-magic-numbers */
 import * as userService from '~/services/user';
 import {
 	IActions,
@@ -65,6 +66,10 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				type: this.fetchOrders,
 				error
 			});
+
+			if (error.code === 401) {
+				window.location.href = `${process.env.API_URL}/login`;
+			}
 		}
 	}
 
@@ -81,6 +86,10 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				type: this.fetchProfile,
 				error
 			});
+
+			if (error.code === 401) {
+				window.location.href = `${process.env.API_URL}/login`;
+			}
 		}
 	}
 
@@ -97,6 +106,10 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				type: this.fetchProducts,
 				error
 			});
+
+			if (error.code === 401) {
+				window.location.href = `${process.env.API_URL}/login`;
+			}
 		}
 	}
 
