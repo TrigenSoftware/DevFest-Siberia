@@ -21,7 +21,6 @@ import {
 	style,
 	classes
 } from './Footer.st.css';
-import Offline from '~/components/Offline';
 
 export type IProps = ISectionProps;
 
@@ -155,14 +154,7 @@ export default class Footer extends Component<IProps> {
 						</li>
 					</ul>
 				</Section>
-				<Offline
-					onChange={this.handleChange}
-				/>
 			</footer>
 		);
-	}
-
-	private handleChange(isOffline) {
-		console.log(isOffline);
 	}
 }
