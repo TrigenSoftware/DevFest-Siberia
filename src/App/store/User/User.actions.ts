@@ -128,7 +128,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 	refreshToken(code: number) {
 
 		if (code === 401) {
-			location.href = `${process.env.BASE_URL}/login`;
+			location.href = `${process.env.BASE_URL}/?login=true`;
 		}
 	}
 
