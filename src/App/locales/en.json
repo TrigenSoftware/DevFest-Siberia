@@ -8,7 +8,7 @@
 	"header": {
 		"home": "Home",
 		"team": "Team",
-		"cfp": "Become a speaker",
+		"speakers": "Speakers",
 		"lang": "Ru",
 		"login": "Log In",
 		"logout": "Log out",
@@ -244,6 +244,24 @@
 				"firstname": "Lev",
 				"lastname": "Novokreshchenov",
 				"description": "Member of the family"
+			},
+			{
+				"src": "https://res.cloudinary.com/trigen/image/upload/v1569823747/devfest2019/photos/Rustam.jpg",
+				"firstname": "Rustam",
+				"lastname": "Habibullin",
+				"description": "Website team, frontend",
+				"contacts": {
+					"site": "https://github.com/Rustamhabibullin"
+				}
+			},
+			{
+				"src": "https://res.cloudinary.com/trigen/image/upload/v1569823748/devfest2019/photos/Dan.jpg",
+				"firstname": "Dan",
+				"lastname": "Onoshko",
+				"description": "Website team",
+				"contacts": {
+					"twitter": "https://twitter.com/dangreen58"
+				}
 			}
 		]
 	},

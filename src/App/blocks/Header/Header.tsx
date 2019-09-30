@@ -95,15 +95,14 @@ export class Header extends Component<IProps> {
 						<HeaderNav>
 							<HeaderSpacer/>
 							<HeaderLink
+								to='/speakers'
+							>
+								{__x`header.speakers`}
+							</HeaderLink>
+							<HeaderLink
 								to='/team'
 							>
 								{__x`header.team`}
-							</HeaderLink>
-							<HeaderLink
-								href='https://www.papercall.io/dfsiberia19'
-								target='_blank'
-							>
-								{__x`header.cfp`}
 							</HeaderLink>
 							<HeaderSpacer/>
 							{!process.env.DISABLE_RU && (

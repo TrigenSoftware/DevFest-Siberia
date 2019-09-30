@@ -8,7 +8,7 @@
 	"header": {
 		"home": "Главная",
 		"team": "Команда",
-		"cfp": "Стать спикером",
+		"speakers": "Спикеры",
 		"lang": "En",
 		"login": "Войти",
 		"logout": "Выход",
@@ -244,6 +244,24 @@
 				"firstname": "Лев",
 				"lastname": "Новокрещёнов",
 				"description": "Член семьи"
+			},
+			{
+				"src": "https://res.cloudinary.com/trigen/image/upload/v1569823747/devfest2019/photos/Rustam.jpg",
+				"firstname": "Рустам",
+				"lastname": "Хабибуллин",
+				"description": "Разработка сайта, frontend",
+				"contacts": {
+					"site": "https://github.com/Rustamhabibullin"
+				}
+			},
+			{
+				"src": "https://res.cloudinary.com/trigen/image/upload/v1569823748/devfest2019/photos/Dan.jpg",
+				"firstname": "Даниил",
+				"lastname": "Оношко",
+				"description": "Разработка сайта",
+				"contacts": {
+					"twitter": "https://twitter.com/dangreen58"
+				}
 			}
 		]
 	},
