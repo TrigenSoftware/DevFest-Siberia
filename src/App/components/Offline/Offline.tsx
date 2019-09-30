@@ -30,56 +30,11 @@ export default class Offline extends Component<IProps> {
 			this.onChange();
 		}
 
-		this.toggleEffects();
+		this.addEffects();
 	}
 
 	componentWillUnmount() {
 		this.removeEffects();
-	}
-
-	private toggleEffects() {
-
-		const onlineSubscribed = typeof this.unsubscribeOnlineEvent === 'function';
-		const offlineSubscribed = typeof this.unsubscribeOfflineEvent === 'function';
-
-		if (!onlineSubscribed) {
-			this.unsubscribeOnlineEvent = subscribeEvent(
-				document,
-				'online',
-				this.onChange
-			);
-		}
-
-		if (!offlineSubscribed) {
-			this.unsubscribeOfflineEvent = subscribeEvent(
-				document,
-				'offline',
-				this.onChange
-			);
-		}
-
-		if (onlineSubscribed) {
-			this.unsubscribeOnlineEvent();
-			this.unsubscribeOnlineEvent = null;
-		}
-
-		if (offlineSubscribed) {
-			this.unsubscribeOfflineEvent();
-			this.unsubscribeOfflineEvent = null;
-		}
-	}
-
-	private removeEffects() {
-
-		if (typeof this.unsubscribeOnlineEvent === 'function') {
-			this.unsubscribeOnlineEvent();
-			this.unsubscribeOnlineEvent = null;
-		}
-
-		if (typeof this.unsubscribeOfflineEvent === 'function') {
-			this.unsubscribeOfflineEvent();
-			this.unsubscribeOfflineEvent = null;
-		}
 	}
 
 	@Bind()
@@ -88,9 +43,28 @@ export default class Offline extends Component<IProps> {
 		const {
 			onChange
 		} = this.props;
-
 		const isOffline = !navigator.onLine;
 
 		onChange(isOffline);
+	}
+
+	private addEffects() {
+		this.unsubscribeOnlineEvent = subscribeEvent(
+			document,
+			'online',
+			this.onChange
+		);
+		this.unsubscribeOfflineEvent = subscribeEvent(
+			document,
+			'offline',
+			this.onChange
+		);
+	}
+
+	private removeEffects() {
+		this.unsubscribeOnlineEvent();
+		this.unsubscribeOnlineEvent = null;
+		this.unsubscribeOfflineEvent();
+		this.unsubscribeOfflineEvent = null;
 	}
 }
