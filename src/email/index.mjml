@@ -94,48 +94,79 @@
 				>
 					<tr>
 						<td
-							style="color: #ff0093; font-size:12px; vertical-align: top"
+							style="
+							color: #ff0093;
+							font-size:12px;
+							vertical-align: top"
 						>
 							Номер Билета
 						</td>
 						<td
-							style="color: #3b008b; font-size:13px; font-weight: 700;text-align: right; vertical-align: top"
+							style="
+							color: #3b008b;
+							font-size:13px;
+							font-weight: 700;
+							text-align: right;
+							vertical-align: top"
 						>
 							ID 343-43
 						</td>
 					</tr>
 					<tr>
 						<td
-							style="color: #ff0093; font-size:12px; vertical-align: top"
+							style="
+							color: #ff0093;
+							font-size:12px;
+							vertical-align: top"
 						>
 							Для
 						</td>
 						<td
-							style="color: #3b008b; font-size:13px; font-weight: 700; text-align: right; vertical-align: top"
+							style="
+								color: #3b008b;
+								font-size:13px;
+								font-weight: 700;
+								text-align: right;
+								vertical-align: top"
 						>
 							Василий Петров
 						</td>
 					</tr>
 					<tr>
 						<td
-							style="color: #ff0093; font-size:12px; vertical-align: top"
+							style="
+								color: #ff0093;
+								font-size:12px;
+								vertical-align: top"
 						>
 							Где
 						</td>
 						<td
-							style="color: #3b008b; font-size:13px; font-weight: 700; text-align: right; vertical-align: top"
+							style="
+								color: #3b008b;
+								font-size:13px;
+								font-weight: 700;
+								text-align: right;
+								vertical-align: top"
 						>
 							Академпарк, 18
 						</td>
 					</tr>
 					<tr>
 						<td
-							style="color: #ff0093; font-size:12px; vertical-align: top"
+							style="
+								color: #ff0093;
+								font-size:12px;
+								vertical-align: top"
 						>
 							Когда
 						</td>
 						<td
-							style="color: #3b008b; font-size:13px; font-weight: 700; text-align: right; vertical-align: top"
+							style="color: #3b008b;
+								font-size:13px;
+								font-weight: 700;
+								text-align: right;
+								vertical-align: top"
 						>
 							29 ноября – 1 декабря
 						</td>
