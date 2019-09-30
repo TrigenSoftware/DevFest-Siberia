@@ -179,16 +179,16 @@ export class Header extends Component<IProps> {
 				search
 			}
 		} = this.props;
-		const searchWithParam = /[^\w]authToken=/.test(search);
+		const searchWithParam = /[^\w]authKey=/.test(search);
 
 		if (searchWithParam) {
 
-			const token = new URLSearchParams(search).get('authToken');
+			const token = new URLSearchParams(search).get('authKey');
 
 			await setToken(token);
 
 			history.push({
-				search: deleteSearchParams(search, 'authToken')
+				search: deleteSearchParams(search, 'authKey')
 			});
 		}
 	}

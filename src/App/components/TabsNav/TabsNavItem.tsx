@@ -1,4 +1,5 @@
 import React, {
+	ReactNode,
 	Component
 } from 'react';
 import PropTypes from 'prop-types';
@@ -11,7 +12,7 @@ import {
 } from './TabsNav.st.css';
 
 export interface IProps extends IToggleNavLinkProps {
-	label: string;
+	label: ReactNode;
 	description?: string;
 }
 
@@ -19,7 +20,7 @@ export class TabsNavItem extends Component<IProps> {
 
 	static propTypes = {
 		...ToggleNavLink.propTypes,
-		label:       PropTypes.string.isRequired,
+		label:       PropTypes.node.isRequired,
 		description: PropTypes.string
 	};
 

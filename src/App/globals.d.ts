@@ -15,6 +15,19 @@ declare module '*.svg' {
 	export default svg;
 }
 
+declare module '*.jpg' {
+    const src: import('@flexis/srcset-loader/types').Src;
+    const source: import('@flexis/srcset-loader/types').Source;
+    const srcset: import('@flexis/srcset-loader/types').Srcset;
+    const names: import('@flexis/srcset-loader/types').Names;
+    export default src;
+    export {
+        source,
+        srcset,
+        names
+    };
+}
+
 declare module 'raw-loader!*' {
 	const str: string;
 	export default str;

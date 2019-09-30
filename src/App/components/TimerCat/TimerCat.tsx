@@ -15,14 +15,11 @@ import {
 import icon from './icon';
 import animate from './animate';
 import {
+	IProps,
 	IIconProps
 } from './types';
 
-export interface IProps {
-	className?: string;
-	start: Date;
-	locale: string;
-}
+export * from './types';
 
 export default class TimerCat extends PureComponent<IProps, IIconProps> {
 

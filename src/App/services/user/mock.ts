@@ -1,13 +1,12 @@
 /* tslint:disable:no-magic-numbers */
 import delay from 'delay';
 import createLogger from '~/services/logger';
-import {
-	saveToken
-} from '~/services/user';
 import User from '~/models/User';
 import Order from '~/models/Order';
+import Product from '~/models/Product';
 import mockUser from '~/models/User.mock';
-import mockOrders from '~/models/Order.mock';
+import mockOrder from '~/models/Order.mock';
+import mockProduct from '~/models/Product.mock';
 
 const logger = createLogger('App::services::user');
 
@@ -34,8 +33,6 @@ export async function login(email: string, password: string) {
 
 	logger.debug('login', 'Response:', response);
 
-	saveToken(response.authKey);
-
 	return User(response.profile);
 }
 
@@ -43,7 +40,7 @@ export async function fetchOrders() {
 
 	logger.debug('fetchOrders');
 
-	const response = mockOrders();
+	const response = mockOrder();
 
 	logger.debug('fetchOrders', 'Response:', response);
 
@@ -61,9 +58,17 @@ export async function fetchProfile() {
 	return User(response.profile);
 }
 
+export async function fetchProducts() {
+
+	logger.debug('fetchProducts');
+
+	const response = mockProduct();
+
+	logger.debug('fetchProducts', 'Response:', response);
+
+	return Product(response);
+}
+
 export function logout() {
-
 	logger.debug('logout');
-
-	localStorage.removeItem('authToken');
 }
