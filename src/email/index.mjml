@@ -16,7 +16,7 @@
 			<mj-column>
 				<mj-image
 					width="193px"
-					src="/assets/logo.png"
+					src="./assets/logo.png"
 				/>
 			</mj-column>
 		</mj-section>
@@ -27,7 +27,7 @@
 				border-radius="10px"
 			>
 				<mj-image
-					src="/assets/cat.png"
+					src="./assets/cat.png"
 					padding="0"
 				/>
 			</mj-column>
@@ -80,7 +80,7 @@
 				width="160px"
 			>
 				<mj-image
-					src="/assets/ticket.png"
+					src="./assets/ticket.png"
 					padding="0"
 				/>
 			</mj-column>
@@ -206,19 +206,19 @@
 				>
 					<mj-social-element
 						href="https://twitter.com/GDGNsk"
-						src="/assets/twitter.png"
+						src="./assets/twitter.png"
 					/>
 					<mj-social-element
 						href="https://t.me/DevFestSiberia"
-						src="/assets/telegram.png"
+						src="./assets/telegram.png"
 					/>
 					<mj-social-element
 						href="https://vk.com/gdgnsk"
-						src="/assets/vk.png"
+						src="./assets/vk.png"
 					/>
 					<mj-social-element
 						href="https://www.meetup.com/GDGNsk"
-						src="/assets/meetup.png"
+						src="./assets/meetup.png"
 					/>
 				</mj-social>
 				<mj-button
