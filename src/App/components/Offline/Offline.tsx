@@ -17,6 +17,7 @@ export default class Offline extends Component<IProps> {
 	};
 
 	componentDidMount() {
+		this.onChange();
 		subscribeEvent(document, 'online', this.onChange);
 		subscribeEvent(document, 'offline', this.onChange);
 	}
