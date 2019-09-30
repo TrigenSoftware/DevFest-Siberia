@@ -24,6 +24,7 @@ import {
 import {
 	getErrorMessage
 } from '~/blocks/common';
+import Offline from '~/components/Offline';
 import Section from '~/components/Section';
 import TabsNav, {
 	TabsNavItem
@@ -65,7 +66,7 @@ export class BuyContainer extends Component<IProps, IState> {
 	static propTypes = {
 		buy:           PropTypes.func.isRequired,
 		fetchProducts: PropTypes.func.isRequired,
-		product:       PropTypes.any.isRequired,
+		product:       PropTypes.any,
 		errors:        PropTypes.any.isRequired
 	};
 
@@ -197,12 +198,17 @@ export class BuyContainer extends Component<IProps, IState> {
 							{this.error()}
 						</ErrorMessage>
 						<TicketFormFooter>
-							<Button
-								variant='secondary'
-								type='submit'
-							>
-								{__x`buy.buy`}
-							</Button>
+							<Offline>
+								{isOffline => (
+									<Button
+										variant='secondary'
+										type='submit'
+										disabled={isOffline}
+									>
+										{__x`buy.buy`}
+									</Button>
+								)}
+							</Offline>
 							<FormGroup
 								flex={false}
 							>

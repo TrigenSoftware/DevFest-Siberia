@@ -1,4 +1,5 @@
 import {
+	ReactNode,
 	Component
 } from 'react';
 import PropTypes from 'prop-types';
@@ -8,20 +9,29 @@ import {
 } from '@flexis/ui/helpers';
 
 export interface IProps {
-	onChange(isOffline: boolean);
+	children?(isOffline: boolean): ReactNode;
+	onChange?(isOffline: boolean);
 }
 
 export default class Offline extends Component<IProps> {
 
 	static propTypes = {
-		onChange: PropTypes.func.isRequired
+		children: PropTypes.func,
+		onChange: PropTypes.func
 	};
 
 	private unsubscribeOnlineEvent: () => void = null;
 	private unsubscribeOfflineEvent: () => void = null;
 
 	render() {
-		return null;
+
+		const {
+			children
+		} = this.props;
+
+		return typeof children === 'function'
+			? children(!navigator.onLine)
+			: null;
 	}
 
 	componentDidMount() {
@@ -38,24 +48,29 @@ export default class Offline extends Component<IProps> {
 	}
 
 	@Bind()
-	private onChange() {
+	private onChange(event?: Event) {
 
 		const {
 			onChange
 		} = this.props;
-		const isOffline = !navigator.onLine;
 
-		onChange(isOffline);
+		if (event) {
+			this.forceUpdate();
+		}
+
+		if (typeof onChange === 'function') {
+			onChange(!navigator.onLine);
+		}
 	}
 
 	private addEffects() {
 		this.unsubscribeOnlineEvent = subscribeEvent(
-			document,
+			window,
 			'online',
 			this.onChange
 		);
 		this.unsubscribeOfflineEvent = subscribeEvent(
-			document,
+			window,
 			'offline',
 			this.onChange
 		);
