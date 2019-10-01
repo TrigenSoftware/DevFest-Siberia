@@ -19,7 +19,12 @@ precacheAndRoute(
 );
 
 registerNavigationRoute(
-	getCacheKeyForURL('/shell.html')
+	getCacheKeyForURL('/shell.html'),
+	{
+		blacklist: [
+			/\/auth(\/|$)/
+		]
+	}
 );
 
 registerRoute(
