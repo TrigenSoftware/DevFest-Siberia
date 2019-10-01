@@ -41,7 +41,7 @@
 					color="#0012be"
 					font-size="16px"
 				>
-					Привет, Иван Петров
+					Привет, {{firstname}} {{lastname}}
 				</mj-text>
 				<mj-text
 					font-family="'Roboto Mono', monospace"
@@ -63,7 +63,7 @@
 					color="#000000"
 					font-size="14px"
 				>
-					Логин: <span style='color: #0012be'>username@email.com</span>
+					Логин: <span style='color: #0012be'>{{email}}</span>
 				</mj-text>
 				<mj-text
 					font-family="'Roboto Mono', monospace"
@@ -71,7 +71,7 @@
 					color="#000000"
 					font-size="14px"
 				>
-					Пароль: 038t24pqhgqv
+					Пароль: {{password}}
 				</mj-text>
 			</mj-column>
 		</mj-section>
@@ -109,7 +109,7 @@
 							text-align: right;
 							vertical-align: top"
 						>
-							ID 343-43
+							ID {{id}}
 						</td>
 					</tr>
 					<tr>
@@ -129,7 +129,7 @@
 								text-align: right;
 								vertical-align: top"
 						>
-							Василий Петров
+							{{firstname}} {{lastname}}
 						</td>
 					</tr>
 					<tr>
