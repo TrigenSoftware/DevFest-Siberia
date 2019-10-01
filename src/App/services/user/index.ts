@@ -83,7 +83,7 @@ export function logout() {
 	logger.debug('logout');
 
 	if (typeof localStorage !== 'undefined') {
-		localStorage.removeItem('authToken');
+		clearToken();
 	}
 }
 
@@ -101,4 +101,8 @@ export function getToken() {
 	}
 
 	return localStorage.getItem('authToken');
+}
+
+export function clearToken() {
+	localStorage.removeItem('authToken');
 }
