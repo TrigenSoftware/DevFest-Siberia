@@ -27,7 +27,7 @@
     "start": "trigen-scripts start",
     "build": "trigen-scripts build",
     "build:render": "trigen-scripts build:render",
-    "build:email": "mkdir -p build/email && mjml src/email/*.mjml -o build/email/ && cp -a src/email/assets/. build/email/assets/",
+    "build:email": "mkdir -p build/email && mjml src/email/*.mjml -o build/email/",
     "render": "trigen-scripts render",
     "serve": "trigen-scripts serve"
   },
