@@ -1,3 +1,4 @@
+/* tslint:disable:no-magic-numbers */
 import * as userService from '~/services/user';
 import {
 	IActions,
@@ -20,14 +21,14 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 
 		const redirectUrl = await userService.buy(registrationData);
 
-		if (redirectUrl === `${process.env.API_URL.replace(/\/$/, '')}/buy?login=true`) {
+		if (redirectUrl.startsWith(process.env.API_URL.replace(/\/$/, ''))) {
 			this.setError({
 				type:  this.buy,
 				error: new Error('User already exist')
 			});
 		} else {
 			this.clearErrors();
-			window.location.href = redirectUrl;
+			location.href = redirectUrl;
 		}
 	}
 
@@ -65,6 +66,10 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				type: this.fetchOrders,
 				error
 			});
+
+			if (error.response.data.code === 401) {
+				this.refreshToken();
+			}
 		}
 	}
 
@@ -81,6 +86,10 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				type: this.fetchProfile,
 				error
 			});
+
+			if (error.response.data.code === 401) {
+				this.refreshToken();
+			}
 		}
 	}
 
@@ -97,6 +106,10 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				type: this.fetchProducts,
 				error
 			});
+
+			if (error.response.data.code === 401) {
+				this.refreshToken();
+			}
 		}
 	}
 
@@ -116,6 +129,11 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				error
 			});
 		}
+	}
+
+	refreshToken() {
+		userService.clearToken();
+		location.href = '/?login=true';
 	}
 
 	isLogged() {
