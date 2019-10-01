@@ -21,6 +21,8 @@ import {
 
 interface ISelfProps {
 	links: Record<string, string>;
+	closeLabel?: string;
+	children?: string;
 }
 
 export type IProps = CombinePropsAndAttributes<
@@ -48,6 +50,7 @@ export default class Share extends Component<IProps, IState> {
 
 		const {
 			className,
+			closeLabel,
 			children,
 			...props
 		} = this.props;
@@ -63,7 +66,7 @@ export default class Share extends Component<IProps, IState> {
 				<Button
 					className={classes.toggle}
 					icon={<IconShare/>}
-					title={String(children)}
+					title={children}
 					onClick={this.onToggle}
 				/>
 				<ul
@@ -75,6 +78,8 @@ export default class Share extends Component<IProps, IState> {
 						className={classes.item}
 					>
 						<Button
+							tabIndex={active ? undefined : -1}
+							title={closeLabel}
 							className={classes.close}
 							onClick={this.onToggle}
 						/>
@@ -82,6 +87,35 @@ export default class Share extends Component<IProps, IState> {
 					{this.renderShareLinks()}
 				</ul>
 			</div>
+		);
+	}
+
+	private renderShareLinks() {
+
+		const {
+			links
+		} = this.props;
+		const {
+			active
+		} = this.state;
+
+		return (
+			Object.entries(links).map(([type, href]) => (
+				<li
+					className={classes.item}
+					key={href}
+				>
+					<ContactLink
+						tabIndex={active ? undefined : -1}
+						className={classes.contactLink}
+						type={type as ContactLinkType}
+						href={href}
+						title={type}
+					>
+						{type}
+					</ContactLink>
+				</li>
+			))
 		);
 	}
 
@@ -171,30 +205,5 @@ export default class Share extends Component<IProps, IState> {
 			this.unsubscribeFromOutsideClick();
 			this.unsubscribeFromOutsideClick = null;
 		}
-	}
-
-	private renderShareLinks() {
-
-		const {
-			links
-		} = this.props;
-
-		return (
-			Object.entries(links).map(([type, href]) => (
-				<li
-					className={classes.item}
-					key={href}
-				>
-					<ContactLink
-						className={classes.contactLink}
-						type={type as ContactLinkType}
-						href={href}
-						title={type}
-					>
-						{type}
-					</ContactLink>
-				</li>
-			))
-		);
 	}
 }

@@ -1,6 +1,8 @@
 import React, {
+	ReactElement,
 	Component
 } from 'react';
+import FocusLock from 'react-focus-lock';
 import {
 	subscribeEvent,
 	Bind
@@ -19,6 +21,16 @@ export {
 };
 
 export type IProps = IFlexisModalProps;
+
+function wrapContent(content: ReactElement) {
+	return (
+		<FocusLock
+			returnFocus
+		>
+			{content}
+		</FocusLock>
+	);
+}
 
 export default class Modal extends Component<IProps> {
 
@@ -43,6 +55,7 @@ export default class Modal extends Component<IProps> {
 			<FlexisModal
 				{...props}
 				className={style(classes.root, className)}
+				wrapContent={wrapContent}
 			>
 				{children}
 			</FlexisModal>

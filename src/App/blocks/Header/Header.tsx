@@ -153,6 +153,7 @@ export class Header extends Component<IProps> {
 							)}
 							<Share
 								links={links as any}
+								closeLabel={__`header.closeShare`}
 							>
 								{__`header.share`}
 							</Share>
