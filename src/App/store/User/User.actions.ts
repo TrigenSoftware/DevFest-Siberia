@@ -67,7 +67,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				error
 			});
 
-			if (error.code === 401) {
+			if (error.response.data.code === 401) {
 				this.refreshToken();
 			}
 		}
@@ -87,7 +87,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				error
 			});
 
-			if (error.code === 401) {
+			if (error.response.data.code === 401) {
 				this.refreshToken();
 			}
 		}
@@ -107,7 +107,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				error
 			});
 
-			if (error.code === 401) {
+			if (error.response.data.code === 401) {
 				this.refreshToken();
 			}
 		}
