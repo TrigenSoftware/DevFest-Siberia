@@ -67,7 +67,9 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				error
 			});
 
-			this.refreshToken(error.code);
+			if (error.code === 401) {
+				this.refreshToken();
+			}
 		}
 	}
 
@@ -85,7 +87,9 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				error
 			});
 
-			this.refreshToken(error.code);
+			if (error.code === 401) {
+				this.refreshToken();
+			}
 		}
 	}
 
@@ -103,7 +107,9 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				error
 			});
 
-			this.refreshToken(error.code);
+			if (error.code === 401) {
+				this.refreshToken();
+			}
 		}
 	}
 
@@ -125,12 +131,9 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 		}
 	}
 
-	refreshToken(code: number) {
-
-		if (code === 401) {
-			localStorage.removeItem('authToken');
-			location.href = '/?login=true';
-		}
+	refreshToken() {
+		userService.clearToken();
+		location.href = '/?login=true';
 	}
 
 	isLogged() {
