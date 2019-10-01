@@ -87,7 +87,7 @@
 		</mj-section>
 		<mj-section>
 			<mj-column
-				width="320px"
+				padding="0 10%"
 			>
 				<mj-table
 					cellpadding="7px"
@@ -149,7 +149,7 @@
 								text-align: right;
 								vertical-align: top"
 						>
-							Академпарк, 18
+							Академпарк, ул. Николаева д. 12, г. Новосибирск
 						</td>
 					</tr>
 					<tr>
