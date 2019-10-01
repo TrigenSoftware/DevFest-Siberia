@@ -24,6 +24,7 @@ import {
 import {
 	UserFieldsSpec
 } from '~/models/User';
+import Offline from '~/components/Offline';
 import FormGroup from '~/components/FormGroup';
 import LoginModal, {
 	IProps as ILoginModalProps,
@@ -176,11 +177,16 @@ export class HeaderLoginModal extends Component<IProps, IState> {
 						>
 							{__x`login.cancel`}
 						</Link>
-						<Button
-							type='submit'
-						>
-							{__x`login.submit`}
-						</Button>
+						<Offline>
+							{isOffline => (
+								<Button
+									type='submit'
+									disabled={isOffline}
+								>
+									{__x`login.submit`}
+								</Button>
+							)}
+						</Offline>
 					</LoginModalFooter>
 				</LoginModalForm>
 				<LoginModalLink
