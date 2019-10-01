@@ -14,6 +14,7 @@ import {
 import {
 	Provider
 } from '@flexis/redux';
+import registerServiceWorker from './serviceWorker?tsw';
 import {
 	getLocaleFromPath
 } from './services/i18n';
@@ -63,6 +64,10 @@ async function getI18nConfig(): Promise<IConfig> {
 }
 
 async function main() {
+
+	if (process.env.NODE_ENV !== 'development') {
+		registerServiceWorker({ scope: '/' });
+	}
 
 	const root = document.querySelector('#view');
 	const i18n = await getI18nConfig();

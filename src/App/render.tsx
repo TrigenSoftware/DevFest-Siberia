@@ -1,6 +1,9 @@
 import {
 	promises as fs
 } from 'fs';
+import {
+	createHash
+} from 'crypto';
 import path from 'path';
 import React from 'react';
 import {
@@ -35,8 +38,9 @@ import {
 	RoutesList
 } from './routes';
 
+const BUILD = 'build';
 const extractorOptions = {
-	statsFile:   path.resolve('build/loadable-stats.json'),
+	statsFile:   path.resolve(BUILD, 'loadable-stats.json'),
 	entrypoints: ['index']
 };
 
@@ -80,9 +84,39 @@ function render(
 	];
 }
 
+async function patchPrecacheManifest() {
+
+	const files = await fs.readdir(BUILD);
+	const precacheManifestFile = files.find(_ => /precache-manifest/.test(_));
+
+	if (!precacheManifestFile) {
+		throw Error('No precache manifest');
+	}
+
+	const template = await fs.readFile(path.join(BUILD, 'index.html'), 'utf8');
+	const precacheManifestPath = path.join(BUILD, precacheManifestFile);
+	const precacheManifest = await fs.readFile(precacheManifestPath, 'utf8');
+
+	return () => {
+
+		const spriteHtml = sprite.stringify();
+		const result = template.replace(/(<div id=view>)/, `${spriteHtml}$1`);
+		const hash = createHash('md5').update(result).digest('hex');
+		const updatedPrecacheManifest = precacheManifest.replace(
+			/"[^"]*"(,\n\s+)"url": "\/index.html"/,
+			`"${hash}", "url": "/shell.html"`
+		);
+
+		return Promise.all([
+			fs.writeFile(path.join(BUILD, 'shell.html'), result),
+			fs.writeFile(precacheManifestPath, updatedPrecacheManifest)
+		]);
+	};
+}
+
 async function createTemplate() {
 
-	const template = await fs.readFile('build/index.html', 'utf8');
+	const template = await fs.readFile(path.join(BUILD, 'index.html'), 'utf8');
 	const enstr = jsesc(JSON.stringify({
 		locale:  'en',
 		locales: { en }
@@ -124,6 +158,7 @@ async function createTemplate() {
 
 async function renderAll(pages: string[]) {
 
+	const writePrecacheManifest = await patchPrecacheManifest();
 	const wrap = await createTemplate();
 	const store = createStore();
 
@@ -142,6 +177,7 @@ async function renderAll(pages: string[]) {
 
 	// need to add all SVGs
 
+	await writePrecacheManifest();
 	await Promise.all(renderers.map(async (render) => {
 
 		const [
@@ -150,12 +186,12 @@ async function renderAll(pages: string[]) {
 		] = render();
 
 		await fs.mkdir(
-			path.join('build', routePath),
+			path.join(BUILD, routePath),
 			{ recursive: true }
 		);
 
 		await fs.writeFile(
-			path.join('build', routePath, 'index.html'),
+			path.join(BUILD, routePath, 'index.html'),
 			html
 		);
 	}));
