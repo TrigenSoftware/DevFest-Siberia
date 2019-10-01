@@ -27,6 +27,7 @@
     "start": "trigen-scripts start",
     "build": "trigen-scripts build",
     "build:render": "trigen-scripts build:render",
+    "build:email": "mkdir -p build/email && mjml src/email/*.mjml -o build/email/",
     "render": "trigen-scripts render",
     "serve": "trigen-scripts serve"
   },
@@ -73,6 +74,7 @@
     "@types/faker": "^4.1.4",
     "faker": "^4.1.0",
     "jsesc": "^2.5.2",
+    "mjml": "^4.5.1",
     "moxios": "^0.4.0"
   },
   "resolutions": {
