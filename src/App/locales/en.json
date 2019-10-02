@@ -20,8 +20,7 @@
 			"twitter": "https://twitter.com/intent/tweet?screen_name=@GDGNsk&text=Spreading the love - #DevFestSiberia2019, the largest community conference in Russia this winter: {SITE_URL}",
 			"facebook": "https://www.facebook.com/dialog/share?app_id=1326280610740824&display=popup&href={SITE_URL}&redirect_uri={SITE_URL}",
 			"vk": "https://vk.com/share.php?url={SITE_URL}",
-			"telegram": "https://telegram.me/share/url?url={SITE_URL}&text=DevFest Siberia 2019",
-			"meetup": "https://www.meetup.com/GDGNsk"
+			"telegram": "https://telegram.me/share/url?url={SITE_URL}&text=DevFest Siberia 2019"
 		},
 		"confirmMessage": "Almost done 🎉 Please check your email for ticket and account details."
 	},
@@ -468,7 +467,7 @@
 				"description": "Android Engineer at Bolt",
 				"location": "🇪🇪",
 				"contacts": {
-					"twitter":"hhttps://twitter.com/xotta6bl4_/",
+					"twitter":"https://twitter.com/xotta6bl4_/",
 					"site":"https://devindi.com/"
 				},
 				"text": "Andrew wrote his hello-world for Android in 2012. He worked at big companies such as Yandex, Tinkoff, Revolut and Bolt, so his code is running on tens of millions of devices.",
