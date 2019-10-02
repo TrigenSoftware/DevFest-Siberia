@@ -119,7 +119,7 @@
 							text-align: right;
 							vertical-align: top"
 						>
-							ID {{.Id}}
+							ID {{.TicketID}}
 						</td>
 					</tr>
 					<tr>
