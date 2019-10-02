@@ -23,8 +23,6 @@ import Section, {
 import ToggleNav, {
 	ToggleNavLink
 } from '~/components/ToggleNav';
-import Link from '~/components/Link';
-import Button from '~/components/Button';
 import ProfileCard from '~/components/ProfileCard';
 import Badge from '~/components/Badge';
 import {
@@ -71,18 +69,6 @@ export class Speakers extends Component<IProps> {
 					<h2>
 						{__x`speakers.title`}
 					</h2>
-					<Link
-						className={classes.link}
-						href='https://www.papercall.io/dfsiberia19'
-						target='_blank'
-						disguised
-					>
-						<Button
-							variant='secondary'
-						>
-							{__x`speakers.cfp`}
-						</Button>
-					</Link>
 				</div>
 				<ToggleNav
 					className={classes.nav}

@@ -191,7 +191,7 @@
 		"title": "Team",
 		"team": [
 			{
-				"src": "https://gdg-siberia.com/img/team/LeonidKalneus.jpg",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018065/team/LeonidKalneus_jbfk5o.jpg",
 				"firstname": "Leonid",
 				"lastname": "Kalneus",
 				"description": "Head of the team",
@@ -201,7 +201,7 @@
 				}
 			},
 			{
-				"src": "https://gdg-siberia.com/img/team/AlexeyRomanenko.jpg",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018251/team/AlexeyRomanenko_c8eprd.jpg",
 				"firstname": "Alexey",
 				"lastname": "Romanenko",
 				"description": "Volunteer coordinator",
@@ -211,7 +211,7 @@
 				}
 			},
 			{
-				"src": "https://gdg-siberia.com/img/team/YuriyKashnikov.jpg",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018255/team/YuriyKashnikov_touofm.jpg",
 				"firstname": "Yuriy",
 				"lastname": "Kashnikov",
 				"description": "Program committee member",
@@ -220,19 +220,19 @@
 				}
 			},
 			{
-				"src": "https://gdg-siberia.com/img/team/KirZharov.jpg",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018250/team/KirZharov_du5wfk.jpg",
 				"firstname": "Kir",
 				"lastname": "Zharov",
 				"description": "Website team, frontend"
 			},
 			{
-				"src": "https://gdg-siberia.com/img/team/IvanKruchkov.png",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018251/team/IvanKruchkov_e2gsvn.png",
 				"firstname": "Ivan",
 				"lastname": "Kruchkov",
 				"description": "Website team, backend"
 			},
 			{
-				"src": "https://gdg-siberia.com/img/team/AminaKotomanova.jpg",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018251/team/AminaKotomanova_l3keke.jpg",
 				"firstname": "Amina",
 				"lastname": "Kotomanova",
 				"description": "Illustrator",
@@ -241,7 +241,7 @@
 				}
 			},
 			{
-				"src": "https://gdg-siberia.com/img/team/LevNovokreshchenov.jpg",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018250/team/LevNovokreshchenov_ujhq7z.jpg",
 				"firstname": "Lev",
 				"lastname": "Novokreshchenov",
 				"description": "Member of the family"
@@ -268,7 +268,6 @@
 	},
 	"speakers": {
 		"title": "Speakers",
-		"cfp": "Become a speaker",
 		"speakers": [
 			{
 				"id": "BaruchSadogursky",
