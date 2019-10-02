@@ -42,7 +42,7 @@
 					color="#0012be"
 					font-size="16px"
 				>
-					Hey, {{.Firstname}} {{.Lastname}}
+					Hey, {{.FirstName}} {{.LastName}}
 				</mj-text>
 				<mj-text
 					font-family="'Roboto Mono', monospace"
@@ -139,7 +139,7 @@
 								text-align: right;
 								vertical-align: top"
 						>
-							{{.Firstname}} {{.Lastname}}
+							{{.FirstName}} {{.LastName}}
 						</td>
 					</tr>
 					<tr>
