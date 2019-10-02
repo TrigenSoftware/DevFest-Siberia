@@ -23,7 +23,7 @@
 			"telegram": "https://telegram.me/share/url?url={SITE_URL}&text=DevFest Siberia 2019",
 			"meetup": "https://www.meetup.com/GDGNsk"
 		},
-		"confirmMessage": "Thank you for your purchase. Check your email."
+		"confirmMessage": "Almost done 🎉 Please check your email for ticket and account details."
 	},
 	"facts": {
 		"title": "DevFest Siberia",
