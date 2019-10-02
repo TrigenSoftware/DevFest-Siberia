@@ -21,7 +21,7 @@
 			"facebook": "https://www.facebook.com/dialog/share?app_id=1326280610740824&display=popup&href={SITE_URL}&redirect_uri={SITE_URL}",
 			"vk": "https://vk.com/share.php?url={SITE_URL}",
 			"telegram": "https://telegram.me/share/url?url={SITE_URL}&text=DevFest Siberia 2019",
-			"meetup": "https://meetup.com"
+			"meetup": "https://www.meetup.com/GDGNsk"
 		},
 		"confirmMessage": "Thank you for your purchase. Check your email."
 	},
