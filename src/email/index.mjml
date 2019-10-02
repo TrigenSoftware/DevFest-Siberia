@@ -15,6 +15,7 @@
 		<mj-section>
 			<mj-column>
 				<mj-image
+					align="center"
 					width="193px"
 					src="https://res.cloudinary.com/trigen/image/upload/v1569940588/devfest2019/email/logo.png"
 				/>
@@ -41,7 +42,7 @@
 					color="#0012be"
 					font-size="16px"
 				>
-					Привет, {{firstname}} {{lastname}}
+					Hey, {{firstname}} {{lastname}}
 				</mj-text>
 				<mj-text
 					font-family="'Roboto Mono', monospace"
@@ -50,11 +51,7 @@
 					font-size="14px"
 					line-height="25px"
 				>
-					DevFest Siberia is a part of the IT conference series around the
-					world for developers, managers, students. It is organised
-					by a non-profit community Google Developers Group. This year,
-					the conference will take place on the 29 rd of November –
-					1th of September in Novosibirsk, Russia.
+					You're all set for your DevFest Siberia 2019 account!<br>Here are your credentials:
 				</mj-text>
 				<mj-text
 					font-family="'Roboto Mono', monospace"
@@ -63,7 +60,7 @@
 					color="#000000"
 					font-size="14px"
 				>
-					Логин: <span style='color: #0012be'>{{email}}</span>
+					Login: <span style='color: #0012be'>{{email}}</span>
 				</mj-text>
 				<mj-text
 					font-family="'Roboto Mono', monospace"
@@ -71,7 +68,20 @@
 					color="#000000"
 					font-size="14px"
 				>
-					Пароль: {{password}}
+					Password: {{password}}
+				</mj-text>
+				<mj-text
+					font-family="'Roboto Mono', monospace"
+					align="center"
+					color="#ff0093"
+					font-size="14px"
+				>
+					<a
+						style="color: #ff0093"
+						href="{{link}}"
+					>
+						Or click here to login.
+					</a>
 				</mj-text>
 			</mj-column>
 		</mj-section>
@@ -99,7 +109,7 @@
 							font-size:12px;
 							vertical-align: top"
 						>
-							Номер Билета
+							Ticket ID
 						</td>
 						<td
 							style="
@@ -119,7 +129,7 @@
 							font-size:12px;
 							vertical-align: top"
 						>
-							Для
+							For
 						</td>
 						<td
 							style="
@@ -139,7 +149,7 @@
 								font-size:12px;
 								vertical-align: top"
 						>
-							Где
+							Where
 						</td>
 						<td
 							style="
@@ -149,7 +159,7 @@
 								text-align: right;
 								vertical-align: top"
 						>
-							Академпарк, ул. Николаева д. 12, г. Новосибирск
+							Academpark, Nikolaeva 12
 						</td>
 					</tr>
 					<tr>
@@ -159,7 +169,7 @@
 								font-size:12px;
 								vertical-align: top"
 						>
-							Когда
+							When
 						</td>
 						<td
 							style="color: #3b008b;
@@ -168,7 +178,7 @@
 								text-align: right;
 								vertical-align: top"
 						>
-							29 ноября – 1 декабря
+							29 November – 1 December
 						</td>
 					</tr>
 				</mj-table>
