@@ -176,6 +176,7 @@
 		</mj-section>
 		<mj-section
 			background-color="#d8e1eb"
+			text-align="center"
 		>
 			<mj-column>
 				<mj-text
@@ -191,6 +192,7 @@
 					font-size="15px"
 					icon-size="36px"
 					mode="horizontal"
+					align="center"
 				>
 					<mj-social-element
 						href="https://twitter.com/GDGNsk"
@@ -211,6 +213,7 @@
 				</mj-social>
 				<mj-button
 					font-family="Roboto"
+					align="center"
 					background-color="transparent"
 					color="#143a57"
 					href="https://gdg-siberia.com"

@@ -594,7 +594,7 @@
 		"title": "Terms Of Service",
 		"consent": "Consent to processing of personal data",
 		"offer": "Public offer",
-		"offerUrl": "/some.pdf"
+		"offerUrl": "/oferta.pdf"
 	},
 	"meta": {
 		"description": "DevFest Siberia - a people-first conference for developers and IT enthusiasts. Main topics: Mobile Development, IoT, Google Cloud, Google APIs, Virtual and Augmented Reality, Modern Web Application Development, Firebase Interaction from experts around the world. Awesome speakers and lots of fun!",
