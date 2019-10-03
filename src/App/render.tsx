@@ -55,7 +55,7 @@ function render(
 		<I18nProvider
 			locale={locale}
 			locales={{
-				ru,
+				ru: process.env.DISABLE_RU ? en : ru,
 				en
 			}}
 			objectNotation
@@ -125,7 +125,7 @@ async function createTemplate() {
 		isScriptContext: true,
 		wrap:            true
 	});
-	const rustr = jsesc(JSON.stringify({
+	const rustr = process.env.DISABLE_RU ? enstr : jsesc(JSON.stringify({
 		locale:  'ru',
 		locales: { ru }
 	}), {
@@ -149,7 +149,7 @@ async function createTemplate() {
 				helmet.script.toString()
 			].join('')}`)
 			.replace(/<script[^>]*src.*<\/script>/, scripts)
-			.replace('<script', `<script>var I18N=${locale === 'en' ? enstr : rustr};</script><script`)
+			.replace('<script', `<script>var I18N=${locale === 'ru' ? rustr : enstr};</script><script`)
 			.replace(/(<div id=view>)(<\/div>)/, `${spriteHtml}$1${view}$2`);
 
 		return result;

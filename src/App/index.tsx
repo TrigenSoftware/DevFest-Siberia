@@ -44,7 +44,11 @@ async function getI18nConfig(): Promise<IConfig> {
 
 			const {
 				default: ru
-			} = await import(/* webpackChunkName: 'ru' */ '~/locales/ru.json');
+			} = await (
+				process.env.DISABLE_RU
+					? import(/* webpackChunkName: 'en' */ '~/locales/en.json')
+					: import(/* webpackChunkName: 'ru' */ '~/locales/ru.json')
+			);
 
 			config.locales.ru = ru;
 			break;
