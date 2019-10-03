@@ -7,6 +7,7 @@
 :import {
 	-st-from: '~/components/variables.st.css';
 	-st-named:
+		sizeScreenXs,
 		sizeScreenSmMax,
 		sizeScreenMdMin,
 		sizeScreenMdMax,
@@ -181,4 +182,12 @@
 	.root .controls > li .Button {
 		font-size: 12px;
 	}/* stylelint-enable */
+}
+
+@media (max-width: value(sizeScreenXs)) {
+
+	.share {
+		width: 0;
+		overflow: hidden;
+	}
 }

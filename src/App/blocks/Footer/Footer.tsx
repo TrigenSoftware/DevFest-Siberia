@@ -4,6 +4,7 @@ import React, {
 } from 'react';
 import {
 	I18nContext,
+	__ as tr,
 	__x
 } from 'i18n-for-react';
 import {
@@ -39,6 +40,7 @@ export default class Footer extends Component<IProps> {
 		const {
 			context
 		} = this;
+		const __ = context.bind(tr);
 		const visitorsLinks = getFooterVisitorsLinks(context);
 		const devFestsLinks = getFooterDevFestsLinks(context);
 		const socialLinks = getFooterSocialLinks(context);
@@ -95,15 +97,35 @@ export default class Footer extends Component<IProps> {
 					>
 						<li>
 							<h3>
-								{__x`footer.companies`}
+								{__x`footer.companies.title`}
 							</h3>
 						</li>
 						<li>
 							<Link
 								className={classes.link}
-								href='mailto:devfest@gdg-siberia.com'
+								href={__`footer.companies.link`}
 							>
-								{__x`footer.partner`}
+								{__x`footer.companies.label`}
+							</Link>
+						</li>
+						<li
+							className={classes.separator}
+						/>
+					</ul>
+					<ul
+						className={classes.list}
+					>
+						<li>
+							<h3>
+								{__x`footer.volunteers.title`}
+							</h3>
+						</li>
+						<li>
+							<Link
+								className={classes.link}
+								href={__`footer.volunteers.link`}
+							>
+								{__x`footer.volunteers.label`}
 							</Link>
 						</li>
 						<li

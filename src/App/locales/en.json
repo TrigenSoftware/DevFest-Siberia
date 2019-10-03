@@ -163,8 +163,16 @@
 				"label": "DevFest Siberia 2016"
 			}
 		],
-		"companies": "Companies",
-		"partner": "Become a partner",
+		"companies": {
+			"title": "Companies",
+			"label": "Become a partner",
+			"link": "mailto:devfest@gdg-siberia.com"
+		},
+		"volunteers": {
+			"title": "Volunteers",
+			"label": "Become a volunteer",
+			"link": "https://forms.gle/1vWcgZfQeg6R7tdUA"
+		},
 		"contact": "Contact us",
 		"socials": "We are on social media",
 		"socialLinks": [
@@ -203,7 +211,7 @@
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018251/team/AlexeyRomanenko_c8eprd.jpg",
 				"firstname": "Alexey",
 				"lastname": "Romanenko",
-				"description": "Volunteer coordinator",
+				"description": "Member of the family",
 				"contacts": {
 					"telegram": "https://t.me/slimus",
 					"email": "mailto:alex@gdg-siberia.com"
@@ -243,7 +251,10 @@
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018250/team/LevNovokreshchenov_ujhq7z.jpg",
 				"firstname": "Lev",
 				"lastname": "Novokreshchenov",
-				"description": "Member of the family"
+				"description": "Volunteer coordinator & Partnership",
+				"contacts": {
+					"telegram": "https://t.me/xpr35"
+				}
 			},
 			{
 				"src": "https://res.cloudinary.com/trigen/image/upload/v1569823747/devfest2019/photos/Rustam.jpg",

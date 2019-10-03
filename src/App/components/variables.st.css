@@ -17,6 +17,7 @@
 	sizeBorderRadius: 1rem;
 
 	/* Screen */
+	sizeScreenXs: 320px;
 	sizeScreenSmMax: 569px;
 	sizeScreenSmMin: 570px;
 	sizeScreenSm: 570px;
