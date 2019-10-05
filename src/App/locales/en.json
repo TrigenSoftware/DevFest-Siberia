@@ -227,10 +227,13 @@
 				}
 			},
 			{
-				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018250/team/KirZharov_du5wfk.jpg",
+				"src": "https://res.cloudinary.com/trigen/image/upload/v1570288887/devfest2019/photos/KirZharov.jpg",
 				"firstname": "Kir",
 				"lastname": "Zharov",
-				"description": "Website team, frontend"
+				"description": "Conference coordinator & PR",
+				"contacts": {
+					"telegram": "https://t.me/kirzharov"
+				}
 			},
 			{
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018251/team/IvanKruchkov_e2gsvn.png",
@@ -273,6 +276,12 @@
 				"contacts": {
 					"twitter": "https://twitter.com/dangreen58"
 				}
+			},
+			{
+				"src": "https://res.cloudinary.com/trigen/image/upload/v1570288887/devfest2019/photos/MaxFilimonov.jpg",
+				"firstname": "Max",
+				"lastname": "Filimonov",
+				"description": ""
 			}
 		]
 	},
