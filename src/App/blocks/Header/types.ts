@@ -8,10 +8,16 @@ import {
 	IProps as ISectionProps
 } from '~/components/Section';
 
-export interface IProps extends ISectionProps, IUserStateProps, RouteComponentProps {
-	login(email: string, password: string);
-	logout();
-	setToken(token: string);
-	isLogged();
-	clearErrors();
+export interface IActionsProps {
+	actionsReady: boolean;
+	login?(email: string, password: string);
+	logout?();
+	setToken?(token: string);
+	isLogged?();
+	clearErrors?();
 }
+
+export interface IProps extends ISectionProps,
+	IUserStateProps,
+	IActionsProps,
+	RouteComponentProps {}

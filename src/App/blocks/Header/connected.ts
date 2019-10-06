@@ -8,7 +8,9 @@ import {
 import {
 	UserSegment
 } from '~/store/segments';
-import Loading from '~/components/Loading';
+import {
+	IActionsProps
+} from './types';
 import Header from './Header';
 
 export function mapStateToProps({ user }: State) {
@@ -18,19 +20,27 @@ export function mapStateToProps({ user }: State) {
 	};
 }
 
-export function mapActionsToProps({ user }: IActions) {
+export function mapActionsToProps({ user }: IActions): IActionsProps {
+
+	if (!user) {
+		return {
+			actionsReady: false
+		};
+	}
+
 	return {
-		login:       user.login,
-		logout:      user.logout,
-		setToken:    user.setToken,
-		isLogged:    user.isLogged,
-		clearErrors: user.clearErrors
+		actionsReady: true,
+		login:        user.login,
+		logout:       user.logout,
+		setToken:     user.setToken,
+		isLogged:     user.isLogged,
+		clearErrors:  user.clearErrors
 	};
 }
 
 export default Connect({
-	dependsOn: UserSegment,
-	loading:   Loading,
+	dependsOn:   UserSegment,
+	skipWaiting: true,
 	mapStateToProps,
 	mapActionsToProps
 })(Header);

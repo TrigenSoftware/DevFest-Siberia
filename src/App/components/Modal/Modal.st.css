@@ -105,10 +105,6 @@
 		padding: 0;
 	}
 
-	.root:active {
-		background: transparent;
-	}
-
 	.root .window {
 		padding-top: rel(57, 16);
 		width: 100%;

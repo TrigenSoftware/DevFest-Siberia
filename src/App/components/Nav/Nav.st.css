@@ -93,7 +93,7 @@
 		box-shadow: 0 2px 5px value(colorBlue8);
 		background: value(colorWhite);
 		padding:
-			calc(value(sizeGapLg) - 15px)
+			calc(value(sizeGapLg) - 11px)
 			value(sizeGapLg)
 			value(sizeGapLg)
 			calc(value(sizeGapLg) * 1.2);
@@ -111,7 +111,8 @@
 		padding-bottom: value(sizeGapLg);
 	}
 
-	.link {
+	.list .link {
 		display: block;
+		font-size: 4rem;
 	}
 }

@@ -33,9 +33,11 @@
 	outline: none;
 	border: none;
 	background: none;
-	padding: rel(13, 48) rel(2, 48);
+	padding: rel(13, 48) rel(2, 48) rel(18, 48);
 	line-height: 0;
 	color: value(colorPink0);
+	/* stylelint-disable-next-line */
+	font-family: initial;
 	font-size: 2em;
 }
 /* stylelint-enable */

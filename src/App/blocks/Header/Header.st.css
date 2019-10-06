@@ -47,6 +47,7 @@
 }
 
 .root {
+	background-color: value(colorBlue4);
 	height: 115px;
 }
 
@@ -90,11 +91,11 @@
 
 .logo {
 	display: inline-flex;
+	margin-left: 12px;
 	overflow: hidden;
 }
 
 .logo .icon {
-	margin-left: 10px;
 	width: auto;
 	max-width: 300px;
 	height: 67px;
@@ -169,10 +170,6 @@
 		width: auto;
 		max-width: 120px;
 		height: 27.5px;
-	}
-
-	.root .list {
-		padding-top: calc(4rem - 5px);
 	}
 }
 

@@ -17,6 +17,40 @@
 		colorGray2;
 }
 
+:vars {
+	sizeStatusBar: 300px;
+	colorTheme: value(colorBlue4);
+	colorPageBackground: white;
+}
+
+/**
+ * iOS status bar
+ */
+
+:global(body) {
+	background-color: value(colorTheme);
+}
+
+:global(#view) {
+	background-color: value(colorPageBackground);
+}
+
+:global(#view)::before {
+	display: block;
+	position: fixed;
+	top: calc(-1 * value(sizeStatusBar));
+	right: 0;
+	left: 0;
+	z-index: 999;
+	background-color: value(colorTheme);
+	height: value(sizeStatusBar);
+	content: '';
+}
+
+/**
+ * Typography
+ */
+
 :global(body) {
 	font-family: value(fontFamily);
 	font-size: 2.4rem;

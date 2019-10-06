@@ -47,11 +47,11 @@ export class Header extends Component<IProps> {
 	static contextType = I18nContext;
 
 	static propTypes = {
-		login:       PropTypes.func.isRequired,
-		logout:      PropTypes.func.isRequired,
-		setToken:    PropTypes.func.isRequired,
-		isLogged:    PropTypes.func.isRequired,
-		clearErrors: PropTypes.func.isRequired,
+		login:       PropTypes.func,
+		logout:      PropTypes.func,
+		setToken:    PropTypes.func,
+		isLogged:    PropTypes.func,
+		clearErrors: PropTypes.func,
 		user:        PropTypes.any
 	};
 
@@ -61,6 +61,7 @@ export class Header extends Component<IProps> {
 
 		const {
 			className,
+			actionsReady,
 			login,
 			logout,
 			errors,
@@ -76,7 +77,7 @@ export class Header extends Component<IProps> {
 		const locale = context.getLocale();
 		const __ = context.bind(tr);
 		const links = getShareLinks(context);
-		const logged = isLogged();
+		const logged = actionsReady && isLogged();
 
 		return (
 			<>
@@ -161,17 +162,31 @@ export class Header extends Component<IProps> {
 						</ul>
 					</Section>
 				</header>
-				<HeaderLoginModal
-					login={login}
-					errors={errors}
-					clearErrors={clearErrors}
-				/>
+				{actionsReady && (
+					<HeaderLoginModal
+						login={login}
+						clearErrors={clearErrors}
+						errors={errors}
+					/>
+				)}
 				<PaidMessageModal/>
 			</>
 		);
 	}
 
-	async componentDidMount() {
+	componentDidMount() {
+		this.autoLogin();
+	}
+
+	componentDidUpdate() {
+		this.autoLogin();
+	}
+
+	private async autoLogin() {
+
+		if (!this.props.actionsReady) {
+			return;
+		}
 
 		const {
 			setToken,
@@ -184,13 +199,13 @@ export class Header extends Component<IProps> {
 
 		if (searchWithParam) {
 
-			const token = new URLSearchParams(search).get('authKey');
-
-			await setToken(token);
-
 			history.push({
 				search: deleteSearchParams(search, 'authKey')
 			});
+
+			const token = new URLSearchParams(search).get('authKey');
+
+			await setToken(token);
 		}
 	}
 }

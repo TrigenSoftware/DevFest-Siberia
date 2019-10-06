@@ -111,17 +111,25 @@
 		color: value(colorWhite);
 	}
 
+	.title:alt::before,
 	.title:alt::after {
 		display: block;
 		position: absolute;
 		top: 0;
 		bottom: 0;
-		left: 50%;
-		z-index: -1;
-		transform: translateX(-50%);
 		background-color: value(colorPink0);
 		width: 100vw;
 		content: '';
+	}
+
+	.title:alt::before {
+		left: 0;
+		transform: translateX(-100%);
+	}
+
+	.title:alt::after {
+		right: 0;
+		transform: translateX(100%);
 	}
 
 	.article:nth-of-type(1) {

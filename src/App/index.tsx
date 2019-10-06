@@ -90,7 +90,6 @@ async function main() {
 	if (root !== null) {
 
 		if (root.hasChildNodes()) {
-			await store.loadAllSegments();
 			hydrate(app, root);
 		} else {
 			render(app, root);
