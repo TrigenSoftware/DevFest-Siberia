@@ -60,3 +60,12 @@ interface IPrecacheEntry {
 interface ServiceWorkerGlobalScope {
 	__precacheManifest: IPrecacheEntry[];
 }
+
+// tslint:disable-next-line
+interface Navigator {
+	share?(data: {
+		url?: string;
+		title?: string;
+		text?: string;
+	}): Promise<void>;
+}

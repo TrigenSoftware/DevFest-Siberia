@@ -198,7 +198,7 @@
 		"title": "Team",
 		"team": [
 			{
-				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018065/team/LeonidKalneus_jbfk5o.jpg",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1570018065/team/LeonidKalneus_jbfk5o.jpg",
 				"firstname": "Leonid",
 				"lastname": "Kalneus",
 				"description": "Head of the team",
@@ -208,7 +208,7 @@
 				}
 			},
 			{
-				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018251/team/AlexeyRomanenko_c8eprd.jpg",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1570018251/team/AlexeyRomanenko_c8eprd.jpg",
 				"firstname": "Alexey",
 				"lastname": "Romanenko",
 				"description": "Member of the family",
@@ -218,7 +218,7 @@
 				}
 			},
 			{
-				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018255/team/YuriyKashnikov_touofm.jpg",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1570018255/team/YuriyKashnikov_touofm.jpg",
 				"firstname": "Yuriy",
 				"lastname": "Kashnikov",
 				"description": "Program committee member",
@@ -227,22 +227,22 @@
 				}
 			},
 			{
-				"src": "https://res.cloudinary.com/trigen/image/upload/v1570288887/devfest2019/photos/KirZharov.jpg",
+				"src": "https://res.cloudinary.com/trigen/image/upload/c_scale,w_350/v1570288887/devfest2019/photos/KirZharov.jpg",
 				"firstname": "Kir",
 				"lastname": "Zharov",
-				"description": "Conference coordinator & PR",
+				"description": "Coordinator & PR",
 				"contacts": {
 					"telegram": "https://t.me/kirzharov"
 				}
 			},
 			{
-				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018251/team/IvanKruchkov_e2gsvn.png",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1570018251/team/IvanKruchkov_e2gsvn.png",
 				"firstname": "Ivan",
 				"lastname": "Kruchkov",
 				"description": "Website team, backend"
 			},
 			{
-				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018251/team/AminaKotomanova_l3keke.jpg",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1570018251/team/AminaKotomanova_l3keke.jpg",
 				"firstname": "Amina",
 				"lastname": "Kotomanova",
 				"description": "Illustrator",
@@ -251,7 +251,7 @@
 				}
 			},
 			{
-				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018250/team/LevNovokreshchenov_ujhq7z.jpg",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1570018250/team/LevNovokreshchenov_ujhq7z.jpg",
 				"firstname": "Lev",
 				"lastname": "Novokreshchenov",
 				"description": "Volunteer coordinator & Partnership",
@@ -260,7 +260,7 @@
 				}
 			},
 			{
-				"src": "https://res.cloudinary.com/trigen/image/upload/v1569823747/devfest2019/photos/Rustam.jpg",
+				"src": "https://res.cloudinary.com/trigen/image/upload/c_scale,w_350/v1569823747/devfest2019/photos/Rustam.jpg",
 				"firstname": "Rustam",
 				"lastname": "Habibullin",
 				"description": "Website team, frontend",
@@ -269,7 +269,7 @@
 				}
 			},
 			{
-				"src": "https://res.cloudinary.com/trigen/image/upload/v1569823748/devfest2019/photos/Dan.jpg",
+				"src": "https://res.cloudinary.com/trigen/image/upload/c_scale,w_350/v1569823748/devfest2019/photos/Dan.jpg",
 				"firstname": "Dan",
 				"lastname": "Onoshko",
 				"description": "Website team",
@@ -278,10 +278,10 @@
 				}
 			},
 			{
-				"src": "https://res.cloudinary.com/trigen/image/upload/v1570288887/devfest2019/photos/MaxFilimonov.jpg",
+				"src": "https://res.cloudinary.com/trigen/image/upload/c_scale,w_350/v1570288887/devfest2019/photos/MaxFilimonov.jpg",
 				"firstname": "Max",
 				"lastname": "Filimonov",
-				"description": ""
+				"description": "Member of the family"
 			}
 		]
 	},

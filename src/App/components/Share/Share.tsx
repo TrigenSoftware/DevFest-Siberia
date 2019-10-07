@@ -139,8 +139,22 @@ export default class Share extends Component<IProps, IState> {
 	}
 
 	@Bind()
-	private onToggle() {
-		this.toggleActiveState(null);
+	private async onToggle() {
+
+		if (navigator.share) {
+
+			try {
+				await navigator.share({
+					title: document.title,
+					url:   process.env.SITE_URL || location.href
+				});
+			} catch (err) {
+				// Silent
+			}
+
+		} else {
+			this.toggleActiveState(null);
+		}
 	}
 
 	@Bind()
