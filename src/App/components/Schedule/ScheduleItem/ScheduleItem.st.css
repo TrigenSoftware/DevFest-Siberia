@@ -75,10 +75,6 @@
 	background-color: value(colorWhite);
 }
 
-.root:now .Badge:nth-of-type(1) {
-	color: value(colorPurple1);
-}
-
 .root:now:frontend main {
 	background-color: value(colorPurple1);
 }

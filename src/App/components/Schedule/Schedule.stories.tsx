@@ -2,6 +2,9 @@ import React from 'react';
 import {
 	storiesOf
 } from '@storybook/react';
+import {
+	action
+} from '@storybook/addon-actions';
 import Schedule, {
 	ScheduleItem,
 	VariantScheduleItemStatus
@@ -43,6 +46,8 @@ storiesOf('Components|Schedule', module)
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Mobile'
 					talkLevelBadge='Middle'
+					onFavoriteClick={action('click')}
+					favorite
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -54,6 +59,8 @@ storiesOf('Components|Schedule', module)
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Frontend'
 					talkLevelBadge='Middle'
+					onFavoriteClick={action('click')}
+					favorite
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -65,6 +72,8 @@ storiesOf('Components|Schedule', module)
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Hype'
 					talkLevelBadge='Middle'
+					onFavoriteClick={action('click')}
+					favorite={false}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -76,6 +85,8 @@ storiesOf('Components|Schedule', module)
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Backend'
 					talkLevelBadge='Middle'
+					onFavoriteClick={action('click')}
+					favorite
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -86,6 +97,8 @@ storiesOf('Components|Schedule', module)
 					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='Mobile'
 					talkLevelBadge='Middle'
+					onFavoriteClick={action('click')}
+					favorite
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -96,6 +109,8 @@ storiesOf('Components|Schedule', module)
 					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='Frontend'
 					talkLevelBadge='Middle'
+					onFavoriteClick={action('click')}
+					favorite={false}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -106,6 +121,8 @@ storiesOf('Components|Schedule', module)
 					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='Backend'
 					talkLevelBadge='Middle'
+					onFavoriteClick={action('click')}
+					favorite={false}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -116,6 +133,8 @@ storiesOf('Components|Schedule', module)
 					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='Hype'
 					talkLevelBadge='Middle'
+					onFavoriteClick={action('click')}
+					favorite={false}
 				/>
 			</Schedule>
 		)

@@ -1,14 +1,20 @@
 import React, {
+	MouseEvent,
 	HTMLAttributes,
 	Component
 } from 'react';
 import PropTypes from 'prop-types';
 import {
-	CombinePropsAndAttributes
+	Bind,
+	CombinePropsAndAttributes,
+	omit
 } from '@flexis/ui/helpers';
 import Badge, {
 	IProps as IBadgeProps
 } from '../../Badge';
+import {
+	ScheduleFavoriteButton
+} from '../ScheduleFavoriteButton';
 import {
 	style,
 	classes
@@ -33,7 +39,7 @@ interface ISelfProps {
 	talkTypeBadge?: string;
 	talkLevelBadge?: string;
 	favorite?: boolean;
-	onFavoriteClick?(isFavorite: boolean, event);
+	onFavoriteClick?(isFavorite: boolean, event: MouseEvent<HTMLButtonElement>);
 }
 
 export type IProps = CombinePropsAndAttributes<
@@ -69,15 +75,21 @@ export class ScheduleItem extends Component<IProps> {
 			description,
 			statusLabel,
 			talkTypeBadge,
-			talkLevelBadge
+			talkLevelBadge,
+			favorite,
+			...props
 		} = this.props;
 		const color = talkTypeBadge && talkTypeBadge.toLowerCase();
 
 		return (
 			<article
+				{...omit(props, [
+					'time',
+					'location'
+				])}
 				className={style(classes.root, {
 					[status]: Boolean(status),
-					[color]: Boolean(color)
+					[color]:  Boolean(color)
 				}, className)}
 			>
 				<section
@@ -123,12 +135,26 @@ export class ScheduleItem extends Component<IProps> {
 						<section
 							className={classes.favorite}
 						>
-							STAR
+							<ScheduleFavoriteButton
+								active={favorite}
+								onClick={this.onFavoriteClick}
+							/>
 						</section>
 					)}
 				</main>
 			</article>
 		);
+	}
+
+	@Bind()
+	private onFavoriteClick(event: MouseEvent<HTMLButtonElement>) {
+
+		const {
+			onFavoriteClick,
+			favorite
+		} = this.props;
+
+		onFavoriteClick(favorite, event);
 	}
 
 	private renderTime() {
@@ -188,28 +214,28 @@ export class ScheduleItem extends Component<IProps> {
 
 			case 'mobile':
 				props = {
-					variant: 'fill',
+					variant: this.getBadgeVariant(),
 					color: 'pink'
 				};
 				break;
 
 			case 'frontend':
 				props = {
-					variant: 'fill',
+					variant: this.getBadgeVariant(),
 					color: 'purple'
 				};
 				break;
 
 			case 'backend':
 				props = {
-					variant: 'fill',
+					variant: this.getBadgeVariant(),
 					color: 'blue'
 				};
 				break;
 
 			case 'hype':
 				props = {
-					variant: 'fill',
+					variant: this.getBadgeVariant(),
 					color: 'green'
 				};
 				break;
@@ -242,5 +268,16 @@ export class ScheduleItem extends Component<IProps> {
 				{type}
 			</Badge>
 		);
+	}
+
+	private getBadgeVariant() {
+
+		const {
+			status
+		} = this.props;
+
+		return status === VariantScheduleItemStatus.Now
+			? 'outline'
+			: 'fill';
 	}
 }
