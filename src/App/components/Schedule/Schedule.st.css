@@ -1,5 +1,19 @@
 
+:import {
+	-st-from: '../variables.st.css';
+	-st-named: colorBlack;
+}
+
 .root {
 	box-shadow: 0 0 19px 0 rgba(0, 0, 0, .16);
-	overflow: hidden;
+}
+
+.list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.item:not(:first-child) {
+	border-top: 1px dashed value(colorBlack);
 }

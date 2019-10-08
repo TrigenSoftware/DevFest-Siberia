@@ -1,5 +1,6 @@
 import React, {
 	HTMLAttributes,
+	Children,
 	Component
 } from 'react';
 import {
@@ -24,7 +25,17 @@ export default class Schedule extends Component<IProps> {
 			<div
 				className={style(classes.root, {}, className)}
 			>
-				{children}
+				<ul
+					className={classes.list}
+				>
+					{Children.map(children, child => child && (
+						<li
+							className={classes.item}
+						>
+							{child}
+						</li>
+					))}
+				</ul>
 			</div>
 		);
 	}
