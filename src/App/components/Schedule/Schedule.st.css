@@ -6,6 +6,8 @@
 
 .root {
 	box-shadow: 0 0 19px 0 rgba(0, 0, 0, .16);
+	border-radius: 10px;
+	overflow: hidden;
 }
 
 .list {
