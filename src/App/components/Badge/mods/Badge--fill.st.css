@@ -6,8 +6,9 @@
 		colorRed,
 		colorBlue10,
 		colorBlue11,
-		colorPink0,
-		colorPink4;
+		colorPurple1,
+		colorPink4,
+		colorGreen1;
 }
 
 .fill {
@@ -35,7 +36,13 @@
 }
 
 .fillPurple {
-	border-color: value(colorPink0);
-	background-color: value(colorPink0);
+	border-color: value(colorPurple1);
+	background-color: value(colorPurple1);
+	color: value(colorWhite);
+}
+
+.fillGreen {
+	border-color: value(colorGreen1);
+	background-color: value(colorGreen1);
 	color: value(colorWhite);
 }

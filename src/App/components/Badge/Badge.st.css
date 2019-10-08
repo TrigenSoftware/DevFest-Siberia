@@ -19,7 +19,8 @@
 		outlineAqua,
 		outlinePink,
 		outlinePurple,
-		outlineRed;
+		outlineRed,
+		outlineGreen;
 }
 
 :import {
@@ -29,7 +30,8 @@
 		fillAqua,
 		fillPink,
 		fillPurple,
-		fillRed;
+		fillRed,
+		fillGreen;
 }
 
 .root {
@@ -42,7 +44,8 @@
 		aqua,
 		pink,
 		red,
-		purple;
+		purple,
+		green;
 	border: 2px solid transparent;
 	border-radius: rel(value(sizeBorderRadiusSm), 14);
 	background-color: transparent;
@@ -81,6 +84,10 @@
 	-st-mixin: outlinePurple;
 }
 
+.root:outline:green {
+	-st-mixin: outlineGreen;
+}
+
 .root:fill:blue {
 	-st-mixin: fill;
 }
@@ -99,4 +106,8 @@
 
 .root:fill:purple {
 	-st-mixin: fillPurple;
+}
+
+.root:fill:green {
+	-st-mixin: fillGreen;
 }

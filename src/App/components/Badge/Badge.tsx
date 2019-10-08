@@ -24,12 +24,13 @@ export enum ColorVariant {
 	Aqua = 'aqua',
 	Pink = 'pink',
 	Red = 'red',
-	Purple = 'purple'
+	Purple = 'purple',
+	Green = 'green'
 }
 
 export type Variant = 'fill'|'outline';
 
-export type Color = 'blue'|'aqua'|'pink'|'red'|'purple';
+export type Color = 'blue'|'aqua'|'pink'|'red'|'purple'|'green';
 
 export interface IProps extends IFlexisBadgeProps {
 	variant?: Variant;

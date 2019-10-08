@@ -28,7 +28,7 @@
  */
 
 :global(body) {
-	background-color: value(colorTheme);
+	background-color: value(colorPageBackground);
 }
 
 :global(#view) {

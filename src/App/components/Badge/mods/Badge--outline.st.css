@@ -6,8 +6,9 @@
 		colorRed,
 		colorBlue10,
 		colorBlue11,
-		colorPink0,
-		colorPink4;
+		colorPurple1,
+		colorPink4,
+		colorGreen1;
 }
 
 .outline {
@@ -27,5 +28,9 @@
 }
 
 .outlinePurple {
-	border-color: value(colorPink0);
+	border-color: value(colorPurple1);
+}
+
+.outlineGreen {
+	border-color: value(colorGreen1);
 }
