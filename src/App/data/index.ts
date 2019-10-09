@@ -29,9 +29,9 @@ export const twitterSite = '@GDGNsk';
 export const siteUrl = process.env.SITE_URL;
 
 export const sharingImages = {
-	image:    'https://gdg-siberia.com/img/seo/sharing-google-plus.png',
-	twitter:  'https://gdg-siberia.com/img/seo/sharing-twitter.png',
-	facebook: 'https://gdg-siberia.com/img/seo/sharing-facebook.png'
+	image:    'https://res.cloudinary.com/trigen/image/upload/c_scale,w_600/v1570633848/devfest2019/share.jpg',
+	twitter:  'https://res.cloudinary.com/trigen/image/upload/c_scale,w_600/v1570633848/devfest2019/share.jpg',
+	facebook: 'https://res.cloudinary.com/trigen/image/upload/c_scale,w_600/v1570633848/devfest2019/share.jpg'
 };
 
 export const ageRange = '16+';

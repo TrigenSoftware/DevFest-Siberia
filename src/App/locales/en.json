@@ -420,25 +420,6 @@
 				"talkLevelBadge": "Middle"
 			},
 			{
-				"id": "SupratimChakraborty",
-				"type": "mobile",
-				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569449926/speakers/SupratimChakraborty_qbjbmr.jpg",
-				"firstname": "Supratim",
-				"lastname": "Chakraborty",
-				"description": "HCI researcher",
-				"location": "🇨🇦",
-				"contacts": {
-					"telegram":"https://t.me/heysupratim",
-					"twitter":"https://twitter.com/heysupratim"
-				},
-				"text": "Supratim, is a Human-computer interaction researcher at Simon Fraser University, Vancouver. He specializes in developing interactive mobile visualization tools. He has previously worked as an Android developer for NewtonMail, a popular multi-platform email client. He is currently working on a data visualization software called VizInteract, which uses Android Canvas APIs and Multi-Touch interaction framework to provide gesture driven data analysis experiences. He also engages with android developer communities as the organizer for Google Developer Group Surrey. When not talking up Star Wars to Star Trek fans, he likes to build android apps as side projects that solve some utilitarian problem in his daily life. One of his side projects OnTime - Smart Widget got featured on <a href=\"https://www.producthunt.com/posts/ontime\" target=\"_blank\">Product Hunt</a> as well",
-				"talkTitle": "",
-				"talkLocation": "",
-				"talkTime": "",
-				"talkTypeBadge": "Mobile",
-				"talkLevelBadge": "Senior"
-			},
-			{
 				"id": "AdriánBolonio",
 				"type": "web",
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569450946/speakers/Adria%CC%81nBolonio_ecv6ta.jpg",
@@ -464,7 +445,7 @@
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569451795/speakers/MajidHajian_bswvpa.jpg",
 				"firstname": "Majid",
 				"lastname": "Hajian",
-				"description": "Senior Developer at Telia Norge",
+				"description": "Founder at Softiware AS",
 				"location": "🇳🇴",
 				"contacts": {
 					"telegram":"https://t.me/mhadaily",
@@ -487,7 +468,7 @@
 				"description": "Android Engineer at Bolt",
 				"location": "🇪🇪",
 				"contacts": {
-					"twitter":"https://twitter.com/xotta6bl4_/",
+					"twitter":"https://twitter.com/a_mihin",
 					"site":"https://devindi.com/"
 				},
 				"text": "Andrew wrote his hello-world for Android in 2012. He worked at big companies such as Yandex, Tinkoff, Revolut and Bolt, so his code is running on tens of millions of devices.",
@@ -535,6 +516,26 @@
 				"talkTime": "",
 				"talkTypeBadge": "Web",
 				"talkLevelBadge": "Junior"
+			},
+			{
+				"id": "LukaKladaric",
+				"type": "devops",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570628856/speakers/LukaKladaric_rtkjqt.jpg",
+				"firstname": "Luka",
+				"lastname": "Kladaric",
+				"description": "Infrastructure Lead at Noom Inc.",
+				"location": "🇭🇷",
+				"contacts": {
+					"telegram":"https://t.me/heysupratim",
+					"twitter":"https://twitter.com/heysupratim",
+					"site":"https://luka.io"
+				},
+				"text": "A former web developer turned architecture, infrastructure & security consultant. Also a remote work evangelist. Doing this computer stuff professionally for close to 20 years.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "DevOps",
+				"talkLevelBadge": "Senior"
 			}
 		],
 		"nav": [
