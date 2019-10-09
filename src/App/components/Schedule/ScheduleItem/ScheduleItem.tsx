@@ -1,4 +1,5 @@
 import React, {
+	ReactNode,
 	MouseEvent,
 	HTMLAttributes,
 	Component
@@ -6,11 +7,11 @@ import React, {
 import PropTypes from 'prop-types';
 import {
 	Bind,
-	CombinePropsAndAttributes,
-	omit
+	CombinePropsAndAttributes
 } from '@flexis/ui/helpers';
 import Badge, {
-	IProps as IBadgeProps
+	IProps as IBadgeProps,
+	Variant
 } from '../../Badge';
 import {
 	ScheduleFavoriteButton
@@ -29,13 +30,13 @@ export enum VariantScheduleItemStatus {
 export type ScheduleItemStatus = 'past' | 'now' | 'next';
 
 interface ISelfProps {
-	time: string;
-	location: string;
-	title: string;
+	time: ReactNode;
+	location: ReactNode;
+	title: ReactNode;
 	status: ScheduleItemStatus;
-	speaker?: string;
-	description?: string;
-	statusLabel?: string;
+	speaker?: ReactNode;
+	description?: ReactNode;
+	statusLabel?: ReactNode;
 	talkTypeBadge?: string;
 	talkLevelBadge?: string;
 	favorite?: boolean;
@@ -52,17 +53,17 @@ export const ScheduleItemStatusValues: ScheduleItemStatus[] = Object.values(Vari
 export class ScheduleItem extends Component<IProps> {
 
 	static propTypes = {
-		time:            PropTypes.string.isRequired,
-		location:        PropTypes.string.isRequired,
-		title:           PropTypes.string.isRequired,
-		status:          PropTypes.oneOf(ScheduleItemStatusValues),
-		speaker:         PropTypes.string,
-		description:     PropTypes.string,
-		statusLabel:     PropTypes.string,
-		talkTypeBadge:   PropTypes.string,
-		talkLevelBadge:  PropTypes.string,
-		favorite:        PropTypes.bool,
-		onFavoriteClick: PropTypes.any
+		time: PropTypes.node.isRequired,
+		location: PropTypes.node.isRequired,
+		title: PropTypes.node.isRequired,
+		status: PropTypes.oneOf(ScheduleItemStatusValues),
+		speaker: PropTypes.node,
+		description: PropTypes.node,
+		statusLabel: PropTypes.node,
+		talkTypeBadge: PropTypes.string,
+		talkLevelBadge: PropTypes.string,
+		favorite: PropTypes.bool,
+		onFavoriteClick: PropTypes.func
 	};
 
 	render() {
@@ -70,6 +71,8 @@ export class ScheduleItem extends Component<IProps> {
 		const {
 			className,
 			title,
+			time,
+			location,
 			status,
 			speaker,
 			description,
@@ -79,26 +82,39 @@ export class ScheduleItem extends Component<IProps> {
 			favorite,
 			...props
 		} = this.props;
-		const color = talkTypeBadge && talkTypeBadge.toLowerCase();
+		const colorsMap = {
+			'frontend': 'purple',
+			'mobile':   'pink',
+			'backend':  'blue',
+			'hype':     'green'
+		};
+		const color = talkTypeBadge && colorsMap[talkTypeBadge.toLowerCase()];
 
 		return (
-			<article
-				{...omit(props, [
-					'time',
-					'location'
-				])}
+			<tr
+				{...props}
 				className={style(classes.root, {
 					[status]: Boolean(status),
 					[color]:  Boolean(color)
 				}, className)}
 			>
-				<section
+				<td
 					className={classes.secondary}
 				>
-					{this.renderTime()}
-					{this.renderLocation()}
-				</section>
-				<main>
+					<div
+						className={classes.time}
+					>
+						{time}
+					</div>
+					<div
+						className={classes.location}
+					>
+						{location}
+					</div>
+				</td>
+				<td
+					className={classes.main}
+				>
 					{statusLabel && (
 						<section
 							className={classes.auxiliary}
@@ -141,8 +157,8 @@ export class ScheduleItem extends Component<IProps> {
 							/>
 						</section>
 					)}
-				</main>
-			</article>
+				</td>
+			</tr>
 		);
 	}
 
@@ -157,51 +173,6 @@ export class ScheduleItem extends Component<IProps> {
 		onFavoriteClick(favorite, event);
 	}
 
-	private renderTime() {
-
-		const {
-			time
-		} = this.props;
-		const [
-			talkTime,
-			format
-		] = time.split(' ');
-
-		return (
-			<div
-				className={classes.time}
-			>
-				{talkTime}
-				{format && (
-					<span>{' '}{format}</span>
-				)}
-			</div>
-		);
-	}
-
-	private renderLocation() {
-
-		const {
-			location
-		} = this.props;
-		const [
-			place,
-			floor
-		] = location.split(',');
-
-		return (
-			<div
-				className={classes.location}
-			>
-				{place}{','}
-				<br />
-				{floor && (
-					<span>{floor}</span>
-				)}
-			</div>
-		);
-	}
-
 	private renderBadge(type: string) {
 
 		if (!type) {
@@ -209,33 +180,39 @@ export class ScheduleItem extends Component<IProps> {
 		}
 
 		let props: Partial<IBadgeProps> = {};
+		const {
+			status
+		} = this.props;
+		const variant: Variant = status === VariantScheduleItemStatus.Now
+			? 'outline'
+			: 'fill';
 
 		switch (type.toLowerCase()) {
 
 			case 'mobile':
 				props = {
-					variant: this.getBadgeVariant(),
+					variant,
 					color: 'pink'
 				};
 				break;
 
 			case 'frontend':
 				props = {
-					variant: this.getBadgeVariant(),
+					variant,
 					color: 'purple'
 				};
 				break;
 
 			case 'backend':
 				props = {
-					variant: this.getBadgeVariant(),
+					variant,
 					color: 'blue'
 				};
 				break;
 
 			case 'hype':
 				props = {
-					variant: this.getBadgeVariant(),
+					variant,
 					color: 'green'
 				};
 				break;
@@ -268,16 +245,5 @@ export class ScheduleItem extends Component<IProps> {
 				{type}
 			</Badge>
 		);
-	}
-
-	private getBadgeVariant() {
-
-		const {
-			status
-		} = this.props;
-
-		return status === VariantScheduleItemStatus.Now
-			? 'outline'
-			: 'fill';
 	}
 }

@@ -13,7 +13,6 @@
 		colorBlue8,
 		colorBlue10,
 		colorPink4,
-		colorGray0,
 		colorGray1,
 		colorGray3,
 		colorPurple1,
@@ -30,16 +29,19 @@
 		past,
 		now,
 		next,
-		mobile,
-		frontend,
-		backend,
-		hype;
-	display: flex;
+		purple,
+		pink,
+		blue,
+		green;
 	background-color: value(colorWhite);
 	font-size: 1rem;
 }
 
-.root main {
+.root:not(:first-child) {
+	border-top: 1px dashed value(colorGray1);
+}
+
+.root .main {
 	display: flex;
 	flex: 1;
 	padding: 10px 0;
@@ -55,36 +57,36 @@
 }
 
 .primary .Badge:not(:last-child) {
-	margin-right: 16px;
+	margin-right: 1.6em;
 }
 
-.root:next main {
-	margin-left: 27px;
+.root:next .main {
+	margin-left: 2.7em;
 }
 
 .root:next .primary {
 	border-left: 1px dashed value(colorGray1);
-	padding-left: 37px;
+	padding-left: 3.7em;
 }
 
 .root:now .Badge {
 	background-color: value(colorWhite);
 }
 
-.root:now:frontend main {
+.root:now:purple .main {
 	background-color: value(colorPurple1);
 }
 
-.root:now:mobile main {
+.root:now:pink .main {
 	background-color: value(colorPink4);
 }
 
-.root:now:hype main {
-	background-color: value(colorGreen1);
+.root:now:blue .main {
+	background-color: value(colorBlue10);
 }
 
-.root:now:backend main {
-	background-color: value(colorBlue10);
+.root:now:green .main {
+	background-color: value(colorGreen1);
 }
 
 .time {
@@ -93,13 +95,7 @@
 	font-size: 2.4em;
 }
 
-.time span {
-	color: value(colorGray0);
-	font-size: rel(14, 24);
-}
-
 .location {
-	text-align: right;
 	color: value(colorGray1);
 	font-size: 1.6em;
 }
@@ -137,12 +133,9 @@
 }
 
 .secondary {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 16px 25px;
-	width: 150px;
+	padding: 1.6em 2.5em;
+	width: 16em;
+	text-align: right;
 }
 
 .auxiliary {

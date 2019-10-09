@@ -1,6 +1,5 @@
 import React, {
-	HTMLAttributes,
-	Children,
+	TableHTMLAttributes,
 	Component
 } from 'react';
 import {
@@ -10,7 +9,7 @@ import {
 
 export * from './ScheduleItem';
 
-export type IProps = HTMLAttributes<HTMLDivElement>;
+export type IProps = TableHTMLAttributes<HTMLTableElement>;
 
 export default class Schedule extends Component<IProps> {
 
@@ -22,21 +21,13 @@ export default class Schedule extends Component<IProps> {
 		} = this.props;
 
 		return (
-			<div
-				className={style(classes.root, {}, className)}
+			<table
+				className={style(classes.root, className)}
 			>
-				<ul
-					className={classes.list}
-				>
-					{Children.map(children, child => child && (
-						<li
-							className={classes.item}
-						>
-							{child}
-						</li>
-					))}
-				</ul>
-			</div>
+				<tbody>
+					{children}
+				</tbody>
+			</table>
 		);
 	}
 }
