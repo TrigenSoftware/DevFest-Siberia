@@ -284,15 +284,34 @@ export function getMetaData(context: I18nConfig) {
 	) as any;
 
 	return {
+		'keywords':            keywords,
 		...meta,
-		'keywords':          keywords,
-		'twitter:title':     title,
-		'twitter:site':      twitterSite,
-		'twitter:image:src': sharingImages.twitter,
-		'og:site_name':      title,
-		'og:url':            siteUrl,
-		'og:description':    title,
-		'og:image':          sharingImages.facebook
+		'twitter:card':        'summary',
+		'twitter:site':        twitterSite,
+		'twitter:title':       title,
+		'twitter:description': meta.description,
+		'twitter:image':       sharingImages.twitter
+	};
+}
+
+/**
+ * Get OpenGraph data from context.
+ */
+export function getOgData(context: I18nConfig) {
+
+	const {
+		meta
+	} = context.getCatalog(
+		context.getLocale()
+	) as any;
+
+	return {
+		'og:type':        'website',
+		'og:title':       title,
+		'og:site_name':   title,
+		'og:url':         siteUrl,
+		'og:description': meta.description,
+		'og:image':       sharingImages.facebook
 	};
 }
 
@@ -337,8 +356,7 @@ export function getSchemaData(context: I18nConfig) {
 				'@type':    'Person',
 				'name':     `${speaker.firstname} ${speaker.lastname}`,
 				'image':    speaker.src,
-				'jobTitle': speaker.talkTitle,
-				'sameAs':   speaker.contacts
+				'jobTitle': speaker.talkTitle
 			}
 		]),
 		'eventStatus':     'EventScheduled',
