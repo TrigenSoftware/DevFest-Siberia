@@ -53,16 +53,16 @@ export const ScheduleItemStatusValues: ScheduleItemStatus[] = Object.values(Vari
 export class ScheduleItem extends Component<IProps> {
 
 	static propTypes = {
-		time: PropTypes.node.isRequired,
-		location: PropTypes.node.isRequired,
-		title: PropTypes.node.isRequired,
-		status: PropTypes.oneOf(ScheduleItemStatusValues),
-		speaker: PropTypes.node,
-		description: PropTypes.node,
-		statusLabel: PropTypes.node,
-		talkTypeBadge: PropTypes.string,
-		talkLevelBadge: PropTypes.string,
-		favorite: PropTypes.bool,
+		time:            PropTypes.node.isRequired,
+		location:        PropTypes.node.isRequired,
+		title:           PropTypes.node.isRequired,
+		status:          PropTypes.oneOf(ScheduleItemStatusValues),
+		speaker:         PropTypes.node,
+		description:     PropTypes.node,
+		statusLabel:     PropTypes.node,
+		talkTypeBadge:   PropTypes.string,
+		talkLevelBadge:  PropTypes.string,
+		favorite:        PropTypes.bool,
 		onFavoriteClick: PropTypes.func
 	};
 
