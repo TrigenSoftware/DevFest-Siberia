@@ -103,6 +103,7 @@ export function getPromoSpeakers(context: I18nConfig): any[] {
 
 	const speakers = getSpeakers(context);
 	const spekersPromo = speakers.filter(speaker => speaker.promo === 'true');
+	console.log(spekersPromo);
 
 	if (process.env.SEED) {
 
@@ -114,7 +115,7 @@ export function getPromoSpeakers(context: I18nConfig): any[] {
 		let index = Math.floor(Math.random() * spekersPromo.length);
 
 		if (index > spekersPromo.length - 3) {
-			index = 0;
+			index = index - 2;
 		}
 
 		randomSpeakers = spekersPromo.splice(index, 3);
