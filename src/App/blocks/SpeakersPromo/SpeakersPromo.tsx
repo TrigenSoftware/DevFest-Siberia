@@ -33,21 +33,24 @@ import {
 	classes
 } from './SpeakersPromo.st.css';
 
-const speakers = [];
-
 export interface IProps extends ISectionProps, RouteComponentProps {}
 
-export class SpeakersPromo extends Component<IProps> {
+interface IState {
+	speakers: any[];
+}
+
+export class SpeakersPromo extends Component<IProps, IState> {
 
 	static contextType = I18nContext;
+
+	state = {
+		speakers: null
+	};
 
 	context!: ContextType<typeof I18nContext>;
 
 	render() {
 
-		const {
-			context
-		} = this;
 		const {
 			className,
 			location: {
@@ -55,17 +58,9 @@ export class SpeakersPromo extends Component<IProps> {
 			},
 			...props
 		} = this.props;
-
-		if (speakers.length === 0) {
-
-			const spekersPromo = getPromoSpeakers(context);
-
-			for (let i = 0; i < 3; i++) {
-				const index = Math.floor(Math.random() * spekersPromo.length);
-				speakers.push(spekersPromo[index]);
-				spekersPromo.splice(index, 1);
-			}
-		}
+		const {
+			speakers
+		} = this.state;
 
 		return (
 			<>
@@ -82,7 +77,7 @@ export class SpeakersPromo extends Component<IProps> {
 					<ul
 						className={classes.list}
 					>
-						{speakers.map(item => (
+						{speakers && speakers.map(item => (
 							<li
 								key={item.id}
 							>
@@ -112,6 +107,25 @@ export class SpeakersPromo extends Component<IProps> {
 				<SpeakerModal/>
 			</>
 		);
+	}
+
+	componentDidMount() {
+
+		const {
+			context
+		} = this;
+		const speakers = [];
+		const spekersPromo = getPromoSpeakers(context);
+
+		for (let i = 0; i < 3; i++) {
+			const index = Math.floor(Math.random() * spekersPromo.length);
+			speakers.push(spekersPromo[index]);
+			spekersPromo.splice(index, 1);
+		}
+
+		this.setState(() => ({
+			speakers
+		}));
 	}
 }
 
