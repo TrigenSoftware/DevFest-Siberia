@@ -109,7 +109,7 @@ export class SpeakersPromo extends Component<IProps> {
 						))}
 					</ul>
 				</Section>
-				<SpeakerModal />
+				<SpeakerModal/>
 			</>
 		);
 	}
