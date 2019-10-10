@@ -103,7 +103,6 @@ export function getPromoSpeakers(context: I18nConfig): any[] {
 
 	const speakers = getSpeakers(context);
 	const spekersPromo = speakers.filter(speaker => speaker.promo === 'true');
-	console.log(spekersPromo);
 
 	if (process.env.SEED) {
 
