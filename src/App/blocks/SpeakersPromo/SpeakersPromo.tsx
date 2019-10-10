@@ -35,22 +35,17 @@ import {
 
 export interface IProps extends ISectionProps, RouteComponentProps {}
 
-interface IState {
-	speakers: any[];
-}
-
-export class SpeakersPromo extends Component<IProps, IState> {
+export class SpeakersPromo extends Component<IProps> {
 
 	static contextType = I18nContext;
 
 	context!: ContextType<typeof I18nContext>;
 
-	state = {
-		speakers: null
-	};
-
 	render() {
 
+		const {
+			context
+		} = this;
 		const {
 			className,
 			location: {
@@ -58,9 +53,7 @@ export class SpeakersPromo extends Component<IProps, IState> {
 			},
 			...props
 		} = this.props;
-		const {
-			speakers
-		} = this.state;
+		const speakers = getPromoSpeakers(context);
 
 		return (
 			<>
@@ -77,7 +70,7 @@ export class SpeakersPromo extends Component<IProps, IState> {
 					<ul
 						className={classes.list}
 					>
-						{speakers && speakers.map(item => (
+						{speakers.map(item => (
 							<li
 								key={item.id}
 							>
@@ -107,25 +100,6 @@ export class SpeakersPromo extends Component<IProps, IState> {
 				<SpeakerModal/>
 			</>
 		);
-	}
-
-	componentDidMount() {
-
-		const {
-			context
-		} = this;
-		const speakers = [];
-		const spekersPromo = getPromoSpeakers(context);
-
-		for (let i = 0; i < 3; i++) {
-			const index = Math.floor(Math.random() * spekersPromo.length);
-			speakers.push(spekersPromo[index]);
-			spekersPromo.splice(index, 1);
-		}
-
-		this.setState(() => ({
-			speakers
-		}));
 	}
 }
 
