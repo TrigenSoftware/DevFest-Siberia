@@ -43,11 +43,11 @@ export class SpeakersPromo extends Component<IProps, IState> {
 
 	static contextType = I18nContext;
 
+	context!: ContextType<typeof I18nContext>;
+
 	state = {
 		speakers: null
 	};
-
-	context!: ContextType<typeof I18nContext>;
 
 	render() {
 
