@@ -33,6 +33,8 @@ import {
 	classes
 } from './SpeakersPromo.st.css';
 
+const speakers = [];
+
 export interface IProps extends ISectionProps, RouteComponentProps {}
 
 export class SpeakersPromo extends Component<IProps> {
@@ -53,7 +55,17 @@ export class SpeakersPromo extends Component<IProps> {
 			},
 			...props
 		} = this.props;
-		const speakers = getPromoSpeakers(context);
+
+		if (speakers.length === 0) {
+
+			const spekersPromo = getPromoSpeakers(context);
+
+			for (let i = 0; i < 3; i++) {
+				const index = Math.floor(Math.random() * spekersPromo.length);
+				speakers.push(spekersPromo[index]);
+				spekersPromo.splice(index, 1);
+			}
+		}
 
 		return (
 			<>
@@ -97,7 +109,7 @@ export class SpeakersPromo extends Component<IProps> {
 						))}
 					</ul>
 				</Section>
-				<SpeakerModal/>
+				<SpeakerModal />
 			</>
 		);
 	}
