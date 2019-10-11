@@ -13,7 +13,6 @@
 		colorBlue8,
 		colorBlue10,
 		colorPink4,
-		colorGray1,
 		colorGray3,
 		colorPurple1,
 		colorGreen1;
@@ -34,17 +33,18 @@
 		blue,
 		green;
 	background-color: value(colorWhite);
+	vertical-align: top;
 	font-size: 1rem;
 }
 
-.root:not(:first-child) {
-	border-top: 1px dashed value(colorGray1);
-}
-
-.root .main {
+.main {
 	display: flex;
 	flex: 1;
-	padding: 10px 0;
+	padding: 10px 0 10px 20px;
+}
+
+.root:not(:first-child) .main {
+	border-top: 1px dashed value(colorBlue8);
 }
 
 .root:past {
@@ -58,15 +58,6 @@
 
 .primary .Badge:not(:last-child) {
 	margin-right: 1.6em;
-}
-
-.root:next .main {
-	margin-left: 2.7em;
-}
-
-.root:next .primary {
-	border-left: 1px dashed value(colorGray1);
-	padding-left: 3.7em;
 }
 
 .root:now .Badge {
@@ -136,23 +127,6 @@
 	padding: 1.6em 2.5em;
 	width: 16em;
 	text-align: right;
-}
-
-.auxiliary {
-	display: flex;
-	writing-mode: vertical-rl;
-	text-orientation: mixed;
-}
-
-.auxiliary .content {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 0;
-	height: 100%;
-	text-transform: uppercase;
-	color: value(colorWhite);
-	font-size: 2em;
 }
 
 .favorite {

@@ -106,26 +106,10 @@ export class ScheduleItem extends Component<IProps> {
 					>
 						{time}
 					</div>
-					<div
-						className={classes.location}
-					>
-						{location}
-					</div>
 				</td>
 				<td
 					className={classes.main}
 				>
-					{statusLabel && (
-						<section
-							className={classes.auxiliary}
-						>
-							<h3
-								className={classes.content}
-							>
-								{statusLabel}
-							</h3>
-						</section>
-					)}
 					<section
 						className={classes.primary}
 					>
