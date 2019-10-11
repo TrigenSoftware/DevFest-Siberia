@@ -4,23 +4,35 @@
 	-st-named:
 		colorWhite,
 		colorRed,
-		colorBlue10,
+		colorBlue7,
 		colorBlue11,
-		colorPurple1,
+		colorBlue13,
+		colorPurple,
 		colorPink4,
-		colorGreen1;
+		colorPink5,
+		colorGreen1,
+		colorGreen2,
+		colorOrange;
 }
 
 .outline {
-	border-color: value(colorBlue10);
+	border-color: value(colorBlue7);
 }
 
 .outlineAqua {
 	border-color: value(colorBlue11);
 }
 
+.outlineDarkBlue {
+	border-color: value(colorBlue13);
+}
+
 .outlinePink {
 	border-color: value(colorPink4);
+}
+
+.outlineDarkPink {
+	border-color: value(colorPink5);
 }
 
 .outlineRed {
@@ -28,9 +40,17 @@
 }
 
 .outlinePurple {
-	border-color: value(colorPurple1);
+	border-color: value(colorPurple);
 }
 
 .outlineGreen {
 	border-color: value(colorGreen1);
+}
+
+.outlineLightGreen {
+	border-color: value(colorGreen2);
+}
+
+.outlineOrange {
+	border-color: value(colorOrange);
 }

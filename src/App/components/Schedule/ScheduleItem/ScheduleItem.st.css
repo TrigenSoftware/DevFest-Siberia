@@ -10,13 +10,18 @@
 		fontFamilyMono,
 		colorWhite,
 		colorBlack,
+		colorOrange,
 		colorBlue8,
 		colorBlue10,
+		colorBlue11,
+		colorBlue13,
 		colorPink4,
+		colorPink5,
 		colorGray1,
 		colorGray3,
-		colorPurple1,
-		colorGreen1;
+		colorPurple,
+		colorGreen1,
+		colorGreen2;
 }
 
 :import {
@@ -29,10 +34,15 @@
 		past,
 		now,
 		next,
-		purple,
+		darkblue,
 		pink,
+		orange,
+		purple,
+		aqua,
+		lightgreen,
 		blue,
-		green;
+		green,
+		darkpink;
 	background-color: value(colorWhite);
 	vertical-align: top;
 	font-size: 1rem;
@@ -44,14 +54,6 @@
 	padding: 10px 0 10px 20px;
 }
 
-.root:not(:first-child) .main {
-	border-top: 1px dashed value(colorBlue8);
-}
-
-.root:past {
-	background-color: value(colorGray3);
-}
-
 .primary {
 	flex: 1;
 	padding-bottom: 10px;
@@ -61,16 +63,52 @@
 	margin-right: 1.6em;
 }
 
+.root:not(:first-child) .main {
+	border-top: 1px dashed value(colorBlue8);
+}
+
 .root:now .Badge {
 	background-color: value(colorWhite);
 }
 
-.root:now:purple .main {
-	background-color: value(colorPurple1);
+.root:past {
+	background-color: value(colorGray3);
+}
+
+.root:past .Badge:fill {
+	border-color: value(colorBlue8);
+	background: transparent;
+	color: value(colorBlue8);
+}
+
+.root:past .Badge:outline {
+	border-color: value(colorBlue8);
+	background: value(colorBlue8);
+	color: value(colorWhite);
+}
+
+.root:now:darkblue .main {
+	background-color: value(colorBlue13);
 }
 
 .root:now:pink .main {
 	background-color: value(colorPink4);
+}
+
+.root:now:orange .main {
+	background-color: value(colorOrange);
+}
+
+.root:now:purple .main {
+	background-color: value(colorPurple);
+}
+
+.root:now:aqua .main {
+	background-color: value(colorBlue11);
+}
+
+.root:now:lightgreen .main {
+	background-color: value(colorGreen2);
 }
 
 .root:now:blue .main {
@@ -79,6 +117,10 @@
 
 .root:now:green .main {
 	background-color: value(colorGreen1);
+}
+
+.root:now:darkpink .main {
+	background-color: value(colorPink5);
 }
 
 .group {

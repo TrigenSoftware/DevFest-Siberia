@@ -4,16 +4,20 @@
 	-st-named:
 		colorWhite,
 		colorRed,
-		colorBlue10,
+		colorBlue7,
 		colorBlue11,
-		colorPurple1,
+		colorBlue13,
+		colorPurple,
 		colorPink4,
-		colorGreen1;
+		colorPink5,
+		colorGreen1,
+		colorGreen2,
+		colorOrange;
 }
 
 .fill {
-	border-color: value(colorBlue10);
-	background-color: value(colorBlue10);
+	border-color: value(colorBlue7);
+	background-color: value(colorBlue7);
 	color: value(colorWhite);
 }
 
@@ -23,9 +27,21 @@
 	color: value(colorWhite);
 }
 
+.fillDarkBlue {
+	border-color: value(colorBlue13);
+	background-color: value(colorBlue13);
+	color: value(colorWhite);
+}
+
 .fillPink {
 	border-color: value(colorPink4);
 	background-color: value(colorPink4);
+	color: value(colorWhite);
+}
+
+.fillDarkPink {
+	border-color: value(colorPink5);
+	background-color: value(colorPink5);
 	color: value(colorWhite);
 }
 
@@ -36,13 +52,25 @@
 }
 
 .fillPurple {
-	border-color: value(colorPurple1);
-	background-color: value(colorPurple1);
+	border-color: value(colorPurple);
+	background-color: value(colorPurple);
 	color: value(colorWhite);
 }
 
 .fillGreen {
 	border-color: value(colorGreen1);
 	background-color: value(colorGreen1);
+	color: value(colorWhite);
+}
+
+.fillLightGreen {
+	border-color: value(colorGreen2);
+	background-color: value(colorGreen2);
+	color: value(colorWhite);
+}
+
+.fillOrange {
+	border-color: value(colorOrange);
+	background-color: value(colorOrange);
 	color: value(colorWhite);
 }

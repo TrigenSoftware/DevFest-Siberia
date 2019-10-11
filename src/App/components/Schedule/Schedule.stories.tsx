@@ -40,6 +40,32 @@ storiesOf('Components|Schedule', module)
 					time='9:30 PM'
 					location='Комната 231, 2 этаж'
 					title='Кодить сегодня или нет'
+					status={VariantScheduleItemStatus.Past}
+					speaker='Иван Петров'
+					description='Старший инженер компании "Копыта", Павловск'
+					statusLabel='Идет сейчас'
+					talkTypeBadge='Mobile'
+					talkLevelBadge='Middle'
+					onFavoriteClick={action('click')}
+					favorite
+				/>
+				<ScheduleItem
+					time='9:30 PM'
+					location='Комната 231, 2 этаж'
+					title='Кодить сегодня или нет'
+					status={VariantScheduleItemStatus.Now}
+					speaker='Иван Петров'
+					description='Старший инженер компании "Копыта", Павловск'
+					statusLabel='Идет сейчас'
+					talkTypeBadge='All'
+					talkLevelBadge='Middle'
+					onFavoriteClick={action('click')}
+					favorite
+				/>
+				<ScheduleItem
+					time='9:30 PM'
+					location='Комната 231, 2 этаж'
+					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
 					speaker='Иван Петров'
 					description='Старший инженер компании "Копыта", Павловск'
@@ -48,6 +74,19 @@ storiesOf('Components|Schedule', module)
 					talkLevelBadge='Middle'
 					onFavoriteClick={action('click')}
 					favorite
+				/>
+				<ScheduleItem
+					time='9:30 PM'
+					location='Комната 231, 2 этаж'
+					title='Кодить сегодня или нет'
+					status={VariantScheduleItemStatus.Now}
+					speaker='Иван Петров'
+					description='Старший инженер компании "Копыта", Павловск'
+					statusLabel='Идет сейчас'
+					talkTypeBadge='Data Science'
+					talkLevelBadge='Middle'
+					onFavoriteClick={action('click')}
+					favorite={false}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -70,10 +109,23 @@ storiesOf('Components|Schedule', module)
 					speaker='Иван Петров'
 					description='Старший инженер компании "Копыта", Павловск'
 					statusLabel='Идет сейчас'
-					talkTypeBadge='Hype'
+					talkTypeBadge='DevOps'
 					talkLevelBadge='Middle'
 					onFavoriteClick={action('click')}
-					favorite={false}
+					favorite
+				/>
+				<ScheduleItem
+					time='9:30 PM'
+					location='Комната 231, 2 этаж'
+					title='Кодить сегодня или нет'
+					status={VariantScheduleItemStatus.Now}
+					speaker='Иван Петров'
+					description='Старший инженер компании "Копыта", Павловск'
+					statusLabel='Идет сейчас'
+					talkTypeBadge='Security'
+					talkLevelBadge='Middle'
+					onFavoriteClick={action('click')}
+					favorite
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -92,13 +144,63 @@ storiesOf('Components|Schedule', module)
 					time='9:30 PM'
 					location='Комната 231, 2 этаж'
 					title='Кодить сегодня или нет'
+					status={VariantScheduleItemStatus.Now}
+					speaker='Иван Петров'
+					description='Старший инженер компании "Копыта", Павловск'
+					statusLabel='Идет сейчас'
+					talkTypeBadge='Hype'
+					talkLevelBadge='Middle'
+					onFavoriteClick={action('click')}
+					favorite
+				/>
+				<ScheduleItem
+					time='9:30 PM'
+					location='Комната 231, 2 этаж'
+					title='Кодить сегодня или нет'
+					status={VariantScheduleItemStatus.Now}
+					speaker='Иван Петров'
+					description='Старший инженер компании "Копыта", Павловск'
+					statusLabel='Идет сейчас'
+					talkTypeBadge='Web'
+					talkLevelBadge='Middle'
+					onFavoriteClick={action('click')}
+					favorite
+				/>
+				<ScheduleItem
+					time='9:30 PM'
+					location='Комната 231, 2 этаж'
+					title='Кодить сегодня или нет'
+					status={VariantScheduleItemStatus.Next}
+					speaker='Иван Петров'
+					description='Старший инженер компании "Копыта", Павловск'
+					talkTypeBadge='All'
+					talkLevelBadge='Senior'
+					onFavoriteClick={action('click')}
+					favorite
+				/>
+				<ScheduleItem
+					time='9:30 PM'
+					location='Комната 231, 2 этаж'
+					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speaker='Иван Петров'
 					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='Mobile'
 					talkLevelBadge='Middle'
 					onFavoriteClick={action('click')}
-					favorite
+					favorite={false}
+				/>
+				<ScheduleItem
+					time='9:30 PM'
+					location='Комната 231, 2 этаж'
+					title='Кодить сегодня или нет'
+					status={VariantScheduleItemStatus.Next}
+					speaker='Иван Петров'
+					description='Старший инженер компании "Копыта", Павловск'
+					talkTypeBadge='Data Science'
+					talkLevelBadge='Middle'
+					onFavoriteClick={action('click')}
+					favorite={false}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -119,7 +221,7 @@ storiesOf('Components|Schedule', module)
 					status={VariantScheduleItemStatus.Next}
 					speaker='Иван Петров'
 					description='Старший инженер компании "Копыта", Павловск'
-					talkTypeBadge='Backend'
+					talkTypeBadge='DevOps'
 					talkLevelBadge='Middle'
 					onFavoriteClick={action('click')}
 					favorite={false}
@@ -131,8 +233,44 @@ storiesOf('Components|Schedule', module)
 					status={VariantScheduleItemStatus.Next}
 					speaker='Иван Петров'
 					description='Старший инженер компании "Копыта", Павловск'
+					talkTypeBadge='Security'
+					talkLevelBadge='Junior'
+					onFavoriteClick={action('click')}
+					favorite={false}
+				/>
+				<ScheduleItem
+					time='9:30 PM'
+					location='Комната 231, 2 этаж'
+					title='Кодить сегодня или нет'
+					status={VariantScheduleItemStatus.Next}
+					speaker='Иван Петров'
+					description='Старший инженер компании "Копыта", Павловск'
+					talkTypeBadge='Backend'
+					talkLevelBadge='Senior'
+					onFavoriteClick={action('click')}
+					favorite={false}
+				/>
+				<ScheduleItem
+					time='9:30 PM'
+					location='Комната 231, 2 этаж'
+					title='Кодить сегодня или нет'
+					status={VariantScheduleItemStatus.Next}
+					speaker='Иван Петров'
+					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='Hype'
-					talkLevelBadge='Middle'
+					talkLevelBadge='Senior'
+					onFavoriteClick={action('click')}
+					favorite={false}
+				/>
+				<ScheduleItem
+					time='9:30 PM'
+					location='Комната 231, 2 этаж'
+					title='Кодить сегодня или нет'
+					status={VariantScheduleItemStatus.Next}
+					speaker='Иван Петров'
+					description='Старший инженер компании "Копыта", Павловск'
+					talkTypeBadge='Web'
+					talkLevelBadge='Senior'
 					onFavoriteClick={action('click')}
 					favorite={false}
 				/>

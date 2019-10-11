@@ -83,10 +83,15 @@ export class ScheduleItem extends Component<IProps> {
 			...props
 		} = this.props;
 		const colorsMap = {
-			'frontend': 'purple',
-			'mobile':   'pink',
-			'backend':  'blue',
-			'hype':     'green'
+			'all':          'darkblue',
+			'mobile':       'pink',
+			'data science': 'orange',
+			'frontend':     'purple',
+			'devops':       'aqua',
+			'security':     'lightgreen',
+			'backend':      'blue',
+			'hype':         'green',
+			'web':          'darkpink'
 		};
 		const color = talkTypeBadge && colorsMap[talkTypeBadge.toLowerCase()];
 
@@ -188,6 +193,13 @@ export class ScheduleItem extends Component<IProps> {
 
 		switch (type.toLowerCase()) {
 
+			case 'all':
+				props = {
+					variant,
+					color: 'darkblue'
+				};
+				break;
+
 			case 'mobile':
 				props = {
 					variant,
@@ -195,10 +207,31 @@ export class ScheduleItem extends Component<IProps> {
 				};
 				break;
 
+			case 'data science':
+				props = {
+					variant,
+					color: 'orange'
+				};
+				break;
+
 			case 'frontend':
 				props = {
 					variant,
 					color: 'purple'
+				};
+				break;
+
+			case 'devops':
+				props = {
+					variant,
+					color: 'aqua'
+				};
+				break;
+
+			case 'security':
+				props = {
+					variant,
+					color: 'lightgreen'
 				};
 				break;
 
@@ -216,6 +249,13 @@ export class ScheduleItem extends Component<IProps> {
 				};
 				break;
 
+			case 'web':
+				props = {
+					variant,
+					color: 'darkpink'
+				};
+				break;
+
 			case 'junior':
 				props = {
 					color: 'aqua'
@@ -230,7 +270,7 @@ export class ScheduleItem extends Component<IProps> {
 
 			case 'senior':
 				props = {
-					color: 'red'
+					color: 'darkblue'
 				};
 				break;
 

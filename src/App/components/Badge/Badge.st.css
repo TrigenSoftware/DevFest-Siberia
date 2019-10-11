@@ -17,10 +17,14 @@
 	-st-named:
 		outline,
 		outlineAqua,
+		outlineDarkBlue,
 		outlinePink,
+		outlineDarkPink,
 		outlinePurple,
 		outlineRed,
-		outlineGreen;
+		outlineGreen,
+		outlineLightGreen,
+		outlineOrange;
 }
 
 :import {
@@ -28,10 +32,14 @@
 	-st-named:
 		fill,
 		fillAqua,
+		fillDarkBlue,
 		fillPink,
+		fillDarkPink,
 		fillPurple,
 		fillRed,
-		fillGreen;
+		fillGreen,
+		fillLightGreen,
+		fillOrange;
 }
 
 .root {
@@ -41,11 +49,15 @@
 		outline,
 		/* Color states */
 		blue,
+		darkblue,
 		aqua,
 		pink,
+		darkpink,
 		red,
 		purple,
-		green;
+		green,
+		lightgreen,
+		orange;
 	border: 2px solid transparent;
 	border-radius: rel(value(sizeBorderRadiusSm), 14);
 	background-color: transparent;
@@ -72,8 +84,16 @@
 	-st-mixin: outlineAqua;
 }
 
+.root:outline:darkblue {
+	-st-mixin: outlineDarkBlue;
+}
+
 .root:outline:pink {
 	-st-mixin: outlinePink;
+}
+
+.root:outline:darkpink {
+	-st-mixin: outlineDarkPink;
 }
 
 .root:outline:red {
@@ -88,6 +108,14 @@
 	-st-mixin: outlineGreen;
 }
 
+.root:outline:lightgreen {
+	-st-mixin: outlineLightGreen;
+}
+
+.root:outline:orange {
+	-st-mixin: outlineOrange;
+}
+
 .root:fill:blue {
 	-st-mixin: fill;
 }
@@ -96,8 +124,16 @@
 	-st-mixin: fillAqua;
 }
 
+.root:fill:darkblue {
+	-st-mixin: fillDarkBlue;
+}
+
 .root:fill:pink {
 	-st-mixin: fillPink;
+}
+
+.root:fill:darkpink {
+	-st-mixin: fillDarkPink;
 }
 
 .root:fill:red {
@@ -110,4 +146,12 @@
 
 .root:fill:green {
 	-st-mixin: fillGreen;
+}
+
+.root:fill:lightgreen {
+	-st-mixin: fillLightGreen;
+}
+
+.root:fill:orange {
+	-st-mixin: fillOrange;
 }
