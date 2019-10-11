@@ -97,30 +97,23 @@ export function getSpeaker(context: I18nConfig, id: string): any {
 	return speakers.find(speaker => speaker.id === id);
 }
 
-let randomSpeakers = [];
+let index = 0;
 
 export function getPromoSpeakers(context: I18nConfig): any[] {
 
 	const speakers = getSpeakers(context);
-	const spekersPromo = speakers.filter(speaker => speaker.promo === 'true');
+	const promoSpeakers = speakers.filter(speaker => speaker.promo === 'true');
 
 	if (process.env.SEED) {
-
-		return spekersPromo.splice(0, 3);
+		return promoSpeakers.splice(0, 3);
 	}
 
-	if (randomSpeakers.length === 0) {
+	if (index === 0) {
 
-		let index = Math.floor(Math.random() * spekersPromo.length);
+		index = Math.floor(Math.random() * promoSpeakers.length - 3);
 
-		if (index > spekersPromo.length - 3) {
-			index = index - 2;
-		}
-
-		randomSpeakers = spekersPromo.splice(index, 3);
+		return promoSpeakers.splice(index, 3);
 	}
-
-	return randomSpeakers;
 }
 
 /**
