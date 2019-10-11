@@ -118,16 +118,31 @@ export class ScheduleItem extends Component<IProps> {
 						>
 							{title}
 						</h3>
-						{speaker && description && (
+						<div
+							className={classes.group}
+						>
 							<div
-								className={classes.description}
+								className={classes.location}
 							>
-								<span>
-									{speaker}{' | '}
-								</span>
-								{description}
+								{location}
 							</div>
-						)}
+							{speaker && description && (
+								<div
+									className={classes.info}
+								>
+									<div
+										className={classes.speaker}
+									>
+										{speaker}
+									</div>
+									<div
+										className={classes.description}
+									>
+										{description}
+									</div>
+								</div>
+							)}
+						</div>
 						{this.renderBadge(talkTypeBadge)}
 						{this.renderBadge(talkLevelBadge)}
 					</section>

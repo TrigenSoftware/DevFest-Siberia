@@ -7,26 +7,25 @@
 :import {
 	-st-from: '../../variables.st.css';
 	-st-named:
-		colorBlack,
-		colorYellow1;
+		colorWhite,
+		colorPink0;
 }
 
 .root {
 	-st-states: active;
 	background: none;
 	padding: 0;
-	color: value(colorBlack);
+	color: value(colorWhite);
 	font-size: 1rem;
 }
 
 .root:active {
-	color: value(colorYellow1);
+	color: value(colorPink0);
 }
 
 .root:focus,
 .root:not(:disabled):hover {
 	background-color: transparent;
-	color: value(colorYellow1);
 }
 
 .root .icon {

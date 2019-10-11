@@ -13,6 +13,7 @@
 		colorBlue8,
 		colorBlue10,
 		colorPink4,
+		colorGray1,
 		colorGray3,
 		colorPurple1,
 		colorGreen1;
@@ -80,46 +81,60 @@
 	background-color: value(colorGreen1);
 }
 
+.group {
+	display: flex;
+	align-items: baseline;
+	margin-bottom: 13px;
+}
+
+.info {
+	margin-left: 3.2em;
+}
+
 .time {
 	margin-bottom: rel(14, 24);
 	font-family: value(fontFamilyMono);
 	font-size: 2.4em;
+	font-weight: bold;
 }
 
 .location {
 	color: value(colorGray1);
-	font-size: 1.6em;
+	font-size: 1.4em;
 }
 
 .title {
+	margin-bottom: 6px;
 	color: value(colorBlack);
 	font-family: value(fontFamilyMono);
-	font-size: 3em;
-}
-
-.description {
-	margin: rel(14, 24) 0;
-	color: value(colorBlack);
 	font-size: 2.4em;
 }
 
-.description span {
+.speaker {
+	color: value(colorBlack);
 	font-family: value(fontFamilyMono);
+	font-size: 1.8em;
 	font-weight: bold;
+}
+
+.description {
+	color: value(colorGray1);
+	font-size: 1.6em;
 }
 
 .root:past .time,
 .root:past .time span,
 .root:past .location,
 .root:past .title,
-.root:past .description,
-.root:past .description span {
+.root:past .speaker,
+.root:past .description {
 	color: value(colorBlue8);
 }
 
 .root:now .title,
-.root:now .description,
-.root:now .description span {
+.root:now .location,
+.root:now .speaker,
+.root:now .description {
 	color: value(colorWhite);
 }
 
