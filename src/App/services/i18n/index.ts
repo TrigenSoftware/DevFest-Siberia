@@ -108,11 +108,9 @@ export function getPromoSpeakers(context: I18nConfig): any[] {
 		return promoSpeakers.splice(0, 3);
 	}
 
-	if (promoSpeakersIndex === -1 || promoSpeakersIndex === null) {
+	if (promoSpeakersIndex === -1) {
 
 		promoSpeakersIndex = Math.floor(Math.random() * promoSpeakers.length - 3);
-
-		return promoSpeakers.splice(promoSpeakersIndex, 3);
 	}
 
 	return promoSpeakers.splice(promoSpeakersIndex, 3);
