@@ -102,7 +102,7 @@ let index = 0;
 export function getPromoSpeakers(context: I18nConfig): any[] {
 
 	const speakers = getSpeakers(context);
-	const promoSpeakers = speakers.filter(speaker => speaker.promo === 'true');
+	const promoSpeakers = speakers.filter(speaker => speaker.promo === true);
 
 	if (process.env.SEED) {
 		return promoSpeakers.splice(0, 3);

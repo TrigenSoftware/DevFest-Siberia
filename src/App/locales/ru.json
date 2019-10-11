@@ -280,7 +280,7 @@
 			{
 				"id": "BaruchSadogursky",
 				"type": "devops",
-				"promo": "true",
+				"promo": true,
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569428936/speakers/Baruch_h2g05o.jpg",
 				"firstname": "Baruch",
 				"lastname": "Sadogursky",
@@ -299,7 +299,7 @@
 			{
 				"id": "ValarieRegas",
 				"type": "devops",
-				"promo": "true",
+				"promo": true,
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569442521/speakers/ValarieRegas_f1kzkd.jpg",
 				"firstname": "Valarie",
 				"lastname": "Regas",
@@ -318,7 +318,7 @@
 			{
 				"id": "WillMendes",
 				"type": "web",
-				"promo": "true",
+				"promo": true,
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569442270/speakers/WillMendes_ktwltk.jpg",
 				"firstname": "Will",
 				"lastname": "Mendes",
@@ -338,7 +338,7 @@
 			{
 				"id": "IgnatKorchagin",
 				"type": "devops",
-				"promo": "true",
+				"promo": true,
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569428936/speakers/Ignat_aoseif.jpg",
 				"firstname": "Ignat",
 				"lastname": "Korchagin",
@@ -354,7 +354,7 @@
 			{
 				"id": "SebastianDaschner",
 				"type": "web",
-				"promo": "true",
+				"promo": true,
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569445407/speakers/SebastianDaschner_md2e9j.jpg",
 				"firstname": "Sebastian",
 				"lastname": "Daschner",
@@ -374,7 +374,7 @@
 			{
 				"id": "AlexeyRodionov",
 				"type": "web",
-				"promo": "true",
+				"promo": true,
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569446303/speakers/AlexeyRodionov_gwjorg.jpg",
 				"firstname": "Alexey",
 				"badge": "GDE",
@@ -395,7 +395,7 @@
 			{
 				"id": "MaciejTreder",
 				"type": "web",
-				"promo": "true",
+				"promo": true,
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569449113/speakers/MaciejTreder2_dtairs.jpg",
 				"firstname": "Maciej",
 				"lastname": "Treder",
@@ -415,7 +415,7 @@
 			{
 				"id": "SupratimChakraborty",
 				"type": "mobile",
-				"promo": "true",
+				"promo": true,
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569449926/speakers/SupratimChakraborty_qbjbmr.jpg",
 				"firstname": "Supratim",
 				"lastname": "Chakraborty",
@@ -435,7 +435,7 @@
 			{
 				"id": "AdriánBolonio",
 				"type": "web",
-				"promo": "true",
+				"promo": true,
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569450946/speakers/Adria%CC%81nBolonio_ecv6ta.jpg",
 				"firstname": "Adrián",
 				"lastname": "Bolonio",
@@ -456,7 +456,7 @@
 			{
 				"id": "MajidHajian",
 				"type": "web",
-				"promo": "true",
+				"promo": true,
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569451795/speakers/MajidHajian_bswvpa.jpg",
 				"firstname": "Majid",
 				"lastname": "Hajian",
@@ -477,7 +477,7 @@
 			{
 				"id": "AndrewMihin",
 				"type": "mobile",
-				"promo": "true",
+				"promo": true,
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569453678/speakers/AndrewMihin_lbbrqs.jpg",
 				"firstname": "Andrew",
 				"lastname": "Mihin",
@@ -497,7 +497,7 @@
 			{
 				"id": "RafałLeszko",
 				"type": "web",
-				"promo": "true",
+				"promo": true,
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569454257/speakers/RafalLeszko_bkd3rg.jpg",
 				"firstname": "Rafał",
 				"lastname": "Leszko",
@@ -518,7 +518,7 @@
 			{
 				"id": "MikołajDobrucki",
 				"type": "web",
-				"promo": "true",
+				"promo": true,
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569454834/speakers/Miko%C5%82ajDobrucki_wky1ct.jpg",
 				"firstname": "Mikołaj",
 				"lastname": "Dobrucki",
