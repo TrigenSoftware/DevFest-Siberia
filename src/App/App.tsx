@@ -22,6 +22,7 @@ import './App.st.css';
 import {
 	getLocalizedPath,
 	getMetaData,
+	getOgData,
 	getSchemaData
 } from '~/services/i18n';
 import {
@@ -62,11 +63,15 @@ export default class App extends Component<IProps> {
 			context
 		} = this;
 		const metaData = getMetaData(context);
+		const ogData = getOgData(context);
 
 		return this.router(
 			<>
 				<Helmet>
-					<html lang={context.getLocale()}/>
+					<html
+						lang={context.getLocale()}
+						prefix='og: //ogp.me/ns#'
+					/>
 					{process.env.BASE_URL && (
 						<base
 							href={process.env.BASE_URL}
@@ -83,6 +88,13 @@ export default class App extends Component<IProps> {
 						<meta
 							key={key}
 							name={key}
+							content={value}
+						/>
+					))}
+					{Object.entries(ogData).map(([key, value]: [string, string]) => (
+						<meta
+							key={key}
+							property={key}
 							content={value}
 						/>
 					))}
