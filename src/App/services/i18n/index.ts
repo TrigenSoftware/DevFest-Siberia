@@ -97,7 +97,7 @@ export function getSpeaker(context: I18nConfig, id: string): any {
 	return speakers.find(speaker => speaker.id === id);
 }
 
-let index = 0;
+let promoSpeakersIndex = -1;
 
 export function getPromoSpeakers(context: I18nConfig): any[] {
 
@@ -108,12 +108,14 @@ export function getPromoSpeakers(context: I18nConfig): any[] {
 		return promoSpeakers.splice(0, 3);
 	}
 
-	if (index === 0) {
+	if (promoSpeakersIndex === -1 || promoSpeakersIndex === null) {
 
-		index = Math.floor(Math.random() * promoSpeakers.length - 3);
+		promoSpeakersIndex = Math.floor(Math.random() * promoSpeakers.length - 3);
 
-		return promoSpeakers.splice(index, 3);
+		return promoSpeakers.splice(promoSpeakersIndex, 3);
 	}
+
+	return promoSpeakers.splice(promoSpeakersIndex, 3);
 }
 
 /**
