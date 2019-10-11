@@ -4930,10 +4930,10 @@ classnames@^2.2.5:
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
 
-cldr-core@^35.1.0:
-  version "35.1.0"
-  resolved "https://registry.yarnpkg.com/cldr-core/-/cldr-core-35.1.0.tgz#2b53b22fa49e549298ea72e2ff9d3dc7b3378dd2"
-  integrity sha512-fTexZlDx+dbjaRNOEzRMqgg9/NxxtPtdIz6CClUNA8rTXBC2RgmP7iag3Z1WCVXqjlIEvWqUvN71c0onhficIA==
+cldr-core@^36.0.0:
+  version "36.0.0"
+  resolved "https://registry.yarnpkg.com/cldr-core/-/cldr-core-36.0.0.tgz#1d2148ed6802411845baeeb21432d7bbfde7d4f7"
+  integrity sha512-QLnAjt20rZe38c8h8OJ9jPND+O4o5O8Nw0TK/P3KpNn1cmOhMu0rk6Kc3ap96c5OStQ9gAngs9+Be2sum26NOw==
 
 clean-css@4.2.x, clean-css@^4.2.1:
   version "4.2.1"
@@ -8833,10 +8833,10 @@ husky@^3.0.3:
     run-node "^1.0.0"
     slash "^3.0.0"
 
-i18n-for-browser@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/i18n-for-browser/-/i18n-for-browser-1.2.1.tgz#2b386474a4948c37879116b65e28b4b9cb864892"
-  integrity sha512-jAnvjmqbTjcJ+WItRXE09ntFWjTnU4DRdF1MeRAeOxwIzpslGqBFkPKijOGZooK+soMzRWcCc7ebV5BJZwpgeQ==
+i18n-for-browser@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/i18n-for-browser/-/i18n-for-browser-1.2.2.tgz#c58254365a2de998be8165d29d09ee029a23280c"
+  integrity sha512-89iTkuIaaCWT5xbTXAQIX7o+y9I7F3TLqPE6yn/gREGabp5mMrSt+r/G+h/u7L72a5r4BFEh427RJvR3Qhxtiw==
   dependencies:
     "@babel/runtime" "^7.4.5"
     "@types/js-cookie" "^2.2.2"
@@ -8844,7 +8844,7 @@ i18n-for-browser@^1.2.1:
     "@types/node" "^12.0.7"
     "@types/sprintf-js" "^1.1.2"
     assert "^2.0.0"
-    cldr-core "^35.1.0"
+    cldr-core "^36.0.0"
     core-js "3"
     js-cookie "^2.2.0"
     make-plural-compiler "^5.0.0"
