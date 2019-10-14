@@ -11,7 +11,8 @@ import {
 } from '@flexis/ui/helpers';
 import Badge, {
 	IProps as IBadgeProps,
-	Variant
+	Variant,
+	Color
 } from '../../Badge';
 import {
 	ScheduleFavoriteButton
@@ -82,18 +83,7 @@ export class ScheduleItem extends Component<IProps> {
 			favorite,
 			...props
 		} = this.props;
-		const colorsMap = {
-			'all':          'darkblue',
-			'mobile':       'pink',
-			'data science': 'orange',
-			'frontend':     'purple',
-			'devops':       'aqua',
-			'security':     'lightgreen',
-			'backend':      'blue',
-			'hype':         'green',
-			'web':          'darkpink'
-		};
-		const color = talkTypeBadge && colorsMap[talkTypeBadge.toLowerCase()];
+		const color = this.getColor();
 
 		return (
 			<tr
@@ -177,6 +167,26 @@ export class ScheduleItem extends Component<IProps> {
 		onFavoriteClick(favorite, event);
 	}
 
+	private getColor() {
+
+		const {
+			talkTypeBadge
+		} = this.props;
+		const colorsMap = {
+			'all':          'darkblue',
+			'mobile':       'pink',
+			'data science': 'orange',
+			'frontend':     'purple',
+			'devops':       'aqua',
+			'security':     'lightgreen',
+			'backend':      'blue',
+			'hype':         'green',
+			'web':          'darkpink'
+		};
+
+		return talkTypeBadge && colorsMap[talkTypeBadge.toLowerCase()];
+	}
+
 	private renderBadge(type: string) {
 
 		if (!type) {
@@ -190,69 +200,70 @@ export class ScheduleItem extends Component<IProps> {
 		const variant: Variant = status === VariantScheduleItemStatus.Now
 			? 'outline'
 			: 'fill';
+		const color: Color = this.getColor();
 
 		switch (type.toLowerCase()) {
 
 			case 'all':
 				props = {
 					variant,
-					color: 'darkblue'
+					color
 				};
 				break;
 
 			case 'mobile':
 				props = {
 					variant,
-					color: 'pink'
+					color
 				};
 				break;
 
 			case 'data science':
 				props = {
 					variant,
-					color: 'orange'
+					color
 				};
 				break;
 
 			case 'frontend':
 				props = {
 					variant,
-					color: 'purple'
+					color
 				};
 				break;
 
 			case 'devops':
 				props = {
 					variant,
-					color: 'aqua'
+					color
 				};
 				break;
 
 			case 'security':
 				props = {
 					variant,
-					color: 'lightgreen'
+					color
 				};
 				break;
 
 			case 'backend':
 				props = {
 					variant,
-					color: 'blue'
+					color
 				};
 				break;
 
 			case 'hype':
 				props = {
 					variant,
-					color: 'green'
+					color
 				};
 				break;
 
 			case 'web':
 				props = {
 					variant,
-					color: 'darkpink'
+					color
 				};
 				break;
 
