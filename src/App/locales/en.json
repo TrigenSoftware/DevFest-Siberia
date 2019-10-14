@@ -39,30 +39,32 @@
 	"tickets": {
 		"contactEmail": "devfest@gdg-siberia.com",
 		"сontact": "If you'd like to purchase corporate tickets, for which we can provide an invoice, please reach out to us at <>%s</>. Corporate tickets incur a 500₽ processing fee on top of individual ticket prices.",
+		"buy": "Buy",
+		"sold": "Sold out",
 		"items": [
 			{
 				"type": "Early Bird",
 				"price": "4500₽",
 				"sale": "Early bird conference pass",
-				"buy": "Buy",
 				"priceType": "Limited stock tickets for our first delegates :)",
-				"description": ""
+				"description": "",
+				"soldOut": true
 			},
 			{
 				"type": "General Admission",
 				"price": "5000₽",
 				"sale": "Standard conference pass",
-				"buy": "Buy",
 				"priceType": "Our main batch of tickets for anyone and everyone",
-				"description": "Available until 15th November"
+				"description": "Available until 15th November",
+				"soldOut": false
 			},
 			{
 				"type": "Later Gator",
 				"price": "7999₽",
 				"sale": "Last chance conference pass",
-				"buy": "Buy",
 				"priceType": "Last chance to grab tickets for our awesome conference",
-				"description": "On sale from 15th November"
+				"description": "On sale from 15th November",
+				"soldOut": false
 			}
 		]
 	},
