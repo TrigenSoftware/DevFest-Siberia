@@ -45,24 +45,30 @@
 				"price": "4500₽",
 				"sale": "Early bird conference pass",
 				"buy": "Buy",
+				"sold": "Sold out",
 				"priceType": "Limited stock tickets for our first delegates :)",
-				"description": ""
+				"description": "",
+				"soldOut": true
 			},
 			{
 				"type": "General Admission",
 				"price": "5000₽",
 				"sale": "Standard conference pass",
 				"buy": "Buy",
+				"sold": "Sold out",
 				"priceType": "Our main batch of tickets for anyone and everyone",
-				"description": "Available until 15th November"
+				"description": "Available until 15th November",
+				"soldOut": false
 			},
 			{
 				"type": "Later Gator",
 				"price": "7999₽",
 				"sale": "Last chance conference pass",
 				"buy": "Buy",
+				"sold": "Sold out",
 				"priceType": "Last chance to grab tickets for our awesome conference",
-				"description": "On sale from 15th November"
+				"description": "On sale from 15th November",
+				"soldOut": false
 			}
 		]
 	},

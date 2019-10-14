@@ -20,6 +20,7 @@ export class TicketPreviewButton extends Component<IProps> {
 
 		const {
 			children,
+			disabled,
 			...props
 		} = this.props;
 
@@ -31,6 +32,7 @@ export class TicketPreviewButton extends Component<IProps> {
 			>
 				<Button
 					variant='secondary'
+					disabled={disabled}
 				>
 					{children}
 				</Button>
