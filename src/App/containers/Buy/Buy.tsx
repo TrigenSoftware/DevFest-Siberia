@@ -78,7 +78,8 @@ export class BuyContainer extends Component<IProps, IState> {
 		position:  '',
 		company:   '',
 		city:      '',
-		email:     ''
+		email:     '',
+		promocode: ''
 	};
 
 	render() {
@@ -92,7 +93,8 @@ export class BuyContainer extends Component<IProps, IState> {
 			position,
 			company,
 			city,
-			email
+			email,
+			promocode
 		} = this.state;
 		const {
 			context
@@ -192,6 +194,19 @@ export class BuyContainer extends Component<IProps, IState> {
 								name='email'
 								onChange={this.onInputChange}
 								value={email}
+							/>
+						</FormGroup>
+						<FormGroup
+							id='promocode'
+							label={__`buy.promocode`}
+						>
+							<Input
+								{...UserFieldsSpec.promocode}
+								id='promocode'
+								placeholder={__`buy.promocode`}
+								name='promocode'
+								onChange={this.onInputChange}
+								value={promocode}
 							/>
 						</FormGroup>
 						<ErrorMessage>
@@ -324,7 +339,8 @@ export class BuyContainer extends Component<IProps, IState> {
 			position,
 			company,
 			city,
-			email
+			email,
+			promocode
 		} = this.state;
 		const locale = getLocaleFromPath(location.pathname);
 		const userData = {
@@ -342,7 +358,7 @@ export class BuyContainer extends Component<IProps, IState> {
 						productRef: 'ticket'
 					}
 				],
-				promocode: ''
+				promocode
 			}
 		};
 

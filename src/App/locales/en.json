@@ -589,7 +589,8 @@
 		"email": "Email",
 		"notice": "This is where we'll send your ticket details :)",
 		"buy": "Buy",
-		"terms": "Accept <>Terms</>"
+		"terms": "Accept <>Terms</>",
+		"promocode": "Promo code"
 	},
 	"cabinet": {
 		"title": "Participant",
