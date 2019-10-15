@@ -11,6 +11,9 @@
 		colorPink0;
 }
 
+/* stylelint-disable-next-line */
+@st-global-custom-property --colorBorder;
+
 .root {
 	-st-states: active;
 	background: none;
@@ -20,6 +23,7 @@
 }
 
 .root:active {
+	--colorBorder: value(colorWhite);
 	color: value(colorPink0);
 }
 

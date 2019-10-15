@@ -51,6 +51,23 @@ export type IProps = CombinePropsAndAttributes<
 
 export const ScheduleItemStatusValues: ScheduleItemStatus[] = Object.values(VariantScheduleItemStatus);
 
+function getColor(type: string): Color {
+
+	const colorsMap = {
+		'all':          'darkblue',
+		'mobile':       'pink',
+		'data science': 'orange',
+		'frontend':     'purple',
+		'devops':       'aqua',
+		'security':     'lightgreen',
+		'backend':      'blue',
+		'hype':         'green',
+		'web':          'darkpink'
+	};
+
+	return type && colorsMap[type.toLowerCase()];
+}
+
 export class ScheduleItem extends Component<IProps> {
 
 	static propTypes = {
@@ -83,7 +100,7 @@ export class ScheduleItem extends Component<IProps> {
 			favorite,
 			...props
 		} = this.props;
-		const color = this.getColor();
+		const color = getColor(talkTypeBadge);
 
 		return (
 			<tr
@@ -105,14 +122,14 @@ export class ScheduleItem extends Component<IProps> {
 				<td
 					className={classes.main}
 				>
-					<section
+					<td
 						className={classes.primary}
 					>
-						<h3
+						<h4
 							className={classes.title}
 						>
 							{title}
-						</h3>
+						</h4>
 						<div
 							className={classes.group}
 						>
@@ -121,35 +138,37 @@ export class ScheduleItem extends Component<IProps> {
 							>
 								{location}
 							</div>
-							{speaker && description && (
-								<div
-									className={classes.info}
-								>
+							<div
+								className={classes.info}
+							>
+								{speaker && (
 									<div
 										className={classes.speaker}
 									>
 										{speaker}
 									</div>
+								)}
+								{description && (
 									<div
 										className={classes.description}
 									>
 										{description}
 									</div>
-								</div>
-							)}
+								)}
+							</div>
 						</div>
 						{this.renderBadge(talkTypeBadge)}
 						{this.renderBadge(talkLevelBadge)}
-					</section>
+					</td>
 					{status !== VariantScheduleItemStatus.Past && (
-						<section
+						<td
 							className={classes.favorite}
 						>
 							<ScheduleFavoriteButton
 								active={favorite}
 								onClick={this.onFavoriteClick}
 							/>
-						</section>
+						</td>
 					)}
 				</td>
 			</tr>
@@ -167,40 +186,20 @@ export class ScheduleItem extends Component<IProps> {
 		onFavoriteClick(favorite, event);
 	}
 
-	private getColor() {
-
-		const {
-			talkTypeBadge
-		} = this.props;
-		const colorsMap = {
-			'all':          'darkblue',
-			'mobile':       'pink',
-			'data science': 'orange',
-			'frontend':     'purple',
-			'devops':       'aqua',
-			'security':     'lightgreen',
-			'backend':      'blue',
-			'hype':         'green',
-			'web':          'darkpink'
-		};
-
-		return talkTypeBadge && colorsMap[talkTypeBadge.toLowerCase()];
-	}
-
 	private renderBadge(type: string) {
 
 		if (!type) {
 			return null;
 		}
 
-		let props: Partial<IBadgeProps> = {};
 		const {
 			status
 		} = this.props;
 		const variant: Variant = status === VariantScheduleItemStatus.Now
 			? 'outline'
 			: 'fill';
-		const color: Color = this.getColor();
+		const color = getColor(type);
+		let props: Partial<IBadgeProps> = {};
 
 		switch (type.toLowerCase()) {
 

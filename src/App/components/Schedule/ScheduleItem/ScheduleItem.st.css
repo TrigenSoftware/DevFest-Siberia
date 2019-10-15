@@ -29,6 +29,14 @@
 	-st-default: Badge;
 }
 
+:import {
+	-st-from: '../ScheduleFavoriteButton/ScheduleFavoriteButton.st.css';
+	-st-default: FavoriteButton;
+}
+
+/* stylelint-disable-next-line */
+@st-global-custom-property --colorBorder;
+
 .root {
 	-st-states:
 		past,
@@ -49,14 +57,13 @@
 }
 
 .main {
-	display: flex;
-	flex: 1;
 	padding: 10px 0 10px 20px;
+	vertical-align: middle;
 }
 
 .primary {
-	flex: 1;
 	padding-bottom: 10px;
+	width: 100%;
 }
 
 .primary .Badge:not(:last-child) {
@@ -123,6 +130,10 @@
 	background-color: value(colorPink5);
 }
 
+.root:next .FavoriteButton:active {
+	--colorBorder: value(colorBlack);
+}
+
 .group {
 	display: flex;
 	align-items: baseline;
@@ -187,8 +198,5 @@
 }
 
 .favorite {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100px;
+	padding: 0 2.7em;
 }

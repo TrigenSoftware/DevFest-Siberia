@@ -1,9 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="300.958" height="67.012" viewBox="0 0 300.958 67.012">
-	<defs>
-		<style>
-            .cls-1{fill:#fbbc04}.cls-2{fill:#0f9d58}.cls-3{fill:#ea4335}.cls-4{fill:#4285f4}.cls-5{fill:#fff}
-		</style>
-	</defs>
+	<defs/>
 	<g id="White" transform="translate(3.578 3.441)">
 		<rect id="Rectangle_489" width="60.75" height="19.66" class="cls-1" data-name="Rectangle 489" rx="9.83" transform="rotate(-29.3 121.775 -104.371)"/>
 		<rect id="Rectangle_490" width="60.75" height="19.66" class="cls-2" data-name="Rectangle 490" rx="9.83" transform="rotate(29.3 44.692 144.203)"/>

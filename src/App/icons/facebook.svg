@@ -1,7 +1,5 @@
 <svg id="Layer_2" data-name="Layer 2"
 	xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
-	<defs>
-		<style>.cls-1{fill:currentColor;}</style>
-	</defs>
+	<defs/>
 	<path class="cls-1" d="M36,18A18,18,0,1,0,15.19,35.78V23.2H10.62V18h4.57V14c0-4.51,2.68-7,6.8-7a27.8,27.8,0,0,1,4,.35v4.43H23.75a2.61,2.61,0,0,0-2.94,2.81V18h5L25,23.2h-4.2V35.78A18,18,0,0,0,36,18Z"/>
 </svg>

@@ -5,6 +5,7 @@ import {
 } from '@trigen/scripts-preset-react-app/storybook/config';
 import '@flexis/ui/reboot.st.css';
 import '../src/App/App.st.css';
+import './storybook.css';
 
 if (process.env.SEED) {
 	faker.seed(parseInt(process.env.SEED));
