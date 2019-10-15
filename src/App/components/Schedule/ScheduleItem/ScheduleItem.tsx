@@ -122,7 +122,7 @@ export class ScheduleItem extends Component<IProps> {
 				<td
 					className={classes.main}
 				>
-					<td
+					<section
 						className={classes.primary}
 					>
 						<h4
@@ -159,16 +159,16 @@ export class ScheduleItem extends Component<IProps> {
 						</div>
 						{this.renderBadge(talkTypeBadge)}
 						{this.renderBadge(talkLevelBadge)}
-					</td>
+					</section>
 					{status !== VariantScheduleItemStatus.Past && (
-						<td
+						<section
 							className={classes.favorite}
 						>
 							<ScheduleFavoriteButton
 								active={favorite}
 								onClick={this.onFavoriteClick}
 							/>
-						</td>
+						</section>
 					)}
 				</td>
 			</tr>
