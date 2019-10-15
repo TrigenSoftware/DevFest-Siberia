@@ -21,7 +21,7 @@
 		colorGray3,
 		colorPurple,
 		colorGreen1,
-		colorGreen2;
+		colorYellow;
 }
 
 :import {
@@ -42,7 +42,7 @@
 		orange,
 		purple,
 		aqua,
-		lightgreen,
+		yellow,
 		blue,
 		green,
 		darkpink;
@@ -110,8 +110,8 @@
 	background-color: value(colorBlue11);
 }
 
-.root:now:lightgreen .main {
-	background-color: value(colorGreen2);
+.root:now:yellow .main {
+	background-color: value(colorYellow);
 }
 
 .root:now:blue .main {

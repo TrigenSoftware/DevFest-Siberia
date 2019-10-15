@@ -28,7 +28,7 @@ export enum ColorVariant {
 	Red = 'red',
 	Purple = 'purple',
 	Green = 'green',
-	LightGreen = 'lightgreen',
+	Yellow = 'yellow',
 	Orange = 'orange'
 }
 
@@ -42,7 +42,7 @@ export type Color = 'blue'
 	|'red'
 	|'purple'
 	|'green'
-	|'lightgreen'
+	|'yellow'
 	|'orange';
 
 export interface IProps extends IFlexisBadgeProps {

@@ -60,7 +60,7 @@ function getColor(type: string): Color {
 		'data science': 'orange',
 		'frontend':     'purple',
 		'devops':       'aqua',
-		'security':     'lightgreen',
+		'security':     'yellow',
 		'backend':      'blue',
 		'hype':         'green',
 		'web':          'darkpink'
@@ -142,20 +142,16 @@ export class ScheduleItem extends Component<IProps> {
 							<div
 								className={classes.info}
 							>
-								{speaker && (
-									<div
-										className={classes.speaker}
-									>
-										{speaker}
-									</div>
-								)}
-								{description && (
-									<div
-										className={classes.description}
-									>
-										{description}
-									</div>
-								)}
+								<div
+									className={classes.speaker}
+								>
+									{speaker}
+								</div>
+								<div
+									className={classes.description}
+								>
+									{description}
+								</div>
 							</div>
 						</div>
 						{this.renderBadge(talkTypeBadge)}

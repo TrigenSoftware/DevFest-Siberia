@@ -11,7 +11,7 @@
 		colorPink4,
 		colorPink5,
 		colorGreen1,
-		colorGreen2,
+		colorYellow,
 		colorOrange;
 }
 
@@ -47,8 +47,8 @@
 	border-color: value(colorGreen1);
 }
 
-.outlineLightGreen {
-	border-color: value(colorGreen2);
+.outlineYellow {
+	border-color: value(colorYellow);
 }
 
 .outlineOrange {

@@ -3,6 +3,7 @@
 	-st-from: '../../variables.st.css';
 	-st-named:
 		colorWhite,
+		colorBlack,
 		colorRed,
 		colorBlue7,
 		colorBlue11,
@@ -11,7 +12,7 @@
 		colorPink4,
 		colorPink5,
 		colorGreen1,
-		colorGreen2,
+		colorYellow,
 		colorOrange;
 }
 
@@ -63,10 +64,10 @@
 	color: value(colorWhite);
 }
 
-.fillLightGreen {
-	border-color: value(colorGreen2);
-	background-color: value(colorGreen2);
-	color: value(colorWhite);
+.fillYellow {
+	border-color: value(colorYellow);
+	background-color: value(colorYellow);
+	color: value(colorBlack);
 }
 
 .fillOrange {

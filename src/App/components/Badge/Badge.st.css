@@ -23,7 +23,7 @@
 		outlinePurple,
 		outlineRed,
 		outlineGreen,
-		outlineLightGreen,
+		outlineYellow,
 		outlineOrange;
 }
 
@@ -38,7 +38,7 @@
 		fillPurple,
 		fillRed,
 		fillGreen,
-		fillLightGreen,
+		fillYellow,
 		fillOrange;
 }
 
@@ -56,7 +56,7 @@
 		red,
 		purple,
 		green,
-		lightgreen,
+		yellow,
 		orange;
 	border: 2px solid transparent;
 	border-radius: rel(value(sizeBorderRadiusSm), 14);
@@ -108,8 +108,8 @@
 	-st-mixin: outlineGreen;
 }
 
-.root:outline:lightgreen {
-	-st-mixin: outlineLightGreen;
+.root:outline:yellow {
+	-st-mixin: outlineYellow;
 }
 
 .root:outline:orange {
@@ -148,8 +148,8 @@
 	-st-mixin: fillGreen;
 }
 
-.root:fill:lightgreen {
-	-st-mixin: fillLightGreen;
+.root:fill:yellow {
+	-st-mixin: fillYellow;
 }
 
 .root:fill:orange {
