@@ -7,7 +7,8 @@ import React, {
 import PropTypes from 'prop-types';
 import {
 	Bind,
-	CombinePropsAndAttributes
+	CombinePropsAndAttributes,
+	omit
 } from '@flexis/ui/helpers';
 import Badge, {
 	IProps as IBadgeProps,
@@ -104,7 +105,7 @@ export class ScheduleItem extends Component<IProps> {
 
 		return (
 			<tr
-				{...props}
+				{...omit(props, ['onFavoriteClick'])}
 				className={style(classes.root, {
 					[status]: Boolean(status),
 					[color]:  Boolean(color)
