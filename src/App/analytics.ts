@@ -31,4 +31,14 @@ export default function initAnalytics() {
 			trackHash: true,
 		});
 	}
+
+	if (process.env.VK_PIXEL_ID) {
+		// @ts-ignore
+		!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?162",t.onload=function(){VK.Retargeting.Init(process.env.VK_PIXEL_ID),VK.Retargeting.Hit()},document.head.appendChild(t)}();
+	}
+
+	if (process.env.FB_PIXEL_ID) {
+		// @ts-ignore
+		!function(e,t,n,c,o,a,f){e.fbq||(o=e.fbq=function(){o.callMethod?o.callMethod.apply(o,arguments):o.queue.push(arguments)},e._fbq||(e._fbq=o),o.push=o,o.loaded=!0,o.version="2.0",o.queue=[],(a=t.createElement(n)).async=!0,a.src="https://connect.facebook.net/en_US/fbevents.js",(f=t.getElementsByTagName(n)[0]).parentNode.insertBefore(a,f))}(window,document,"script"),fbq("init",process.env.FB_PIXEL_ID),fbq("track","PageView");
+	}
 }

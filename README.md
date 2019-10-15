@@ -45,6 +45,8 @@ API_URL=xxx
 YANDEX_METRIKA_ID=XXX
 GOOGLE_ANALYTICS_ID=XXX
 GOOGLE_MAPS_KEY=XXX
+VK_PIXEL_ID=xxx # enabling VK pixel analytics
+FB_PIXEL_ID=xxx # enabling Facebook pixel analytics
 ```
 
 Optional variables:

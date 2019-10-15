@@ -84,8 +84,12 @@ export default class Tickets extends Component<IProps> {
 									</div>
 									<TicketPreviewButton
 										to='/buy'
+										disabled={item.soldOut}
 									>
-										{item.buy}
+										{item.soldOut
+											? __x`tickets.sold`
+											: __x`tickets.buy`
+										}
 									</TicketPreviewButton>
 									<TicketPreviewDescription>
 										{item.description}
