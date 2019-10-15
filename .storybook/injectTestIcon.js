@@ -1,3 +1,3 @@
-import TestIcon from './star.svg';
+import TestIcon from './starIcon.svg';
 
 global.TestIcon = TestIcon;

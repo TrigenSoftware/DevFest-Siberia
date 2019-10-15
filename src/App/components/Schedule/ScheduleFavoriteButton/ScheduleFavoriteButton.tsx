@@ -8,7 +8,7 @@ import {
 	style,
 	classes
 } from './ScheduleFavoriteButton.st.css';
-import StarIcon from '~/icons/star1.svg';
+import StarIcon from '~/icons/star.svg';
 
 interface IProps extends IButtonProps {
 	active: boolean;
