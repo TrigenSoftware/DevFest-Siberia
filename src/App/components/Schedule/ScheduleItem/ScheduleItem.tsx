@@ -52,22 +52,17 @@ export type IProps = CombinePropsAndAttributes<
 
 export const ScheduleItemStatusValues: ScheduleItemStatus[] = Object.values(VariantScheduleItemStatus);
 
-function getColor(type: string): Color {
-
-	const colorsMap = {
-		'all':          'darkblue',
-		'mobile':       'pink',
-		'data science': 'orange',
-		'frontend':     'purple',
-		'devops':       'aqua',
-		'security':     'yellow',
-		'backend':      'blue',
-		'hype':         'green',
-		'web':          'darkpink'
-	};
-
-	return type && colorsMap[type.toLowerCase()];
-}
+const talkTypeColors: Record<string, Color> = {
+	'all':          'darkblue',
+	'mobile':       'pink',
+	'data science': 'orange',
+	'frontend':     'purple',
+	'devops':       'aqua',
+	'security':     'yellow',
+	'backend':      'blue',
+	'hype':         'green',
+	'web':          'darkpink'
+};
 
 export class ScheduleItem extends Component<IProps> {
 
@@ -101,7 +96,7 @@ export class ScheduleItem extends Component<IProps> {
 			favorite,
 			...props
 		} = this.props;
-		const color = getColor(talkTypeBadge);
+		const color = talkTypeBadge && talkTypeColors[talkTypeBadge.toLowerCase()];
 
 		return (
 			<tr
@@ -162,8 +157,8 @@ export class ScheduleItem extends Component<IProps> {
 							className={classes.favorite}
 						>
 							<ScheduleFavoriteButton
-								active={favorite}
 								onClick={this.onFavoriteClick}
+								active={favorite}
 							/>
 						</section>
 					)}
@@ -195,10 +190,11 @@ export class ScheduleItem extends Component<IProps> {
 		const variant: Variant = status === VariantScheduleItemStatus.Now
 			? 'outline'
 			: 'fill';
-		const color = getColor(type);
+		const typeId = type.toLowerCase();
+		const color = talkTypeColors[typeId];
 		let props: Partial<IBadgeProps> = {};
 
-		switch (type.toLowerCase()) {
+		switch (typeId) {
 
 			case 'all':
 				props = {

@@ -29,6 +29,11 @@
 	-st-default: Badge;
 }
 
+:import {
+	-st-from: '../ScheduleFavoriteButton/ScheduleFavoriteButton.st.css';
+	-st-default: FavoriteButton;
+}
+
 /* stylelint-disable-next-line */
 @st-global-custom-property --colorBorder;
 
@@ -54,11 +59,10 @@
 .main {
 	display: flex;
 	align-items: center;
-	padding: 10px 0 10px 20px;
+	padding: 1.6em 0 1.6em 2em;
 }
 
 .primary {
-	padding-bottom: 10px;
 	width: 100%;
 }
 
@@ -126,6 +130,10 @@
 	background-color: value(colorPink5);
 }
 
+.root:not(:now) .FavoriteButton {
+	--colorBorder: value(colorBlack);
+}
+
 .group {
 	display: flex;
 	align-items: baseline;
@@ -168,7 +176,6 @@
 }
 
 .root:past .time,
-.root:past .time span,
 .root:past .location,
 .root:past .title,
 .root:past .speaker,
@@ -184,9 +191,8 @@
 }
 
 .secondary {
-	padding: 1.6em 2.5em;
-	width: 16em;
-	text-align: right;
+	padding: 1.6em 0;
+	text-align: center;
 }
 
 .favorite {

@@ -35,15 +35,15 @@ export enum ColorVariant {
 export type Variant = 'fill'|'outline';
 
 export type Color = 'blue'
-	|'darkblue'
-	|'aqua'
-	|'pink'
-	|'darkpink'
-	|'red'
-	|'purple'
-	|'green'
-	|'yellow'
-	|'orange';
+	| 'darkblue'
+	| 'aqua'
+	| 'pink'
+	| 'darkpink'
+	| 'red'
+	| 'purple'
+	| 'green'
+	| 'yellow'
+	| 'orange';
 
 export interface IProps extends IFlexisBadgeProps {
 	variant?: Variant;
