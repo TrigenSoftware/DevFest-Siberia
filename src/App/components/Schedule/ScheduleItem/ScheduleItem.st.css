@@ -7,6 +7,7 @@
 :import {
 	-st-from: '../../variables.st.css';
 	-st-named:
+		sizeScreenSmMax,
 		fontFamilyMono,
 		colorWhite,
 		colorBlack,
@@ -18,7 +19,8 @@
 		colorPink4,
 		colorPink5,
 		colorGray1,
-		colorGray3,
+		colorGray4,
+		colorGray5,
 		colorPurple,
 		colorGreen1,
 		colorYellow;
@@ -76,7 +78,7 @@
 
 .root:past,
 .root:past .controls {
-	background-color: value(colorGray3);
+	background-color: value(colorGray5);
 }
 
 .root:now .Badge {
@@ -148,10 +150,25 @@
 	display: flex;
 	align-items: baseline;
 	margin-bottom: 13px;
+	max-width: 70em;
 }
 
-.info {
-	margin-left: 3.2em;
+.list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: start;
+	margin: 0 0 0 3.2em;
+	padding: 0;
+	list-style: none;
+}
+
+.item {
+	margin: 0 1.7em 1.2em 0;
+	padding-right: 1.7em;
+}
+
+.item:not(:last-child) {
+	border-right: 1px dashed value(colorGray4);
 }
 
 .startAt {
@@ -201,6 +218,17 @@
 }
 
 .time {
-	padding: 1.6em 0;
+	padding: 1.6em 1em;
 	text-align: center;
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.list {
+		flex-direction: column;
+	}
+
+	.item:not(:last-child) {
+		border: none;
+	}
 }

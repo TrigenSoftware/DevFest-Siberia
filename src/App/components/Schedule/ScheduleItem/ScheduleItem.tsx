@@ -31,17 +31,23 @@ export enum VariantScheduleItemStatus {
 
 export type ScheduleItemStatus = 'past' | 'now' | 'next';
 
+interface ISpeaker {
+	name: string;
+	description: string;
+}
+
 interface ISelfProps {
 	time: ReactNode;
 	location: ReactNode;
 	title: ReactNode;
 	status: ScheduleItemStatus;
-	speaker?: ReactNode;
+	speakers?: ISpeaker[];
 	description?: ReactNode;
 	statusLabel?: ReactNode;
 	talkTypeBadge?: string;
 	talkLevelBadge?: string;
 	favorite?: boolean;
+	value?: string;
 	onFavoriteClick?(isFavorite: boolean, event: MouseEvent<HTMLButtonElement>);
 }
 
@@ -77,6 +83,7 @@ export class ScheduleItem extends Component<IProps> {
 		talkTypeBadge:   PropTypes.string,
 		talkLevelBadge:  PropTypes.string,
 		favorite:        PropTypes.bool,
+		value:           PropTypes.string,
 		onFavoriteClick: PropTypes.func
 	};
 
@@ -88,12 +95,12 @@ export class ScheduleItem extends Component<IProps> {
 			time,
 			location,
 			status,
-			speaker,
-			description,
+			speakers,
 			statusLabel,
 			talkTypeBadge,
 			talkLevelBadge,
 			favorite,
+			value,
 			...props
 		} = this.props;
 		const color = talkTypeBadge && talkTypeColors[talkTypeBadge.toLowerCase()];
@@ -131,20 +138,27 @@ export class ScheduleItem extends Component<IProps> {
 						>
 							{location}
 						</div>
-						<div
-							className={classes.info}
+						<ul
+							className={classes.list}
 						>
-							<div
-								className={classes.speaker}
-							>
-								{speaker}
-							</div>
-							<div
-								className={classes.about}
-							>
-								{description}
-							</div>
-						</div>
+							{speakers && speakers.map((speaker, index) => (
+								<li
+									key={index}
+									className={classes.item}
+								>
+									<div
+										className={classes.speaker}
+									>
+										{speaker.name}
+									</div>
+									<div
+										className={classes.about}
+									>
+										{speaker.description}
+									</div>
+								</li>
+							))}
+						</ul>
 					</div>
 					{this.renderBadge(talkTypeBadge)}
 					{this.renderBadge(talkLevelBadge)}
@@ -156,6 +170,7 @@ export class ScheduleItem extends Component<IProps> {
 						<ScheduleFavoriteButton
 							onClick={this.onFavoriteClick}
 							active={favorite}
+							value={value}
 						/>
 					)}
 				</td>

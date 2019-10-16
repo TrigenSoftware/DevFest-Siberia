@@ -41,7 +41,16 @@ storiesOf('Components|Schedule', module)
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Past}
-					speaker='Иван Петров'
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
 					description='Старший инженер компании "Копыта", Павловск'
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Mobile'
@@ -54,7 +63,16 @@ storiesOf('Components|Schedule', module)
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
-					speaker='Иван Петров'
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
 					description='Старший инженер компании "Копыта", Павловск'
 					statusLabel='Идет сейчас'
 					talkTypeBadge='All'
@@ -67,7 +85,16 @@ storiesOf('Components|Schedule', module)
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
-					speaker='Иван Петров'
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
 					description='Старший инженер компании "Копыта", Павловск'
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Mobile'
@@ -80,7 +107,16 @@ storiesOf('Components|Schedule', module)
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
-					speaker='Иван Петров'
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
 					description='Старший инженер компании "Копыта", Павловск'
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Data Science'
@@ -93,7 +129,16 @@ storiesOf('Components|Schedule', module)
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
-					speaker='Иван Петров'
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
 					description='Старший инженер компании "Копыта", Павловск'
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Frontend'
@@ -106,7 +151,16 @@ storiesOf('Components|Schedule', module)
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
-					speaker='Иван Петров'
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
 					description='Старший инженер компании "Копыта", Павловск'
 					statusLabel='Идет сейчас'
 					talkTypeBadge='DevOps'
@@ -119,7 +173,16 @@ storiesOf('Components|Schedule', module)
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
-					speaker='Иван Петров'
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
 					description='Старший инженер компании "Копыта", Павловск'
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Security'
@@ -132,7 +195,28 @@ storiesOf('Components|Schedule', module)
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
-					speaker='Иван Петров'
+					speakers={[
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						},
+						{
+							name:        'Jhon',
+							description: 'Инженер'
+						},
+						{
+							name:        'Doe',
+							description: 'Инженер'
+						},
+						{
+							name:        'Jane',
+							description: 'Инженер'
+						},
+						{
+							name:        'Max',
+							description: 'Инженер'
+						}
+					]}
 					description='Старший инженер компании "Копыта", Павловск'
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Backend'
@@ -145,7 +229,16 @@ storiesOf('Components|Schedule', module)
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
-					speaker='Иван Петров'
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
 					description='Старший инженер компании "Копыта", Павловск'
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Hype'
@@ -158,7 +251,16 @@ storiesOf('Components|Schedule', module)
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
-					speaker='Иван Петров'
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
 					description='Старший инженер компании "Копыта", Павловск'
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Web'
@@ -171,7 +273,16 @@ storiesOf('Components|Schedule', module)
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
-					speaker='Иван Петров'
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						}
+					]}
 					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='All'
 					talkLevelBadge='Senior'
@@ -183,7 +294,16 @@ storiesOf('Components|Schedule', module)
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
-					speaker='Иван Петров'
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
 					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='Mobile'
 					talkLevelBadge='Middle'
@@ -195,7 +315,16 @@ storiesOf('Components|Schedule', module)
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
-					speaker='Иван Петров'
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
 					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='Data Science'
 					talkLevelBadge='Middle'
@@ -207,7 +336,16 @@ storiesOf('Components|Schedule', module)
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
-					speaker='Иван Петров'
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
 					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='Frontend'
 					talkLevelBadge='Middle'
@@ -219,7 +357,16 @@ storiesOf('Components|Schedule', module)
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
-					speaker='Иван Петров'
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
 					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='DevOps'
 					talkLevelBadge='Middle'
@@ -231,7 +378,16 @@ storiesOf('Components|Schedule', module)
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
-					speaker='Иван Петров'
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
 					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='Security'
 					talkLevelBadge='Junior'
@@ -243,7 +399,16 @@ storiesOf('Components|Schedule', module)
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
-					speaker='Иван Петров'
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
 					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='Backend'
 					talkLevelBadge='Senior'
@@ -255,7 +420,16 @@ storiesOf('Components|Schedule', module)
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
-					speaker='Иван Петров'
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
 					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='Hype'
 					talkLevelBadge='Senior'
@@ -267,7 +441,16 @@ storiesOf('Components|Schedule', module)
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
-					speaker='Иван Петров'
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
 					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='Web'
 					talkLevelBadge='Senior'
