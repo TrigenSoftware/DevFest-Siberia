@@ -107,60 +107,56 @@ export class ScheduleItem extends Component<IProps> {
 				}, className)}
 			>
 				<td
-					className={classes.secondary}
+					className={classes.time}
 				>
 					<div
-						className={classes.time}
+						className={classes.startAt}
 					>
 						{time}
 					</div>
 				</td>
 				<td
-					className={classes.main}
+					className={classes.description}
 				>
-					<section
-						className={classes.primary}
+					<h4
+						className={classes.title}
 					>
-						<h4
-							className={classes.title}
-						>
-							{title}
-						</h4>
+						{title}
+					</h4>
+					<div
+						className={classes.group}
+					>
 						<div
-							className={classes.group}
+							className={classes.location}
+						>
+							{location}
+						</div>
+						<div
+							className={classes.info}
 						>
 							<div
-								className={classes.location}
+								className={classes.speaker}
 							>
-								{location}
+								{speaker}
 							</div>
 							<div
-								className={classes.info}
+								className={classes.position}
 							>
-								<div
-									className={classes.speaker}
-								>
-									{speaker}
-								</div>
-								<div
-									className={classes.description}
-								>
-									{description}
-								</div>
+								{description}
 							</div>
 						</div>
-						{this.renderBadge(talkTypeBadge)}
-						{this.renderBadge(talkLevelBadge)}
-					</section>
+					</div>
+					{this.renderBadge(talkTypeBadge)}
+					{this.renderBadge(talkLevelBadge)}
+				</td>
+				<td
+					className={classes.controls}
+				>
 					{status !== VariantScheduleItemStatus.Past && (
-						<section
-							className={classes.favorite}
-						>
-							<ScheduleFavoriteButton
-								onClick={this.onFavoriteClick}
-								active={favorite}
-							/>
-						</section>
+						<ScheduleFavoriteButton
+							onClick={this.onFavoriteClick}
+							active={favorite}
+						/>
 					)}
 				</td>
 			</tr>

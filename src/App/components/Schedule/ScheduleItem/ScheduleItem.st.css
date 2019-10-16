@@ -56,30 +56,31 @@
 	font-size: 1rem;
 }
 
-.main {
-	display: flex;
-	align-items: center;
+.description {
 	padding: 1.6em 0 1.6em 2em;
 }
 
-.primary {
-	width: 100%;
-}
-
-.primary .Badge:not(:last-child) {
+.description .Badge:not(:last-child) {
 	margin-right: 1.6em;
 }
 
-.root:not(:first-child) .main {
+.controls {
+	vertical-align: middle;
+	text-align: center;
+}
+
+.root:not(:first-child) .description,
+.root:not(:first-child) .controls {
 	border-top: 1px dashed value(colorBlue8);
+}
+
+.root:past,
+.root:past .controls {
+	background-color: value(colorGray3);
 }
 
 .root:now .Badge {
 	background-color: value(colorWhite);
-}
-
-.root:past {
-	background-color: value(colorGray3);
 }
 
 .root:past .Badge:fill {
@@ -94,39 +95,48 @@
 	color: value(colorWhite);
 }
 
-.root:now:darkblue .main {
+.root:now:darkblue .description,
+.root:now:darkblue .controls {
 	background-color: value(colorBlue13);
 }
 
-.root:now:pink .main {
+.root:now:pink .description,
+.root:now:pink .controls {
 	background-color: value(colorPink4);
 }
 
-.root:now:orange .main {
+.root:now:orange .description,
+.root:now:orange .controls {
 	background-color: value(colorOrange);
 }
 
-.root:now:purple .main {
+.root:now:purple .description,
+.root:now:purple .controls {
 	background-color: value(colorPurple);
 }
 
-.root:now:aqua .main {
+.root:now:aqua .description,
+.root:now:aqua .controls {
 	background-color: value(colorBlue11);
 }
 
-.root:now:yellow .main {
+.root:now:yellow .description,
+.root:now:yellow .controls {
 	background-color: value(colorYellow);
 }
 
-.root:now:blue .main {
+.root:now:blue .description,
+.root:now:blue .controls {
 	background-color: value(colorBlue10);
 }
 
-.root:now:green .main {
+.root:now:green .description,
+.root:now:green .controls {
 	background-color: value(colorGreen1);
 }
 
-.root:now:darkpink .main {
+.root:now:darkpink .description,
+.root:now:darkpink .controls {
 	background-color: value(colorPink5);
 }
 
@@ -144,7 +154,7 @@
 	margin-left: 3.2em;
 }
 
-.time {
+.startAt {
 	margin-bottom: rel(14, 24);
 	font-family: value(fontFamilyMono);
 	font-size: 2.4em;
@@ -170,31 +180,27 @@
 	font-weight: bold;
 }
 
-.description {
+.position {
 	color: value(colorGray1);
 	font-size: 1.6em;
 }
 
-.root:past .time,
+.root:past .startAt,
 .root:past .location,
 .root:past .title,
 .root:past .speaker,
-.root:past .description {
+.root:past .position {
 	color: value(colorBlue8);
 }
 
 .root:now .title,
 .root:now .location,
 .root:now .speaker,
-.root:now .description {
+.root:now .position {
 	color: value(colorWhite);
 }
 
-.secondary {
+.time {
 	padding: 1.6em 0;
 	text-align: center;
-}
-
-.favorite {
-	padding: 0 2.7em;
 }
