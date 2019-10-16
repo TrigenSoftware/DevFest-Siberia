@@ -140,7 +140,7 @@ export class ScheduleItem extends Component<IProps> {
 								{speaker}
 							</div>
 							<div
-								className={classes.position}
+								className={classes.about}
 							>
 								{description}
 							</div>
