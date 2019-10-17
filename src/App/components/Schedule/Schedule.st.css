@@ -20,11 +20,11 @@
 	overflow: hidden;
 }
 
-.date {
+.separator {
 	background-color: value(colorGray5);
 }
 
-.date td {
+.separator td {
 	padding: rel(20, 22) rel(34, 22);
 	color: value(colorBlue14);
 	font-family: value(fontFamilyMono);

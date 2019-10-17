@@ -7,9 +7,9 @@ import {
 	classes
 } from './Schedule.st.css';
 
-export type IScheduleDateProps = HTMLAttributes<HTMLTableRowElement>;
+export type IScheduleSeparatorProps = HTMLAttributes<HTMLTableRowElement>;
 
-export class ScheduleDate extends Component<IScheduleDateProps> {
+export class ScheduleSeparator extends Component<IScheduleSeparatorProps> {
 
 	render() {
 
@@ -21,7 +21,7 @@ export class ScheduleDate extends Component<IScheduleDateProps> {
 		return (
 			<tr
 				{...props}
-				className={classes.date}
+				className={classes.separator}
 			>
 				<td
 					colSpan={3}

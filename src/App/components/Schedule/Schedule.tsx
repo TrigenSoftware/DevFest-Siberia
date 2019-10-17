@@ -8,7 +8,7 @@ import {
 } from './Schedule.st.css';
 
 export * from './ScheduleItem';
-export * from './ScheduleDate';
+export * from './ScheduleSeparator';
 
 export type IProps = TableHTMLAttributes<HTMLTableElement>;
 

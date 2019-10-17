@@ -7,7 +7,7 @@ import {
 } from '@storybook/addon-actions';
 import Schedule, {
 	ScheduleItem,
-	ScheduleDate,
+	ScheduleSeparator,
 	VariantScheduleItemStatus
 } from './';
 
@@ -82,9 +82,9 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 					favorite
 				/>
-				<ScheduleDate>
+				<ScheduleSeparator>
 					30 ноября
-				</ScheduleDate>
+				</ScheduleSeparator>
 				<ScheduleItem
 					time='9:30 PM'
 					lang='RU'
