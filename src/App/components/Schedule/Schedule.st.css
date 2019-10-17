@@ -4,29 +4,9 @@
 	-st-default: rel;
 }
 
-:import {
-	-st-from: '../variables.st.css';
-	-st-named:
-		fontFamilyMono,
-		colorBlack,
-		colorBlue14,
-		colorGray5;
-}
-
 .root {
 	box-shadow: 0 0 19px 0 rgba(0, 0, 0, .16);
 	border-radius: 10px;
 	width: 100%;
 	overflow: hidden;
-}
-
-.separator {
-	background-color: value(colorGray5);
-}
-
-.separator td {
-	padding: rel(20, 22) rel(34, 22);
-	color: value(colorBlue14);
-	font-family: value(fontFamilyMono);
-	font-size: rel(22, 24);
 }

@@ -4,8 +4,9 @@ import React, {
 	Component
 } from 'react';
 import {
+	style,
 	classes
-} from './Schedule.st.css';
+} from './ScheduleSeparator.st.css';
 
 export type IScheduleSeparatorProps = HTMLAttributes<HTMLTableRowElement>;
 
@@ -14,6 +15,7 @@ export class ScheduleSeparator extends Component<IScheduleSeparatorProps> {
 	render() {
 
 		const {
+			className,
 			children,
 			...props
 		} = this.props;
@@ -21,7 +23,7 @@ export class ScheduleSeparator extends Component<IScheduleSeparatorProps> {
 		return (
 			<tr
 				{...props}
-				className={classes.separator}
+				className={style(classes.root, className)}
 			>
 				<td
 					colSpan={3}

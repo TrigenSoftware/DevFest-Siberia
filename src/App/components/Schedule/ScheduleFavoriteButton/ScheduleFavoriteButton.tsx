@@ -10,11 +10,11 @@ import {
 } from './ScheduleFavoriteButton.st.css';
 import StarIcon from '~/icons/star.svg';
 
-interface IProps extends IButtonProps {
+interface IScheduleFavoriteButtonProps extends IButtonProps {
 	active: boolean;
 }
 
-export class ScheduleFavoriteButton extends Component<IProps> {
+export class ScheduleFavoriteButton extends Component<IScheduleFavoriteButtonProps> {
 
 	render() {
 

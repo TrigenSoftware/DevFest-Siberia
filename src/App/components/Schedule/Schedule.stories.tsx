@@ -82,9 +82,6 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 					favorite
 				/>
-				<ScheduleSeparator>
-					30 ноября
-				</ScheduleSeparator>
 				<ScheduleItem
 					time='9:30 PM'
 					lang='RU'
@@ -428,6 +425,79 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 					favorite={false}
 				/>
+				<ScheduleItem
+					time='9:30 PM'
+					location={<span>Комната 231,<br/>2 этаж</span>}
+					title='Кодить сегодня или нет'
+					status={VariantScheduleItemStatus.Next}
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
+					talkTypeBadge='Web'
+					talkLevelBadge='Senior'
+					onFavoriteClick={action('click')}
+					favorite={false}
+				/>
+			</Schedule>
+		)
+	)
+	.add(
+		'with separator',
+		() => (
+			<Schedule>
+				<ScheduleSeparator>
+					30 ноября
+				</ScheduleSeparator>
+				<ScheduleItem
+					time='9:30 PM'
+					location={<span>Комната 231,<br/>2 этаж</span>}
+					title='Кодить сегодня или нет'
+					status={VariantScheduleItemStatus.Next}
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
+					talkTypeBadge='Web'
+					talkLevelBadge='Senior'
+					onFavoriteClick={action('click')}
+					favorite={false}
+				/>
+				<ScheduleItem
+					time='9:30 PM'
+					location={<span>Комната 231,<br/>2 этаж</span>}
+					title='Кодить сегодня или нет'
+					status={VariantScheduleItemStatus.Next}
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
+					talkTypeBadge='Web'
+					talkLevelBadge='Senior'
+					onFavoriteClick={action('click')}
+					favorite={false}
+				/>
+				<ScheduleSeparator>
+					1 декабря
+				</ScheduleSeparator>
 				<ScheduleItem
 					time='9:30 PM'
 					location={<span>Комната 231,<br/>2 этаж</span>}

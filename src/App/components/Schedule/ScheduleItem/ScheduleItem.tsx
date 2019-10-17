@@ -51,7 +51,7 @@ interface ISelfProps {
 	onFavoriteClick?(isFavorite: boolean, event: MouseEvent<HTMLButtonElement>);
 }
 
-export type IProps = CombinePropsAndAttributes<
+export type IScheduleItemProps = CombinePropsAndAttributes<
 	ISelfProps,
 	HTMLAttributes<HTMLElement>
 >;
@@ -70,7 +70,7 @@ const talkTypeColors: Record<string, Color> = {
 	'web':          'darkpink'
 };
 
-export class ScheduleItem extends Component<IProps> {
+export class ScheduleItem extends Component<IScheduleItemProps> {
 
 	static propTypes = {
 		time:            PropTypes.node.isRequired,

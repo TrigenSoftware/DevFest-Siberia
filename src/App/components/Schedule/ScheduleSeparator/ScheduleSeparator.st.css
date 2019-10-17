@@ -1,0 +1,37 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../../variables.st.css';
+	-st-named:
+		fontFamilyMono,
+		colorBlue14,
+		colorGray5;
+}
+
+:import {
+	-st-from: '../ScheduleItem/ScheduleItem.st.css';
+	-st-default: Row;
+	-st-named:
+		description,
+		controls;
+}
+
+.root {
+	background-color: value(colorGray5);
+}
+
+.root td {
+	padding: rel(20, 22) rel(34, 22);
+	color: value(colorBlue14);
+	font-family: value(fontFamilyMono);
+	font-size: rel(22, 24);
+}
+
+.root + .Row .description,
+.root + .Row .controls {
+	border: none;
+}
