@@ -38,11 +38,11 @@ interface ISpeaker {
 
 interface ISelfProps {
 	time: ReactNode;
+	lang?: string;
 	location: ReactNode;
 	title: ReactNode;
 	status: ScheduleItemStatus;
 	speakers?: ISpeaker[];
-	description?: ReactNode;
 	statusLabel?: ReactNode;
 	talkTypeBadge?: string;
 	talkLevelBadge?: string;
@@ -74,11 +74,11 @@ export class ScheduleItem extends Component<IProps> {
 
 	static propTypes = {
 		time:            PropTypes.node.isRequired,
+		lang:            PropTypes.string,
 		location:        PropTypes.node.isRequired,
 		title:           PropTypes.node.isRequired,
 		status:          PropTypes.oneOf(ScheduleItemStatusValues),
-		speaker:         PropTypes.node,
-		description:     PropTypes.node,
+		speakers:        PropTypes.any,
 		statusLabel:     PropTypes.node,
 		talkTypeBadge:   PropTypes.string,
 		talkLevelBadge:  PropTypes.string,
@@ -91,9 +91,10 @@ export class ScheduleItem extends Component<IProps> {
 
 		const {
 			className,
-			title,
 			time,
+			lang,
 			location,
+			title,
 			status,
 			speakers,
 			statusLabel,
@@ -133,10 +134,17 @@ export class ScheduleItem extends Component<IProps> {
 					<div
 						className={classes.group}
 					>
-						<div
-							className={classes.location}
-						>
-							{location}
+						<div>
+							<div
+								className={classes.lang}
+							>
+								{lang}
+							</div>
+							<div
+								className={classes.location}
+							>
+								{location}
+							</div>
 						</div>
 						<ul
 							className={classes.list}

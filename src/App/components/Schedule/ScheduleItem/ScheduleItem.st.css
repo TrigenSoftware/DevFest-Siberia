@@ -21,6 +21,7 @@
 		colorGray1,
 		colorGray4,
 		colorGray5,
+		colorGray6,
 		colorPurple,
 		colorGreen1,
 		colorYellow;
@@ -202,7 +203,16 @@
 	font-size: 1.6em;
 }
 
+.lang {
+	text-transform: uppercase;
+	color: value(colorGray6);
+	font-family: value(fontFamilyMono);
+	font-size: 1.6em;
+	font-weight: bold;
+}
+
 .root:past .startAt,
+.root:past .lang,
 .root:past .location,
 .root:past .title,
 .root:past .speaker,
@@ -210,6 +220,7 @@
 	color: value(colorBlue8);
 }
 
+.root:now .lang,
 .root:now .title,
 .root:now .location,
 .root:now .speaker,

@@ -1,7 +1,16 @@
 
 :import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
 	-st-from: '../variables.st.css';
-	-st-named: colorBlack;
+	-st-named:
+		fontFamilyMono,
+		colorBlack,
+		colorBlue14,
+		colorGray5;
 }
 
 .root {
@@ -9,4 +18,15 @@
 	border-radius: 10px;
 	width: 100%;
 	overflow: hidden;
+}
+
+.date {
+	background-color: value(colorGray5);
+}
+
+.date td {
+	padding: rel(20, 22) rel(34, 22);
+	color: value(colorBlue14);
+	font-family: value(fontFamilyMono);
+	font-size: rel(22, 24);
 }

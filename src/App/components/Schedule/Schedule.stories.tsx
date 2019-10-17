@@ -7,6 +7,7 @@ import {
 } from '@storybook/addon-actions';
 import Schedule, {
 	ScheduleItem,
+	ScheduleDate,
 	VariantScheduleItemStatus
 } from './';
 
@@ -26,6 +27,7 @@ storiesOf('Components|Schedule', module)
 			<Schedule>
 				<ScheduleItem
 					time='9:30 AM'
+					lang='RU'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Открытие'
 					status={VariantScheduleItemStatus.Past}
@@ -38,6 +40,7 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					time='9:30 PM'
+					lang='RU'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Past}
@@ -51,7 +54,6 @@ storiesOf('Components|Schedule', module)
 							description: 'Инженер'
 						}
 					]}
-					description='Старший инженер компании "Копыта", Павловск'
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Mobile'
 					talkLevelBadge='Middle'
@@ -60,6 +62,7 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					time='9:30 PM'
+					lang='RU'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
@@ -73,15 +76,18 @@ storiesOf('Components|Schedule', module)
 							description: 'Инженер'
 						}
 					]}
-					description='Старший инженер компании "Копыта", Павловск'
 					statusLabel='Идет сейчас'
 					talkTypeBadge='All'
 					talkLevelBadge='Middle'
 					onFavoriteClick={action('click')}
 					favorite
 				/>
+				<ScheduleDate>
+					30 ноября
+				</ScheduleDate>
 				<ScheduleItem
 					time='9:30 PM'
+					lang='RU'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
@@ -95,7 +101,6 @@ storiesOf('Components|Schedule', module)
 							description: 'Инженер'
 						}
 					]}
-					description='Старший инженер компании "Копыта", Павловск'
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Mobile'
 					talkLevelBadge='Middle'
@@ -117,7 +122,6 @@ storiesOf('Components|Schedule', module)
 							description: 'Инженер'
 						}
 					]}
-					description='Старший инженер компании "Копыта", Павловск'
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Data Science'
 					talkLevelBadge='Middle'
@@ -139,7 +143,6 @@ storiesOf('Components|Schedule', module)
 							description: 'Инженер'
 						}
 					]}
-					description='Старший инженер компании "Копыта", Павловск'
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Frontend'
 					talkLevelBadge='Middle'
@@ -161,7 +164,6 @@ storiesOf('Components|Schedule', module)
 							description: 'Инженер'
 						}
 					]}
-					description='Старший инженер компании "Копыта", Павловск'
 					statusLabel='Идет сейчас'
 					talkTypeBadge='DevOps'
 					talkLevelBadge='Middle'
@@ -183,7 +185,6 @@ storiesOf('Components|Schedule', module)
 							description: 'Инженер'
 						}
 					]}
-					description='Старший инженер компании "Копыта", Павловск'
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Security'
 					talkLevelBadge='Middle'
@@ -201,23 +202,22 @@ storiesOf('Components|Schedule', module)
 							description: 'Инженер'
 						},
 						{
-							name:        'Jhon',
+							name:        'Jhon Doe',
 							description: 'Инженер'
 						},
 						{
-							name:        'Doe',
+							name:        'Doe Jhon',
 							description: 'Инженер'
 						},
 						{
-							name:        'Jane',
+							name:        'Jane Doe',
 							description: 'Инженер'
 						},
 						{
-							name:        'Max',
+							name:        'Max Doe',
 							description: 'Инженер'
 						}
 					]}
-					description='Старший инженер компании "Копыта", Павловск'
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Backend'
 					talkLevelBadge='Middle'
@@ -239,7 +239,6 @@ storiesOf('Components|Schedule', module)
 							description: 'Инженер'
 						}
 					]}
-					description='Старший инженер компании "Копыта", Павловск'
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Hype'
 					talkLevelBadge='Middle'
@@ -261,7 +260,6 @@ storiesOf('Components|Schedule', module)
 							description: 'Инженер'
 						}
 					]}
-					description='Старший инженер компании "Копыта", Павловск'
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Web'
 					talkLevelBadge='Middle'
@@ -270,6 +268,7 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					time='9:30 PM'
+					lang='RU'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -283,7 +282,6 @@ storiesOf('Components|Schedule', module)
 							description: 'Инженер'
 						}
 					]}
-					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='All'
 					talkLevelBadge='Senior'
 					onFavoriteClick={action('click')}
@@ -291,6 +289,7 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					time='9:30 PM'
+					lang='RU'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -304,7 +303,6 @@ storiesOf('Components|Schedule', module)
 							description: 'Инженер'
 						}
 					]}
-					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='Mobile'
 					talkLevelBadge='Middle'
 					onFavoriteClick={action('click')}
@@ -325,7 +323,6 @@ storiesOf('Components|Schedule', module)
 							description: 'Инженер'
 						}
 					]}
-					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='Data Science'
 					talkLevelBadge='Middle'
 					onFavoriteClick={action('click')}
@@ -346,7 +343,6 @@ storiesOf('Components|Schedule', module)
 							description: 'Инженер'
 						}
 					]}
-					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='Frontend'
 					talkLevelBadge='Middle'
 					onFavoriteClick={action('click')}
@@ -367,7 +363,6 @@ storiesOf('Components|Schedule', module)
 							description: 'Инженер'
 						}
 					]}
-					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='DevOps'
 					talkLevelBadge='Middle'
 					onFavoriteClick={action('click')}
@@ -388,7 +383,6 @@ storiesOf('Components|Schedule', module)
 							description: 'Инженер'
 						}
 					]}
-					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='Security'
 					talkLevelBadge='Junior'
 					onFavoriteClick={action('click')}
@@ -409,7 +403,6 @@ storiesOf('Components|Schedule', module)
 							description: 'Инженер'
 						}
 					]}
-					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='Backend'
 					talkLevelBadge='Senior'
 					onFavoriteClick={action('click')}
@@ -430,7 +423,6 @@ storiesOf('Components|Schedule', module)
 							description: 'Инженер'
 						}
 					]}
-					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='Hype'
 					talkLevelBadge='Senior'
 					onFavoriteClick={action('click')}
@@ -451,7 +443,6 @@ storiesOf('Components|Schedule', module)
 							description: 'Инженер'
 						}
 					]}
-					description='Старший инженер компании "Копыта", Павловск'
 					talkTypeBadge='Web'
 					talkLevelBadge='Senior'
 					onFavoriteClick={action('click')}
