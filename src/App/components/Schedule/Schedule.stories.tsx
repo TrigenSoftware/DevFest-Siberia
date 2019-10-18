@@ -57,8 +57,9 @@ storiesOf('Components|Schedule', module)
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Mobile'
 					talkLevelBadge='Middle'
-					onFavoriteClick={action('click')}
 					favorite
+					favoriteLabel='Favorite'
+					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -79,8 +80,9 @@ storiesOf('Components|Schedule', module)
 					statusLabel='Идет сейчас'
 					talkTypeBadge='All'
 					talkLevelBadge='Middle'
-					onFavoriteClick={action('click')}
 					favorite
+					favoriteLabel='Favorite'
+					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -101,8 +103,9 @@ storiesOf('Components|Schedule', module)
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Mobile'
 					talkLevelBadge='Middle'
-					onFavoriteClick={action('click')}
 					favorite
+					favoriteLabel='Favorite'
+					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -122,8 +125,9 @@ storiesOf('Components|Schedule', module)
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Data Science'
 					talkLevelBadge='Middle'
-					onFavoriteClick={action('click')}
 					favorite={false}
+					favoriteLabel='Favorite'
+					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -143,8 +147,9 @@ storiesOf('Components|Schedule', module)
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Frontend'
 					talkLevelBadge='Middle'
+					favorite={false}
+					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
-					favorite
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -164,8 +169,9 @@ storiesOf('Components|Schedule', module)
 					statusLabel='Идет сейчас'
 					talkTypeBadge='DevOps'
 					talkLevelBadge='Middle'
-					onFavoriteClick={action('click')}
 					favorite
+					favoriteLabel='Favorite'
+					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -185,8 +191,9 @@ storiesOf('Components|Schedule', module)
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Security'
 					talkLevelBadge='Middle'
-					onFavoriteClick={action('click')}
 					favorite
+					favoriteLabel='Favorite'
+					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -218,8 +225,9 @@ storiesOf('Components|Schedule', module)
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Backend'
 					talkLevelBadge='Middle'
-					onFavoriteClick={action('click')}
 					favorite
+					favoriteLabel='Favorite'
+					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -239,8 +247,9 @@ storiesOf('Components|Schedule', module)
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Hype'
 					talkLevelBadge='Middle'
-					onFavoriteClick={action('click')}
 					favorite
+					favoriteLabel='Favorite'
+					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -260,8 +269,9 @@ storiesOf('Components|Schedule', module)
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Web'
 					talkLevelBadge='Middle'
-					onFavoriteClick={action('click')}
 					favorite
+					favoriteLabel='Favorite'
+					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -281,8 +291,9 @@ storiesOf('Components|Schedule', module)
 					]}
 					talkTypeBadge='All'
 					talkLevelBadge='Senior'
-					onFavoriteClick={action('click')}
 					favorite
+					favoriteLabel='Favorite'
+					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -302,8 +313,9 @@ storiesOf('Components|Schedule', module)
 					]}
 					talkTypeBadge='Mobile'
 					talkLevelBadge='Middle'
-					onFavoriteClick={action('click')}
 					favorite={false}
+					favoriteLabel='Favorite'
+					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -322,8 +334,9 @@ storiesOf('Components|Schedule', module)
 					]}
 					talkTypeBadge='Data Science'
 					talkLevelBadge='Middle'
-					onFavoriteClick={action('click')}
 					favorite={false}
+					favoriteLabel='Favorite'
+					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -342,8 +355,9 @@ storiesOf('Components|Schedule', module)
 					]}
 					talkTypeBadge='Frontend'
 					talkLevelBadge='Middle'
-					onFavoriteClick={action('click')}
 					favorite={false}
+					favoriteLabel='Favorite'
+					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -362,8 +376,9 @@ storiesOf('Components|Schedule', module)
 					]}
 					talkTypeBadge='DevOps'
 					talkLevelBadge='Middle'
-					onFavoriteClick={action('click')}
 					favorite={false}
+					favoriteLabel='Favorite'
+					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -382,8 +397,9 @@ storiesOf('Components|Schedule', module)
 					]}
 					talkTypeBadge='Security'
 					talkLevelBadge='Junior'
-					onFavoriteClick={action('click')}
 					favorite={false}
+					favoriteLabel='Favorite'
+					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -402,8 +418,9 @@ storiesOf('Components|Schedule', module)
 					]}
 					talkTypeBadge='Backend'
 					talkLevelBadge='Senior'
-					onFavoriteClick={action('click')}
 					favorite={false}
+					favoriteLabel='Favorite'
+					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -422,8 +439,9 @@ storiesOf('Components|Schedule', module)
 					]}
 					talkTypeBadge='Hype'
 					talkLevelBadge='Senior'
-					onFavoriteClick={action('click')}
 					favorite={false}
+					favoriteLabel='Favorite'
+					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -442,8 +460,9 @@ storiesOf('Components|Schedule', module)
 					]}
 					talkTypeBadge='Web'
 					talkLevelBadge='Senior'
-					onFavoriteClick={action('click')}
 					favorite={false}
+					favoriteLabel='Favorite'
+					onFavoriteClick={action('click')}
 				/>
 			</Schedule>
 		)
@@ -472,8 +491,9 @@ storiesOf('Components|Schedule', module)
 					]}
 					talkTypeBadge='Web'
 					talkLevelBadge='Senior'
-					onFavoriteClick={action('click')}
 					favorite={false}
+					favoriteLabel='Favorite'
+					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -492,8 +512,9 @@ storiesOf('Components|Schedule', module)
 					]}
 					talkTypeBadge='Web'
 					talkLevelBadge='Senior'
-					onFavoriteClick={action('click')}
 					favorite={false}
+					favoriteLabel='Favorite'
+					onFavoriteClick={action('click')}
 				/>
 				<ScheduleSeparator>
 					1 декабря
@@ -515,8 +536,9 @@ storiesOf('Components|Schedule', module)
 					]}
 					talkTypeBadge='Web'
 					talkLevelBadge='Senior'
-					onFavoriteClick={action('click')}
 					favorite={false}
+					favoriteLabel='Favorite'
+					onFavoriteClick={action('click')}
 				/>
 			</Schedule>
 		)

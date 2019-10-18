@@ -7,8 +7,7 @@ import React, {
 import PropTypes from 'prop-types';
 import {
 	Bind,
-	CombinePropsAndAttributes,
-	omit
+	CombinePropsAndAttributes
 } from '@flexis/ui/helpers';
 import Badge, {
 	IProps as IBadgeProps,
@@ -48,6 +47,7 @@ interface ISelfProps {
 	talkLevelBadge?: string;
 	favorite?: boolean;
 	value?: string;
+	favoriteLabel?: string;
 	onFavoriteClick?(isFavorite: boolean, event: MouseEvent<HTMLButtonElement>);
 }
 
@@ -84,6 +84,7 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 		talkLevelBadge:  PropTypes.string,
 		favorite:        PropTypes.bool,
 		value:           PropTypes.string,
+		favoriteLabel:   PropTypes.string,
 		onFavoriteClick: PropTypes.func
 	};
 
@@ -102,13 +103,15 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 			talkLevelBadge,
 			favorite,
 			value,
+			favoriteLabel,
+			onFavoriteClick,
 			...props
 		} = this.props;
 		const color = talkTypeBadge && talkTypeColors[talkTypeBadge.toLowerCase()];
 
 		return (
 			<tr
-				{...omit(props, ['onFavoriteClick'])}
+				{...props}
 				className={style(classes.root, {
 					[status]: Boolean(status),
 					[color]:  Boolean(color)
@@ -174,9 +177,10 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 				<td
 					className={classes.controls}
 				>
-					{status !== VariantScheduleItemStatus.Past && (
+					{onFavoriteClick && (
 						<ScheduleFavoriteButton
 							onClick={this.onFavoriteClick}
+							title={favoriteLabel}
 							active={favorite}
 							value={value}
 						/>
@@ -194,7 +198,9 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 			favorite
 		} = this.props;
 
-		onFavoriteClick(favorite, event);
+		if (typeof onFavoriteClick === 'function') {
+			onFavoriteClick(favorite, event);
+		}
 	}
 
 	private renderBadge(type: string) {
