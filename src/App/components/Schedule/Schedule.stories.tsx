@@ -542,4 +542,76 @@ storiesOf('Components|Schedule', module)
 				/>
 			</Schedule>
 		)
+	)
+	.add(
+		'with workshops',
+		() => (
+			<Schedule>
+				<ScheduleItem
+					time='9:30 PM'
+					location={<span>Комната 231,<br/>2 этаж</span>}
+					title='Как делать пирамидку?'
+					status={VariantScheduleItemStatus.Next}
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
+					talkTypeBadge='Web'
+					talkLevelBadge='Senior'
+					workshop={false}
+					workshopAddLabel='Хочу пойти'
+					workshopDisabled={false}
+					onWorkshopAddClick={action('add')}
+				/>
+				<ScheduleItem
+					time='9:30 PM'
+					location={<span>Комната 231,<br/>2 этаж</span>}
+					title='Как делать пирамидку?'
+					status={VariantScheduleItemStatus.Next}
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
+					talkTypeBadge='Web'
+					talkLevelBadge='Senior'
+					workshop
+					workshopDisabled
+					workshopDisabledLabel='Мест больше нет :('
+				/>
+				<ScheduleItem
+					time='9:30 PM'
+					location={<span>Комната 231,<br/>2 этаж</span>}
+					title='Как делать пирамидку?'
+					status={VariantScheduleItemStatus.Next}
+					speakers={[
+						{
+							name:        'Иван',
+							description: 'Инженер'
+						},
+						{
+							name:        'Иван Петров',
+							description: 'Инженер'
+						}
+					]}
+					talkTypeBadge='Web'
+					talkLevelBadge='Senior'
+					workshop
+					workshopLabel='Я иду! : )'
+					workshopDeleteLabel='Не пойти'
+					onWorkshopDeleteClick={action('delete')}
+				/>
+			</Schedule>
+		)
 	);

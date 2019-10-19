@@ -14,6 +14,7 @@ import Badge, {
 	Variant,
 	Color
 } from '../../Badge';
+import Button from '../../Button';
 import {
 	ScheduleFavoriteButton
 } from '../ScheduleFavoriteButton';
@@ -48,7 +49,15 @@ interface ISelfProps {
 	favorite?: boolean;
 	value?: string;
 	favoriteLabel?: string;
+	workshop?: boolean;
+	workshopLabel?: string;
+	workshopAddLabel?: string;
+	workshopDeleteLabel?: string;
+	workshopDisabled?: boolean;
+	workshopDisabledLabel?: string;
 	onFavoriteClick?(isFavorite: boolean, event: MouseEvent<HTMLButtonElement>);
+	onWorkshopAddClick?(event: MouseEvent<HTMLButtonElement>);
+	onWorkshopDeleteClick?(event: MouseEvent<HTMLButtonElement>);
 }
 
 export type IScheduleItemProps = CombinePropsAndAttributes<
@@ -73,19 +82,27 @@ const talkTypeColors: Record<string, Color> = {
 export class ScheduleItem extends Component<IScheduleItemProps> {
 
 	static propTypes = {
-		time:            PropTypes.node.isRequired,
-		lang:            PropTypes.string,
-		location:        PropTypes.node.isRequired,
-		title:           PropTypes.node.isRequired,
-		status:          PropTypes.oneOf(ScheduleItemStatusValues),
-		speakers:        PropTypes.any,
-		statusLabel:     PropTypes.node,
-		talkTypeBadge:   PropTypes.string,
-		talkLevelBadge:  PropTypes.string,
-		favorite:        PropTypes.bool,
-		value:           PropTypes.string,
-		favoriteLabel:   PropTypes.string,
-		onFavoriteClick: PropTypes.func
+		time:                  PropTypes.node.isRequired,
+		lang:                  PropTypes.string,
+		location:              PropTypes.node.isRequired,
+		title:                 PropTypes.node.isRequired,
+		status:                PropTypes.oneOf(ScheduleItemStatusValues),
+		speakers:              PropTypes.any,
+		statusLabel:           PropTypes.node,
+		talkTypeBadge:         PropTypes.string,
+		talkLevelBadge:        PropTypes.string,
+		favorite:              PropTypes.bool,
+		value:                 PropTypes.string,
+		favoriteLabel:         PropTypes.string,
+		workshop:              PropTypes.bool,
+		workshopLabel:         PropTypes.string,
+		workshopAddLabel:      PropTypes.string,
+		workshopDeleteLabel:   PropTypes.string,
+		workshopDisabled:      PropTypes.bool,
+		workshopDisabledLabel: PropTypes.string,
+		onFavoriteClick:       PropTypes.func,
+		onWorkshopAddClick:    PropTypes.func,
+		onWorkshopDeleteClick: PropTypes.func
 	};
 
 	render() {
@@ -104,7 +121,15 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 			favorite,
 			value,
 			favoriteLabel,
+			workshop,
+			workshopLabel,
+			workshopAddLabel,
+			workshopDeleteLabel,
+			workshopDisabled,
+			workshopDisabledLabel,
 			onFavoriteClick,
+			onWorkshopAddClick,
+			onWorkshopDeleteClick,
 			...props
 		} = this.props;
 		const color = talkTypeBadge && talkTypeColors[talkTypeBadge.toLowerCase()];
@@ -185,6 +210,43 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 							value={value}
 						/>
 					)}
+					<div
+						className={classes.workshop}
+					>
+						{onWorkshopAddClick && !workshop && !workshopDisabled && (
+							<Button
+								className={classes.button}
+								onClick={this.onWorkshopAddClick}
+							>
+								{workshopAddLabel}
+							</Button>
+						)}
+						{workshopDisabled && (
+							<Button
+								className={classes.button}
+								disabled
+							>
+								{workshopDisabledLabel}
+							</Button>
+						)}
+						{onWorkshopDeleteClick && workshop && !workshopDisabled && (
+							<>
+								{workshopLabel && (
+									<div
+										className={classes.label}
+									>
+										{workshopLabel}
+									</div>
+								)}
+								<Button
+									className={classes.delete}
+									onClick={this.onWorkshopDeleteClick}
+								>
+									{workshopDeleteLabel}
+								</Button>
+							</>
+						)}
+					</div>
 				</td>
 			</tr>
 		);
@@ -200,6 +262,30 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 
 		if (typeof onFavoriteClick === 'function') {
 			onFavoriteClick(favorite, event);
+		}
+	}
+
+	@Bind()
+	private onWorkshopAddClick(event: MouseEvent<HTMLButtonElement>) {
+
+		const {
+			onWorkshopAddClick
+		} = this.props;
+
+		if (typeof onWorkshopAddClick === 'function') {
+			onWorkshopAddClick(event);
+		}
+	}
+
+	@Bind()
+	private onWorkshopDeleteClick(event: MouseEvent<HTMLButtonElement>) {
+
+		const {
+			onWorkshopDeleteClick
+		} = this.props;
+
+		if (typeof onWorkshopDeleteClick === 'function') {
+			onWorkshopDeleteClick(event);
 		}
 	}
 

@@ -16,6 +16,7 @@
 		colorBlue10,
 		colorBlue11,
 		colorBlue13,
+		colorPink0,
 		colorPink4,
 		colorPink5,
 		colorGray1,
@@ -68,6 +69,7 @@
 }
 
 .controls {
+	width: 26em;
 	vertical-align: middle;
 	text-align: center;
 }
@@ -232,6 +234,23 @@
 	padding: 1.6em 1em;
 	width: 16em;
 	text-align: center;
+}
+
+.label {
+	padding-bottom: rel(90, 20);
+	color: value(colorPink0);
+	font-family: value(fontFamilyMono);
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.delete {
+	background-color: transparent;
+	padding: 0;
+	text-decoration: underline;
+	color: value(colorGray1);
+	font-size: 2em;
+	font-weight: normal;
 }
 
 @media (max-width: value(sizeScreenSmMax)) {
