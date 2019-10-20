@@ -566,7 +566,6 @@ storiesOf('Components|Schedule', module)
 					talkLevelBadge='Senior'
 					workshop={false}
 					workshopAddLabel='Хочу пойти'
-					workshopDisabled={false}
 					onWorkshopAddClick={action('add')}
 				/>
 				<ScheduleItem

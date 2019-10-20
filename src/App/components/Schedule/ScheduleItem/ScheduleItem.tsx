@@ -223,7 +223,6 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 						)}
 						{workshopDisabled && (
 							<Button
-								className={classes.button}
 								disabled
 							>
 								{workshopDisabledLabel}
