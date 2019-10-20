@@ -12,6 +12,7 @@
 		colorWhite,
 		colorBlack,
 		colorOrange,
+		colorBlue2,
 		colorBlue8,
 		colorBlue10,
 		colorBlue11,
@@ -251,6 +252,13 @@
 	color: value(colorGray1);
 	font-size: 2em;
 	font-weight: normal;
+}
+
+.disabled {
+	color: value(colorBlue2);
+	font-family: value(fontFamilyMono);
+	font-size: 2em;
+	font-weight: bold;
 }
 
 @media (max-width: value(sizeScreenSmMax)) {

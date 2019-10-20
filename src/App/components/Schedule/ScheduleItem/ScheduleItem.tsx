@@ -222,21 +222,19 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 							</Button>
 						)}
 						{workshopDisabled && (
-							<Button
-								disabled
+							<div
+								className={classes.disabled}
 							>
 								{workshopDisabledLabel}
-							</Button>
+							</div>
 						)}
 						{onWorkshopDeleteClick && workshop && !workshopDisabled && (
 							<>
-								{workshopLabel && (
-									<div
-										className={classes.label}
-									>
-										{workshopLabel}
-									</div>
-								)}
+								<div
+									className={classes.label}
+								>
+									{workshopLabel}
+								</div>
 								<Button
 									className={classes.delete}
 									onClick={this.onWorkshopDeleteClick}
