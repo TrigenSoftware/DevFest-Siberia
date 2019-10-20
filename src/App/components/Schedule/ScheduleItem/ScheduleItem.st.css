@@ -62,7 +62,7 @@
 }
 
 .description {
-	padding: 1.6em 0 1.6em 2em;
+	padding: 16px 0 16px 20px;
 }
 
 .description .Badge:not(:last-child) {
@@ -263,11 +263,36 @@
 
 @media (max-width: value(sizeScreenSmMax)) {
 
+	.root .controls {
+		display: block;
+		border: none !important;
+		padding: 0 20px 16px;
+		width: 100%;
+		text-align: left;
+	}
+
 	.list {
 		flex-direction: column;
 	}
 
 	.item:not(:last-child) {
 		border: none;
+	}
+
+	.description {
+		display: block;
+	}
+
+	.workshop {
+		display: flex;
+		align-items: center;
+	}
+
+	.label {
+		padding: 0;
+	}
+
+	.delete {
+		margin-left: 10px;
 	}
 }
