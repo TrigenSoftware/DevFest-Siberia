@@ -210,40 +210,36 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 							value={value}
 						/>
 					)}
-					<div
-						className={classes.workshop}
-					>
-						{onWorkshopAddClick && !workshop && !workshopDisabled && (
-							<Button
-								className={classes.button}
-								onClick={this.onWorkshopAddClick}
-							>
-								{workshopAddLabel}
-							</Button>
-						)}
-						{workshopDisabled && (
+					{onWorkshopAddClick && !workshop && !workshopDisabled && (
+						<Button
+							className={classes.button}
+							onClick={this.onWorkshopAddClick}
+						>
+							{workshopAddLabel}
+						</Button>
+					)}
+					{workshopDisabled && (
+						<div
+							className={classes.disabled}
+						>
+							{workshopDisabledLabel}
+						</div>
+					)}
+					{onWorkshopDeleteClick && workshop && !workshopDisabled && (
+						<>
 							<div
-								className={classes.disabled}
+								className={classes.label}
 							>
-								{workshopDisabledLabel}
+								{workshopLabel}
 							</div>
-						)}
-						{onWorkshopDeleteClick && workshop && !workshopDisabled && (
-							<>
-								<div
-									className={classes.label}
-								>
-									{workshopLabel}
-								</div>
-								<Button
-									className={classes.delete}
-									onClick={this.onWorkshopDeleteClick}
-								>
-									{workshopDeleteLabel}
-								</Button>
-							</>
-						)}
-					</div>
+							<Button
+								className={classes.delete}
+								onClick={this.onWorkshopDeleteClick}
+							>
+								{workshopDeleteLabel}
+							</Button>
+						</>
+					)}
 				</td>
 			</tr>
 		);
