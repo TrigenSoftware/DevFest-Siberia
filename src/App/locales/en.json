@@ -267,7 +267,7 @@
 				"lastname": "Habibullin",
 				"description": "Website team, frontend",
 				"contacts": {
-					"site": "https://github.com/Rustamhabibullin"
+					"github": "https://github.com/Rustamhabibullin"
 				}
 			},
 			{
@@ -474,7 +474,7 @@
 				"contacts": {
 					"telegram": "https://t.me/bolonio",
 					"twitter": "https://twitter.com/bolonio",
-					"site": "https://github.com/bolonio"
+					"github": "https://github.com/bolonio"
 				},
 				"text": "Adrián is an experienced Frontend developer and Web Team Lead, focusing now in Web Accessibility (a11y), and since 2012 he is living and working in Vienna.\r\nWhen Adrián is not at the office he enjoys a good read, working the way through any delicious recipe, and indulging my love for travelling to new places.",
 				"talkTitle": "",
@@ -809,7 +809,7 @@
 				"description": "UI Developer at Yandex",
 				"location": "🇷🇺",
 				"contacts": {
-					"site": "https://github.com/mad-gooze"
+					"github": "https://github.com/mad-gooze"
 				},
 				"text": "Alexey is UI developer in Yandex advertising technologies. His passion is frontend development and traveling.",
 				"talkTitle": "",
