@@ -12,7 +12,7 @@ import TwitterIcon from '~/icons/twitter.svg';
 import VkIcon from '~/icons/vk.svg';
 import FacebookIcon from '~/icons/facebook.svg';
 import MeetupIcon from '~/icons/meetup.svg';
-import GuthubIcon from '~/icons/github.svg';
+import GithubIcon from '~/icons/github.svg';
 import SiteIcon from '~/icons/site.svg';
 import {
 	style,
@@ -84,7 +84,7 @@ export default class ContactLink extends Component<IProps> {
 				break;
 
 			case ContactLinkTypeVariant.Github:
-				Icon = GuthubIcon;
+				Icon = GithubIcon;
 				break;
 
 			case ContactLinkTypeVariant.Site:
