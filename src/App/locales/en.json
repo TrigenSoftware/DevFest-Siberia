@@ -39,30 +39,32 @@
 	"tickets": {
 		"contactEmail": "devfest@gdg-siberia.com",
 		"сontact": "If you'd like to purchase corporate tickets, for which we can provide an invoice, please reach out to us at <>%s</>. Corporate tickets incur a 500₽ processing fee on top of individual ticket prices.",
+		"buy": "Buy",
+		"sold": "Sold out",
 		"items": [
 			{
 				"type": "Early Bird",
 				"price": "4500₽",
 				"sale": "Early bird conference pass",
-				"buy": "Buy",
 				"priceType": "Limited stock tickets for our first delegates :)",
-				"description": ""
+				"description": "",
+				"soldOut": true
 			},
 			{
 				"type": "General Admission",
 				"price": "5000₽",
 				"sale": "Standard conference pass",
-				"buy": "Buy",
 				"priceType": "Our main batch of tickets for anyone and everyone",
-				"description": "Available until 15th November"
+				"description": "Available until 15th November",
+				"soldOut": false
 			},
 			{
 				"type": "Later Gator",
 				"price": "7999₽",
 				"sale": "Last chance conference pass",
-				"buy": "Buy",
 				"priceType": "Last chance to grab tickets for our awesome conference",
-				"description": "On sale from 15th November"
+				"description": "On sale from 15th November",
+				"soldOut": false
 			}
 		]
 	},
@@ -292,7 +294,7 @@
 				"id": "BaruchSadogursky",
 				"type": "devops",
 				"promo": true,
-				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569428936/speakers/Baruch_h2g05o.jpg",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1571613372/speakers/kkidp2bmlgvp3asw9rmp.jpg",
 				"firstname": "Baruch",
 				"lastname": "Sadogursky",
 				"description": "Head of DevRel and Developer Advocate at JFrog",
@@ -347,6 +349,44 @@
 				"talkLevelBadge": "Middle"
 			},
 			{
+				"id": "LauraCarvajal",
+				"type": "web",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1571609942/speakers/phi1mhszavg9nsoiawbm.jpg",
+				"firstname": "Laura",
+				"lastname": "Carvajal",
+				"description": "Principal Engineer at Financial Times",
+				"location": "🇬🇧",
+				"contacts": {
+					"twitter": "https://twitter.com/lc512k"
+				},
+				"text": "Laura is a Principal Engineer at the Financial Times and former accessibility Lead for FT.com",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Web",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"id": "EkaterinaLoshchinina",
+				"type": "hype",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1571600323/speakers/Katerina_Loschinina_falpg4.jpg",
+				"firstname": "Katerina",
+				"lastname": "Loshchinina",
+				"description": "Engineer at Financial Times",
+				"location": "🇬🇧",
+				"contacts": {
+					"twitter": "https://twitter.com/kate_loschinina"
+				},
+				"text": "Katerina Loschinina is an artist, mathematician and software engineer. She currently works at the Financial Times. Her coding journey started with a London based coding bootcamp. Prior to that, she organised several large scale art projects in Europe.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Hype",
+				"talkLevelBadge": "Middle"
+			},
+			{
 				"id": "IgnatKorchagin",
 				"type": "devops",
 				"promo": true,
@@ -372,8 +412,8 @@
 				"description": "Java Developer Advocate at IBM",
 				"location": "🇩🇪",
 				"contacts": {
-					"site":"https://www.sebastian-daschner.com",
-					"twitter":"https://twitter.com/DaschnerS"
+					"site": "https://www.sebastian-daschner.com",
+					"twitter": "https://twitter.com/DaschnerS"
 				},
 				"text": "Sebastian Daschner is a Java Developer Advocate at IBM, a consultant, author, and trainer. He is participating in the JCP, helping forming the future standards of Java EE, serving in the JSR 370 and 374 Expert Groups and collaborating on various open source projects. For his contributions in the Java community and ecosystem he was recognized as a Java Champion, Oracle Developer Champion and double 2016 JavaOne Rockstar. He has been working with enterprise Java for more than 8 years. Besides Java, Sebastian is also a heavy user of Linux and container technologies like Docker. He evangelizes computer science practices on <a href=\"https://blog.sebastian-daschner.com\" target=\"_blank\">his blog</a>, his Newsletter, and on Twitter via @DaschnerS. When not working with Java, he also loves to travel the world — either by plane or motorbike.",
 				"talkTitle": "",
@@ -388,15 +428,14 @@
 				"promo": true,
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569446303/speakers/AlexeyRodionov_gwjorg.jpg",
 				"firstname": "Alexey",
-				"badge": "GDE",
 				"lastname": "Rodionov",
 				"description": "CTO at GdeZerno",
 				"location": "🇷🇺",
 				"contacts": {
-					"telegram":"https://t.me/FluorescentHallucinogen",
-					"twitter":"https://twitter.com/alexey_rodionov"
+					"telegram": "https://t.me/FluorescentHallucinogen",
+					"twitter": "https://twitter.com/alexey_rodionov"
 				},
-				"text": "Progressive Web Apps Developer. CTO at <a href=\"https://gdezerno.ru\" target=\"_blank\">GdeZerno</a> (“Uber” for grain trucks) start-up. Google Developers Group Krasnodar organizer. PWA, Web Components, GraphQL, Firebase evangelist. PWA Russian-speaking <a href=\"https://t.me/pwa_ru\" target=\"_blank\">community</a> organizer. Cutting edge technology enthusiast.",
+				"text": "Progressive Web Apps Developer. CTO at <a href=\"https://gdezerno.ru/?utm=dfSiberia\" target=\"_blank\">GdeZerno</a> (“Uber” for grain trucks) start-up. Google Developers Group Krasnodar organizer. PWA, Web Components, GraphQL, Firebase evangelist. PWA Russian-speaking <a href=\"https://t.me/pwa_ru\" target=\"_blank\">community</a> organizer. Cutting edge technology enthusiast.",
 				"talkTitle": "",
 				"talkLocation": "",
 				"talkTime": "",
@@ -413,8 +452,8 @@
 				"description": "Senior Engineer at Akamai Technologies",
 				"location": "🇵🇱",
 				"contacts": {
-					"telegram":"https://t.me/maciejtreder",
-					"twitter":"https://twitter.com/maciejtreder"
+					"telegram": "https://t.me/maciejtreder",
+					"twitter": "https://twitter.com/maciejtreder"
 				},
 				"text": "Enthusiast of web technologies especially Single Page Apps, Progressive Web Apps, microservices, and Internet of Things. Author of articles about JavaScript, NodeJS, and Angular. Open Source contributor - creator of <a href=\"https://github.com/maciejtreder/ng-toolkit\" target=\"_blank\">@ng-toolkit</a> opensource project - set of tools for expanding existing Angular applications.",
 				"talkTitle": "",
@@ -433,9 +472,9 @@
 				"description": "Web Team Lead at @willhabentech",
 				"location": "🇦🇹",
 				"contacts": {
-					"telegram":"https://t.me/bolonio",
-					"twitter":"https://twitter.com/bolonio",
-					"site":"https://github.com/bolonio"
+					"telegram": "https://t.me/bolonio",
+					"twitter": "https://twitter.com/bolonio",
+					"site": "https://github.com/bolonio"
 				},
 				"text": "Adrián is an experienced Frontend developer and Web Team Lead, focusing now in Web Accessibility (a11y), and since 2012 he is living and working in Vienna.\r\nWhen Adrián is not at the office he enjoys a good read, working the way through any delicious recipe, and indulging my love for travelling to new places.",
 				"talkTitle": "",
@@ -454,9 +493,9 @@
 				"description": "Founder at Softiware AS",
 				"location": "🇳🇴",
 				"contacts": {
-					"telegram":"https://t.me/mhadaily",
-					"twitter":"https://twitter.com/mhadaily",
-					"site":"https://www.majidhajian.com/"
+					"telegram": "https://t.me/mhadaily",
+					"twitter": "https://twitter.com/mhadaily",
+					"site": "https://www.majidhajian.com/"
 				},
 				"text": "Majid Hajian is a software developer has developed and architected complex web applications since 2007 after he graduated as a software engineer.\r\nA software developer at heart, Majid is passionate about web platform especially hardware connectivity and performance and in particular Progressive Web Apps.\r\nHe loves sharing his knowledge with the community by writing on his blog majidhajian.com and tweeting @mhadaily, speaking at conferences, visiting developers to help them, contributing to open source and organizing meetups and events.\r\nMajid is the author of \"Progressive web app with Angular\" book published by Apress and \"Progressive Web Apps\" video tutorial published by PacktPub and Udemy. \r\nHe is (co)organizer of a few meetups in Norway dedicated to frontend and mobile in Oslo including Mobile meetup and Vue.js Oslo and Angular Oslo, Framisa and an Organizer of Mobile Era and ngVikings which are the main Nordic conferences for mobile and Angular.",
 				"talkTitle": "",
@@ -475,8 +514,8 @@
 				"description": "Android Engineer at Bolt",
 				"location": "🇪🇪",
 				"contacts": {
-					"twitter":"https://twitter.com/a_mihin",
-					"site":"https://devindi.com/"
+					"twitter": "https://twitter.com/a_mihin",
+					"site": "https://devindi.com/"
 				},
 				"text": "Andrew wrote his hello-world for Android in 2012. He worked at big companies such as Yandex, Tinkoff, Revolut and Bolt, so his code is running on tens of millions of devices.",
 				"talkTitle": "",
@@ -495,9 +534,9 @@
 				"description": "Cloud software engineer at Hazelcast",
 				"location": "🇵🇱",
 				"contacts": {
-					"telegram":"https://t.me/RafalLeszko",
-					"twitter":"https://twitter.com/RafalLeszko",
-					"site":"https://www.linkedin.com/in/rafal-leszko"
+					"telegram": "https://t.me/RafalLeszko",
+					"twitter": "https://twitter.com/RafalLeszko",
+					"site": "https://www.linkedin.com/in/rafal-leszko"
 				},
 				"text": "Cloud software engineer at Hazelcast, author of the book \"Continuous Delivery with Docker and Jenkins\", trainer, and conference speaker. He specializes in Java development, Cloud environments, and Continuous Delivery. Former employee in a number of companies and scientific organizations: Google, CERN, AGH University, and more.",
 				"talkTitle": "",
@@ -516,8 +555,8 @@
 				"description": "Lead Designer at ucreate",
 				"location": "🇵🇱",
 				"contacts": {
-					"twitter":"http://www.twitter.com/mikolajdobrucki",
-					"site":"http://mikolajdobrucki.com/"
+					"twitter": "http://www.twitter.com/mikolajdobrucki",
+					"site": "http://mikolajdobrucki.com/"
 				},
 				"text": "Mikolaj is a designer and front-end developer leading a design team at ucreate, a British company specialised in building startups. He's passionate about UI Design and typography, and works a lot with CSS and SVG.",
 				"talkTitle": "",
@@ -533,11 +572,11 @@
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570628856/speakers/LukaKladaric_rtkjqt.jpg",
 				"firstname": "Luka",
 				"lastname": "Kladaric",
-				"description": "Infrastructure Lead at Noom Inc.",
+				"description": "Chaos Manager at Sekura Collective",
 				"location": "🇭🇷",
 				"contacts": {
-					"twitter":"https://twitter.com/kll",
-					"site":"https://luka.io"
+					"twitter": "https://twitter.com/kll",
+					"site": "https://luka.io"
 				},
 				"text": "A former web developer turned architecture, infrastructure & security consultant. Also a remote work evangelist. Doing this computer stuff professionally for close to 20 years.",
 				"talkTitle": "",
@@ -545,6 +584,239 @@
 				"talkTime": "",
 				"talkTypeBadge": "DevOps",
 				"talkLevelBadge": "Senior"
+			},
+			{
+				"id": "KonstantinOsipov",
+				"type": "web",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1571569052/speakers/KonstantinOsipov_ky270f.jpg",
+				"firstname": "Konstantin",
+				"lastname": "Osipov",
+				"description": "Software Team Lead at ScyllaDB",
+				"location": "🇷🇺",
+				"contacts": {
+					"site": "http://github.com/kostja/tarantool"
+				},
+				"text": "Kostja is a well-known expert in the DBMS world. He spent most of his career developing open source DBMS. Since recently he joined Scylla team where his focus is transaction support and synchronous replication. Previously Kostja worked on such open source databases as MySQL and Tarantool. In his free time Kostja maintains a fork of Tarantool database with a few community features.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Web",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"id": "SergeyPugachev",
+				"type": "web",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1571577922/speakers/SergeyPugachev_o1ndrg.jpg",
+				"firstname": "Sergey",
+				"lastname": "Pugachev",
+				"description": "Solutions Architect at Amazon Web Services",
+				"location": "🇩🇪",
+				"contacts": {
+					"facebook": "https://facebook.com/spugachev"
+				},
+				"text": "Solutions Architect at Amazon Web Services (AWS) in Munich. Sergey worked at Booking.com, Google, Microsoft and Intel. He was a Google Developer Expert on web-technologies, as well as Microsoft MVP (Microsoft Most Valuable Professional). Best speaker at DevFest Siberia 2018-2017.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Web",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"id": "DawidPacia",
+				"type": "web",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1571578467/speakers/Dawid_Pacia_edmgny.jpg",
+				"firstname": "Dawid",
+				"lastname": "Pacia",
+				"description": "QA Lead at Brainly",
+				"location": "🇵🇱",
+				"contacts": {
+					"twitter": "https://twitter.com/dawid_py",
+					"site": "https://aeon.network/?utm=dfSiberia"
+				},
+				"text": "Tech freak following all the newest technologies (and implementing them on his own). Fan of Agile approach to project management and products. Proudly and patriotically awarded as \"People of Testing 2018\". <br>Dawid is leading and supporting the best and the happiest QA team! Actively speaking (and traveling) around the world (combining both passions). Organizer and originator of the first regular Ukrainian QA meetup in Krakow.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Security",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"id": "YogeshOjha",
+				"type": "mobile",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1571580124/speakers/YogeshOjha_gnmp2m.jpg",
+				"firstname": "Yogesh",
+				"lastname": "Ojha",
+				"description": "Cyber Security Analyst at Tata Consultancy",
+				"location": "🇮🇳",
+				"contacts": {
+					"site": "https://www.yogeshojha.com/?utm=dfSiberia"
+				},
+				"text": "Yogesh is a Cyber Security Analyst at Tata Consultancy Service, India where his primary research areas focus on IoT Security, hardware hacking and Mobile Application Security. He is currently responsible for corporate information security, including vulnerability assessment and penetration testing.<br>A passionate communicator, Yogesh’s talk has been delivered/accepted at several conferences like HITB Cyber week Abu Dhabi, HITB CommSec Abu Dhabi, KazHackStan Kazhakstan, ThreatCon Nepal, FOSS Asia Summit Singapore, Global Azure Bootcamp Bhubaneswar, Open Source Summit China, Sector Canada (2019), etc.<br>Yogesh has presented his research on various topics like Unfit Story of Fitness trackers, Automotive Security, Car Hacking 101, IoT penetration testing, IoT in google cloud, Hacking the fitness trackers (BLE Hacking) etc.<br>His research/talks have been featured at several conferences like recently at Open Source Summit China.<br>Apart from that, he is an avid developer who works on multiple projects that make use of machine learning, IoT, and Robotics.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Security",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"id": "TomKozacinski",
+				"type": "hype",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1571600650/speakers/juziaw27hy3fxkwscld3.jpg",
+				"firstname": "Tom",
+				"lastname": "Kozacinski",
+				"description": "Product Designer at VIOOH",
+				"location": "🇬🇧",
+				"contacts": {
+					"twitter": "https://twitter.com/universeceo",
+					"site": "https://www.kozacinski.com/?utm=dfSiberia"
+				},
+				"text": "Tom is a London based full stack product designer, speaker, mentor and stand-up comedian with extensive business experience across digital and organisational landscape. He is a creative entrepreneur, well organised problem solver and a storyteller.<br>Tom love sharing my experience and making ideas come to life!<br>He enjoys contributing to the community and he is looking forward to speaking opportunities.<br>Over the last five years Tom gave numerous talks on variety of subjects ranging from User Experience, Product Design and Freelancing. Coupled with his twelve years of Stand Up Comedy experience and stage time reception was overwhelmingly positive and oftentimes workshops ended up educational as well as fun.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Hype",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"id": "IgorDultsev",
+				"type": "web",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1571601406/speakers/cpkyppylhguhxemsmvmv.jpg",
+				"firstname": "Igor",
+				"lastname": "Dultsev",
+				"description": "Senior Software Engineer at GFG eCommerce, GmbH",
+				"location": "🇩🇪",
+				"contacts": {
+					"twitter": "https://twitter.com/yhaskell"
+				},
+				"text": "Igor is an experienced full stack polyglot. He speaks Russian, English, German, and a dozen programming languages. <br>He likes back end, does stand ups (not the comedy ones), sings opera and plays violin.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Web",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"id": "VsevolodHrechaniuk",
+				"type": "web",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1571602685/speakers/eod6epar3hk4qlucpjti.jpg",
+				"firstname": "Vsevolod",
+				"lastname": "Hrechaniuk",
+				"description": "Tech consultant at Avalon Solutions AB",
+				"location": "🇳🇴",
+				"contacts": {
+
+				},
+				"text": "Straight from sunny Norway 🇳🇴, Vsevolod is always curious to know as well as to share what tech has to offer. Have been here and there, from working in investment banks to building startups, eventually ending up being cloud-savvy. Currently engaged with a Google premier partner to deliver cutting-edge cloud solutions to leading local players. Some of my current involvements are: bringing 500 containers to the cloud, building sophisticated AI-stack for the local agricultural giant.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Web",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"id": "AlexanderEfremenkov",
+				"type": "mobile",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1571603332/speakers/rhrt6hpkwllnwiobtq0l.jpg",
+				"firstname": "Alexander",
+				"lastname": "Efremenkov",
+				"description": "Engineer at Yandex.Taxi",
+				"location": "🇷🇺",
+				"contacts": {
+					"twitter": "https://twitter.com/iamironz"
+				},
+				"text": "Alexander has experience in developing Java/C/C++, both the backend systems and mobile applications. At the moment he works at Yandex, where he develops system protection components to ensure the security of mobile platforms, mainly for Android. Alexander is also an Android GDE in Russia. Technical leader, co-host of AndroidDev Podcast.",
+				"badge": "GDE",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Mobile",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"id": "RamónGuijarro",
+				"type": "web",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1571604425/speakers/k3mniym9xdypetdxgijp.jpg",
+				"firstname": "Ramón",
+				"lastname": "Guijarro",
+				"description": "Software engineer at Undefined Labs",
+				"location": "🇪🇸",
+				"contacts": {
+					"twitter": "https://twitter.com/soyguijarro"
+				},
+				"text": "Ramón is a product-focused web engineer and all-around web lover. He enjoys building user interfaces with JavaScript and React, speaking at conferences, moving fast and learning new things (tech-related or otherwise). He also likes using JavaScript to build stuff beyond the browser and finding out about unexpected uses for the web in general. He cares about community, diversity and inclusion as well. Making up silly personal needs in order to solve them with equally silly code projects is another of his questionable virtues.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Web",
+				"talkLevelBadge": "Junior"
+			},
+			{
+				"id": "SrdjanVranac",
+				"type": "web",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1571608049/speakers/trj3nej81injiypklg6l.jpg",
+				"firstname": "Srdjan",
+				"lastname": "Vranac",
+				"description": "CEO at Code4Hire Kft",
+				"location": "🇷🇸",
+				"contacts": {
+					"twitter": "https://twitter.com/vranac",
+					"site": "https://vranac.io/?utm=dfSiberia"
+				},
+				"text": "Srdjan has been in this industry for a long time. He had good fortune to work with a lot of talented people, and had a chance to see some brilliant code, and some of the worst ever written. He gets paid for writing code that performs exceptionally. He runs Code4Hire, a small outfit dedicated to solving tough problems.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Web",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"id": "IgorSheko",
+				"type": "web",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1571608720/speakers/d0vm3xgt7miqyxjm1i6b.jpg",
+				"firstname": "Igor",
+				"lastname": "Sheko",
+				"description": "Lead front-end at Voximplant",
+				"location": "🇷🇺",
+				"contacts": {
+					"twitter": "https://twitter.com/iRbisaDm",
+					"telegram": "https://t.me/iRbisaDm"
+				},
+				"text": "Igor is a lead of a front-end team focused on WebRTC and client performance at Voximplant. This summer he started the MSK VUE.JS community in Moscow. At free time helps the team of <a href=\"https://takiedela.ru/?utm=dfSiberia\" target=\"_blank\">\"Takie Dela\"</a> magazine to develop web applications bringing up some important social problems.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Web",
+				"talkLevelBadge": "Junior"
+			},
+			{
+				"id": "AlexeyGusev",
+				"type": "web",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1571609655/speakers/anvpabuwmullxuf53toc.jpg",
+				"firstname": "Alexey",
+				"lastname": "Gusev",
+				"description": "UI Developer at Yandex",
+				"location": "🇷🇺",
+				"contacts": {
+					"site": "https://github.com/mad-gooze"
+				},
+				"text": "Alexey is UI developer in Yandex advertising technologies. His passion is frontend development and traveling.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Web",
+				"talkLevelBadge": "Junior"
 			}
 		],
 		"nav": [
@@ -567,6 +839,10 @@
 			{
 				"type": "ai",
 				"label": "AI"
+			},
+			{
+				"type": "hype",
+				"label": "Hype"
 			}
 		]
 	},
@@ -587,7 +863,8 @@
 		"email": "Email",
 		"notice": "This is where we'll send your ticket details :)",
 		"buy": "Buy",
-		"terms": "Accept <>Terms</>"
+		"terms": "Accept <>Terms</>",
+		"promocode": "Promo code"
 	},
 	"cabinet": {
 		"title": "Participant",

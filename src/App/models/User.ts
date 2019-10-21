@@ -63,5 +63,8 @@ export const UserFieldsSpec = {
 		required:     true,
 		pattern:      noAroundSpacesPattern,
 		autoComplete: 'current-password'
+	},
+	promocode: {
+		pattern: noAroundSpacesPattern
 	}
 };

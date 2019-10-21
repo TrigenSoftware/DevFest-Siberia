@@ -20,4 +20,5 @@ export interface IState {
 	company: string;
 	city: string;
 	email: string;
+	promocode: string;
 }
