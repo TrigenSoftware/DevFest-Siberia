@@ -258,7 +258,7 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 		} = this.props;
 
 		if (typeof onFavoriteClick === 'function') {
-			onFavoriteClick(favorite, event);
+			onFavoriteClick(!favorite, event);
 		}
 	}
 

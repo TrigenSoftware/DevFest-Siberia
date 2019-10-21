@@ -70,9 +70,10 @@
 }
 
 .controls {
+	padding-right: 20px;
 	width: 26em;
 	vertical-align: middle;
-	text-align: center;
+	text-align: right;
 }
 
 .root:not(:first-child) .description,
@@ -184,7 +185,7 @@
 
 .location {
 	color: value(colorGray1);
-	font-size: 1.4em;
+	font-size: 14px;
 }
 
 .title {
@@ -197,20 +198,20 @@
 .speaker {
 	color: value(colorBlack);
 	font-family: value(fontFamilyMono);
-	font-size: 1.8em;
+	font-size: 18px;
 	font-weight: bold;
 }
 
 .about {
 	color: value(colorGray1);
-	font-size: 1.6em;
+	font-size: 16px;
 }
 
 .lang {
 	text-transform: uppercase;
 	color: value(colorGray6);
 	font-family: value(fontFamilyMono);
-	font-size: 1.6em;
+	font-size: 16px;
 	font-weight: bold;
 }
 
@@ -238,11 +239,25 @@
 }
 
 .label {
+	display: flex;
+	position: relative;
+	align-items: end;
+	justify-content: flex-end;
 	padding-bottom: rel(90, 20);
 	color: value(colorPink0);
 	font-family: value(fontFamilyMono);
 	font-size: 2em;
 	font-weight: bold;
+}
+
+.label::before {
+	transform: rotate(-45deg);
+	margin-right: 10px;
+	border-bottom: .2em solid value(colorPink0);
+	border-left: .2em solid value(colorPink0);
+	width: rel(34, 20);
+	height: rel(18, 20);
+	content: '';
 }
 
 .delete {
@@ -269,6 +284,10 @@
 		padding: 0 20px 16px;
 		width: 100%;
 		text-align: left;
+	}
+
+	.description .Badge:not(:last-child) {
+		margin-bottom: 10px;
 	}
 
 	.list {

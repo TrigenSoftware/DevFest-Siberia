@@ -252,6 +252,13 @@ export default class SpeakerCard extends Component<IProps> {
 				};
 				break;
 
+			case 'hype':
+				props = {
+					variant: 'fill',
+					color:   'green'
+				};
+				break;
+
 			case 'junior':
 				props = {
 					color: 'aqua'
