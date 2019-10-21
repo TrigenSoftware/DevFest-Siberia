@@ -607,7 +607,7 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='Web'
 					talkLevelBadge='Senior'
 					workshop
-					workshopLabel='Я иду! : )'
+					workshopLabel='Я иду! :)'
 					workshopDeleteLabel='Не пойти'
 					onWorkshopDeleteClick={action('delete')}
 				/>

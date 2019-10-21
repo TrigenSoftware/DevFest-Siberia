@@ -7,6 +7,7 @@
 :import {
 	-st-from: '../../variables.st.css';
 	-st-named:
+		sizeScreenMdMax,
 		sizeScreenSmMax,
 		fontFamilyMono,
 		colorWhite,
@@ -62,7 +63,7 @@
 }
 
 .description {
-	padding: 16px 0 16px 20px;
+	padding: 1.6em 0 1.6em 2em;
 }
 
 .description .Badge:not(:last-child) {
@@ -70,7 +71,7 @@
 }
 
 .controls {
-	padding-right: 20px;
+	padding: 0 2em;
 	width: 26em;
 	vertical-align: middle;
 	text-align: right;
@@ -168,11 +169,12 @@
 }
 
 .item {
-	margin: 0 1.7em 1.2em 0;
+	margin-right: 1.7em;
 	padding-right: 1.7em;
 }
 
 .item:not(:last-child) {
+	margin-bottom: 1.2em;
 	border-right: 1px dashed value(colorGray4);
 }
 
@@ -185,7 +187,7 @@
 
 .location {
 	color: value(colorGray1);
-	font-size: 14px;
+	font-size: 15px;
 }
 
 .title {
@@ -234,7 +236,6 @@
 
 .time {
 	padding: 1.6em 1em;
-	width: 16em;
 	text-align: center;
 }
 
@@ -276,12 +277,27 @@
 	font-weight: bold;
 }
 
+@media (max-width: value(sizeScreenMdMax)) {
+
+	.label {
+		font-size: 15px;
+	}
+
+	.delete {
+		font-size: 15px;
+	}
+
+	.disabled {
+		font-size: 15px;
+	}
+}
+
 @media (max-width: value(sizeScreenSmMax)) {
 
-	.root .controls {
+	.controls {
 		display: flex;
 		align-items: center;
-		padding: 0 20px 16px;
+		padding: 0 0 16px 10px;
 		width: 100%;
 	}
 
@@ -289,24 +305,39 @@
 		border: none;
 	}
 
-	.description .Badge:not(:last-child) {
+	.time {
+		padding: 10px 5px 5px 10px;
+	}
+
+	.description {
+		display: block;
+		padding: 10px 5px 5px 10px;
+	}
+
+	.description .Badge {
+		margin-right: 10px;
 		margin-bottom: 10px;
 	}
 
 	.list {
 		flex-direction: column;
+		margin-left: 10px;
+	}
+
+	.item {
+		margin-right: 0;
 	}
 
 	.item:not(:last-child) {
 		border: none;
 	}
 
-	.description {
-		display: block;
-	}
-
 	.label {
 		padding: 0;
+	}
+
+	.label::before {
+		margin-right: 5px;
 	}
 
 	.delete {
