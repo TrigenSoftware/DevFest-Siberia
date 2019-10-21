@@ -112,13 +112,16 @@
 }
 
 .photo {
+	display: flex;
 	flex: auto;
+	align-items: stretch;
+	justify-content: stretch;
 	margin: 0;
 }
 
 .photo img {
 	min-width: 100%;
-	min-height: 100%;
+	object-fit: cover;
 }
 
 .info {
@@ -205,6 +208,7 @@
 
 	.photo img {
 		width: 100%;
+		min-height: 100%;
 		object-fit: cover;
 	}
 
