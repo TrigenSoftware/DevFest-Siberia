@@ -30,7 +30,14 @@ export enum ContactLinkTypeVariant {
 	Site = 'site'
 }
 
-export type ContactLinkType = 'telegram' | 'email' | 'twitter' | 'vk' | 'facebook' | 'meetup' | 'github' | 'site';
+export type ContactLinkType = 'telegram'
+	| 'email'
+	| 'twitter'
+	| 'vk'
+	| 'facebook'
+	| 'meetup'
+	| 'github'
+	| 'site';
 
 export interface IProps extends ILinkProps {
 	type: ContactLinkType;
