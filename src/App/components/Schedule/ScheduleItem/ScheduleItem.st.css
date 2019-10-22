@@ -279,6 +279,10 @@
 
 @media (max-width: value(sizeScreenMdMax)) {
 
+	.description .Badge:not(:last-child) {
+		margin-right: 10px;
+	}
+
 	.label {
 		font-size: 15px;
 	}
@@ -306,7 +310,7 @@
 	}
 
 	.time {
-		padding: 10px 5px 5px 10px;
+		padding: 10px 5px;
 	}
 
 	.description {
@@ -315,7 +319,6 @@
 	}
 
 	.description .Badge {
-		margin-right: 10px;
 		margin-bottom: 10px;
 	}
 
