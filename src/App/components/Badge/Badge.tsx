@@ -21,15 +21,29 @@ export enum VariantVariant {
 
 export enum ColorVariant {
 	Blue = 'blue',
+	DarkBlue = 'darkblue',
 	Aqua = 'aqua',
 	Pink = 'pink',
+	DarkPink = 'darkpink',
 	Red = 'red',
-	Purple = 'purple'
+	Purple = 'purple',
+	Green = 'green',
+	Yellow = 'yellow',
+	Orange = 'orange'
 }
 
 export type Variant = 'fill'|'outline';
 
-export type Color = 'blue'|'aqua'|'pink'|'red'|'purple';
+export type Color = 'blue'
+	| 'darkblue'
+	| 'aqua'
+	| 'pink'
+	| 'darkpink'
+	| 'red'
+	| 'purple'
+	| 'green'
+	| 'yellow'
+	| 'orange';
 
 export interface IProps extends IFlexisBadgeProps {
 	variant?: Variant;

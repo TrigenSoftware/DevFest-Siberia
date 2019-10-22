@@ -1,0 +1,38 @@
+
+:import {
+	-st-from: '@flexis/ui/components/Button/Button.st.css';
+	-st-named: icon;
+}
+
+:import {
+	-st-from: '../../variables.st.css';
+	-st-named:
+		colorWhite,
+		colorPink0;
+}
+
+/* stylelint-disable-next-line */
+@st-global-custom-property --colorBorder;
+
+.root {
+	-st-states: active;
+	background: none;
+	padding: 0;
+	color: value(colorWhite);
+	font-size: 1rem;
+}
+
+.root:active {
+	--colorBorder: value(colorWhite);
+	color: value(colorPink0);
+}
+
+.root:focus,
+.root:not(:disabled):hover {
+	background-color: transparent;
+}
+
+.root .icon {
+	width: 4em;
+	height: 4em;
+}

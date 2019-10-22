@@ -1,0 +1,349 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '../../variables.st.css';
+	-st-named:
+		sizeScreenMdMax,
+		sizeScreenSmMax,
+		fontFamilyMono,
+		colorWhite,
+		colorBlack,
+		colorOrange,
+		colorBlue2,
+		colorBlue8,
+		colorBlue10,
+		colorBlue11,
+		colorBlue13,
+		colorPink0,
+		colorPink4,
+		colorPink5,
+		colorGray1,
+		colorGray4,
+		colorGray5,
+		colorGray6,
+		colorPurple,
+		colorGreen1,
+		colorYellow;
+}
+
+:import {
+	-st-from: '../../Badge/Badge.st.css';
+	-st-default: Badge;
+}
+
+:import {
+	-st-from: '../ScheduleFavoriteButton/ScheduleFavoriteButton.st.css';
+	-st-default: FavoriteButton;
+}
+
+/* stylelint-disable-next-line */
+@st-global-custom-property --colorBorder;
+
+.root {
+	-st-states:
+		past,
+		now,
+		next,
+		darkblue,
+		pink,
+		orange,
+		purple,
+		aqua,
+		yellow,
+		blue,
+		green,
+		darkpink;
+	background-color: value(colorWhite);
+	vertical-align: top;
+	font-size: 1rem;
+}
+
+.description {
+	padding: 1.6em 0 1.6em 2em;
+}
+
+.description .Badge:not(:last-child) {
+	margin-right: 1.6em;
+}
+
+.controls {
+	padding: 1.6em 2em;
+	width: 26em;
+	vertical-align: middle;
+	text-align: right;
+}
+
+.root:not(:first-child) .description,
+.root:not(:first-child) .controls {
+	border-top: 1px dashed value(colorBlue8);
+}
+
+.root:past,
+.root:past .controls {
+	background-color: value(colorGray5);
+}
+
+.root:now .Badge {
+	background-color: value(colorWhite);
+}
+
+.root:past .Badge:fill {
+	border-color: value(colorBlue8);
+	background: transparent;
+	color: value(colorBlue8);
+}
+
+.root:past .Badge:outline {
+	border-color: value(colorBlue8);
+	background: value(colorBlue8);
+	color: value(colorWhite);
+}
+
+.root:now:darkblue .description,
+.root:now:darkblue .controls {
+	background-color: value(colorBlue13);
+}
+
+.root:now:pink .description,
+.root:now:pink .controls {
+	background-color: value(colorPink4);
+}
+
+.root:now:orange .description,
+.root:now:orange .controls {
+	background-color: value(colorOrange);
+}
+
+.root:now:purple .description,
+.root:now:purple .controls {
+	background-color: value(colorPurple);
+}
+
+.root:now:aqua .description,
+.root:now:aqua .controls {
+	background-color: value(colorBlue11);
+}
+
+.root:now:yellow .description,
+.root:now:yellow .controls {
+	background-color: value(colorYellow);
+}
+
+.root:now:blue .description,
+.root:now:blue .controls {
+	background-color: value(colorBlue10);
+}
+
+.root:now:green .description,
+.root:now:green .controls {
+	background-color: value(colorGreen1);
+}
+
+.root:now:darkpink .description,
+.root:now:darkpink .controls {
+	background-color: value(colorPink5);
+}
+
+.root:not(:now) .FavoriteButton {
+	--colorBorder: value(colorBlack);
+}
+
+.group {
+	display: flex;
+	align-items: baseline;
+	margin-bottom: 13px;
+	max-width: 70em;
+}
+
+.list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: start;
+	margin: 0 0 0 3.2em;
+	padding: 0;
+	list-style: none;
+}
+
+.item {
+	margin-right: 1.7em;
+	padding-right: 1.7em;
+}
+
+.item:not(:last-child) {
+	margin-bottom: 1.2em;
+	border-right: 1px dashed value(colorGray4);
+}
+
+.startAt {
+	margin-bottom: rel(14, 24);
+	font-family: value(fontFamilyMono);
+	font-size: 2.4em;
+	font-weight: bold;
+}
+
+.location {
+	color: value(colorGray1);
+	font-size: 15px;
+}
+
+.title {
+	margin-bottom: 6px;
+	color: value(colorBlack);
+	font-family: value(fontFamilyMono);
+	font-size: 2.4em;
+}
+
+.speaker {
+	color: value(colorBlack);
+	font-family: value(fontFamilyMono);
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.about {
+	color: value(colorGray1);
+	font-size: 16px;
+}
+
+.lang {
+	text-transform: uppercase;
+	color: value(colorGray6);
+	font-family: value(fontFamilyMono);
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.root:past .startAt,
+.root:past .lang,
+.root:past .location,
+.root:past .title,
+.root:past .speaker,
+.root:past .about {
+	color: value(colorBlue8);
+}
+
+.root:now .lang,
+.root:now .title,
+.root:now .location,
+.root:now .speaker,
+.root:now .about {
+	color: value(colorWhite);
+}
+
+.time {
+	padding: 1.6em 1em;
+	text-align: center;
+}
+
+.label {
+	display: flex;
+	position: relative;
+	align-items: end;
+	justify-content: flex-end;
+	padding-bottom: rel(77, 20);
+	color: value(colorPink0);
+	font-family: value(fontFamilyMono);
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.label::before {
+	transform: rotate(-45deg);
+	margin-right: 10px;
+	border-bottom: .2em solid value(colorPink0);
+	border-left: .2em solid value(colorPink0);
+	width: rel(34, 20);
+	height: rel(18, 20);
+	content: '';
+}
+
+.delete {
+	background-color: transparent;
+	padding: 0;
+	text-decoration: underline;
+	color: value(colorGray1);
+	font-size: 2em;
+	font-weight: normal;
+}
+
+.disabled {
+	color: value(colorBlue2);
+	font-family: value(fontFamilyMono);
+	font-size: 2em;
+	font-weight: bold;
+}
+
+@media (max-width: value(sizeScreenMdMax)) {
+
+	.description .Badge:not(:last-child) {
+		margin-right: 10px;
+	}
+
+	.label {
+		font-size: 15px;
+	}
+
+	.delete {
+		font-size: 15px;
+	}
+
+	.disabled {
+		font-size: 15px;
+	}
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.controls {
+		display: flex;
+		align-items: center;
+		padding: 0 0 16px 10px;
+		width: 100%;
+	}
+
+	.root:not(:first-child) .controls {
+		border: none;
+	}
+
+	.time {
+		padding: 10px 5px;
+	}
+
+	.description {
+		display: block;
+		padding: 10px 5px 5px 10px;
+	}
+
+	.description .Badge {
+		margin-bottom: 10px;
+	}
+
+	.list {
+		flex-direction: column;
+		margin-left: 10px;
+	}
+
+	.item {
+		margin-right: 0;
+	}
+
+	.item:not(:last-child) {
+		border: none;
+	}
+
+	.label {
+		padding: 0;
+	}
+
+	.label::before {
+		margin-right: 5px;
+	}
+
+	.delete {
+		margin-left: 10px;
+	}
+}

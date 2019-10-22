@@ -3,16 +3,22 @@
 	-st-from: '../../variables.st.css';
 	-st-named:
 		colorWhite,
+		colorBlack,
 		colorRed,
-		colorBlue10,
+		colorBlue7,
 		colorBlue11,
-		colorPink0,
-		colorPink4;
+		colorBlue13,
+		colorPurple,
+		colorPink4,
+		colorPink5,
+		colorGreen1,
+		colorYellow,
+		colorOrange;
 }
 
 .fill {
-	border-color: value(colorBlue10);
-	background-color: value(colorBlue10);
+	border-color: value(colorBlue7);
+	background-color: value(colorBlue7);
 	color: value(colorWhite);
 }
 
@@ -22,9 +28,21 @@
 	color: value(colorWhite);
 }
 
+.fillDarkBlue {
+	border-color: value(colorBlue13);
+	background-color: value(colorBlue13);
+	color: value(colorWhite);
+}
+
 .fillPink {
 	border-color: value(colorPink4);
 	background-color: value(colorPink4);
+	color: value(colorWhite);
+}
+
+.fillDarkPink {
+	border-color: value(colorPink5);
+	background-color: value(colorPink5);
 	color: value(colorWhite);
 }
 
@@ -35,7 +53,25 @@
 }
 
 .fillPurple {
-	border-color: value(colorPink0);
-	background-color: value(colorPink0);
+	border-color: value(colorPurple);
+	background-color: value(colorPurple);
+	color: value(colorWhite);
+}
+
+.fillGreen {
+	border-color: value(colorGreen1);
+	background-color: value(colorGreen1);
+	color: value(colorWhite);
+}
+
+.fillYellow {
+	border-color: value(colorYellow);
+	background-color: value(colorYellow);
+	color: value(colorBlack);
+}
+
+.fillOrange {
+	border-color: value(colorOrange);
+	background-color: value(colorOrange);
 	color: value(colorWhite);
 }
