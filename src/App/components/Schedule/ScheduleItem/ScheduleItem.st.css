@@ -71,7 +71,7 @@
 }
 
 .controls {
-	padding: 0 2em;
+	padding: 1.6em 2em;
 	width: 26em;
 	vertical-align: middle;
 	text-align: right;
@@ -244,7 +244,7 @@
 	position: relative;
 	align-items: end;
 	justify-content: flex-end;
-	padding-bottom: rel(90, 20);
+	padding-bottom: rel(77, 20);
 	color: value(colorPink0);
 	font-family: value(fontFamilyMono);
 	font-size: 2em;
