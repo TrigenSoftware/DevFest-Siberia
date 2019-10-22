@@ -67,7 +67,7 @@ export type IScheduleItemProps = CombinePropsAndAttributes<
 
 export const ScheduleItemStatusValues: ScheduleItemStatus[] = Object.values(VariantScheduleItemStatus);
 
-const talkTypeColors: Record<string, Color> = {
+export const talkTypeColors: Record<string, Color> = {
 	'all':          'darkblue',
 	'mobile':       'pink',
 	'data science': 'orange',

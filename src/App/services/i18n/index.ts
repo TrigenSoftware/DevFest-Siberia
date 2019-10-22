@@ -132,6 +132,61 @@ export function getTalkTypes(context: I18nConfig): any[] {
 }
 
 /**
+ * Get schedule from locales.
+ */
+export function getSchedule(context: I18nConfig, date: string, type: string): any[] {
+
+	const {
+		schedule: {
+			items
+		}
+	} = context.getCatalog(
+		context.getLocale()
+	) as any;
+	const filtredByDate = items.filter(item => item.date === date);
+
+	if (type && type !== 'all') {
+		return filtredByDate.filter(item => item.talkTypeBadge && item.talkTypeBadge.toLowerCase() === type);
+	}
+
+	return filtredByDate;
+}
+
+/**
+ * Get schedule date from locales.
+ */
+export function getScheduleDate(context: I18nConfig): any[] {
+
+	const {
+		schedule: {
+			nav
+		}
+	} = context.getCatalog(
+		context.getLocale()
+	) as any;
+
+	return nav;
+}
+
+/**
+ * Get schedule types from locales.
+ */
+export function getScheduleTypes(context: I18nConfig): any[] {
+
+	const {
+		schedule: {
+			filter: {
+				items
+			}
+		}
+	} = context.getCatalog(
+		context.getLocale()
+	) as any;
+
+	return items;
+}
+
+/**
  * Get grouped partners from locales.
  */
 export function getPartners(context: I18nConfig): any[] {

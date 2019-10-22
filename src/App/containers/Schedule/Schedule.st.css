@@ -1,0 +1,61 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named: colorGray1;
+}
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+:import {
+	-st-from: '~/components/ToggleNav/ToggleNav.st.css';
+	-st-default: ToggleNav;
+	-st-named:
+		item,
+		link;
+}
+
+.root .center {
+	position: relative;
+	padding-top: rel(33, 24);
+	padding-bottom: rel(61, 24);
+}
+
+.root .nav {
+	margin-bottom: rel(32, 24);
+}
+
+.root .filter {
+	margin-bottom: rel(41, 24);
+}
+
+/* stylelint-disable a11y/no-display-none */
+.root .nav::after,
+.root .filter::after {
+	display: none;
+}/* stylelint-enable */
+
+.root .filter .item {
+	margin-right: 10px;
+	font-size: 0;
+}
+
+.title {
+	display: flex;
+	align-items: baseline;
+	margin-bottom: rel(30, 82);
+}
+
+.title::after {
+	flex: 1;
+	margin-left: 15px;
+	border: rel(1, 82) dashed value(colorGray1);
+	content: '';
+}

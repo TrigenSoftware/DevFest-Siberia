@@ -836,6 +836,140 @@
 			}
 		]
 	},
+	"schedule": {
+		"title": "Schedule",
+		"items": [
+			{
+				"date": "2019-11-30",
+				"time": "9:00 AM",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "Открытие",
+				"status": "next"
+			},
+			{
+				"date": "2019-11-30",
+				"time": "9:30 AM",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "Регистрация",
+				"status": "next"
+			},
+			{
+				"date": "2019-11-30",
+				"time": "9:30 AM",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "Кодить сегодня?",
+				"status": "next",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Mobile",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"date": "2019-12-01",
+				"time": "9:30 AM",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "Кодить сегодня или нет",
+				"status": "next",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Mobile",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"date": "2019-12-01",
+				"time": "9:00 PM",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "Закрытие",
+				"status": "next"
+			},
+			{
+				"date": "2019-12-01",
+				"time": "9:30 PM",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "Афтерпати",
+				"status": "next"
+			}
+		],
+		"nav": [
+			{
+				"date": "2019-11-29",
+				"label": "29 November"
+			},
+			{
+				"date": "2019-11-30",
+				"label": "30 November"
+			},
+			{
+				"date": "2019-12-01",
+				"label": "1 December"
+			}
+		],
+		"filter": {
+			"title": "Filter by track",
+			"items": [
+				{
+					"type": "all",
+					"label": "All"
+				},
+				{
+					"type": "mobile",
+					"label": "Mobile"
+				},
+				{
+					"type": "data science",
+					"label": "Data Science"
+				},
+				{
+					"type": "frontend",
+					"label": "Frontend"
+				},
+				{
+					"type": "devops",
+					"label": "DevOps"
+				},
+				{
+					"type": "security",
+					"label": "Security"
+				},
+				{
+					"type": "backend",
+					"label": "Backend"
+				},
+				{
+					"type": "hype",
+					"label": "Hype"
+				},
+				{
+					"type": "web",
+					"label": "Web"
+				}
+			]
+		}
+	},
 	"profile": {
 		"view": "Посмотреть профиль"
 	},
