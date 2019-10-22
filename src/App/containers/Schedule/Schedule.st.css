@@ -6,7 +6,18 @@
 
 :import {
 	-st-from: '~/components/variables.st.css';
-	-st-named: colorGray1;
+	-st-named:
+		sizeScreenSmMax,
+		colorBlue10,
+		colorBlue11,
+		colorBlue13,
+		colorPink4,
+		colorPink5,
+		colorGray1,
+		colorPurple,
+		colorGreen1,
+		colorOrange,
+		colorYellow;
 }
 
 :import {
@@ -18,8 +29,14 @@
 	-st-from: '~/components/ToggleNav/ToggleNav.st.css';
 	-st-default: ToggleNav;
 	-st-named:
+		list,
 		item,
-		link;
+		active;
+}
+
+:import {
+	-st-from: '~/components/Badge/Badge.st.css';
+	-st-default: Badge;
 }
 
 .root .center {
@@ -28,23 +45,79 @@
 	padding-bottom: rel(61, 24);
 }
 
-.root .nav {
-	margin-bottom: rel(32, 24);
-}
-
-.root .filter {
-	margin-bottom: rel(41, 24);
-}
-
 /* stylelint-disable a11y/no-display-none */
 .root .nav::after,
 .root .filter::after {
 	display: none;
 }/* stylelint-enable */
 
-.root .filter .item {
+.nav {
+	margin-bottom: rel(32, 24);
+}
+
+.filter {
+	margin-bottom: rel(21, 24);
+}
+
+.filter .list {
+	flex-wrap: wrap;
+}
+
+.filter .item {
 	margin-right: 10px;
+	margin-bottom: 20px;
 	font-size: 0;
+}
+
+.filter .active .Badge {
+	position: relative;
+}
+
+.filter .active .Badge::after {
+	position: absolute;
+	bottom: -16px;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 50%;
+	width: 9px;
+	height: 9px;
+	content: '';
+}
+
+.filter .active .Badge:darkblue::after {
+	background-color: value(colorBlue13);
+}
+
+.filter .active .Badge:pink::after {
+	background-color: value(colorPink4);
+}
+
+.filter .active .Badge:orange::after {
+	background-color: value(colorOrange);
+}
+
+.filter .active .Badge:purple::after {
+	background-color: value(colorPurple);
+}
+
+.filter .active .Badge:aqua::after {
+	background-color: value(colorBlue11);
+}
+
+.filter .active .Badge:yellow::after {
+	background-color: value(colorYellow);
+}
+
+.filter .active .Badge:blue::after {
+	background-color: value(colorBlue10);
+}
+
+.filter .active .Badge:green::after {
+	background-color: value(colorGreen1);
+}
+
+.filter .active .Badge:darkpink::after {
+	background-color: value(colorPink5);
 }
 
 .title {
@@ -58,4 +131,11 @@
 	margin-left: 15px;
 	border: rel(1, 82) dashed value(colorGray1);
 	content: '';
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.filter .active .Badge::after {
+		bottom: -13px;
+	}
 }

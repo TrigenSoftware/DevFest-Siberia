@@ -81,6 +81,7 @@ export class ScheduleContainer extends Component<IProps> {
 						<ToggleNavLink
 							key={item.date}
 							to={{
+								pathname: '/schedule',
 								search: addSearchParams(search, {
 									date: item.date
 								})
@@ -97,6 +98,7 @@ export class ScheduleContainer extends Component<IProps> {
 						<ToggleNavLink
 							key={item.type}
 							to={{
+								pathname: '/schedule',
 								search: addSearchParams(search, {
 									type: item.type
 								})
