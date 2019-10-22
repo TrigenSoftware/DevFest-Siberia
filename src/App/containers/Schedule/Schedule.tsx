@@ -91,28 +91,37 @@ export class ScheduleContainer extends Component<IProps> {
 						</ToggleNavLink>
 					))}
 				</ToggleNav>
-				<ToggleNav
-					className={classes.filter}
+				<div
+					className={classes.group}
 				>
-					{filter.map(item => (
-						<ToggleNavLink
-							key={item.type}
-							to={{
-								pathname: '/schedule',
-								search: addSearchParams(search, {
-									type: item.type
-								})
-							}}
-						>
-							<Badge
-								variant='fill'
-								color={talkTypeColors[item.type]}
+					<div
+						className={classes.filterTitle}
+					>
+						{__x`schedule.filter.title`}:
+					</div>
+					<ToggleNav
+						className={classes.filter}
+					>
+						{filter.map(item => (
+							<ToggleNavLink
+								key={item.type}
+								to={{
+									pathname: '/schedule',
+									search: addSearchParams(search, {
+										type: item.type
+									})
+								}}
 							>
-								{item.label}
-							</Badge>
-						</ToggleNavLink>
-					))}
-				</ToggleNav>
+								<Badge
+									variant='fill'
+									color={talkTypeColors[item.type]}
+								>
+									{item.label}
+								</Badge>
+							</ToggleNavLink>
+						))}
+					</ToggleNav>
+				</div>
 				<Schedule>
 					{schedule && schedule.map(item => (
 						<ScheduleItem

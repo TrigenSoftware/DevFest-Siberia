@@ -7,7 +7,7 @@
 :import {
 	-st-from: '~/components/variables.st.css';
 	-st-named:
-		sizeScreenSmMax,
+		sizeScreenMdMax,
 		colorBlue10,
 		colorBlue11,
 		colorBlue13,
@@ -51,11 +51,26 @@
 	display: none;
 }/* stylelint-enable */
 
+.title {
+	display: flex;
+	align-items: baseline;
+	margin-bottom: rel(30, 82);
+}
+
+.title::after {
+	flex: 1;
+	margin-left: 15px;
+	border: rel(1, 82) dashed value(colorGray1);
+	content: '';
+}
+
 .nav {
 	margin-bottom: rel(32, 24);
 }
 
-.filter {
+.group {
+	display: flex;
+	align-items: center;
 	margin-bottom: rel(21, 24);
 }
 
@@ -65,7 +80,6 @@
 
 .filter .item {
 	margin-right: 10px;
-	margin-bottom: 20px;
 	font-size: 0;
 }
 
@@ -120,20 +134,21 @@
 	background-color: value(colorPink5);
 }
 
-.title {
-	display: flex;
-	align-items: baseline;
-	margin-bottom: rel(30, 82);
+.filterTitle {
+	margin-right: 14px;
+	color: value(colorGray1);
+	font-size: 16px;
 }
 
-.title::after {
-	flex: 1;
-	margin-left: 15px;
-	border: rel(1, 82) dashed value(colorGray1);
-	content: '';
-}
+@media (max-width: value(sizeScreenMdMax)) {
 
-@media (max-width: value(sizeScreenSmMax)) {
+	.group {
+		align-items: start;
+	}
+
+	.filter .item {
+		margin-bottom: 20px;
+	}
 
 	.filter .active .Badge::after {
 		bottom: -13px;
