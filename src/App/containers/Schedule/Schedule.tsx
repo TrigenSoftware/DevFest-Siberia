@@ -1,5 +1,6 @@
 import {
-	parseISO
+	parseISO,
+	format
 } from 'date-fns';
 import React, {
 	ContextType,
@@ -61,6 +62,13 @@ function getStatus(date: string, timeStart: string, timeEnd: string) {
 	if (currentDate < startDate) {
 		return 'next';
 	}
+}
+
+function formatDate(date: string, timeStart: string) {
+
+	const startDate = parseISO(`${date}T${timeStart}:00`);
+
+	return format(startDate, 'hh:mm a');
 }
 
 export class ScheduleContainer extends Component<IProps> {
@@ -151,6 +159,7 @@ export class ScheduleContainer extends Component<IProps> {
 							key={item.title}
 							{...item}
 							status={getStatus(item.date, item.timeStart, item.timeEnd)}
+							timeStart={formatDate(item.date, item.timeStart)}
 						/>
 					))}
 				</Schedule>
