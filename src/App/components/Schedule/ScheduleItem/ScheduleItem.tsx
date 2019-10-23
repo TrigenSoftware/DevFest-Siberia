@@ -135,7 +135,9 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 			onWorkshopDeleteClick,
 			...props
 		} = this.props;
-		const color = talkTypeBadge && talkTypeColors[talkTypeBadge.toLowerCase()];
+		const color = talkTypeBadge
+			? talkTypeColors[talkTypeBadge.toLowerCase()]
+			: 'noColor';
 
 		return (
 			<tr

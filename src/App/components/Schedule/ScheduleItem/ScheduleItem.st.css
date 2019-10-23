@@ -56,7 +56,8 @@
 		yellow,
 		blue,
 		green,
-		lightgreen;
+		lightgreen,
+		noColor;
 	background-color: value(colorWhite);
 	vertical-align: top;
 	font-size: 1rem;
@@ -234,14 +235,13 @@
 	color: value(colorWhite);
 }
 
-/* stylelint-disable */
-.root:now:not(:darkblue):not(:pink):not(:orange):not(:purple):not(:aqua):not(:yellow):not(:blue):not(:green):not(:lightgreen) .lang,
-.root:now:not(:darkblue):not(:pink):not(:orange):not(:purple):not(:aqua):not(:yellow):not(:blue):not(:green):not(:lightgreen) .title,
-.root:now:not(:darkblue):not(:pink):not(:orange):not(:purple):not(:aqua):not(:yellow):not(:blue):not(:green):not(:lightgreen) .location,
-.root:now:not(:darkblue):not(:pink):not(:orange):not(:purple):not(:aqua):not(:yellow):not(:blue):not(:green):not(:lightgreen) .speaker,
-.root:now:not(:darkblue):not(:pink):not(:orange):not(:purple):not(:aqua):not(:yellow):not(:blue):not(:green):not(:lightgreen) .about {
+.root:now:noColor .lang,
+.root:now:noColor .title,
+.root:now:noColor .location,
+.root:now:noColor .speaker,
+.root:now:noColor .about {
 	color: value(colorBlack);
-}/* stylelint-enable */
+}
 
 .time {
 	padding: 1.6em 1em;
