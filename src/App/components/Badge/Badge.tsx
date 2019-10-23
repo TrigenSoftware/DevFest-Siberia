@@ -24,10 +24,10 @@ export enum ColorVariant {
 	DarkBlue = 'darkblue',
 	Aqua = 'aqua',
 	Pink = 'pink',
-	DarkPink = 'darkpink',
 	Red = 'red',
 	Purple = 'purple',
 	Green = 'green',
+	LightGreen = 'lightgreen',
 	Yellow = 'yellow',
 	Orange = 'orange'
 }
@@ -38,10 +38,10 @@ export type Color = 'blue'
 	| 'darkblue'
 	| 'aqua'
 	| 'pink'
-	| 'darkpink'
 	| 'red'
 	| 'purple'
 	| 'green'
+	| 'lightgreen'
 	| 'yellow'
 	| 'orange';
 

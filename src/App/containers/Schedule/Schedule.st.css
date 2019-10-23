@@ -12,10 +12,10 @@
 		colorBlue11,
 		colorBlue13,
 		colorPink4,
-		colorPink5,
 		colorGray1,
 		colorPurple,
 		colorGreen1,
+		colorGreen2,
 		colorOrange,
 		colorYellow;
 }
@@ -130,8 +130,8 @@
 	background-color: value(colorGreen1);
 }
 
-.filter .active .Badge:darkpink::after {
-	background-color: value(colorPink5);
+.filter .active .Badge:lightgreen::after {
+	background-color: value(colorGreen2);
 }
 
 .filterTitle {

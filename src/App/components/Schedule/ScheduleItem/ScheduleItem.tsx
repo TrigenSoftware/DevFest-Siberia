@@ -76,7 +76,7 @@ export const talkTypeColors: Record<string, Color> = {
 	'security':     'yellow',
 	'backend':      'blue',
 	'hype':         'green',
-	'web':          'darkpink'
+	'web':          'lightgreen'
 };
 
 export class ScheduleItem extends Component<IScheduleItemProps> {

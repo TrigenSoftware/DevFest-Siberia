@@ -9,8 +9,8 @@
 		colorBlue13,
 		colorPurple,
 		colorPink4,
-		colorPink5,
 		colorGreen1,
+		colorGreen2,
 		colorYellow,
 		colorOrange;
 }
@@ -31,8 +31,8 @@
 	border-color: value(colorPink4);
 }
 
-.outlineDarkPink {
-	border-color: value(colorPink5);
+.outlineLightGreen {
+	border-color: value(colorGreen2);
 }
 
 .outlineRed {

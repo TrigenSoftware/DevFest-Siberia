@@ -20,13 +20,13 @@
 		colorBlue13,
 		colorPink0,
 		colorPink4,
-		colorPink5,
 		colorGray1,
 		colorGray4,
 		colorGray5,
 		colorGray6,
 		colorPurple,
 		colorGreen1,
+		colorGreen2,
 		colorYellow;
 }
 
@@ -56,7 +56,7 @@
 		yellow,
 		blue,
 		green,
-		darkpink;
+		lightgreen;
 	background-color: value(colorWhite);
 	vertical-align: top;
 	font-size: 1rem;
@@ -143,9 +143,9 @@
 	background-color: value(colorGreen1);
 }
 
-.root:now:darkpink .description,
-.root:now:darkpink .controls {
-	background-color: value(colorPink5);
+.root:now:lightgreen .description,
+.root:now:lightgreen .controls {
+	background-color: value(colorGreen2);
 }
 
 .root:not(:now) .FavoriteButton {

@@ -10,8 +10,8 @@
 		colorBlue13,
 		colorPurple,
 		colorPink4,
-		colorPink5,
 		colorGreen1,
+		colorGreen2,
 		colorYellow,
 		colorOrange;
 }
@@ -40,10 +40,10 @@
 	color: value(colorWhite);
 }
 
-.fillDarkPink {
-	border-color: value(colorPink5);
-	background-color: value(colorPink5);
-	color: value(colorWhite);
+.fillLightGreen {
+	border-color: value(colorGreen2);
+	background-color: value(colorGreen2);
+	color: value(colorBlack);
 }
 
 .fillRed {
