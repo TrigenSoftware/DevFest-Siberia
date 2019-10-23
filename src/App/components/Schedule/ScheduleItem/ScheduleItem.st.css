@@ -234,6 +234,15 @@
 	color: value(colorWhite);
 }
 
+/* stylelint-disable */
+.root:now:not(:darkblue):not(:pink):not(:orange):not(:purple):not(:aqua):not(:yellow):not(:blue):not(:green):not(:lightgreen) .lang,
+.root:now:not(:darkblue):not(:pink):not(:orange):not(:purple):not(:aqua):not(:yellow):not(:blue):not(:green):not(:lightgreen) .title,
+.root:now:not(:darkblue):not(:pink):not(:orange):not(:purple):not(:aqua):not(:yellow):not(:blue):not(:green):not(:lightgreen) .location,
+.root:now:not(:darkblue):not(:pink):not(:orange):not(:purple):not(:aqua):not(:yellow):not(:blue):not(:green):not(:lightgreen) .speaker,
+.root:now:not(:darkblue):not(:pink):not(:orange):not(:purple):not(:aqua):not(:yellow):not(:blue):not(:green):not(:lightgreen) .about {
+	color: value(colorBlack);
+}/* stylelint-enable */
+
 .time {
 	padding: 1.6em 1em;
 	text-align: center;

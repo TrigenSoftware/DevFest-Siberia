@@ -7,7 +7,8 @@ import React, {
 import PropTypes from 'prop-types';
 import {
 	Bind,
-	CombinePropsAndAttributes
+	CombinePropsAndAttributes,
+	omit
 } from '@flexis/ui/helpers';
 import Badge, {
 	IProps as IBadgeProps,
@@ -37,7 +38,8 @@ interface ISpeaker {
 }
 
 interface ISelfProps {
-	time: ReactNode;
+	timeStart: ReactNode;
+	timeEnd: ReactNode;
 	lang?: string;
 	location: ReactNode;
 	title: ReactNode;
@@ -82,7 +84,8 @@ export const talkTypeColors: Record<string, Color> = {
 export class ScheduleItem extends Component<IScheduleItemProps> {
 
 	static propTypes = {
-		time:                  PropTypes.node.isRequired,
+		timeStart:             PropTypes.node.isRequired,
+		timeEnd:               PropTypes.node.isRequired,
 		lang:                  PropTypes.string,
 		location:              PropTypes.node.isRequired,
 		title:                 PropTypes.node.isRequired,
@@ -109,7 +112,7 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 
 		const {
 			className,
-			time,
+			timeStart,
 			lang,
 			location,
 			title,
@@ -136,7 +139,7 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 
 		return (
 			<tr
-				{...props}
+				{...omit(props, ['timeEnd'])}
 				className={style(classes.root, {
 					[status]: Boolean(status),
 					[color]:  Boolean(color)
@@ -148,7 +151,7 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 					<div
 						className={classes.startAt}
 					>
-						{time}
+						{timeStart}
 					</div>
 				</td>
 				<td

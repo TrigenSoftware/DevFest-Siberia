@@ -852,15 +852,16 @@
 		"items": [
 			{
 				"date": "2019-11-30",
-				"time": "9:00 AM",
+				"timeStart": "08:00",
+				"timeEnd": "10:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
-				"title": "30 Открытие",
-				"status": "next"
+				"title": "30 Открытие"
 			},
 			{
 				"date": "2019-11-30",
-				"time": "9:30 AM",
+				"timeStart": "08:00",
+				"timeEnd": "10:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "30 Регистрация",
@@ -868,11 +869,11 @@
 			},
 			{
 				"date": "2019-11-30",
-				"time": "9:30 AM",
+				"timeStart": "09:00",
+				"timeEnd": "10:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "30 Кодить сегодня?",
-				"status": "next",
 				"speakers": [
 					{
 						"name": "Иван",
@@ -889,11 +890,11 @@
 			},
 			{
 				"date": "2019-11-30",
-				"time": "9:30 AM",
+				"timeStart": "09:00",
+				"timeEnd": "10:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "30 Какой-то заголовок должен быть тут?",
-				"status": "next",
 				"speakers": [
 					{
 						"name": "Иван",
@@ -910,11 +911,11 @@
 			},
 			{
 				"date": "2019-11-30",
-				"time": "9:30 AM",
+				"timeStart": "09:00",
+				"timeEnd": "10:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "30 Какой-то заголовок должен быть тут1?",
-				"status": "next",
 				"speakers": [
 					{
 						"name": "Иван",
@@ -931,11 +932,11 @@
 			},
 			{
 				"date": "2019-11-30",
-				"time": "9:30 AM",
+				"timeStart": "09:00",
+				"timeEnd": "10:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "30 Какой-то заголовок должен быть тут2?",
-				"status": "next",
 				"speakers": [
 					{
 						"name": "Иван",
@@ -952,11 +953,11 @@
 			},
 			{
 				"date": "2019-12-01",
-				"time": "9:30 AM",
+				"timeStart": "09:00",
+				"timeEnd": "10:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "01 Кодить сегодня или нет",
-				"status": "next",
 				"speakers": [
 					{
 						"name": "Иван",
@@ -973,11 +974,11 @@
 			},
 			{
 				"date": "2019-12-01",
-				"time": "9:30 AM",
+				"timeStart": "09:00",
+				"timeEnd": "10:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "01 Есть хочу :)",
-				"status": "next",
 				"speakers": [
 					{
 						"name": "Иван",
@@ -994,11 +995,11 @@
 			},
 			{
 				"date": "2019-12-01",
-				"time": "9:30 AM",
+				"timeStart": "09:00",
+				"timeEnd": "10:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "01 Кодить",
-				"status": "next",
 				"speakers": [
 					{
 						"name": "Иван",
@@ -1015,11 +1016,11 @@
 			},
 			{
 				"date": "2019-12-01",
-				"time": "9:30 AM",
+				"timeStart": "09:00",
+				"timeEnd": "10:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "01 Что бы съесть?",
-				"status": "next",
 				"speakers": [
 					{
 						"name": "Иван",
@@ -1036,11 +1037,11 @@
 			},
 			{
 				"date": "2019-12-01",
-				"time": "9:30 AM",
+				"timeStart": "09:00",
+				"timeEnd": "10:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "01 Тоже хочу есть",
-				"status": "next",
 				"speakers": [
 					{
 						"name": "Иван",
@@ -1057,11 +1058,11 @@
 			},
 			{
 				"date": "2019-12-01",
-				"time": "9:30 AM",
+				"timeStart": "09:00",
+				"timeEnd": "10:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "01 А я уже поел :)",
-				"status": "next",
 				"speakers": [
 					{
 						"name": "Иван",
@@ -1078,11 +1079,11 @@
 			},
 			{
 				"date": "2019-12-01",
-				"time": "9:30 AM",
+				"timeStart": "09:00",
+				"timeEnd": "10:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "01 А я уже поел :))",
-				"status": "next",
 				"speakers": [
 					{
 						"name": "Иван",
@@ -1099,11 +1100,11 @@
 			},
 			{
 				"date": "2019-12-01",
-				"time": "9:30 AM",
+				"timeStart": "09:00",
+				"timeEnd": "10:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "01 А я уже поел... :)",
-				"status": "next",
 				"speakers": [
 					{
 						"name": "Иван",
@@ -1120,11 +1121,11 @@
 			},
 			{
 				"date": "2019-12-01",
-				"time": "9:30 AM",
+				"timeStart": "09:00",
+				"timeEnd": "10:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "01 Когда уже домой?",
-				"status": "next",
 				"speakers": [
 					{
 						"name": "Иван",
@@ -1145,19 +1146,19 @@
 			},
 			{
 				"date": "2019-12-01",
-				"time": "9:00 PM",
+				"timeStart": "11:00",
+				"timeEnd": "12:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
-				"title": "01 Закрытие",
-				"status": "next"
+				"title": "01 Закрытие"
 			},
 			{
 				"date": "2019-12-01",
-				"time": "9:30 PM",
+				"timeStart": "11:00",
+				"timeEnd": "12:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
-				"title": "01 Афтерпати",
-				"status": "next"
+				"title": "01 Афтерпати"
 			}
 		],
 		"nav": [

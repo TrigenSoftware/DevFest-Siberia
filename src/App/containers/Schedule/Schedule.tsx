@@ -1,3 +1,4 @@
+import { parseISO } from 'date-fns';
 import React, {
 	ContextType,
 	Component
@@ -39,6 +40,26 @@ import {
 } from './Schedule.st.css';
 
 export interface IProps extends ISectionProps, RouteComponentProps {}
+
+function getStatus(date: string, timeStart: string, timeEnd: string) {
+
+	const currentDate = new Date();
+	// тестил вот так вот: currentDate = parseISO(`${date}T09:00:00`) или parseISO(`${date}T10:00:00`) и тд.
+	const startDate = parseISO(`${date}T${timeStart}:00`);
+	const endDate = parseISO(`${date}T${timeEnd}:00`);
+
+	if (currentDate > startDate && currentDate > endDate) {
+		return 'past';
+	}
+
+	if (currentDate >= startDate && currentDate <= endDate) {
+		return 'now';
+	}
+
+	if (currentDate < startDate) {
+		return 'next';
+	}
+}
 
 export class ScheduleContainer extends Component<IProps> {
 
@@ -127,6 +148,7 @@ export class ScheduleContainer extends Component<IProps> {
 						<ScheduleItem
 							key={item.title}
 							{...item}
+							status={getStatus(item.date, item.timeStart, item.timeEnd)}
 						/>
 					))}
 				</Schedule>
