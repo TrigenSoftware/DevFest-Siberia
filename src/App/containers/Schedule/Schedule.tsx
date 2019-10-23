@@ -47,7 +47,8 @@ export interface IProps extends ISectionProps, RouteComponentProps {}
 function getStatus(date: string, timeStart: string, timeEnd: string) {
 
 	const currentDate = new Date();
-	// тестил вот так вот: currentDate = parseISO(`${date}T09:00:00`) или parseISO(`${date}T10:00:00`) и тд.
+	/* тестил вот так вот: currentDate = parseISO(`${date}T09:00:00`)
+	или parseISO(`${date}T10:00:00`) и тд и вот так еще new Date('November 30, 2019 09:01:00'). */
 	const startDate = parseISO(`${date}T${timeStart}:00`);
 	const endDate = parseISO(`${date}T${timeEnd}:00`);
 
