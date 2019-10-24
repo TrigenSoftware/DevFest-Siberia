@@ -20,7 +20,6 @@
 		colorBlue13,
 		colorPink0,
 		colorPink4,
-		colorGray0,
 		colorGray1,
 		colorGray4,
 		colorGray5,
@@ -188,7 +187,7 @@
 }
 
 .startAt span {
-	color: value(colorGray0);
+	color: value(colorGray1);
 	font-size: 15px;
 	font-weight: normal;
 }
