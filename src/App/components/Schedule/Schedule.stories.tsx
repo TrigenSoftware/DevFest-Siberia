@@ -26,20 +26,20 @@ storiesOf('Components|Schedule', module)
 		() => (
 			<Schedule>
 				<ScheduleItem
-					time='9:30 AM'
+					timeStart='9:30 AM'
 					lang='RU'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Открытие'
 					status={VariantScheduleItemStatus.Past}
 				/>
 				<ScheduleItem
-					time='9:30 AM'
+					timeStart='9:30 AM'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Регистрация'
 					status={VariantScheduleItemStatus.Past}
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					lang='RU'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
@@ -62,7 +62,7 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					lang='RU'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
@@ -85,7 +85,7 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					lang='RU'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
@@ -108,7 +108,7 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
@@ -130,7 +130,7 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
@@ -152,7 +152,7 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
@@ -174,7 +174,7 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
@@ -196,7 +196,7 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
@@ -230,7 +230,7 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
@@ -252,7 +252,7 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
@@ -274,7 +274,7 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					lang='RU'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
@@ -296,7 +296,7 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					lang='RU'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
@@ -318,7 +318,7 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -339,7 +339,7 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -360,7 +360,7 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -381,7 +381,7 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -402,7 +402,7 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -423,7 +423,7 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -444,7 +444,7 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -475,7 +475,7 @@ storiesOf('Components|Schedule', module)
 					30 ноября
 				</ScheduleSeparator>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -496,7 +496,7 @@ storiesOf('Components|Schedule', module)
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -520,7 +520,7 @@ storiesOf('Components|Schedule', module)
 					1 декабря
 				</ScheduleSeparator>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -548,7 +548,7 @@ storiesOf('Components|Schedule', module)
 		() => (
 			<Schedule>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Как делать пирамидку?'
 					status={VariantScheduleItemStatus.Next}
@@ -569,7 +569,7 @@ storiesOf('Components|Schedule', module)
 					onWorkshopAddClick={action('add')}
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Как делать пирамидку?'
 					status={VariantScheduleItemStatus.Next}
@@ -590,7 +590,7 @@ storiesOf('Components|Schedule', module)
 					workshopDisabledLabel='Мест больше нет :('
 				/>
 				<ScheduleItem
-					time='9:30 PM'
+					timeStart='9:30 PM'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Как делать пирамидку?'
 					status={VariantScheduleItemStatus.Next}

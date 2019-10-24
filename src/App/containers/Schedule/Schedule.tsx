@@ -28,7 +28,9 @@ import Section, {
 import ToggleNav, {
 	ToggleNavLink
 } from '~/components/ToggleNav';
-import Badge from '~/components/Badge';
+import Badge, {
+	VariantVariant
+} from '~/components/Badge';
 import Schedule, {
 	ScheduleItem,
 	talkTypeColors,
@@ -63,6 +65,20 @@ function formatDate(date: string, timeStart: string) {
 	);
 }
 
+function getVariant(type: string) {
+
+	switch (type) {
+
+		case 'junior':
+		case 'middle':
+		case 'senior':
+			return VariantVariant.Outline;
+
+		default:
+			return VariantVariant.Fill;
+	}
+}
+
 export class ScheduleContainer extends Component<IProps> {
 
 	static contextType = I18nContext;
@@ -81,8 +97,9 @@ export class ScheduleContainer extends Component<IProps> {
 		const {
 			context
 		} = this;
-		const date = new URLSearchParams(search).get('date');
-		const type = new URLSearchParams(search).get('type');
+		const params = new URLSearchParams(search);
+		const date = params.get('date');
+		const type = params.get('type');
 		const nav = getScheduleDate(context);
 		const filter = getScheduleTypes(context);
 		const schedule = getSchedule(context, date, type);
@@ -103,17 +120,20 @@ export class ScheduleContainer extends Component<IProps> {
 				<ToggleNav
 					className={classes.nav}
 				>
-					{nav.map(item => (
+					{nav.map(({
+						date,
+						label
+					}) => (
 						<ToggleNavLink
-							key={item.date}
+							key={date}
 							to={{
 								pathname: '/schedule',
 								search: addSearchParams(search, {
-									date: item.date
+									date
 								})
 							}}
 						>
-							{item.label}
+							{label}
 						</ToggleNavLink>
 					))}
 				</ToggleNav>
@@ -128,35 +148,48 @@ export class ScheduleContainer extends Component<IProps> {
 					<ToggleNav
 						className={classes.filter}
 					>
-						{filter.map(item => (
+						{filter.map(({
+							type,
+							label
+						}) => (
 							<ToggleNavLink
-								key={item.type}
+								key={type}
 								to={{
 									pathname: '/schedule',
 									search: addSearchParams(search, {
-										type: item.type
+										type
 									})
 								}}
 							>
 								<Badge
-									variant='fill'
-									color={talkTypeColors[item.type]}
+									variant={getVariant(type)}
+									color={talkTypeColors[type]}
 								>
-									{item.label}
+									{label}
 								</Badge>
 							</ToggleNavLink>
 						))}
 					</ToggleNav>
 				</div>
 				<Schedule>
-					{schedule && schedule.map(item => (
-						<ScheduleItem
-							key={item.title}
-							{...item}
-							time={formatDate(item.date, item.time)}
-							status={this.getStatus(item.date, item.time, item.timeEnd)}
-						/>
-					))}
+					{schedule && schedule.map((item) => {
+
+						const {
+							title,
+							date,
+							timeStart,
+							timeEnd
+						} = item;
+
+						return (
+							<ScheduleItem
+								key={title}
+								{...item}
+								timeStart={formatDate(date, timeStart)}
+								status={this.getStatus(date, timeStart, timeEnd)}
+							/>
+						);
+					})}
 				</Schedule>
 			</Section>
 		);
@@ -170,6 +203,8 @@ export class ScheduleContainer extends Component<IProps> {
 		const currentDate = datetime || new Date();
 		const startDate = parseISO(`${date}T${timeStart}:00`);
 		const endDate = parseISO(`${date}T${timeEnd}:00`);
+
+		console.log(startDate, endDate);
 
 		if (currentDate > startDate && currentDate > endDate) {
 			return VariantScheduleItemStatus.Past;
