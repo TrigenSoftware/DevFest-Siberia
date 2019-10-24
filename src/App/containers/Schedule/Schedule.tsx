@@ -31,7 +31,8 @@ import ToggleNav, {
 import Badge from '~/components/Badge';
 import Schedule, {
 	ScheduleItem,
-	talkTypeColors
+	talkTypeColors,
+	VariantScheduleItemStatus
 } from '~/components/Schedule';
 import {
 	routeProps,
@@ -53,15 +54,15 @@ function getStatus(date: string, timeStart: string, timeEnd: string) {
 	const endDate = parseISO(`${date}T${timeEnd}:00`);
 
 	if (currentDate > startDate && currentDate > endDate) {
-		return 'past';
+		return VariantScheduleItemStatus.Past;
 	}
 
 	if (currentDate >= startDate && currentDate <= endDate) {
-		return 'now';
+		return VariantScheduleItemStatus.Now;
 	}
 
 	if (currentDate < startDate) {
-		return 'next';
+		return VariantScheduleItemStatus.Next;
 	}
 }
 
