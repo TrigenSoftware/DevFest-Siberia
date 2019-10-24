@@ -47,7 +47,7 @@ export interface IProps extends ISectionProps, RouteComponentProps {}
 
 function getStatus(date: string, timeStart: string, timeEnd: string) {
 
-	const currentDate = new Date();
+	const currentDate = new Date('November 30, 2019 09:01:00');
 	/* тестил вот так вот: currentDate = parseISO(`${date}T09:00:00`)
 	или parseISO(`${date}T10:00:00`) и тд и вот так еще new Date('November 30, 2019 09:01:00'). */
 	const startDate = parseISO(`${date}T${timeStart}:00`);
@@ -160,8 +160,8 @@ export class ScheduleContainer extends Component<IProps> {
 						<ScheduleItem
 							key={item.title}
 							{...item}
-							status={getStatus(item.date, item.timeStart, item.timeEnd)}
 							timeStart={formatDate(item.date, item.timeStart)}
+							status={getStatus(item.date, item.timeStart, item.timeEnd)}
 						/>
 					))}
 				</Schedule>
