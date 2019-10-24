@@ -43,27 +43,8 @@ import {
 	classes
 } from './Schedule.st.css';
 
-export interface IProps extends ISectionProps, RouteComponentProps {}
-
-function getStatus(date: string, timeStart: string, timeEnd: string) {
-
-	const currentDate = new Date('November 30, 2019 09:01:00');
-	/* тестил вот так вот: currentDate = parseISO(`${date}T09:00:00`)
-	или parseISO(`${date}T10:00:00`) и тд и вот так еще new Date('November 30, 2019 09:01:00'). */
-	const startDate = parseISO(`${date}T${timeStart}:00`);
-	const endDate = parseISO(`${date}T${timeEnd}:00`);
-
-	if (currentDate > startDate && currentDate > endDate) {
-		return VariantScheduleItemStatus.Past;
-	}
-
-	if (currentDate >= startDate && currentDate <= endDate) {
-		return VariantScheduleItemStatus.Now;
-	}
-
-	if (currentDate < startDate) {
-		return VariantScheduleItemStatus.Next;
-	}
+export interface IProps extends ISectionProps, RouteComponentProps {
+	datetime?: Date;
 }
 
 function formatDate(date: string, timeStart: string) {
@@ -99,7 +80,10 @@ export class ScheduleContainer extends Component<IProps> {
 
 		return (
 			<Section
-				{...omit(props, routeProps)}
+				{...omit(props, [
+					...routeProps,
+					'datetime'
+				])}
 				className={style(classes.root, className)}
 			>
 				<h2
@@ -161,12 +145,34 @@ export class ScheduleContainer extends Component<IProps> {
 							key={item.title}
 							{...item}
 							timeStart={formatDate(item.date, item.timeStart)}
-							status={getStatus(item.date, item.timeStart, item.timeEnd)}
+							status={this.getStatus(item.date, item.timeStart, item.timeEnd)}
 						/>
 					))}
 				</Schedule>
 			</Section>
 		);
+	}
+
+	private getStatus(date: string, timeStart: string, timeEnd: string) {
+
+		const {
+			datetime
+		} = this.props;
+		const currentDate = datetime || new Date();
+		const startDate = parseISO(`${date}T${timeStart}:00`);
+		const endDate = parseISO(`${date}T${timeEnd}:00`);
+
+		if (currentDate > startDate && currentDate > endDate) {
+			return VariantScheduleItemStatus.Past;
+		}
+
+		if (currentDate >= startDate && currentDate <= endDate) {
+			return VariantScheduleItemStatus.Now;
+		}
+
+		if (currentDate < startDate) {
+			return VariantScheduleItemStatus.Next;
+		}
 	}
 }
 

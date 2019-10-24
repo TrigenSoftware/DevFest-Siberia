@@ -9,7 +9,8 @@ import {
 	storiesOf
 } from '@storybook/react';
 import {
-	select
+	select,
+	date
 } from '@storybook/addon-knobs';
 import {
 	I18nProvider
@@ -61,7 +62,9 @@ storiesOf('Containers|Schedule', module)
 				<Provider store={store}>
 					<Header/>
 				</Provider>
-				<Schedule/>
+				<Schedule
+					datetime={date('Start at', new Date())}
+				/>
 				<Footer/>
 			</>
 		)

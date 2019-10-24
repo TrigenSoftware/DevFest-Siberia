@@ -27,7 +27,6 @@ storiesOf('Components|Schedule', module)
 			<Schedule>
 				<ScheduleItem
 					timeStart='9:30 AM'
-					timeEnd='10:00'
 					lang='RU'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Открытие'
@@ -35,14 +34,12 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 AM'
-					timeEnd='10:00'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Регистрация'
 					status={VariantScheduleItemStatus.Past}
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					lang='RU'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
@@ -66,7 +63,6 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					lang='RU'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
@@ -90,7 +86,6 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					lang='RU'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
@@ -114,7 +109,6 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
@@ -137,7 +131,6 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
@@ -160,7 +153,6 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
@@ -183,7 +175,6 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
@@ -206,7 +197,6 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
@@ -241,7 +231,6 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
@@ -264,7 +253,6 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
@@ -287,7 +275,6 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					lang='RU'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
@@ -310,7 +297,6 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					lang='RU'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
@@ -333,7 +319,6 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -355,7 +340,6 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -377,7 +361,6 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -399,7 +382,6 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -421,7 +403,6 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -443,7 +424,6 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -465,7 +445,6 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -497,7 +476,6 @@ storiesOf('Components|Schedule', module)
 				</ScheduleSeparator>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -519,7 +497,6 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -544,7 +521,6 @@ storiesOf('Components|Schedule', module)
 				</ScheduleSeparator>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
@@ -573,7 +549,6 @@ storiesOf('Components|Schedule', module)
 			<Schedule>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Как делать пирамидку?'
 					status={VariantScheduleItemStatus.Next}
@@ -595,7 +570,6 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Как делать пирамидку?'
 					status={VariantScheduleItemStatus.Next}
@@ -617,7 +591,6 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					timeStart='9:30 PM'
-					timeEnd='10:00'
 					location={<span>Комната 231,<br/>2 этаж</span>}
 					title='Как делать пирамидку?'
 					status={VariantScheduleItemStatus.Next}
