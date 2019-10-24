@@ -71,7 +71,7 @@
 .group {
 	display: flex;
 	align-items: center;
-	margin-bottom: rel(21, 24);
+	margin-bottom: rel(41, 24);
 }
 
 .filter .list {

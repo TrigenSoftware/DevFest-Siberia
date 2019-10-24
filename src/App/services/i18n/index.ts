@@ -146,7 +146,17 @@ export function getSchedule(context: I18nConfig, date: string, type: string): an
 	const filtredByDate = items.filter(item => item.date === date);
 
 	if (type && type !== 'all') {
-		return filtredByDate.filter(item => item.talkTypeBadge && item.talkTypeBadge.toLowerCase() === type);
+
+		switch (type) {
+
+			case 'junior':
+			case 'middle':
+			case 'senior':
+				return filtredByDate.filter(item => item.talkLevelBadge && item.talkLevelBadge.toLowerCase() === type);
+
+			default:
+				return filtredByDate.filter(item => item.talkTypeBadge && item.talkTypeBadge.toLowerCase() === type);
+		}
 	}
 
 	return filtredByDate;

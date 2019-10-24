@@ -851,28 +851,20 @@
 		"title": "Schedule",
 		"items": [
 			{
-				"date": "2019-11-30",
-				"timeStart": "08:00",
-				"timeEnd": "09:00",
-				"lang": "Ru",
-				"location": "Комната 231, 2 этаж",
-				"title": "30 Открытие"
-			},
-			{
-				"date": "2019-11-30",
-				"timeStart": "08:00",
-				"timeEnd": "09:00",
-				"lang": "Ru",
-				"location": "Комната 231, 2 этаж",
-				"title": "30 Регистрация"
-			},
-			{
-				"date": "2019-11-30",
-				"timeStart": "09:00",
+				"date": "2019-11-29",
+				"time": "09:00",
 				"timeEnd": "10:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
-				"title": "30 Кодить сегодня?",
+				"title": "29 Открытие"
+			},
+			{
+				"date": "2019-11-29",
+				"time": "10:00",
+				"timeEnd": "11:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "29 Кодить сегодня?",
 				"speakers": [
 					{
 						"name": "Иван",
@@ -888,9 +880,143 @@
 				"talkLevelBadge": "Middle"
 			},
 			{
+				"date": "2019-11-29",
+				"time": "10:00",
+				"timeEnd": "11:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "29 Какой-то заголовок должен быть тут?",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Data Science",
+				"talkLevelBadge": "Junior"
+			},
+			{
+				"date": "2019-11-29",
+				"time": "11:00",
+				"timeEnd": "12:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "29 Какой-то заголовок должен быть тут1?",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Frontend",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"date": "2019-11-29",
+				"time": "11:00",
+				"timeEnd": "12:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "29 Какой-то заголовок должен быть тут2?",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Frontend",
+				"talkLevelBadge": "Junior"
+			},
+			{
+				"date": "2019-11-29",
+				"time": "12:00",
+				"timeEnd": "13:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "Тест1",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Backend",
+				"talkLevelBadge": "Junior"
+			},
+			{
+				"date": "2019-11-29",
+				"time": "12:00",
+				"timeEnd": "13:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "Тест2",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Hype",
+				"talkLevelBadge": "Junior"
+			},
+			{
 				"date": "2019-11-30",
-				"timeStart": "09:00",
+				"time": "09:00",
 				"timeEnd": "10:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "30 Открытие"
+			},
+			{
+				"date": "2019-11-30",
+				"time": "10:00",
+				"timeEnd": "11:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "30 Кодить сегодня?",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Mobile",
+				"talkLevelBadge": "Junior"
+			},
+			{
+				"date": "2019-11-30",
+				"time": "10:00",
+				"timeEnd": "11:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "30 Какой-то заголовок должен быть тут?",
@@ -910,8 +1036,8 @@
 			},
 			{
 				"date": "2019-11-30",
-				"timeStart": "09:00",
-				"timeEnd": "10:00",
+				"time": "11:00",
+				"timeEnd": "12:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "30 Какой-то заголовок должен быть тут1?",
@@ -927,12 +1053,12 @@
 				],
 				"statusLabel": "Идет сейчас",
 				"talkTypeBadge": "Frontend",
-				"talkLevelBadge": "Middle"
+				"talkLevelBadge": "Senior"
 			},
 			{
 				"date": "2019-11-30",
-				"timeStart": "09:00",
-				"timeEnd": "10:00",
+				"time": "11:00",
+				"timeEnd": "12:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "30 Какой-то заголовок должен быть тут2?",
@@ -948,11 +1074,53 @@
 				],
 				"statusLabel": "Идет сейчас",
 				"talkTypeBadge": "Frontend",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"date": "2019-11-30",
+				"time": "12:00",
+				"timeEnd": "13:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "Тест1",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Backend",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"date": "2019-11-30",
+				"time": "12:00",
+				"timeEnd": "13:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "Тест2",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Hype",
 				"talkLevelBadge": "Middle"
 			},
 			{
 				"date": "2019-12-01",
-				"timeStart": "09:00",
+				"time": "09:00",
 				"timeEnd": "10:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
@@ -973,7 +1141,7 @@
 			},
 			{
 				"date": "2019-12-01",
-				"timeStart": "09:00",
+				"time": "09:00",
 				"timeEnd": "10:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
@@ -990,12 +1158,12 @@
 				],
 				"statusLabel": "Идет сейчас",
 				"talkTypeBadge": "DevOps",
-				"talkLevelBadge": "Middle"
+				"talkLevelBadge": "Senior"
 			},
 			{
 				"date": "2019-12-01",
-				"timeStart": "09:00",
-				"timeEnd": "10:00",
+				"time": "10:00",
+				"timeEnd": "11:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "01 Кодить",
@@ -1011,12 +1179,12 @@
 				],
 				"statusLabel": "Идет сейчас",
 				"talkTypeBadge": "Security",
-				"talkLevelBadge": "Middle"
+				"talkLevelBadge": "Senior"
 			},
 			{
 				"date": "2019-12-01",
-				"timeStart": "09:00",
-				"timeEnd": "10:00",
+				"time": "10:00",
+				"timeEnd": "11:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "01 Что бы съесть?",
@@ -1036,8 +1204,8 @@
 			},
 			{
 				"date": "2019-12-01",
-				"timeStart": "09:00",
-				"timeEnd": "10:00",
+				"time": "11:00",
+				"timeEnd": "12:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "01 Тоже хочу есть",
@@ -1057,8 +1225,8 @@
 			},
 			{
 				"date": "2019-12-01",
-				"timeStart": "09:00",
-				"timeEnd": "10:00",
+				"time": "11:00",
+				"timeEnd": "12:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "01 А я уже поел :)",
@@ -1078,8 +1246,8 @@
 			},
 			{
 				"date": "2019-12-01",
-				"timeStart": "09:00",
-				"timeEnd": "10:00",
+				"time": "12:00",
+				"timeEnd": "13:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "01 А я уже поел :))",
@@ -1099,8 +1267,8 @@
 			},
 			{
 				"date": "2019-12-01",
-				"timeStart": "09:00",
-				"timeEnd": "10:00",
+				"time": "12:00",
+				"timeEnd": "13:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "01 А я уже поел... :)",
@@ -1120,8 +1288,8 @@
 			},
 			{
 				"date": "2019-12-01",
-				"timeStart": "09:00",
-				"timeEnd": "10:00",
+				"time": "13:00",
+				"timeEnd": "14:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "01 Когда уже домой?",
@@ -1145,16 +1313,17 @@
 			},
 			{
 				"date": "2019-12-01",
-				"timeStart": "11:00",
-				"timeEnd": "12:00",
+				"time": "14:00",
+				"timeEnd": "15:00",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "01 Закрытие"
 			},
 			{
 				"date": "2019-12-01",
+				"time": "14:00",
 				"timeStart": "13:00",
-				"timeEnd": "14:00",
+				"timeEnd": "15:30",
 				"lang": "Ru",
 				"location": "Комната 231, 2 этаж",
 				"title": "01 Афтерпати"
@@ -1212,6 +1381,18 @@
 				{
 					"type": "web",
 					"label": "Web"
+				},
+				{
+					"type": "junior",
+					"label": "Junior"
+				},
+				{
+					"type": "middle",
+					"label": "Middle"
+				},
+				{
+					"type": "senior",
+					"label": "Senior"
 				}
 			]
 		}
