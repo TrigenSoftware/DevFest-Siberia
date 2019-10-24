@@ -70,8 +70,8 @@
 
 .group {
 	display: flex;
-	align-items: center;
-	margin-bottom: rel(41, 24);
+	align-items: baseline;
+	margin-bottom: rel(21, 24);
 }
 
 .filter .list {
@@ -80,6 +80,7 @@
 
 .filter .item {
 	margin-right: 10px;
+	margin-bottom: 20px;
 	font-size: 0;
 }
 
@@ -141,14 +142,6 @@
 }
 
 @media (max-width: value(sizeScreenMdMax)) {
-
-	.group {
-		align-items: start;
-	}
-
-	.filter .item {
-		margin-bottom: 20px;
-	}
 
 	.filter .active .Badge::after {
 		bottom: -13px;

@@ -225,6 +225,7 @@
 }
 
 .root:past .startAt,
+.root:past .startAt span,
 .root:past .lang,
 .root:past .location,
 .root:past .title,
