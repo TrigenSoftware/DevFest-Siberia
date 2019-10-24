@@ -50,8 +50,17 @@ export interface IProps extends ISectionProps, RouteComponentProps {
 function formatDate(date: string, timeStart: string) {
 
 	const startDate = parseISO(`${date}T${timeStart}:00`);
+	const [
+		time,
+		formatType
+	] = format(startDate, 'hh:mm a').split(' ');
 
-	return format(startDate, 'hh:mm a');
+	return (
+		<>
+			{time}
+			<span>{' '}{formatType}</span>
+		</>
+	);
 }
 
 export class ScheduleContainer extends Component<IProps> {

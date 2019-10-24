@@ -20,6 +20,7 @@
 		colorBlue13,
 		colorPink0,
 		colorPink4,
+		colorGray0,
 		colorGray1,
 		colorGray4,
 		colorGray5,
@@ -184,6 +185,12 @@
 	font-family: value(fontFamilyMono);
 	font-size: 2.4em;
 	font-weight: bold;
+}
+
+.startAt span {
+	color: value(colorGray0);
+	font-size: 15px;
+	font-weight: normal;
 }
 
 .location {
