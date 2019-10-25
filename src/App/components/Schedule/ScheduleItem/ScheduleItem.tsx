@@ -38,7 +38,7 @@ interface ISpeaker {
 }
 
 interface ISelfProps {
-	timeStart: string;
+	timeStart: ReactNode;
 	timeEnd?: string;
 	lang?: string;
 	location: ReactNode;
@@ -87,7 +87,7 @@ export const talkTypeColors: Record<string, Color> = {
 export class ScheduleItem extends Component<IScheduleItemProps> {
 
 	static propTypes = {
-		timeStart:             PropTypes.string.isRequired,
+		timeStart:             PropTypes.node.isRequired,
 		timeEnd:               PropTypes.string,
 		lang:                  PropTypes.string,
 		location:              PropTypes.node.isRequired,
