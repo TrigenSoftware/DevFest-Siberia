@@ -185,7 +185,7 @@ export class ScheduleContainer extends Component<IProps> {
 							<ScheduleItem
 								key={title}
 								{...item}
-								timeStart={formatDate(date, timeStart)}
+								time={formatDate(date, timeStart)}
 								status={this.getStatus(date, timeStart, timeEnd)}
 							/>
 						);
