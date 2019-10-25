@@ -68,4 +68,18 @@ storiesOf('Containers|Schedule', module)
 				<Footer/>
 			</>
 		)
+	)
+	.add(
+		'with pass date',
+		() => (
+			<>
+				<Provider store={store}>
+					<Header/>
+				</Provider>
+				<Schedule
+					datetime={date('Current time', new Date('2019-11-30'))}
+				/>
+				<Footer/>
+			</>
+		)
 	);

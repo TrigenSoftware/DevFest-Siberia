@@ -195,6 +195,42 @@ export class ScheduleContainer extends Component<IProps> {
 		);
 	}
 
+	componentDidMount() {
+
+		const {
+			history,
+			location: {
+				search
+			},
+			datetime
+		} = this.props;
+		const {
+			context
+		} = this;
+		const date = new URLSearchParams(search).get('date');
+
+		if (!date) {
+			const today = datetime && new Date(datetime) || new Date();
+			const hours = today.getHours();
+			const minutes = today.getMinutes();
+			const seconds = today.getSeconds();
+			const dates = getScheduleDate(context).map(item =>
+				new Date(`${item.date} ${hours}:${minutes}:${seconds}`)
+			);
+
+			dates.some((date) => {
+				if (today <= date) {
+					history.push({
+						search: addSearchParams(search, {
+							date: format(date, 'yyyy-MM-dd')
+						})
+					});
+					return true;
+				}
+			});
+		}
+	}
+
 	private getStatus(date: string, timeStart: string, timeEnd: string) {
 
 		const {
@@ -203,8 +239,6 @@ export class ScheduleContainer extends Component<IProps> {
 		const currentDate = datetime || new Date();
 		const startDate = parseISO(`${date}T${timeStart}:00`);
 		const endDate = parseISO(`${date}T${timeEnd}:00`);
-
-		console.log(startDate, endDate);
 
 		if (currentDate > startDate && currentDate > endDate) {
 			return VariantScheduleItemStatus.Past;
