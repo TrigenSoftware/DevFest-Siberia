@@ -84,12 +84,29 @@ export class ScheduleContainer extends Component<IProps, IState> {
 
 	static contextType = I18nContext;
 
+	static getDerivedStateFromProps(
+		{
+			datetime
+		}: IProps
+	) {
+
+		if (datetime) {
+			return {
+				currentDate: datetime
+			};
+		}
+
+		return {
+			currentDate: new Date()
+		};
+	}
+
 	context!: ContextType<typeof I18nContext>;
 
 	updateIntervalId: any = null;
 
 	state = {
-		currentDate: new Date()
+		currentDate: null
 	};
 
 	render() {
@@ -208,7 +225,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 			history,
 			location: {
 				search
-			}
+			},
+			datetime
 		} = this.props;
 		const {
 			currentDate
@@ -218,7 +236,10 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		} = this;
 		const date = new URLSearchParams(search).get('date');
 
-		this.updateIntervalId = setInterval(this.updateDate, UPDATE_INTERVAL);
+		if (!datetime) {
+
+			this.updateIntervalId = setInterval(this.updateDate, UPDATE_INTERVAL);
+		}
 
 		if (!date) {
 
