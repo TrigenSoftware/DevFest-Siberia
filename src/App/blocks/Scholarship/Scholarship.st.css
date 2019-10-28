@@ -1,0 +1,100 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named:
+		sizeScreenMdMax,
+		sizeGapXl,
+		colorWhite,
+		colorBlue10;
+}
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+.root {
+	border-bottom: rel(14, 24) solid value(colorWhite);
+	background-color: value(colorBlue10);
+	overflow: hidden;
+}
+
+.root .center {
+	position: relative;
+	padding-bottom: value(sizeGapXl);
+}
+
+.root article {
+	width: 73%;
+}
+
+.group {
+	display: flex;
+	align-items: center;
+}
+
+.subtitle {
+	color: value(colorWhite);
+	font-size: rel(36, 24);
+}
+
+.title {
+	margin: 0;
+	width: 671px;
+	color: value(colorWhite);
+	font-size: rel(50, 24);
+}
+
+.button {
+	border: rel(8, 44) solid value(colorWhite);
+	border-radius: rel(20, 44);
+	padding: rel(16, 44) rel(40, 44);
+	font-size: rel(44, 24);
+}
+
+.scholarshipImg {
+	position: absolute;
+	top: -10px;
+	right: -30px;
+	width: rel(321, 24);
+	height: rel(371, 24);
+}
+
+@media (max-width: value(sizeScreenMdMax)) {
+
+	.root article {
+		width: 100%;
+	}
+
+	.group {
+		display: block;
+	}
+
+	.subtitle {
+		margin-bottom: 27px;
+		font-size: 16px;
+	}
+
+	.title {
+		margin-bottom: 30px;
+		width: 100%;
+		font-size: 23px;
+	}
+
+	.button {
+		font-size: 30px;
+	}
+
+	.scholarshipImg {
+		top: auto;
+		right: -7px;
+		bottom: -20px;
+		width: 142px;
+		height: 149px;
+	}
+}
