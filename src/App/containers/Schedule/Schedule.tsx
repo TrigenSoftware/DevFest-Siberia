@@ -1,3 +1,4 @@
+/* tslint:disable:no-magic-numbers */
 import {
 	parseISO,
 	format
@@ -7,7 +8,6 @@ import React, {
 	Component
 } from 'react';
 import {
-	RouteComponentProps,
 	withRouter
 } from 'react-router-dom';
 import {
@@ -15,16 +15,15 @@ import {
 	__x
 } from 'i18n-for-react';
 import {
-	omit
+	omit,
+	Bind
 } from '@flexis/ui/helpers';
 import {
 	getScheduleDate,
 	getScheduleTypes,
 	getSchedule
 } from '~/services/i18n';
-import Section, {
-	IProps as ISectionProps
-} from '~/components/Section';
+import Section from '~/components/Section';
 import ToggleNav, {
 	ToggleNavLink
 } from '~/components/ToggleNav';
@@ -41,13 +40,15 @@ import {
 	addSearchParams
 } from '~/blocks/common/router';
 import {
+	IProps,
+	IState
+} from './types';
+import {
 	style,
 	classes
 } from './Schedule.st.css';
 
-export interface IProps extends ISectionProps, RouteComponentProps {
-	datetime?: Date;
-}
+const UPDATE_INTERVAL = 3000;
 
 function formatDate(date: string, timeStart: string) {
 
@@ -79,11 +80,17 @@ function getVariant(type: string) {
 	}
 }
 
-export class ScheduleContainer extends Component<IProps> {
+export class ScheduleContainer extends Component<IProps, IState> {
 
 	static contextType = I18nContext;
 
 	context!: ContextType<typeof I18nContext>;
+
+	updateIntervalId: any = null;
+
+	state = {
+		currentDate: new Date()
+	};
 
 	render() {
 
@@ -201,28 +208,27 @@ export class ScheduleContainer extends Component<IProps> {
 			history,
 			location: {
 				search
-			},
-			datetime
+			}
 		} = this.props;
+		const {
+			currentDate
+		} = this.state;
 		const {
 			context
 		} = this;
 		const date = new URLSearchParams(search).get('date');
 
-		if (!date) {
-			const today = datetime && new Date(datetime) || new Date();
-			const hours = today.getHours();
-			const minutes = today.getMinutes();
-			const seconds = today.getSeconds();
-			const dates = getScheduleDate(context).map(item =>
-				new Date(`${item.date} ${hours}:${minutes}:${seconds}`)
-			);
+		this.updateIntervalId = setInterval(this.updateDate, UPDATE_INTERVAL);
 
-			dates.some((date) => {
-				if (today <= date) {
+		if (!date) {
+
+			getScheduleDate(context).some(({ date }) => {
+
+				if (currentDate <= new Date(date)) {
+
 					history.push({
 						search: addSearchParams(search, {
-							date: format(date, 'yyyy-MM-dd')
+							date
 						})
 					});
 					return true;
@@ -231,12 +237,22 @@ export class ScheduleContainer extends Component<IProps> {
 		}
 	}
 
+	componentWillUnmount() {
+		clearInterval(this.updateIntervalId);
+	}
+
+	@Bind()
+	private updateDate() {
+		this.setState(() => ({
+			currentDate: new Date()
+		}));
+	}
+
 	private getStatus(date: string, timeStart: string, timeEnd: string) {
 
 		const {
-			datetime
-		} = this.props;
-		const currentDate = datetime || new Date();
+			currentDate
+		} = this.state;
 		const startDate = parseISO(`${date}T${timeStart}:00`);
 		const endDate = parseISO(`${date}T${timeEnd}:00`);
 

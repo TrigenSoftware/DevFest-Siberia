@@ -138,16 +138,19 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 			onWorkshopDeleteClick,
 			...props
 		} = this.props;
-		const color = talkTypeBadge
-			? talkTypeColors[talkTypeBadge.toLowerCase()]
-			: 'noColor';
+		const color = talkTypeBadge && talkTypeColors[talkTypeBadge.toLowerCase()];
+		const withBadge = talkTypeBadge;
 
 		return (
 			<tr
-				{...omit(props, ['timeEnd'])}
+				{...omit(props, [
+					'timeStart',
+					'timeEnd'
+				])}
 				className={style(classes.root, {
-					[status]: Boolean(status),
-					[color]:  Boolean(color)
+					[status]:  Boolean(status),
+					[color]:   Boolean(color),
+					withBadge: Boolean(withBadge)
 				}, className)}
 			>
 				<td

@@ -57,7 +57,7 @@
 		blue,
 		green,
 		lightgreen,
-		noColor;
+		withBadge;
 	background-color: value(colorWhite);
 	vertical-align: top;
 	font-size: 1rem;
@@ -234,20 +234,12 @@
 	color: value(colorBlue8);
 }
 
-.root:now .lang,
-.root:now .title,
-.root:now .location,
-.root:now .speaker,
-.root:now .about {
+.root:now:withBadge .lang,
+.root:now:withBadge .title,
+.root:now:withBadge .location,
+.root:now:withBadge .speaker,
+.root:now:withBadge .about {
 	color: value(colorWhite);
-}
-
-.root:now:noColor .lang,
-.root:now:noColor .title,
-.root:now:noColor .location,
-.root:now:noColor .speaker,
-.root:now:noColor .about {
-	color: value(colorBlack);
 }
 
 .time {

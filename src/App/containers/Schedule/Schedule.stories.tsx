@@ -62,9 +62,7 @@ storiesOf('Containers|Schedule', module)
 				<Provider store={store}>
 					<Header/>
 				</Provider>
-				<Schedule
-					datetime={date('Current time', new Date())}
-				/>
+				<Schedule/>
 				<Footer/>
 			</>
 		)
