@@ -68,6 +68,20 @@ storiesOf('Containers|Schedule', module)
 		)
 	)
 	.add(
+		'with 2019-11-29 date',
+		() => (
+			<>
+				<Provider store={store}>
+					<Header/>
+				</Provider>
+				<Schedule
+					datetime={date('Current time', new Date('2019-11-29'))}
+				/>
+				<Footer/>
+			</>
+		)
+	)
+	.add(
 		'with 2019-11-30 date',
 		() => (
 			<>

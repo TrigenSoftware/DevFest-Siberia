@@ -7,6 +7,7 @@ import React, {
 	ContextType,
 	Component
 } from 'react';
+import PropTypes from 'prop-types';
 import {
 	withRouter
 } from 'react-router-dom';
@@ -48,7 +49,7 @@ import {
 	classes
 } from './Schedule.st.css';
 
-const UPDATE_INTERVAL = 3000;
+const UPDATE_INTERVAL = 30000;
 
 function formatDate(date: string, timeStart: string) {
 
@@ -83,6 +84,10 @@ function getVariant(type: string) {
 export class ScheduleContainer extends Component<IProps, IState> {
 
 	static contextType = I18nContext;
+
+	static propTypes = {
+		datetime: PropTypes.any
+	};
 
 	static getDerivedStateFromProps(
 		{
