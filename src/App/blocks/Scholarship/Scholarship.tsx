@@ -1,6 +1,12 @@
 import React, {
+	ContextType,
 	Component
 } from 'react';
+import {
+	I18nContext,
+	__ as tr,
+	__x
+} from 'i18n-for-react';
 import Section, {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -19,12 +25,20 @@ export type IProps = ISectionProps;
 
 export default class Scholarship extends Component<IProps> {
 
+	static contextType = I18nContext;
+
+	context!: ContextType<typeof I18nContext>;
+
 	render() {
 
 		const {
 			className,
 			...props
 		} = this.props;
+		const {
+			context
+		} = this;
+		const __ = context.bind(tr);
 
 		return (
 			<Section
@@ -35,7 +49,7 @@ export default class Scholarship extends Component<IProps> {
 					<h3
 						className={classes.subtitle}
 					>
-						Also on this year, you have a chance get
+						{__x`scholarship.subtitle`}
 					</h3>
 					<div
 						className={classes.group}
@@ -43,16 +57,16 @@ export default class Scholarship extends Component<IProps> {
 						<h2
 							className={classes.title}
 						>
-							DevFest Siberia 2019 Diversity Scholarship
+							{__x`scholarship.title`}
 						</h2>
 						<Link
-							to='/'
+							to={__`scholarship.link`}
 							disguised
 						>
 							<Button
 								className={classes.button}
 							>
-								Get It
+								{__x`scholarship.button`}
 							</Button>
 						</Link>
 					</div>

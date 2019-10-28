@@ -36,6 +36,7 @@
 .group {
 	display: flex;
 	align-items: center;
+	padding-top: rel(19, 24);
 }
 
 .subtitle {
@@ -59,7 +60,7 @@
 
 .scholarshipImg {
 	position: absolute;
-	top: -10px;
+	top: 10px;
 	right: -30px;
 	width: rel(321, 24);
 	height: rel(371, 24);
