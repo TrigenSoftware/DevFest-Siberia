@@ -77,7 +77,10 @@ export class ScheduleContainer extends Component<IProps, IState> {
 	static getDerivedStateFromProps(
 		{
 			datetime
-		}: IProps
+		}: IProps,
+		{
+			currentDate
+		}: IState
 	) {
 
 		if (datetime) {
@@ -87,14 +90,14 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		}
 
 		return {
-			currentDate: new Date()
+			currentDate: new Date() === currentDate
+				? currentDate
+				: new Date()
 		};
 	}
 
 	context!: ContextType<typeof I18nContext>;
-
 	updateIntervalId: any = null;
-
 	state = {
 		currentDate: null
 	};
@@ -255,7 +258,10 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		const date = new URLSearchParams(search).get('date');
 
 		if (!date) {
-			getScheduleDate(context).some(({ date }) => {
+
+			const schedule = getScheduleDate(context);
+
+			schedule.some(({ date }) => {
 
 				if (currentDate <= new Date(date)) {
 					history.push({
@@ -270,7 +276,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 
 		if (!datetime) {
 
-			this.updateIntervalId = setInterval(this.updateDate, UPDATE_INTERVAL);
+			this.updateIntervalId = setInterval(this.updateCurrentDate, UPDATE_INTERVAL);
 		}
 	}
 
@@ -279,7 +285,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 	}
 
 	@Bind()
-	private updateDate() {
+	private updateCurrentDate() {
 		this.setState(() => ({
 			currentDate: new Date()
 		}));

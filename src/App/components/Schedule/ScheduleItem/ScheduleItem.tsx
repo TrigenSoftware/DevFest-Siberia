@@ -137,7 +137,6 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 			...props
 		} = this.props;
 		const color = talkTypeBadge && talkTypeColors[talkTypeBadge.toLowerCase()];
-		const withBadge = talkTypeBadge;
 
 		return (
 			<tr
@@ -148,7 +147,7 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 				className={style(classes.root, {
 					[status]:  Boolean(status),
 					[color]:   Boolean(color),
-					withBadge: Boolean(withBadge)
+					withBadge: Boolean(talkTypeBadge)
 				}, className)}
 			>
 				<td
