@@ -46,11 +46,11 @@ export default class Scholarship extends Component<IProps> {
 				className={style(classes.root, className)}
 			>
 				<article>
-					<h3
-						className={classes.subtitle}
+					<div
+						className={classes.text}
 					>
-						{__x`scholarship.subtitle`}
-					</h3>
+						{__x`scholarship.text`}
+					</div>
 					<div
 						className={classes.group}
 					>

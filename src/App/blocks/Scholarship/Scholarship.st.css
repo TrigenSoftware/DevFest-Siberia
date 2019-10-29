@@ -21,7 +21,6 @@
 .root {
 	border-bottom: rel(14, 24) solid value(colorWhite);
 	background-color: value(colorBlue10);
-	overflow: hidden;
 }
 
 .root .center {
@@ -39,7 +38,7 @@
 	padding-top: rel(19, 24);
 }
 
-.subtitle {
+.text {
 	color: value(colorWhite);
 	font-size: rel(36, 24);
 }
@@ -60,8 +59,8 @@
 
 .scholarshipImg {
 	position: absolute;
-	top: 10px;
-	right: -30px;
+	top: 0;
+	right: 0;
 	width: rel(321, 24);
 	height: rel(371, 24);
 }
@@ -93,7 +92,6 @@
 
 	.scholarshipImg {
 		top: auto;
-		right: -7px;
 		bottom: -20px;
 		width: 142px;
 		height: 149px;
