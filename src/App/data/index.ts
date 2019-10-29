@@ -29,9 +29,9 @@ export const twitterSite = '@GDGNsk';
 export const siteUrl = process.env.SITE_URL;
 
 export const sharingImages = {
-	image:    'https://res.cloudinary.com/trigen/image/upload/c_scale,w_600/v1570633848/devfest2019/share.jpg',
-	twitter:  'https://res.cloudinary.com/trigen/image/upload/c_scale,w_600/v1570633848/devfest2019/share.jpg',
-	facebook: 'https://res.cloudinary.com/trigen/image/upload/c_scale,w_600/v1570633848/devfest2019/share.jpg'
+	image:    'https://res.cloudinary.com/trigen/image/upload/c_scale,w_600/v1572276861/devfest2019/share-v2.jpg',
+	twitter:  'https://res.cloudinary.com/trigen/image/upload/c_scale,w_600/v1572276861/devfest2019/share-v2.jpg',
+	facebook: 'https://res.cloudinary.com/trigen/image/upload/c_scale,w_600/v1572276861/devfest2019/share-v2.jpg'
 };
 
 export const ageRange = '16+';
