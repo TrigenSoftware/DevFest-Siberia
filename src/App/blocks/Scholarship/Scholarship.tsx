@@ -45,7 +45,9 @@ export default class Scholarship extends Component<IProps> {
 				{...props}
 				className={style(classes.root, className)}
 			>
-				<article>
+				<div
+					className={classes.content}
+				>
 					<div
 						className={classes.text}
 					>
@@ -70,7 +72,7 @@ export default class Scholarship extends Component<IProps> {
 							</Button>
 						</Link>
 					</div>
-				</article>
+				</div>
 				<ScholarshipImg
 					className={classes.scholarshipImg}
 					{...noSize}
