@@ -79,13 +79,13 @@ export class ScheduleContainer extends Component<IProps, IState> {
 			datetime
 		}: IProps,
 		{
-			currentDate
+			currentDate: prevCurrentDate
 		}: IState
 	) {
 
-		const now = new Date();
+		const currentDate = new Date();
 
-		if (now === currentDate) {
+		if (currentDate === prevCurrentDate) {
 			return null;
 		}
 
@@ -96,7 +96,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		}
 
 		return {
-			currentDate: now
+			currentDate
 		};
 	}
 
