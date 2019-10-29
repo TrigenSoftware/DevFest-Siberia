@@ -255,11 +255,9 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		const date = new URLSearchParams(search).get('date');
 
 		if (!date) {
-
 			getScheduleDate(context).some(({ date }) => {
 
 				if (currentDate <= new Date(date)) {
-
 					history.push({
 						search: addSearchParams(search, {
 							date
