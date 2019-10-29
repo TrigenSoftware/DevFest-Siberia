@@ -22,15 +22,14 @@ import {
 import {
 	getScheduleDate,
 	getScheduleTypes,
+	getScheduleLevels,
 	getSchedule
 } from '~/services/i18n';
 import Section from '~/components/Section';
 import ToggleNav, {
 	ToggleNavLink
 } from '~/components/ToggleNav';
-import Badge, {
-	VariantVariant
-} from '~/components/Badge';
+import Badge from '~/components/Badge';
 import Schedule, {
 	ScheduleItem,
 	talkTypeColors,
@@ -65,20 +64,6 @@ function formatDate(date: string, timeStart: string) {
 			<span>{' '}{formatType}</span>
 		</>
 	);
-}
-
-function getVariant(type: string) {
-
-	switch (type) {
-
-		case 'junior':
-		case 'middle':
-		case 'senior':
-			return VariantVariant.Outline;
-
-		default:
-			return VariantVariant.Fill;
-	}
 }
 
 export class ScheduleContainer extends Component<IProps, IState> {
@@ -130,7 +115,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		const date = params.get('date');
 		const type = params.get('type');
 		const nav = getScheduleDate(context);
-		const filter = getScheduleTypes(context);
+		const filterTypes = getScheduleTypes(context);
+		const filterLevels = getScheduleLevels(context);
 		const schedule = getSchedule(context, date, type);
 
 		return (
@@ -177,7 +163,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 					<ToggleNav
 						className={classes.filter}
 					>
-						{filter.map(({
+						{filterTypes.map(({
 							type,
 							label
 						}) => (
@@ -191,7 +177,34 @@ export class ScheduleContainer extends Component<IProps, IState> {
 								}}
 							>
 								<Badge
-									variant={getVariant(type)}
+									variant='fill'
+									color={talkTypeColors[type]}
+								>
+									{label}
+								</Badge>
+							</ToggleNavLink>
+						))}
+					</ToggleNav>
+					<div
+						className={classes.separator}
+					/>
+					<ToggleNav
+						className={classes.filter}
+					>
+						{filterLevels.map(({
+							type,
+							label
+						}) => (
+							<ToggleNavLink
+								key={type}
+								to={{
+									pathname: '/schedule',
+									search: addSearchParams(search, {
+										type
+									})
+								}}
+							>
+								<Badge
 									color={talkTypeColors[type]}
 								>
 									{label}
@@ -241,11 +254,6 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		} = this;
 		const date = new URLSearchParams(search).get('date');
 
-		if (!datetime) {
-
-			this.updateIntervalId = setInterval(this.updateDate, UPDATE_INTERVAL);
-		}
-
 		if (!date) {
 
 			getScheduleDate(context).some(({ date }) => {
@@ -260,6 +268,11 @@ export class ScheduleContainer extends Component<IProps, IState> {
 					return true;
 				}
 			});
+		}
+
+		if (!datetime) {
+
+			this.updateIntervalId = setInterval(this.updateDate, UPDATE_INTERVAL);
 		}
 	}
 

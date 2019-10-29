@@ -79,9 +79,12 @@
 }
 
 .filter .item {
-	margin-right: 10px;
 	margin-bottom: 20px;
 	font-size: 0;
+}
+
+.filter .item:not(:last-child) {
+	margin-right: 10px;
 }
 
 .filter .active .Badge {
@@ -139,6 +142,11 @@
 	margin-right: 14px;
 	color: value(colorGray1);
 	font-size: 16px;
+}
+
+.separator {
+	margin: auto;
+	width: 0;
 }
 
 @media (max-width: value(sizeScreenMdMax)) {

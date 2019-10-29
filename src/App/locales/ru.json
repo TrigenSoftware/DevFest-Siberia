@@ -930,7 +930,7 @@
 		],
 		"filter": {
 			"title": "Filter by track",
-			"items": [
+			"types": [
 				{
 					"type": "all",
 					"label": "All"
@@ -966,6 +966,20 @@
 				{
 					"type": "web",
 					"label": "Web"
+				}
+			],
+			"level": [
+				{
+					"type": "junior",
+					"label": "Junior"
+				},
+				{
+					"type": "middle",
+					"label": "Middle"
+				},
+				{
+					"type": "senior",
+					"label": "Senior"
 				}
 			]
 		}

@@ -186,14 +186,32 @@ export function getScheduleTypes(context: I18nConfig): any[] {
 	const {
 		schedule: {
 			filter: {
-				items
+				types
 			}
 		}
 	} = context.getCatalog(
 		context.getLocale()
 	) as any;
 
-	return items;
+	return types;
+}
+
+/**
+ * Get schedule levels from locales.
+ */
+export function getScheduleLevels(context: I18nConfig): any[] {
+
+	const {
+		schedule: {
+			filter: {
+				level
+			}
+		}
+	} = context.getCatalog(
+		context.getLocale()
+	) as any;
+
+	return level;
 }
 
 /**
