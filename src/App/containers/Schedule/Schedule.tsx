@@ -83,6 +83,12 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		}: IState
 	) {
 
+		const now = new Date();
+
+		if (now === currentDate) {
+			return null;
+		}
+
 		if (datetime) {
 			return {
 				currentDate: datetime
@@ -90,9 +96,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		}
 
 		return {
-			currentDate: new Date() === currentDate
-				? currentDate
-				: new Date()
+			currentDate: now
 		};
 	}
 
@@ -275,7 +279,6 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		}
 
 		if (!datetime) {
-
 			this.updateIntervalId = setInterval(this.updateCurrentDate, UPDATE_INTERVAL);
 		}
 	}
