@@ -28,13 +28,10 @@
 	padding-bottom: value(sizeGapXl);
 }
 
-.content {
-	margin-right: 27%;
-}
-
 .group {
 	display: flex;
 	align-items: center;
+	margin-right: 27%;
 	padding-top: rel(19, 24);
 }
 
@@ -67,12 +64,9 @@
 
 @media (max-width: value(sizeScreenMdMax)) {
 
-	.content {
-		margin: auto;
-	}
-
 	.group {
 		display: block;
+		margin: 0;
 	}
 
 	.subtitle {

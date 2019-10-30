@@ -46,32 +46,28 @@ export default class Scholarship extends Component<IProps> {
 				className={style(classes.root, className)}
 			>
 				<div
-					className={classes.content}
+					className={classes.text}
 				>
-					<div
-						className={classes.text}
+					{__x`scholarship.text`}
+				</div>
+				<div
+					className={classes.group}
+				>
+					<h2
+						className={classes.title}
 					>
-						{__x`scholarship.text`}
-					</div>
-					<div
-						className={classes.group}
+						{__x`scholarship.title`}
+					</h2>
+					<Link
+						to={__`scholarship.link`}
+						disguised
 					>
-						<h2
-							className={classes.title}
+						<Button
+							className={classes.button}
 						>
-							{__x`scholarship.title`}
-						</h2>
-						<Link
-							to={__`scholarship.link`}
-							disguised
-						>
-							<Button
-								className={classes.button}
-							>
-								{__x`scholarship.button`}
-							</Button>
-						</Link>
-					</div>
+							{__x`scholarship.button`}
+						</Button>
+					</Link>
 				</div>
 				<ScholarshipImg
 					className={classes.scholarshipImg}
