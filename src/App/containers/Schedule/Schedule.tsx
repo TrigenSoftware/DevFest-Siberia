@@ -83,15 +83,9 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		}: IState
 	) {
 
-		if (datetime === currentDate) {
-			return null;
-		}
+		let nextState: Partial<IState> = null;
 
-		let nextState: Partial<IState> = {
-			currentDate: new Date()
-		};
-
-		if (datetime) {
+		if (datetime && datetime !== currentDate) {
 			nextState = {
 				currentDate: datetime
 			};
