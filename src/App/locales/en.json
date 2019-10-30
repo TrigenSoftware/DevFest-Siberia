@@ -114,6 +114,17 @@
 				]
 			},
 			{
+				"title": "Silver partners",
+				"items": [
+					{
+						"type": "silver",
+						"href": "https://arqatech.com/?utm=dfSiberia19",
+						"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1572372361/partners/an3zf9lfhj4hdvwkpoik.svg",
+						"title": "ARQA Technologies"
+					}
+				]
+			},
+			{
 				"title": "Media Partners",
 				"items": [
 					{
@@ -317,25 +328,6 @@
 				"talkLevelBadge": "Senior"
 			},
 			{
-				"id": "ValarieRegas",
-				"type": "devops",
-				"promo": true,
-				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1569442521/speakers/ValarieRegas_f1kzkd.jpg",
-				"firstname": "Valarie",
-				"lastname": "Regas",
-				"description": "Jr. DevOps at Airbus Aerial",
-				"location": "🇺🇸",
-				"contacts": {
-					"twitter": "https://twitter.com/ValarieRegas"
-				},
-				"text": "Valarie Regas is a youngling developer, a Georgia Tech coding bootcamp graduate, and a veteran mommy. She holds a BA in Psychology and currently works as a Jr. DevOps Engineer. After years being a stay-at-home mom, she decided to change her life by entering Tech, and has learned a lot along the way. She enjoys mixed martial arts fighting, table-top role playing games, public speaking, creating tiny humans, and political activism.",
-				"talkTitle": "",
-				"talkLocation": "",
-				"talkTime": "",
-				"talkTypeBadge": "DevOps",
-				"talkLevelBadge": "Junior"
-			},
-			{
 				"id": "WillMendes",
 				"type": "web",
 				"promo": true,
@@ -375,12 +367,31 @@
 				"talkLevelBadge": "Senior"
 			},
 			{
-				"id": "EkaterinaLoshchinina",
+				"id": "ValarieRegas",
+				"type": "devops",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1569442521/speakers/ValarieRegas_f1kzkd.jpg",
+				"firstname": "Valarie",
+				"lastname": "Regas",
+				"description": "Jr. DevOps at Airbus Aerial",
+				"location": "🇺🇸",
+				"contacts": {
+					"twitter": "https://twitter.com/ValarieRegas"
+				},
+				"text": "Valarie Regas is a youngling developer, a Georgia Tech coding bootcamp graduate, and a veteran mommy. She holds a BA in Psychology and currently works as a Jr. DevOps Engineer. After years being a stay-at-home mom, she decided to change her life by entering Tech, and has learned a lot along the way. She enjoys mixed martial arts fighting, table-top role playing games, public speaking, creating tiny humans, and political activism.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "DevOps",
+				"talkLevelBadge": "Junior"
+			},
+			{
+				"id": "EkaterinaLoschinina",
 				"type": "hype",
 				"promo": true,
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571600323/speakers/Katerina_Loschinina_falpg4.jpg",
 				"firstname": "Katerina",
-				"lastname": "Loshchinina",
+				"lastname": "Loschinina",
 				"description": "Engineer at Financial Times",
 				"location": "🇬🇧",
 				"contacts": {
@@ -392,6 +403,25 @@
 				"talkTime": "",
 				"talkTypeBadge": "Hype",
 				"talkLevelBadge": "Middle"
+			},
+			{
+				"id": "AarushiKansal",
+				"type": "web",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571362918/speakers/Aarushi_Kansal_dbg2mp.jpg",
+				"firstname": "Aarushi",
+				"lastname": "Kansal",
+				"description": "Software developer at Tier",
+				"location": "🇩🇪",
+				"contacts": {
+				"twitter":"https://twitter.com/aarushikansal"
+				},
+				"text": "Aarushi is a software developer currently working at Tier, previously Deliveroo and ThoughtWorks. She codes in primarily Go and a bit of Python. Passionate about increasing diversity in tech and spends a lot of her time mentoring underrepresented groups.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "Web",
+				"talkLevelBadge": "Senior"
 			},
 			{
 				"id": "IgnatKorchagin",
@@ -477,7 +507,7 @@
 				"firstname": "Adrián",
 				"lastname": "Bolonio",
 				"description": "Web Team Lead at @willhabentech",
-				"location": "🇦🇹",
+				"location": "🇪🇸",
 				"contacts": {
 					"telegram": "https://t.me/bolonio",
 					"twitter": "https://twitter.com/bolonio",
@@ -489,27 +519,6 @@
 				"talkTime": "",
 				"talkTypeBadge": "Web",
 				"talkLevelBadge": "Middle"
-			},
-			{
-				"id": "MajidHajian",
-				"type": "web",
-				"promo": true,
-				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1569451795/speakers/MajidHajian_bswvpa.jpg",
-				"firstname": "Majid",
-				"lastname": "Hajian",
-				"description": "Founder at Softiware AS",
-				"location": "🇳🇴",
-				"contacts": {
-					"telegram": "https://t.me/mhadaily",
-					"twitter": "https://twitter.com/mhadaily",
-					"site": "https://www.majidhajian.com/"
-				},
-				"text": "Majid Hajian is a software developer has developed and architected complex web applications since 2007 after he graduated as a software engineer.\r\nA software developer at heart, Majid is passionate about web platform especially hardware connectivity and performance and in particular Progressive Web Apps.\r\nHe loves sharing his knowledge with the community by writing on his blog majidhajian.com and tweeting @mhadaily, speaking at conferences, visiting developers to help them, contributing to open source and organizing meetups and events.\r\nMajid is the author of \"Progressive web app with Angular\" book published by Apress and \"Progressive Web Apps\" video tutorial published by PacktPub and Udemy. \r\nHe is (co)organizer of a few meetups in Norway dedicated to frontend and mobile in Oslo including Mobile meetup and Vue.js Oslo and Angular Oslo, Framisa and an Organizer of Mobile Era and ngVikings which are the main Nordic conferences for mobile and Angular.",
-				"talkTitle": "",
-				"talkLocation": "",
-				"talkTime": "",
-				"talkTypeBadge": "Web",
-				"talkLevelBadge": "Junior"
 			},
 			{
 				"id": "AndrewMihin",
@@ -676,7 +685,7 @@
 				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571600650/speakers/juziaw27hy3fxkwscld3.jpg",
 				"firstname": "Tom",
 				"lastname": "Kozacinski",
-				"description": "Product Designer at VIOOH",
+				"description": "Product design consultant",
 				"location": "🇬🇧",
 				"contacts": {
 					"twitter": "https://twitter.com/universeceo",
@@ -718,7 +727,6 @@
 				"description": "Tech consultant at Avalon Solutions AB",
 				"location": "🇳🇴",
 				"contacts": {
-
 				},
 				"text": "Straight from sunny Norway 🇳🇴, Vsevolod is always curious to know as well as to share what tech has to offer. Have been here and there, from working in investment banks to building startups, eventually ending up being cloud-savvy. Currently engaged with a Google premier partner to deliver cutting-edge cloud solutions to leading local players. Some of my current involvements are: bringing 500 containers to the cloud, building sophisticated AI-stack for the local agricultural giant.",
 				"talkTitle": "",
@@ -824,6 +832,234 @@
 				"talkTime": "",
 				"talkTypeBadge": "Web",
 				"talkLevelBadge": "Junior"
+			},
+			{
+				"id": "NikitaAshikhmin",
+				"type": "ai",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571609655/speakers/w7s7qtroioekqf4nqmzp.jpg",
+				"firstname": "Nikita",
+				"lastname": "Ashikhmin",
+				"description": "Software Developer at JetBrains",
+				"location": "🇷🇺",
+				"contacts": {
+					"github": "https://github.com/nashikhmin"
+				},
+				"text": "Nikita is a software developer in Big Data Tools. He creates integration with Zeppelin Notebooks.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "AI",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"id": "NatalyaLukashevich",
+				"type": "ai",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571609655/speakers/iz5shg9qon9ctjqlsl2f.jpg",
+				"firstname": "Natalia",
+				"lastname": "Lukashevich",
+				"description": "Leading Researcher at Moscow State University",
+				"location": "🇷🇺",
+				"contacts": {
+					"site": "https://istina.msu.ru/profile/louk_nat/?utm=dfSiberia19"
+				},
+				"text": "Natalia's main specialization is natural language processing and knowledge representation. She published more than 200 scientific papers. Natalia is the main author of large lexical-semantic resources for natural language processing in Russian such as <a href=\"https://www.labinform.ru/pub/ruthes/index_eng.htm?utm=dfSiberia\" target=\"_blank\">RuThes</a> and <a href=\"https://ruwordnet.ru/en/?utm=dfSiberia\" target=\"_blank\">RuWordNet</a>. Her research group prepared and published several lexicons for Russian sentiment analysis, labeled datasets for named entity recognition. Natalia helped organize several evaluations in sentiment analysis and distributional semantics for the Russian language.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "ai",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"id": "AnnaMosolova",
+				"type": "ai",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571609655/speakers/gy2hitsi4gj5ztxhnnse.jpg",
+				"firstname": "Anna",
+				"lastname": "Mosolova",
+				"description": "Data scientist at Data Monsters",
+				"location": "🇷🇺",
+				"contacts": {
+					"telegram": "https://t.me/anyabelk"
+				},
+				"text": "Anna is a computational linguist interested in natural language processing, text generation, distributional semantics and historical linguistics ",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "ai",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"id": "IvanBondarenko",
+				"type": "ai",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571609655/speakers/tdc6dpg1lh4lhqqe895w.jpg",
+				"firstname": "Ivan",
+				"lastname": "Bondarenko",
+				"description": "Lead developer at MIPT",
+				"location": "🇷🇺",
+				"contacts": {
+					"github": "https://github.com/bond005"
+				},
+				"text": "Ivan is a lead developer at MIPT, a solution architect at DataMonsters, and slightly teaches at NSU. His passion is deep learning for natural language processing and speech recognition.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "ai",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"id": "ValentinMalykh",
+				"type": "ai",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571609655/speakers/ht1byb4s2vxjzyyqhoff.jpg",
+				"firstname": "Valentin",
+				"lastname": "Malykh",
+				"description": "Senior Research Scientist at Huawei",
+				"location": "🇷🇺",
+				"contacts": {
+					"email": "mailto:valentin@maly.hk"
+				},
+				"text": "Research Scientist with a demonstrated history of working in information retrieval industry. Skilled in Deep Learning, Natural Language Processing, & Python. Strong research professional graduated from MIPT in 2009.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "ai",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"id": "AndrewKutuzov",
+				"type": "ai",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571609655/speakers/seefhxchrqnelk7mhd4z.jpg",
+				"firstname": "Andrew",
+				"lastname": "Kutuzov",
+				"description": "Researcher at Oslo University",
+				"location": "🇳🇴",
+				"contacts": {
+					"site": "https://rusvectores.org/?utm=dfSiberia"
+				},
+				"text": "Andrew completed a master's degree in computer linguistics at the Higher School of Economics in Moscow, worked for three years as an NLP engineer at Mail.ru Search, and in 2015 moved to the University of Oslo to write PhD about word embeddings. He teaches there a course about Deep Learning in NLP. The most relevant project for today is <a href=\"https://rusvectores.org\" traget=\"_blank\">rusvectores.org</a>.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "ai",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"id": "KirillMalev",
+				"type": "ai",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571609655/speakers/rz21lhfm6xgtvoxfgoda.jpg",
+				"firstname": "Kirill",
+				"lastname": "Malev",
+				"description": "Leading Data Scientist, LocalKitchen",
+				"location": "🇷🇺",
+				"contacts": {
+					"site": "https://malev.ru/?utm=dfSiberia"
+				},
+				"text": "Kirill is developing a data platform at growing dark kitchen company.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "ai",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"id": "IvanKomarov",
+				"type": "ai",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571609655/speakers/aiu1e28florjra3toxpd.jpg",
+				"firstname": "Ivan",
+				"lastname": "Komarov",
+				"description": "Chief Data Scientist at CFT",
+				"location": "🇷🇺",
+				"contacts": {
+				
+				},
+				"text": "",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "ai",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"id": "AndreyFilchenko",
+				"type": "ai",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571609655/speakers/qdkicxtc82gpwtlbxfxs.jpg",
+				"firstname": "Andrey",
+				"lastname": "Filchenko",
+				"description": "Head of ML Lab, Associate Professor at FITP",
+				"location": "🇷🇺",
+				"contacts": {
+					"email": "mailto:aaafil@mail.ru"
+				},
+				"text": "PhD, head of Machine Learning Lab, Associate Professor at FITP, head of Machine Learning and Data Analysis Master prorgam, ITMO University. CTO at Statanly Technologies and ICV.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "ai",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"id": "PabloPerezDeAngelis",
+				"type": "ai",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571609655/speakers/aaibddfctl0kkhvlwgbj.jpg",
+				"firstname": "Pablo",
+				"lastname": "Perez De Angelis",
+				"description": "CTO at tuQuejaSuma.com",
+				"location": "🇦🇷",
+				"contacts": {
+					"twitter": "https://twitter.com/arkatPDA"
+				},
+				"text": "Coach of the snowboarding troop, CTO and co-founder of tuQuejaSuma.com. His drive comes from solving complex problems. So no one was surprised when he changed from Physics to Computer Science. He worked as part of research and development teams in natural language processing, data mining and artificial intelligence in companies such as Aivo, ViClone, Lvklabs, and Natural Tech. Passionate about free software, especially Linux and Python, he advocates for Data Science and Tensor Flow as manager of PyData Córdoba and TensorFlow Buenos Aires.",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "ai",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"id": "YuriBaburov",
+				"type": "ai",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571609655/speakers/uzt7lrpz0ubgwunussl8.png",
+				"firstname": "Yuri",
+				"lastname": "Baburov",
+				"description": "Software consultant",
+				"location": "🇷🇺",
+				"contacts": {
+					"github": "https://github.com/buriy"
+				},
+				"text": "Expert in modern technologies for speech and text processing",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "ai",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"id": "BorisSharchilev",
+				"type": "ai",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571609655/speakers/yg7tc5yddoea41qkhgxn.jpg",
+				"firstname": "Boris",
+				"lastname": "Sharchilev",
+				"description": "Head of algorithmic ecosystem growth group at Yandex.Zen",
+				"location": "🇷🇺",
+				"contacts": {
+					"email": "mailto:bsharchilev@gmail.com"
+				},
+				"text": "- Currently - head of algorithmic ecosystem growth group@Yandex.Zen<br>- Previously - researcher@Yandex Machine Intelligence & Research Dept., PhD student@University of Amsterdam<br>- Education: Mechanics & Mathematics dept.@MSU, Yandex School of Data Analysis",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "ai",
+				"talkLevelBadge": "Senior"
 			}
 		],
 		"nav": [
