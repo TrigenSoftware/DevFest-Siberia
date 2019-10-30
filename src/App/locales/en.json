@@ -325,7 +325,7 @@
 				"id": "WillMendes",
 				"type": "web",
 				"promo": true,
-				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1569442270/speakers/WillMendes_ktwltk.jpg",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1569442270/speakers/WillMendes_ktwltk.jpg",
 				"firstname": "Will",
 				"lastname": "Mendes",
 				"description": "Senior Software Developer at Atlassian",
@@ -345,13 +345,13 @@
 				"id": "LauraCarvajal",
 				"type": "web",
 				"promo": true,
-				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1571609942/speakers/phi1mhszavg9nsoiawbm.jpg",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571609942/speakers/phi1mhszavg9nsoiawbm.jpg",
 				"firstname": "Laura",
 				"lastname": "Carvajal",
 				"description": "Principal Engineer at Financial Times",
 				"location": "🇬🇧",
 				"contacts": {
-					"twitter":"https://twitter.com/lc512k"
+					"twitter": "https://twitter.com/lc512k"
 				},
 				"text": "Laura is a Principal Engineer at the Financial Times and former accessibility Lead for FT.com",
 				"talkTitle": "",
@@ -383,13 +383,13 @@
 				"id": "EkaterinaLoschinina",
 				"type": "hype",
 				"promo": true,
-				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1571600323/speakers/Katerina_Loschinina_falpg4.jpg",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571600323/speakers/Katerina_Loschinina_falpg4.jpg",
 				"firstname": "Katerina",
 				"lastname": "Loschinina",
 				"description": "Engineer at Financial Times",
 				"location": "🇬🇧",
 				"contacts": {
-					"twitter":"https://twitter.com/kate_loschinina"
+					"twitter": "https://twitter.com/kate_loschinina"
 				},
 				"text": "Katerina Loschinina is an artist, mathematician and software engineer. She currently works at the Financial Times. Her coding journey started with a London based coding bootcamp. Prior to that, she organised several large scale art projects in Europe.",
 				"talkTitle": "",
@@ -402,7 +402,7 @@
 				"id": "AarushiKansal",
 				"type": "web",
 				"promo": true,
-				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1571362918/speakers/Aarushi_Kansal_dbg2mp.jpg",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571362918/speakers/Aarushi_Kansal_dbg2mp.jpg",
 				"firstname": "Aarushi",
 				"lastname": "Kansal",
 				"description": "Software developer at Tier",
