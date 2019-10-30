@@ -913,7 +913,7 @@
 				"description": "Senior Research Scientist at Huawei",
 				"location": "🇷🇺",
 				"contacts": {
-					"email": "valentin@maly.hk"
+					"email": "mailto:valentin@maly.hk"
 				},
 				"text": "Research Scientist with a demonstrated history of working in information retrieval industry. Skilled in Deep Learning, Natural Language Processing, & Python. Strong research professional graduated from MIPT in 2009.",
 				"talkTitle": "",
@@ -989,7 +989,7 @@
 				"description": "Head of ML Lab, Associate Professor at FITP",
 				"location": "🇷🇺",
 				"contacts": {
-					"email": "aaafil@mail.ru"
+					"email": "mailto:aaafil@mail.ru"
 				},
 				"text": "PhD, head of Machine Learning Lab, Associate Professor at FITP, head of Machine Learning and Data Analysis Master prorgam, ITMO University. CTO at Statanly Technologies and ICV.",
 				"talkTitle": "",
@@ -1016,6 +1016,44 @@
 				"talkTime": "",
 				"talkTypeBadge": "ai",
 				"talkLevelBadge": "Middle"
+			},
+			{
+				"id": "YuriBaburov",
+				"type": "ai",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571609655/speakers/uzt7lrpz0ubgwunussl8.png",
+				"firstname": "Yuri",
+				"lastname": "Baburov",
+				"description": "Software consultant",
+				"location": "🇷🇺",
+				"contacts": {
+					"github": "https://github.com/buriy"
+				},
+				"text": "Expert in modern technologies for speech and text processing",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "ai",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"id": "BorisSharchilev",
+				"type": "ai",
+				"promo": true,
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571609655/speakers/yg7tc5yddoea41qkhgxn.jpg",
+				"firstname": "Boris",
+				"lastname": "Sharchilev",
+				"description": "Head of algorithmic ecosystem growth group at Yandex.Zen",
+				"location": "🇷🇺",
+				"contacts": {
+					"email": "mailto:bsharchilev@gmail.com"
+				},
+				"text": "- Currently - head of algorithmic ecosystem growth group@Yandex.Zen<br>- Previously - researcher@Yandex Machine Intelligence & Research Dept., PhD student@University of Amsterdam<br>- Education: Mechanics & Mathematics dept.@MSU, Yandex School of Data Analysis",
+				"talkTitle": "",
+				"talkLocation": "",
+				"talkTime": "",
+				"talkTypeBadge": "ai",
+				"talkLevelBadge": "Senior"
 			}
 		],
 		"nav": [
