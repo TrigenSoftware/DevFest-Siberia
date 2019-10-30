@@ -69,7 +69,7 @@ async function getI18nConfig(): Promise<IConfig> {
 
 async function main() {
 
-	if (process.env.NODE_ENV !== 'development') {
+	if (process.env.NODE_ENV !== 'development' && !process.env.DISABLE_SW) {
 		registerServiceWorker({ scope: '/' });
 	}
 
