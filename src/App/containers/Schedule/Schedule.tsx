@@ -87,15 +87,18 @@ export class ScheduleContainer extends Component<IProps, IState> {
 			return null;
 		}
 
+		let nextState: Partial<IState> = {
+			currentDate: new Date()
+		};
+
 		if (datetime) {
-			return {
+			nextState = {
+				...nextState,
 				currentDate: datetime
 			};
 		}
 
-		return {
-			currentDate: new Date()
-		};
+		return nextState;
 	}
 
 	context!: ContextType<typeof I18nContext>;
