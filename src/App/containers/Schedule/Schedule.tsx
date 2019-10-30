@@ -93,7 +93,6 @@ export class ScheduleContainer extends Component<IProps, IState> {
 
 		if (datetime) {
 			nextState = {
-				...nextState,
 				currentDate: datetime
 			};
 		}
