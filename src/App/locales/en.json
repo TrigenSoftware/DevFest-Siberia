@@ -68,6 +68,12 @@
 			}
 		]
 	},
+	"scholarship": {
+		"text": "Also on this year, you have a chance get",
+		"title": "DevFest Siberia 2019 Diversity Scholarship",
+		"link": "https://forms.gle/zp6CMGg3hnBwUwyQ6",
+		"button": "Get It"
+	},
 	"photos": {
 		"description": "A people-first conference",
 		"more": "Take a peek"
