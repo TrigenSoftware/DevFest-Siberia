@@ -93,7 +93,9 @@ export class Header extends Component<IProps> {
 							icon={<Logo/>}
 							title={__`header.home`}
 						/>
-						<HeaderNav>
+						<HeaderNav
+							toggleButtonLabel={__`header.menu`}
+						>
 							<HeaderSpacer/>
 							<HeaderLink
 								to='/speakers'

@@ -120,7 +120,7 @@ export default class ProfileCard extends Component<IProps> {
 					className={classes.name}
 				>
 					{firstname}
-					<br />
+					<br/>
 					{lastname}
 				</h3>
 				<div

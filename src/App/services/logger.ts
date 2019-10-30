@@ -1,7 +1,7 @@
 import Logger from 'js-logger';
 
 Logger.useDefaults({
-	defaultLevel: process.env.NODE_ENV === 'test'
+	defaultLevel: process.env.NODE_ENV === 'test' || process.env.RENDERING
 		? Logger.WARN
 		: Logger.DEBUG,
 	formatter(messages, { name }) {

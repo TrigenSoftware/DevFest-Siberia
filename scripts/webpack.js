@@ -5,8 +5,22 @@ import {
 import findIndex from '@trigen/scripts-preset-react-app/helpers/findIndex';
 import update from 'immutability-helper';
 
+const jsonLoader = {
+	type:    'javascript/auto',
+	test:    /\.fetch\.json$/,
+	loader:  'file-loader',
+	options: {
+		name: 'data/[folder]-[name].[ext]'
+	}
+};
+
 export function dev(config) {
 	return update(config, {
+		module: {
+			rules: {
+				$push: [jsonLoader]
+			}
+		},
 		plugins: {
 			$push: [
 				new StylableImportOrderPlugin({
@@ -40,7 +54,8 @@ export function build(config) {
 							}
 						}
 					}
-				}
+				},
+				$push: [jsonLoader]
 			}
 		},
 		plugins: {

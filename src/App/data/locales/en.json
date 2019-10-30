@@ -6,6 +6,7 @@
 		"year": "2019"
 	},
 	"header": {
+		"menu": "Toggle navigation menu",
 		"home": "Home",
 		"team": "Team",
 		"speakers": "Speakers",

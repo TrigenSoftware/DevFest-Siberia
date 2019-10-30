@@ -3,7 +3,6 @@ import React, {
 	Component
 } from 'react';
 import {
-	RouteComponentProps,
 	withRouter
 } from 'react-router-dom';
 import {
@@ -11,30 +10,26 @@ import {
 	__x
 } from 'i18n-for-react';
 import {
-	omit
-} from '@flexis/ui/helpers';
-import {
-	getSpeakers,
 	getTalkTypes
 } from '~/services/i18n';
-import Section, {
-	IProps as ISectionProps
-} from '~/components/Section';
+import SpeakerModal from '~/blocks/SpeakerModal';
+import Section from '~/components/Section';
 import ToggleNav, {
 	ToggleNavLink
 } from '~/components/ToggleNav';
 import ProfileCard from '~/components/ProfileCard';
 import Badge from '~/components/Badge';
+import Loading from '~/components/Loading';
 import {
-	routeProps,
 	addSearchParams
 } from '../common/router';
+import {
+	IProps
+} from './types';
 import {
 	style,
 	classes
 } from './Speakers.st.css';
-
-export interface IProps extends ISectionProps, RouteComponentProps {}
 
 export class Speakers extends Component<IProps> {
 
@@ -49,18 +44,18 @@ export class Speakers extends Component<IProps> {
 			location: {
 				search
 			},
-			...props
+			selectSpeakersByType,
+			selectSpeaker
 		} = this.props;
 		const {
 			context
 		} = this;
 		const type = new URLSearchParams(search).get('type');
 		const nav = getTalkTypes(context);
-		const speakers = getSpeakers(context, type);
+		const speakers = selectSpeakersByType(type);
 
 		return (
 			<Section
-				{...omit(props, routeProps)}
 				className={style(classes.root, className)}
 			>
 				<div
@@ -82,6 +77,9 @@ export class Speakers extends Component<IProps> {
 						</ToggleNavLink>
 					))}
 				</ToggleNav>
+				{!speakers.length && (
+					<Loading/>
+				)}
 				<ul
 					className={classes.list}
 				>
@@ -108,8 +106,20 @@ export class Speakers extends Component<IProps> {
 						</li>
 					))}
 				</ul>
+				<SpeakerModal
+					getSpeaker={selectSpeaker}
+				/>
 			</Section>
 		);
+	}
+
+	componentDidMount() {
+
+		const {
+			fetchSpeakers
+		} = this.props;
+
+		fetchSpeakers();
 	}
 }
 

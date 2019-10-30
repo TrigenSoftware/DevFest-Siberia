@@ -9,8 +9,8 @@ import {
 import {
 	I18nProvider
 } from 'i18n-for-react';
-import ru from '~/locales/ru.json';
-import en from '~/locales/en.json';
+import ru from '~/data/locales/ru.json';
+import en from '~/data/locales/en.json';
 import Main from './';
 
 const stylableApi = `

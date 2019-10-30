@@ -10,11 +10,16 @@ import {
 	MemoryRouter
 } from 'react-router';
 import {
+	Provider
+} from '@flexis/redux';
+import {
 	I18nProvider
 } from 'i18n-for-react';
-import ru from '~/locales/ru.json';
-import en from '~/locales/en.json';
-import SpeakersPromo from './';
+import ru from '~/data/locales/ru.json';
+import en from '~/data/locales/en.json';
+import SpeakersPromo, {
+	store
+} from './mock';
 
 const stylableApi = `
 Stylable API
@@ -47,6 +52,13 @@ storiesOf('Blocks|SpeakersPromo', module)
 		>
 			{story()}
 		</I18nProvider>
+	))
+	.addDecorator(story => (
+		<Provider
+			store={store}
+		>
+			{story()}
+		</Provider>
 	))
 	.add(
 		'with basic state',

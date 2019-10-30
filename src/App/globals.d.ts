@@ -51,6 +51,11 @@ declare module '*?tsw' {
     };
 }
 
+declare module '*?fetch' {
+    const urlOrData: string | any;
+    export default urlOrData;
+}
+
 interface IPrecacheEntry {
 	url: string;
 	revision?: string;
