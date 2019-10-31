@@ -5,7 +5,7 @@ import {
 import findIndex from '@trigen/scripts-preset-react-app/helpers/findIndex';
 import update from 'immutability-helper';
 
-const jsonLoader = {
+const jsonDataLoader = {
 	type:    'javascript/auto',
 	test:    /\.fetch\.json$/,
 	loader:  'file-loader',
@@ -18,7 +18,7 @@ export function dev(config) {
 	return update(config, {
 		module: {
 			rules: {
-				$push: [jsonLoader]
+				$push: [jsonDataLoader]
 			}
 		},
 		plugins: {
@@ -55,7 +55,7 @@ export function build(config) {
 						}
 					}
 				},
-				$push: [jsonLoader]
+				$push: [jsonDataLoader]
 			}
 		},
 		plugins: {

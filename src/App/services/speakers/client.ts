@@ -1,4 +1,3 @@
-
 import Axios from '~/services/axios';
 
 export default Axios.create({

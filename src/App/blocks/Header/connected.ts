@@ -21,19 +21,13 @@ export function mapStateToProps({ user }: State) {
 }
 
 const pendingActions = {
-
 	actionsReady: false,
-
 	login() {},
-
 	logout() {},
-
 	setToken() {},
-
 	isLogged() {
 		return false;
 	},
-
 	clearErrors() {}
 };
 

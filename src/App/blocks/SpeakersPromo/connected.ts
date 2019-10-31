@@ -20,17 +20,13 @@ export function mapStateToProps({ speakers }: State) {
 }
 
 const pendingActions = {
-
 	actionsReady: false,
-
 	fetchSpeakers() {},
-
 	selectPromoSpeakers() {
 		return [];
 	},
-
 	selectSpeaker() {
-		return [];
+		return null;
 	}
 };
 

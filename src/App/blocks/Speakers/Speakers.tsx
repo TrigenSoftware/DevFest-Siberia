@@ -78,9 +78,6 @@ export class Speakers extends Component<IProps> {
 						</ToggleNavLink>
 					))}
 				</ToggleNav>
-				{!actionsReady && (
-					<Loading/>
-				)}
 				<ul
 					className={classes.list}
 				>
@@ -107,9 +104,13 @@ export class Speakers extends Component<IProps> {
 						</li>
 					))}
 				</ul>
-				<SpeakerModal
-					getSpeaker={selectSpeaker}
-				/>
+				{actionsReady ? (
+					<SpeakerModal
+						getSpeaker={selectSpeaker}
+					/>
+				) : (
+					<Loading/>
+				)}
 			</Section>
 		);
 	}

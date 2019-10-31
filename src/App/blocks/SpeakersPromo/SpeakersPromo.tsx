@@ -50,9 +50,6 @@ export class SpeakersPromo extends Component<IProps> {
 				>
 					{__x`speakers.title`}
 				</Link>
-				{!actionsReady && (
-					<Loading/>
-				)}
 				<ul
 					className={classes.list}
 				>
@@ -82,9 +79,13 @@ export class SpeakersPromo extends Component<IProps> {
 						</li>
 					))}
 				</ul>
-				<SpeakerModal
-					getSpeaker={selectSpeaker}
-				/>
+				{actionsReady ? (
+					<SpeakerModal
+						getSpeaker={selectSpeaker}
+					/>
+				) : (
+					<Loading/>
+				)}
 			</Section>
 		);
 	}
