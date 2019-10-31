@@ -104,8 +104,8 @@ storiesOf('Containers|Schedule', module)
 					<Schedule
 						datetime={date('Current time', new Date('2019-12-01'))}
 					/>
-				<Footer/>
 				</Provider>
+				<Footer/>
 			</>
 		)
 	);
