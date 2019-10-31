@@ -1,3 +1,6 @@
+import {
+	BundleAnalyzerPlugin
+} from 'webpack-bundle-analyzer';
 import LoadablePlugin from '@loadable/webpack-plugin';
 import {
 	StylableImportOrderPlugin
@@ -5,14 +8,29 @@ import {
 import findIndex from '@trigen/scripts-preset-react-app/helpers/findIndex';
 import update from 'immutability-helper';
 
+const jsonDataLoader = {
+	type:    'javascript/auto',
+	test:    /\.fetch\.json$/,
+	loader:  'file-loader',
+	options: {
+		name: 'data/[folder]-[name].[ext]'
+	}
+};
+
 export function dev(config) {
 	return update(config, {
+		module: {
+			rules: {
+				$push: [jsonDataLoader]
+			}
+		},
 		plugins: {
 			$push: [
+				process.env.BUNDLE_ANALYZER && new BundleAnalyzerPlugin(),
 				new StylableImportOrderPlugin({
 					fullControl: true
 				})
-			]
+			].filter(Boolean)
 		}
 	});
 }
@@ -40,7 +58,8 @@ export function build(config) {
 							}
 						}
 					}
-				}
+				},
+				$push: [jsonDataLoader]
 			}
 		},
 		plugins: {

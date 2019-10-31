@@ -1,2 +1,2 @@
-export { default } from './SpeakersPromo';
+export { default } from './connected';
 export * from './SpeakersPromo';

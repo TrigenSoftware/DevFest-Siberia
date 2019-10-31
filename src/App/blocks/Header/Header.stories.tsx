@@ -4,9 +4,6 @@ import {
 	storiesOf
 } from '@storybook/react';
 import {
-	Provider
-} from '@flexis/redux';
-import {
 	select
 } from '@storybook/addon-knobs';
 import {
@@ -18,10 +15,13 @@ import {
 	Route
 } from 'react-router';
 import {
+	Provider
+} from '@flexis/redux';
+import {
 	I18nProvider
 } from 'i18n-for-react';
-import ru from '~/locales/ru.json';
-import en from '~/locales/en.json';
+import ru from '~/data/locales/ru.json';
+import en from '~/data/locales/en.json';
 import Header, {
 	store,
 	actions

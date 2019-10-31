@@ -10,11 +10,11 @@ import {
 
 export interface IActionsProps {
 	actionsReady: boolean;
-	login?(email: string, password: string);
-	logout?();
-	setToken?(token: string);
-	isLogged?();
-	clearErrors?();
+	login(email: string, password: string);
+	logout();
+	setToken(token: string);
+	isLogged(): boolean;
+	clearErrors();
 }
 
 export interface IProps extends ISectionProps,

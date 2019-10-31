@@ -14,7 +14,9 @@ import {
 
 export * from './NavLink';
 
-export type IProps = HTMLAttributes<HTMLElement>;
+export interface IProps extends HTMLAttributes<HTMLElement> {
+	toggleButtonLabel?: string;
+}
 
 interface IState {
 	active: boolean;
@@ -30,6 +32,7 @@ export default class Nav extends Component<IProps, IState> {
 
 		const {
 			className,
+			toggleButtonLabel,
 			children,
 			...props
 		} = this.props;
@@ -48,7 +51,9 @@ export default class Nav extends Component<IProps, IState> {
 					className={classes.toggle}
 					onClick={this.onClick}
 					active={active}
-				/>
+				>
+					{toggleButtonLabel}
+				</BurgerButton>
 				<ul
 					className={classes.list}
 					onClick={this.onLinkClick}

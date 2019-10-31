@@ -32,7 +32,7 @@
     "serve": "trigen-scripts serve"
   },
   "dependencies": {
-    "@babel/runtime": "^7.6.2",
+    "@babel/runtime": "^7.6.3",
     "@flexis/redux": "^1.1.0-alpha",
     "@flexis/ui": "^1.1.1-beta",
     "@loadable/component": "^5.10.2",
@@ -45,8 +45,8 @@
     "@types/react-helmet": "^5.0.10",
     "@types/react-router-dom": "^4.3.5",
     "axios": "^0.19.0",
-    "core-js": "3",
-    "date-fns": "^2.1.0",
+    "core-js": "3.3.5",
+    "date-fns": "^2.6.0",
     "date-fns-timezone": "^0.1.4",
     "delay": "^4.3.0",
     "google-map-react": "^1.1.5",
@@ -56,27 +56,28 @@
     "immutable": "4.0.0-rc.12",
     "js-logger": "^1.6.0",
     "prop-types": "^15.6.0",
-    "qs": "^6.8.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-focus-lock": "^2.1.1",
+    "qs": "^6.9.0",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-focus-lock": "^2.2.1",
     "react-helmet": "^5.2.1",
-    "react-router-dom": "^5.0.0",
+    "react-router-dom": "^5.1.2",
     "redux": "^4.0.4"
   },
   "devDependencies": {
     "@loadable/babel-plugin": "^5.10.0",
     "@loadable/server": "^5.10.2",
     "@loadable/webpack-plugin": "^5.7.1",
-    "@storybook/addon-viewport": "^5.1.11",
-    "@trigen/scripts": "3.2.0",
-    "@trigen/scripts-plugin-eslint": "3.2.0",
-    "@trigen/scripts-preset-react-app": "^3.4.2",
+    "@storybook/addon-viewport": "^5.2.5",
+    "@trigen/scripts": "3.5.0",
+    "@trigen/scripts-plugin-eslint": "3.5.0",
+    "@trigen/scripts-preset-react-app": "^3.5.1",
     "@types/faker": "^4.1.4",
     "faker": "^4.1.0",
     "jsesc": "^2.5.2",
     "mjml": "^4.5.1",
-    "moxios": "^0.4.0"
+    "moxios": "^0.4.0",
+    "webpack-bundle-analyzer": "^3.6.0"
   },
   "resolutions": {
     "@stylable/optimizer": "2.1.1"

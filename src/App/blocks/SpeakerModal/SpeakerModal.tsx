@@ -1,5 +1,4 @@
 import React, {
-	ContextType,
 	Component
 } from 'react';
 import {
@@ -7,16 +6,10 @@ import {
 	withRouter
 } from 'react-router-dom';
 import {
-	I18nContext
-} from 'i18n-for-react';
-import {
 	Bind,
 	Debounce,
 	omit
 } from '@flexis/ui/helpers';
-import {
-	getSpeaker
-} from '~/services/i18n';
 import {
 	routeProps,
 	deleteSearchParams
@@ -32,7 +25,9 @@ import {
 
 type ISpeakerModalProps = Omit<IModalProps, 'children'>;
 
-export interface IProps extends ISpeakerModalProps, RouteComponentProps {}
+export interface IProps extends ISpeakerModalProps, RouteComponentProps {
+	getSpeaker(id: string);
+}
 
 interface IState {
 	active: boolean;
@@ -44,8 +39,6 @@ const {
 } = Modal.defaultProps;
 
 export class SpeakerModal extends Component<IProps, IState> {
-
-	static contextType = I18nContext;
 
 	static getDerivedStateFromProps(
 		{
@@ -71,8 +64,6 @@ export class SpeakerModal extends Component<IProps, IState> {
 		return nextState;
 	}
 
-	context!: ContextType<typeof I18nContext>;
-
 	state = {
 		active:     false,
 		prevSearch: ''
@@ -85,16 +76,14 @@ export class SpeakerModal extends Component<IProps, IState> {
 			location: {
 				search
 			},
+			getSpeaker,
 			...props
 		} = this.props;
 		const {
 			active
 		} = this.state;
-		const {
-			context
-		} = this;
 		const id = new URLSearchParams(search).get('id');
-		const speaker = getSpeaker(context, id);
+		const speaker = getSpeaker(id);
 
 		if (!speaker) {
 			return null;
@@ -108,7 +97,19 @@ export class SpeakerModal extends Component<IProps, IState> {
 				active={active}
 			>
 				<SpeakerCard
-					{...speaker}
+					src={speaker.src}
+					firstname={speaker.firstname}
+					lastname={speaker.lastname}
+					description={speaker.description}
+					location={speaker.location}
+					contacts={speaker.contacts}
+					badge={speaker.badge}
+					text={speaker.text}
+					talkTitle={speaker.talkTitle}
+					talkLocation={speaker.talkLocation}
+					talkTime={speaker.talkTime}
+					talkTypeBadge={speaker.talkTypeBadge}
+					talkLevelBadge={speaker.talkLevelBadge}
 				/>
 			</Modal>
 		);
