@@ -306,6 +306,78 @@
 			}
 		]
 	},
+	"schedule": {
+		"title": "Schedule",
+		"nav": [
+			{
+				"date": "2019-11-29",
+				"label": "29 November"
+			},
+			{
+				"date": "2019-11-30",
+				"label": "30 November"
+			},
+			{
+				"date": "2019-12-01",
+				"label": "1 December"
+			}
+		],
+		"filter": {
+			"title": "Filter by track",
+			"types": [
+				{
+					"type": "all",
+					"label": "All"
+				},
+				{
+					"type": "mobile",
+					"label": "Mobile"
+				},
+				{
+					"type": "data science",
+					"label": "Data Science"
+				},
+				{
+					"type": "frontend",
+					"label": "Frontend"
+				},
+				{
+					"type": "devops",
+					"label": "DevOps"
+				},
+				{
+					"type": "security",
+					"label": "Security"
+				},
+				{
+					"type": "backend",
+					"label": "Backend"
+				},
+				{
+					"type": "hype",
+					"label": "Hype"
+				},
+				{
+					"type": "web",
+					"label": "Web"
+				}
+			],
+			"level": [
+				{
+					"type": "junior",
+					"label": "Junior"
+				},
+				{
+					"type": "middle",
+					"label": "Middle"
+				},
+				{
+					"type": "senior",
+					"label": "Senior"
+				}
+			]
+		}
+	},
 	"profile": {
 		"view": "Посмотреть профиль"
 	},

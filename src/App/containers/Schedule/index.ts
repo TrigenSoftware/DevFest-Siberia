@@ -1,2 +1,2 @@
-export { default } from './Schedule';
+export { default } from './connected';
 export * from './Schedule';

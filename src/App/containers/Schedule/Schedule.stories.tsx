@@ -15,13 +15,13 @@ import {
 import {
 	I18nProvider
 } from 'i18n-for-react';
-import Header, {
-	store
-} from '~/blocks/Header/mock';
+import Header from '~/blocks/Header';
 import Footer from '~/blocks/Footer';
-import ru from '~/locales/ru.json';
-import en from '~/locales/en.json';
-import Schedule from './';
+import ru from '~/data/locales/ru.json';
+import en from '~/data/locales/en.json';
+import Schedule, {
+	store
+} from './mock';
 
 const stylableApi = `
 Stylable API
@@ -61,8 +61,8 @@ storiesOf('Containers|Schedule', module)
 			<>
 				<Provider store={store}>
 					<Header/>
+					<Schedule/>
 				</Provider>
-				<Schedule/>
 				<Footer/>
 			</>
 		)
@@ -73,10 +73,10 @@ storiesOf('Containers|Schedule', module)
 			<>
 				<Provider store={store}>
 					<Header/>
+					<Schedule
+						datetime={date('Current time', new Date('2019-11-29'))}
+					/>
 				</Provider>
-				<Schedule
-					datetime={date('Current time', new Date('2019-11-29'))}
-				/>
 				<Footer/>
 			</>
 		)
@@ -87,10 +87,10 @@ storiesOf('Containers|Schedule', module)
 			<>
 				<Provider store={store}>
 					<Header/>
+					<Schedule
+						datetime={date('Current time', new Date('2019-11-30'))}
+					/>
 				</Provider>
-				<Schedule
-					datetime={date('Current time', new Date('2019-11-30'))}
-				/>
 				<Footer/>
 			</>
 		)
@@ -101,11 +101,11 @@ storiesOf('Containers|Schedule', module)
 			<>
 				<Provider store={store}>
 					<Header/>
-				</Provider>
-				<Schedule
-					datetime={date('Current time', new Date('2019-12-01'))}
-				/>
+					<Schedule
+						datetime={date('Current time', new Date('2019-12-01'))}
+					/>
 				<Footer/>
+				</Provider>
 			</>
 		)
 	);
