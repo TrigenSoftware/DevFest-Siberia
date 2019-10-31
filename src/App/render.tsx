@@ -29,8 +29,8 @@ import {
 import {
 	getLocaleFromPath
 } from './services/i18n';
-import ru from '~/locales/ru.json';
-import en from '~/locales/en.json';
+import ru from '~/data/locales/ru.json';
+import en from '~/data/locales/en.json';
 import App from './App';
 import sprite from 'svg-sprite-loader/runtime/sprite.build';
 import createStore from './store';

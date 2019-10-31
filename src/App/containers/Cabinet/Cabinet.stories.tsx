@@ -18,8 +18,8 @@ import {
 } from 'i18n-for-react';
 import Header from '~/blocks/Header/mock';
 import Footer from '~/blocks/Footer';
-import ru from '~/locales/ru.json';
-import en from '~/locales/en.json';
+import ru from '~/data/locales/ru.json';
+import en from '~/data/locales/en.json';
 import Cabinet, {
 	store
 } from './mock';

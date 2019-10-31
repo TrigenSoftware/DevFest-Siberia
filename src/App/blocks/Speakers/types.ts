@@ -2,7 +2,8 @@ import {
 	RouteComponentProps
 } from 'react-router-dom';
 import {
-	IUserStateProps
+	Speaker,
+	ISpeakersStateProps
 } from '~/store/types';
 import {
 	IProps as ISectionProps
@@ -10,14 +11,12 @@ import {
 
 export interface IActionsProps {
 	actionsReady: boolean;
-	login(email: string, password: string);
-	logout();
-	setToken(token: string);
-	isLogged(): boolean;
-	clearErrors();
+	fetchSpeakers();
+	selectSpeakersByType(type: string);
+	selectSpeaker(id: string): Speaker;
 }
 
 export interface IProps extends ISectionProps,
-	IUserStateProps,
+	ISpeakersStateProps,
 	IActionsProps,
 	RouteComponentProps {}

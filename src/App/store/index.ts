@@ -8,6 +8,9 @@ import {
 import {
 	registerUserSegment
 } from './User/register';
+import {
+	registerSpeakersSegment
+} from './Speakers/register';
 
 const {
 	__REDUX_DEVTOOLS_EXTENSION__
@@ -22,6 +25,7 @@ export default function createStore() {
 	});
 
 	registerUserSegment(store);
+	registerSpeakersSegment(store);
 
 	return store;
 }

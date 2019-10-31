@@ -7,23 +7,31 @@ import {
 import {
 	UserActions
 } from './User/User.actions';
+import {
+	SpeakersState
+} from './Speakers/Speakers.types';
+import {
+	SpeakersActions
+} from './Speakers/Speakers.actions';
 
 export * from './User/User.types';
-
-export * from './User/User.actions';
+export * from './Speakers/Speakers.types';
 
 export interface IStateProps {
 	user: UserState;
+	speakers: SpeakersState;
 }
 
 export interface IActions {
 	user: UserActions;
+	speakers: SpeakersActions;
 }
 
 type State = ReturnType<Record.Factory<IStateProps>>;
 
 const State = Record<IStateProps>({
-	user: UserState()
+	user:     UserState(),
+	speakers: SpeakersState()
 });
 
 export {

@@ -64,58 +64,6 @@ export function getTeam(context: I18nConfig): any[] {
 }
 
 /**
- * Get speakers from locales.
- */
-export function getSpeakers(context: I18nConfig, type?: string): any[] {
-
-	const {
-		speakers: {
-			speakers
-		}
-	} = context.getCatalog(
-		context.getLocale()
-	) as any;
-	const safeSpeakers = speakers.map(speaker => ({
-		...speaker,
-		text: speaker.text.replace(/(href=)/g, 'rel="noopener noreferrer" $1')
-	}));
-
-	if (type && type !== 'all') {
-		return safeSpeakers.filter(speaker => speaker.type === type);
-	}
-
-	return safeSpeakers;
-}
-
-/**
- * Get speaker by id.
- */
-export function getSpeaker(context: I18nConfig, id: string): any {
-
-	const speakers = getSpeakers(context);
-
-	return speakers.find(speaker => speaker.id === id);
-}
-
-let promoSpeakersIndex = -1;
-
-export function getPromoSpeakers(context: I18nConfig): any[] {
-
-	const speakers = getSpeakers(context);
-	const promoSpeakers = speakers.filter(speaker => speaker.promo);
-
-	if (process.env.SEED) {
-		return promoSpeakers.splice(0, 3);
-	}
-
-	if (promoSpeakersIndex === -1) {
-		promoSpeakersIndex = Math.floor(Math.random() * (promoSpeakers.length - 2));
-	}
-
-	return promoSpeakers.splice(promoSpeakersIndex, 3);
-}
-
-/**
  * Get talk types from locales.
  */
 export function getTalkTypes(context: I18nConfig): any[] {
@@ -332,7 +280,6 @@ export function getOgData(context: I18nConfig) {
 export function getSchemaData(context: I18nConfig) {
 
 	const metaData = getMetaData(context);
-	const speakers = getSpeakers(context);
 	const location = getLocation(context);
 
 	return {
@@ -362,14 +309,6 @@ export function getSchemaData(context: I18nConfig) {
 				'longitude': coordinates.lng
 			}
 		},
-		'performer': speakers.map(speaker => [
-			{
-				'@type':    'Person',
-				'name':     `${speaker.firstname} ${speaker.lastname}`,
-				'image':    speaker.src,
-				'jobTitle': speaker.talkTitle
-			}
-		]),
 		'eventStatus':     'EventScheduled',
 		'typicalAgeRange': ageRange
 	};
