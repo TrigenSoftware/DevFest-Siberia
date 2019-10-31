@@ -77,7 +77,7 @@ export class Header extends Component<IProps> {
 		const locale = context.getLocale();
 		const __ = context.bind(tr);
 		const links = getShareLinks(context);
-		const logged = actionsReady && isLogged();
+		const logged = isLogged();
 
 		return (
 			<>

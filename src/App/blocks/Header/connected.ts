@@ -20,12 +20,27 @@ export function mapStateToProps({ user }: State) {
 	};
 }
 
+const pendingActions = {
+
+	actionsReady: false,
+
+	login() {},
+
+	logout() {},
+
+	setToken() {},
+
+	isLogged() {
+		return false;
+	},
+
+	clearErrors() {}
+};
+
 export function mapActionsToProps({ user }: IActions): IActionsProps {
 
 	if (!user) {
-		return {
-			actionsReady: false
-		};
+		return pendingActions;
 	}
 
 	return {

@@ -10,6 +10,7 @@ import {
 } from '~/components/Section';
 
 export interface IActionsProps {
+	actionsReady: boolean;
 	fetchSpeakers();
 	selectPromoSpeakers(): Speaker[];
 	selectSpeaker(id: string): Speaker;

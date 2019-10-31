@@ -8,7 +8,6 @@ import {
 import {
 	SpeakersSegment
 } from '~/store/segments';
-import Loading from '~/components/Loading';
 import {
 	IActionsProps
 } from './types';
@@ -20,8 +19,29 @@ export function mapStateToProps({ speakers }: State) {
 	};
 }
 
+const pendingActions = {
+
+	actionsReady: false,
+
+	fetchSpeakers() {},
+
+	selectPromoSpeakers() {
+		return [];
+	},
+
+	selectSpeaker() {
+		return [];
+	}
+};
+
 export function mapActionsToProps({ speakers }: IActions): IActionsProps {
+
+	if (!speakers) {
+		return pendingActions;
+	}
+
 	return {
+		actionsReady:        true,
 		fetchSpeakers:       speakers.fetchSpeakers,
 		selectPromoSpeakers: speakers.selectPromoSpeakers,
 		selectSpeaker:       speakers.selectSpeaker
@@ -29,8 +49,8 @@ export function mapActionsToProps({ speakers }: IActions): IActionsProps {
 }
 
 export default Connect({
-	dependsOn: SpeakersSegment,
-	loading:   Loading,
+	dependsOn:   SpeakersSegment,
+	skipWaiting: true,
 	mapStateToProps,
 	mapActionsToProps
 })(SpeakersPromo);

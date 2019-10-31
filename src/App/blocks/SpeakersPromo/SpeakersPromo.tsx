@@ -34,6 +34,7 @@ export class SpeakersPromo extends Component<IProps> {
 			location: {
 				search
 			},
+			actionsReady,
 			selectPromoSpeakers,
 			selectSpeaker
 		} = this.props;
@@ -49,7 +50,7 @@ export class SpeakersPromo extends Component<IProps> {
 				>
 					{__x`speakers.title`}
 				</Link>
-				{!speakers.length && (
+				{!actionsReady && (
 					<Loading/>
 				)}
 				<ul

@@ -44,6 +44,7 @@ export class Speakers extends Component<IProps> {
 			location: {
 				search
 			},
+			actionsReady,
 			selectSpeakersByType,
 			selectSpeaker
 		} = this.props;
@@ -77,7 +78,7 @@ export class Speakers extends Component<IProps> {
 						</ToggleNavLink>
 					))}
 				</ToggleNav>
-				{!speakers.length && (
+				{!actionsReady && (
 					<Loading/>
 				)}
 				<ul
