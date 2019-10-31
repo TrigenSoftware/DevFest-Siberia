@@ -68,7 +68,7 @@
     "@loadable/babel-plugin": "^5.10.0",
     "@loadable/server": "^5.10.2",
     "@loadable/webpack-plugin": "^5.7.1",
-    "@storybook/addon-viewport": "^5.2.5",
+    "@storybook/addon-viewport": "^5.1.11",
     "@trigen/scripts": "3.5.0",
     "@trigen/scripts-plugin-eslint": "3.5.0",
     "@trigen/scripts-preset-react-app": "^3.5.1",
