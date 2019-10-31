@@ -1,3 +1,6 @@
+import {
+	BundleAnalyzerPlugin
+} from 'webpack-bundle-analyzer';
 import LoadablePlugin from '@loadable/webpack-plugin';
 import {
 	StylableImportOrderPlugin
@@ -23,10 +26,11 @@ export function dev(config) {
 		},
 		plugins: {
 			$push: [
+				process.env.BUNDLE_ANALYZER && new BundleAnalyzerPlugin(),
 				new StylableImportOrderPlugin({
 					fullControl: true
 				})
-			]
+			].filter(Boolean)
 		}
 	});
 }

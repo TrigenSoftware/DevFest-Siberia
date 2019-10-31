@@ -76,7 +76,8 @@
     "faker": "^4.1.0",
     "jsesc": "^2.5.2",
     "mjml": "^4.5.1",
-    "moxios": "^0.4.0"
+    "moxios": "^0.4.0",
+    "webpack-bundle-analyzer": "^3.6.0"
   },
   "resolutions": {
     "@stylable/optimizer": "2.1.1"
