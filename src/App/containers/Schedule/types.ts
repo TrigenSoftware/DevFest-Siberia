@@ -13,6 +13,7 @@ export interface IState {
 }
 
 export interface IProps extends ISectionProps, IScheduleStateProps, RouteComponentProps {
+	actionsReady: boolean;
 	datetime?: Date;
 	fetchSchedule();
 	selectScheduleByType(date: string, type: string);

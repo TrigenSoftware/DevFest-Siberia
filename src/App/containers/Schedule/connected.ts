@@ -8,7 +8,6 @@ import {
 import {
 	ScheduleSegment
 } from '~/store/segments';
-import Loading from '~/components/Loading';
 import ScheduleContainer from './Schedule';
 
 export function mapStateToProps({ schedule }: State) {
@@ -17,16 +16,30 @@ export function mapStateToProps({ schedule }: State) {
 	};
 }
 
+const pendingActions = {
+	actionsReady: false,
+	fetchSchedule() {},
+	selectScheduleByType() {
+		return [];
+	}
+};
+
 export function mapActionsToProps({ schedule }: IActions) {
+
+	if (!schedule) {
+		return pendingActions;
+	}
+
 	return {
+		actionsReady:         true,
 		fetchSchedule:        schedule.fetchSchedule,
 		selectScheduleByType: schedule.selectScheduleByType
 	};
 }
 
 export default Connect({
-	dependsOn: ScheduleSegment,
-	loading:   Loading,
+	dependsOn:   ScheduleSegment,
+	skipWaiting: true,
 	mapStateToProps,
 	mapActionsToProps
 })(ScheduleContainer);

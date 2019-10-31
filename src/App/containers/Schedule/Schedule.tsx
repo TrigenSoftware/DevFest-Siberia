@@ -109,6 +109,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 			location: {
 				search
 			},
+			actionsReady,
 			selectScheduleByType,
 			...props
 		} = this.props;
@@ -218,7 +219,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 						))}
 					</ToggleNav>
 				</div>
-				{schedule.length !== 0 ? (
+				{actionsReady ? (
 					<Schedule>
 						{
 							schedule.map((item) => {
