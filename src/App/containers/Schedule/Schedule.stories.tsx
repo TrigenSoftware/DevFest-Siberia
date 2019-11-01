@@ -19,8 +19,8 @@ import Header, {
 	store
 } from '~/blocks/Header/mock';
 import Footer from '~/blocks/Footer';
-import ru from '~/locales/ru.json';
-import en from '~/locales/en.json';
+import ru from '~/data/locales/ru.json';
+import en from '~/data/locales/en.json';
 import Schedule from './';
 
 const stylableApi = `
