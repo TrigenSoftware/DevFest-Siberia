@@ -358,9 +358,11 @@ export class BuyContainer extends Component<IProps, IState> {
 						productRef: 'ticket'
 					}
 				],
-				promocode
+				promocode: promocode.toLocaleLowerCase()
 			}
 		};
+
+		console.log(userData);
 
 		return userData;
 	}
