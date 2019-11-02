@@ -23,6 +23,13 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 
 			const redirectUrl = await userService.buy(registrationData);
 
+			if (!redirectUrl) {
+				this.setError({
+					type:  this.buy,
+					error: new Error('Invalid promocode')
+				});
+			}
+
 			if (redirectUrl.startsWith(process.env.API_URL.replace(/\/$/, ''))) {
 				this.setError({
 					type:  this.buy,
