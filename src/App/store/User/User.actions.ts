@@ -25,7 +25,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 
 			if (redirectUrl.startsWith(process.env.API_URL.replace(/\/$/, ''))) {
 				this.setError({
-					type: this.buy,
+					type:  this.buy,
 					error: new Error('User already exist')
 				});
 			} else {
