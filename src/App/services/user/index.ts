@@ -8,13 +8,27 @@ import {
 
 const logger = createLogger('App::services::user');
 
-export async function buy(registrationData) {
+export async function buy({
+	locale,
+	promocode,
+	...registrationData
+}) {
 
 	logger.debug('buy', 'Input user:', registrationData);
 
 	const {
 		data: buyData
-	} = await client.post('auth/register', registrationData);
+	} = await client.post('auth/register', {
+		termsAccepted:  true,
+		paymentRequest: {
+			locale,
+			products: [{
+				productRef: 'ticket'
+			}],
+			promocode: promocode.toLocaleLowerCase()
+		},
+		...registrationData
+	});
 
 	logger.debug('buy', 'Response:', buyData);
 

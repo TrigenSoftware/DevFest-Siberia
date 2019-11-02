@@ -1,8 +1,10 @@
 
-export function getErrorMessage(error: any): string {
+export function getErrorMessage(error: any) {
 	return error
-		? error.response
-			? error.response.data.message
-			: error.message
+		? String(
+			error.response
+				? error.response.data.message
+				: error.message
+		).replace(/^(.)/, _ => _.toUpperCase())
 		: '';
 }
