@@ -15,16 +15,17 @@ export async function buy(registrationData) {
 	const {
 		data: buyData
 	} = await client.post('auth/register', registrationData);
+
+	logger.debug('buy', 'Response:', buyData);
+
 	const {
 		paymentDetails: {
 			redirectUrl
 		}
 	} = buyData;
 
-	logger.debug('buy', 'Response:', buyData);
-
 	if (!redirectUrl) {
-		throw Error('Invalid promocode');
+		throw Error('Invalid input data');
 	}
 
 	if (redirectUrl.startsWith(process.env.API_URL.replace(/\/$/, ''))) {
