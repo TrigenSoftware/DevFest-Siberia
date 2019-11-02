@@ -15,10 +15,23 @@ export async function buy(registrationData) {
 	const {
 		data: buyData
 	} = await client.post('auth/register', registrationData);
+	const {
+		paymentDetails: {
+			redirectUrl
+		}
+	} = buyData;
 
 	logger.debug('buy', 'Response:', buyData);
 
-	return buyData.paymentDetails.redirectUrl;
+	if (!redirectUrl) {
+		throw Error('Invalid promocode');
+	}
+
+	if (redirectUrl.startsWith(process.env.API_URL.replace(/\/$/, ''))) {
+		throw Error('User already exist');
+	}
+
+	return redirectUrl;
 }
 
 export async function login(email: string, password: string) {
