@@ -80,40 +80,9 @@ export function getTalkTypes(context: I18nConfig): any[] {
 }
 
 /**
- * Get schedule from locales.
- */
-export function getSchedule(context: I18nConfig, date: string, type: string): any[] {
-
-	const {
-		schedule: {
-			items
-		}
-	} = context.getCatalog(
-		context.getLocale()
-	) as any;
-	const filtredByDate = items.filter(item => item.date === date);
-
-	if (type && type !== 'all') {
-
-		switch (type) {
-
-			case 'junior':
-			case 'middle':
-			case 'senior':
-				return filtredByDate.filter(item => item.talkLevelBadge && item.talkLevelBadge.toLowerCase() === type);
-
-			default:
-				return filtredByDate.filter(item => item.talkTypeBadge && item.talkTypeBadge.toLowerCase() === type);
-		}
-	}
-
-	return filtredByDate;
-}
-
-/**
  * Get schedule date from locales.
  */
-export function getScheduleDate(context: I18nConfig): any[] {
+export function getScheduleDates(context: I18nConfig): any[] {
 
 	const {
 		schedule: {

@@ -16,12 +16,14 @@ import {
 	I18nProvider
 } from 'i18n-for-react';
 import Header, {
-	store
+	store as headerStore
 } from '~/blocks/Header/mock';
 import Footer from '~/blocks/Footer';
 import ru from '~/data/locales/ru.json';
 import en from '~/data/locales/en.json';
-import Schedule from './';
+import Schedule, {
+	store as scheduleStore
+} from './mock';
 
 const stylableApi = `
 Stylable API
@@ -59,10 +61,12 @@ storiesOf('Containers|Schedule', module)
 		'with default state',
 		() => (
 			<>
-				<Provider store={store}>
+				<Provider store={headerStore}>
 					<Header/>
 				</Provider>
-				<Schedule/>
+				<Provider store={scheduleStore}>
+					<Schedule/>
+				</Provider>
 				<Footer/>
 			</>
 		)
@@ -71,12 +75,14 @@ storiesOf('Containers|Schedule', module)
 		'with 2019-11-29 date',
 		() => (
 			<>
-				<Provider store={store}>
+				<Provider store={headerStore}>
 					<Header/>
 				</Provider>
-				<Schedule
-					datetime={date('Current time', new Date('2019-11-29'))}
-				/>
+				<Provider store={scheduleStore}>
+					<Schedule
+						datetime={date('Current time', new Date('2019-11-29'))}
+					/>
+				</Provider>
 				<Footer/>
 			</>
 		)
@@ -85,12 +91,14 @@ storiesOf('Containers|Schedule', module)
 		'with 2019-11-30 date',
 		() => (
 			<>
-				<Provider store={store}>
+				<Provider store={headerStore}>
 					<Header/>
 				</Provider>
-				<Schedule
-					datetime={date('Current time', new Date('2019-11-30'))}
-				/>
+				<Provider store={scheduleStore}>
+					<Schedule
+						datetime={date('Current time', new Date('2019-11-30'))}
+					/>
+				</Provider>
 				<Footer/>
 			</>
 		)
@@ -99,12 +107,14 @@ storiesOf('Containers|Schedule', module)
 		'with 2019-12-01 date',
 		() => (
 			<>
-				<Provider store={store}>
+				<Provider store={headerStore}>
 					<Header/>
 				</Provider>
-				<Schedule
-					datetime={date('Current time', new Date('2019-12-01'))}
-				/>
+				<Provider store={scheduleStore}>
+					<Schedule
+						datetime={date('Current time', new Date('2019-12-01'))}
+					/>
+				</Provider>
 				<Footer/>
 			</>
 		)

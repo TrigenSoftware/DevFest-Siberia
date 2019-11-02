@@ -20,10 +20,9 @@ import {
 	Bind
 } from '@flexis/ui/helpers';
 import {
-	getScheduleDate,
+	getScheduleDates,
 	getScheduleTypes,
-	getScheduleLevels,
-	getSchedule
+	getScheduleLevels
 } from '~/services/i18n';
 import Section from '~/components/Section';
 import ToggleNav, {
@@ -35,6 +34,7 @@ import Schedule, {
 	talkTypeColors,
 	VariantScheduleItemStatus
 } from '~/components/Schedule';
+import Loading from '~/components/Loading';
 import {
 	routeProps,
 	addSearchParams
@@ -71,7 +71,9 @@ export class ScheduleContainer extends Component<IProps, IState> {
 	static contextType = I18nContext;
 
 	static propTypes = {
-		datetime: PropTypes.any
+		datetime:             PropTypes.any,
+		fetchSchedule:        PropTypes.func.isRequired,
+		selectScheduleByType: PropTypes.func.isRequired
 	};
 
 	static getDerivedStateFromProps(
@@ -107,6 +109,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 			location: {
 				search
 			},
+			actionsReady,
+			selectScheduleByType,
 			...props
 		} = this.props;
 		const {
@@ -115,16 +119,17 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		const params = new URLSearchParams(search);
 		const date = params.get('date');
 		const type = params.get('type');
-		const nav = getScheduleDate(context);
+		const nav = getScheduleDates(context);
 		const filterTypes = getScheduleTypes(context);
 		const filterLevels = getScheduleLevels(context);
-		const schedule = getSchedule(context, date, type);
+		const schedule = selectScheduleByType(date, type);
 
 		return (
 			<Section
 				{...omit(props, [
 					...routeProps,
-					'datetime'
+					'datetime',
+					'fetchSchedule'
 				])}
 				className={style(classes.root, className)}
 			>
@@ -214,26 +219,30 @@ export class ScheduleContainer extends Component<IProps, IState> {
 						))}
 					</ToggleNav>
 				</div>
-				<Schedule>
-					{schedule && schedule.map((item) => {
+				{actionsReady ? (
+					<Schedule>
+						{schedule.map((item) => {
 
-						const {
-							title,
-							date,
-							timeStart,
-							timeEnd
-						} = item;
+							const {
+								title,
+								date,
+								timeStart,
+								timeEnd
+							} = item;
 
-						return (
-							<ScheduleItem
-								key={title}
-								{...item}
-								time={formatDate(date, timeStart)}
-								status={this.getStatus(date, timeStart, timeEnd)}
-							/>
-						);
-					})}
-				</Schedule>
+							return (
+								<ScheduleItem
+									key={title}
+									{...item}
+									time={formatDate(date, timeStart)}
+									status={this.getStatus(date, timeStart, timeEnd)}
+								/>
+							);
+						})}
+					</Schedule>
+				) : (
+					<Loading/>
+				)}
 			</Section>
 		);
 	}
@@ -245,7 +254,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 			location: {
 				search
 			},
-			datetime
+			datetime,
+			fetchSchedule
 		} = this.props;
 		const {
 			currentDate
@@ -255,9 +265,11 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		} = this;
 		const date = new URLSearchParams(search).get('date');
 
+		fetchSchedule();
+
 		if (!date) {
 
-			const schedule = getScheduleDate(context);
+			const schedule = getScheduleDates(context);
 
 			schedule.some(({ date }) => {
 
