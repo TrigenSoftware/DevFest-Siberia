@@ -335,6 +335,557 @@
 			}
 		]
 	},
+	"schedule": {
+		"title": "Schedule",
+		"items": [
+			{
+				"date": "2019-11-29",
+				"timeStart": "09:00",
+				"timeEnd": "10:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "29 Открытие"
+			},
+			{
+				"date": "2019-11-29",
+				"timeStart": "10:00",
+				"timeEnd": "11:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "29 Кодить сегодня?",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Mobile",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"date": "2019-11-29",
+				"timeStart": "10:00",
+				"timeEnd": "11:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "29 Какой-то заголовок должен быть тут?",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Data Science",
+				"talkLevelBadge": "Junior"
+			},
+			{
+				"date": "2019-11-29",
+				"timeStart": "11:00",
+				"timeEnd": "12:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "29 Какой-то заголовок должен быть тут1?",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Frontend",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"date": "2019-11-29",
+				"timeStart": "11:00",
+				"timeEnd": "12:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "29 Какой-то заголовок должен быть тут2?",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Frontend",
+				"talkLevelBadge": "Junior"
+			},
+			{
+				"date": "2019-11-29",
+				"timeStart": "12:00",
+				"timeEnd": "13:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "Тест1",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Backend",
+				"talkLevelBadge": "Junior"
+			},
+			{
+				"date": "2019-11-29",
+				"timeStart": "12:00",
+				"timeEnd": "13:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "Тест2",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Hype",
+				"talkLevelBadge": "Junior"
+			},
+			{
+				"date": "2019-11-30",
+				"timeStart": "09:00",
+				"timeEnd": "10:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "30 Открытие"
+			},
+			{
+				"date": "2019-11-30",
+				"timeStart": "10:00",
+				"timeEnd": "11:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "30 Кодить сегодня?",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Mobile",
+				"talkLevelBadge": "Junior"
+			},
+			{
+				"date": "2019-11-30",
+				"timeStart": "10:00",
+				"timeEnd": "11:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "30 Какой-то заголовок должен быть тут?",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Data Science",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"date": "2019-11-30",
+				"timeStart": "11:00",
+				"timeEnd": "12:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "30 Какой-то заголовок должен быть тут1?",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Frontend",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"date": "2019-11-30",
+				"timeStart": "11:00",
+				"timeEnd": "12:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "30 Какой-то заголовок должен быть тут2?",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Frontend",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"date": "2019-11-30",
+				"timeStart": "12:00",
+				"timeEnd": "13:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "Тест1",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Backend",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"date": "2019-11-30",
+				"timeStart": "12:00",
+				"timeEnd": "13:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "Тест2",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Hype",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"date": "2019-12-01",
+				"timeStart": "09:00",
+				"timeEnd": "10:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "01 Кодить сегодня или нет",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Mobile",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"date": "2019-12-01",
+				"timeStart": "09:00",
+				"timeEnd": "10:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "01 Есть хочу :)",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "DevOps",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"date": "2019-12-01",
+				"timeStart": "10:00",
+				"timeEnd": "11:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "01 Кодить",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Security",
+				"talkLevelBadge": "Senior"
+			},
+			{
+				"date": "2019-12-01",
+				"timeStart": "10:00",
+				"timeEnd": "11:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "01 Что бы съесть?",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Backend",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"date": "2019-12-01",
+				"timeStart": "11:00",
+				"timeEnd": "12:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "01 Тоже хочу есть",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Hype",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"date": "2019-12-01",
+				"timeStart": "11:00",
+				"timeEnd": "12:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "01 А я уже поел :)",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Web",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"date": "2019-12-01",
+				"timeStart": "12:00",
+				"timeEnd": "13:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "01 А я уже поел :))",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Frontend",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"date": "2019-12-01",
+				"timeStart": "12:00",
+				"timeEnd": "13:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "01 А я уже поел... :)",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Data Science",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"date": "2019-12-01",
+				"timeStart": "13:00",
+				"timeEnd": "14:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "01 Когда уже домой?",
+				"speakers": [
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					},
+					{
+						"name": "Иван",
+						"description": "Инженер"
+					}
+				],
+				"statusLabel": "Идет сейчас",
+				"talkTypeBadge": "Data Science",
+				"talkLevelBadge": "Middle"
+			},
+			{
+				"date": "2019-12-01",
+				"timeStart": "14:00",
+				"timeEnd": "15:00",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "01 Закрытие"
+			},
+			{
+				"date": "2019-12-01",
+				"timeStart": "13:00",
+				"timeEnd": "15:30",
+				"lang": "Ru",
+				"location": "Комната 231, 2 этаж",
+				"title": "01 Афтерпати"
+			}
+		],
+		"nav": [
+			{
+				"date": "2019-11-29",
+				"label": "29 November"
+			},
+			{
+				"date": "2019-11-30",
+				"label": "30 November"
+			},
+			{
+				"date": "2019-12-01",
+				"label": "1 December"
+			}
+		],
+		"filter": {
+			"title": "Filter by track",
+			"types": [
+				{
+					"type": "all",
+					"label": "All"
+				},
+				{
+					"type": "mobile",
+					"label": "Mobile"
+				},
+				{
+					"type": "data science",
+					"label": "Data Science"
+				},
+				{
+					"type": "frontend",
+					"label": "Frontend"
+				},
+				{
+					"type": "devops",
+					"label": "DevOps"
+				},
+				{
+					"type": "security",
+					"label": "Security"
+				},
+				{
+					"type": "backend",
+					"label": "Backend"
+				},
+				{
+					"type": "hype",
+					"label": "Hype"
+				},
+				{
+					"type": "web",
+					"label": "Web"
+				}
+			],
+			"level": [
+				{
+					"type": "junior",
+					"label": "Junior"
+				},
+				{
+					"type": "middle",
+					"label": "Middle"
+				},
+				{
+					"type": "senior",
+					"label": "Senior"
+				}
+			]
+		}
+	},
 	"profile": {
 		"view": "View profile"
 	},
