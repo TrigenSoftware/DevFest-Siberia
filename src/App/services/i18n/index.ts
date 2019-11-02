@@ -82,7 +82,7 @@ export function getTalkTypes(context: I18nConfig): any[] {
 /**
  * Get schedule date from locales.
  */
-export function getScheduleDate(context: I18nConfig): any[] {
+export function getScheduleDates(context: I18nConfig): any[] {
 
 	const {
 		schedule: {

@@ -20,7 +20,7 @@ import {
 	Bind
 } from '@flexis/ui/helpers';
 import {
-	getScheduleDate,
+	getScheduleDates,
 	getScheduleTypes,
 	getScheduleLevels
 } from '~/services/i18n';
@@ -119,7 +119,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		const params = new URLSearchParams(search);
 		const date = params.get('date');
 		const type = params.get('type');
-		const nav = getScheduleDate(context);
+		const nav = getScheduleDates(context);
 		const filterTypes = getScheduleTypes(context);
 		const filterLevels = getScheduleLevels(context);
 		const schedule = selectScheduleByType(date, type);
@@ -221,26 +221,24 @@ export class ScheduleContainer extends Component<IProps, IState> {
 				</div>
 				{actionsReady ? (
 					<Schedule>
-						{
-							schedule.map((item) => {
+						{schedule.map((item) => {
 
-								const {
-									title,
-									date,
-									timeStart,
-									timeEnd
-								} = item;
+							const {
+								title,
+								date,
+								timeStart,
+								timeEnd
+							} = item;
 
-								return (
-									<ScheduleItem
-										key={title}
-										{...item}
-										time={formatDate(date, timeStart)}
-										status={this.getStatus(date, timeStart, timeEnd)}
-									/>
-								);
-							})
-						}
+							return (
+								<ScheduleItem
+									key={title}
+									{...item}
+									time={formatDate(date, timeStart)}
+									status={this.getStatus(date, timeStart, timeEnd)}
+								/>
+							);
+						})}
 					</Schedule>
 				) : (
 					<Loading/>
@@ -271,7 +269,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 
 		if (!date) {
 
-			const schedule = getScheduleDate(context);
+			const schedule = getScheduleDates(context);
 
 			schedule.some(({ date }) => {
 

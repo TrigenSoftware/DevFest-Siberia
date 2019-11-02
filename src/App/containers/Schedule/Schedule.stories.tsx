@@ -15,12 +15,14 @@ import {
 import {
 	I18nProvider
 } from 'i18n-for-react';
-import Header from '~/blocks/Header/mock';
+import Header, {
+	store as headerStore
+} from '~/blocks/Header/mock';
 import Footer from '~/blocks/Footer';
 import ru from '~/data/locales/ru.json';
 import en from '~/data/locales/en.json';
 import Schedule, {
-	store
+	store as scheduleStore
 } from './mock';
 
 const stylableApi = `
@@ -59,8 +61,10 @@ storiesOf('Containers|Schedule', module)
 		'with default state',
 		() => (
 			<>
-				<Provider store={store}>
+				<Provider store={headerStore}>
 					<Header/>
+				</Provider>
+				<Provider store={scheduleStore}>
 					<Schedule/>
 				</Provider>
 				<Footer/>
@@ -71,8 +75,10 @@ storiesOf('Containers|Schedule', module)
 		'with 2019-11-29 date',
 		() => (
 			<>
-				<Provider store={store}>
+				<Provider store={headerStore}>
 					<Header/>
+				</Provider>
+				<Provider store={scheduleStore}>
 					<Schedule
 						datetime={date('Current time', new Date('2019-11-29'))}
 					/>
@@ -85,8 +91,10 @@ storiesOf('Containers|Schedule', module)
 		'with 2019-11-30 date',
 		() => (
 			<>
-				<Provider store={store}>
+				<Provider store={headerStore}>
 					<Header/>
+				</Provider>
+				<Provider store={scheduleStore}>
 					<Schedule
 						datetime={date('Current time', new Date('2019-11-30'))}
 					/>
@@ -99,8 +107,10 @@ storiesOf('Containers|Schedule', module)
 		'with 2019-12-01 date',
 		() => (
 			<>
-				<Provider store={store}>
+				<Provider store={headerStore}>
 					<Header/>
+				</Provider>
+				<Provider store={scheduleStore}>
 					<Schedule
 						datetime={date('Current time', new Date('2019-12-01'))}
 					/>

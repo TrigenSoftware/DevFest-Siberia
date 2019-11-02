@@ -1,5 +1,8 @@
 // tslint:disable space-in-parens
 import Store from '@flexis/redux';
+import {
+	IActions
+} from '../types';
 
 export const ScheduleSegment = Symbol('schedule');
 
@@ -16,9 +19,19 @@ async function loadScheduleSegmentConfig() {
 	};
 }
 
+async function loadInitialScheduleData(store: Store<any, IActions>) {
+
+	const {
+		fetchSchedule
+	} = store.actions.schedule;
+
+	await fetchSchedule();
+}
+
 export function registerScheduleSegment(store: Store) {
 	store.registerSegment(
 		ScheduleSegment,
-		loadScheduleSegmentConfig
+		loadScheduleSegmentConfig,
+		loadInitialScheduleData
 	);
 }
