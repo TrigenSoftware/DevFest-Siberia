@@ -362,8 +362,6 @@ export class BuyContainer extends Component<IProps, IState> {
 			}
 		};
 
-		console.log(userData);
-
 		return userData;
 	}
 
