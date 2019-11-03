@@ -53,7 +53,7 @@ function formatDate(date: string, timeStart: string) {
 	const [
 		time,
 		formatType
-	] = format(startDate, 'hh:mm a').split(' ');
+	] = format(startDate, 'H:mm').split(' ');
 
 	return (
 		<>

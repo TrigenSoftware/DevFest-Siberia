@@ -105,11 +105,7 @@ export class SpeakerModal extends Component<IProps, IState> {
 					contacts={speaker.contacts}
 					badge={speaker.badge}
 					text={speaker.text}
-					talkTitle={speaker.talkTitle}
-					talkLocation={speaker.talkLocation}
-					talkTime={speaker.talkTime}
-					talkTypeBadge={speaker.talkTypeBadge}
-					talkLevelBadge={speaker.talkLevelBadge}
+					talks={speaker.talks}
 				/>
 			</Modal>
 		);

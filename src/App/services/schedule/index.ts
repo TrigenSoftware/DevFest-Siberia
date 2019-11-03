@@ -5,11 +5,16 @@ import enSchedule from '~/data/schedule/en.fetch.json?fetch';
 
 const logger = createLogger('App::services::schedule');
 
-export async function fetch(lang = 'en') {
+export async function fetch({
+	lang = 'en',
+	skipSpeakers = false
+} = {}) {
 
 	logger.debug('fetch', 'Input lang:', lang);
 
-	const fetchSpeakersTask = speakersService.fetch();
+	const fetchSpeakersTask = !skipSpeakers && speakersService.fetch({
+		skipSchedule: true
+	});
 	const url = lang === 'en' ? enSchedule : '';
 	let schedule: any[] = null;
 
@@ -26,27 +31,30 @@ export async function fetch(lang = 'en') {
 		schedule = data;
 	}
 
-	const speakers = await fetchSpeakersTask;
+	if (fetchSpeakersTask) {
 
-	schedule = schedule.map((scheduleItem) => {
+		const speakers = await fetchSpeakersTask;
 
-		const {
-			speakers: speakersIds
-		} = scheduleItem;
+		schedule = schedule.map((scheduleItem) => {
 
-		if (!speakersIds) {
-			return scheduleItem;
-		}
+			const {
+				speakers: speakersIds
+			} = scheduleItem;
 
-		const shcedultItemSpeakers = speakersIds
-			.map(speakerId => findSpeaker(speakers, speakerId))
-			.filter(Boolean);
+			if (!speakersIds) {
+				return scheduleItem;
+			}
 
-		return {
-			...scheduleItem,
-			speakers: shcedultItemSpeakers
-		};
-	});
+			const shcedultItemSpeakers = speakersIds
+				.map(speakerId => findSpeaker(speakers, speakerId))
+				.filter(Boolean);
+
+			return {
+				...scheduleItem,
+				speakers: shcedultItemSpeakers
+			};
+		});
+	}
 
 	logger.debug('fetch', 'Response:', schedule);
 

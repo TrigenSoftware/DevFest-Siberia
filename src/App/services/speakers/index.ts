@@ -1,13 +1,20 @@
 import createLogger from '~/services/logger';
+import * as scheduleService from '~/services/schedule';
 import client from './client';
 import enSpeakers from '~/data/speakers/en.fetch.json?fetch';
 
 const logger = createLogger('App::services::speakers');
 
-export async function fetch(lang = 'en') {
+export async function fetch({
+	lang = 'en',
+	skipSchedule = false
+} = {}) {
 
 	logger.debug('fetch', 'Input lang:', lang);
 
+	const fetchScheduleTask = !skipSchedule && scheduleService.fetch({
+		skipSpeakers: true
+	});
 	const url = lang === 'en' ? enSpeakers : '';
 	let speakers: any[] = null;
 
@@ -24,12 +31,35 @@ export async function fetch(lang = 'en') {
 		speakers = data;
 	}
 
-	const safeSpeakers = speakers.map(speaker => ({
+	speakers = speakers.map(speaker => ({
 		...speaker,
 		text: speaker.text.replace(/(href=)/g, 'rel="noopener noreferrer" $1')
 	}));
 
-	logger.debug('fetch', 'Response:', safeSpeakers);
+	if (fetchScheduleTask) {
 
-	return safeSpeakers;
+		const schedule = await fetchScheduleTask;
+
+		speakers = speakers.map((speaker) => {
+
+			const talks = findTalks(schedule, speaker.id);
+
+			return {
+				...speaker,
+				talks
+			};
+		});
+	}
+
+	logger.debug('fetch', 'Response:', speakers);
+
+	return speakers;
+}
+
+function findTalks(schedule: any[], id: string) {
+	return schedule.filter(({
+		speakers
+	}) =>
+		speakers.includes(id)
+	);
 }
