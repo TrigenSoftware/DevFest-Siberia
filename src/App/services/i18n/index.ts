@@ -114,24 +114,6 @@ export function getScheduleTypes(context: I18nConfig): any[] {
 }
 
 /**
- * Get schedule levels from locales.
- */
-export function getScheduleLevels(context: I18nConfig): any[] {
-
-	const {
-		schedule: {
-			filter: {
-				level
-			}
-		}
-	} = context.getCatalog(
-		context.getLocale()
-	) as any;
-
-	return level;
-}
-
-/**
  * Get grouped partners from locales.
  */
 export function getPartners(context: I18nConfig): any[] {

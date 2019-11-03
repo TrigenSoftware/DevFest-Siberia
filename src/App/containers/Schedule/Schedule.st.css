@@ -8,6 +8,7 @@
 	-st-from: '~/components/variables.st.css';
 	-st-named:
 		sizeScreenMdMax,
+		sizeScreenSmMax,
 		colorBlue10,
 		colorBlue11,
 		colorBlue13,
@@ -47,7 +48,7 @@
 
 /* stylelint-disable a11y/no-display-none */
 .root .nav::after,
-.root .filter::after {
+.root .filterNav::after {
 	display: none;
 }/* stylelint-enable */
 
@@ -68,30 +69,31 @@
 	margin-bottom: rel(32, 24);
 }
 
-.group {
+.filter {
 	display: flex;
 	align-items: baseline;
 	margin-bottom: rel(21, 24);
 }
 
-.filter .list {
+.filterNav .list {
 	flex-wrap: wrap;
+	margin-bottom: 10px;
 }
 
-.filter .item {
-	margin-bottom: 20px;
+.filterNav .item {
+	margin-bottom: 10px;
 	font-size: 0;
 }
 
-.filter .item:not(:last-child) {
+.filterNav .item:not(:last-child) {
 	margin-right: 10px;
 }
 
-.filter .active .Badge {
+.filterNav .active .Badge {
 	position: relative;
 }
 
-.filter .active .Badge::after {
+.filterNav .active .Badge::after {
 	position: absolute;
 	bottom: -16px;
 	left: 50%;
@@ -102,39 +104,39 @@
 	content: '';
 }
 
-.filter .active .Badge:darkblue::after {
+.filterNav .active .Badge:darkblue::after {
 	background-color: value(colorBlue13);
 }
 
-.filter .active .Badge:pink::after {
+.filterNav .active .Badge:pink::after {
 	background-color: value(colorPink4);
 }
 
-.filter .active .Badge:orange::after {
+.filterNav .active .Badge:orange::after {
 	background-color: value(colorOrange);
 }
 
-.filter .active .Badge:purple::after {
+.filterNav .active .Badge:purple::after {
 	background-color: value(colorPurple);
 }
 
-.filter .active .Badge:aqua::after {
+.filterNav .active .Badge:aqua::after {
 	background-color: value(colorBlue11);
 }
 
-.filter .active .Badge:yellow::after {
+.filterNav .active .Badge:yellow::after {
 	background-color: value(colorYellow);
 }
 
-.filter .active .Badge:blue::after {
+.filterNav .active .Badge:blue::after {
 	background-color: value(colorBlue10);
 }
 
-.filter .active .Badge:green::after {
+.filterNav .active .Badge:green::after {
 	background-color: value(colorGreen1);
 }
 
-.filter .active .Badge:lightgreen::after {
+.filterNav .active .Badge:lightgreen::after {
 	background-color: value(colorGreen2);
 }
 
@@ -144,14 +146,20 @@
 	font-size: 16px;
 }
 
-.separator {
-	margin: auto;
-	width: 0;
-}
-
 @media (max-width: value(sizeScreenMdMax)) {
 
-	.filter .active .Badge::after {
+	.filterNav .active .Badge::after {
 		bottom: -13px;
+	}
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.filter {
+		display: block;
+	}
+
+	.filterTitle {
+		margin-bottom: 10px;
 	}
 }

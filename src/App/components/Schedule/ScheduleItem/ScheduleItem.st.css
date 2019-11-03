@@ -63,8 +63,14 @@
 	font-size: 1rem;
 }
 
+.time {
+	padding: 1.6em 3em;
+	text-align: center;
+	white-space: nowrap;
+}
+
 .description {
-	padding: 1.6em 0 1.6em 2em;
+	padding: 1.6em 0;
 }
 
 .description .Badge:not(:last-child) {
@@ -72,8 +78,7 @@
 }
 
 .controls {
-	padding: 1.6em 2em;
-	width: 26em;
+	padding: 1.6em 3em;
 	vertical-align: middle;
 	text-align: right;
 }
@@ -157,10 +162,9 @@
 	display: flex;
 	align-items: baseline;
 	margin-bottom: 13px;
-	max-width: 70em;
 }
 
-.list {
+.speakersList {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: start;
@@ -169,12 +173,12 @@
 	list-style: none;
 }
 
-.item {
+.speaker {
 	margin-right: 1.7em;
 	padding-right: 1.7em;
 }
 
-.item:not(:last-child) {
+.speaker:not(:last-child) {
 	margin-bottom: 1.2em;
 	border-right: 1px dashed value(colorGray4);
 }
@@ -204,14 +208,14 @@
 	font-size: 2.4em;
 }
 
-.speaker {
+.speakerName {
 	color: value(colorBlack);
 	font-family: value(fontFamilyMono);
 	font-size: 18px;
 	font-weight: bold;
 }
 
-.about {
+.speakerDescription {
 	color: value(colorGray1);
 	font-size: 16px;
 }
@@ -229,22 +233,17 @@
 .root:past .lang,
 .root:past .location,
 .root:past .title,
-.root:past .speaker,
-.root:past .about {
+.root:past .speakerName,
+.root:past .speakerDescription {
 	color: value(colorBlue8);
 }
 
 .root:now:withBadge .lang,
 .root:now:withBadge .title,
 .root:now:withBadge .location,
-.root:now:withBadge .speaker,
-.root:now:withBadge .about {
+.root:now:withBadge .speakerName,
+.root:now:withBadge .speakerDescription {
 	color: value(colorWhite);
-}
-
-.time {
-	padding: 1.6em 1em;
-	text-align: center;
 }
 
 .label {
@@ -287,6 +286,10 @@
 
 @media (max-width: value(sizeScreenMdMax)) {
 
+	.title {
+		font-size: 3.5em;
+	}
+
 	.description .Badge:not(:last-child) {
 		margin-right: 10px;
 	}
@@ -306,19 +309,8 @@
 
 @media (max-width: value(sizeScreenSmMax)) {
 
-	.controls {
-		display: flex;
-		align-items: center;
-		padding: 0 0 16px 10px;
-		width: 100%;
-	}
-
-	.root:not(:first-child) .controls {
-		border: none;
-	}
-
 	.time {
-		padding: 10px 5px;
+		padding: 10px;
 	}
 
 	.description {
@@ -330,16 +322,35 @@
 		margin-bottom: 10px;
 	}
 
-	.list {
-		flex-direction: column;
-		margin-left: 10px;
+	.group {
+		display: block;
 	}
 
-	.item {
+	.talkInfo {
+		padding: 1em 0 2em;
+	}
+
+	.speakersList {
+		flex-direction: column;
+		margin-left: 0;
+	}
+
+	.speaker {
 		margin-right: 0;
 	}
 
-	.item:not(:last-child) {
+	.speaker:not(:last-child) {
+		border: none;
+	}
+
+	.controls {
+		display: flex;
+		align-items: center;
+		padding: 0 0 16px 10px;
+		width: 100%;
+	}
+
+	.root:not(:first-child) .controls {
 		border: none;
 	}
 

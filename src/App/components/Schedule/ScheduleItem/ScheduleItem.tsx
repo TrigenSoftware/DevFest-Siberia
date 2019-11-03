@@ -141,6 +141,7 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 		return (
 			<tr
 				{...omit(props, [
+					'date',
 					'timeStart',
 					'timeEnd'
 				])}
@@ -170,7 +171,9 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 					<div
 						className={classes.group}
 					>
-						<div>
+						<div
+							className={classes.talkInfo}
+						>
 							<div
 								className={classes.lang}
 							>
@@ -183,20 +186,20 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 							</div>
 						</div>
 						<ul
-							className={classes.list}
+							className={classes.speakersList}
 						>
 							{speakers && speakers.map((speaker, index) => (
 								<li
 									key={index}
-									className={classes.item}
+									className={classes.speaker}
 								>
 									<div
-										className={classes.speaker}
+										className={classes.speakerName}
 									>
 										{speaker.name}
 									</div>
 									<div
-										className={classes.about}
+										className={classes.speakerDescription}
 									>
 										{speaker.description}
 									</div>

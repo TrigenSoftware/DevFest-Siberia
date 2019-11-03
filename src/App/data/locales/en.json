@@ -390,20 +390,6 @@
 					"type": "web",
 					"label": "Web"
 				}
-			],
-			"level": [
-				{
-					"type": "beginner",
-					"label": "Beginner"
-				},
-				{
-					"type": "intermediate",
-					"label": "Intermediate"
-				},
-				{
-					"type": "advanced",
-					"label": "Advanced"
-				}
 			]
 		}
 	},

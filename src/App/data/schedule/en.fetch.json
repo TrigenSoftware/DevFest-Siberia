@@ -15,16 +15,9 @@
 		"location": "Комната 231, 2 этаж",
 		"title": "29 Кодить сегодня?",
 		"speakers": [
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			}
+			"BaruchSadogursky",
+			"WillMendes"
 		],
-		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Mobile",
 		"talkLevelBadge": "Intermediate"
 	},
@@ -36,16 +29,8 @@
 		"location": "Комната 231, 2 этаж",
 		"title": "29 Какой-то заголовок должен быть тут?",
 		"speakers": [
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			}
+			"WillMendes"
 		],
-		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Data Science",
 		"talkLevelBadge": "Beginner"
 	},
@@ -57,16 +42,9 @@
 		"location": "Комната 231, 2 этаж",
 		"title": "29 Какой-то заголовок должен быть тут1?",
 		"speakers": [
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			}
+			"BaruchSadogursky",
+			"WillMendes"
 		],
-		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Frontend",
 		"talkLevelBadge": "Intermediate"
 	},
@@ -78,16 +56,10 @@
 		"location": "Комната 231, 2 этаж",
 		"title": "29 Какой-то заголовок должен быть тут2?",
 		"speakers": [
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			}
+			"BaruchSadogursky",
+			"WillMendes",
+			"LauraCarvajal"
 		],
-		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Frontend",
 		"talkLevelBadge": "Beginner"
 	},
@@ -99,16 +71,8 @@
 		"location": "Комната 231, 2 этаж",
 		"title": "Тест1",
 		"speakers": [
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			}
+			"BaruchSadogursky"
 		],
-		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Backend",
 		"talkLevelBadge": "Beginner"
 	},
@@ -120,16 +84,10 @@
 		"location": "Комната 231, 2 этаж",
 		"title": "Тест2",
 		"speakers": [
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			}
+			"BaruchSadogursky",
+			"WillMendes",
+			"LauraCarvajal"
 		],
-		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Hype",
 		"talkLevelBadge": "Beginner"
 	},
@@ -149,16 +107,8 @@
 		"location": "Комната 231, 2 этаж",
 		"title": "30 Кодить сегодня?",
 		"speakers": [
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			}
+			"LauraCarvajal"
 		],
-		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Mobile",
 		"talkLevelBadge": "Beginner"
 	},
@@ -170,16 +120,8 @@
 		"location": "Комната 231, 2 этаж",
 		"title": "30 Какой-то заголовок должен быть тут?",
 		"speakers": [
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			}
+			"WillMendes"
 		],
-		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Data Science",
 		"talkLevelBadge": "Intermediate"
 	},
@@ -191,16 +133,10 @@
 		"location": "Комната 231, 2 этаж",
 		"title": "30 Какой-то заголовок должен быть тут1?",
 		"speakers": [
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			}
+			"BaruchSadogursky",
+			"WillMendes",
+			"LauraCarvajal"
 		],
-		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Frontend",
 		"talkLevelBadge": "Advanced"
 	},
@@ -212,16 +148,9 @@
 		"location": "Комната 231, 2 этаж",
 		"title": "30 Какой-то заголовок должен быть тут2?",
 		"speakers": [
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			}
+			"WillMendes",
+			"LauraCarvajal"
 		],
-		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Frontend",
 		"talkLevelBadge": "Advanced"
 	},
@@ -233,16 +162,8 @@
 		"location": "Комната 231, 2 этаж",
 		"title": "Тест1",
 		"speakers": [
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			}
+			"BaruchSadogursky"
 		],
-		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Backend",
 		"talkLevelBadge": "Advanced"
 	},
@@ -254,16 +175,10 @@
 		"location": "Комната 231, 2 этаж",
 		"title": "Тест2",
 		"speakers": [
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			}
+			"BaruchSadogursky",
+			"WillMendes",
+			"LauraCarvajal"
 		],
-		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Hype",
 		"talkLevelBadge": "Intermediate"
 	},
@@ -275,16 +190,10 @@
 		"location": "Комната 231, 2 этаж",
 		"title": "01 Кодить сегодня или нет",
 		"speakers": [
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			}
+			"BaruchSadogursky",
+			"WillMendes",
+			"LauraCarvajal"
 		],
-		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Mobile",
 		"talkLevelBadge": "Intermediate"
 	},
@@ -296,16 +205,9 @@
 		"location": "Комната 231, 2 этаж",
 		"title": "01 Есть хочу :)",
 		"speakers": [
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			}
+			"WillMendes",
+			"LauraCarvajal"
 		],
-		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "DevOps",
 		"talkLevelBadge": "Advanced"
 	},
@@ -317,16 +219,9 @@
 		"location": "Комната 231, 2 этаж",
 		"title": "01 Кодить",
 		"speakers": [
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			}
+			"WillMendes",
+			"LauraCarvajal"
 		],
-		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Security",
 		"talkLevelBadge": "Advanced"
 	},
@@ -338,16 +233,8 @@
 		"location": "Комната 231, 2 этаж",
 		"title": "01 Что бы съесть?",
 		"speakers": [
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			}
+			"LauraCarvajal"
 		],
-		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Backend",
 		"talkLevelBadge": "Intermediate"
 	},
@@ -359,16 +246,9 @@
 		"location": "Комната 231, 2 этаж",
 		"title": "01 Тоже хочу есть",
 		"speakers": [
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			}
+			"BaruchSadogursky",
+			"WillMendes"
 		],
-		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Hype",
 		"talkLevelBadge": "Intermediate"
 	},
@@ -380,16 +260,10 @@
 		"location": "Комната 231, 2 этаж",
 		"title": "01 А я уже поел :)",
 		"speakers": [
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			}
+			"BaruchSadogursky",
+			"WillMendes",
+			"LauraCarvajal"
 		],
-		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Web",
 		"talkLevelBadge": "Intermediate"
 	},
@@ -401,16 +275,8 @@
 		"location": "Комната 231, 2 этаж",
 		"title": "01 А я уже поел :))",
 		"speakers": [
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			}
+			"LauraCarvajal"
 		],
-		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Frontend",
 		"talkLevelBadge": "Intermediate"
 	},
@@ -422,16 +288,8 @@
 		"location": "Комната 231, 2 этаж",
 		"title": "01 А я уже поел... :)",
 		"speakers": [
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			}
+			"LauraCarvajal"
 		],
-		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Data Science",
 		"talkLevelBadge": "Intermediate"
 	},
@@ -443,20 +301,8 @@
 		"location": "Комната 231, 2 этаж",
 		"title": "01 Когда уже домой?",
 		"speakers": [
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			},
-			{
-				"name": "Иван",
-				"description": "Инженер"
-			}
+			"LauraCarvajal"
 		],
-		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Data Science",
 		"talkLevelBadge": "Intermediate"
 	},

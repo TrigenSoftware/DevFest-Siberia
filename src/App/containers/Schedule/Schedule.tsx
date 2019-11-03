@@ -16,13 +16,11 @@ import {
 	__x
 } from 'i18n-for-react';
 import {
-	omit,
 	Bind
 } from '@flexis/ui/helpers';
 import {
 	getScheduleDates,
-	getScheduleTypes,
-	getScheduleLevels
+	getScheduleTypes
 } from '~/services/i18n';
 import Section from '~/components/Section';
 import ToggleNav, {
@@ -36,7 +34,6 @@ import Schedule, {
 } from '~/components/Schedule';
 import Loading from '~/components/Loading';
 import {
-	routeProps,
 	addSearchParams
 } from '~/blocks/common/router';
 import {
@@ -110,8 +107,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 				search
 			},
 			actionsReady,
-			selectScheduleByType,
-			...props
+			selectScheduleByType
 		} = this.props;
 		const {
 			context
@@ -121,16 +117,10 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		const type = params.get('type');
 		const nav = getScheduleDates(context);
 		const filterTypes = getScheduleTypes(context);
-		const filterLevels = getScheduleLevels(context);
 		const schedule = selectScheduleByType(date, type);
 
 		return (
 			<Section
-				{...omit(props, [
-					...routeProps,
-					'datetime',
-					'fetchSchedule'
-				])}
 				className={style(classes.root, className)}
 			>
 				<h2
@@ -159,7 +149,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 					))}
 				</ToggleNav>
 				<div
-					className={classes.group}
+					className={classes.filter}
 				>
 					<div
 						className={classes.filterTitle}
@@ -167,7 +157,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 						{__x`schedule.filter.title`}:
 					</div>
 					<ToggleNav
-						className={classes.filter}
+						className={classes.filterNav}
 					>
 						{filterTypes.map(({
 							type,
@@ -184,33 +174,6 @@ export class ScheduleContainer extends Component<IProps, IState> {
 							>
 								<Badge
 									variant='fill'
-									color={talkTypeColors[type]}
-								>
-									{label}
-								</Badge>
-							</ToggleNavLink>
-						))}
-					</ToggleNav>
-					<div
-						className={classes.separator}
-					/>
-					<ToggleNav
-						className={classes.filter}
-					>
-						{filterLevels.map(({
-							type,
-							label
-						}) => (
-							<ToggleNavLink
-								key={type}
-								to={{
-									pathname: '/schedule',
-									search: addSearchParams(search, {
-										type
-									})
-								}}
-							>
-								<Badge
 									color={talkTypeColors[type]}
 								>
 									{label}
