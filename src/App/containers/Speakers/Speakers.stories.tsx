@@ -20,10 +20,9 @@ import Header, {
 import Footer from '~/blocks/Footer';
 import ru from '~/data/locales/ru.json';
 import en from '~/data/locales/en.json';
-import {
+import Speakers, {
 	store as speakersStore
-} from '~/blocks/Speakers/mock';
-import Speakers from './';
+} from './mock';
 
 const stylableApi = `
 Stylable API

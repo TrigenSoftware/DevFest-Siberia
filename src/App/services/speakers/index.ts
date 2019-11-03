@@ -60,6 +60,6 @@ function findTalks(schedule: any[], id: string) {
 	return schedule.filter(({
 		speakers
 	}) =>
-		speakers.includes(id)
+		speakers && speakers.includes(id)
 	);
 }

@@ -7,6 +7,9 @@ import {
 	State
 } from '~/store/types';
 import {
+	SpeakersSegment
+} from '~/store/segments';
+import {
 	SpeakersActions,
 	SpeakersReducer
 } from '~/store/Speakers';
@@ -32,3 +35,6 @@ export const store = new Store<State, IActions>({
 	reducer:  SpeakersReducer,
 	enhancer: __REDUX_DEVTOOLS_EXTENSION__ && __REDUX_DEVTOOLS_EXTENSION__()
 });
+
+// Mark as loaded.
+(store as any).segmentsRegistry.set(SpeakersSegment, null);

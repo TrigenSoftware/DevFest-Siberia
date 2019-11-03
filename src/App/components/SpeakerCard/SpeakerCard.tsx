@@ -131,9 +131,11 @@ export default class SpeakerCard extends Component<IProps> {
 							{location}
 						</div>
 						{this.renderContacts()}
-						<Badge>
-							{badge}
-						</Badge>
+						{badge && (
+							<Badge>
+								{badge}
+							</Badge>
+						)}
 					</div>
 					<h3
 						className={classes.name}
@@ -159,17 +161,20 @@ export default class SpeakerCard extends Component<IProps> {
 					<Schedule
 						className={classes.talks}
 					>
-						{talks.map(({
-							date,
-							timeStart,
-							lang,
-							location,
-							title,
-							talkTypeBadge,
-							talkLevelBadge
-						}) => (
+						{talks.map((
+							{
+								date,
+								timeStart,
+								lang,
+								location,
+								title,
+								talkTypeBadge,
+								talkLevelBadge
+							},
+							i
+						) => (
 							<ScheduleItem
-								key={title}
+								key={i}
 								time={formatTime(date, timeStart)}
 								lang={lang}
 								location={location}

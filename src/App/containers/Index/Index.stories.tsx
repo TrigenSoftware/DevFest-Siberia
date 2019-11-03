@@ -15,8 +15,11 @@ import {
 	I18nProvider
 } from 'i18n-for-react';
 import Header, {
-	store
+	store as headerStore
 } from '~/blocks/Header/mock';
+import {
+	store as speakersPromoStore
+} from '~/blocks/SpeakersPromo/mock';
 import Footer from '~/blocks/Footer';
 import ru from '~/data/locales/ru.json';
 import en from '~/data/locales/en.json';
@@ -58,10 +61,12 @@ storiesOf('Containers|Index', module)
 		'with default state',
 		() => (
 			<>
-				<Provider store={store}>
+				<Provider store={headerStore}>
 					<Header/>
 				</Provider>
-				<Index/>
+				<Provider store={speakersPromoStore}>
+					<Index/>
+				</Provider>
 				<Footer/>
 			</>
 		)
