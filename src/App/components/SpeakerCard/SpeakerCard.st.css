@@ -143,6 +143,10 @@
 	padding: 2em value(sizeGapLg) value(sizeGapLg);
 }
 
+.footer .Badge {
+	margin-bottom: rel(10, 14);
+}
+
 .footer .Badge:not(:last-child) {
 	margin-right: rel(16, 14);
 }
