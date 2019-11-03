@@ -27,9 +27,9 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 
 			switch (type) {
 
-				case 'junior':
-				case 'middle':
-				case 'senior':
+				case 'beginner':
+				case 'intermediate':
+				case 'advanced':
 					return filtredByDate.filter(item => item.talkLevelBadge && item.talkLevelBadge.toLowerCase() === type);
 
 				default:

@@ -16,7 +16,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "DevOps",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"id": "WillMendes",
@@ -36,7 +36,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"id": "LauraCarvajal",
@@ -55,7 +55,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"id": "ValarieRegas",
@@ -74,7 +74,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "DevOps",
-		"talkLevelBadge": "Junior"
+		"talkLevelBadge": "Beginner"
 	},
 	{
 		"id": "EkaterinaLoschinina",
@@ -93,7 +93,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Hype",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"id": "AarushiKansal",
@@ -112,7 +112,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"id": "IgnatKorchagin",
@@ -128,7 +128,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "DevOps",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"id": "SebastianDaschner",
@@ -148,7 +148,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"id": "AlexeyRodionov",
@@ -168,7 +168,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"id": "MaciejTreder",
@@ -188,7 +188,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"id": "AdriánBolonio",
@@ -209,7 +209,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"id": "AndrewMihin",
@@ -229,7 +229,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Mobile",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"id": "RafałLeszko",
@@ -250,7 +250,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"id": "MikołajDobrucki",
@@ -270,7 +270,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Junior"
+		"talkLevelBadge": "Beginner"
 	},
 	{
 		"id": "LukaKladaric",
@@ -290,7 +290,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "DevOps",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"id": "KonstantinOsipov",
@@ -309,7 +309,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"id": "SergeyPugachev",
@@ -328,7 +328,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"id": "DawidPacia",
@@ -348,7 +348,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Security",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"id": "YogeshOjha",
@@ -367,7 +367,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Security",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"id": "TomKozacinski",
@@ -387,7 +387,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Hype",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"id": "IgorDultsev",
@@ -406,7 +406,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"id": "VsevolodHrechaniuk",
@@ -424,7 +424,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"id": "AlexanderEfremenkov",
@@ -444,7 +444,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Mobile",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"id": "RamónGuijarro",
@@ -463,7 +463,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Junior"
+		"talkLevelBadge": "Beginner"
 	},
 	{
 		"id": "SrdjanVranac",
@@ -483,7 +483,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"id": "IgorSheko",
@@ -503,7 +503,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Junior"
+		"talkLevelBadge": "Beginner"
 	},
 	{
 		"id": "AlexeyGusev",
@@ -522,7 +522,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Junior"
+		"talkLevelBadge": "Beginner"
 	},
 	{
 		"id": "NikitaAshikhmin",
@@ -541,7 +541,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "AI",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"id": "NatalyaLukashevich",
@@ -560,7 +560,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "ai",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"id": "AnnaMosolova",
@@ -579,7 +579,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "ai",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"id": "IvanBondarenko",
@@ -598,7 +598,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "ai",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"id": "ValentinMalykh",
@@ -617,7 +617,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "ai",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"id": "AndrewKutuzov",
@@ -636,7 +636,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "ai",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"id": "KirillMalev",
@@ -655,7 +655,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "ai",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"id": "IvanKomarov",
@@ -674,7 +674,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "ai",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"id": "AndreyFilchenko",
@@ -693,7 +693,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "ai",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"id": "PabloPerezDeAngelis",
@@ -712,7 +712,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "ai",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"id": "YuriBaburov",
@@ -731,7 +731,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "ai",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"id": "BorisSharchilev",
@@ -750,6 +750,6 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "ai",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	}
 ]

@@ -71,7 +71,7 @@ storiesOf('Components|SpeakerCard', module)
 				talkLocation={text('Talk location', '543 аудитория, 3 этаж | Академпарк')}
 				talkTime={text('Talk time', '11:21 AM')}
 				talkTypeBadge='Mobile'
-				talkLevelBadge='Junior'
+				talkLevelBadge='Beginner'
 			/>
 		)
 	);

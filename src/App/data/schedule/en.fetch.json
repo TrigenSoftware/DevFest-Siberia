@@ -26,7 +26,7 @@
 		],
 		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Mobile",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"date": "2019-11-29",
@@ -47,7 +47,7 @@
 		],
 		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Data Science",
-		"talkLevelBadge": "Junior"
+		"talkLevelBadge": "Beginner"
 	},
 	{
 		"date": "2019-11-29",
@@ -68,7 +68,7 @@
 		],
 		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Frontend",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"date": "2019-11-29",
@@ -89,7 +89,7 @@
 		],
 		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Frontend",
-		"talkLevelBadge": "Junior"
+		"talkLevelBadge": "Beginner"
 	},
 	{
 		"date": "2019-11-29",
@@ -110,7 +110,7 @@
 		],
 		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Backend",
-		"talkLevelBadge": "Junior"
+		"talkLevelBadge": "Beginner"
 	},
 	{
 		"date": "2019-11-29",
@@ -131,7 +131,7 @@
 		],
 		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Hype",
-		"talkLevelBadge": "Junior"
+		"talkLevelBadge": "Beginner"
 	},
 	{
 		"date": "2019-11-30",
@@ -160,7 +160,7 @@
 		],
 		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Mobile",
-		"talkLevelBadge": "Junior"
+		"talkLevelBadge": "Beginner"
 	},
 	{
 		"date": "2019-11-30",
@@ -181,7 +181,7 @@
 		],
 		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Data Science",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"date": "2019-11-30",
@@ -202,7 +202,7 @@
 		],
 		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Frontend",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"date": "2019-11-30",
@@ -223,7 +223,7 @@
 		],
 		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Frontend",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"date": "2019-11-30",
@@ -244,7 +244,7 @@
 		],
 		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Backend",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"date": "2019-11-30",
@@ -265,7 +265,7 @@
 		],
 		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Hype",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"date": "2019-12-01",
@@ -286,7 +286,7 @@
 		],
 		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Mobile",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"date": "2019-12-01",
@@ -307,7 +307,7 @@
 		],
 		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "DevOps",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"date": "2019-12-01",
@@ -328,7 +328,7 @@
 		],
 		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Security",
-		"talkLevelBadge": "Senior"
+		"talkLevelBadge": "Advanced"
 	},
 	{
 		"date": "2019-12-01",
@@ -349,7 +349,7 @@
 		],
 		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Backend",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"date": "2019-12-01",
@@ -370,7 +370,7 @@
 		],
 		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Hype",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"date": "2019-12-01",
@@ -391,7 +391,7 @@
 		],
 		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"date": "2019-12-01",
@@ -412,7 +412,7 @@
 		],
 		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Frontend",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"date": "2019-12-01",
@@ -433,7 +433,7 @@
 		],
 		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Data Science",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"date": "2019-12-01",
@@ -458,7 +458,7 @@
 		],
 		"statusLabel": "Идет сейчас",
 		"talkTypeBadge": "Data Science",
-		"talkLevelBadge": "Middle"
+		"talkLevelBadge": "Intermediate"
 	},
 	{
 		"date": "2019-12-01",

@@ -78,9 +78,9 @@ export const talkTypeColors: Record<string, Color> = {
 	'backend':      'blue',
 	'hype':         'green',
 	'web':          'lightgreen',
-	'junior':       'aqua',
-	'middle':       'blue',
-	'senior':       'darkblue'
+	'beginner':     'aqua',
+	'intermediate': 'blue',
+	'advanced':     'darkblue'
 };
 
 export class ScheduleItem extends Component<IScheduleItemProps> {
@@ -371,19 +371,19 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 				};
 				break;
 
-			case 'junior':
+			case 'beginner':
 				props = {
 					color
 				};
 				break;
 
-			case 'middle':
+			case 'intermediate':
 				props = {
 					color
 				};
 				break;
 
-			case 'senior':
+			case 'advanced':
 				props = {
 					color
 				};

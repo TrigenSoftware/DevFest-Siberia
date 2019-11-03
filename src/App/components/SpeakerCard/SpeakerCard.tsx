@@ -259,19 +259,19 @@ export default class SpeakerCard extends Component<IProps> {
 				};
 				break;
 
-			case 'junior':
+			case 'beginner':
 				props = {
 					color: 'aqua'
 				};
 				break;
 
-			case 'middle':
+			case 'intermediate':
 				props = {
 					color: 'pink'
 				};
 				break;
 
-			case 'senior':
+			case 'advanced':
 				props = {
 					color: 'red'
 				};

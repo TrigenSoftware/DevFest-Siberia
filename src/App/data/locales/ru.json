@@ -364,16 +364,16 @@
 			],
 			"level": [
 				{
-					"type": "junior",
-					"label": "Junior"
+					"type": "beginner",
+					"label": "Beginner"
 				},
 				{
-					"type": "middle",
-					"label": "Middle"
+					"type": "intermediate",
+					"label": "Intermediate"
 				},
 				{
-					"type": "senior",
-					"label": "Senior"
+					"type": "advanced",
+					"label": "Advanced"
 				}
 			]
 		}
