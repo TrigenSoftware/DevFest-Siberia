@@ -15,11 +15,14 @@ import {
 	I18nProvider
 } from 'i18n-for-react';
 import Header, {
-	store
+	store as headerStore
 } from '~/blocks/Header/mock';
 import Footer from '~/blocks/Footer';
 import ru from '~/data/locales/ru.json';
 import en from '~/data/locales/en.json';
+import {
+	store as speakersStore
+} from '~/blocks/Speakers/mock';
 import Speakers from './';
 
 const stylableApi = `
@@ -58,10 +61,12 @@ storiesOf('Containers|Speakers', module)
 		'with default state',
 		() => (
 			<>
-				<Provider store={store}>
+				<Provider store={headerStore}>
 					<Header/>
 				</Provider>
-				<Speakers/>
+				<Provider store={speakersStore}>
+					<Speakers/>
+				</Provider>
 				<Footer/>
 			</>
 		)
