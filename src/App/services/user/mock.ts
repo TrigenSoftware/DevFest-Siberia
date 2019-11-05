@@ -4,10 +4,12 @@ import createLogger from '~/services/logger';
 import User from '~/models/User';
 import Order from '~/models/Order';
 import Product from '~/models/Product';
+import Favorite from '~/models/Favorite';
 import mockUser from '~/models/User.mock';
 import mockOrder from '~/models/Order.mock';
 import mockProduct from '~/models/Product.mock';
 import mockFavorites from '~/models/Favorite.mock';
+import mockReservations from '~/models/Reservation.mock';
 
 const logger = createLogger('App::services::user');
 
@@ -77,6 +79,17 @@ export async function fetchFavorites() {
 	const response = mockFavorites();
 
 	logger.debug('fetchFavorites', 'Response:', response);
+
+	return response;
+}
+
+export async function fetchReservations() {
+
+	logger.debug('fetchReservations');
+
+	const response = mockReservations();
+
+	logger.debug('fetchReservations', 'Response:', response);
 
 	return response;
 }

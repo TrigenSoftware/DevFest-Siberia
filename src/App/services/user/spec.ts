@@ -6,9 +6,11 @@ import {
 	buy,
 	login,
 	fetchOrders,
-	fetchFavorites
+	fetchFavorites,
+	fetchReservations
 } from './';
 import mockFavorites from '~/models/Favorite.mock';
+import mockReservations from '~/models/Reservation.mock';
 
 const MOCK_LOGIN_RESPONSE = {
 	authKey: 'string',
@@ -64,6 +66,7 @@ const MOCK_FETCHORDERS_RESPONSE = [
 	}
 ];
 const MOCK_FETCHFAVORITES_RESPONSE = mockFavorites();
+const MOCK_RESERVATIONS_RESPONSE = mockReservations();
 
 describe('API', () => {
 
@@ -140,6 +143,21 @@ describe('API', () => {
 				const fetchFavoritesResponse = await fetchFavorites();
 
 				expect(fetchFavoritesResponse.size).toEqual(3);
+			});
+		});
+
+		describe('fetchReservations', () => {
+
+			it('should get correct fetchReservations data', async () => {
+
+				moxios.stubRequest(/\/reservation/, {
+					status:   200,
+					response: MOCK_RESERVATIONS_RESPONSE
+				});
+
+				const fetchReservationsResponse = await fetchReservations();
+
+				expect(fetchReservationsResponse.size).toEqual(3);
 			});
 		});
 	});
