@@ -2,6 +2,7 @@ import {
 	RouteComponentProps
 } from 'react-router-dom';
 import {
+	Schedule,
 	IScheduleStateProps
 } from '~/store/types';
 import {
@@ -16,5 +17,5 @@ export interface IProps extends ISectionProps, IScheduleStateProps, RouteCompone
 	actionsReady: boolean;
 	datetime?: Date;
 	fetchSchedule();
-	selectScheduleByType(date: string, type: string);
+	selectScheduleByType(date: string, type: string): Schedule[];
 }

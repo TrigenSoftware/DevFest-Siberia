@@ -111,10 +111,9 @@
 }
 
 .footer {
-	display: flex;
-	align-items: baseline;
 	clear: both;
 	border-top: 1px dashed value(colorGray1);
+	padding-bottom: 1rem;
 }
 
 .talks {

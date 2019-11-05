@@ -20,7 +20,6 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 		const {
 			schedule
 		} = this.state;
-
 		const filtredByDate = schedule.filter(item => item.date === date);
 
 		if (type && type !== AllScheduleType) {
@@ -30,10 +29,14 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 				case 'beginner':
 				case 'intermediate':
 				case 'advanced':
-					return filtredByDate.filter(item => item.talkLevelBadge && item.talkLevelBadge.toLowerCase() === type);
+					return filtredByDate.filter(
+						item => item.talkLevelBadge && item.talkLevelBadge.toLowerCase() === type
+					);
 
 				default:
-					return filtredByDate.filter(item => item.talkTypeBadge && item.talkTypeBadge.toLowerCase() === type);
+					return filtredByDate.filter(
+						item => item.talkTypeBadge && item.talkTypeBadge.toLowerCase() === type
+					);
 			}
 		}
 

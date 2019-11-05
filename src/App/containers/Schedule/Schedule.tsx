@@ -184,10 +184,9 @@ export class ScheduleContainer extends Component<IProps, IState> {
 				</div>
 				{actionsReady ? (
 					<Schedule>
-						{schedule.map((item) => {
+						{schedule.map((item, i) => {
 
 							const {
-								title,
 								date,
 								timeStart,
 								timeEnd
@@ -195,7 +194,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 
 							return (
 								<ScheduleItem
-									key={title}
+									key={i}
 									{...item}
 									time={formatDate(date, timeStart)}
 									status={this.getStatus(date, timeStart, timeEnd)}
