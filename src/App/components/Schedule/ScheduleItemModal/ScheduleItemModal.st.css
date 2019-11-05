@@ -1,0 +1,14 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '@flexis/ui/components/Modal/Modal.st.css';
+	-st-named: window;
+}
+
+.root .window {
+	padding: rel(52, 24) rel(59, 24);
+}

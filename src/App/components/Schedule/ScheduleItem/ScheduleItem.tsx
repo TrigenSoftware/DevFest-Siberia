@@ -149,7 +149,7 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps, IState> {
 			return null;
 		}
 
-		const searchWithParam = /[^\w]title=/.test(search) && new URLSearchParams(search).get('title') === title;
+		const searchWithParam = new URLSearchParams(search).get('title') === title;
 		const nextState: Partial<IState> = {
 			active:     searchWithParam,
 			prevSearch: search

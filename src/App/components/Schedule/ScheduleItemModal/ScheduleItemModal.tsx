@@ -4,6 +4,10 @@ import React, {
 import Modal, {
 	IProps as IModalProps
 } from '../../Modal';
+import {
+	style,
+	classes
+} from './ScheduleItemModal.st.css';
 
 export type IProps = IModalProps;
 
@@ -20,6 +24,7 @@ export class ScheduleItemModal extends Component<IProps> {
 		return (
 			<Modal
 				{...props}
+				className={style(classes.root, className)}
 				centered
 			>
 				{children}
