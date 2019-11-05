@@ -74,7 +74,7 @@
 }
 
 .description .Badge:not(:last-child) {
-	margin-right: 1.6em;
+	margin-right: rel(16, 14);
 }
 
 .controls {
