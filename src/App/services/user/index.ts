@@ -3,7 +3,10 @@ import client from './client';
 import {
 	userFromResponseData,
 	orderFromResponseData,
-	productFromResponseData
+	productFromResponseData,
+	favoritesFromResponseData,
+	reservationsFromResponseData,
+	reservationFromResponseData
 } from './adapters';
 
 const logger = createLogger('App::services::user');
@@ -88,7 +91,7 @@ export async function fetchFavorites() {
 
 	logger.debug('fetchFavorites', 'Response:', favoritesData);
 
-	return favoritesData;
+	return favoritesFromResponseData(favoritesData);
 }
 
 export async function addFavorite(lectureId: string) {
@@ -101,7 +104,7 @@ export async function addFavorite(lectureId: string) {
 
 	logger.debug('addFavorite', 'Response:', favoritesData);
 
-	return favoritesData;
+	return favoritesFromResponseData(favoritesData);
 }
 
 export async function deleteFavorite(lectureId: string) {
@@ -114,7 +117,7 @@ export async function deleteFavorite(lectureId: string) {
 
 	logger.debug('deleteFavorite', 'Response:', favoritesData);
 
-	return favoritesData;
+	return favoritesFromResponseData(favoritesData);
 }
 
 export async function fetchReservations() {
@@ -127,7 +130,7 @@ export async function fetchReservations() {
 
 	logger.debug('fetchReservation', 'Response:', reservationsData);
 
-	return reservationsData;
+	return reservationsFromResponseData(reservationsData);
 }
 
 export async function addReservation(workshopId: string) {
@@ -140,7 +143,7 @@ export async function addReservation(workshopId: string) {
 
 	logger.debug('addedReservation', 'Response:', addedReservation);
 
-	return addedReservation;
+	return reservationFromResponseData(addedReservation);
 }
 
 export async function deleteReservation(workshopId: string) {
@@ -153,7 +156,7 @@ export async function deleteReservation(workshopId: string) {
 
 	logger.debug('deleteReservation', 'Response:', deletedReservation);
 
-	return deletedReservation;
+	return reservationFromResponseData(deletedReservation);
 }
 
 export function logout() {

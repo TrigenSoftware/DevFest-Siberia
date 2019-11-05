@@ -1,6 +1,11 @@
+import {
+	List
+} from 'immutable';
 import User from '~/models/User';
 import Order from '~/models/Order';
 import Product from '~/models/Product';
+import Favorite from '~/models/Favorite';
+import Reservation from '~/models/Reservation';
 
 export function userFromResponseData(responseData) {
 	return User({
@@ -29,4 +34,19 @@ export function productFromResponseData(responseData) {
 		name:        responseData.name,
 		description: responseData.description
 	});
+}
+
+export function reservationFromResponseData(responseData) {
+	return Reservation({
+		workshopId: responseData.workshopId,
+		status:     responseData.status
+	});
+}
+
+export function favoritesFromResponseData(responseData) {
+	return List(responseData).map(Favorite);
+}
+
+export function reservationsFromResponseData(responseData) {
+	return List(responseData).map(Reservation);
 }
