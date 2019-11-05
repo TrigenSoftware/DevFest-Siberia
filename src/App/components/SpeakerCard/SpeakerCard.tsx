@@ -16,8 +16,8 @@ import ContactLink, {
 } from '../ContactLink';
 import Badge from '../Badge';
 import Schedule, {
-	VariantScheduleItemStatus,
-	ScheduleItem
+	ScheduleItem,
+	VariantScheduleItemStatus
 } from '../Schedule';
 import {
 	style,
@@ -177,7 +177,7 @@ export default class SpeakerCard extends Component<IProps> {
 								key={i}
 								time={formatTime(date, timeStart)}
 								lang={lang}
-								location={location}
+								place={location}
 								title={title}
 								talkTypeBadge={talkTypeBadge}
 								talkLevelBadge={talkLevelBadge}

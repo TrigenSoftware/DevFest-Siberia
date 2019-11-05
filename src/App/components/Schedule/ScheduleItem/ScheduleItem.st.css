@@ -203,6 +203,7 @@
 
 .title {
 	margin-bottom: 6px;
+	text-decoration: none;
 	color: value(colorBlack);
 	font-family: value(fontFamilyMono);
 	font-size: 2.4em;
@@ -282,6 +283,16 @@
 	font-family: value(fontFamilyMono);
 	font-size: 2em;
 	font-weight: bold;
+}
+
+.modalTitle {
+	margin-bottom: rel(30, 24);
+	color: value(colorBlue10);
+	font-size: rel(28, 24);
+}
+
+.modalDescription {
+	font-size: rel(21, 24);
 }
 
 @media (max-width: value(sizeScreenMdMax)) {

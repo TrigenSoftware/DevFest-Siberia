@@ -6,19 +6,32 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import {
+	withRouter,
+	RouteComponentProps
+} from 'react-router-dom';
+import {
 	Bind,
-	CombinePropsAndAttributes,
-	omit
+	Debounce,
+	CombinePropsAndAttributes
 } from '@flexis/ui/helpers';
+import {
+	addSearchParams,
+	deleteSearchParams
+} from '~/blocks/common/router';
+import Modal from '~/components/Modal';
 import Badge, {
 	IProps as IBadgeProps,
 	Variant,
 	Color
 } from '../../Badge';
 import Button from '../../Button';
+import Link from '../../Link';
 import {
 	ScheduleFavoriteButton
 } from '../ScheduleFavoriteButton';
+import {
+	ScheduleItemModal
+} from '../ScheduleItemModal';
 import {
 	style,
 	classes
@@ -37,10 +50,10 @@ interface ISpeaker {
 	description: string;
 }
 
-interface ISelfProps {
+interface ISelfProps extends RouteComponentProps {
 	time: ReactNode;
 	lang?: string;
-	location: ReactNode;
+	place: ReactNode;
 	title: ReactNode;
 	status: ScheduleItemStatus;
 	speakers?: ISpeaker[];
@@ -49,6 +62,7 @@ interface ISelfProps {
 	talkLevelBadge?: string;
 	favorite?: boolean;
 	value?: string;
+	description?: string;
 	favoriteLabel?: string;
 	workshop?: boolean;
 	workshopLabel?: string;
@@ -65,6 +79,11 @@ export type IScheduleItemProps = CombinePropsAndAttributes<
 	ISelfProps,
 	HTMLAttributes<HTMLElement>
 >;
+
+interface IState {
+	active: boolean;
+	prevSearch: string;
+}
 
 export const ScheduleItemStatusValues: ScheduleItemStatus[] = Object.values(VariantScheduleItemStatus);
 
@@ -83,12 +102,16 @@ export const talkTypeColors: Record<string, Color> = {
 	'advanced':     'darkblue'
 };
 
-export class ScheduleItem extends Component<IScheduleItemProps> {
+const {
+	transitionDuration
+} = Modal.defaultProps;
+
+class ScheduleItemWithRouter extends Component<IScheduleItemProps, IState> {
 
 	static propTypes = {
 		time:                  PropTypes.node.isRequired,
 		lang:                  PropTypes.string,
-		location:              PropTypes.node.isRequired,
+		place:                 PropTypes.node.isRequired,
 		title:                 PropTypes.node.isRequired,
 		status:                PropTypes.oneOf(ScheduleItemStatusValues),
 		speakers:              PropTypes.any,
@@ -97,6 +120,7 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 		talkLevelBadge:        PropTypes.string,
 		favorite:              PropTypes.bool,
 		value:                 PropTypes.string,
+		description:           PropTypes.string,
 		favoriteLabel:         PropTypes.string,
 		workshop:              PropTypes.bool,
 		workshopLabel:         PropTypes.string,
@@ -109,21 +133,51 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 		onWorkshopDeleteClick: PropTypes.func
 	};
 
+	static getDerivedStateFromProps(
+		{
+			location: {
+				search
+			},
+			title
+		}: IScheduleItemProps,
+		{
+			prevSearch
+		}: IState
+	) {
+
+		if (prevSearch === search) {
+			return null;
+		}
+
+		const searchWithParam = /[^\w]title=/.test(search) && new URLSearchParams(search).get('title') === title;
+		const nextState: Partial<IState> = {
+			active:     searchWithParam,
+			prevSearch: search
+		};
+
+		return nextState;
+	}
+
+	state = {
+		active:     false,
+		prevSearch: ''
+	};
+
 	render() {
 
 		const {
 			className,
 			time,
 			lang,
-			location,
+			place,
 			title,
 			status,
 			speakers,
-			statusLabel,
 			talkTypeBadge,
 			talkLevelBadge,
 			favorite,
 			value,
+			description,
 			favoriteLabel,
 			workshop,
 			workshopLabel,
@@ -134,126 +188,173 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 			onFavoriteClick,
 			onWorkshopAddClick,
 			onWorkshopDeleteClick,
-			...props
+			location: {
+				search
+			}
 		} = this.props;
+		const {
+			active
+		} = this.state;
 		const color = talkTypeBadge && talkTypeColors[talkTypeBadge.toLowerCase()];
 
 		return (
-			<tr
-				{...omit(props, [
-					'date',
-					'timeStart',
-					'timeEnd'
-				])}
-				className={style(classes.root, {
-					[status]:  Boolean(status),
-					[color]:   Boolean(color),
-					withBadge: Boolean(talkTypeBadge)
-				}, className)}
-			>
-				<td
-					className={classes.time}
+			<>
+				<tr
+					className={style(classes.root, {
+						[status]:  Boolean(status),
+						[color]:   Boolean(color),
+						withBadge: Boolean(talkTypeBadge)
+					}, className)}
 				>
-					<div
-						className={classes.startAt}
+					<td
+						className={classes.time}
 					>
-						{time}
-					</div>
-				</td>
-				<td
-					className={classes.description}
+						<div
+							className={classes.startAt}
+						>
+							{time}
+						</div>
+					</td>
+					<td
+						className={classes.description}
+					>
+						<Link
+							className={classes.title}
+							to={{
+								search: addSearchParams(search, {
+									title: description && title
+								})
+							}}
+						>
+							{title}
+						</Link>
+						<div
+							className={classes.group}
+						>
+							<div
+								className={classes.talkInfo}
+							>
+								<div
+									className={classes.lang}
+								>
+									{lang}
+								</div>
+								<div
+									className={classes.location}
+								>
+									{place}
+								</div>
+							</div>
+							<ul
+								className={classes.speakersList}
+							>
+								{speakers && speakers.map((speaker, index) => (
+									<li
+										key={index}
+										className={classes.speaker}
+									>
+										<div
+											className={classes.speakerName}
+										>
+											{speaker.name}
+										</div>
+										<div
+											className={classes.speakerDescription}
+										>
+											{speaker.description}
+										</div>
+									</li>
+								))}
+							</ul>
+						</div>
+						{this.renderBadge(talkTypeBadge)}
+						{this.renderBadge(talkLevelBadge)}
+					</td>
+					<td
+						className={classes.controls}
+					>
+						{onFavoriteClick && (
+							<ScheduleFavoriteButton
+								onClick={this.onFavoriteClick}
+								title={favoriteLabel}
+								active={favorite}
+								value={value}
+							/>
+						)}
+						{onWorkshopAddClick && !workshop && !workshopDisabled && (
+							<Button
+								className={classes.button}
+								onClick={this.onWorkshopAddClick}
+							>
+								{workshopAddLabel}
+							</Button>
+						)}
+						{workshopDisabled && (
+							<div
+								className={classes.disabled}
+							>
+								{workshopDisabledLabel}
+							</div>
+						)}
+						{onWorkshopDeleteClick && workshop && !workshopDisabled && (
+							<>
+								<div
+									className={classes.label}
+								>
+									{workshopLabel}
+								</div>
+								<Button
+									className={classes.delete}
+									onClick={this.onWorkshopDeleteClick}
+								>
+									{workshopDeleteLabel}
+								</Button>
+							</>
+						)}
+					</td>
+				</tr>
+				<ScheduleItemModal
+					onClose={this.onClose}
+					active={active}
 				>
-					<h4
-						className={classes.title}
+					<h3
+						className={classes.modalTitle}
 					>
 						{title}
-					</h4>
+					</h3>
 					<div
-						className={classes.group}
+						className={classes.modalDescription}
 					>
-						<div
-							className={classes.talkInfo}
-						>
-							<div
-								className={classes.lang}
-							>
-								{lang}
-							</div>
-							<div
-								className={classes.location}
-							>
-								{location}
-							</div>
-						</div>
-						<ul
-							className={classes.speakersList}
-						>
-							{speakers && speakers.map((speaker, index) => (
-								<li
-									key={index}
-									className={classes.speaker}
-								>
-									<div
-										className={classes.speakerName}
-									>
-										{speaker.name}
-									</div>
-									<div
-										className={classes.speakerDescription}
-									>
-										{speaker.description}
-									</div>
-								</li>
-							))}
-						</ul>
+						{description}
 					</div>
-					{this.renderBadge(talkTypeBadge)}
-					{this.renderBadge(talkLevelBadge)}
-				</td>
-				<td
-					className={classes.controls}
-				>
-					{onFavoriteClick && (
-						<ScheduleFavoriteButton
-							onClick={this.onFavoriteClick}
-							title={favoriteLabel}
-							active={favorite}
-							value={value}
-						/>
-					)}
-					{onWorkshopAddClick && !workshop && !workshopDisabled && (
-						<Button
-							className={classes.button}
-							onClick={this.onWorkshopAddClick}
-						>
-							{workshopAddLabel}
-						</Button>
-					)}
-					{workshopDisabled && (
-						<div
-							className={classes.disabled}
-						>
-							{workshopDisabledLabel}
-						</div>
-					)}
-					{onWorkshopDeleteClick && workshop && !workshopDisabled && (
-						<>
-							<div
-								className={classes.label}
-							>
-								{workshopLabel}
-							</div>
-							<Button
-								className={classes.delete}
-								onClick={this.onWorkshopDeleteClick}
-							>
-								{workshopDeleteLabel}
-							</Button>
-						</>
-					)}
-				</td>
-			</tr>
+				</ScheduleItemModal>
+			</>
 		);
+	}
+
+	@Bind()
+	private onClose() {
+		this.setState(() => ({
+			active: false
+		}), this.goBack);
+	}
+
+	@Debounce(transitionDuration)
+	private goBack() {
+
+		const {
+			props
+		} = this;
+		const {
+			history,
+			location: {
+				search
+			}
+		} = props;
+
+		history.push({
+			search: deleteSearchParams(search, 'title')
+		});
 	}
 
 	@Bind()
@@ -404,3 +505,5 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 		);
 	}
 }
+
+export const ScheduleItem = withRouter(ScheduleItemWithRouter);
