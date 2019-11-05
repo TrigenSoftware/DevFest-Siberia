@@ -4,7 +4,6 @@ import createLogger from '~/services/logger';
 import User from '~/models/User';
 import Order from '~/models/Order';
 import Product from '~/models/Product';
-import Favorite from '~/models/Favorite';
 import mockUser from '~/models/User.mock';
 import mockOrder from '~/models/Order.mock';
 import mockProduct from '~/models/Product.mock';
