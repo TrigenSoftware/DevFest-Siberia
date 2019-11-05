@@ -313,21 +313,23 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps, IState> {
 						)}
 					</td>
 				</tr>
-				<ScheduleItemModal
-					onClose={this.onClose}
-					active={active}
-				>
-					<h3
-						className={classes.modalTitle}
+				{description && (
+					<ScheduleItemModal
+						onClose={this.onClose}
+						active={active}
 					>
-						{title}
-					</h3>
-					<div
-						className={classes.modalDescription}
-					>
-						{description}
-					</div>
-				</ScheduleItemModal>
+						<h3
+							className={classes.modalTitle}
+						>
+							{title}
+						</h3>
+						<div
+							className={classes.modalDescription}
+						>
+							{description}
+						</div>
+					</ScheduleItemModal>
+				)}
 			</>
 		);
 	}
