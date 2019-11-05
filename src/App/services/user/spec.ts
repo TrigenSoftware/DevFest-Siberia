@@ -1,11 +1,14 @@
+/* tslint:disable:no-magic-numbers */
 import 'dotenv/config';
 import moxios from 'moxios';
 import userClient from './client';
 import {
 	buy,
 	login,
-	fetchOrders
+	fetchOrders,
+	fetchFavorites
 } from './';
+import mockFavorites from '~/models/Favorite.mock';
 
 const MOCK_LOGIN_RESPONSE = {
 	authKey: 'string',
@@ -60,6 +63,7 @@ const MOCK_FETCHORDERS_RESPONSE = [
 		]
 	}
 ];
+const MOCK_FETCHFAVORITES_RESPONSE = mockFavorites();
 
 describe('API', () => {
 
@@ -121,6 +125,21 @@ describe('API', () => {
 				expect(typeof fetchOrdersResponse.status).toBe('string');
 				expect(typeof fetchOrdersResponse.paymentLink).toBe('string');
 				expect(typeof fetchOrdersResponse.items).toBe('object');
+			});
+		});
+
+		describe('fetchFavorites', () => {
+
+			it('should get correct fetchFavorites data', async () => {
+
+				moxios.stubRequest(/\/favorites/, {
+					status:   200,
+					response: MOCK_FETCHFAVORITES_RESPONSE
+				});
+
+				const fetchFavoritesResponse = await fetchFavorites();
+
+				expect(fetchFavoritesResponse.size).toEqual(3);
 			});
 		});
 	});
