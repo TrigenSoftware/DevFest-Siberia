@@ -9,6 +9,21 @@
 	-st-named: window;
 }
 
+:import {
+	-st-from: '../../variables.st.css';
+	-st-named: colorBlue10;
+}
+
 .root .window {
 	padding: rel(52, 24) rel(59, 24);
+}
+
+.title {
+	margin-bottom: rel(30, 24);
+	color: value(colorBlue10);
+	font-size: rel(28, 24);
+}
+
+.description {
+	font-size: rel(21, 24);
 }

@@ -350,16 +350,8 @@ export class BuyContainer extends Component<IProps, IState> {
 			company,
 			position,
 			city,
-			termsAccepted: true,
-			paymentRequest: {
-				locale,
-				products: [
-					{
-						productRef: 'ticket'
-					}
-				],
-				promocode
-			}
+			locale,
+			promocode
 		};
 
 		return userData;

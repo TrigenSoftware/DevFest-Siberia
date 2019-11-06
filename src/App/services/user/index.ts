@@ -8,17 +8,45 @@ import {
 
 const logger = createLogger('App::services::user');
 
-export async function buy(registrationData) {
+export async function buy({
+	locale,
+	promocode,
+	...registrationData
+}) {
 
 	logger.debug('buy', 'Input user:', registrationData);
 
 	const {
 		data: buyData
-	} = await client.post('auth/register', registrationData);
+	} = await client.post('auth/register', {
+		termsAccepted:  true,
+		paymentRequest: {
+			locale,
+			products: [{
+				productRef: 'ticket'
+			}],
+			promocode: promocode.toLocaleLowerCase()
+		},
+		...registrationData
+	});
 
 	logger.debug('buy', 'Response:', buyData);
 
-	return buyData.paymentDetails.redirectUrl;
+	const {
+		paymentDetails: {
+			redirectUrl
+		}
+	} = buyData;
+
+	if (!redirectUrl) {
+		throw Error('Invalid input data');
+	}
+
+	if (redirectUrl.startsWith(process.env.API_URL.replace(/\/$/, ''))) {
+		throw Error('User already exist');
+	}
+
+	return redirectUrl;
 }
 
 export async function login(email: string, password: string) {

@@ -11,14 +11,11 @@ import {
 } from 'react-router-dom';
 import {
 	Bind,
-	Debounce,
 	CombinePropsAndAttributes
 } from '@flexis/ui/helpers';
 import {
-	addSearchParams,
-	deleteSearchParams
+	addSearchParams
 } from '~/blocks/common/router';
-import Modal from '~/components/Modal';
 import Badge, {
 	IProps as IBadgeProps,
 	Variant,
@@ -80,11 +77,6 @@ export type IScheduleItemProps = CombinePropsAndAttributes<
 	HTMLAttributes<HTMLElement>
 >;
 
-interface IState {
-	active: boolean;
-	prevSearch: string;
-}
-
 export const ScheduleItemStatusValues: ScheduleItemStatus[] = Object.values(VariantScheduleItemStatus);
 
 export const talkTypeColors: Record<string, Color> = {
@@ -102,11 +94,7 @@ export const talkTypeColors: Record<string, Color> = {
 	'advanced':     'darkblue'
 };
 
-const {
-	transitionDuration
-} = Modal.defaultProps;
-
-class ScheduleItemWithRouter extends Component<IScheduleItemProps, IState> {
+class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 
 	static propTypes = {
 		time:                  PropTypes.node.isRequired,
@@ -131,36 +119,6 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps, IState> {
 		onFavoriteClick:       PropTypes.func,
 		onWorkshopAddClick:    PropTypes.func,
 		onWorkshopDeleteClick: PropTypes.func
-	};
-
-	static getDerivedStateFromProps(
-		{
-			location: {
-				search
-			},
-			title
-		}: IScheduleItemProps,
-		{
-			prevSearch
-		}: IState
-	) {
-
-		if (prevSearch === search) {
-			return null;
-		}
-
-		const searchWithParam = new URLSearchParams(search).get('title') === title;
-		const nextState: Partial<IState> = {
-			active:     searchWithParam,
-			prevSearch: search
-		};
-
-		return nextState;
-	}
-
-	state = {
-		active:     false,
-		prevSearch: ''
 	};
 
 	render() {
@@ -188,175 +146,138 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps, IState> {
 			onFavoriteClick,
 			onWorkshopAddClick,
 			onWorkshopDeleteClick,
-			location: {
-				search
-			}
+			location,
+			history
 		} = this.props;
 		const {
-			active
-		} = this.state;
+			search
+		} = location;
 		const color = talkTypeBadge && talkTypeColors[talkTypeBadge.toLowerCase()];
 
 		return (
-			<>
-				<tr
-					className={style(classes.root, {
-						[status]:  Boolean(status),
-						[color]:   Boolean(color),
-						withBadge: Boolean(talkTypeBadge)
-					}, className)}
+			<tr
+				className={style(classes.root, {
+					[status]:  Boolean(status),
+					[color]:   Boolean(color),
+					withBadge: Boolean(talkTypeBadge)
+				}, className)}
+			>
+				<td
+					className={classes.time}
 				>
-					<td
-						className={classes.time}
+					<div
+						className={classes.startAt}
+					>
+						{time}
+					</div>
+				</td>
+				<td
+					className={classes.description}
+				>
+					<Link
+						className={classes.title}
+						to={{
+							search: addSearchParams(search, {
+								title: description && title
+							})
+						}}
+					>
+						{title}
+					</Link>
+					<div
+						className={classes.group}
 					>
 						<div
-							className={classes.startAt}
-						>
-							{time}
-						</div>
-					</td>
-					<td
-						className={classes.description}
-					>
-						<Link
-							className={classes.title}
-							to={{
-								search: addSearchParams(search, {
-									title: description && title
-								})
-							}}
-						>
-							{title}
-						</Link>
-						<div
-							className={classes.group}
+							className={classes.talkInfo}
 						>
 							<div
-								className={classes.talkInfo}
+								className={classes.lang}
 							>
-								<div
-									className={classes.lang}
-								>
-									{lang}
-								</div>
-								<div
-									className={classes.location}
-								>
-									{place}
-								</div>
+								{lang}
 							</div>
-							<ul
-								className={classes.speakersList}
+							<div
+								className={classes.location}
 							>
-								{speakers && speakers.map((speaker, index) => (
-									<li
-										key={index}
-										className={classes.speaker}
+								{place}
+							</div>
+						</div>
+						<ul
+							className={classes.speakersList}
+						>
+							{speakers && speakers.map((speaker, index) => (
+								<li
+									key={index}
+									className={classes.speaker}
+								>
+									<div
+										className={classes.speakerName}
 									>
-										<div
-											className={classes.speakerName}
-										>
-											{speaker.name}
-										</div>
-										<div
-											className={classes.speakerDescription}
-										>
-											{speaker.description}
-										</div>
-									</li>
-								))}
-							</ul>
+										{speaker.name}
+									</div>
+									<div
+										className={classes.speakerDescription}
+									>
+										{speaker.description}
+									</div>
+								</li>
+							))}
+						</ul>
+					</div>
+					{this.renderBadge(talkTypeBadge)}
+					{this.renderBadge(talkLevelBadge)}
+				</td>
+				<td
+					className={classes.controls}
+				>
+					{onFavoriteClick && (
+						<ScheduleFavoriteButton
+							onClick={this.onFavoriteClick}
+							title={favoriteLabel}
+							active={favorite}
+							value={value}
+						/>
+					)}
+					{onWorkshopAddClick && !workshop && !workshopDisabled && (
+						<Button
+							className={classes.button}
+							onClick={this.onWorkshopAddClick}
+						>
+							{workshopAddLabel}
+						</Button>
+					)}
+					{workshopDisabled && (
+						<div
+							className={classes.disabled}
+						>
+							{workshopDisabledLabel}
 						</div>
-						{this.renderBadge(talkTypeBadge)}
-						{this.renderBadge(talkLevelBadge)}
-					</td>
-					<td
-						className={classes.controls}
-					>
-						{onFavoriteClick && (
-							<ScheduleFavoriteButton
-								onClick={this.onFavoriteClick}
-								title={favoriteLabel}
-								active={favorite}
-								value={value}
-							/>
-						)}
-						{onWorkshopAddClick && !workshop && !workshopDisabled && (
-							<Button
-								className={classes.button}
-								onClick={this.onWorkshopAddClick}
-							>
-								{workshopAddLabel}
-							</Button>
-						)}
-						{workshopDisabled && (
+					)}
+					{onWorkshopDeleteClick && workshop && !workshopDisabled && (
+						<>
 							<div
-								className={classes.disabled}
+								className={classes.label}
 							>
-								{workshopDisabledLabel}
+								{workshopLabel}
 							</div>
-						)}
-						{onWorkshopDeleteClick && workshop && !workshopDisabled && (
-							<>
-								<div
-									className={classes.label}
-								>
-									{workshopLabel}
-								</div>
-								<Button
-									className={classes.delete}
-									onClick={this.onWorkshopDeleteClick}
-								>
-									{workshopDeleteLabel}
-								</Button>
-							</>
-						)}
-					</td>
-				</tr>
+							<Button
+								className={classes.delete}
+								onClick={this.onWorkshopDeleteClick}
+							>
+								{workshopDeleteLabel}
+							</Button>
+						</>
+					)}
+				</td>
 				{description && (
 					<ScheduleItemModal
-						onClose={this.onClose}
-						active={active}
-					>
-						<h3
-							className={classes.modalTitle}
-						>
-							{title}
-						</h3>
-						<div
-							className={classes.modalDescription}
-						>
-							{description}
-						</div>
-					</ScheduleItemModal>
+						history={history}
+						location={location}
+						title={String(title)}
+						description={description}
+					/>
 				)}
-			</>
+			</tr>
 		);
-	}
-
-	@Bind()
-	private onClose() {
-		this.setState(() => ({
-			active: false
-		}), this.goBack);
-	}
-
-	@Debounce(transitionDuration)
-	private goBack() {
-
-		const {
-			props
-		} = this;
-		const {
-			history,
-			location: {
-				search
-			}
-		} = props;
-
-		history.push({
-			search: deleteSearchParams(search, 'title')
-		});
 	}
 
 	@Bind()
