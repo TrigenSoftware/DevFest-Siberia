@@ -103,6 +103,10 @@ export class UserReducer extends Reducer {
 		} = state;
 		const reservationIndex = reservations.findIndex(_ => _.workshopId === workshopId);
 
+		if (!~reservationIndex) {
+			return state;
+		}
+
 		return state.set(
 			'reservations',
 			state.reservations.delete(reservationIndex)
