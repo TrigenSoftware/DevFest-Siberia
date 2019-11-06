@@ -1,6 +1,7 @@
 import React, {
 	Component
 } from 'react';
+import PropTypes from 'prop-types';
 import {
 	Location,
 	History
@@ -39,6 +40,13 @@ const {
 } = Modal.defaultProps;
 
 export class ScheduleItemModal extends Component<IProps> {
+
+	static propTypes = {
+		location:    PropTypes.object.isRequired,
+		history:     PropTypes.object.isRequired,
+		title:       PropTypes.string.isRequired,
+		description: PropTypes.string.isRequired
+	};
 
 	static getDerivedStateFromProps(
 		{
