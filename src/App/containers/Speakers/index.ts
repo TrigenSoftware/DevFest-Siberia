@@ -1,2 +1,2 @@
-export { default } from './Speakers';
+export { default } from './connected';
 export * from './Speakers';

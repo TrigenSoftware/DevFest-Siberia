@@ -1,10 +1,5 @@
+/* tslint:disable: no-magic-numbers */
 import React from 'react';
-import {
-	MemoryRouter
-} from 'react-router';
-import {
-	Provider
-} from '@flexis/redux';
 import {
 	storiesOf
 } from '@storybook/react';
@@ -12,15 +7,23 @@ import {
 	select
 } from '@storybook/addon-knobs';
 import {
+	MemoryRouter
+} from 'react-router';
+import {
+	Provider
+} from '@flexis/redux';
+import {
 	I18nProvider
 } from 'i18n-for-react';
 import Header, {
-	store
+	store as headerStore
 } from '~/blocks/Header/mock';
 import Footer from '~/blocks/Footer';
 import ru from '~/data/locales/ru.json';
 import en from '~/data/locales/en.json';
-import Speakers from './';
+import Speakers, {
+	store as speakersStore
+} from './mock';
 
 const stylableApi = `
 Stylable API
@@ -33,14 +36,14 @@ storiesOf('Containers|Speakers', module)
 		info: stylableApi
 	})
 	.addDecorator(story => (
-		<div style={{ margin: '-12px' }}>
-			{story()}
-		</div>
-	))
-	.addDecorator(story => (
 		<MemoryRouter initialEntries={['/speakers']}>
 			{story()}
 		</MemoryRouter>
+	))
+	.addDecorator(story => (
+		<div style={{ margin: '-12px' }}>
+			{story()}
+		</div>
 	))
 	.addDecorator(story => (
 		<I18nProvider
@@ -55,13 +58,15 @@ storiesOf('Containers|Speakers', module)
 		</I18nProvider>
 	))
 	.add(
-		'with default state',
+		'with basic state',
 		() => (
 			<>
-				<Provider store={store}>
+				<Provider store={headerStore}>
 					<Header/>
 				</Provider>
-				<Speakers/>
+				<Provider store={speakersStore}>
+					<Speakers/>
+				</Provider>
 				<Footer/>
 			</>
 		)
