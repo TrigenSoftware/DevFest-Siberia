@@ -6,11 +6,11 @@
         "lang": "",
         "location": "Halls",
         "title": "Check-in",
-        "talkTypeBadge": "",
+		"talkTypeBadge": "",
 		"talkLevelBadge": ""
     },
     {
-        "date": "2019-11-29",
+    	"date": "2019-11-29",
         "timeStart": "14:30",
         "timeEnd": "15:00",
         "lang": "",

@@ -11,7 +11,9 @@
 
 :import {
 	-st-from: '../../variables.st.css';
-	-st-named: colorBlue10;
+	-st-named:
+		sizeScreenSmMax,
+		colorBlue10;
 }
 
 .root .window {
@@ -26,4 +28,11 @@
 
 .description {
 	font-size: rel(21, 24);
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.root .window {
+		padding-top: 65px;
+	}
 }

@@ -198,15 +198,22 @@
 
 .location {
 	color: value(colorGray1);
-	font-size: 15px;
+	font-size: rel(24, 68);
 }
 
-.title {
+.link {
 	margin-bottom: 6px;
 	text-decoration: none;
+}
+
+.link:hover,
+.link:focus {
+	text-decoration: underline;
+}
+
+.link .title {
 	color: value(colorBlack);
-	font-family: value(fontFamilyMono);
-	font-size: 2.4em;
+	font-size: rel(24, 10);
 }
 
 .speakerName {
@@ -233,14 +240,14 @@
 .root:past .startAt span,
 .root:past .lang,
 .root:past .location,
-.root:past .title,
+.root:past .link .title,
 .root:past .speakerName,
 .root:past .speakerDescription {
 	color: value(colorBlue8);
 }
 
 .root:now:withBadge .lang,
-.root:now:withBadge .title,
+.root:now:withBadge .link .title,
 .root:now:withBadge .location,
 .root:now:withBadge .speakerName,
 .root:now:withBadge .speakerDescription {
@@ -287,8 +294,8 @@
 
 @media (max-width: value(sizeScreenMdMax)) {
 
-	.title {
-		font-size: 3.5em;
+	.link .title {
+		font-size: 16px;
 	}
 
 	.description .Badge:not(:last-child) {

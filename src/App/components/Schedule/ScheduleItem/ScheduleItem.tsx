@@ -175,14 +175,18 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 					className={classes.description}
 				>
 					<Link
-						className={classes.title}
+						className={classes.link}
 						to={{
 							search: addSearchParams(search, {
 								title: description && title
 							})
 						}}
 					>
-						{title}
+						<h4
+							className={classes.title}
+						>
+							{title}
+						</h4>
 					</Link>
 					<div
 						className={classes.group}

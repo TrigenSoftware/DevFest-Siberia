@@ -16,8 +16,8 @@ import ContactLink, {
 } from '../ContactLink';
 import Badge from '../Badge';
 import Schedule, {
-	ScheduleItem,
-	VariantScheduleItemStatus
+	VariantScheduleItemStatus,
+	ScheduleItem
 } from '../Schedule';
 import {
 	style,
