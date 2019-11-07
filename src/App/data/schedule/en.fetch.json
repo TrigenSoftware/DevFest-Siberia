@@ -6,11 +6,11 @@
         "lang": "",
         "location": "Halls",
         "title": "Check-in",
-		"talkTypeBadge": "",
-		"talkLevelBadge": ""
+        "talkTypeBadge": "",
+        "talkLevelBadge": ""
     },
     {
-    	"date": "2019-11-29",
+        "date": "2019-11-29",
         "timeStart": "14:30",
         "timeEnd": "15:00",
         "lang": "",
@@ -30,8 +30,7 @@
         "talkLevelBadge": "Beginer",
         "speakers": [
             "VsevolodHrechaniuk"
-		],
-		"description": "Flutter speed coding, add some text about this lecture"
+        ]
     },
     {
         "date": "2019-11-29",
@@ -44,8 +43,7 @@
         "talkLevelBadge": "Intermediate",
         "speakers": [
             "AlexeyRodionov"
-		],
-		"description": "Mission Possible: Build PWA out of Web Components in 180 minutes, add some text about this lecture..."
+        ]
     },
     {
         "date": "2019-11-29",
