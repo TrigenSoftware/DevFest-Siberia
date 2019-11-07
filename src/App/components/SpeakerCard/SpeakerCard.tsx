@@ -1,3 +1,7 @@
+import {
+	parseISO,
+	format
+} from 'date-fns';
 import React, {
 	HTMLAttributes,
 	Component
@@ -10,13 +14,25 @@ import {
 import ContactLink, {
 	ContactLinkType
 } from '../ContactLink';
-import Badge, {
-	IProps as IBadgeProps
-} from '../Badge';
+import Badge from '../Badge';
+import Schedule, {
+	VariantScheduleItemStatus,
+	ScheduleItem
+} from '../Schedule';
 import {
 	style,
 	classes
 } from './SpeakerCard.st.css';
+
+interface ITalkProps {
+	date: string;
+	timeStart: string;
+	lang: string;
+	location: string;
+	title: string;
+	talkTypeBadge?: string;
+	talkLevelBadge?: string;
+}
 
 interface ISelfProps {
 	src: string;
@@ -27,17 +43,21 @@ interface ISelfProps {
 	contacts?: Record<string, string>;
 	badge?: string;
 	text: string;
-	talkTitle: string;
-	talkLocation: string;
-	talkTime: string;
-	talkTypeBadge?: string;
-	talkLevelBadge?: string;
+	talks: ITalkProps[];
 }
 
 export type IProps = CombinePropsAndAttributes<
 	ISelfProps,
 	HTMLAttributes<HTMLElement>
 >;
+
+function formatTime(date: string, timeStart: string) {
+
+	const startDate = parseISO(`${date}T${timeStart}:00`);
+	const time = format(startDate, 'd MMM H:mm');
+
+	return time;
+}
 
 export default class SpeakerCard extends Component<IProps> {
 
@@ -50,11 +70,7 @@ export default class SpeakerCard extends Component<IProps> {
 		contacts:       PropTypes.any,
 		badge:          PropTypes.string,
 		text:           PropTypes.string.isRequired,
-		talkTitle:      PropTypes.string.isRequired,
-		talkLocation:   PropTypes.string.isRequired,
-		talkTime:       PropTypes.string.isRequired,
-		talkTypeBadge:  PropTypes.string,
-		talkLevelBadge: PropTypes.string
+		talks:          PropTypes.array
 	};
 
 	render() {
@@ -68,11 +84,7 @@ export default class SpeakerCard extends Component<IProps> {
 			location,
 			badge,
 			text,
-			talkTitle,
-			talkLocation,
-			talkTime,
-			talkTypeBadge,
-			talkLevelBadge,
+			talks,
 			...props
 		} = this.props;
 
@@ -118,10 +130,12 @@ export default class SpeakerCard extends Component<IProps> {
 						>
 							{location}
 						</div>
-						<>
-							{this.renderContacts()}
-							{this.renderBadge(badge)}
-						</>
+						{this.renderContacts()}
+						{badge && (
+							<Badge>
+								{badge}
+							</Badge>
+						)}
 					</div>
 					<h3
 						className={classes.name}
@@ -143,29 +157,34 @@ export default class SpeakerCard extends Component<IProps> {
 				<footer
 					className={classes.footer}
 				>
-					<div
-						className={classes.group}
+
+					<Schedule
+						className={classes.talks}
 					>
-						<div
-							className={classes.title}
-						>
-							{talkTitle}
-						</div>
-						<div
-							className={classes.talkLocation}
-						>
-							{talkLocation}
-						</div>
-					</div>
-					<div
-						className={classes.group}
-					>
-						{this.renderDate()}
-						<div>
-							{this.renderBadge(talkTypeBadge)}
-							{this.renderBadge(talkLevelBadge)}
-						</div>
-					</div>
+						{talks.map((
+							{
+								date,
+								timeStart,
+								lang,
+								location,
+								title,
+								talkTypeBadge,
+								talkLevelBadge
+							},
+							i
+						) => (
+							<ScheduleItem
+								key={i}
+								time={formatTime(date, timeStart)}
+								lang={lang}
+								place={location}
+								title={title}
+								talkTypeBadge={talkTypeBadge}
+								talkLevelBadge={talkLevelBadge}
+								status={VariantScheduleItemStatus.Next}
+							/>
+						))}
+					</Schedule>
 				</footer>
 			</article>
 		);
@@ -196,96 +215,6 @@ export default class SpeakerCard extends Component<IProps> {
 					</ContactLink>
 				))}
 			</div>
-		);
-	}
-
-	private renderDate() {
-
-		const {
-			talkTime
-		} = this.props;
-		const [
-			time,
-			format
-		] = talkTime.split(' ');
-
-		return (
-			<div
-				className={classes.date}
-			>
-				{time}
-				{format && (
-					<span>{' '}{format}</span>
-				)}
-			</div>
-		);
-	}
-
-	private renderBadge(type: string) {
-
-		if (!type) {
-			return null;
-		}
-
-		let props: Partial<IBadgeProps> = {};
-
-		switch (type.toLowerCase()) {
-
-			case 'mobile':
-				props = {
-					variant: 'fill',
-					color:   'pink'
-				};
-				break;
-
-			case 'web':
-				props = {
-					variant: 'fill',
-					color:   'aqua'
-				};
-				break;
-
-			case 'ai':
-				props = {
-					variant: 'fill',
-					color:   'red'
-				};
-				break;
-
-			case 'hype':
-				props = {
-					variant: 'fill',
-					color:   'green'
-				};
-				break;
-
-			case 'junior':
-				props = {
-					color: 'aqua'
-				};
-				break;
-
-			case 'middle':
-				props = {
-					color: 'pink'
-				};
-				break;
-
-			case 'senior':
-				props = {
-					color: 'red'
-				};
-				break;
-
-			default:
-		}
-
-		return (
-			<Badge
-				{...props}
-			>
-				{type}
-			</Badge>
 		);
 	}
 }

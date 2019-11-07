@@ -11,6 +11,9 @@ import {
 import {
 	registerSpeakersSegment
 } from './Speakers/register';
+import {
+	registerScheduleSegment
+} from './Schedule/register';
 
 const {
 	__REDUX_DEVTOOLS_EXTENSION__
@@ -26,6 +29,7 @@ export default function createStore() {
 
 	registerUserSegment(store);
 	registerSpeakersSegment(store);
+	registerScheduleSegment(store);
 
 	return store;
 }

@@ -20,13 +20,13 @@
 		colorBlue13,
 		colorPink0,
 		colorPink4,
-		colorPink5,
 		colorGray1,
 		colorGray4,
 		colorGray5,
 		colorGray6,
 		colorPurple,
 		colorGreen1,
+		colorGreen2,
 		colorYellow;
 }
 
@@ -56,23 +56,29 @@
 		yellow,
 		blue,
 		green,
-		darkpink;
+		lightgreen,
+		withBadge;
 	background-color: value(colorWhite);
 	vertical-align: top;
 	font-size: 1rem;
 }
 
+.time {
+	padding: 1.6em 3em;
+	text-align: center;
+	white-space: nowrap;
+}
+
 .description {
-	padding: 1.6em 0 1.6em 2em;
+	padding: 1.6em 1.5em;
 }
 
 .description .Badge:not(:last-child) {
-	margin-right: 1.6em;
+	margin-right: rel(16, 14);
 }
 
 .controls {
-	padding: 1.6em 2em;
-	width: 26em;
+	padding: 1.6em 3em;
 	vertical-align: middle;
 	text-align: right;
 }
@@ -143,9 +149,9 @@
 	background-color: value(colorGreen1);
 }
 
-.root:now:darkpink .description,
-.root:now:darkpink .controls {
-	background-color: value(colorPink5);
+.root:now:lightgreen .description,
+.root:now:lightgreen .controls {
+	background-color: value(colorGreen2);
 }
 
 .root:not(:now) .FavoriteButton {
@@ -156,10 +162,9 @@
 	display: flex;
 	align-items: baseline;
 	margin-bottom: 13px;
-	max-width: 70em;
 }
 
-.list {
+.speakersList {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: start;
@@ -168,12 +173,12 @@
 	list-style: none;
 }
 
-.item {
+.speaker {
 	margin-right: 1.7em;
 	padding-right: 1.7em;
 }
 
-.item:not(:last-child) {
+.speaker:not(:last-child) {
 	margin-bottom: 1.2em;
 	border-right: 1px dashed value(colorGray4);
 }
@@ -185,26 +190,35 @@
 	font-weight: bold;
 }
 
+.startAt span {
+	color: value(colorGray1);
+	font-size: 15px;
+	font-weight: normal;
+}
+
 .location {
 	color: value(colorGray1);
 	font-size: 15px;
 }
 
-.title {
-	margin-bottom: 6px;
-	color: value(colorBlack);
-	font-family: value(fontFamilyMono);
-	font-size: 2.4em;
+.link:not(:hover):not(:focus) {
+	text-decoration: none;
 }
 
-.speaker {
+.title {
+	margin: 0 0 6px;
+	color: value(colorBlack);
+	font-size: rel(24, 10);
+}
+
+.speakerName {
 	color: value(colorBlack);
 	font-family: value(fontFamilyMono);
 	font-size: 18px;
 	font-weight: bold;
 }
 
-.about {
+.speakerDescription {
 	color: value(colorGray1);
 	font-size: 16px;
 }
@@ -218,25 +232,21 @@
 }
 
 .root:past .startAt,
+.root:past .startAt span,
 .root:past .lang,
 .root:past .location,
 .root:past .title,
-.root:past .speaker,
-.root:past .about {
+.root:past .speakerName,
+.root:past .speakerDescription {
 	color: value(colorBlue8);
 }
 
-.root:now .lang,
-.root:now .title,
-.root:now .location,
-.root:now .speaker,
-.root:now .about {
+.root:now:withBadge .lang,
+.root:now:withBadge .title,
+.root:now:withBadge .location,
+.root:now:withBadge .speakerName,
+.root:now:withBadge .speakerDescription {
 	color: value(colorWhite);
-}
-
-.time {
-	padding: 1.6em 1em;
-	text-align: center;
 }
 
 .label {
@@ -279,6 +289,10 @@
 
 @media (max-width: value(sizeScreenMdMax)) {
 
+	.title {
+		font-size: 16px;
+	}
+
 	.description .Badge:not(:last-child) {
 		margin-right: 10px;
 	}
@@ -298,19 +312,8 @@
 
 @media (max-width: value(sizeScreenSmMax)) {
 
-	.controls {
-		display: flex;
-		align-items: center;
-		padding: 0 0 16px 10px;
-		width: 100%;
-	}
-
-	.root:not(:first-child) .controls {
-		border: none;
-	}
-
 	.time {
-		padding: 10px 5px;
+		padding: 10px;
 	}
 
 	.description {
@@ -322,16 +325,35 @@
 		margin-bottom: 10px;
 	}
 
-	.list {
-		flex-direction: column;
-		margin-left: 10px;
+	.group {
+		display: block;
 	}
 
-	.item {
+	.talkInfo {
+		padding: 1em 0 2em;
+	}
+
+	.speakersList {
+		flex-direction: column;
+		margin-left: 0;
+	}
+
+	.speaker {
 		margin-right: 0;
 	}
 
-	.item:not(:last-child) {
+	.speaker:not(:last-child) {
+		border: none;
+	}
+
+	.controls {
+		display: flex;
+		align-items: center;
+		padding: 0 0 16px 10px;
+		width: 100%;
+	}
+
+	.root:not(:first-child) .controls {
 		border: none;
 	}
 

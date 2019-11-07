@@ -19,10 +19,10 @@
 		outlineAqua,
 		outlineDarkBlue,
 		outlinePink,
-		outlineDarkPink,
 		outlinePurple,
 		outlineRed,
 		outlineGreen,
+		outlineLightGreen,
 		outlineYellow,
 		outlineOrange;
 }
@@ -34,10 +34,10 @@
 		fillAqua,
 		fillDarkBlue,
 		fillPink,
-		fillDarkPink,
 		fillPurple,
 		fillRed,
 		fillGreen,
+		fillLightGreen,
 		fillYellow,
 		fillOrange;
 }
@@ -52,10 +52,10 @@
 		darkblue,
 		aqua,
 		pink,
-		darkpink,
 		red,
 		purple,
 		green,
+		lightgreen,
 		yellow,
 		orange;
 	border: 2px solid transparent;
@@ -92,8 +92,8 @@
 	-st-mixin: outlinePink;
 }
 
-.root:outline:darkpink {
-	-st-mixin: outlineDarkPink;
+.root:outline:lightgreen {
+	-st-mixin: outlineLightGreen;
 }
 
 .root:outline:red {
@@ -132,8 +132,8 @@
 	-st-mixin: fillPink;
 }
 
-.root:fill:darkpink {
-	-st-mixin: fillDarkPink;
+.root:fill:lightgreen {
+	-st-mixin: fillLightGreen;
 }
 
 .root:fill:red {

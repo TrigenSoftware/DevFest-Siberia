@@ -1,0 +1,165 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named:
+		sizeScreenMdMax,
+		sizeScreenSmMax,
+		colorBlue10,
+		colorBlue11,
+		colorBlue13,
+		colorPink4,
+		colorGray1,
+		colorPurple,
+		colorGreen1,
+		colorGreen2,
+		colorOrange,
+		colorYellow;
+}
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+:import {
+	-st-from: '~/components/ToggleNav/ToggleNav.st.css';
+	-st-default: ToggleNav;
+	-st-named:
+		list,
+		item,
+		active;
+}
+
+:import {
+	-st-from: '~/components/Badge/Badge.st.css';
+	-st-default: Badge;
+}
+
+.root .center {
+	position: relative;
+	padding-top: rel(33, 24);
+	padding-bottom: rel(61, 24);
+}
+
+/* stylelint-disable a11y/no-display-none */
+.root .nav::after,
+.root .filterNav::after {
+	display: none;
+}/* stylelint-enable */
+
+.title {
+	display: flex;
+	align-items: baseline;
+	margin-bottom: rel(30, 82);
+}
+
+.title::after {
+	flex: 1;
+	margin-left: 15px;
+	border: rel(1, 82) dashed value(colorGray1);
+	content: '';
+}
+
+.nav {
+	margin-bottom: rel(32, 24);
+}
+
+.filter {
+	display: flex;
+	align-items: baseline;
+	margin-bottom: rel(21, 24);
+}
+
+.filterNav .list {
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+}
+
+.filterNav .item {
+	margin-bottom: 10px;
+	font-size: 0;
+}
+
+.filterNav .item:not(:last-child) {
+	margin-right: 10px;
+}
+
+.filterNav .active .Badge {
+	position: relative;
+}
+
+.filterNav .active .Badge::after {
+	position: absolute;
+	bottom: -16px;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 50%;
+	width: 9px;
+	height: 9px;
+	content: '';
+}
+
+.filterNav .active .Badge:darkblue::after {
+	background-color: value(colorBlue13);
+}
+
+.filterNav .active .Badge:pink::after {
+	background-color: value(colorPink4);
+}
+
+.filterNav .active .Badge:orange::after {
+	background-color: value(colorOrange);
+}
+
+.filterNav .active .Badge:purple::after {
+	background-color: value(colorPurple);
+}
+
+.filterNav .active .Badge:aqua::after {
+	background-color: value(colorBlue11);
+}
+
+.filterNav .active .Badge:yellow::after {
+	background-color: value(colorYellow);
+}
+
+.filterNav .active .Badge:blue::after {
+	background-color: value(colorBlue10);
+}
+
+.filterNav .active .Badge:green::after {
+	background-color: value(colorGreen1);
+}
+
+.filterNav .active .Badge:lightgreen::after {
+	background-color: value(colorGreen2);
+}
+
+.filterTitle {
+	margin-right: 14px;
+	color: value(colorGray1);
+	font-size: 16px;
+}
+
+@media (max-width: value(sizeScreenMdMax)) {
+
+	.filterNav .active .Badge::after {
+		bottom: -13px;
+	}
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.filter {
+		display: block;
+	}
+
+	.filterTitle {
+		margin-bottom: 10px;
+	}
+}

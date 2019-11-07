@@ -7,8 +7,8 @@ import {
 } from '@storybook/addon-actions';
 import Schedule, {
 	ScheduleItem,
-	ScheduleSeparator,
-	VariantScheduleItemStatus
+	VariantScheduleItemStatus,
+	ScheduleSeparator
 } from './';
 
 const stylableApi = `
@@ -28,20 +28,20 @@ storiesOf('Components|Schedule', module)
 				<ScheduleItem
 					time='9:30 AM'
 					lang='RU'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Открытие'
 					status={VariantScheduleItemStatus.Past}
 				/>
 				<ScheduleItem
 					time='9:30 AM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Регистрация'
 					status={VariantScheduleItemStatus.Past}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
 					lang='RU'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Past}
 					speakers={[
@@ -56,7 +56,7 @@ storiesOf('Components|Schedule', module)
 					]}
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Mobile'
-					talkLevelBadge='Middle'
+					talkLevelBadge='Intermediate'
 					favorite
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
@@ -64,7 +64,7 @@ storiesOf('Components|Schedule', module)
 				<ScheduleItem
 					time='9:30 PM'
 					lang='RU'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
 					speakers={[
@@ -79,7 +79,7 @@ storiesOf('Components|Schedule', module)
 					]}
 					statusLabel='Идет сейчас'
 					talkTypeBadge='All'
-					talkLevelBadge='Middle'
+					talkLevelBadge='Intermediate'
 					favorite
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
@@ -87,7 +87,7 @@ storiesOf('Components|Schedule', module)
 				<ScheduleItem
 					time='9:30 PM'
 					lang='RU'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
 					speakers={[
@@ -102,14 +102,14 @@ storiesOf('Components|Schedule', module)
 					]}
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Mobile'
-					talkLevelBadge='Middle'
+					talkLevelBadge='Intermediate'
 					favorite
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
 					speakers={[
@@ -124,14 +124,14 @@ storiesOf('Components|Schedule', module)
 					]}
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Data Science'
-					talkLevelBadge='Middle'
+					talkLevelBadge='Intermediate'
 					favorite={false}
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
 					speakers={[
@@ -146,14 +146,14 @@ storiesOf('Components|Schedule', module)
 					]}
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Frontend'
-					talkLevelBadge='Middle'
+					talkLevelBadge='Intermediate'
 					favorite={false}
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
 					speakers={[
@@ -168,14 +168,14 @@ storiesOf('Components|Schedule', module)
 					]}
 					statusLabel='Идет сейчас'
 					talkTypeBadge='DevOps'
-					talkLevelBadge='Middle'
+					talkLevelBadge='Intermediate'
 					favorite
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
 					speakers={[
@@ -190,14 +190,14 @@ storiesOf('Components|Schedule', module)
 					]}
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Security'
-					talkLevelBadge='Middle'
+					talkLevelBadge='Intermediate'
 					favorite
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
 					speakers={[
@@ -224,14 +224,14 @@ storiesOf('Components|Schedule', module)
 					]}
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Backend'
-					talkLevelBadge='Middle'
+					talkLevelBadge='Intermediate'
 					favorite
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
 					speakers={[
@@ -246,14 +246,14 @@ storiesOf('Components|Schedule', module)
 					]}
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Hype'
-					talkLevelBadge='Middle'
+					talkLevelBadge='Intermediate'
 					favorite
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
 					speakers={[
@@ -268,7 +268,7 @@ storiesOf('Components|Schedule', module)
 					]}
 					statusLabel='Идет сейчас'
 					talkTypeBadge='Web'
-					talkLevelBadge='Middle'
+					talkLevelBadge='Intermediate'
 					favorite
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
@@ -276,7 +276,7 @@ storiesOf('Components|Schedule', module)
 				<ScheduleItem
 					time='9:30 PM'
 					lang='RU'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -290,7 +290,7 @@ storiesOf('Components|Schedule', module)
 						}
 					]}
 					talkTypeBadge='All'
-					talkLevelBadge='Senior'
+					talkLevelBadge='Advanced'
 					favorite
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
@@ -298,7 +298,7 @@ storiesOf('Components|Schedule', module)
 				<ScheduleItem
 					time='9:30 PM'
 					lang='RU'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -312,14 +312,14 @@ storiesOf('Components|Schedule', module)
 						}
 					]}
 					talkTypeBadge='Mobile'
-					talkLevelBadge='Middle'
+					talkLevelBadge='Intermediate'
 					favorite={false}
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -333,14 +333,14 @@ storiesOf('Components|Schedule', module)
 						}
 					]}
 					talkTypeBadge='Data Science'
-					talkLevelBadge='Middle'
+					talkLevelBadge='Intermediate'
 					favorite={false}
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -354,14 +354,14 @@ storiesOf('Components|Schedule', module)
 						}
 					]}
 					talkTypeBadge='Frontend'
-					talkLevelBadge='Middle'
+					talkLevelBadge='Intermediate'
 					favorite={false}
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -375,14 +375,14 @@ storiesOf('Components|Schedule', module)
 						}
 					]}
 					talkTypeBadge='DevOps'
-					talkLevelBadge='Middle'
+					talkLevelBadge='Intermediate'
 					favorite={false}
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -396,14 +396,14 @@ storiesOf('Components|Schedule', module)
 						}
 					]}
 					talkTypeBadge='Security'
-					talkLevelBadge='Junior'
+					talkLevelBadge='Beginner'
 					favorite={false}
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -417,14 +417,14 @@ storiesOf('Components|Schedule', module)
 						}
 					]}
 					talkTypeBadge='Backend'
-					talkLevelBadge='Senior'
+					talkLevelBadge='Advanced'
 					favorite={false}
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -438,14 +438,14 @@ storiesOf('Components|Schedule', module)
 						}
 					]}
 					talkTypeBadge='Hype'
-					talkLevelBadge='Senior'
+					talkLevelBadge='Advanced'
 					favorite={false}
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -459,7 +459,7 @@ storiesOf('Components|Schedule', module)
 						}
 					]}
 					talkTypeBadge='Web'
-					talkLevelBadge='Senior'
+					talkLevelBadge='Advanced'
 					favorite={false}
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
@@ -476,7 +476,7 @@ storiesOf('Components|Schedule', module)
 				</ScheduleSeparator>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -490,14 +490,14 @@ storiesOf('Components|Schedule', module)
 						}
 					]}
 					talkTypeBadge='Web'
-					talkLevelBadge='Senior'
+					talkLevelBadge='Advanced'
 					favorite={false}
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -511,7 +511,7 @@ storiesOf('Components|Schedule', module)
 						}
 					]}
 					talkTypeBadge='Web'
-					talkLevelBadge='Senior'
+					talkLevelBadge='Advanced'
 					favorite={false}
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
@@ -521,7 +521,7 @@ storiesOf('Components|Schedule', module)
 				</ScheduleSeparator>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -535,7 +535,7 @@ storiesOf('Components|Schedule', module)
 						}
 					]}
 					talkTypeBadge='Web'
-					talkLevelBadge='Senior'
+					talkLevelBadge='Advanced'
 					favorite={false}
 					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
@@ -549,7 +549,7 @@ storiesOf('Components|Schedule', module)
 			<Schedule>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Как делать пирамидку?'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -563,14 +563,14 @@ storiesOf('Components|Schedule', module)
 						}
 					]}
 					talkTypeBadge='Web'
-					talkLevelBadge='Senior'
+					talkLevelBadge='Advanced'
 					workshop={false}
 					workshopAddLabel='Хочу пойти'
 					onWorkshopAddClick={action('add')}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Как делать пирамидку?'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -584,14 +584,14 @@ storiesOf('Components|Schedule', module)
 						}
 					]}
 					talkTypeBadge='Web'
-					talkLevelBadge='Senior'
+					talkLevelBadge='Advanced'
 					workshop
 					workshopDisabled
 					workshopDisabledLabel='Мест больше нет :('
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Как делать пирамидку?'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -605,7 +605,7 @@ storiesOf('Components|Schedule', module)
 						}
 					]}
 					talkTypeBadge='Web'
-					talkLevelBadge='Senior'
+					talkLevelBadge='Advanced'
 					workshop
 					workshopLabel='Я иду! :)'
 					workshopDeleteLabel='Не пойти'

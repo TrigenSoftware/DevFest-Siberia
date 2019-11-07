@@ -4,19 +4,19 @@
 	-st-named:
 		colorWhite,
 		colorRed,
-		colorBlue7,
+		colorBlue4,
+		colorBlue10,
 		colorBlue11,
-		colorBlue13,
 		colorPurple,
 		colorPink4,
-		colorPink5,
 		colorGreen1,
+		colorGreen2,
 		colorYellow,
 		colorOrange;
 }
 
 .outline {
-	border-color: value(colorBlue7);
+	border-color: value(colorBlue10);
 }
 
 .outlineAqua {
@@ -24,15 +24,15 @@
 }
 
 .outlineDarkBlue {
-	border-color: value(colorBlue13);
+	border-color: value(colorBlue4);
 }
 
 .outlinePink {
 	border-color: value(colorPink4);
 }
 
-.outlineDarkPink {
-	border-color: value(colorPink5);
+.outlineLightGreen {
+	border-color: value(colorGreen2);
 }
 
 .outlineRed {

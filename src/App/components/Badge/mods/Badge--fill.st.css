@@ -5,20 +5,20 @@
 		colorWhite,
 		colorBlack,
 		colorRed,
-		colorBlue7,
+		colorBlue4,
+		colorBlue10,
 		colorBlue11,
-		colorBlue13,
 		colorPurple,
 		colorPink4,
-		colorPink5,
 		colorGreen1,
+		colorGreen2,
 		colorYellow,
 		colorOrange;
 }
 
 .fill {
-	border-color: value(colorBlue7);
-	background-color: value(colorBlue7);
+	border-color: value(colorBlue10);
+	background-color: value(colorBlue10);
 	color: value(colorWhite);
 }
 
@@ -29,8 +29,8 @@
 }
 
 .fillDarkBlue {
-	border-color: value(colorBlue13);
-	background-color: value(colorBlue13);
+	border-color: value(colorBlue4);
+	background-color: value(colorBlue4);
 	color: value(colorWhite);
 }
 
@@ -40,10 +40,10 @@
 	color: value(colorWhite);
 }
 
-.fillDarkPink {
-	border-color: value(colorPink5);
-	background-color: value(colorPink5);
-	color: value(colorWhite);
+.fillLightGreen {
+	border-color: value(colorGreen2);
+	background-color: value(colorGreen2);
+	color: value(colorBlack);
 }
 
 .fillRed {

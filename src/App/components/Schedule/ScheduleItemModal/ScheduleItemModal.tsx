@@ -1,32 +1,34 @@
 import React, {
 	Component
 } from 'react';
+import PropTypes from 'prop-types';
 import {
-	RouteComponentProps,
-	withRouter
-} from 'react-router-dom';
+	Location,
+	History
+} from 'history';
 import {
 	Bind,
 	Debounce,
 	omit
 } from '@flexis/ui/helpers';
 import {
-	routeProps,
 	deleteSearchParams
 } from '~/blocks/common/router';
 import Modal, {
 	IProps as IModalProps
-} from '~/components/Modal';
-import SpeakerCard from '~/components/SpeakerCard';
+} from '../../Modal';
 import {
 	style,
 	classes
-} from './SpeakerModal.st.css';
+} from './ScheduleItemModal.st.css';
 
-type ISpeakerModalProps = Omit<IModalProps, 'children'>;
+type IScheduleItemModalProps = Omit<IModalProps, 'children'>;
 
-export interface IProps extends ISpeakerModalProps, RouteComponentProps {
-	getSpeaker(id: string);
+export interface IProps extends IScheduleItemModalProps {
+	location: Location;
+	history: History;
+	title: string;
+	description: string;
 }
 
 interface IState {
@@ -38,13 +40,21 @@ const {
 	transitionDuration
 } = Modal.defaultProps;
 
-export class SpeakerModal extends Component<IProps, IState> {
+export class ScheduleItemModal extends Component<IProps> {
+
+	static propTypes = {
+		location:    PropTypes.object.isRequired,
+		history:     PropTypes.object.isRequired,
+		title:       PropTypes.string.isRequired,
+		description: PropTypes.string.isRequired
+	};
 
 	static getDerivedStateFromProps(
 		{
 			location: {
 				search
-			}
+			},
+			title
 		}: IProps,
 		{
 			prevSearch
@@ -55,7 +65,7 @@ export class SpeakerModal extends Component<IProps, IState> {
 			return null;
 		}
 
-		const searchWithParam = /[^\w]id=/.test(search);
+		const searchWithParam = new URLSearchParams(search).get('title') === title;
 		const nextState: Partial<IState> = {
 			active:     searchWithParam,
 			prevSearch: search
@@ -73,39 +83,35 @@ export class SpeakerModal extends Component<IProps, IState> {
 
 		const {
 			className,
-			location: {
-				search
-			},
-			getSpeaker,
+			title,
+			description,
+			children,
 			...props
 		} = this.props;
 		const {
 			active
 		} = this.state;
-		const id = new URLSearchParams(search).get('id');
-		const speaker = getSpeaker(id);
-
-		if (!speaker) {
-			return null;
-		}
 
 		return (
 			<Modal
-				{...omit(props, routeProps)}
+				{...omit(props, [
+					'location',
+					'history'
+				])}
 				className={style(classes.root, className)}
 				onClose={this.onClose}
 				active={active}
 			>
-				<SpeakerCard
-					src={speaker.src}
-					firstname={speaker.firstname}
-					lastname={speaker.lastname}
-					description={speaker.description}
-					location={speaker.location}
-					contacts={speaker.contacts}
-					badge={speaker.badge}
-					text={speaker.text}
-					talks={speaker.talks}
+				<h3
+					className={classes.title}
+				>
+					{title}
+				</h3>
+				<div
+					className={classes.description}
+					dangerouslySetInnerHTML={{
+						__html: description
+					}}
 				/>
 			</Modal>
 		);
@@ -132,9 +138,7 @@ export class SpeakerModal extends Component<IProps, IState> {
 		} = props;
 
 		history.push({
-			search: deleteSearchParams(search, 'id')
+			search: deleteSearchParams(search, 'title')
 		});
 	}
 }
-
-export default withRouter(SpeakerModal);

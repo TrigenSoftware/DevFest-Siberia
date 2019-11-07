@@ -80,6 +80,40 @@ export function getTalkTypes(context: I18nConfig): any[] {
 }
 
 /**
+ * Get schedule date from locales.
+ */
+export function getScheduleDates(context: I18nConfig): any[] {
+
+	const {
+		schedule: {
+			nav
+		}
+	} = context.getCatalog(
+		context.getLocale()
+	) as any;
+
+	return nav;
+}
+
+/**
+ * Get schedule types from locales.
+ */
+export function getScheduleTypes(context: I18nConfig): any[] {
+
+	const {
+		schedule: {
+			filter: {
+				types
+			}
+		}
+	} = context.getCatalog(
+		context.getLocale()
+	) as any;
+
+	return types;
+}
+
+/**
  * Get grouped partners from locales.
  */
 export function getPartners(context: I18nConfig): any[] {

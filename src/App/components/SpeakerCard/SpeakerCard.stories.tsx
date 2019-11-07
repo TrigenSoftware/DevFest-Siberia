@@ -49,29 +49,104 @@ storiesOf('Components|SpeakerCard', module)
 		</MemoryRouter>
 	))
 	.add(
-		'with default data',
-		() => (
-			<SpeakerCard
-				style={{
-					width:    '100%',
-					maxWidth: '700px'
-				}}
-				src={text('Source', faker.image.avatar())}
-				firstname={text('Firstname', 'Ангва')}
-				lastname={text('Lastname', 'Кэррот')}
-				description={text('Description', 'iOs, Android, Tech')}
-				location={text('Location', 'USA, Springfiels')}
-				contacts={{
-					twitter: faker.internet.url(),
-					vk:      faker.internet.url()
-				}}
-				badge='GDG'
-				text={text('Text', testText)}
-				talkTitle={text('Talk title', 'Название Доклада')}
-				talkLocation={text('Talk location', '543 аудитория, 3 этаж | Академпарк')}
-				talkTime={text('Talk time', '11:21 AM')}
-				talkTypeBadge='Mobile'
-				talkLevelBadge='Junior'
-			/>
-		)
+		'with zero talks',
+		() => {
+
+			const talks = [];
+
+			return (
+				<SpeakerCard
+					style={{
+						width:    '100%',
+						maxWidth: '700px'
+					}}
+					src={text('Source', faker.image.avatar())}
+					firstname={text('Firstname', 'Ангва')}
+					lastname={text('Lastname', 'Кэррот')}
+					description={text('Description', 'iOs, Android, Tech')}
+					location={text('Location', 'USA, Springfiels')}
+					contacts={{
+						twitter: faker.internet.url(),
+						vk:      faker.internet.url()
+					}}
+					badge='GDG'
+					text={text('Text', testText)}
+					talks={talks}
+				/>
+			);
+		}
+	)
+	.add(
+		'with one talk',
+		() => {
+
+			const talk = {
+				date:           text('Talk date', '2019-12-01'),
+				timeStart:      text('Talk time', '11:21'),
+				lang:           'en',
+				location:       text('Talk location', '543 аудитория, 3 этаж | Академпарк'),
+				title:          text('Talk title', 'Название Доклада'),
+				talkTypeBadge:  'Mobile',
+				talkLevelBadge: 'Beginner'
+			};
+			const talks = [talk];
+
+			return (
+				<SpeakerCard
+					style={{
+						width:    '100%',
+						maxWidth: '700px'
+					}}
+					src={text('Source', faker.image.avatar())}
+					firstname={text('Firstname', 'Ангва')}
+					lastname={text('Lastname', 'Кэррот')}
+					description={text('Description', 'iOs, Android, Tech')}
+					location={text('Location', 'USA, Springfiels')}
+					contacts={{
+						twitter: faker.internet.url(),
+						vk:      faker.internet.url()
+					}}
+					badge='GDG'
+					text={text('Text', testText)}
+					talks={talks}
+				/>
+			);
+		}
+	)
+	.add(
+		'with some talks',
+		() => {
+
+			const talk = {
+				date:           text('Talk date', '2019-12-01'),
+				timeStart:      text('Talk time', '11:21'),
+				lang:           'en',
+				location:       text('Talk location', '543 аудитория, 3 этаж | Академпарк'),
+				title:          text('Talk title', 'Название Доклада'),
+				talkTypeBadge:  'Mobile',
+				talkLevelBadge: 'Beginner'
+			};
+			const talks = [talk, talk];
+
+			return (
+				<SpeakerCard
+					style={{
+						width:    '100%',
+						maxWidth: '700px'
+					}}
+					src={text('Source', faker.image.avatar())}
+					firstname={text('Firstname', 'Ангва')}
+					lastname={text('Lastname', 'Кэррот')}
+					description={text('Description', 'iOs, Android, Tech')}
+					location={text('Location', 'USA, Springfiels')}
+					contacts={{
+						twitter: faker.internet.url(),
+						vk:      faker.internet.url()
+					}}
+					badge='GDG'
+					text={text('Text', testText)}
+					talks={talks}
+				/>
+			);
+		}
 	);

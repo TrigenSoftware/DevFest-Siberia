@@ -7,6 +7,7 @@ export enum Routes {
 	CodeOfConduct = '/code-of-conduct',
 	Buy = '/buy',
 	Cabinet = '/cabinet',
+	Schedule = '/schedule',
 	TermsOfService = '/terms',
 	Ru = '/ru'
 }

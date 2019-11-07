@@ -7,13 +7,10 @@ import {
 	State
 } from '~/store/types';
 import {
-	SpeakersSegment
-} from '~/store/segments';
-import {
-	SpeakersActions,
-	SpeakersReducer
-} from '~/store/Speakers';
-import SpeakersPromo from './SpeakersPromo';
+	ScheduleActions,
+	ScheduleReducer
+} from '~/store/Schedule';
+import Schedule from './Schedule';
 import {
 	mapStateToProps,
 	mapActionsToProps
@@ -26,15 +23,12 @@ const {
 export default Connect({
 	mapStateToProps,
 	mapActionsToProps
-})(SpeakersPromo);
+})(Schedule);
 
 export const store = new Store<State, IActions>({
 	adapter:  ImmutableAdapter,
 	state:    State(),
-	actions:  SpeakersActions,
-	reducer:  SpeakersReducer,
+	actions:  ScheduleActions,
+	reducer:  ScheduleReducer,
 	enhancer: __REDUX_DEVTOOLS_EXTENSION__ && __REDUX_DEVTOOLS_EXTENSION__()
 });
-
-// Mark as loaded.
-(store as any).segmentsRegistry.set(SpeakersSegment, null);

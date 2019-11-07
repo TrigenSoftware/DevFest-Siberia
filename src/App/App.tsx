@@ -40,6 +40,7 @@ import Partners from '~/containers/Partners/loadable';
 import CodeOfConduct from '~/containers/CodeOfConduct/loadable';
 import Buy from '~/containers/Buy/loadable';
 import Cabinet from '~/containers/Cabinet/loadable';
+import Schedule from '~/containers/Schedule/loadable';
 import TermsOfService from '~/containers/TermsOfService/loadable';
 import Footer from '~/blocks/Footer';
 import {
@@ -133,6 +134,10 @@ export default class App extends Component<IProps> {
 				<Route
 					path={getLocalizedPath(context, Routes.Buy)}
 					component={Buy}
+				/>
+				<Route
+					path={getLocalizedPath(context, Routes.Schedule)}
+					component={Schedule}
 				/>
 				<Route
 					path={getLocalizedPath(context, Routes.TermsOfService)}

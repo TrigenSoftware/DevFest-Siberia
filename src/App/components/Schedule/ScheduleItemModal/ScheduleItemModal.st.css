@@ -1,0 +1,38 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '@flexis/ui/components/Modal/Modal.st.css';
+	-st-named: window;
+}
+
+:import {
+	-st-from: '../../variables.st.css';
+	-st-named:
+		sizeScreenSmMax,
+		colorBlue10;
+}
+
+.root .window {
+	padding-top: rel(50, 24);
+}
+
+.title {
+	margin-bottom: rel(30, 24);
+	color: value(colorBlue10);
+	font-size: rel(28, 24);
+}
+
+.description {
+	font-size: rel(21, 24);
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.root .window {
+		padding-top: 65px;
+	}
+}
