@@ -1004,13 +1004,13 @@
 		"date": "2019-12-01",
 		"timeStart": "18:00",
 		"timeEnd": "18:50",
-		"lang": "",
+		"lang": "Ru",
 		"location": "Big room, 2nd floor",
-		"title": "To be announced",
+		"title": "Vue.js v3. The new generation of front-end frameworks.",
 		"talkTypeBadge": "Web",
-		"talkLevelBadge": "",
+		"talkLevelBadge": "Intermediate",
 		"speakers": [
-			"TBA"
+			"IgorSheko"
 		]
 	},
 	{
