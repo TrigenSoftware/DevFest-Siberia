@@ -187,6 +187,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 						{schedule.map((item, i) => {
 
 							const {
+								location,
 								date,
 								timeStart,
 								timeEnd
@@ -196,6 +197,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 								<ScheduleItem
 									key={i}
 									{...item}
+									place={location}
 									time={formatDate(date, timeStart)}
 									status={this.getStatus(date, timeStart, timeEnd)}
 								/>
