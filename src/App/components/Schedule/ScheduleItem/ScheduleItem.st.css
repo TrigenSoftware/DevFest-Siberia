@@ -201,16 +201,12 @@
 	font-size: 15px;
 }
 
-.link {
-	margin-bottom: 6px;
-}
-
 .link:not(:hover):not(:focus) {
 	text-decoration: none;
 }
 
 .title {
-	margin: 0;
+	margin: 0 0 6px;
 	color: value(colorBlack);
 	font-size: rel(24, 10);
 }
