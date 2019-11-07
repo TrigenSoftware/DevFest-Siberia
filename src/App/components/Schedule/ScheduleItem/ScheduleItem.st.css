@@ -198,7 +198,7 @@
 
 .location {
 	color: value(colorGray1);
-	font-size: rel(24, 68);
+	font-size: 15px;
 }
 
 .link {
@@ -212,6 +212,7 @@
 }
 
 .link .title {
+	margin: 0;
 	color: value(colorBlack);
 	font-size: rel(24, 10);
 }
