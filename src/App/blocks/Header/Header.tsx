@@ -103,6 +103,11 @@ export class Header extends Component<IProps> {
 								{__x`header.speakers`}
 							</HeaderLink>
 							<HeaderLink
+								to='/schedule'
+							>
+								{__x`header.schedule`}
+							</HeaderLink>
+							<HeaderLink
 								to='/team'
 							>
 								{__x`header.team`}

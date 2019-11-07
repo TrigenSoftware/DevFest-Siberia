@@ -8,8 +8,9 @@
 	"header": {
 		"menu": "Toggle navigation menu",
 		"home": "Home",
-		"team": "Team",
 		"speakers": "Speakers",
+		"schedule": "Schedule",
+		"team": "Team",
 		"lang": "Ru",
 		"login": "Log In",
 		"logout": "Log out",
@@ -363,20 +364,12 @@
 					"label": "Mobile"
 				},
 				{
-					"type": "data science",
+					"type": "datascience",
 					"label": "Data Science"
-				},
-				{
-					"type": "frontend",
-					"label": "Frontend"
 				},
 				{
 					"type": "devops",
 					"label": "DevOps"
-				},
-				{
-					"type": "security",
-					"label": "Security"
 				},
 				{
 					"type": "backend",
