@@ -70,7 +70,7 @@
 }
 
 .description {
-	padding: 1.6em 0;
+	padding: 1.6em 5px 1.6em 10px;
 }
 
 .description .Badge:not(:last-child) {
