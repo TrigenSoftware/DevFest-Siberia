@@ -31,7 +31,7 @@
         "speakers": [
             "VsevolodHrechaniuk"
         ],
-        "description": "Flutter speed coding, add some text about this lecture"
+        "description": "Flutter speed coding, add some text about this lecture <ul><li>Тест1</li><li>Тест2</li><li>Тест3</li></ul>"
     },
     {
         "date": "2019-11-29",

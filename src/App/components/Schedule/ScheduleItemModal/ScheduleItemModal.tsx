@@ -8,7 +8,8 @@ import {
 } from 'history';
 import {
 	Bind,
-	Debounce
+	Debounce,
+	omit
 } from '@flexis/ui/helpers';
 import {
 	deleteSearchParams
@@ -93,7 +94,10 @@ export class ScheduleItemModal extends Component<IProps> {
 
 		return (
 			<Modal
-				{...props}
+				{...omit(props, [
+					'location',
+					'history'
+				])}
 				className={style(classes.root, className)}
 				onClose={this.onClose}
 				active={active}
@@ -105,9 +109,10 @@ export class ScheduleItemModal extends Component<IProps> {
 				</h3>
 				<div
 					className={classes.description}
-				>
-					{description}
-				</div>
+					dangerouslySetInnerHTML={{
+						__html: description
+					}}
+				/>
 			</Modal>
 		);
 	}

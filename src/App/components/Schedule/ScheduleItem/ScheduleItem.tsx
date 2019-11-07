@@ -174,20 +174,28 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 				<td
 					className={classes.description}
 				>
-					<Link
-						className={classes.link}
-						to={{
-							search: addSearchParams(search, {
-								title: description && title
-							})
-						}}
-					>
+					{!speakers || !description ? (
 						<h4
 							className={classes.title}
 						>
 							{title}
 						</h4>
-					</Link>
+					) : (
+						<Link
+							className={classes.link}
+							to={{
+								search: addSearchParams(search, {
+									title: description && title
+								})
+							}}
+						>
+							<h4
+								className={classes.title}
+							>
+								{title}
+							</h4>
+						</Link>
+					)}
 					<div
 						className={classes.group}
 					>

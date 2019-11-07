@@ -17,7 +17,7 @@
 }
 
 .root .window {
-	padding: rel(52, 24) rel(59, 24);
+	padding-top: rel(50, 23);
 }
 
 .title {
