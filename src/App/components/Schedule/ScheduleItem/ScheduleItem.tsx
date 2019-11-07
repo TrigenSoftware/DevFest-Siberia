@@ -6,19 +6,29 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import {
+	withRouter,
+	RouteComponentProps
+} from 'react-router-dom';
+import {
 	Bind,
-	CombinePropsAndAttributes,
-	omit
+	CombinePropsAndAttributes
 } from '@flexis/ui/helpers';
+import {
+	addSearchParams
+} from '~/blocks/common/router';
 import Badge, {
 	IProps as IBadgeProps,
 	Variant,
 	Color
 } from '../../Badge';
 import Button from '../../Button';
+import Link from '../../Link';
 import {
 	ScheduleFavoriteButton
 } from '../ScheduleFavoriteButton';
+import {
+	ScheduleItemModal
+} from '../ScheduleItemModal';
 import {
 	style,
 	classes
@@ -37,10 +47,10 @@ interface ISpeaker {
 	description: string;
 }
 
-interface ISelfProps {
+interface ISelfProps extends RouteComponentProps {
 	time: ReactNode;
 	lang?: string;
-	location: ReactNode;
+	place: ReactNode;
 	title: ReactNode;
 	status: ScheduleItemStatus;
 	speakers?: ISpeaker[];
@@ -49,6 +59,7 @@ interface ISelfProps {
 	talkLevelBadge?: string;
 	favorite?: boolean;
 	value?: string;
+	description?: string;
 	favoriteLabel?: string;
 	workshop?: boolean;
 	workshopLabel?: string;
@@ -83,12 +94,12 @@ export const talkTypeColors: Record<string, Color> = {
 	'advanced':     'darkblue'
 };
 
-export class ScheduleItem extends Component<IScheduleItemProps> {
+class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 
 	static propTypes = {
 		time:                  PropTypes.node.isRequired,
 		lang:                  PropTypes.string,
-		location:              PropTypes.node.isRequired,
+		place:                 PropTypes.node.isRequired,
 		title:                 PropTypes.node.isRequired,
 		status:                PropTypes.oneOf(ScheduleItemStatusValues),
 		speakers:              PropTypes.any,
@@ -97,6 +108,7 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 		talkLevelBadge:        PropTypes.string,
 		favorite:              PropTypes.bool,
 		value:                 PropTypes.string,
+		description:           PropTypes.string,
 		favoriteLabel:         PropTypes.string,
 		workshop:              PropTypes.bool,
 		workshopLabel:         PropTypes.string,
@@ -115,15 +127,15 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 			className,
 			time,
 			lang,
-			location,
+			place,
 			title,
 			status,
 			speakers,
-			statusLabel,
 			talkTypeBadge,
 			talkLevelBadge,
 			favorite,
 			value,
+			description,
 			favoriteLabel,
 			workshop,
 			workshopLabel,
@@ -134,17 +146,16 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 			onFavoriteClick,
 			onWorkshopAddClick,
 			onWorkshopDeleteClick,
-			...props
+			location,
+			history
 		} = this.props;
+		const {
+			search
+		} = location;
 		const color = talkTypeBadge && talkTypeColors[talkTypeBadge.toLowerCase()];
 
 		return (
 			<tr
-				{...omit(props, [
-					'date',
-					'timeStart',
-					'timeEnd'
-				])}
 				className={style(classes.root, {
 					[status]:  Boolean(status),
 					[color]:   Boolean(color),
@@ -163,11 +174,28 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 				<td
 					className={classes.description}
 				>
-					<h4
-						className={classes.title}
-					>
-						{title}
-					</h4>
+					{!speakers || !description ? (
+						<h4
+							className={classes.title}
+						>
+							{title}
+						</h4>
+					) : (
+						<Link
+							className={classes.link}
+							to={{
+								search: addSearchParams(search, {
+									title
+								})
+							}}
+						>
+							<h4
+								className={classes.title}
+							>
+								{title}
+							</h4>
+						</Link>
+					)}
 					<div
 						className={classes.group}
 					>
@@ -182,7 +210,7 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 							<div
 								className={classes.location}
 							>
-								{location}
+								{place}
 							</div>
 						</div>
 						<ul
@@ -252,6 +280,14 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 						</>
 					)}
 				</td>
+				{description && (
+					<ScheduleItemModal
+						history={history}
+						location={location}
+						title={String(title)}
+						description={description}
+					/>
+				)}
 			</tr>
 		);
 	}
@@ -404,3 +440,5 @@ export class ScheduleItem extends Component<IScheduleItemProps> {
 		);
 	}
 }
+
+export const ScheduleItem = withRouter(ScheduleItemWithRouter);
