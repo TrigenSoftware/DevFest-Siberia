@@ -8,8 +8,9 @@
 	"header": {
 		"menu": "Toggle navigation menu",
 		"home": "Home",
-		"team": "Team",
 		"speakers": "Speakers",
+		"schedule": "Schedule",
+		"team": "Team",
 		"lang": "Ru",
 		"login": "Log In",
 		"logout": "Log out",
