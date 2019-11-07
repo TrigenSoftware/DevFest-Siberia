@@ -191,7 +191,7 @@
 		"talkLevelBadge": "Intermediate"
 	},
 	{
-		"id": "AdriánBolonio",
+		"id": "AdrianBolonio",
 		"type": "web",
 		"promo": true,
 		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1569450946/speakers/Adria%CC%81nBolonio_ecv6ta.jpg",
@@ -620,25 +620,6 @@
 		"talkLevelBadge": "Advanced"
 	},
 	{
-		"id": "AndrewKutuzov",
-		"type": "ai",
-		"promo": true,
-		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571609655/speakers/seefhxchrqnelk7mhd4z.jpg",
-		"firstname": "Andrew",
-		"lastname": "Kutuzov",
-		"description": "Researcher at Oslo University",
-		"location": "🇳🇴",
-		"contacts": {
-			"site": "https://rusvectores.org/?utm=dfSiberia"
-		},
-		"text": "Andrew completed a master's degree in computer linguistics at the Higher School of Economics in Moscow, worked for three years as an NLP engineer at Mail.ru Search, and in 2015 moved to the University of Oslo to write PhD about word embeddings. He teaches there a course about Deep Learning in NLP. The most relevant project for today is <a href=\"https://rusvectores.org\" traget=\"_blank\">rusvectores.org</a>.",
-		"talkTitle": "",
-		"talkLocation": "",
-		"talkTime": "",
-		"talkTypeBadge": "AI",
-		"talkLevelBadge": "Advanced"
-	},
-	{
 		"id": "KirillMalev",
 		"type": "ai",
 		"promo": true,
@@ -677,12 +658,12 @@
 		"talkLevelBadge": "Advanced"
 	},
 	{
-		"id": "AndreyFilchenko",
+		"id": "AndreyFilchenkov",
 		"type": "ai",
 		"promo": true,
 		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571609655/speakers/qdkicxtc82gpwtlbxfxs.jpg",
 		"firstname": "Andrey",
-		"lastname": "Filchenko",
+		"lastname": "Filchenkov",
 		"description": "Head of ML Lab, Associate Professor at FITP",
 		"location": "🇷🇺",
 		"contacts": {
@@ -941,5 +922,64 @@
 		"talkTime": "",
 		"talkTypeBadge": "Beginner",
 		"talkLevelBadge": "Web"
+	},
+	{
+		"id": "KseniaYakil",
+		"type": "web",
+		"promo": true,
+		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1573135845/speakers/u7s7c93dr4d9msrikzur.jpg",
+		"firstname": "Ksenia",
+		"lastname": "Yakil",
+		"description": "Backend C/Go developer at Badoo",
+		"location": "🇷🇺",
+		"contacts": {
+			
+		},
+		"text": "",
+		"talkTitle": "Integration Tests in Go",
+		"talkLocation": "",
+		"talkTime": "",
+		"talkTypeBadge": "Intermediate",
+		"talkLevelBadge": "Web"
+	},
+	{
+		"id": "PetrKozlov",
+		"type": "mobile",
+		"promo": true,
+		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1573136655/speakers/t1f11lxrmiteuwmx2jt0.jpg",
+		"firstname": "Petr",
+		"lastname": "Kozlov",
+		"description": "Android Developer at RedMadRobot",
+		"location": "🇷🇺",
+		"contacts": {
+			"telegram": "https://t.me/xd720p",
+			"email": "mailto:xd720p@gmail.com"
+		},
+		"text": "Petr is an Android developer since 2016. He developed a failed uber-like app for ordering car services in a company with a strange name. Then he proudly developed a binary options app recently banned in the Russian Federation. Nowadays, Petr works for RedMadRobot, developing legal and useful applications.",
+		"talkTitle": "Dispelling DiffUtil magic",
+		"talkLocation": "",
+		"talkTime": "",
+		"talkTypeBadge": "Intermediate",
+		"talkLevelBadge": "Mobile"
+	},
+	{
+		"id": "VladGrozin",
+		"type": "ai",
+		"promo": true,
+		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1573142000/speakers/eavl85hbgftqvdyoajxu.jpg",
+		"firstname": "Vlad",
+		"lastname": "Grozin",
+		"description": "Data Scientist at Diginetica",
+		"location": "🇷🇺",
+		"contacts": {
+			"email": "mailto:vlad.grozin@yandex.ru",
+			"site": "https://rampeer.github.io/?utm=dfSiberia"
+		},
+		"text": "Recommender Systems / Computer Vision",
+		"talkTitle": "Data Engineering в DS",
+		"talkLocation": "",
+		"talkTime": "",
+		"talkTypeBadge": "Intermediate",
+		"talkLevelBadge": "AI"
 	}
 ]
