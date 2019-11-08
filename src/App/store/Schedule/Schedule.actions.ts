@@ -1,11 +1,17 @@
+/* tslint:disable:no-magic-numbers */
 import * as scheduleService from '~/services/schedule';
+import * as userService from '~/services/user';
 import {
 	IActions,
 	State
 } from '../types';
 import {
 	SetSchedulePayload,
-	ScheduleState
+	ScheduleState,
+	SetFavoritesPayload,
+	SetReservationsPayload,
+	SetReservationPayload,
+	RemoveReservationPayload
 } from './Schedule.types';
 import {
 	ScheduleReducer
@@ -50,5 +56,99 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 		this.setSchedule(schedule);
 	}
 
+	async fetchFavorites() {
+
+		try {
+
+			const favorites = await scheduleService.fetchFavorites();
+
+			this.setFavorites(favorites);
+
+		} catch (error) {
+			this.checkToken(error);
+		}
+	}
+
+	async addFavorite(lectureId: string) {
+
+		try {
+
+			const favorites = await scheduleService.addFavorite(lectureId);
+
+			this.setFavorites(favorites);
+
+		} catch (error) {
+			this.checkToken(error);
+		}
+	}
+
+	async deleteFavorite(lectureId: string) {
+
+		try {
+
+			const favorites = await scheduleService.deleteFavorite(lectureId);
+
+			this.setFavorites(favorites);
+
+		} catch (error) {
+			this.checkToken(error);
+		}
+	}
+
+	async fetchReservations() {
+
+		try {
+
+			const reservations = await scheduleService.fetchReservations();
+
+			this.setReservations(reservations);
+
+		} catch (error) {
+			this.checkToken(error);
+		}
+	}
+
+	async addReservation(workshopId: string) {
+
+		try {
+
+			const reservation = await scheduleService.addReservation(workshopId);
+
+			this.setReservation(reservation);
+
+		} catch (error) {
+			this.checkToken(error);
+		}
+	}
+
+	async deleteReservation(workshopId: string) {
+
+		try {
+
+			const reservation = await scheduleService.deleteReservation(workshopId);
+
+			this.removeReservation(reservation);
+
+		} catch (error) {
+			this.checkToken(error);
+		}
+	}
+
+	checkToken(error) {
+
+		if (error.response.data.code === 401) {
+			this.refreshToken();
+		}
+	}
+
+	refreshToken() {
+		userService.clearToken();
+		location.href = '/?login=true';
+	}
+
 	abstract setSchedule(payload: SetSchedulePayload);
+	abstract setFavorites(payload: SetFavoritesPayload);
+	abstract setReservations(payload: SetReservationsPayload);
+	abstract setReservation(payload: SetReservationPayload);
+	abstract removeReservation(payload: RemoveReservationPayload);
 }

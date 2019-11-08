@@ -3,10 +3,7 @@ import client from './client';
 import {
 	userFromResponseData,
 	orderFromResponseData,
-	productFromResponseData,
-	favoritesFromResponseData,
-	reservationsFromResponseData,
-	reservationFromResponseData
+	productFromResponseData
 } from './adapters';
 
 const logger = createLogger('App::services::user');
@@ -107,84 +104,6 @@ export async function fetchProducts() {
 	logger.debug('fetchProducts', 'Response:', productsData);
 
 	return productFromResponseData(productsData[0]);
-}
-
-export async function fetchFavorites() {
-
-	logger.debug('fetchFavorites');
-
-	const {
-		data: favoritesData
-	} = await client.get('api/favorites');
-
-	logger.debug('fetchFavorites', 'Response:', favoritesData);
-
-	return favoritesFromResponseData(favoritesData);
-}
-
-export async function addFavorite(lectureId: string) {
-
-	logger.debug('addFavorite');
-
-	const {
-		data: favoritesData
-	} = await client.put(`api/favorites/${lectureId}`);
-
-	logger.debug('addFavorite', 'Response:', favoritesData);
-
-	return favoritesFromResponseData(favoritesData);
-}
-
-export async function deleteFavorite(lectureId: string) {
-
-	logger.debug('deleteFavorite');
-
-	const {
-		data: favoritesData
-	} = await client.delete(`api/favorites/${lectureId}`);
-
-	logger.debug('deleteFavorite', 'Response:', favoritesData);
-
-	return favoritesFromResponseData(favoritesData);
-}
-
-export async function fetchReservations() {
-
-	logger.debug('fetchReservation');
-
-	const {
-		data: reservationsData
-	} = await client.get('api/reservation/all');
-
-	logger.debug('fetchReservation', 'Response:', reservationsData);
-
-	return reservationsFromResponseData(reservationsData);
-}
-
-export async function addReservation(workshopId: string) {
-
-	logger.debug('addReservation');
-
-	const {
-		data: addedReservation
-	} = await client.put(`api/reservation/${workshopId}`);
-
-	logger.debug('addedReservation', 'Response:', addedReservation);
-
-	return reservationFromResponseData(addedReservation);
-}
-
-export async function deleteReservation(workshopId: string) {
-
-	logger.debug('deleteReservation');
-
-	const {
-		data: deletedReservation
-	} = await client.delete(`api/reservation/${workshopId}`);
-
-	logger.debug('deleteReservation', 'Response:', deletedReservation);
-
-	return reservationFromResponseData(deletedReservation);
 }
 
 export function logout() {

@@ -1,9 +1,18 @@
 import {
+	List
+} from 'immutable';
+import {
 	Reducer
 } from '@flexis/redux';
+import Favorite from '~/models/Favorite';
+import Reservation from '~/models/Reservation';
 import {
 	ScheduleState,
-	ISetScheduleAction
+	ISetScheduleAction,
+	ISetFavoritesAction,
+	ISetReservationsAction,
+	ISetReservationAction,
+	IRemoveReservationAction
 } from './Schedule.types';
 
 export class ScheduleReducer extends Reducer {
@@ -14,6 +23,64 @@ export class ScheduleReducer extends Reducer {
 		return state.set(
 			'schedule',
 			payload
+		);
+	}
+
+	setFavorites(state: ScheduleState, { payload }: ISetFavoritesAction) {
+
+		const favorites = payload && List(payload).map(Favorite);
+
+		if (!favorites) {
+			return state;
+		}
+
+		return state.set(
+			'favorites',
+			favorites
+		);
+	}
+
+	setReservations(state: ScheduleState, { payload }: ISetReservationsAction) {
+
+		const reservations = payload && List(payload).map(Reservation);
+
+		if (!reservations) {
+			return state;
+		}
+
+		return state.set(
+			'reservations',
+			reservations
+		);
+	}
+
+	setReservation(state: ScheduleState, { payload }: ISetReservationAction) {
+
+		const reservation = payload && Reservation(payload);
+
+		return state.set(
+			'reservations',
+			state.reservations.push(reservation)
+		);
+	}
+
+	removeReservation(state: ScheduleState, { payload }: IRemoveReservationAction) {
+
+		const {
+			workshopId
+		} = payload;
+		const {
+			reservations
+		} = state;
+		const reservationIndex = reservations.findIndex(_ => _.workshopId === workshopId);
+
+		if (!~reservationIndex) {
+			return state;
+		}
+
+		return state.set(
+			'reservations',
+			state.reservations.delete(reservationIndex)
 		);
 	}
 }

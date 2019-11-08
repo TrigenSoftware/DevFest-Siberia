@@ -108,7 +108,7 @@ export class CabinetContainer extends Component<IProps> {
 		);
 	}
 
-	componentDidMount() {
+	async componentDidMount() {
 
 		const {
 			history,

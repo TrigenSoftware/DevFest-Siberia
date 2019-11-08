@@ -5,12 +5,8 @@ import userClient from './client';
 import {
 	buy,
 	login,
-	fetchOrders,
-	fetchFavorites,
-	fetchReservations
+	fetchOrders
 } from './';
-import mockFavorites from '~/models/Favorite.mock';
-import mockReservations from '~/models/Reservation.mock';
 
 const MOCK_LOGIN_RESPONSE = {
 	authKey: 'string',
@@ -58,8 +54,6 @@ const MOCK_FETCHORDERS_RESPONSE = [
 		]
 	}
 ];
-const MOCK_FETCHFAVORITES_RESPONSE = mockFavorites();
-const MOCK_RESERVATIONS_RESPONSE = mockReservations();
 
 describe('API', () => {
 
@@ -121,36 +115,6 @@ describe('API', () => {
 				expect(typeof fetchOrdersResponse.status).toBe('string');
 				expect(typeof fetchOrdersResponse.paymentLink).toBe('string');
 				expect(typeof fetchOrdersResponse.items).toBe('object');
-			});
-		});
-
-		describe('fetchFavorites', () => {
-
-			it('should get correct fetchFavorites data', async () => {
-
-				moxios.stubRequest(/\/favorites/, {
-					status:   200,
-					response: MOCK_FETCHFAVORITES_RESPONSE
-				});
-
-				const fetchFavoritesResponse = await fetchFavorites();
-
-				expect(fetchFavoritesResponse.size).toEqual(3);
-			});
-		});
-
-		describe('fetchReservations', () => {
-
-			it('should get correct fetchReservations data', async () => {
-
-				moxios.stubRequest(/\/reservation/, {
-					status:   200,
-					response: MOCK_RESERVATIONS_RESPONSE
-				});
-
-				const fetchReservationsResponse = await fetchReservations();
-
-				expect(fetchReservationsResponse.size).toEqual(3);
 			});
 		});
 	});
