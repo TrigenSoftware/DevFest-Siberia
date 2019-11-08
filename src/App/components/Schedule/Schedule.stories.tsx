@@ -7,8 +7,8 @@ import {
 } from '@storybook/addon-actions';
 import Schedule, {
 	ScheduleItem,
-	ScheduleSeparator,
-	VariantScheduleItemStatus
+	VariantScheduleItemStatus,
+	ScheduleSeparator
 } from './';
 
 const stylableApi = `
@@ -28,20 +28,20 @@ storiesOf('Components|Schedule', module)
 				<ScheduleItem
 					time='9:30 AM'
 					lang='RU'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Открытие'
 					status={VariantScheduleItemStatus.Past}
 				/>
 				<ScheduleItem
 					time='9:30 AM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Регистрация'
 					status={VariantScheduleItemStatus.Past}
 				/>
 				<ScheduleItem
 					time='9:30 PM'
 					lang='RU'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Past}
 					speakers={[
@@ -64,7 +64,7 @@ storiesOf('Components|Schedule', module)
 				<ScheduleItem
 					time='9:30 PM'
 					lang='RU'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
 					speakers={[
@@ -87,7 +87,7 @@ storiesOf('Components|Schedule', module)
 				<ScheduleItem
 					time='9:30 PM'
 					lang='RU'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
 					speakers={[
@@ -109,7 +109,7 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
 					speakers={[
@@ -131,7 +131,7 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
 					speakers={[
@@ -153,7 +153,7 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
 					speakers={[
@@ -175,7 +175,7 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
 					speakers={[
@@ -197,7 +197,7 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
 					speakers={[
@@ -231,7 +231,7 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
 					speakers={[
@@ -253,7 +253,7 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Now}
 					speakers={[
@@ -276,7 +276,7 @@ storiesOf('Components|Schedule', module)
 				<ScheduleItem
 					time='9:30 PM'
 					lang='RU'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -298,7 +298,7 @@ storiesOf('Components|Schedule', module)
 				<ScheduleItem
 					time='9:30 PM'
 					lang='RU'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -319,7 +319,7 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -340,7 +340,7 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -361,7 +361,7 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -382,7 +382,7 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -403,7 +403,7 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -424,7 +424,7 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -445,7 +445,7 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -476,7 +476,7 @@ storiesOf('Components|Schedule', module)
 				</ScheduleSeparator>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -497,7 +497,7 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -521,7 +521,7 @@ storiesOf('Components|Schedule', module)
 				</ScheduleSeparator>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Кодить сегодня или нет'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -549,7 +549,7 @@ storiesOf('Components|Schedule', module)
 			<Schedule>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Как делать пирамидку?'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -570,7 +570,7 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Как делать пирамидку?'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[
@@ -591,7 +591,7 @@ storiesOf('Components|Schedule', module)
 				/>
 				<ScheduleItem
 					time='9:30 PM'
-					location={<span>Комната 231,<br/>2 этаж</span>}
+					place={<span>Комната 231,<br/>2 этаж</span>}
 					title='Как делать пирамидку?'
 					status={VariantScheduleItemStatus.Next}
 					speakers={[

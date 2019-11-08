@@ -175,6 +175,10 @@ export default class App extends Component<IProps> {
 			default: analytics
 		} = await import(/* webpackChunkName: 'analytics' */ './analytics');
 
-		analytics();
+		try {
+			analytics();
+		} catch (err) {
+			/* Ad-blocker 👍 */
+		}
 	}
 }

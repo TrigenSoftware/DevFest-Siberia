@@ -112,11 +112,11 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		const {
 			context
 		} = this;
-		const params = new URLSearchParams(search);
-		const date = params.get('date');
-		const type = params.get('type');
 		const nav = getScheduleDates(context);
 		const filterTypes = getScheduleTypes(context);
+		const params = new URLSearchParams(search);
+		const date = params.get('date') || nav[0].date;
+		const type = params.get('type');
 		const schedule = selectScheduleByType(date, type);
 
 		return (
@@ -187,6 +187,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 						{schedule.map((item, i) => {
 
 							const {
+								location,
 								date,
 								timeStart,
 								timeEnd
@@ -196,6 +197,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 								<ScheduleItem
 									key={i}
 									{...item}
+									place={location}
 									time={formatDate(date, timeStart)}
 									status={this.getStatus(date, timeStart, timeEnd)}
 								/>

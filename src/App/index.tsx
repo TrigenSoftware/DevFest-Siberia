@@ -20,6 +20,7 @@ import {
 } from './services/i18n';
 import App from './App';
 import createStore from './store';
+import updater from './updater';
 
 declare const I18N: string;
 
@@ -70,7 +71,7 @@ async function getI18nConfig(): Promise<IConfig> {
 async function main() {
 
 	if (process.env.NODE_ENV !== 'development' && !process.env.DISABLE_SW) {
-		registerServiceWorker({ scope: '/' });
+		updater(registerServiceWorker({ scope: '/' }));
 	}
 
 	const root = document.querySelector('#view');

@@ -23,16 +23,18 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 
 	async buy(registrationData) {
 
-		const redirectUrl = await userService.buy(registrationData);
+		try {
 
-		if (redirectUrl.startsWith(process.env.API_URL.replace(/\/$/, ''))) {
-			this.setError({
-				type:  this.buy,
-				error: new Error('User already exist')
-			});
-		} else {
+			const redirectUrl = await userService.buy(registrationData);
+
 			this.clearErrors();
 			location.href = redirectUrl;
+
+		} catch (error) {
+			this.setError({
+				type: this.buy,
+				error
+			});
 		}
 	}
 

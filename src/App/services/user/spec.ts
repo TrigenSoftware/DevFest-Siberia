@@ -36,15 +36,8 @@ const MOCK_BUY_DATA = {
 	position:       'string',
 	city:           'string',
 	termsAccepted:  true,
-	paymentRequest: {
-		locale:    'ru',
-		products:  [
-			{
-				productRef: 'string'
-			}
-		],
-		promocode: 'string'
-	}
+	locale:         'ru',
+	promocode:      'string'
 };
 const MOCK_FETCHORDERS_RESPONSE = [
 	{

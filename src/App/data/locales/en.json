@@ -8,8 +8,9 @@
 	"header": {
 		"menu": "Toggle navigation menu",
 		"home": "Home",
-		"team": "Team",
 		"speakers": "Speakers",
+		"schedule": "Schedule",
+		"team": "Team",
 		"lang": "Ru",
 		"login": "Log In",
 		"logout": "Log out",
@@ -70,10 +71,10 @@
 		]
 	},
 	"scholarship": {
-		"text": "Also on this year, you have a chance get",
+		"text": "Also this year, you have a chance get",
 		"title": "DevFest Siberia 2019 Diversity Scholarship",
 		"link": "https://forms.gle/zp6CMGg3hnBwUwyQ6",
-		"button": "Get It"
+		"button": "Apply"
 	},
 	"photos": {
 		"description": "A people-first conference",
@@ -367,16 +368,8 @@
 					"label": "Data Science"
 				},
 				{
-					"type": "frontend",
-					"label": "Frontend"
-				},
-				{
 					"type": "devops",
 					"label": "DevOps"
-				},
-				{
-					"type": "security",
-					"label": "Security"
 				},
 				{
 					"type": "backend",

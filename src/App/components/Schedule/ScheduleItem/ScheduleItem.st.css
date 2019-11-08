@@ -70,7 +70,7 @@
 }
 
 .description {
-	padding: 1.6em 0;
+	padding: 1.6em 1.5em;
 }
 
 .description .Badge:not(:last-child) {
@@ -201,11 +201,14 @@
 	font-size: 15px;
 }
 
+.link:not(:hover):not(:focus) {
+	text-decoration: none;
+}
+
 .title {
-	margin-bottom: 6px;
+	margin: 0 0 6px;
 	color: value(colorBlack);
-	font-family: value(fontFamilyMono);
-	font-size: 2.4em;
+	font-size: rel(24, 10);
 }
 
 .speakerName {
@@ -287,7 +290,7 @@
 @media (max-width: value(sizeScreenMdMax)) {
 
 	.title {
-		font-size: 3.5em;
+		font-size: 16px;
 	}
 
 	.description .Badge:not(:last-child) {
