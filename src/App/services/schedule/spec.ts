@@ -35,8 +35,6 @@ describe('API', () => {
 
 				const fetchFavoritesResponse = await fetchFavorites();
 
-				console.log(fetchFavoritesResponse);
-
 				expect(fetchFavoritesResponse.size).toEqual(3);
 			});
 		});
@@ -51,8 +49,6 @@ describe('API', () => {
 				});
 
 				const fetchReservationsResponse = await fetchReservations();
-
-				console.log(fetchReservationsResponse);
 
 				expect(fetchReservationsResponse.size).toEqual(3);
 			});
