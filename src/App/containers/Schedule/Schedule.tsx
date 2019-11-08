@@ -225,7 +225,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 				search
 			},
 			datetime,
-			fetchSchedule
+			fetchSchedule,
+			fetchSpeakers
 		} = this.props;
 		const {
 			currentDate
@@ -236,6 +237,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		const date = new URLSearchParams(search).get('date');
 
 		fetchSchedule();
+		fetchSpeakers();
 
 		if (!date) {
 

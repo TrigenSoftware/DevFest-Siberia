@@ -4,7 +4,8 @@ import {
 import {
 	Schedule,
 	Speaker,
-	IScheduleStateProps
+	IScheduleStateProps,
+	ISpeakersStateProps
 } from '~/store/types';
 import {
 	IProps as ISectionProps
@@ -14,10 +15,11 @@ export interface IState {
 	currentDate: Date;
 }
 
-export interface IProps extends ISectionProps, IScheduleStateProps, RouteComponentProps {
+export interface IProps extends ISectionProps, IScheduleStateProps, ISpeakersStateProps, RouteComponentProps {
 	actionsReady: boolean;
 	datetime?: Date;
 	fetchSchedule();
 	selectScheduleByType(date: string, type: string): Schedule[];
+	fetchSpeakers();
 	selectSpeaker(id: string): Speaker;
 }

@@ -11,9 +11,10 @@ import {
 } from '~/store/segments';
 import ScheduleContainer from './Schedule';
 
-export function mapStateToProps({ schedule }: State) {
+export function mapStateToProps({ schedule, speakers }: State) {
 	return {
-		schedule: schedule.schedule
+		schedule: schedule.schedule,
+		speakers: speakers.speakers
 	};
 }
 
@@ -23,6 +24,7 @@ const pendingActions = {
 	selectScheduleByType() {
 		return [];
 	},
+	fetchSpeakers() {},
 	selectSpeaker() {
 		return null;
 	}
@@ -38,6 +40,7 @@ export function mapActionsToProps({ schedule, speakers }: IActions) {
 		actionsReady:         true,
 		fetchSchedule:        schedule.fetchSchedule,
 		selectScheduleByType: schedule.selectScheduleByType,
+		fetchSpeakers:        speakers.fetchSpeakers,
 		selectSpeaker:        speakers.selectSpeaker
 	};
 }
