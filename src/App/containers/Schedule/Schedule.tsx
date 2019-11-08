@@ -23,6 +23,7 @@ import {
 	getScheduleTypes
 } from '~/services/i18n';
 import Section from '~/components/Section';
+import SpeakerModal from '~/blocks/SpeakerModal';
 import ToggleNav, {
 	ToggleNavLink
 } from '~/components/ToggleNav';
@@ -70,7 +71,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 	static propTypes = {
 		datetime:             PropTypes.any,
 		fetchSchedule:        PropTypes.func.isRequired,
-		selectScheduleByType: PropTypes.func.isRequired
+		selectScheduleByType: PropTypes.func.isRequired,
+		selectSpeaker:        PropTypes.func.isRequired
 	};
 
 	static getDerivedStateFromProps(
@@ -107,7 +109,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 				search
 			},
 			actionsReady,
-			selectScheduleByType
+			selectScheduleByType,
+			selectSpeaker
 		} = this.props;
 		const {
 			context
@@ -203,6 +206,9 @@ export class ScheduleContainer extends Component<IProps, IState> {
 								/>
 							);
 						})}
+						<SpeakerModal
+							getSpeaker={selectSpeaker}
+						/>
 					</Schedule>
 				) : (
 					<Loading/>

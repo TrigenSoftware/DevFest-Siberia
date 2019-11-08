@@ -6,7 +6,8 @@ import {
 	IActions
 } from '~/store/types';
 import {
-	ScheduleSegment
+	ScheduleSegment,
+	SpeakersSegment
 } from '~/store/segments';
 import ScheduleContainer from './Schedule';
 
@@ -21,10 +22,13 @@ const pendingActions = {
 	fetchSchedule() {},
 	selectScheduleByType() {
 		return [];
+	},
+	selectSpeaker() {
+		return null;
 	}
 };
 
-export function mapActionsToProps({ schedule }: IActions) {
+export function mapActionsToProps({ schedule, speakers }: IActions) {
 
 	if (!schedule) {
 		return pendingActions;
@@ -33,12 +37,16 @@ export function mapActionsToProps({ schedule }: IActions) {
 	return {
 		actionsReady:         true,
 		fetchSchedule:        schedule.fetchSchedule,
-		selectScheduleByType: schedule.selectScheduleByType
+		selectScheduleByType: schedule.selectScheduleByType,
+		selectSpeaker:        speakers.selectSpeaker
 	};
 }
 
 export default Connect({
-	dependsOn:   ScheduleSegment,
+	dependsOn:   [
+		ScheduleSegment,
+		SpeakersSegment
+	],
 	skipWaiting: true,
 	mapStateToProps,
 	mapActionsToProps

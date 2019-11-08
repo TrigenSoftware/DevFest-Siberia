@@ -3,6 +3,7 @@ import {
 } from 'react-router-dom';
 import {
 	Schedule,
+	Speaker,
 	IScheduleStateProps
 } from '~/store/types';
 import {
@@ -18,4 +19,5 @@ export interface IProps extends ISectionProps, IScheduleStateProps, RouteCompone
 	datetime?: Date;
 	fetchSchedule();
 	selectScheduleByType(date: string, type: string): Schedule[];
+	selectSpeaker(id: string): Speaker;
 }
