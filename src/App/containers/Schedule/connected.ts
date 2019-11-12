@@ -12,7 +12,8 @@ import ScheduleContainer from './Schedule';
 
 export function mapStateToProps({ schedule }: State) {
 	return {
-		schedule: schedule.schedule
+		schedule:  schedule.schedule,
+		favorites: schedule.favorites
 	};
 }
 
@@ -21,7 +22,10 @@ const pendingActions = {
 	fetchSchedule() {},
 	selectScheduleByType() {
 		return [];
-	}
+	},
+	fetchFavorites() {},
+	addFavorite() {},
+	deleteFavorite() {}
 };
 
 export function mapActionsToProps({ schedule }: IActions) {
@@ -33,7 +37,10 @@ export function mapActionsToProps({ schedule }: IActions) {
 	return {
 		actionsReady:         true,
 		fetchSchedule:        schedule.fetchSchedule,
-		selectScheduleByType: schedule.selectScheduleByType
+		selectScheduleByType: schedule.selectScheduleByType,
+		fetchFavorites:       schedule.fetchFavorites,
+		addFavorite:          schedule.addFavorite,
+		deleteFavorite:       schedule.deleteFavorite
 	};
 }
 

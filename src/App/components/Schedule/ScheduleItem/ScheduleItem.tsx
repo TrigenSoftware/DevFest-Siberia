@@ -40,7 +40,14 @@ export enum VariantScheduleItemStatus {
 	Next = 'next'
 }
 
+export enum VariantScheduleItemType {
+	Workshop = 'workshop',
+	Talk = 'talk'
+}
+
 export type ScheduleItemStatus = 'past' | 'now' | 'next';
+
+export type ScheduleItemType = 'workshop' | 'talk';
 
 interface ISpeaker {
 	name: string;
@@ -48,6 +55,8 @@ interface ISpeaker {
 }
 
 interface ISelfProps extends RouteComponentProps {
+	id?: string;
+	type?: ScheduleItemType;
 	time: ReactNode;
 	lang?: string;
 	place: ReactNode;
@@ -67,7 +76,7 @@ interface ISelfProps extends RouteComponentProps {
 	workshopDeleteLabel?: string;
 	workshopDisabled?: boolean;
 	workshopDisabledLabel?: string;
-	onFavoriteClick?(isFavorite: boolean, event: MouseEvent<HTMLButtonElement>);
+	onFavoriteClick?(lectureId: string, isFavorite: boolean, event: MouseEvent<HTMLButtonElement>);
 	onWorkshopAddClick?(event: MouseEvent<HTMLButtonElement>);
 	onWorkshopDeleteClick?(event: MouseEvent<HTMLButtonElement>);
 }
@@ -78,6 +87,8 @@ export type IScheduleItemProps = CombinePropsAndAttributes<
 >;
 
 export const ScheduleItemStatusValues: ScheduleItemStatus[] = Object.values(VariantScheduleItemStatus);
+
+export const ScheduleItemTypeValues: ScheduleItemType[] = Object.values(VariantScheduleItemType);
 
 export const talkTypeColors: Record<string, Color> = {
 	'all':          'darkblue',
@@ -97,6 +108,8 @@ export const talkTypeColors: Record<string, Color> = {
 class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 
 	static propTypes = {
+		id:                    PropTypes.string,
+		type:                  PropTypes.string,
 		time:                  PropTypes.node.isRequired,
 		lang:                  PropTypes.string,
 		place:                 PropTypes.node.isRequired,
@@ -297,11 +310,12 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 
 		const {
 			onFavoriteClick,
-			favorite
+			favorite,
+			id
 		} = this.props;
 
 		if (typeof onFavoriteClick === 'function') {
-			onFavoriteClick(!favorite, event);
+			onFavoriteClick(id, !favorite, event);
 		}
 	}
 

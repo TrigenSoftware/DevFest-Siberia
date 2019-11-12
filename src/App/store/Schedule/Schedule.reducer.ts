@@ -34,10 +34,26 @@ export class ScheduleReducer extends Reducer {
 			return state;
 		}
 
-		return state.set(
-			'favorites',
-			favorites
-		);
+		const favoritesIds = favorites.map(favorite => favorite.lectureId);
+
+		const schedule = state.schedule.map((item) => {
+
+			if (favoritesIds.includes(item.id)) {
+				return {
+					...item,
+					favorite: true
+				};
+			}
+			return {
+				...item,
+				favorite: false
+			};
+		});
+
+		return state.merge({
+			favorites,
+			schedule
+		});
 	}
 
 	setReservations(state: ScheduleState, { payload }: ISetReservationsAction) {

@@ -7,9 +7,11 @@ import {
 	State
 } from '~/store/types';
 import {
-	ScheduleActions,
 	ScheduleReducer
 } from '~/store/Schedule';
+import {
+	ScheduleActions
+} from '~/store/Schedule/Schedule.actions.mock';
 import Schedule from './Schedule';
 import {
 	mapStateToProps,
@@ -32,3 +34,17 @@ export const store = new Store<State, IActions>({
 	reducer:  ScheduleReducer,
 	enhancer: __REDUX_DEVTOOLS_EXTENSION__ && __REDUX_DEVTOOLS_EXTENSION__()
 });
+
+export const actions = {
+
+	generate() {
+
+		const {
+			schedule
+		} = store.actions;
+
+		schedule.fetchFavorites();
+	}
+};
+
+actions.generate();

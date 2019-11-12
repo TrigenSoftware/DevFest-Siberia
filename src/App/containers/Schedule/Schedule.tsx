@@ -30,7 +30,8 @@ import Badge from '~/components/Badge';
 import Schedule, {
 	ScheduleItem,
 	talkTypeColors,
-	VariantScheduleItemStatus
+	VariantScheduleItemStatus,
+	VariantScheduleItemType
 } from '~/components/Schedule';
 import Loading from '~/components/Loading';
 import {
@@ -70,7 +71,10 @@ export class ScheduleContainer extends Component<IProps, IState> {
 	static propTypes = {
 		datetime:             PropTypes.any,
 		fetchSchedule:        PropTypes.func.isRequired,
-		selectScheduleByType: PropTypes.func.isRequired
+		selectScheduleByType: PropTypes.func.isRequired,
+		fetchFavorites:       PropTypes.func.isRequired,
+		addFavorite:          PropTypes.func.isRequired,
+		deleteFavorite:       PropTypes.func.isRequired
 	};
 
 	static getDerivedStateFromProps(
@@ -187,6 +191,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 						{schedule.map((item, i) => {
 
 							const {
+								type,
 								location,
 								date,
 								timeStart,
@@ -200,6 +205,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 									place={location}
 									time={formatDate(date, timeStart)}
 									status={this.getStatus(date, timeStart, timeEnd)}
+									{...this.addControlsHandlers(type)}
 								/>
 							);
 						})}
@@ -219,7 +225,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 				search
 			},
 			datetime,
-			fetchSchedule
+			fetchSchedule,
+			fetchFavorites
 		} = this.props;
 		const {
 			currentDate
@@ -230,6 +237,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		const date = new URLSearchParams(search).get('date');
 
 		fetchSchedule();
+		fetchFavorites();
 
 		if (!date) {
 
@@ -258,6 +266,25 @@ export class ScheduleContainer extends Component<IProps, IState> {
 	}
 
 	@Bind()
+	private onFavoriteClick(lectureId: string, favorite: boolean) {
+
+		const {
+			addFavorite,
+			deleteFavorite
+		} = this.props;
+
+		if (favorite) {
+			addFavorite(lectureId);
+		} else {
+			deleteFavorite(lectureId);
+		}
+	}
+
+	private onWorkshopAddClick() {
+		console.log('workshop');
+	}
+
+	@Bind()
 	private updateCurrentDate() {
 		this.setState(() => ({
 			currentDate: new Date()
@@ -282,6 +309,24 @@ export class ScheduleContainer extends Component<IProps, IState> {
 
 		if (currentDate < startDate) {
 			return VariantScheduleItemStatus.Next;
+		}
+	}
+
+	private addControlsHandlers(type) {
+
+		switch (type) {
+
+			case VariantScheduleItemType.Talk:
+				return {
+					onFavoriteClick: this.onFavoriteClick
+				};
+
+			case VariantScheduleItemType.Workshop:
+				return {
+					onWorkshopAddClick: this.onWorkshopAddClick
+				};
+
+			default:
 		}
 	}
 }

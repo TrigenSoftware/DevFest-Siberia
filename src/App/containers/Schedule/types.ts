@@ -18,4 +18,7 @@ export interface IProps extends ISectionProps, IScheduleStateProps, RouteCompone
 	datetime?: Date;
 	fetchSchedule();
 	selectScheduleByType(date: string, type: string): Schedule[];
+	fetchFavorites();
+	addFavorite(lectureId: string);
+	deleteFavorite(ectureId: string);
 }

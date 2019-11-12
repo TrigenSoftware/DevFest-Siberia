@@ -22,10 +22,12 @@ async function loadScheduleSegmentConfig() {
 async function loadInitialScheduleData(store: Store<any, IActions>) {
 
 	const {
-		fetchSchedule
+		fetchSchedule,
+		fetchFavorites
 	} = store.actions.schedule;
 
 	await fetchSchedule();
+	await fetchFavorites();
 }
 
 export function registerScheduleSegment(store: Store) {

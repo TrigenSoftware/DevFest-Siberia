@@ -1,5 +1,6 @@
 [
 	{
+		"id": "LF1yUJyu_LC5VRcy-Qnu3",
 		"date": "2019-11-29",
 		"timeStart": "13:00",
 		"timeEnd": "15:00",
@@ -13,6 +14,7 @@
 		]
 	},
 	{
+		"id": "MLCS4hlEKDMjv_rNijaJJ",
 		"date": "2019-11-29",
 		"timeStart": "14:30",
 		"timeEnd": "15:00",
@@ -26,6 +28,8 @@
 		]
 	},
 	{
+		"id": "ZLx7WKdfQoDhkVw774n7X",
+		"type": "talk",
 		"date": "2019-11-29",
 		"timeStart": "15:00",
 		"timeEnd": "17:00",
@@ -36,9 +40,12 @@
 		"talkLevelBadge": "Beginner",
 		"speakers": [
 			"VsevolodHrechaniuk"
-		]
+		],
+		"favoriteLabel": "Add To Favorite"
 	},
 	{
+		"id": "0IG0y2olrnsldnVT2Vjfg",
+		"type": "workshop",
 		"date": "2019-11-29",
 		"timeStart": "15:00",
 		"timeEnd": "16:00",
@@ -49,9 +56,13 @@
 		"talkLevelBadge": "Intermediate",
 		"speakers": [
 			"AlexeyRodionov"
-		]
+		],
+		"workshopAddLabel": "Хочу пойти",
+		"workshopLabel": "Я иду! :)",
+		"workshopDeleteLabel": "Не пойти"
 	},
 	{
+		"id": "ivZ4manCEMebayE4fk68Y",
 		"date": "2019-11-29",
 		"timeStart": "15:00",
 		"timeEnd": "16:00",
@@ -65,6 +76,7 @@
 		]
 	},
 	{
+		"id": "5GPEf2LsELcnhYbhpfNzN",
 		"date": "2019-11-29",
 		"timeStart": "16:00",
 		"timeEnd": "17:00",
@@ -78,6 +90,8 @@
 		]
 	},
 	{
+		"id": "Ln02m8wwp__JvIaz41OSc",
+		"type": "talk",
 		"date": "2019-11-29",
 		"timeStart": "17:00",
 		"timeEnd": "19:00",
@@ -88,9 +102,11 @@
 		"talkLevelBadge": "Intermediate",
 		"speakers": [
 			"AlexanderEfremenkov"
-		]
+		],
+		"favoriteLabel": "Add To Favorite"
 	},
 	{
+		"id": "gMn2fAdcpohYAIwqwVdgJ",
 		"date": "2019-11-29",
 		"timeStart": "19:00",
 		"timeEnd": "21:00",
@@ -104,6 +120,7 @@
 		]
 	},
 	{
+		"id": "NE0PyDcMoDPetYQRGRgTv",
 		"date": "2019-11-30",
 		"timeStart": "09:00",
 		"timeEnd": "10:30",
@@ -117,6 +134,7 @@
 		]
 	},
 	{
+		"id": "qFr5RMs_OIdosoAAK8zpd",
 		"date": "2019-11-30",
 		"timeStart": "09:00",
 		"timeEnd": "10:30",
@@ -130,6 +148,7 @@
 		]
 	},
 	{
+		"id": "dfTzq2zNcY06Bixq8mDrH",
 		"date": "2019-11-30",
 		"timeStart": "10:30",
 		"timeEnd": "10:50",
@@ -143,6 +162,7 @@
 		]
 	},
 	{
+		"id": "_E2dH3GQCSGAxIHCwYE_q",
 		"date": "2019-11-30",
 		"timeStart": "11:00",
 		"timeEnd": "11:50",
@@ -156,6 +176,7 @@
 		]
 	},
 	{
+		"id": "3bFCNDoISnij3DG7S9xG6",
 		"date": "2019-11-30",
 		"timeStart": "11:00",
 		"timeEnd": "11:50",
@@ -169,6 +190,7 @@
 		]
 	},
 	{
+		"id": "Fd-P93vm_-4x_yLSntkxC",
 		"date": "2019-11-30",
 		"timeStart": "11:00",
 		"timeEnd": "11:50",
@@ -182,6 +204,7 @@
 		]
 	},
 	{
+		"id": "IhVfkyVyKksJqEzLM-xhL",
 		"date": "2019-11-30",
 		"timeStart": "11:00",
 		"timeEnd": "11:50",
@@ -195,6 +218,7 @@
 		]
 	},
 	{
+		"id": "sO0KK1ZiMDcqr85EK5G8C",
 		"date": "2019-11-30",
 		"timeStart": "12:00",
 		"timeEnd": "12:50",
@@ -208,6 +232,7 @@
 		]
 	},
 	{
+		"id": "5BrpMh9jFgtBaQqqda3gk",
 		"date": "2019-11-30",
 		"timeStart": "12:00",
 		"timeEnd": "12:50",
@@ -221,6 +246,7 @@
 		]
 	},
 	{
+		"id": "C_05sW8AdBT2f3Ge1_Vgn",
 		"date": "2019-11-30",
 		"timeStart": "12:00",
 		"timeEnd": "12:50",
@@ -234,6 +260,7 @@
 		]
 	},
 	{
+		"id": "p2kLfR0yrNMmt5X8jxoV1",
 		"date": "2019-11-30",
 		"timeStart": "12:00",
 		"timeEnd": "12:50",
@@ -247,6 +274,7 @@
 		]
 	},
 	{
+		"id": "FCKbzSswGlbnQ-pLo121D",
 		"date": "2019-11-30",
 		"timeStart": "13:00",
 		"timeEnd": "13:50",
@@ -260,6 +288,7 @@
 		]
 	},
 	{
+		"id": "XhxCtEUGFORrHGoWJ5kaC",
 		"date": "2019-11-30",
 		"timeStart": "13:00",
 		"timeEnd": "13:50",
@@ -269,10 +298,11 @@
 		"talkTypeBadge": "Hype",
 		"talkLevelBadge": "Intermediate",
 		"speakers": [
-			"JaniEv\u00e4kallio"
+			"JaniEväkallio"
 		]
 	},
 	{
+		"id": "35USED0_CeSjavApsMEX0",
 		"date": "2019-11-30",
 		"timeStart": "13:00",
 		"timeEnd": "13:50",
@@ -286,6 +316,7 @@
 		]
 	},
 	{
+		"id": "KXRIfjwv8y99PQvw6jcfz",
 		"date": "2019-11-30",
 		"timeStart": "13:00",
 		"timeEnd": "13:50",
@@ -299,6 +330,7 @@
 		]
 	},
 	{
+		"id": "sttH-pXQxnPy_FN9yVxT5",
 		"date": "2019-11-30",
 		"timeStart": "14:00",
 		"timeEnd": "14:50",
@@ -312,6 +344,7 @@
 		]
 	},
 	{
+		"id": "U8ysY5kEDkqwMv2qZxEWW",
 		"date": "2019-11-30",
 		"timeStart": "14:00",
 		"timeEnd": "14:50",
@@ -325,6 +358,7 @@
 		]
 	},
 	{
+		"id": "EejZoXO9afp4xSIaE8aep",
 		"date": "2019-11-30",
 		"timeStart": "14:00",
 		"timeEnd": "14:50",
@@ -338,6 +372,7 @@
 		]
 	},
 	{
+		"id": "R4r4YXvk1wvTQ0lOj4Syk",
 		"date": "2019-11-30",
 		"timeStart": "14:00",
 		"timeEnd": "14:50",
@@ -351,6 +386,7 @@
 		]
 	},
 	{
+		"id": "kq-cbQRYMtuY7BDaQ9Q7Y",
 		"date": "2019-11-30",
 		"timeStart": "15:00",
 		"timeEnd": "15:50",
@@ -360,10 +396,11 @@
 		"talkTypeBadge": "Web",
 		"talkLevelBadge": "Intermediate",
 		"speakers": [
-			"Ram\u00f3nGuijarro"
+			"RamónGuijarro"
 		]
 	},
 	{
+		"id": "crPvDLbTmgRwYGtqdP2cJ",
 		"date": "2019-11-30",
 		"timeStart": "15:00",
 		"timeEnd": "15:50",
@@ -377,6 +414,7 @@
 		]
 	},
 	{
+		"id": "Okr5i3PcDv28Pj45eyQQm",
 		"date": "2019-11-30",
 		"timeStart": "15:00",
 		"timeEnd": "15:50",
@@ -390,6 +428,7 @@
 		]
 	},
 	{
+		"id": "wAGPY5r-HNluI8bM4cBP4",
 		"date": "2019-11-30",
 		"timeStart": "15:00",
 		"timeEnd": "15:50",
@@ -403,6 +442,7 @@
 		]
 	},
 	{
+		"id": "077d3P1yKg1LMDTDCtpAe",
 		"date": "2019-11-30",
 		"timeStart": "16:00",
 		"timeEnd": "16:50",
@@ -416,6 +456,7 @@
 		]
 	},
 	{
+		"id": "DVFwyM37xcIzN0ft3QsTv",
 		"date": "2019-11-30",
 		"timeStart": "16:00",
 		"timeEnd": "16:50",
@@ -429,6 +470,7 @@
 		]
 	},
 	{
+		"id": "ev-ptfre3fNThZBamJvYX",
 		"date": "2019-11-30",
 		"timeStart": "16:00",
 		"timeEnd": "16:50",
@@ -442,6 +484,7 @@
 		]
 	},
 	{
+		"id": "24zFo492X4MJ6LTW5Yw-c",
 		"date": "2019-11-30",
 		"timeStart": "16:00",
 		"timeEnd": "16:50",
@@ -455,6 +498,7 @@
 		]
 	},
 	{
+		"id": "6RIt5znJT3FF0si3b0XXR",
 		"date": "2019-11-30",
 		"timeStart": "17:00",
 		"timeEnd": "17:50",
@@ -468,6 +512,7 @@
 		]
 	},
 	{
+		"id": "1d2xrzHDeXgTbsknahqYo",
 		"date": "2019-11-30",
 		"timeStart": "17:00",
 		"timeEnd": "17:50",
@@ -481,6 +526,7 @@
 		]
 	},
 	{
+		"id": "j1BHyzmbU9m9WLxYMAPoi",
 		"date": "2019-11-30",
 		"timeStart": "17:00",
 		"timeEnd": "17:50",
@@ -494,6 +540,7 @@
 		]
 	},
 	{
+		"id": "o_aSRilg3CNux38Xo4-KQ",
 		"date": "2019-11-30",
 		"timeStart": "17:00",
 		"timeEnd": "17:50",
@@ -507,6 +554,7 @@
 		]
 	},
 	{
+		"id": "fCf6TC0wsgYAV5sBixs05",
 		"date": "2019-11-30",
 		"timeStart": "18:00",
 		"timeEnd": "18:50",
@@ -520,6 +568,7 @@
 		]
 	},
 	{
+		"id": "1AkcGQnkStHpberPmgRoZ",
 		"date": "2019-11-30",
 		"timeStart": "18:00",
 		"timeEnd": "18:50",
@@ -533,6 +582,7 @@
 		]
 	},
 	{
+		"id": "weauuS9BogK05-GZCoiTM",
 		"date": "2019-11-30",
 		"timeStart": "18:00",
 		"timeEnd": "18:50",
@@ -546,6 +596,7 @@
 		]
 	},
 	{
+		"id": "wkjH8yhTg9FBwGNt8MvLW",
 		"date": "2019-11-30",
 		"timeStart": "18:00",
 		"timeEnd": "18:50",
@@ -559,6 +610,7 @@
 		]
 	},
 	{
+		"id": "H6dSrA1d44b0vMKW4VlGq",
 		"date": "2019-11-30",
 		"timeStart": "19:20",
 		"timeEnd": "21:30",
@@ -572,6 +624,7 @@
 		]
 	},
 	{
+		"id": "_No-gOJrN4SK1MxDAMiNT",
 		"date": "2019-12-01",
 		"timeStart": "10:00",
 		"timeEnd": "10:50",
@@ -585,12 +638,13 @@
 		]
 	},
 	{
+		"id": "tTtML9GK7dSuH_rxR64C6",
 		"date": "2019-12-01",
 		"timeStart": "10:00",
 		"timeEnd": "10:50",
 		"lang": "Ru",
 		"location": "13th floor",
-		"title": "Data Engineering \u0432 DS",
+		"title": "Data Engineering в DS",
 		"talkTypeBadge": "Data Science",
 		"talkLevelBadge": "Beginner",
 		"speakers": [
@@ -598,6 +652,7 @@
 		]
 	},
 	{
+		"id": "irlPq85sv9bru9UuCWpdH",
 		"date": "2019-12-01",
 		"timeStart": "10:00",
 		"timeEnd": "10:50",
@@ -611,6 +666,7 @@
 		]
 	},
 	{
+		"id": "FoBOy2oywYEVuITEkmnG1",
 		"date": "2019-12-01",
 		"timeStart": "10:00",
 		"timeEnd": "10:50",
@@ -624,12 +680,13 @@
 		]
 	},
 	{
+		"id": "f1kf0O1fEI3rzzclwa-Sy",
 		"date": "2019-12-01",
 		"timeStart": "11:00",
 		"timeEnd": "11:50",
 		"lang": "Ru",
 		"location": "Room #3, 3d floor",
-		"title": "Why we\u2019ve picked Flutter for our \u201cNext big thing\u201d",
+		"title": "Why we’ve picked Flutter for our “Next big thing”",
 		"talkTypeBadge": "Mobile",
 		"talkLevelBadge": "Intermediate",
 		"speakers": [
@@ -637,6 +694,7 @@
 		]
 	},
 	{
+		"id": "4p8gcQPuj8Pasv0Dk2NKl",
 		"date": "2019-12-01",
 		"timeStart": "11:00",
 		"timeEnd": "11:50",
@@ -650,6 +708,7 @@
 		]
 	},
 	{
+		"id": "3cTwUByp6MuhEMQ0C41-O",
 		"date": "2019-12-01",
 		"timeStart": "11:00",
 		"timeEnd": "11:50",
@@ -659,10 +718,11 @@
 		"talkTypeBadge": "Web",
 		"talkLevelBadge": "Intermediate",
 		"speakers": [
-			"Miko\u0142ajDobrucki"
+			"MikołajDobrucki"
 		]
 	},
 	{
+		"id": "-7TCJphNqmpYdsSllyJsW",
 		"date": "2019-12-01",
 		"timeStart": "11:00",
 		"timeEnd": "11:50",
@@ -676,6 +736,7 @@
 		]
 	},
 	{
+		"id": "nJuXBFztSonR0J9CLeVo5",
 		"date": "2019-12-01",
 		"timeStart": "12:00",
 		"timeEnd": "12:50",
@@ -689,6 +750,7 @@
 		]
 	},
 	{
+		"id": "TumKABXSnXTzei5D1gHp7",
 		"date": "2019-12-01",
 		"timeStart": "12:00",
 		"timeEnd": "12:50",
@@ -702,6 +764,7 @@
 		]
 	},
 	{
+		"id": "GVoqi-wZL779NL63552OZ",
 		"date": "2019-12-01",
 		"timeStart": "12:00",
 		"timeEnd": "12:50",
@@ -715,6 +778,7 @@
 		]
 	},
 	{
+		"id": "YiAk3UCKzZt2qGr_J5weq",
 		"date": "2019-12-01",
 		"timeStart": "12:00",
 		"timeEnd": "12:50",
@@ -728,6 +792,7 @@
 		]
 	},
 	{
+		"id": "EjyULk3qO5_1jjJ1m_rq3",
 		"date": "2019-12-01",
 		"timeStart": "13:00",
 		"timeEnd": "13:50",
@@ -741,6 +806,7 @@
 		]
 	},
 	{
+		"id": "CBRuqacKl2XVFIclvhDWs",
 		"date": "2019-12-01",
 		"timeStart": "13:00",
 		"timeEnd": "13:50",
@@ -754,6 +820,7 @@
 		]
 	},
 	{
+		"id": "ARBBbA6PLc8WnMz-WuexW",
 		"date": "2019-12-01",
 		"timeStart": "13:00",
 		"timeEnd": "13:50",
@@ -767,12 +834,13 @@
 		]
 	},
 	{
+		"id": "OrBsEYlNZUQOt0y6ymead",
 		"date": "2019-12-01",
 		"timeStart": "13:00",
 		"timeEnd": "13:50",
 		"lang": "Ru",
 		"location": "13th floor",
-		"title": "Spark \u0438 Zeppelin; What's in your code? Exploring the code with Big Data",
+		"title": "Spark и Zeppelin; What's in your code? Exploring the code with Big Data",
 		"talkTypeBadge": "Data Science",
 		"talkLevelBadge": "Beginner",
 		"speakers": [
@@ -780,6 +848,7 @@
 		]
 	},
 	{
+		"id": "usDAm3luhb4l_hkmh---O",
 		"date": "2019-12-01",
 		"timeStart": "14:00",
 		"timeEnd": "14:50",
@@ -793,6 +862,7 @@
 		]
 	},
 	{
+		"id": "csb7NvSOBnA6i2dZl-Ga-",
 		"date": "2019-12-01",
 		"timeStart": "14:00",
 		"timeEnd": "14:50",
@@ -806,6 +876,7 @@
 		]
 	},
 	{
+		"id": "BVc3m4FViNupBz9I5oMDx",
 		"date": "2019-12-01",
 		"timeStart": "14:00",
 		"timeEnd": "14:50",
@@ -815,10 +886,11 @@
 		"talkTypeBadge": "Backend",
 		"talkLevelBadge": "Intermediate",
 		"speakers": [
-			"Rafa\u0142Leszko"
+			"RafałLeszko"
 		]
 	},
 	{
+		"id": "8bmlHLKsjHc4TRbwqxVCJ",
 		"date": "2019-12-01",
 		"timeStart": "14:00",
 		"timeEnd": "14:50",
@@ -832,6 +904,7 @@
 		]
 	},
 	{
+		"id": "_ltBWbReXUa1X8kWU7fba",
 		"date": "2019-12-01",
 		"timeStart": "15:00",
 		"timeEnd": "15:50",
@@ -845,6 +918,7 @@
 		]
 	},
 	{
+		"id": "pzUl_-iOEKxSlq1HO6mJs",
 		"date": "2019-12-01",
 		"timeStart": "15:00",
 		"timeEnd": "15:50",
@@ -858,6 +932,7 @@
 		]
 	},
 	{
+		"id": "uWAO9LxIPyVjw1ZL4Mm8j",
 		"date": "2019-12-01",
 		"timeStart": "15:00",
 		"timeEnd": "15:50",
@@ -871,6 +946,7 @@
 		]
 	},
 	{
+		"id": "-xrnZ0GVPmvwnwpQWc879",
 		"date": "2019-12-01",
 		"timeStart": "15:00",
 		"timeEnd": "15:50",
@@ -884,6 +960,7 @@
 		]
 	},
 	{
+		"id": "HgYN6s4oFJU33g36QXqSF",
 		"date": "2019-12-01",
 		"timeStart": "16:00",
 		"timeEnd": "16:50",
@@ -897,6 +974,7 @@
 		]
 	},
 	{
+		"id": "_1qxayTQuXBOPQlN2EmCs",
 		"date": "2019-12-01",
 		"timeStart": "16:00",
 		"timeEnd": "16:50",
@@ -910,6 +988,7 @@
 		]
 	},
 	{
+		"id": "oPqwjTGoUXZ6i12njWs_I",
 		"date": "2019-12-01",
 		"timeStart": "16:00",
 		"timeEnd": "16:50",
@@ -923,6 +1002,7 @@
 		]
 	},
 	{
+		"id": "Chm6bE9XefOO-xiEuVFoE",
 		"date": "2019-12-01",
 		"timeStart": "16:00",
 		"timeEnd": "16:50",
@@ -936,6 +1016,7 @@
 		]
 	},
 	{
+		"id": "Jfv8VaUV-QTL0bhyKeVA1",
 		"date": "2019-12-01",
 		"timeStart": "17:00",
 		"timeEnd": "17:50",
@@ -949,6 +1030,7 @@
 		]
 	},
 	{
+		"id": "5xu2zRSuUoweehB7KGhBf",
 		"date": "2019-12-01",
 		"timeStart": "17:00",
 		"timeEnd": "17:50",
@@ -962,6 +1044,7 @@
 		]
 	},
 	{
+		"id": "W2Wr8WajvCE2BH8eH-M10",
 		"date": "2019-12-01",
 		"timeStart": "17:00",
 		"timeEnd": "17:50",
@@ -975,6 +1058,7 @@
 		]
 	},
 	{
+		"id": "J8MlUgEqPSN_tQsV3TToP",
 		"date": "2019-12-01",
 		"timeStart": "17:00",
 		"timeEnd": "17:50",
@@ -988,6 +1072,7 @@
 		]
 	},
 	{
+		"id": "Cq9Kzfv1j1JN4mnGf3oCD",
 		"date": "2019-12-01",
 		"timeStart": "18:00",
 		"timeEnd": "18:50",
@@ -1001,6 +1086,7 @@
 		]
 	},
 	{
+		"id": "G1MwiJEkc2ynPvPoAqSCf",
 		"date": "2019-12-01",
 		"timeStart": "18:00",
 		"timeEnd": "18:50",
@@ -1014,6 +1100,7 @@
 		]
 	},
 	{
+		"id": "wCBkIHtEli0xn-eT9vdoN",
 		"date": "2019-12-01",
 		"timeStart": "18:00",
 		"timeEnd": "18:50",
@@ -1027,6 +1114,7 @@
 		]
 	},
 	{
+		"id": "QkFXpfF1teo_g9g56N_yV",
 		"date": "2019-12-01",
 		"timeStart": "18:00",
 		"timeEnd": "18:50",
@@ -1040,6 +1128,7 @@
 		]
 	},
 	{
+		"id": "MbeCtlBdmRQXPgZrJHaKA",
 		"date": "2019-12-01",
 		"timeStart": "19:00",
 		"timeEnd": "19:20",
