@@ -1,6 +1,7 @@
 /* tslint:disable:no-magic-numbers */
 import * as scheduleService from '~/services/schedule';
 import * as scheduleServiceMock from '~/services/schedule/mock';
+import Favorite from '~/models/Favorite';
 import {
 	IActions,
 	State
@@ -63,12 +64,28 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 		this.setFavorites(favorites);
 	}
 
-	async addFavorite() {
-		console.log('addFavorite');
+	async addFavorite(lectureId: string) {
+
+		const {
+			favorites
+		} = this.state;
+		const addedFavorite = Favorite({
+			lectureId
+		});
+		const updatedFavorites = favorites.push(addedFavorite);
+
+		this.setFavorites(updatedFavorites);
 	}
 
-	async deleteFavorite() {
-		console.log('deleteFavorite');
+	async deleteFavorite(lectureId: string) {
+
+		const {
+			favorites
+		} = this.state;
+		const favoriteIndex = favorites.findIndex(_ => _.lectureId === lectureId);
+		const updatedFavorites = favorites.delete(favoriteIndex);
+
+		this.setFavorites(updatedFavorites);
 	}
 
 	async fetchReservations() {
