@@ -38,6 +38,7 @@ export class ScheduleReducer extends Reducer {
 		const schedule = state.schedule.map((item) => {
 
 			if (item.type === 'talk') {
+
 				if (favoritesIds.includes(item.id)) {
 					return {
 						...item,

@@ -63,6 +63,29 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 		this.setFavorites(favorites);
 	}
 
+	async addFavorite() {
+		console.log('addFavorite');
+	}
+
+	async deleteFavorite() {
+		console.log('deleteFavorite');
+	}
+
+	async fetchReservations() {
+
+		const reservations = await scheduleServiceMock.fetchReservations();
+
+		this.setReservations(reservations);
+	}
+
+	async addReservation() {
+		console.log('addReservation');
+	}
+
+	async deleteReservation() {
+		console.log('deleteReservation');
+	}
+
 	abstract setSchedule(payload: SetSchedulePayload);
 	abstract setFavorites(payload: SetFavoritesPayload);
 	abstract setReservations(payload: SetReservationsPayload);

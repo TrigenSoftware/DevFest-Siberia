@@ -12,6 +12,9 @@ import {
 import {
 	ScheduleActions
 } from '~/store/Schedule/Schedule.actions.mock';
+import {
+	UserActions
+} from '~/store/User/User.actions.mock';
 import Schedule from './Schedule';
 import {
 	mapStateToProps,
@@ -30,7 +33,10 @@ export default Connect({
 export const store = new Store<State, IActions>({
 	adapter:  ImmutableAdapter,
 	state:    State(),
-	actions:  ScheduleActions,
+	actions:  [
+		ScheduleActions,
+		UserActions
+	],
 	reducer:  ScheduleReducer,
 	enhancer: __REDUX_DEVTOOLS_EXTENSION__ && __REDUX_DEVTOOLS_EXTENSION__()
 });
@@ -40,10 +46,14 @@ export const actions = {
 	generate() {
 
 		const {
-			schedule
+			schedule,
+			user
 		} = store.actions;
 
 		schedule.fetchFavorites();
+		schedule.fetchReservations();
+		user.setToken('token');
+		user.login('test', 'test');
 	}
 };
 
