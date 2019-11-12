@@ -225,7 +225,7 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 										className={classes.speakerName}
 										to={{
 											search: addSearchParams(search, {
-												id: speaker.name.split(' ').join('')
+												id: speaker.name.replace(/\s/g, '')
 											})
 										}}
 									>

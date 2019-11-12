@@ -11,7 +11,11 @@ import {
 } from '~/store/segments';
 import ScheduleContainer from './Schedule';
 
-export function mapStateToProps({ schedule, speakers }: State) {
+export function mapStateToProps(
+	{
+		schedule,
+		speakers
+	}: State) {
 	return {
 		schedule: schedule.schedule,
 		speakers: speakers.speakers
@@ -30,7 +34,11 @@ const pendingActions = {
 	}
 };
 
-export function mapActionsToProps({ schedule, speakers }: IActions) {
+export function mapActionsToProps(
+	{
+		schedule,
+		speakers
+	}: IActions) {
 
 	if (!schedule) {
 		return pendingActions;
