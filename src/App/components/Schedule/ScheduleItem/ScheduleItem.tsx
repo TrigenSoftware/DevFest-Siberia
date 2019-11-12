@@ -310,8 +310,8 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 
 		const {
 			onFavoriteClick,
-			favorite,
-			id
+			id,
+			favorite
 		} = this.props;
 
 		if (typeof onFavoriteClick === 'function') {
