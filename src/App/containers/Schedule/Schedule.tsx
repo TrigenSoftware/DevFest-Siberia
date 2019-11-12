@@ -74,7 +74,11 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		selectScheduleByType: PropTypes.func.isRequired,
 		fetchFavorites:       PropTypes.func.isRequired,
 		addFavorite:          PropTypes.func.isRequired,
-		deleteFavorite:       PropTypes.func.isRequired
+		deleteFavorite:       PropTypes.func.isRequired,
+		fetchReservations:    PropTypes.func.isRequired,
+		addReservation:       PropTypes.func.isRequired,
+		deleteReservation:    PropTypes.func.isRequired,
+		isLogged:             PropTypes.func.isRequired
 	};
 
 	static getDerivedStateFromProps(
@@ -195,7 +199,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 								location,
 								date,
 								timeStart,
-								timeEnd
+								timeEnd,
+								workshop
 							} = item;
 
 							return (
@@ -205,7 +210,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 									place={location}
 									time={formatDate(date, timeStart)}
 									status={this.getStatus(date, timeStart, timeEnd)}
-									{...this.addControlsHandlers(type)}
+									{...this.addControlsHandlers(type, workshop)}
 								/>
 							);
 						})}
@@ -226,7 +231,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 			},
 			datetime,
 			fetchSchedule,
-			fetchFavorites
+			fetchFavorites,
+			fetchReservations
 		} = this.props;
 		const {
 			currentDate
@@ -238,6 +244,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 
 		fetchSchedule();
 		fetchFavorites();
+		fetchReservations();
 
 		if (!date) {
 
@@ -280,8 +287,23 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		}
 	}
 
-	private onWorkshopAddClick() {
-		console.log('workshop');
+	@Bind()
+	private onWorkshopAddClick(workshopId: string) {
+
+		const {
+			addReservation
+		} = this.props;
+
+		addReservation(workshopId);
+	}
+
+	@Bind()
+	private onWorkshopDeleteClick(workshopId: string) {
+		const {
+			deleteReservation
+		} = this.props;
+
+		deleteReservation(workshopId);
 	}
 
 	@Bind()
@@ -312,7 +334,21 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		}
 	}
 
-	private addControlsHandlers(type) {
+	private addControlsHandlers(type: VariantScheduleItemType, workshop: boolean) {
+
+		const {
+			isLogged
+		} = this.props;
+
+		if (!isLogged()) {
+			return null;
+		}
+
+		if (type === VariantScheduleItemType.Workshop && workshop) {
+			return {
+				onWorkshopDeleteClick: this.onWorkshopDeleteClick
+			};
+		}
 
 		switch (type) {
 

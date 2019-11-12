@@ -37,16 +37,19 @@ export class ScheduleReducer extends Reducer {
 		const favoritesIds = favorites.map(favorite => favorite.lectureId);
 		const schedule = state.schedule.map((item) => {
 
-			if (favoritesIds.includes(item.id)) {
+			if (item.type === 'talk') {
+				if (favoritesIds.includes(item.id)) {
+					return {
+						...item,
+						favorite: true
+					};
+				}
 				return {
 					...item,
-					favorite: true
+					favorite: false
 				};
 			}
-			return {
-				...item,
-				favorite: false
-			};
+			return item;
 		});
 
 		return state.merge({

@@ -21,4 +21,8 @@ export interface IProps extends ISectionProps, IScheduleStateProps, RouteCompone
 	fetchFavorites();
 	addFavorite(lectureId: string);
 	deleteFavorite(ectureId: string);
+	fetchReservations();
+	addReservation(workshopId: string);
+	deleteReservation(workshopId: string);
+	isLogged();
 }

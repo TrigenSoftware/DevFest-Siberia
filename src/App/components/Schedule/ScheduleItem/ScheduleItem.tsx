@@ -77,7 +77,7 @@ interface ISelfProps extends RouteComponentProps {
 	workshopDisabled?: boolean;
 	workshopDisabledLabel?: string;
 	onFavoriteClick?(lectureId: string, isFavorite: boolean, event: MouseEvent<HTMLButtonElement>);
-	onWorkshopAddClick?(event: MouseEvent<HTMLButtonElement>);
+	onWorkshopAddClick?(lectureId: string, event: MouseEvent<HTMLButtonElement>);
 	onWorkshopDeleteClick?(event: MouseEvent<HTMLButtonElement>);
 }
 
@@ -323,11 +323,12 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 	private onWorkshopAddClick(event: MouseEvent<HTMLButtonElement>) {
 
 		const {
-			onWorkshopAddClick
+			onWorkshopAddClick,
+			id
 		} = this.props;
 
 		if (typeof onWorkshopAddClick === 'function') {
-			onWorkshopAddClick(event);
+			onWorkshopAddClick(id, event);
 		}
 	}
 

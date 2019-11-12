@@ -23,11 +23,13 @@ async function loadInitialScheduleData(store: Store<any, IActions>) {
 
 	const {
 		fetchSchedule,
-		fetchFavorites
+		fetchFavorites,
+		fetchReservations
 	} = store.actions.schedule;
 
 	await fetchSchedule();
 	await fetchFavorites();
+	await fetchReservations();
 }
 
 export function registerScheduleSegment(store: Store) {

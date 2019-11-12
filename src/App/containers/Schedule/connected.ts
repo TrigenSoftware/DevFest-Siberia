@@ -25,10 +25,18 @@ const pendingActions = {
 	},
 	fetchFavorites() {},
 	addFavorite() {},
-	deleteFavorite() {}
+	deleteFavorite() {},
+	fetchReservations() {},
+	addReservation() {},
+	deleteReservation() {},
+	isLogged() {}
 };
 
-export function mapActionsToProps({ schedule }: IActions) {
+export function mapActionsToProps(
+	{
+		schedule,
+		user
+	}: IActions) {
 
 	if (!schedule) {
 		return pendingActions;
@@ -40,7 +48,11 @@ export function mapActionsToProps({ schedule }: IActions) {
 		selectScheduleByType: schedule.selectScheduleByType,
 		fetchFavorites:       schedule.fetchFavorites,
 		addFavorite:          schedule.addFavorite,
-		deleteFavorite:       schedule.deleteFavorite
+		deleteFavorite:       schedule.deleteFavorite,
+		fetchReservations:    schedule.fetchReservations,
+		addReservation:       schedule.addReservation,
+		deleteReservation:    schedule.deleteReservation,
+		isLogged:             user.isLogged
 	};
 }
 
