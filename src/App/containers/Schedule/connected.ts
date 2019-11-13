@@ -15,7 +15,8 @@ export function mapStateToProps(
 	{
 		schedule,
 		speakers
-	}: State) {
+	}: State
+) {
 	return {
 		schedule: schedule.schedule,
 		speakers: speakers.speakers
@@ -38,7 +39,8 @@ export function mapActionsToProps(
 	{
 		schedule,
 		speakers
-	}: IActions) {
+	}: IActions
+) {
 
 	if (!schedule) {
 		return pendingActions;
