@@ -221,11 +221,16 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 									key={index}
 									className={classes.speaker}
 								>
-									<div
+									<Link
 										className={classes.speakerName}
+										to={{
+											search: addSearchParams(search, {
+												id: speaker.name.replace(/\s/g, '')
+											})
+										}}
 									>
 										{speaker.name}
-									</div>
+									</Link>
 									<div
 										className={classes.speakerDescription}
 									>

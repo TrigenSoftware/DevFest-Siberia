@@ -23,6 +23,7 @@ import {
 	getScheduleTypes
 } from '~/services/i18n';
 import Section from '~/components/Section';
+import SpeakerModal from '~/blocks/SpeakerModal';
 import ToggleNav, {
 	ToggleNavLink
 } from '~/components/ToggleNav';
@@ -70,7 +71,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 	static propTypes = {
 		datetime:             PropTypes.any,
 		fetchSchedule:        PropTypes.func.isRequired,
-		selectScheduleByType: PropTypes.func.isRequired
+		selectScheduleByType: PropTypes.func.isRequired,
+		selectSpeaker:        PropTypes.func.isRequired
 	};
 
 	static getDerivedStateFromProps(
@@ -107,7 +109,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 				search
 			},
 			actionsReady,
-			selectScheduleByType
+			selectScheduleByType,
+			selectSpeaker
 		} = this.props;
 		const {
 			context
@@ -187,6 +190,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 						{schedule.map((item, i) => {
 
 							const {
+								location,
 								date,
 								timeStart,
 								timeEnd
@@ -196,11 +200,15 @@ export class ScheduleContainer extends Component<IProps, IState> {
 								<ScheduleItem
 									key={i}
 									{...item}
+									place={location}
 									time={formatDate(date, timeStart)}
 									status={this.getStatus(date, timeStart, timeEnd)}
 								/>
 							);
 						})}
+						<SpeakerModal
+							getSpeaker={selectSpeaker}
+						/>
 					</Schedule>
 				) : (
 					<Loading/>
@@ -217,7 +225,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 				search
 			},
 			datetime,
-			fetchSchedule
+			fetchSchedule,
+			fetchSpeakers
 		} = this.props;
 		const {
 			currentDate
@@ -228,6 +237,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		const date = new URLSearchParams(search).get('date');
 
 		fetchSchedule();
+		fetchSpeakers();
 
 		if (!date) {
 

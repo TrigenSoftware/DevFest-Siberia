@@ -10,6 +10,7 @@ import {
 	NetworkFirst,
 	StaleWhileRevalidate
 } from 'workbox-strategies';
+import connectUpdater from './util/connectUpdater';
 
 declare var self: ServiceWorkerGlobalScope;
 
@@ -62,3 +63,5 @@ registerRoute(
 		networkTimeoutSeconds: 3
 	})
 );
+
+connectUpdater();
