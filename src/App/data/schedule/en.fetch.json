@@ -1,1055 +1,1122 @@
 [
-	{
-		"date": "2019-11-29",
-		"timeStart": "13:00",
-		"timeEnd": "15:00",
-		"lang": "",
-		"location": "Halls",
-		"title": "Check-in",
-		"talkTypeBadge": "",
-		"talkLevelBadge": "",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-11-29",
-		"timeStart": "14:30",
-		"timeEnd": "15:00",
-		"lang": "",
-		"location": "Halls",
-		"title": "Coffee-break",
-		"talkTypeBadge": "",
-		"talkLevelBadge": "",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-11-29",
-		"timeStart": "15:00",
-		"timeEnd": "17:00",
-		"lang": "En",
-		"location": "Room #2, 2nd floor",
-		"title": "Flutter speed coding",
-		"talkTypeBadge": "Mobile",
-		"talkLevelBadge": "Beginner",
-		"speakers": [
-			"VsevolodHrechaniuk"
-		]
-	},
-	{
-		"date": "2019-11-29",
-		"timeStart": "15:00",
-		"timeEnd": "16:00",
-		"lang": "Ru",
-		"location": "Room #1, 2nd floor",
-		"title": "Mission Possible: Build PWA out of Web Components in 180 minutes",
-		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"AlexeyRodionov"
-		]
-	},
-	{
-		"date": "2019-11-29",
-		"timeStart": "15:00",
-		"timeEnd": "16:00",
-		"lang": "En",
-		"location": "Big room, 2nd floor",
-		"title": "Discussion panel WTM",
-		"talkTypeBadge": "Hype",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-11-29",
-		"timeStart": "16:00",
-		"timeEnd": "17:00",
-		"lang": "En",
-		"location": "Big room, 2nd floor",
-		"title": "Discussion panel about the startups",
-		"talkTypeBadge": "Hype",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-11-29",
-		"timeStart": "17:00",
-		"timeEnd": "19:00",
-		"lang": "Ru",
-		"location": "Room #2, 2nd floor",
-		"title": "Cross-platform in 2019: C++ as an antagonist in a progressive world: workshop",
-		"talkTypeBadge": "Mobile",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"AlexanderEfremenkov"
-		]
-	},
-	{
-		"date": "2019-11-29",
-		"timeStart": "19:00",
-		"timeEnd": "21:00",
-		"lang": "",
-		"location": "",
-		"title": "Preparty",
-		"talkTypeBadge": "",
-		"talkLevelBadge": "",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "09:00",
-		"timeEnd": "10:30",
-		"lang": "",
-		"location": "Halls",
-		"title": "Check-in",
-		"talkTypeBadge": "",
-		"talkLevelBadge": "",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "09:00",
-		"timeEnd": "10:30",
-		"lang": "",
-		"location": "Halls",
-		"title": "Coffee-break",
-		"talkTypeBadge": "",
-		"talkLevelBadge": "",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "10:30",
-		"timeEnd": "10:50",
-		"lang": "En",
-		"location": "Big room, 2nd floor",
-		"title": "Opening",
-		"talkTypeBadge": "",
-		"talkLevelBadge": "",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "11:00",
-		"timeEnd": "11:50",
-		"lang": "En",
-		"location": "Big room, 2nd floor",
-		"title": "Yes! Your site can (and should) be accessible",
-		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"LauraCarvajal"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "11:00",
-		"timeEnd": "11:50",
-		"lang": "Ru",
-		"location": "Room #1, 2nd floor",
-		"title": "Smart Railways with GCP and IoT",
-		"talkTypeBadge": "Hype",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"VladimirDaron"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "11:00",
-		"timeEnd": "11:50",
-		"lang": "Ru",
-		"location": "13th floor",
-		"title": "Bayesian deep learning for text and speech recognition",
-		"talkTypeBadge": "Data Science",
-		"talkLevelBadge": "Advanced",
-		"speakers": [
-			"IvanBondarenko"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "11:00",
-		"timeEnd": "11:50",
-		"lang": "En",
-		"location": "Room #3, 3d floor",
-		"title": "DevOps: A Love Story",
-		"talkTypeBadge": "DevOps",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"ValarieRegas"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "12:00",
-		"timeEnd": "12:50",
-		"lang": "En",
-		"location": "Room #1, 2nd floor",
-		"title": "Data-Driven Frontend Components and the New Jira Navigation",
-		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"WillMendes"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "12:00",
-		"timeEnd": "12:50",
-		"lang": "En",
-		"location": "Room #3, 3d floor",
-		"title": "Build your own Internet of Continuously Delivered Things",
-		"talkTypeBadge": "Hype",
-		"talkLevelBadge": "Advanced",
-		"speakers": [
-			"DawidPacia"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "12:00",
-		"timeEnd": "12:50",
-		"lang": "Ru",
-		"location": "13th floor",
-		"title": "Data Science without ML",
-		"talkTypeBadge": "Data Science",
-		"talkLevelBadge": "Beginner",
-		"speakers": [
-			"KirillMalev"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "12:00",
-		"timeEnd": "12:50",
-		"lang": "En",
-		"location": "Big room, 2nd floor",
-		"title": "DevOps patterns and antipatterns for continuous software updates",
-		"talkTypeBadge": "DevOps",
-		"talkLevelBadge": "Beginner",
-		"speakers": [
-			"BaruchSadogursky"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "13:00",
-		"timeEnd": "13:50",
-		"lang": "",
-		"location": "Canteen",
-		"title": "Lunch",
-		"talkTypeBadge": "Web",
-		"talkLevelBadge": "",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "13:00",
-		"timeEnd": "13:50",
-		"lang": "En",
-		"location": "Big room, 2nd floor",
-		"title": "To be announced",
-		"talkTypeBadge": "Hype",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"JaniEv\u00e4kallio"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "13:00",
-		"timeEnd": "13:50",
-		"lang": "Ru",
-		"location": "13th floor",
-		"title": "Lock, stock, ALS: recommending ads at Yandex.Zen",
-		"talkTypeBadge": "Data Science",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"BorisSharchilev"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "13:00",
-		"timeEnd": "13:50",
-		"lang": "",
-		"location": "Canteen",
-		"title": "Lunch",
-		"talkTypeBadge": "DevOps",
-		"talkLevelBadge": "",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "14:00",
-		"timeEnd": "14:50",
-		"lang": "Ru",
-		"location": "Big room, 2nd floor",
-		"title": "PWA/TWA Uncensored",
-		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"AlexeyRodionov"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "14:00",
-		"timeEnd": "14:50",
-		"lang": "",
-		"location": "Canteen",
-		"title": "Lunch",
-		"talkTypeBadge": "Hype",
-		"talkLevelBadge": "",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "14:00",
-		"timeEnd": "14:50",
-		"lang": "",
-		"location": "Canteen",
-		"title": "Lunch",
-		"talkTypeBadge": "Data Science",
-		"talkLevelBadge": "",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "14:00",
-		"timeEnd": "14:50",
-		"lang": "En",
-		"location": "Room #1, 2nd floor",
-		"title": "The platform is dead, long live the platform",
-		"talkTypeBadge": "DevOps",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"LukaKladaric"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "15:00",
-		"timeEnd": "15:50",
-		"lang": "En",
-		"location": "Big room, 2nd floor",
-		"title": "You might not need classes",
-		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"Ram\u00f3nGuijarro"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "15:00",
-		"timeEnd": "15:50",
-		"lang": "En",
-		"location": "Room #3, 3d floor",
-		"title": "No Bulls*it Freelancer",
-		"talkTypeBadge": "Hype",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"TomKozacinski"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "15:00",
-		"timeEnd": "15:50",
-		"lang": "Ru",
-		"location": "13th floor",
-		"title": "Nurturing Data Science in Siberia",
-		"talkTypeBadge": "Data Science",
-		"talkLevelBadge": "Beginner",
-		"speakers": [
-			"IvanKomarov"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "15:00",
-		"timeEnd": "15:50",
-		"lang": "Ru",
-		"location": "Room #1, 2nd floor",
-		"title": "Version control for microservices",
-		"talkTypeBadge": "Backend",
-		"talkLevelBadge": "Beginner",
-		"speakers": [
-			"DmitriiToloknov"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "16:00",
-		"timeEnd": "16:50",
-		"lang": "En",
-		"location": "Big room, 2nd floor",
-		"title": "Live-Patching Weak Crypto with OpenSSL Engines",
-		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"IgnatKorchagin"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "16:00",
-		"timeEnd": "16:50",
-		"lang": "En",
-		"location": "Room #1, 2nd floor",
-		"title": "Managing ML Lifecycle - DevOps for ML",
-		"talkTypeBadge": "Hype",
-		"talkLevelBadge": "Advanced",
-		"speakers": [
-			"VasudevMaduri"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "16:00",
-		"timeEnd": "16:50",
-		"lang": "En",
-		"location": "13th floor",
-		"title": "Neural Architecture Search in a small company",
-		"talkTypeBadge": "Data Science",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"AlexanderGoncharenko"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "16:00",
-		"timeEnd": "16:50",
-		"lang": "Ru",
-		"location": "Room #3, 3d floor",
-		"title": "WebRTC Internals",
-		"talkTypeBadge": "Backend",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"IlyaShcherbak"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "17:00",
-		"timeEnd": "17:50",
-		"lang": "En",
-		"location": "Big room, 2nd floor",
-		"title": "Testing Web Accessibility",
-		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Advanced",
-		"speakers": [
-			"AdrianBolonio"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "17:00",
-		"timeEnd": "17:50",
-		"lang": "Ru",
-		"location": "13th floor",
-		"title": "How to build a hippy trap",
-		"talkTypeBadge": "Hype",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"EkaterinaLoschinina"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "17:00",
-		"timeEnd": "17:50",
-		"lang": "Ru",
-		"location": "Room #1, 2nd floor",
-		"title": "Automated methods for building taxonomies from texts",
-		"talkTypeBadge": "Data Science",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"NatalyaLukashevich"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "17:00",
-		"timeEnd": "17:50",
-		"lang": "Ru",
-		"location": "Room #3, 3d floor",
-		"title": "Patroni failure stories, or How to crash your PostgreSQL",
-		"talkTypeBadge": "Backend",
-		"talkLevelBadge": "Advanced",
-		"speakers": [
-			"LesovskyAlexey"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "18:00",
-		"timeEnd": "18:50",
-		"lang": "En",
-		"location": "Big room, 2nd floor",
-		"title": "The other side of webapp security",
-		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"LukaKladaric"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "18:00",
-		"timeEnd": "18:50",
-		"lang": "Ru",
-		"location": "Room #1, 2nd floor",
-		"title": "From SentEval to SentEvalRu: semantic sentence vectors for problems of analysis of Russian texts and an automatic quality evaluation",
-		"talkTypeBadge": "Data Science",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"AnnaMosolova"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "18:00",
-		"timeEnd": "18:50",
-		"lang": "En",
-		"location": "13th floor",
-		"title": "How to sell yourself for fun and profit",
-		"talkTypeBadge": "Hype",
-		"talkLevelBadge": "Beginner",
-		"speakers": [
-			"BaruchSadogursky"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "18:00",
-		"timeEnd": "18:50",
-		"lang": "Ru",
-		"location": "Room #3, 3d floor",
-		"title": "GraphQL. Moving from REST in a large project",
-		"talkTypeBadge": "Backend",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"DenisYuriev"
-		]
-	},
-	{
-		"date": "2019-11-30",
-		"timeStart": "19:20",
-		"timeEnd": "21:30",
-		"lang": "",
-		"location": "Canteen",
-		"title": "Afterparty",
-		"talkTypeBadge": "",
-		"talkLevelBadge": "",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "10:00",
-		"timeEnd": "10:50",
-		"lang": "En",
-		"location": "Big room, 2nd floor",
-		"title": "Cloud Composer: simplifying complex workflows with a powerful orchestrator on GCP",
-		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"VsevolodHrechaniuk"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "10:00",
-		"timeEnd": "10:50",
-		"lang": "Ru",
-		"location": "13th floor",
-		"title": "Data Engineering \u0432 DS",
-		"talkTypeBadge": "Data Science",
-		"talkLevelBadge": "Beginner",
-		"speakers": [
-			"VladGrozin"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "10:00",
-		"timeEnd": "10:50",
-		"lang": "Ru",
-		"location": "Room #1, 2nd floor",
-		"title": "When there are too many microservices, or why did we make our chat solution a monolith",
-		"talkTypeBadge": "Backend",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"IgorDultsev"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "10:00",
-		"timeEnd": "10:50",
-		"lang": "",
-		"location": "Room #3, 3d floor",
-		"title": "To be announced",
-		"talkTypeBadge": "Mobile",
-		"talkLevelBadge": "",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "11:00",
-		"timeEnd": "11:50",
-		"lang": "Ru",
-		"location": "Room #3, 3d floor",
-		"title": "Why we\u2019ve picked Flutter for our \u201cNext big thing\u201d",
-		"talkTypeBadge": "Mobile",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"GennadyEvstratov"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "11:00",
-		"timeEnd": "11:50",
-		"lang": "En",
-		"location": "Room #1, 2nd floor",
-		"title": "Cloud Native, Service-Meshed Java Enterprise With Istio",
-		"talkTypeBadge": "Backend",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"SebastianDaschner"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "11:00",
-		"timeEnd": "11:50",
-		"lang": "En",
-		"location": "Big room, 2nd floor",
-		"title": "Getting more with design tokens",
-		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"Miko\u0142ajDobrucki"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "11:00",
-		"timeEnd": "11:50",
-		"lang": "En",
-		"location": "13th floor",
-		"title": "SEO: de Marketing a Data Science.",
-		"talkTypeBadge": "Data Science",
-		"talkLevelBadge": "Beginner",
-		"speakers": [
-			"PabloPerezDeAngelis"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "12:00",
-		"timeEnd": "12:50",
-		"lang": "Ru",
-		"location": "Room #3, 3d floor",
-		"title": "Practical mapping in Android apps development",
-		"talkTypeBadge": "Mobile",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"AndrewMihin"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "12:00",
-		"timeEnd": "12:50",
-		"lang": "Ru",
-		"location": "Big room, 2nd floor",
-		"title": "Serverless and functions as a service. Can you manage without a classic backend?",
-		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"SergeyPugachev"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "12:00",
-		"timeEnd": "12:50",
-		"lang": "Ru",
-		"location": "Room #1, 2nd floor",
-		"title": "Top mistakes made by developers when working with PostgreSQL",
-		"talkTypeBadge": "Backend",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"LesovskyAlexey"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "12:00",
-		"timeEnd": "12:50",
-		"lang": "",
-		"location": "13th floor",
-		"title": "To be announced",
-		"talkTypeBadge": "Data Science",
-		"talkLevelBadge": "",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "13:00",
-		"timeEnd": "13:50",
-		"lang": "",
-		"location": "Room #3, 3d floor",
-		"title": "Lunch",
-		"talkTypeBadge": "Mobile",
-		"talkLevelBadge": "",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "13:00",
-		"timeEnd": "13:50",
-		"lang": "En",
-		"location": "Big room, 2nd floor",
-		"title": "Go for frontend",
-		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"AarushiKansal"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "13:00",
-		"timeEnd": "13:50",
-		"lang": "",
-		"location": "Room #1, 2nd floor",
-		"title": "Lunch",
-		"talkTypeBadge": "Backend",
-		"talkLevelBadge": "",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "13:00",
-		"timeEnd": "13:50",
-		"lang": "Ru",
-		"location": "13th floor",
-		"title": "Spark \u0438 Zeppelin; What's in your code? Exploring the code with Big Data",
-		"talkTypeBadge": "Data Science",
-		"talkLevelBadge": "Beginner",
-		"speakers": [
-			"NikitaAshikhmin"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "14:00",
-		"timeEnd": "14:50",
-		"lang": "En",
-		"location": "Room #3, 3d floor",
-		"title": "How not to suck at mobile app development?",
-		"talkTypeBadge": "Mobile",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"YogeshOjha"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "14:00",
-		"timeEnd": "14:50",
-		"lang": "",
-		"location": "Big room, 2nd floor",
-		"title": "Lunch",
-		"talkTypeBadge": "Web",
-		"talkLevelBadge": "",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "14:00",
-		"timeEnd": "14:50",
-		"lang": "En",
-		"location": "Room #1, 2nd floor",
-		"title": "Where is my cache? Architectural patterns for caching microservices by example",
-		"talkTypeBadge": "Backend",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"Rafa\u0142Leszko"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "14:00",
-		"timeEnd": "14:50",
-		"lang": "",
-		"location": "13th floor",
-		"title": "Lunch",
-		"talkTypeBadge": "Data Science",
-		"talkLevelBadge": "",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "15:00",
-		"timeEnd": "15:50",
-		"lang": "Ru",
-		"location": "Room #3, 3d floor",
-		"title": "Cross-platform in 2019: C++ as an antagonist in a progressive world",
-		"talkTypeBadge": "Mobile",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"AlexanderEfremenkov"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "15:00",
-		"timeEnd": "15:50",
-		"lang": "Ru",
-		"location": "Big room, 2nd floor",
-		"title": "Video in Web: from Flash to MSE or how to develop your own video player",
-		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"AlexeyGusev"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "15:00",
-		"timeEnd": "15:50",
-		"lang": "Ru",
-		"location": "Room #1, 2nd floor",
-		"title": "What makes a database unique: Tarantool's best fist.",
-		"talkTypeBadge": "Backend",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"KonstantinOsipov"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "15:00",
-		"timeEnd": "15:50",
-		"lang": "Ru",
-		"location": "13th floor",
-		"title": "SpaCy-RU: fast neural networks for text analysis",
-		"talkTypeBadge": "Data Science",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"YuriBaburov"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "16:00",
-		"timeEnd": "16:50",
-		"lang": "Ru",
-		"location": "Room #3, 3d floor",
-		"title": "Dispelling DiffUtil magic ",
-		"talkTypeBadge": "Mobile",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"PetrKozlov"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "16:00",
-		"timeEnd": "16:50",
-		"lang": "Ru",
-		"location": "Big room, 2nd floor",
-		"title": "The Holy Graal: running React in Java",
-		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"OlegKorovin"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "16:00",
-		"timeEnd": "16:50",
-		"lang": "En",
-		"location": "Room #1, 2nd floor",
-		"title": "Distributed Domain Destruction",
-		"talkTypeBadge": "Backend",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"SrdjanVranac"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "16:00",
-		"timeEnd": "16:50",
-		"lang": "Ru",
-		"location": "13th floor",
-		"title": "Zero- and Few-Shot Learning in Natural Language Understanding",
-		"talkTypeBadge": "Data Science",
-		"talkLevelBadge": "Advanced",
-		"speakers": [
-			"ValentinMalykh"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "17:00",
-		"timeEnd": "17:50",
-		"lang": "",
-		"location": "Room #3, 3d floor",
-		"title": "To be announced",
-		"talkTypeBadge": "Mobile",
-		"talkLevelBadge": "",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "17:00",
-		"timeEnd": "17:50",
-		"lang": "En",
-		"location": "Big room, 2nd floor",
-		"title": "Paste Wars: fighting for copypaste freedom",
-		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"IgnatKorchagin"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "17:00",
-		"timeEnd": "17:50",
-		"lang": "Ru",
-		"location": "Room #1, 2nd floor",
-		"title": "Code as literature.",
-		"talkTypeBadge": "Backend",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"FedorSavkin"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "17:00",
-		"timeEnd": "17:50",
-		"lang": "Ru",
-		"location": "13th floor",
-		"title": "Automatic Machine Learning: State of the art",
-		"talkTypeBadge": "Data Science",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"AndreyFilchenkov"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "18:00",
-		"timeEnd": "18:50",
-		"lang": "",
-		"location": "Room #3, 3d floor",
-		"title": "To be announced",
-		"talkTypeBadge": "Mobile",
-		"talkLevelBadge": "",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "18:00",
-		"timeEnd": "18:50",
-		"lang": "Ru",
-		"location": "Big room, 2nd floor",
-		"title": "Vue.js v3. The new generation of front-end frameworks.",
-		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"IgorSheko"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "18:00",
-		"timeEnd": "18:50",
-		"lang": "",
-		"location": "Room #1, 2nd floor",
-		"title": "To be announced",
-		"talkTypeBadge": "Data Science",
-		"talkLevelBadge": "",
-		"speakers": [
-			"TBA"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "18:00",
-		"timeEnd": "18:50",
-		"lang": "Ru",
-		"location": "Big room, 2nd floor",
-		"title": "Integration Tests in Go",
-		"talkTypeBadge": "Backend",
-		"talkLevelBadge": "Intermediate",
-		"speakers": [
-			"KseniaYakil"
-		]
-	},
-	{
-		"date": "2019-12-01",
-		"timeStart": "19:00",
-		"timeEnd": "19:20",
-		"lang": "",
-		"location": "Big room, 2nd floor",
-		"title": "Closing",
-		"talkTypeBadge": "",
-		"talkLevelBadge": "",
-		"speakers": [
-			"TBA"
-		]
-	}
-]
+    {
+      "timeStart": "14:30",
+      "lang": "",
+      "speakers": [
+        "TBA"
+      ],
+      "talkLevelBadge": "",
+      "location": "Halls",
+      "title": "Coffee-break",
+      "date": "2019-11-29",
+      "talkTypeBadge": "",
+      "timeEnd": "15:00",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "15:00",
+      "lang": "En",
+      "speakers": [
+        "VsevolodHrechaniuk"
+      ],
+      "talkLevelBadge": "Beginner",
+      "location": "Room #2, 2nd floor",
+      "title": "Flutter speed coding",
+      "date": "2019-11-29",
+      "talkTypeBadge": "Mobile",
+      "timeEnd": "17:00",
+      "description": "Building an app from a scratch within a few hours is no longer a dream. Get rid of html/css/js nightmare. Get native performance. Build cross platform."
+    },
+    {
+      "timeStart": "15:00",
+      "lang": "Ru",
+      "speakers": [
+        "AlexeyRodionov"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #1, 2nd floor",
+      "title": "Mission Possible: Build PWA out of Web Components in 180 minutes",
+      "date": "2019-11-29",
+      "talkTypeBadge": "Web",
+      "timeEnd": "16:00",
+      "description": "We'll build a fully functional cross-platform Progressive Web App (PWA), using modern hardware Web APIs, entirely out of ready-made Web Components, like out of Lego bricks, almost with no code, and publish it on Google Firebase."
+    },
+    {
+      "timeStart": "15:00",
+      "lang": "En",
+      "speakers": [
+        "TBA"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Big room, 2nd floor",
+      "title": "Discussion panel WTM",
+      "date": "2019-11-29",
+      "talkTypeBadge": "Hype",
+      "timeEnd": "16:00",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "16:00",
+      "lang": "En",
+      "speakers": [
+        "TBA"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Big room, 2nd floor",
+      "title": "Discussion panel about the startups",
+      "date": "2019-11-29",
+      "talkTypeBadge": "Hype",
+      "timeEnd": "17:00",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "17:00",
+      "lang": "Ru",
+      "speakers": [
+        "AlexanderEfremenkov"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #2, 2nd floor",
+      "title": "Cross-platform in 2019: C++ as an antagonist in a progressive world: workshop",
+      "date": "2019-11-29",
+      "talkTypeBadge": "Mobile",
+      "timeEnd": "19:00",
+      "description": "\"In C++, there are a sufficient number of fundamental nuances due to the proximity to bare metal:\n\n1. Undefined Behavior\n2. Use After Free\n1. Memory Corruption\n2. Stack/Heap/Global Buffer Overflow\n3. Use After Scope\n4. Init Order\n5. Memory leaks\n\nAnd this is far from the limit. All of them can shoot very violently and painfully with the most incomprehensible outcome for the uninitiated in the language, because of which there is a need to somehow monitor, diagnose and solve such problems.\nIn this session, we will try to understood all cases on real cross-platform code, try to write our own and debug it properly.\""
+    },
+    {
+      "timeStart": "19:00",
+      "lang": "",
+      "speakers": [
+        "TBA"
+      ],
+      "talkLevelBadge": "",
+      "location": "",
+      "title": "Preparty",
+      "date": "2019-11-29",
+      "talkTypeBadge": "",
+      "timeEnd": "21:00",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "09:00",
+      "lang": "",
+      "speakers": [
+        "TBA"
+      ],
+      "talkLevelBadge": "",
+      "location": "Halls",
+      "title": "Check-in",
+      "date": "2019-11-30",
+      "talkTypeBadge": "",
+      "timeEnd": "10:30",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "09:00",
+      "lang": "",
+      "speakers": [
+        "TBA"
+      ],
+      "talkLevelBadge": "",
+      "location": "Halls",
+      "title": "Coffee-break",
+      "date": "2019-11-30",
+      "talkTypeBadge": "",
+      "timeEnd": "10:30",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "10:30",
+      "lang": "En",
+      "speakers": [
+        "TBA"
+      ],
+      "talkLevelBadge": "",
+      "location": "Big room, 2nd floor",
+      "title": "Opening",
+      "date": "2019-11-30",
+      "talkTypeBadge": "",
+      "timeEnd": "10:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "11:00",
+      "lang": "En",
+      "speakers": [
+        "LauraCarvajal"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Big room, 2nd floor",
+      "title": "Yes! Your site can (and should) be accessible",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Web",
+      "timeEnd": "11:50",
+      "description": "\"In 2016, The Financial Times launched a new version of our website, FT.com, to great success. It broke ground on key areas in which we’d set out to excel and measured very closely, like performance, resilience and usability. But one day, and rather serendipitously, we realized we had largely forgotten to measure one thing: accessibility. And you can’t improve what you don’t measure.\n\nIn this talk I will go over how we introduced accessibility to the The Financial Times website, and our journey from being generally oblivious about accessibility to making it a core part of our process across multiple divisions. I will share the roadblocks we encountered and lessons that we learned along the way as well as practical solutions you can implement in your project today, regardless of available time, resources, or support.\""
+    },
+    {
+      "timeStart": "11:00",
+      "lang": "Ru",
+      "speakers": [
+        "GennadyEvstratov"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #3, 3d floor",
+      "title": "Why we’ve picked Flutter for our “Next big thing”",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Mobile",
+      "timeEnd": "11:50",
+      "description": "We’ll discuss why we’ve picked flutter for our mission critical project, what other technologies were considered, and where are we now with this decision.  I will show all the stats we have measured while developing the app, and tell about problems we’ve encountered."
+    },
+    {
+      "timeStart": "11:00",
+      "lang": "Ru",
+      "speakers": [
+        "IvanBondarenko"
+      ],
+      "talkLevelBadge": "Advanced",
+      "location": "13th floor",
+      "title": "Bayesian deep learning for text and speech recognition",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Data Science",
+      "timeEnd": "11:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "11:00",
+      "lang": "En",
+      "speakers": [
+        "ValarieRegas"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #3, 3d floor",
+      "title": "DevOps: A Love Story",
+      "date": "2019-11-30",
+      "talkTypeBadge": "DevOps",
+      "timeEnd": "11:50",
+      "description": "\"This romance involves the partnership of Docker, Kubernetes, and Jenkins. These technologies are a huge part of the DevOps movement, and are making the heart of many development teams flutter. Let me introduce you to these three. You're going to fall head over heels.\n\nDuring this presentation we will cover a high-level overview of concepts such as DevOps Culture, containers, build pipelines, pods, clusters, CI/CD, and means of automation. At the end, you should walk away with a fundamental understanding of the world of auto-magic!\""
+    },
+    {
+      "timeStart": "12:00",
+      "lang": "En",
+      "speakers": [
+        "WillMendes"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #1, 2nd floor",
+      "title": "Data-Driven Frontend Components and the New Jira Navigation",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Web",
+      "timeEnd": "12:50",
+      "description": "\"In large frontend codebases, concise components are the key for the success of your application. Decisions can be done based on the user journey: better ways to improve performance by code-splitting, memory consumption, flexibility or even A/B testing. What if we can use a data-driven approach in a component level and mitigating any possible risk involved?\n\nIn this talk, I will share my experience and decisions using hypothesis and data-driven development effectively to release the new navigation in Jira, the most famous project management in the world! How to use some component patterns for A/B testing, performance and bundle size improvements and all the journey around the new navigation in Jira.\""
+    },
+    {
+      "timeStart": "12:00",
+      "lang": "Ru",
+      "speakers": [
+        "AndrewMihin"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #3, 3d floor",
+      "title": "Practical mapping in Android apps development",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Mobile",
+      "timeEnd": "12:50",
+      "description": "We will talk about converting one object to another one. Let's consider different approaches to solving the mapping issue and existing implementations of these approaches. I will review the applicability of these solutions in the android applications development and show how to write yet another tool for generating mapping code."
+    },
+    {
+      "timeStart": "12:00",
+      "lang": "Ru",
+      "speakers": [
+        "KirillMalev"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "13th floor",
+      "title": "Creating a social media account with generative machine learning toolkit",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Data Science",
+      "timeEnd": "12:50",
+      "description": "\"Social media content is supposed to be generated by people, but we are exploring opportunities to run social media account with generative machine learning toolkit and AI.\nOur initial experiments show that we can generate a lot of useful content, especially for our fans who are interested in what we are doing.\nOur goal is to be able to drive social media accounts. For now, we are focusing on generating social media content to our fan base and not to create any kind of automated bots.\""
+    },
+    {
+      "timeStart": "12:00",
+      "lang": "En",
+      "speakers": [
+        "BaruchSadogursky"
+      ],
+      "talkLevelBadge": "Beginner",
+      "location": "Big room, 2nd floor",
+      "title": "DevOps patterns and antipatterns for continuous software updates",
+      "date": "2019-11-30",
+      "talkTypeBadge": "DevOps",
+      "timeEnd": "12:50",
+      "description": "\"So, you want to update the software for your user, be it the nodes in your K8s cluster, a browser on user’s desktop, an app in user’s smartphone or even a user’s car. What can possibly go wrong?\n\nIn this talk, we’ll analyze real-world software update fails and how multiple DevOps patterns, that fit a variety of scenarios, could have saved the developers. Manually making sure that everything works before sending update and expecting the user to do acceptance tests before they update is most definitely not on the list of such patterns.\n\nJoin us for some awesome and scary continuous update horror stories and some obvious (and some not so obvious) proven ideas for improvement and best practices you can start following tomorrow.\""
+    },
+    {
+      "timeStart": "13:00",
+      "lang": "",
+      "speakers": [
+        "TBA"
+      ],
+      "talkLevelBadge": "",
+      "location": "Canteen",
+      "title": "Lunch",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Web",
+      "timeEnd": "13:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "13:00",
+      "lang": "Ru",
+      "speakers": [
+        "BorisSharchilev"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "13th floor",
+      "title": "Lock, stock, ALS: recommending ads at Yandex.Zen",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Data Science",
+      "timeEnd": "13:50",
+      "description": "\"Yandex.Zen is a personalised recommendations feed which finds interesting and unique content for its users. \nUsing Zen’s recommendations engine, we are currently building a new-generation ad platform, which aims at being both interesting to our users and effective for our advertisers.\nIn this talk, I’ll describe how we launched our ad platform from a ML perspective:\n ⁃ How our ads recommendations pipeline works;\n ⁃ Challenges we were faced with;\n ⁃ Simple and efficient ML solutions which helped us increase ad full reads by 50%;\n ⁃ Just how crucial the right training target is;\n ⁃ And some new challenges that lie before us.\nWant to teach ML algorithms how to make money? Come join us to discuss how we do it at Zen.\""
+    },
+    {
+      "timeStart": "13:00",
+      "lang": "Ru",
+      "speakers": [
+        "AlexanderEfremenkov"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #3, 3d floor",
+      "title": "Cross-platform in 2019: C++ as an antagonist in a progressive world",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Mobile",
+      "timeEnd": "13:50",
+      "description": "\"To date, the cross-platform development ecosystem has a sufficient number of frameworks for mobile\nplatforms: Flutter, Kotlin Native, React Native, Xamarin, Cordova.\nBut there are those technologies that receive less attention, one of which is C ++.\nIn this session, we will talk about what kind of compromise each of the approaches has,\nsee how the C ++ developer lives on mobile platforms in 2019 and how to avoid troubles when\ndeveloping in this language.\""
+    },
+    {
+      "timeStart": "13:00",
+      "lang": "",
+      "speakers": [
+        "TBA"
+      ],
+      "talkLevelBadge": "",
+      "location": "Canteen",
+      "title": "Lunch",
+      "date": "2019-11-30",
+      "talkTypeBadge": "DevOps",
+      "timeEnd": "13:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "14:00",
+      "lang": "Ru",
+      "speakers": [
+        "AlexeyRodionov"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Big room, 2nd floor",
+      "title": "PWA/TWA Uncensored",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Web",
+      "timeEnd": "14:50",
+      "description": "\"Nobody tell about drawbacks and problems at tech conferences and product presentations.\n\nI’ll tell about problems that we encountered in our startup “GdeZerno” (“Uber” for grain trucks) while developing, launching and operating in production for more than 2 years the first in Russia commercial Progressive Web App (PWA) and Trusted Web Activity (TWA), built entirely out of Web Components using Google Polymer (and later Google LitElement) on front-end and Google Firebase (and later Prisma GraphQL) on back-end, how we have solved these problems, and how eventually have had an impact on the Web platform and GraphQL ecosystem.\""
+    },
+    {
+      "timeStart": "14:00",
+      "lang": "",
+      "speakers": [
+        "TBA"
+      ],
+      "talkLevelBadge": "",
+      "location": "Canteen",
+      "title": "Lunch",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Mobile",
+      "timeEnd": "14:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "14:00",
+      "lang": "",
+      "speakers": [
+        "TBA"
+      ],
+      "talkLevelBadge": "",
+      "location": "Canteen",
+      "title": "Lunch",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Data Science",
+      "timeEnd": "14:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "14:00",
+      "lang": "En",
+      "speakers": [
+        "LukaKladaric"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #1, 2nd floor",
+      "title": "The platform is dead, long live the platform",
+      "date": "2019-11-30",
+      "talkTypeBadge": "DevOps",
+      "timeEnd": "14:50",
+      "description": "\"Out with the old, in with the new. Replacing a functioning platform with shiny containerized automated goodness.\n\nWhen companies evolve, their tech stacks need to as well. But sometimes you realize every single part of the machine needs evolving, and you're better off scrapping the entire thing.\n\nZero downtime migration from a legacy stack based on Jenkins, Ansible, Icinga, HAproxy, nginx, uwsgi, pypi, and Tomcat to a new one based on Travis, Docker, CloudFormation and ECS/Fargate with assorted tech debt solved on the way there.\n\nA high level overview of current tech, leaning towards the \"serverless\" trend by having 0 self-managed resources (\"classic servers\"). Talk will focus on AWS offerings but is applicable to most of the popular public clouds.\n\nIt's basically a rich man's Heroku, with all the flexibility you might possibly need, while avoiding scary tech like Kubernetes which nobody wants to really learn how to manage properly.\""
+    },
+    {
+      "timeStart": "15:00",
+      "lang": "En",
+      "speakers": [
+        "RamónGuijarro"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Big room, 2nd floor",
+      "title": "You might not need classes",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Web",
+      "timeEnd": "15:50",
+      "description": "\"Classes in JavaScript are problematic in a few important ways that many people are still not aware of, and they don't really have much advantages over alternative patterns based on just functions. Let's show the audience how to simplify their codebases by taking advantage of function composition!\n\nMore than three years later, the introduction of classes to the ECMAScript standard is still a controversial topic. Brought over from popular classical object-oriented languages, they've not only been argued an unnecessary feature for JavaScript, but their usage can become actually harmful very easily. In this talk we'll take a look at the potential issues and pitfalls of using classes, like the need for context binding of methods, and suggest alternative patterns that are conceptually simpler, easier to work with, safer to use, more idiomatic, require less code and are actually more powerful.\""
+    },
+    {
+      "timeStart": "15:00",
+      "lang": "Ru",
+      "speakers": [
+        "IvanKomarov"
+      ],
+      "talkLevelBadge": "Beginner",
+      "location": "13th floor",
+      "title": "How to become a Data Scientist: guide for developer, scientist, student.",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Data Science",
+      "timeEnd": "15:50",
+      "description": "В наше время, со всех сторон мы слышим о машинном обучении (и ИИ). Многие уже работают дата саентистами, другие думают о том, как ими стать. Попробую ответить на вопросы: А стоит ли? О чем это действительно? Как сделать переход? На примерах нашей 3-летней истории в ЦФТ."
+    },
+    {
+      "timeStart": "15:00",
+      "lang": "",
+      "speakers": [
+        "TBA"
+      ],
+      "talkLevelBadge": "",
+      "location": "Room #3, 3d floor",
+      "title": "TBA",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Mobile",
+      "timeEnd": "15:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "15:00",
+      "lang": "Ru",
+      "speakers": [
+        "DmitriiToloknov"
+      ],
+      "talkLevelBadge": "Beginner",
+      "location": "Room #1, 2nd floor",
+      "title": "Version control for microservices",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Backend",
+      "timeEnd": "15:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "16:00",
+      "lang": "En",
+      "speakers": [
+        "JaniEväkallio"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Big room, 2nd floor",
+      "title": "To be announced",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Hype",
+      "timeEnd": "16:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "16:00",
+      "lang": "En",
+      "speakers": [
+        "IgnatKorchagin"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Big room, 2nd floor",
+      "title": "The definitive guide to make software fail on ARM64",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Web",
+      "timeEnd": "16:50",
+      "description": "\"Adopting a second CPU architecture into x86-only infrastructure can be a challenging task: not only you have to find the right hardware and to learn how to properly provision it, but you also need to port the whole software stack, which was probably developed and improved for a number of years without having this second architecture in mind.\n\nAnd even though you might think that all the components of your stack are written in a cross-platform architecture agnostic language (like Go or Java), there are still many ways they can fail on a secondary architecture after porting. This presentation describes the issues we encountered, when porting our software to ARM64 and provides some advice for developers on how to avoid them, when writing new code.\""
+    },
+    {
+      "timeStart": "16:00",
+      "lang": "En",
+      "speakers": [
+        "AlexanderGoncharenko"
+      ],
+      "talkLevelBadge": "Advanced",
+      "location": "13th floor",
+      "title": "Neural Architecture Search in a small company",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Data Science",
+      "timeEnd": "16:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "16:00",
+      "lang": "Ru",
+      "speakers": [
+        "IlyaShcherbak"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #3, 3d floor",
+      "title": "WebRTC Internals",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Backend",
+      "timeEnd": "16:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "17:00",
+      "lang": "En",
+      "speakers": [
+        "AdrianBolonio"
+      ],
+      "talkLevelBadge": "Advanced",
+      "location": "Big room, 2nd floor",
+      "title": "Testing Web Accessibility",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Web",
+      "timeEnd": "17:50",
+      "description": "\"When we develop a new web application, we often put a lot of work on the design, on making it beautiful and usable. In other words, we want our web app to be effective, efficient, and satisfying for the user. But a lot of times we don’t think about the user experience for people with disabilities, including people with age-related impairments.\n\nFor the web, accessibility (a11y ) means that people with disabilities can perceive, understand, navigate, and interact with websites and tools, and that they can contribute equally without barriers.” (Source: W3C - Web Accessibility Initiative). Our role as frontend and web developers is to create clear interfaces to make people understand and care about data, independently of their disabilities or impairments, but what we, developers, often forget is to ensure that the code we write follows the Web Content Accessibility Guidelines (WCAG), and the only way to achieve that is testing, either manual or automated. \\r\\n\\r\\nAutomated web a11y tests can free up our QA team from manual testing every part of our application…but…they can’t automatically, and magically, make our site accessible.\\r\\n\\r\\nWe should use automated a11y tests as one step of a larger testing process. Don’t forget that only 20% to 50% of all accessibility issues can automatically be detected.\\r\\n\\r\\nI will show you some testing tools, libraries and techniques to increase the a11y test coverage of your code with a simple React application example.\""
+    },
+    {
+      "timeStart": "17:00",
+      "lang": "Ru",
+      "speakers": [
+        "EkaterinaLoschinina"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "13th floor",
+      "title": "How to build a hippy trap",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Hype",
+      "timeEnd": "17:50",
+      "description": "Take one musician, one practitioner in the ancient art of Japanese rope bondage, a haptic VR entrepreneur and a couple of software engineers. Stir in a shared passion for art, and sprinkle with dust. This is the story of how we created one of the most loved \\\"playa\\\" installations at a European Burning Man event in 2019 – a new kind of spatial musical instrument allowing the audience to play a desert symphony on a rope art piece. In my talk, you'll come along on our creative journey from idea (+ blood, sweat and tears), to technical implementation. I'll then show you how you can contribute your own desert performance to the project (with just a few lines of Javascript!)."
+    },
+    {
+      "timeStart": "17:00",
+      "lang": "Ru",
+      "speakers": [
+        "NatalyaLukashevich"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #1, 2nd floor",
+      "title": "Automated methods for building taxonomies from texts",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Data Science",
+      "timeEnd": "17:50",
+      "description": "\"Для повышения качества автоматической обработки текстов часто нужно использовать знания: лексические (синонимы, антонимы и др.), знания о мире или о конкретной предметной области. \nДля представления таких знаний вручную создаются специализированные компьютерные ресурсы: таксономии,\nонтологии, тезаурусы, при этом часто возникает вопрос, насколько можно автоматизировать извлечение знаний из текстовых коллекций.\n\nВ докладе будут рассмотрены известные лексико-семантические ресурсы для автоматической обработки текстов, а также будут описаны различные тестирования и их результаты по автоматическому извлечению родо-видовых (таксономических) отношений из текстовых коллекций.\"\""
+    },
+    {
+      "timeStart": "17:00",
+      "lang": "Ru",
+      "speakers": [
+        "LesovskyAlexey"
+      ],
+      "talkLevelBadge": "Advanced",
+      "location": "Room #3, 3d floor",
+      "title": "Patroni failure stories, or How to crash your PostgreSQL",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Backend",
+      "timeEnd": "17:50",
+      "description": "\"Main aim of Patroni is providing High Availability for PostgreSQL. But Patroni is just a template, but not a silver bullet (that is mentioned in the Patroni's documentation).\n\nAt first glance, get Patroni in test lab, you can see how is this practical tool and how easy it manages our attempts to destroy a streaming cluster. But on practice, in production environment, things sometimes are not going ideally as they go in test lab.\n\nIn this talk I'm trying to summarize all our failure stories and tell you in details about what problems we are faced when using Patroni in our clients. In this talk you will know about exact problems that might occurr and how to manage them. Also you will know about how to preoperly configure Patroni (and perhaps Postgres), and of course you will get clear understanding about how to observe problems and eliminate them asap.\""
+    },
+    {
+      "timeStart": "18:00",
+      "lang": "En",
+      "speakers": [
+        "LukaKladaric"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Big room, 2nd floor",
+      "title": "The other side of webapp security",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Web",
+      "timeEnd": "18:50",
+      "description": "\"Protecting your backend and database is fine, but what about the users? How do we protect them, their browsers and computers?\n\nThere's a lot of focus on backend security, best practices, how to store passwords, how to do password recovery, encryption at rest, etc. But to exploit any of those someone needs to target a website specifically, and put a lot of effort into it.\n\nBut the users of those websites are exposed every day, and they access them through various insecure networks, including hotel and coffee shop wifi.\n\nIn this talk we will cover the usual suspects: HTTPS and certificates, but also talk about some newer tech like HSTS and CSP.\""
+    },
+    {
+      "timeStart": "18:00",
+      "lang": "Ru",
+      "speakers": [
+        "AnnaMosolova"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #1, 2nd floor",
+      "title": "From SentEval to SentEvalRu: semantic sentence vectors for problems of analysis of Russian texts and an automatic quality evaluation",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Data Science",
+      "timeEnd": "18:50",
+      "description": "Сейчас почти во всех задачах, связанных с NLP, используются эмбеддинги. В своём докладе расскажу о популярных видах эмбеддингов и о том, какие языковые модели есть для русского языка. Также обсудим задачи, на которых можно оценивать их качество, и посмотрим, какие векторные представления работают лучше на каждой из них."
+    },
+    {
+      "timeStart": "18:00",
+      "lang": "En",
+      "speakers": [
+        "BaruchSadogursky"
+      ],
+      "talkLevelBadge": "Beginner",
+      "location": "13th floor",
+      "title": "How to sell yourself for fun and profit",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Hype",
+      "timeEnd": "18:50",
+      "description": "\"As it would seem, why does a developer need a personal brand? Just sitting, no one touching, fixing the primus. The less they know him, the less they touch them, right?\n\nBut here's the thing: according to researches, the best way to raise wage is to change the work. And during the interview publicity and personal brand are half the battle! And when it comes to hiring good personal brand management will give 100 points ahead to any cookies with ping-pong.\n\nIn this talk, Baruch will tell how it happened that you know who Baruch is, how this knowledge is converted to profit for Baruch and how you can repeat his success.\""
+    },
+    {
+      "timeStart": "18:00",
+      "lang": "Ru",
+      "speakers": [
+        "DenisYuriev"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #3, 3d floor",
+      "title": "GraphQL. Moving from REST in a large project",
+      "date": "2019-11-30",
+      "talkTypeBadge": "Backend",
+      "timeEnd": "18:50",
+      "description": "\"REST is almost a synonym for the web API. But it is not always possible to do RESTful API quickly and nicely looking inside and out. Especially on the the first try. We launched a new project recently and we learnt it the hard way.\nThen we decided not to waste second version on refactoring and rewriting same architecture but to dig deeper. What if REST itself is not fully suited for our team?\nThis is when we took a look at the GraphQL. And very much liked it!\nThis will be a talk about differences in approaches between REST and GraphQL and how hard it is to move from one to another.\""
+    },
+    {
+      "timeStart": "19:20",
+      "lang": "",
+      "speakers": [
+        "TBA"
+      ],
+      "talkLevelBadge": "",
+      "location": "Canteen",
+      "title": "Afterparty",
+      "date": "2019-11-30",
+      "talkTypeBadge": "",
+      "timeEnd": "21:30",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "10:00",
+      "lang": "En",
+      "speakers": [
+        "VsevolodHrechaniuk"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Big room, 2nd floor",
+      "title": "Cloud Composer: simplifying complex workflows with a powerful orchestrator on GCP",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Web",
+      "timeEnd": "10:50",
+      "description": "\"We'll dive deep into what's under the hood. Then unleash its immense power by looking at what it can do:\n- internals: celery, redis, GKE, GCS, SQL\n- concepts: DAG, operator, workflow, operator, hook, xcom and more\n- customizing: custom operators, custom sensors, custom deployment\n- GCP perks: private IPs, VPC native, KubernetesPodOperator, Stackdriver\n- use cases: CICD, infrastructure, ETL, ML workflow and complex data pipelines\n- integrations: terraform, slack, etc\""
+    },
+    {
+      "timeStart": "10:00",
+      "lang": "Ru",
+      "speakers": [
+        "VladGrozin"
+      ],
+      "talkLevelBadge": "Beginner",
+      "location": "13th floor",
+      "title": "Roles and positions in Data Science. How to join?",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Data Science",
+      "timeEnd": "10:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "10:00",
+      "lang": "Ru",
+      "speakers": [
+        "IgorDultsev"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #1, 2nd floor",
+      "title": "When there are too many microservices, or why did we make our chat solution a monolith",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Backend",
+      "timeEnd": "10:50",
+      "description": "Sometimes you look at something, and say to yourself: oh, this is too much. This happened to us too. We decided to do something about it. The result was not what we expected. By the way, monolyth is a lie :D"
+    },
+    {
+      "timeStart": "10:00",
+      "lang": "Ru",
+      "speakers": [
+        "NarekChanglian"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #3, 3d floor",
+      "title": "Accessibility in a banking application: how we make Rocketbank convenient for everyone",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Mobile",
+      "timeEnd": "10:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "11:00",
+      "lang": "En",
+      "speakers": [
+        "YogeshOjha"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #3, 3d floor",
+      "title": "How not to suck at mobile app development?",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Mobile",
+      "timeEnd": "11:50",
+      "description": "\"With every year, there is an exponential increase in the number of mobile apps being developed. With this rate of growth, it is the right time to talk about security in mobile apps! In rare cases, developers think about security but on the other hand, consumers think that developers would have taken care of it. We need to teach our developers to think about app security upfront and include security in their development lifecycle. And this is important to retain the consumer trust if you want to stay in this game for long.\n\nMobile application security is one of the primary concerns as the data residing within the app could put users at risk. Every single developer needs to have a basic understanding of application security. You need to understand why it is important not to log sensitive data. You need to understand why it is important to use proguard to avoid reverse engineering. And you must rethink about insecure data storage and much more.\n\nIf you are a developer who develops a mobile application, chances are that you would have never thought about security. You must have been busy all the time thinking about UI/UX, cool shiny buttons, and whatnot! But very often we forget to think about security. If you don't work with mobile app security on a daily basis, chances are that you might feel stuck when it comes to dealing with sensitive data that cannot be exposed to third parties.\n\nCommon vulnerabilities in mobile applications include architectural flaws, platform weakness, isolation and permission problems and of course application weakness! This talk is targeted to developers who are already developing mobile apps for Android or maybe plan to. This talk, however, assumes that you know how to build and deploy mobile apps.\n\nThe real question is, how do enterprise or individuals avoid security challenges to protect their mobile apps? Enterprise and Indie developers of today must comprehend the next-generation cybersecurity best practices to safeguard the mobile apps and data within. And this talk will give you a brief idea about how to implement secure practices for your next mobile apps, or if you have any, already, implementing them on your existing mobile app!\n\nThere is a number of best practices for your mobile app security, this talk will focus on a few of them. So after the end of this talk, you would be in the position to implement some of them and make your app more trustworthy. This talk will teach you how to ensure that you are writing a vulnerability-free code!\n\nThis talk will give a brief insight on the OWASP top 10 mobile app vulnerabilities and how not to have them inside your next billion $$$ app.\""
+    },
+    {
+      "timeStart": "11:00",
+      "lang": "En",
+      "speakers": [
+        "SebastianDaschner"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #1, 2nd floor",
+      "title": "Cloud Native, Service-Meshed Java Enterprise With Istio",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Backend",
+      "timeEnd": "11:50",
+      "description": "\"In enterprise software, we see more and more of the cloud native technologies, especially container orchestration and service meshes, emerging and slowly taking over the market. Developers are facing the challenge which technology to choose to implement microservices for a cloud native setting. Java Enterprise has been used for software solutions for a long time and its APIs are well-established in the ecosystem. However, is it possible to develop cloud native, service-meshed Java Enterprise applications that fulfill concerns such as scalability, resiliency, and telemetry — in an effective, manageable way?\n\nThis session shows how to implement service-meshed applications using Jakarta EE 8 and MicroProfile. We will develop a mesh of microservices, managed by Kubernetes and Istio. We’ll see why especially the Java Enterprise approach fits the concepts behind container orchestration and service meshes well. The session also includes how to integrate the required cross-cutting concerns, such as monitoring, tracing, or resiliency into our applications, where developers have to actively integrate technology themselves and where the platform supports us. Especially the cooperation between Jakarta EE and MicroProfile provides a potent technology. All of the time will be spent live-coding while explaining the concepts and solutions.\""
+    },
+    {
+      "timeStart": "11:00",
+      "lang": "En",
+      "speakers": [
+        "MikołajDobrucki"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Big room, 2nd floor",
+      "title": "Getting more with design tokens",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Web",
+      "timeEnd": "11:50",
+      "description": "Design tokens, a mysterious remedy for the most severe pains of working with design systems. I will show the basic use cases of design tokens and perform a live demo of syncing designs with code in real time. I will also share all the resources necessary to start using this concept in your own work."
+    },
+    {
+      "timeStart": "11:00",
+      "lang": "En",
+      "speakers": [
+        "PabloPerezDeAngelis"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "13th floor",
+      "title": "SEO: de Marketing a Data Science.",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Data Science",
+      "timeEnd": "11:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "12:00",
+      "lang": "Ru",
+      "speakers": [
+        "PetrKozlov"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #3, 3d floor",
+      "title": "Dispelling DiffUtil magic ",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Mobile",
+      "timeEnd": "12:50",
+      "description": "\"Each Android developer used RecyclerView to display lists in their Apps, and each faced with the problem of updating the data in the adapter until the magic class DiffUtil appeared in 2016. I will explain “on fingers” how it actually works and try to dispel its magic.\n\nIf you already read my article on the habr, there is still a lot of new information about DiffUtil. On my meetup you will learn not only about Myers algorithm, but about everything occurs after it: how DiffUtil searchs movements, how change flags works, how changes apply to the Adapter using these flags.\""
+    },
+    {
+      "timeStart": "12:00",
+      "lang": "Ru",
+      "speakers": [
+        "SergeyPugachev"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Big room, 2nd floor",
+      "title": "Serverless and Functions as a Service (FaaS). How to build modern backend for PWA and mobile apps",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Web",
+      "timeEnd": "12:50",
+      "description": "In this talk Sergey will show how to use serverless approach to implement modern backends for web and mobile apps. We will consider FaaS (functions as a service) based on AWS Lambda and GraphQL APIs with AWS AppSync. Sergey will show how to use popular frameworks for AWS Lambda to do fast prototyping and achieve unlimited scalability."
+    },
+    {
+      "timeStart": "12:00",
+      "lang": "Ru",
+      "speakers": [
+        "LesovskyAlexey"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #1, 2nd floor",
+      "title": "Top mistakes made by developers when working with PostgreSQL",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Backend",
+      "timeEnd": "12:50",
+      "description": "\"My colleagues and I often see how development teams, whether consciously or not, keep making the same mistakes when working with Postgres. In this talk I’m going to review  different scenarios and “fixes\" made by developers who consider them as solutions though, in reality, may lead to bigger problems later on.\n\nHere is what we will discuss: - problems caused by the lack of planning and monitoring and by default configurations - most painful anti-patterns related to schema design - problems with idle transactions that often become a surprise -  we will also look into custom queue systems, HTAP workload, \"big data\" and Docker/Kubernetes. Тhis talk will be interesting to those involved in software development.\""
+    },
+    {
+      "timeStart": "12:00",
+      "lang": "",
+      "speakers": [
+        "TBA"
+      ],
+      "talkLevelBadge": "",
+      "location": "13th floor",
+      "title": "TBA",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Data Science",
+      "timeEnd": "12:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "13:00",
+      "lang": "",
+      "speakers": [
+        "TBA"
+      ],
+      "talkLevelBadge": "",
+      "location": "Room #3, 3d floor",
+      "title": "Lunch",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Mobile",
+      "timeEnd": "13:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "13:00",
+      "lang": "En",
+      "speakers": [
+        "AarushiKansal"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Big room, 2nd floor",
+      "title": "Go for frontend",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Web",
+      "timeEnd": "13:50",
+      "description": "\"Ever wanted to use Go to unleash your creative side? \\nThis talk is for developers who want to write front end code purely in Go, using web assembly and vugu.\nIt introduces the audience to creating beautiful, exciting apps and graphics, all running in the browser.\nAfter attending JSConf and seeing all the amazing, creative presentations, I decided it was time to use Go in a more creative manner.\nIn this talk I introduce frontend development for Go and how to make beautiful components and websites purely in Go. The technologies touched on will be WebAssembly and vugu.\nI will also demo one of my personal projects built purely in Go, running completely in the browser.\nThis talk also briefly touches on contributing to vugu, an experimental front end framework. \"\""
+    },
+    {
+      "timeStart": "13:00",
+      "lang": "",
+      "speakers": [
+        "TBA"
+      ],
+      "talkLevelBadge": "",
+      "location": "Room #1, 2nd floor",
+      "title": "Lunch",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Backend",
+      "timeEnd": "13:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "13:00",
+      "lang": "Ru",
+      "speakers": [
+        "NikitaAshikhmin"
+      ],
+      "talkLevelBadge": "Beginner",
+      "location": "13th floor",
+      "title": "Spark и Zeppelin; What's in your code? Exploring the code with Big Data",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Data Science",
+      "timeEnd": "13:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "14:00",
+      "lang": "En",
+      "speakers": [
+        "TomKozacinski"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #3, 3d floor",
+      "title": "No Bulls*it Freelancer",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Hype",
+      "timeEnd": "14:50",
+      "description": "I am a product designer by day and Stand up comedian by night. But more importantly - I am a freelancer, and now is the time you should be one too. This is a talk where I will share how I was growing and managing two parallel careers. What is it actually like to work for yourself and what to do with this newfound freedom? I talk about growing as professional, share all the good and the bad from my experience. How I do it, and is it all worth it."
+    },
+    {
+      "timeStart": "14:00",
+      "lang": "",
+      "speakers": [
+        "TBA"
+      ],
+      "talkLevelBadge": "",
+      "location": "Big room, 2nd floor",
+      "title": "Lunch",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Web",
+      "timeEnd": "14:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "14:00",
+      "lang": "En",
+      "speakers": [
+        "RafałLeszko"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #1, 2nd floor",
+      "title": "Where is my cache? Architectural patterns for caching microservices by example",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Backend",
+      "timeEnd": "14:50",
+      "description": "Everybody knows that we need a cache, but where exactly to put it? Inside your application or as a layer in front of it? In the container or outside the container? In the era of Cloud and Microservices these questions get even more complicated. In this session, I'll present different architectural patterns for distributed caching: Embedded, Client-Server, (Kubernetes) Sidecar, and Proxy Caching."
+    },
+    {
+      "timeStart": "14:00",
+      "lang": "",
+      "speakers": [
+        "TBA"
+      ],
+      "talkLevelBadge": "",
+      "location": "13th floor",
+      "title": "Lunch",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Data Science",
+      "timeEnd": "14:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "15:00",
+      "lang": "Ru",
+      "speakers": [
+        "VladimirDaron"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #1, 2nd floor",
+      "title": "Smart Railways with GCP and IoT",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Hype",
+      "timeEnd": "15:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "15:00",
+      "lang": "Ru",
+      "speakers": [
+        "AlexeyGusev"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Big room, 2nd floor",
+      "title": "Video in web from flash to MSE or writing your own video-player",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Web",
+      "timeEnd": "15:50",
+      "description": "\"I will talk about evolution of video related APIs from Flash to MSE, about nowaday approaches and APIs used by the majority of video hosting services and technologies you need to know if you want to create your own video streaming service.\n\nMost emphasis will be placed on modern video streaming formats and principles of their work, as well as on browser APIs that are needed to support them. We will also cover cover video-specific analytics and quality assessment.\""
+    },
+    {
+      "timeStart": "15:00",
+      "lang": "Ru",
+      "speakers": [
+        "KonstantinOsipov"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #1, 2nd floor",
+      "title": "What makes a database unique: Tarantool's best fist.",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Backend",
+      "timeEnd": "15:50",
+      "description": "\"Patterns and anti-patterns exist not only in programming,\nbut also in working with data, and databases... When an application is data-intensive, a mistake in data modelling can lead to huge costs in production, and put a roadblock in the path of further feature development.\nMany programmers start their journey into data modelling with  relational databases, which provide a centralized worldview of  data. The learned assumptions and paradigms that come with RDBMS carry over from project to project, throughout their career.\n\nOpinion wars happen regularly, but they rarely lead to people using the best tool for the job.\n\nIn this talk I will present a few patterns for data modelling, showcasing the areas in which Tarantool, a feature-rich, fast data platform, uniquely shines: processing highly volatile, highly connected, transactional data.\""
+    },
+    {
+      "timeStart": "15:00",
+      "lang": "Ru",
+      "speakers": [
+        "YuriBaburov"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "13th floor",
+      "title": "SpaCy-RU: fast neural networks for text analysis",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Data Science",
+      "timeEnd": "15:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "16:00",
+      "lang": "En",
+      "speakers": [
+        "VasudevMaduri"
+      ],
+      "talkLevelBadge": "Advanced",
+      "location": "Room #1, 2nd floor",
+      "title": "Managing ML Lifecycle - DevOps for ML",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Hype",
+      "timeEnd": "16:50",
+      "description": "\"Creating an ML model is just a starting point. To bring it into production, you need to solve various real-world issues, such as building a pipeline for continuous training, automated validation of the model, scalable serving infrastructure, and supporting multiple environments in increasingly common multi-cloud setups. In this session, we will learn the concept of \"ML Ops\" (DevOps for ML) and how to leverage TFX, Kubeflow Pipelines to build and maintain production quality ML systems.\nIn this session we will also see a demo of Creating a model, deploying and moving the model over multiple environments.\n\n\"It is my impression that the world of deep learning research is starting to plateau. What's booming: deploying DL to real-world problems.\"\n-François Chollet\""
+    },
+    {
+      "timeStart": "16:00",
+      "lang": "Ru",
+      "speakers": [
+        "OlegKorovin"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Big room, 2nd floor",
+      "title": "The Holy Graal: running React in Java",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Web",
+      "timeEnd": "16:50",
+      "description": "The story about our migration path. How we started to use modern JS stack in Java world with GraalVM runtime."
+    },
+    {
+      "timeStart": "16:00",
+      "lang": "En",
+      "speakers": [
+        "SrdjanVranac"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #1, 2nd floor",
+      "title": "Distributed Domain Destruction",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Backend",
+      "timeEnd": "16:50",
+      "description": "For the last couple of years I have been building, maintaining and fighting a projects that make use of distributed computing, parallel processing, message brokers, queues and workers. This is one of those \"from thetrenches\" talks, where I will regale you with tales about the series of unfortunate events that may happen as your application grows in complexity. Tales like disk space fluctuations, importance of logging, NoSql problems, restructuring your order of execution in code for performance gains, short sighted albeit logical architectural decisions that will cost you in the long run."
+    },
+    {
+      "timeStart": "16:00",
+      "lang": "Ru",
+      "speakers": [
+        "ValentinMalykh"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "13th floor",
+      "title": "Zero- and Few-Shot Learning in Natural Language Understanding",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Data Science",
+      "timeEnd": "16:50",
+      "description": "\"Here, at Huawei, we are solving different real-world tasks. Our team spends most of our time on dialog systems.\nOne of the problems we are solving is how to choose the right skill in each situation. And more interestingly, what if we have (almost) no training set? Traditionally, for such tasks TF-IDF and word2vec are used. We use currently more and more popular BERT and its successors. We are integrating our developed solution into large-scale dialog system, which arises some new challenges. In my talk I'll try to describe to you our approach and demonstrate its results on open data. On it we are achieving 80% vs 40% for traditional approaches. Hopefully, you could get these ideas and apply them to your problem solution.\""
+    },
+    {
+      "timeStart": "17:00",
+      "lang": "En",
+      "speakers": [
+        "DawidPacia"
+      ],
+      "talkLevelBadge": "Advanced",
+      "location": "Room #3, 3d floor",
+      "title": "Build your own Internet of Continuously Delivered Things",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Hype",
+      "timeEnd": "17:50",
+      "description": "\"We all know that a modern tester should have both analytical skills and basic knowledge of programming as well as soft skills. If we add experience in agile software development, we get an almost perfect candidate in the eyes of employers. However, what if one day your employer says:\\r\\n\\r\\n+ Our sensor has been recently working too short.\n+ Please, do the battery life tests. \n+ Current functionalities of our product will be enhanced soon. Please, write some tests for the embedded platform.\n+ Clients are complaining about our system working too slowly. Please, prepare the testing environment for performance tests of microprocessor memory.\n\nNowadays, everything tends to deliver high-quality products in a continuous way. How to test an application for your customer with so many tools, equipment, and ecosystems combining HW, FW, mobile devices and complex backend architecture? Over the past few years, I've already gone three times through the transformation from \\\"QA Team\\\" thinking to \\\"Dev/TestOps\\\" mindset in IoT companies.\n\nDuring my presentation, I'll show you how to implement a multi-node system (HW/FW/SW) in the environment of Continuous Integration and (finally) Continuous Delivery. I will start with a big picture of a centralized automated test environment. After that, all components will be separately analyzed to present possible solutions and implementations. I will also show how to involve manual testers and let actively participate in the environment evolution. All of that supported by Jenkins tool, Python language, BDD approach and some HW knowledge.\""
+    },
+    {
+      "timeStart": "17:00",
+      "lang": "En",
+      "speakers": [
+        "IgnatKorchagin"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Big room, 2nd floor",
+      "title": "Paste Wars: fighting for copypaste freedom",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Web",
+      "timeEnd": "17:50",
+      "description": "\"No one knows where it came from, but it is spreading like a disease: blocking paste functionality on online password forms. There is no explanation, no research, just a typical “this is for your security…”. And yet, all this is in the age of almost defeating the threat of weak and reused passwords by adopting password managers.\n\nSome try to fight back: Firefox, for example, allows users to disable the block by completely turning off paste notifications. However, this is like cracking a nut with a sledgehammer, as there may be many other legitimate use-cases for sites to handle paste events.\\r\\n\\r\\nThere are also some browser plugins: they go as far as scanning the whole DOM and removing the blocker code or injecting passwords directly into the page. But these come not without risks: unveiling passwords and full browsing history to third-party applications (which, by the way, have full network access). Also, users are limited in the choice of their browser, as these plugins are often not portable.\\r\\n\\r\\nIt feels a bit wrong when a website (or anyone else) decides what users can or cannot do on their computers. However, there is hope: instead of fighting paste blockers, why not just provide the password in the “natural” way they expect—by typing it in. But the typing will be done by the user’s operating system, rather than the user himself: the OS can automatically type a very complex password from any password manager for you. And paste blockers can never block it—because this is the only way they should allow the password to get in, by design. These ‘Paste Wars’ are over: introducing a simple tool, which can type in complex passwords and restore users’ rights to paste!\""
+    },
+    {
+      "timeStart": "17:00",
+      "lang": "Ru",
+      "speakers": [
+        "FedorSavkin"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #1, 2nd floor",
+      "title": "Code as literature.",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Backend",
+      "timeEnd": "17:50",
+      "description": "\"A lot of people spoke and wrote a lot about how to write good code. Thousands of them, maybe even hundreds of thousands. \n\nBut there is a huge piece of dark matter - why is it hard to read some programs? The work fast, well-formatted and commonly use best practices, but it is hard to read them, physiologically (and also psychologically) hard. In most cases, when you want to stop reading the code and take some break it is not procrastination but someone's bad-done job. \n\nIt sounds obvious that the code that we write should be comfortable to read and a lot of those best practices try to take this into account, but the focused on different things. Most of the programmers didn`t even think about their code as literature.\n\nSo, let's think about it. Why someone writes code like Fridrich Nitsche and why someone writes like Kenneth Grahame? Why some code as sophisticated as tax law and other as clear as a fifth-grade essay? Why some code makes you cry before you find a bug and why some code logical as subway map(well... some subway maps)?\n\nEncephalograms to make you feel your self as a scientist included.\""
+    },
+    {
+      "timeStart": "17:00",
+      "lang": "Ru",
+      "speakers": [
+        "AndreyFilchenkov"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "13th floor",
+      "title": "Automatic Machine Learning: State of the art",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Data Science",
+      "timeEnd": "17:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "18:00",
+      "lang": "En",
+      "speakers": [
+        "JamesBirnie"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Room #3, 3d floor",
+      "title": "Why we should be scared of Shor's Algorithm right now",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Hype",
+      "timeEnd": "18:50",
+      "description": "\"Quantum computers are real and are starting to be used for some interesting applications. As well as many applications in finance, organic chemistry and complex dynamical systems there is an ugly elephant in the room. That elephant is Shor's algorithm.\n\nGiven a sufficiently powerful quantum computer, Shor's algorithm can factorise numbers in polynomial time. I have implemented it on a quantum simulator and it has been used on real quantum computers. When quantum computers are powerful enough nearly all the encryption techniques that we currently rely on will be useless.\n\nThe time is still far off when RSA will be useless but I will share some compelling reasons why we need to be taking action right now to avoid potential catastrophe in the not too distant future.\""
+    },
+    {
+      "timeStart": "18:00",
+      "lang": "Ru",
+      "speakers": [
+        "IgorSheko"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Big room, 2nd floor",
+      "title": "Vue.js v3. The new generation of front-end frameworks.",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Web",
+      "timeEnd": "18:50",
+      "description": "Just imagine a whole new world with fast responsive and lightweight web applications you've ever seen. Front end developers don't only write code for% frameworkName% but also know what they do and how it works. A lot of them. Lets discuss how the new front-end generation brings part of this magic world to reality."
+    },
+    {
+      "timeStart": "18:00",
+      "lang": "",
+      "speakers": [
+        "TBA"
+      ],
+      "talkLevelBadge": "",
+      "location": "Room #1, 2nd floor",
+      "title": "TBA",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Backend",
+      "timeEnd": "18:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "18:00",
+      "lang": "Ru",
+      "speakers": [
+        "KseniaYakil"
+      ],
+      "talkLevelBadge": "Intermediate",
+      "location": "Big room, 2nd floor",
+      "title": "Integration Tests in Go",
+      "date": "2019-12-01",
+      "talkTypeBadge": "Backend",
+      "timeEnd": "18:50",
+      "description": "TBA"
+    },
+    {
+      "timeStart": "19:00",
+      "lang": "",
+      "speakers": [
+        "TBA"
+      ],
+      "talkLevelBadge": "",
+      "location": "Big room, 2nd floor",
+      "title": "Closing",
+      "date": "2019-12-01",
+      "talkTypeBadge": "",
+      "timeEnd": "19:20",
+      "description": "TBA"
+    }
+  ]

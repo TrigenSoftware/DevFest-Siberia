@@ -981,5 +981,39 @@
 		"talkTime": "",
 		"talkTypeBadge": "Intermediate",
 		"talkLevelBadge": "AI"
+	},
+	{
+		"id": "NarekChanglian",
+		"type": "mobile",
+		"promo": true,
+		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1573142000/speakers/iqgm2npp8zhkhg17kh1o.jpg",
+		"firstname": "Narek",
+		"lastname": "Changlian",
+		"description": "Lead Mobile Developer at RocketBank",
+		"location": "🇷🇺",
+		"contacts": {
+		},
+		"text": "Narek Changlyan is a Lead Mobile Developer at Rocketbank. Previously a Web-developer but nowadays he creates the apps of any difficulty with React Native.",
+		"talkTitle": "Accessibility in a banking application: how we make Rocketbank convenient for everyone",
+		"talkLocation": "",
+		"talkTime": "",
+		"talkTypeBadge": "Intermediate",
+		"talkLevelBadge": "Mobile"
+	},
+	{
+		"id": "JamesBirnie",
+		"type": "hype",
+		"promo": true,
+		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1569428936/speakers/Ignat_aoseif.jpg",
+		"firstname": "James",
+		"lastname": "Birnie",
+		"description": "Lead Consultant at ThoughtWorks",
+		"location": "🇬🇧",
+		"text": "James has worked in software since the 1990s when TDD was something you studied but never did and Agile and Lean were words used to describe athletes. In 2005 James joined a startup and worked through a huge expansion, at least three major rewrites and an Agile transformation. In 2015 he joined ThoughtWorks and now every day is different - often surprising sometimes disappointing and occasionally delightful",
+		"talkLocation": "",
+		"talkTime": "",
+		"talkTitle": "Why we should be scared of Shor's Algorithm right now",
+		"talkTypeBadge": "Hype",
+		"talkLevelBadge": "Intermediate"
 	}
 ]
