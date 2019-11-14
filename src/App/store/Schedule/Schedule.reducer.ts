@@ -7,6 +7,9 @@ import {
 import Favorite from '~/models/Favorite';
 import Reservation from '~/models/Reservation';
 import {
+	VariantScheduleItemType
+} from '~/components/Schedule';
+import {
 	ScheduleState,
 	ISetScheduleAction,
 	ISetFavoritesAction,
@@ -35,7 +38,7 @@ export class ScheduleReducer extends Reducer {
 		const favoritesIds = favorites.map(favorite => favorite.lectureId);
 		const schedule = state.schedule.map((item) => {
 
-			if (item.type === 'talk') {
+			if (item.type === VariantScheduleItemType.Talk) {
 
 				if (favoritesIds.includes(item.id)) {
 					return {
@@ -68,7 +71,7 @@ export class ScheduleReducer extends Reducer {
 		const reservationsIds = reservations.map(reservation => reservation.workshopId);
 		const schedule = state.schedule.map((item) => {
 
-			if (item.type === 'workshop') {
+			if (item.type === VariantScheduleItemType.Workshop) {
 
 				if (reservationsIds.includes(item.id)) {
 					return {
