@@ -116,13 +116,30 @@
 				]
 			},
 			{
+				"title": "Gold partners",
+				"items": [
+					{
+						"type": "gold",
+						"href": "https://rocketbank.ru/?utm_source=gdg-siberia.com&utm_medium=logo&utm_campaign=devfest",
+						"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_300/v1573702727/partners/c5820wfbuycxsdjydhsl.png",
+						"title": "Rocketbank"
+					}
+				]
+			},
+			{
 				"title": "Silver partners",
 				"items": [
 					{
 						"type": "silver",
 						"href": "https://arqatech.com/?utm=dfSiberia19",
-						"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1572372361/partners/an3zf9lfhj4hdvwkpoik.svg",
+						"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_160/v1572372361/partners/an3zf9lfhj4hdvwkpoik.svg",
 						"title": "ARQA Technologies"
+					},
+					{
+						"type": "silver",
+						"href": "https://selectel.ru/en/?utm=dfSiberia19",
+						"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_160/v1573702831/partners/bize9pwewdrj9kyd8ncn.svg",
+						"title": "Selectel"
 					}
 				]
 			},
@@ -131,10 +148,16 @@
 				"items": [
 					{
 						"type": "info",
-						"href": "https://androiddev.apptractor.ru/",
+						"href": "https://androiddev.apptractor.ru/?utm=dfSiberia",
 						"src": "https://res.cloudinary.com/trigen/image/upload/v1565857597/devfest2019/android.svg",
 						"title": "Android Dev Podcast",
 						"text": "Android Dev - is a podcast about apps development for Android and anything around. Our guests - experienced developers, who knows Android since version 1.5"
+					},
+					{
+						"type": "info",
+						"href": "http://it-events.com/?utm=dfSiberia",
+						"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_200/v1573703193/partners/lwy5ywivyb4vgqrvq7ax.png",
+						"title": "IT Events"
 					}
 				]
 			}
