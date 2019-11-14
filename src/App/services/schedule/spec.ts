@@ -50,7 +50,7 @@ describe('API', () => {
 
 				const fetchReservationsResponse = await fetchReservations();
 
-				expect(fetchReservationsResponse.size).toEqual(3);
+				expect(fetchReservationsResponse.size).toEqual(4);
 			});
 		});
 	});
