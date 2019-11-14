@@ -100,7 +100,8 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 			reservations
 		} = this.state;
 		const addedReservation = Reservation({
-			workshopId
+			workshopId,
+			status: 'reserved'
 		});
 		const updatedReservations = reservations.push(addedReservation);
 

@@ -10,7 +10,7 @@ const count = 3;
 function mockReservation() {
 	return Reservation({
 		workshopId: faker.lorem.word(),
-		status:     faker.lorem.word()
+		status:     'reserved'
 	});
 }
 

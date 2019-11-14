@@ -35,21 +35,17 @@ export class ScheduleReducer extends Reducer {
 			return state;
 		}
 
-		const favoritesIds = favorites.map(favorite => favorite.lectureId);
 		const schedule = state.schedule.map((item) => {
 
 			if (item.type === VariantScheduleItemType.Talk) {
 
-				if (favoritesIds.includes(item.id)) {
-					return {
-						...item,
-						favorite: true
-					};
+				if (favorites.some(_ => _.lectureId === item.id)) {
+					item.favorite = true;
+					return item;
 				}
-				return {
-					...item,
-					favorite: false
-				};
+
+				item.favorite = false;
+				return item;
 			}
 			return item;
 		});
@@ -68,21 +64,17 @@ export class ScheduleReducer extends Reducer {
 			return state;
 		}
 
-		const reservationsIds = reservations.map(reservation => reservation.workshopId);
 		const schedule = state.schedule.map((item) => {
 
 			if (item.type === VariantScheduleItemType.Workshop) {
 
-				if (reservationsIds.includes(item.id)) {
-					return {
-						...item,
-						workshop: true
-					};
+				if (reservations.some(_ => _.workshopId === item.id && _.status === 'reserved')) {
+					item.workshop = true;
+					return item;
 				}
-				return {
-					...item,
-					workshop: false
-				};
+
+				item.workshop = false;
+				return item;
 			}
 			return item;
 		});

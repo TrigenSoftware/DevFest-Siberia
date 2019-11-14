@@ -50,6 +50,7 @@ export const actions = {
 			user
 		} = store.actions;
 
+		schedule.fetchSchedule();
 		schedule.fetchFavorites();
 		schedule.fetchReservations();
 		user.setToken('token');

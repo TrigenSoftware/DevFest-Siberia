@@ -12,8 +12,7 @@ import ScheduleContainer from './Schedule';
 
 export function mapStateToProps({ schedule }: State) {
 	return {
-		schedule:  schedule.schedule,
-		favorites: schedule.favorites
+		schedule: schedule.schedule
 	};
 }
 
