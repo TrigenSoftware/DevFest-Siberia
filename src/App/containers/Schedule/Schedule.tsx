@@ -222,7 +222,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		);
 	}
 
-	componentDidMount() {
+	async componentDidMount() {
 
 		const {
 			history,
@@ -242,9 +242,9 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		} = this;
 		const date = new URLSearchParams(search).get('date');
 
-		fetchSchedule();
-		fetchFavorites();
-		fetchReservations();
+		await fetchSchedule();
+		await fetchFavorites();
+		await fetchReservations();
 
 		if (!date) {
 

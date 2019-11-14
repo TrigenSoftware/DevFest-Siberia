@@ -73,6 +73,11 @@ export class ScheduleReducer extends Reducer {
 					return item;
 				}
 
+				if (reservations.some(_ => _.workshopId === item.id && _.status === 'disabled')) {
+					item.workshopDisabled = true;
+					return item;
+				}
+
 				item.workshop = false;
 				return item;
 			}

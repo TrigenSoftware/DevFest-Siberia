@@ -63,6 +63,7 @@
 	},
 	{
 		"id": "ivZ4manCEMebayE4fk68Y",
+		"type": "workshop",
 		"date": "2019-11-29",
 		"timeStart": "15:00",
 		"timeEnd": "16:00",
@@ -73,7 +74,8 @@
 		"talkLevelBadge": "Intermediate",
 		"speakers": [
 			"TBA"
-		]
+		],
+		"workshopDisabledLabel": "Closed"
 	},
 	{
 		"id": "5GPEf2LsELcnhYbhpfNzN",
