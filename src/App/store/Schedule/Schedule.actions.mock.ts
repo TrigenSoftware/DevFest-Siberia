@@ -2,6 +2,7 @@
 import * as scheduleService from '~/services/schedule';
 import * as scheduleServiceMock from '~/services/schedule/mock';
 import Favorite from '~/models/Favorite';
+import Reservation from '~/models/Reservation';
 import {
 	IActions,
 	State
@@ -10,9 +11,7 @@ import {
 	SetSchedulePayload,
 	ScheduleState,
 	SetFavoritesPayload,
-	SetReservationsPayload,
-	SetReservationPayload,
-	RemoveReservationPayload
+	SetReservationsPayload
 } from './Schedule.types';
 import {
 	ScheduleReducer
@@ -95,17 +94,31 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 		this.setReservations(reservations);
 	}
 
-	async addReservation() {
-		console.log('addReservation');
+	async addReservation(workshopId: string) {
+
+		const {
+			reservations
+		} = this.state;
+		const addedReservation = Reservation({
+			workshopId
+		});
+		const updatedReservations = reservations.push(addedReservation);
+
+		this.setReservations(updatedReservations);
 	}
 
-	async deleteReservation() {
-		console.log('deleteReservation');
+	async deleteReservation(workshopId: string) {
+
+		const {
+			reservations
+		} = this.state;
+		const reservationIndex = reservations.findIndex(_ => _.workshopId === workshopId);
+		const updatedReservations = reservations.delete(reservationIndex);
+
+		this.setReservations(updatedReservations);
 	}
 
 	abstract setSchedule(payload: SetSchedulePayload);
 	abstract setFavorites(payload: SetFavoritesPayload);
 	abstract setReservations(payload: SetReservationsPayload);
-	abstract setReservation(payload: SetReservationPayload);
-	abstract removeReservation(payload: RemoveReservationPayload);
 }

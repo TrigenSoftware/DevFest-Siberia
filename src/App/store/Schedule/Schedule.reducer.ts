@@ -10,9 +10,7 @@ import {
 	ScheduleState,
 	ISetScheduleAction,
 	ISetFavoritesAction,
-	ISetReservationsAction,
-	ISetReservationAction,
-	IRemoveReservationAction
+	ISetReservationsAction
 } from './Schedule.types';
 
 export class ScheduleReducer extends Reducer {
@@ -67,39 +65,28 @@ export class ScheduleReducer extends Reducer {
 			return state;
 		}
 
-		return state.set(
-			'reservations',
-			reservations
-		);
-	}
+		const reservationsIds = reservations.map(reservation => reservation.workshopId);
+		const schedule = state.schedule.map((item) => {
 
-	setReservation(state: ScheduleState, { payload }: ISetReservationAction) {
+			if (item.type === 'workshop') {
 
-		const reservation = payload && Reservation(payload);
+				if (reservationsIds.includes(item.id)) {
+					return {
+						...item,
+						workshop: true
+					};
+				}
+				return {
+					...item,
+					workshop: false
+				};
+			}
+			return item;
+		});
 
-		return state.set(
-			'reservations',
-			state.reservations.push(reservation)
-		);
-	}
-
-	removeReservation(state: ScheduleState, { payload }: IRemoveReservationAction) {
-
-		const {
-			workshopId
-		} = payload;
-		const {
-			reservations
-		} = state;
-		const reservationIndex = reservations.findIndex(_ => _.workshopId === workshopId);
-
-		if (!~reservationIndex) {
-			return state;
-		}
-
-		return state.set(
-			'reservations',
-			state.reservations.delete(reservationIndex)
-		);
+		return state.merge({
+			reservations,
+			schedule
+		});
 	}
 }

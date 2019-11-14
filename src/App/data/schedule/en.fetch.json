@@ -163,6 +163,7 @@
 	},
 	{
 		"id": "_E2dH3GQCSGAxIHCwYE_q",
+		"type": "workshop",
 		"date": "2019-11-30",
 		"timeStart": "11:00",
 		"timeEnd": "11:50",
@@ -173,10 +174,14 @@
 		"talkLevelBadge": "Intermediate",
 		"speakers": [
 			"LauraCarvajal"
-		]
+		],
+		"workshopAddLabel": "Хочу пойти",
+		"workshopLabel": "Я иду! :)",
+		"workshopDeleteLabel": "Не пойти"
 	},
 	{
 		"id": "3bFCNDoISnij3DG7S9xG6",
+		"type": "workshop",
 		"date": "2019-11-30",
 		"timeStart": "11:00",
 		"timeEnd": "11:50",
@@ -187,7 +192,10 @@
 		"talkLevelBadge": "Intermediate",
 		"speakers": [
 			"VladimirDaron"
-		]
+		],
+		"workshopAddLabel": "Хочу пойти",
+		"workshopLabel": "Я иду! :)",
+		"workshopDeleteLabel": "Не пойти"
 	},
 	{
 		"id": "Fd-P93vm_-4x_yLSntkxC",

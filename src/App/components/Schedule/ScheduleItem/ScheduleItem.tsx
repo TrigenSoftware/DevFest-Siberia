@@ -77,8 +77,8 @@ interface ISelfProps extends RouteComponentProps {
 	workshopDisabled?: boolean;
 	workshopDisabledLabel?: string;
 	onFavoriteClick?(lectureId: string, isFavorite: boolean, event: MouseEvent<HTMLButtonElement>);
-	onWorkshopAddClick?(lectureId: string, event: MouseEvent<HTMLButtonElement>);
-	onWorkshopDeleteClick?(event: MouseEvent<HTMLButtonElement>);
+	onWorkshopAddClick?(workshopId: string, event: MouseEvent<HTMLButtonElement>);
+	onWorkshopDeleteClick?(workshopId: string, event: MouseEvent<HTMLButtonElement>);
 }
 
 export type IScheduleItemProps = CombinePropsAndAttributes<
@@ -336,11 +336,12 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 	private onWorkshopDeleteClick(event: MouseEvent<HTMLButtonElement>) {
 
 		const {
-			onWorkshopDeleteClick
+			onWorkshopDeleteClick,
+			id
 		} = this.props;
 
 		if (typeof onWorkshopDeleteClick === 'function') {
-			onWorkshopDeleteClick(event);
+			onWorkshopDeleteClick(id, event);
 		}
 	}
 

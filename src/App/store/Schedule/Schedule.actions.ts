@@ -9,9 +9,7 @@ import {
 	SetSchedulePayload,
 	ScheduleState,
 	SetFavoritesPayload,
-	SetReservationsPayload,
-	SetReservationPayload,
-	RemoveReservationPayload
+	SetReservationsPayload
 } from './Schedule.types';
 import {
 	ScheduleReducer
@@ -112,9 +110,11 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 
 		try {
 
-			const reservation = await scheduleService.addReservation(workshopId);
+			await scheduleService.addReservation(workshopId);
 
-			this.setReservation(reservation);
+			const reservations = await scheduleService.fetchReservations();
+
+			this.setReservations(reservations);
 
 		} catch (error) {
 			this.checkToken(error);
@@ -125,9 +125,11 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 
 		try {
 
-			const reservation = await scheduleService.deleteReservation(workshopId);
+			await scheduleService.deleteReservation(workshopId);
 
-			this.removeReservation(reservation);
+			const reservations = await scheduleService.fetchReservations();
+
+			this.setReservations(reservations);
 
 		} catch (error) {
 			this.checkToken(error);
@@ -149,6 +151,4 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 	abstract setSchedule(payload: SetSchedulePayload);
 	abstract setFavorites(payload: SetFavoritesPayload);
 	abstract setReservations(payload: SetReservationsPayload);
-	abstract setReservation(payload: SetReservationPayload);
-	abstract removeReservation(payload: RemoveReservationPayload);
 }
