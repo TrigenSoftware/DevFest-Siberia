@@ -105,7 +105,7 @@
 		"description": "Software developer at Tier",
 		"location": "🇩🇪",
 		"contacts": {
-		"twitter":"https://twitter.com/aarushikansal"
+			"twitter": "https://twitter.com/aarushikansal"
 		},
 		"text": "Aarushi is a software developer currently working at Tier, previously Deliveroo and ThoughtWorks. She codes in primarily Go and a bit of Python. Passionate about increasing diversity in tech and spends a lot of her time mentoring underrepresented groups.",
 		"talkTitle": "Go for frontend",
@@ -417,8 +417,7 @@
 		"lastname": "Hrechaniuk",
 		"description": "Tech consultant at Avalon Solutions AB",
 		"location": "🇳🇴",
-		"contacts": {
-		},
+		"contacts": {},
 		"text": "Straight from sunny Norway 🇳🇴, Vsevolod is always curious to know as well as to share what tech has to offer. Have been here and there, from working in investment banks to building startups, eventually ending up being cloud-savvy. Currently engaged with a Google premier partner to deliver cutting-edge cloud solutions to leading local players. Some of my current involvements are: bringing 500 containers to the cloud, building sophisticated AI-stack for the local agricultural giant.",
 		"talkTitle": "Cloud Composer: simplifying complex workflows with a powerful orchestrator on GCP",
 		"talkLocation": "",
@@ -647,9 +646,7 @@
 		"lastname": "Komarov",
 		"description": "Chief Data Scientist at CFT",
 		"location": "🇷🇺",
-		"contacts": {
-
-		},
+		"contacts": {},
 		"text": "",
 		"talkTitle": "",
 		"talkLocation": "",
@@ -932,9 +929,7 @@
 		"lastname": "Yakil",
 		"description": "Backend C/Go developer at Badoo",
 		"location": "🇷🇺",
-		"contacts": {
-			
-		},
+		"contacts": {},
 		"text": "",
 		"talkTitle": "Integration Tests in Go",
 		"talkLocation": "",
@@ -991,8 +986,7 @@
 		"lastname": "Changlian",
 		"description": "Lead Mobile Developer at RocketBank",
 		"location": "🇷🇺",
-		"contacts": {
-		},
+		"contacts": {},
 		"text": "Narek Changlyan is a Lead Mobile Developer at Rocketbank. Previously a Web-developer but nowadays he creates the apps of any difficulty with React Native.",
 		"talkTitle": "Accessibility in a banking application: how we make Rocketbank convenient for everyone",
 		"talkLocation": "",
