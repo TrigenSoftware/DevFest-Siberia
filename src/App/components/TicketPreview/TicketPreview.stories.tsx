@@ -9,6 +9,7 @@ import TicketPreview, {
 	TickerPreviewPrimary,
 	TickerPreviewGroup,
 	TickerPreviewField,
+	TicketPreviewAfterparty,
 	TicketPreviewAuxiliary,
 	TicketPreviewPrice,
 	TicketPreviewSale,
@@ -68,6 +69,41 @@ storiesOf('Components|TicketPreview', module)
 						/>
 					</TickerPreviewGroup>
 				</TickerPreviewPrimary>
+				<TicketPreviewAuxiliary>
+					Один Билет
+				</TicketPreviewAuxiliary>
+			</TicketPreview>
+		)
+	)
+	.add(
+		'with afterparty',
+		() => (
+			<TicketPreview>
+				<TickerPreviewPrimary>
+					<TickerPreviewGroup>
+						<TickerPreviewField
+							label='Номер Билета'
+							value='ID 123123'
+						/>
+						<TickerPreviewField
+							label='Для'
+							value='Jhon Doe'
+						/>
+					</TickerPreviewGroup>
+					<TickerPreviewGroup>
+						<TickerPreviewField
+							label='Где'
+							value='Academ, 18'
+						/>
+						<TickerPreviewField
+							label='Когда'
+							value='29 ноября – 1 декабря'
+						/>
+					</TickerPreviewGroup>
+				</TickerPreviewPrimary>
+				<TicketPreviewAfterparty>
+					Аффтепати
+				</TicketPreviewAfterparty>
 				<TicketPreviewAuxiliary>
 					Один Билет
 				</TicketPreviewAuxiliary>
