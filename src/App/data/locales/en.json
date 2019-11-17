@@ -57,7 +57,7 @@
 				"price": "5000₽",
 				"sale": "Standard conference pass",
 				"priceType": "Our main batch of tickets for anyone and everyone",
-				"description": "Available until 15th November",
+				"description": "Available until 20th November",
 				"soldOut": false
 			},
 			{
@@ -65,7 +65,7 @@
 				"price": "7999₽",
 				"sale": "Last chance conference pass",
 				"priceType": "Last chance to grab tickets for our awesome conference",
-				"description": "On sale from 16th November",
+				"description": "On sale from 21th November",
 				"soldOut": false
 			}
 		]
