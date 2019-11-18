@@ -76,7 +76,10 @@ export class CabinetContainer extends Component<IProps> {
 					}) => (
 						<ToggleNavLink
 							key={type}
-							to={type === 'ticket' ? '/cabinet' : `/cabinet?type=${type}`}
+							to={type === 'ticket'
+								? '/cabinet'
+								: `/cabinet?type=${type}`
+							}
 						>
 							{label}
 						</ToggleNavLink>
