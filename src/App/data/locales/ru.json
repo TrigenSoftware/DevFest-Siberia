@@ -276,7 +276,8 @@
 				"lastname": "Жаров",
 				"description": "Координатор & PR",
 				"contacts": {
-					"telegram": "https://t.me/kirzharov"
+					"telegram": "https://t.me/kirzharov",
+					"email": "mailto:kirx@gdg-siberia.com"
 				}
 			},
 			{
