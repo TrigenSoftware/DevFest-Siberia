@@ -12,9 +12,13 @@ import {
 	__x
 } from 'i18n-for-react';
 import {
-	getLocalizedPath
+	getLocalizedPath,
+	getCabinetTypes
 } from '~/services/i18n';
 import Section from '~/components/Section';
+import ToggleNav, {
+	ToggleNavLink
+} from '~/components/ToggleNav';
 import TicketPreview, {
 	TickerPreviewPrimary,
 	TickerPreviewGroup,
@@ -45,14 +49,12 @@ export class CabinetContainer extends Component<IProps> {
 
 		const {
 			className,
-			user,
-			order,
 			isLogged
 		} = this.props;
 		const {
 			context
 		} = this;
-		const __ = context.bind(tr);
+		const nav = getCabinetTypes(context);
 
 		if (!isLogged()) {
 			return null;
@@ -65,10 +67,79 @@ export class CabinetContainer extends Component<IProps> {
 				<h2>
 					{__x`cabinet.title`}
 				</h2>
+				<ToggleNav
+					className={classes.nav}
+				>
+					{nav.map(({
+						type,
+						label
+					}) => (
+						<ToggleNavLink
+							key={type}
+							to={type === 'ticket' ? '/cabinet' : `/cabinet?type=${type}`}
+						>
+							{label}
+						</ToggleNavLink>
+					))}
+				</ToggleNav>
 				<article
 					className={classes.article}
 				>
-					{user && order && order.items.map(({
+					{this.renderContent()}
+				</article>
+			</Section>
+		);
+	}
+
+	componentDidMount() {
+
+		const {
+			history,
+			fetchProfile,
+			fetchOrders,
+			isLogged
+		} = this.props;
+		const {
+			context
+		} = this;
+
+		if (isLogged()) {
+			fetchOrders();
+			fetchProfile();
+		} else {
+			history.push(getLocalizedPath(context, '/'));
+		}
+	}
+
+	private renderContent() {
+
+		const {
+			user,
+			order,
+			location: {
+				search
+			}
+		} = this.props;
+		const {
+			context
+		} = this;
+		const __ = context.bind(tr);
+		const type = new URLSearchParams(search).get('type');
+
+		switch (type) {
+
+			case 'favorites':
+				return (
+					<div>Empty</div>
+				);
+
+			case 'workshops':
+				return (
+					<div>Empty</div>
+				);
+
+			default:
+				return (user && order && order.items.map(({
 						ticket,
 						productName
 					}) => (
@@ -102,29 +173,8 @@ export class CabinetContainer extends Component<IProps> {
 								{productName}
 							</TicketPreviewAuxiliary>
 						</TicketPreview>
-					))}
-				</article>
-			</Section>
-		);
-	}
-
-	componentDidMount() {
-
-		const {
-			history,
-			fetchProfile,
-			fetchOrders,
-			isLogged
-		} = this.props;
-		const {
-			context
-		} = this;
-
-		if (isLogged()) {
-			fetchOrders();
-			fetchProfile();
-		} else {
-			history.push(getLocalizedPath(context, '/'));
+					)
+				));
 		}
 	}
 }

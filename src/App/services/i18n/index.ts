@@ -184,6 +184,22 @@ export function getTickets(context: I18nConfig): any[] {
 }
 
 /**
+ * Get cabinet types from locales.
+ */
+export function getCabinetTypes(context: I18nConfig): any[] {
+
+	const {
+		cabinet: {
+			nav
+		}
+	} = context.getCatalog(
+		context.getLocale()
+	) as any;
+
+	return nav;
+}
+
+/**
  * Get share links from locales.
  */
 export function getShareLinks(context: I18nConfig): Record<string, string> {

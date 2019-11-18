@@ -437,7 +437,21 @@
 		"location": "Academpark, Nikolaeva St 12, Novosibirsk",
 		"when": "When",
 		"date": "29 November – 1 December",
-		"ticket": "One ticket"
+		"ticket": "One ticket",
+		"nav": [
+			{
+				"type": "favorites",
+				"label": "Избранные доклады"
+			},
+			{
+				"type": "workshops",
+				"label": "Воркшопы"
+			},
+			{
+				"type": "ticket",
+				"label": "Билет"
+			}
+		]
 	},
 	"login": {
 		"title": "SIGN IN",
