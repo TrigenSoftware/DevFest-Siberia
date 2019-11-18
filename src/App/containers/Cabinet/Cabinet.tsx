@@ -15,6 +15,9 @@ import {
 	getLocalizedPath,
 	getCabinetTypes
 } from '~/services/i18n';
+import {
+	addSearchParams
+} from '~/blocks/common/router';
 import Section from '~/components/Section';
 import ToggleNav, {
 	ToggleNavLink
@@ -48,6 +51,9 @@ export class CabinetContainer extends Component<IProps> {
 	render() {
 
 		const {
+			location: {
+				search
+			},
 			className,
 			isLogged
 		} = this.props;
@@ -76,10 +82,11 @@ export class CabinetContainer extends Component<IProps> {
 					}) => (
 						<ToggleNavLink
 							key={type}
-							to={type === 'ticket'
-								? '/cabinet'
-								: `/cabinet?type=${type}`
-							}
+							to={type === 'ticket' ? '/cabinet' : {
+								search: addSearchParams(search, {
+									type
+								})
+							}}
 						>
 							{label}
 						</ToggleNavLink>
@@ -142,7 +149,8 @@ export class CabinetContainer extends Component<IProps> {
 				);
 
 			default:
-				return (user && order && order.items.map(({
+				return (
+					user && order && order.items.map(({
 						ticket,
 						productName
 					}) => (
