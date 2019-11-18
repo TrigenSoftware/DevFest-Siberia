@@ -441,7 +441,7 @@
 		"ticket": "One ticket"
 	},
 	"login": {
-		"title": "SIGN IN",
+		"title": "Sign In",
 		"email": "E-mail",
 		"emailPlaceholder": "Enter e-mail",
 		"password": "Password",

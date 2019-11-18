@@ -441,7 +441,7 @@
 		"ticket": "Один билет"
 	},
 	"login": {
-		"title": "ВОЙТИ",
+		"title": "Войти",
 		"email": "Почта",
 		"emailPlaceholder": "Введите почту",
 		"password": "Пароль",
