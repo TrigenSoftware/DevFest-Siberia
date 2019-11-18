@@ -19,7 +19,7 @@
 		"share": "Поделиться",
 		"closeShare": "Закрыть",
 		"links": {
-			"twitter": "https://twitter.com/intent/tweet?screen_name=@GDGNsk&text=С любовью - #DevFestSiberia2019, одна из самых больших коммюнити-движимых конференций в России этой зимой: {SITE_URL}",
+			"twitter": "https://twitter.com/intent/tweet?screen_name=@GDGNsk&text=С любовью - #DevFestSiberia2019, одна из самых больших коммьюнити-движимых конференций в России этой зимой: {SITE_URL}",
 			"facebook": "https://www.facebook.com/dialog/share?app_id=1326280610740824&display=popup&href={SITE_URL}&redirect_uri={SITE_URL}",
 			"vk": "https://vk.com/share.php?url={SITE_URL}",
 			"telegram": "https://telegram.me/share/url?url={SITE_URL}&text=DevFest Siberia 2019"
