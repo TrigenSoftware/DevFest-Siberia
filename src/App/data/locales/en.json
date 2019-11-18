@@ -441,15 +441,15 @@
 		"nav": [
 			{
 				"type": "favorites",
-				"label": "Избранные доклады"
+				"label": "Favorites"
 			},
 			{
 				"type": "workshops",
-				"label": "Воркшопы"
+				"label": "Workshops"
 			},
 			{
 				"type": "ticket",
-				"label": "Билет"
+				"label": "Ticket"
 			}
 		]
 	},
