@@ -1,3 +1,4 @@
+/* tslint:disable:no-magic-numbers */
 import React, {
 	HTMLAttributes,
 	Component
@@ -46,6 +47,7 @@ export default class PartnerCard extends Component<IProps> {
 			text,
 			...props
 		} = this.props;
+		const url = String(to);
 
 		return (
 			<article
@@ -73,7 +75,7 @@ export default class PartnerCard extends Component<IProps> {
 						to={to}
 						target='_blank'
 					>
-						{to}
+						{url.substr(0, url.indexOf('/', url.indexOf('//') + 2))}
 					</Link>
 					{text && (
 						<p
