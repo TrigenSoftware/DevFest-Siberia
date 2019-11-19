@@ -9,6 +9,7 @@ export function userFromResponseData(responseData) {
 		firstname: responseData.firstName,
 		lastname:  responseData.lastName,
 		company:   responseData.company,
+		position:   responseData.position,
 		city:      responseData.city
 	});
 }

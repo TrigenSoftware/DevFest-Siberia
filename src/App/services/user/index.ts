@@ -49,6 +49,33 @@ export async function buy({
 	return redirectUrl;
 }
 
+export async function buyAfterpartyTicket({ locale }) {
+
+	logger.debug('buyAfterpartyTicket');
+
+	const profile = await fetchProfile();
+
+	logger.debug('buyAfterpartyTicket', 'Response:', profile);
+
+	const {
+		data: buyAfterpartyData
+	} = await client.post('auth/register', {
+		termsAccepted:  true,
+		paymentRequest: {
+			locale,
+			products: [{
+				productRef: 'afterparty'
+			}],
+			promocode: ''
+		},
+		...profile.toJS()
+	});
+
+	logger.debug('buyAfterpartyTicket', 'Response:', buyAfterpartyData);
+
+	console.log(buyAfterpartyData);
+}
+
 export async function login(email: string, password: string) {
 
 	logger.debug('login', 'Input email:', email);

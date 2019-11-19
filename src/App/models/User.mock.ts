@@ -7,6 +7,7 @@ const user = User({
 	firstname: faker.name.firstName(),
 	lastname:  faker.name.lastName(),
 	company:   faker.lorem.word(),
+	position:  faker.lorem.word(),
 	city:      faker.lorem.word()
 });
 
