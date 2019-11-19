@@ -41,6 +41,7 @@
 }
 
 .link {
+	word-break: break-word;
 	font-size: 17px;
 }
 
