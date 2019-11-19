@@ -103,13 +103,13 @@
 				"items": [
 					{
 						"type": "general",
-						"href": "https://academpark.com",
+						"href": "https://academpark.com/",
 						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/academpark.svg",
 						"title": "Academpark"
 					},
 					{
 						"type": "general",
-						"href": "https://developers.google.com",
+						"href": "https://developers.google.com/",
 						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/google.svg",
 						"title": "Google"
 					}
