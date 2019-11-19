@@ -8,6 +8,9 @@ import {
 import {
 	__x
 } from 'i18n-for-react';
+import {
+	getLocaleFromPath
+} from '~/services/i18n';
 import SpeakerModal from '~/blocks/SpeakerModal';
 import Section from '~/components/Section';
 import ProfileCard from '~/components/ProfileCard';
@@ -92,11 +95,14 @@ export class SpeakersPromo extends Component<IProps> {
 
 	componentDidMount() {
 
+		console.log('mount');
+
 		const {
 			fetchSpeakers
 		} = this.props;
+		const lang = getLocaleFromPath(location.pathname);
 
-		fetchSpeakers();
+		fetchSpeakers(lang);
 	}
 }
 

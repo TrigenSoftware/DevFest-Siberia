@@ -1,8 +1,5 @@
 import createLogger from '~/services/logger';
 import * as scheduleService from '~/services/schedule';
-import {
-	getLocaleFromPath
-} from '~/services/i18n';
 import client from './client';
 import enSpeakers from '~/data/speakers/en.fetch.json?fetch';
 import ruSpeakers from '~/data/speakers/ru.fetch.json?fetch';
@@ -10,7 +7,7 @@ import ruSpeakers from '~/data/speakers/ru.fetch.json?fetch';
 const logger = createLogger('App::services::speakers');
 
 export async function fetch({
-	lang = getLocaleFromPath(location.pathname),
+	lang = 'en',
 	skipSchedule = false
 } = {}) {
 
