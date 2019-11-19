@@ -22,14 +22,14 @@ async function loadSpeakersSegmentConfig() {
 	};
 }
 
-async function loadInitialSpeakersData(store: Store<any, IActions>) {
+async function loadInitialSpeakersData(store: Store<any, IActions>, context: Record<string, any>) {
 
 	const {
 		fetchSpeakers
 	} = store.actions.speakers;
-	const lang = getLocaleFromPath(location.pathname);
+	const locale = context.locale || getLocaleFromPath(location.pathname);
 
-	await fetchSpeakers(lang);
+	await fetchSpeakers(locale);
 }
 
 export function registerSpeakersSegment(store: Store) {

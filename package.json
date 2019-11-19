@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.6.3",
-    "@flexis/redux": "^1.1.0-alpha",
+    "@flexis/redux": "^1.2.0-alpha",
     "@flexis/ui": "^1.1.1-beta",
     "@loadable/component": "^5.10.2",
     "@stylable/runtime": "^2.1.3",
