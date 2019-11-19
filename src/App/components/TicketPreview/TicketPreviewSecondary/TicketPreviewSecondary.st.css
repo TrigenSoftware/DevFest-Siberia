@@ -13,7 +13,6 @@
 }
 
 .root {
-	display: flex;
 	padding: rel(7, 24) rel(7, 24) rel(7, 24) 0;
 	writing-mode: vertical-rl;
 	text-orientation: mixed;

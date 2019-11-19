@@ -9,7 +9,7 @@ import TicketPreview, {
 	TickerPreviewPrimary,
 	TickerPreviewGroup,
 	TickerPreviewField,
-	TicketPreviewAfterparty,
+	TicketPreviewSecondary,
 	TicketPreviewAuxiliary,
 	TicketPreviewPrice,
 	TicketPreviewSale,
@@ -101,9 +101,9 @@ storiesOf('Components|TicketPreview', module)
 						/>
 					</TickerPreviewGroup>
 				</TickerPreviewPrimary>
-				<TicketPreviewAfterparty>
+				<TicketPreviewSecondary>
 					Аффтепати
-				</TicketPreviewAfterparty>
+				</TicketPreviewSecondary>
 				<TicketPreviewAuxiliary>
 					Один Билет
 				</TicketPreviewAuxiliary>

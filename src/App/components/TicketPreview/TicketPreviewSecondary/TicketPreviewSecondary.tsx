@@ -5,11 +5,11 @@ import React, {
 import {
 	style,
 	classes
-} from './TicketPreviewAfterparty.st.css';
+} from './TicketPreviewSecondary.st.css';
 
-export type ITicketPreviewAfterpartyProps = HTMLAttributes<HTMLElement>;
+export type ITicketPreviewSecondaryProps = HTMLAttributes<HTMLElement>;
 
-export class TicketPreviewAfterparty extends Component<ITicketPreviewAfterpartyProps> {
+export class TicketPreviewSecondary extends Component<ITicketPreviewSecondaryProps> {
 
 	render() {
 
