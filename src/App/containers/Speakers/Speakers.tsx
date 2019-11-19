@@ -10,7 +10,6 @@ import {
 	__x
 } from 'i18n-for-react';
 import {
-	getLocaleFromPath,
 	getTalkTypes
 } from '~/services/i18n';
 import SpeakerModal from '~/blocks/SpeakerModal';
@@ -121,7 +120,10 @@ export class Speakers extends Component<IProps> {
 		const {
 			fetchSpeakers
 		} = this.props;
-		const lang = getLocaleFromPath(location.pathname);
+		const {
+			context
+		} = this;
+		const lang = context.getLocale();
 
 		fetchSpeakers(lang);
 	}

@@ -1,16 +1,15 @@
 /* tslint:disable:no-magic-numbers */
 import React, {
+	ContextType,
 	Component
 } from 'react';
 import {
 	withRouter
 } from 'react-router-dom';
 import {
+	I18nContext,
 	__x
 } from 'i18n-for-react';
-import {
-	getLocaleFromPath
-} from '~/services/i18n';
 import SpeakerModal from '~/blocks/SpeakerModal';
 import Section from '~/components/Section';
 import ProfileCard from '~/components/ProfileCard';
@@ -29,6 +28,10 @@ import {
 } from './SpeakersPromo.st.css';
 
 export class SpeakersPromo extends Component<IProps> {
+
+	static contextType = I18nContext;
+
+	context!: ContextType<typeof I18nContext>;
 
 	render() {
 
@@ -98,7 +101,10 @@ export class SpeakersPromo extends Component<IProps> {
 		const {
 			fetchSpeakers
 		} = this.props;
-		const lang = getLocaleFromPath(location.pathname);
+		const {
+			context
+		} = this;
+		const lang = context.getLocale();
 
 		fetchSpeakers(lang);
 	}
