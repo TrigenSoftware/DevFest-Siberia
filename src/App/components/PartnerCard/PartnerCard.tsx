@@ -47,7 +47,7 @@ export default class PartnerCard extends Component<IProps> {
 			text,
 			...props
 		} = this.props;
-		const url = String(to);
+		const linkLabel = to && String(to).substr(0, String(to).indexOf('/', String(to).indexOf('//') + 2));
 
 		return (
 			<article
@@ -75,7 +75,7 @@ export default class PartnerCard extends Component<IProps> {
 						to={to}
 						target='_blank'
 					>
-						{url.substr(0, url.indexOf('/', url.indexOf('//') + 2))}
+						{linkLabel}
 					</Link>
 					{text && (
 						<p
