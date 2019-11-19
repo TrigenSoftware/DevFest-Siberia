@@ -95,8 +95,6 @@ export class SpeakersPromo extends Component<IProps> {
 
 	componentDidMount() {
 
-		console.log('mount');
-
 		const {
 			fetchSpeakers
 		} = this.props;
