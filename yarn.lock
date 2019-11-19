@@ -1131,10 +1131,10 @@
     vinyl "^2.1.0"
     vinyl-fs "^3.0.3"
 
-"@flexis/redux@^1.1.0-alpha":
-  version "1.1.0-alpha"
-  resolved "https://registry.yarnpkg.com/@flexis/redux/-/redux-1.1.0-alpha.tgz#755e0f042060f2090d70b50b8ec1aa1d59d1b279"
-  integrity sha512-kfbObYD/pBOJVARbkDXV5qu4BaWS3j2gK0HqxyuqV9kaWtEy7U0kFMxRhHDLpQ9CddGkw5eV9t/z3dlPhRRrKA==
+"@flexis/redux@^1.2.0-alpha":
+  version "1.2.0-alpha"
+  resolved "https://registry.yarnpkg.com/@flexis/redux/-/redux-1.2.0-alpha.tgz#1f694ec200a5e3401510134725d101b6ba5ee38d"
+  integrity sha512-eR6HGLrM1W56HtK2eQhssGTbUNrpsiidHLx5J5QiwsZj2wQSRAi8G21NBJRkYSklct6aODUekBGCMdF7nB1PEQ==
   dependencies:
     "@babel/runtime" "^7.5.5"
     "@types/node" "^12.7.2"
