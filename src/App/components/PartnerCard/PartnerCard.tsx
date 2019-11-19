@@ -47,7 +47,8 @@ export default class PartnerCard extends Component<IProps> {
 			text,
 			...props
 		} = this.props;
-		const linkLabel = to && String(to).substr(0, String(to).indexOf('/', String(to).indexOf('//') + 2));
+		const link = to && String(to);
+		const linkLabel = link && link.substr(0, link.indexOf('/', link.indexOf('//') + 2));
 
 		return (
 			<article
