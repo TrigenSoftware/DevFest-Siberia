@@ -18,8 +18,8 @@ export interface IState {
 export interface IProps extends ISectionProps, IScheduleStateProps, ISpeakersStateProps, RouteComponentProps {
 	actionsReady: boolean;
 	datetime?: Date;
-	fetchSchedule();
+	fetchSchedule(lang: string);
 	selectScheduleByType(date: string, type: string): Schedule[];
-	fetchSpeakers();
+	fetchSpeakers(lang: string);
 	selectSpeaker(id: string): Speaker;
 }

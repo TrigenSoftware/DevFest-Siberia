@@ -1,6 +1,9 @@
 // tslint:disable space-in-parens
 import Store from '@flexis/redux';
 import {
+	getLocaleFromPath
+} from '~/services/i18n';
+import {
 	IActions
 } from '../types';
 
@@ -24,8 +27,9 @@ async function loadInitialScheduleData(store: Store<any, IActions>) {
 	const {
 		fetchSchedule
 	} = store.actions.schedule;
+	const lang = getLocaleFromPath(location.pathname);
 
-	await fetchSchedule();
+	await fetchSchedule(lang);
 }
 
 export function registerScheduleSegment(store: Store) {
