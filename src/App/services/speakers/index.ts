@@ -14,6 +14,7 @@ export async function fetch({
 	logger.debug('fetch', 'Input lang:', lang);
 
 	const fetchScheduleTask = !skipSchedule && scheduleService.fetch({
+		lang,
 		skipSpeakers: true
 	});
 	const url = lang === 'en' ? enSpeakers : ruSpeakers;

@@ -14,6 +14,7 @@ export async function fetch({
 	logger.debug('fetch', 'Input lang:', lang);
 
 	const fetchSpeakersTask = !skipSpeakers && speakersService.fetch({
+		lang,
 		skipSchedule: true
 	});
 	const url = lang === 'en' ? enSchedule : ruSchedule;
@@ -71,6 +72,7 @@ function findSpeaker(speakers: any[], id: string) {
 	}
 
 	return {
+		id:          speaker.id,
 		name:        `${speaker.firstname} ${speaker.lastname}`,
 		description: speaker.description
 	};
