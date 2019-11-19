@@ -53,7 +53,7 @@ storiesOf('Components|LoginModal', module)
 					onSubmit={action('submit')}
 				>
 					<LoginModalTitle>
-						SIGN IN
+						Sign in
 					</LoginModalTitle>
 					<FormGroup
 						label='E-mail:'

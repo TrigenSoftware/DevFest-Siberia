@@ -6,70 +6,78 @@
 		"year": "2019"
 	},
 	"header": {
+		"menu": "Меню",
 		"home": "Главная",
-		"team": "Команда",
 		"speakers": "Спикеры",
-		"lang": "En",
+		"schedule": "Расписание",
+		"team": "Команда",
+		"lang": "Ru",
 		"login": "Войти",
-		"logout": "Выход",
-		"profile": "Личный кабинет",
+		"logout": "Выйти",
+		"profile": "Профиль",
 		"buyTicket": "Купить Билет",
 		"share": "Поделиться",
 		"closeShare": "Закрыть",
 		"links": {
-			"twitter": "https://twitter.com/intent/tweet?screen_name=@GDGNsk&text=Spreading the love - #DevFestSiberia2019, the largest community conference in Russia this winter: {SITE_URL}",
+			"twitter": "https://twitter.com/intent/tweet?screen_name=@GDGNsk&text=С любовью - #DevFestSiberia2019, одна из самых больших коммьюнити-движимых конференций в России этой зимой: {SITE_URL}",
 			"facebook": "https://www.facebook.com/dialog/share?app_id=1326280610740824&display=popup&href={SITE_URL}&redirect_uri={SITE_URL}",
 			"vk": "https://vk.com/share.php?url={SITE_URL}",
 			"telegram": "https://telegram.me/share/url?url={SITE_URL}&text=DevFest Siberia 2019"
 		},
-		"confirmMessage": "Спасибо за покупку. Проверьте ваш имейл."
+		"confirmMessage": "Почти готово 🎉 Пожалуйста, проверьте билет и данные для входа в аккаунт в почте."
 	},
 	"facts": {
-		"title": "DevFest Siberia это",
-		"topics": "Доклады",
-		"topicsDescription": "Самые горячие темы этого года от экспертов со всего мира. Секции этого года – Mobile, Frontend, Backend, Blockchaind и прочее и побольше. Созданно с любовью сибирскими разработчиками!",
+		"title": "DevFest Siberia",
+		"topics": "Темы",
+		"topicsDescription": "Mobile, Frontend, Backend, DevOps, Security, Data Science и много других",
 		"workshops": "Воркшопы",
-		"workshopsDescription": "Выделенный день для практических занятий с ведущими экспертами отрасли! Отличный способ попробовать новые технологии, не откладывая на потом!",
+		"workshopsDescription": "Выделенный день для практических занятий с ведущими экспертами индустрии! Отличный способ попробовать новые технологии, не откладывая на потом!",
 		"also": "А также это",
 		"attendees": "<>900+</><>Участников</>Со всей страны",
-		"days": "<>3</><>Дня</>Включая день воркшопов и практических семинаров",
-		"speakers": "<>48+</><>Спикеров</>со всего Мира",
-		"tracks": "<>4</><>Потока</>2880 минут удовольствия"
+		"days": "<>3</><>Дня</>обсуждений и погружения в технологии",
+		"speakers": "<>48+</><>Спикеров</>Со всего Мира",
+		"tracks": "<>4</><>Трека</>Плюс воркшопы и кодлабы"
 	},
 	"tickets": {
 		"contactEmail": "devfest@gdg-siberia.com",
-		"сontact": "Для покупки на юридическое лицо свяжитесь с нами: <>%s</>",
+		"сontact": "Для покупки на юридическое лицо, пожалуйста, напишите нам на почту <>%s</>. Корпоративные билеты включают комиссию 500₽ для обработки.",
 		"buy": "Купить",
 		"sold": "Продано",
 		"items": [
 			{
-				"type": "Early Birds",
-				"price": "5000₽",
-				"sale": "Количество билетов ограниченно",
-				"priceType": "Три дня конференции по специальной цене",
-				"description": "Для тех, кто хочет успеть первым",
+				"type": "Early Bird",
+				"price": "4500₽",
+				"sale": "Для тех, кто планирует все заранее",
+				"priceType": "Ограниченная партия для первых участников :)",
+				"description": "",
 				"soldOut": true
 			},
 			{
-				"type": "General Pass",
-				"price": "6000₽",
-				"sale": "Продажа открыта до 15 ноября",
-				"priceType": "Три дня конференции по стандартной цене",
-				"description": "Для всех",
+				"type": "General Admission",
+				"price": "5000₽",
+				"sale": "Для тех, кто не торопится, но и не опаздывает",
+				"priceType": "Основная партия билетов по отличной цене",
+				"description": "Доступны до 20-го ноября",
 				"soldOut": false
 			},
 			{
-				"type": "Late Birds",
+				"type": "Later Gator",
 				"price": "7999₽",
-				"sale": "Продажа открыта до 15 ноября",
-				"priceType": "Три дня конференции по внезапной цене",
-				"description": "Успеть в последний момент",
+				"sale": "Для любителей делать всё в последний момент",
+				"priceType": "Последний шанс купить билет, чтобы попасть на конференцию ;)",
+				"description": "В продаже с 21-го ноября",
 				"soldOut": false
 			}
 		]
 	},
+	"scholarship": {
+		"text": "А также в этом году у вас есть шанс получить",
+		"title": "DevFest Siberia 2019 Diversity Scholarship",
+		"link": "https://forms.gle/zp6CMGg3hnBwUwyQ6",
+		"button": "Подать заявку"
+	},
 	"photos": {
-		"description": "Как все прошло год назад и тут нужен осмысленный текст",
+		"description": "Коммьюнити-движимая конференция",
 		"more": "Больше фото"
 	},
 	"subscribe": {
@@ -78,16 +86,16 @@
 		"policy": "Я ознакомился с <>политикой конфиденциальности</>"
 	},
 	"location": {
-		"address": "<>Технопарк Новосибирского Академгородка</>ул. Николаева д. 12, г. Новосибирск",
+		"address": "<>Технопарк</>ул.Николаева, 12, г.Новосибирск",
 		"name": "Технопарк",
-		"streetAddress": "ул. Николаева",
+		"streetAddress": "ул.Николаева",
 		"addressLocality": "Россия, Новосибирск",
 		"addressRegion": "Новосибирск",
 		"postalCode": "630000",
 		"addressCountry": "Россия"
 	},
 	"partners": {
-		"title": "Партнеры",
+		"title": "Партнёры",
 		"cfp": "Стать партнером",
 		"partners": [
 			{
@@ -97,7 +105,7 @@
 						"type": "general",
 						"href": "https://academpark.com",
 						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/academpark.svg",
-						"title": "Академпарк"
+						"title": "Academpark"
 					},
 					{
 						"type": "general",
@@ -108,14 +116,48 @@
 				]
 			},
 			{
-				"title": "Инфопартнеры",
+				"title": "Золотые партнёры",
+				"items": [
+					{
+						"type": "gold",
+						"href": "https://rocketbank.ru/?utm_source=gdg-siberia.com&utm_medium=logo&utm_campaign=devfest",
+						"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_300/v1573702727/partners/c5820wfbuycxsdjydhsl.png",
+						"title": "Rocketbank"
+					}
+				]
+			},
+			{
+				"title": "Серебянные партнёры",
+				"items": [
+					{
+						"type": "silver",
+						"href": "https://arqatech.com/?utm=dfSiberia19",
+						"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_160/v1572372361/partners/an3zf9lfhj4hdvwkpoik.svg",
+						"title": "ARQA Technologies"
+					},
+					{
+						"type": "silver",
+						"href": "https://selectel.ru/en/?utm=dfSiberia19",
+						"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_160/v1573702831/partners/bize9pwewdrj9kyd8ncn.svg",
+						"title": "Selectel"
+					}
+				]
+			},
+			{
+				"title": "Медиа партнёры",
 				"items": [
 					{
 						"type": "info",
-						"href": "https://androiddev.apptractor.ru/",
+						"href": "https://androiddev.apptractor.ru/?utm=dfSiberia",
 						"src": "https://res.cloudinary.com/trigen/image/upload/v1565857597/devfest2019/android.svg",
 						"title": "Android Dev Podcast",
-						"text": "Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo, Donec dapibus mauris id odio ornare tempus."
+						"text": "Android Dev - is a podcast about apps development for Android and anything around. Our guests - experienced developers, who knows Android since version 1.5"
+					},
+					{
+						"type": "info",
+						"href": "http://it-events.com/?utm=dfSiberia",
+						"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_200/v1573703193/partners/lwy5ywivyb4vgqrvq7ax.png",
+						"title": "IT Events"
 					}
 				]
 			}
@@ -148,7 +190,7 @@
 			},
 			{
 				"link": "/terms",
-				"label": "Договор оферты"
+				"label": "Условия использования"
 			}
 		],
 		"devFestsLinks": [
@@ -165,8 +207,16 @@
 				"label": "DevFest Siberia 2016"
 			}
 		],
-		"companies": "Компаниям",
-		"partner": "Стать партнером",
+		"companies": {
+			"title": "Компаниям",
+			"label": "Стать партнером",
+			"link": "mailto:devfest@gdg-siberia.com"
+		},
+		"volunteers": {
+			"title": "Волонтёрам",
+			"label": "Стать волонтёром",
+			"link": "https://forms.gle/1vWcgZfQeg6R7tdUA"
+		},
 		"contact": "Контакты",
 		"socials": "Мы в соцсетях",
 		"socialLinks": [
@@ -175,7 +225,7 @@
 				"label": "Telegram"
 			},
 			{
-				"link": "https://twitter.com/intent/user?screen_name=GDGNsk",
+				"link": "https://twitter.com/GDGNsk",
 				"label": "Twitter"
 			},
 			{
@@ -192,7 +242,7 @@
 		"title": "Команда",
 		"team": [
 			{
-				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018065/team/LeonidKalneus_jbfk5o.jpg",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1570018065/team/LeonidKalneus_jbfk5o.jpg",
 				"firstname": "Леонид",
 				"lastname": "Кальнеус",
 				"description": "Человек-конференция",
@@ -202,17 +252,17 @@
 				}
 			},
 			{
-				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018251/team/AlexeyRomanenko_c8eprd.jpg",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1570018251/team/AlexeyRomanenko_c8eprd.jpg",
 				"firstname": "Алексей",
 				"lastname": "Романенко",
-				"description": "Координатор волонтеров",
+				"description": "Член семьи",
 				"contacts": {
 					"telegram": "https://t.me/slimus",
 					"email": "mailto:alex@gdg-siberia.com"
 				}
 			},
 			{
-				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018255/team/YuriyKashnikov_touofm.jpg",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1570018255/team/YuriyKashnikov_touofm.jpg",
 				"firstname": "Юрий",
 				"lastname": "Кашников",
 				"description": "Программный комитет",
@@ -221,22 +271,23 @@
 				}
 			},
 			{
-				"src": "https://res.cloudinary.com/trigen/image/upload/v1570288887/devfest2019/photos/KirZharov.jpg",
-				"firstname": "Кир",
+				"src": "https://res.cloudinary.com/trigen/image/upload/c_scale,w_350/v1570288887/devfest2019/photos/KirZharov.jpg",
+				"firstname": "Кирилл",
 				"lastname": "Жаров",
-				"description": "Conference coordinator & PR",
+				"description": "Координатор & PR",
 				"contacts": {
-					"telegram": "https://t.me/kirzharov"
+					"telegram": "https://t.me/kirzharov",
+					"email": "mailto:kirx@gdg-siberia.com"
 				}
 			},
 			{
-				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018251/team/IvanKruchkov_e2gsvn.png",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1570018251/team/IvanKruchkov_e2gsvn.png",
 				"firstname": "Иван",
 				"lastname": "Крючков",
 				"description": "Разработка сайта, backend"
 			},
 			{
-				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018251/team/AminaKotomanova_l3keke.jpg",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1570018251/team/AminaKotomanova_l3keke.jpg",
 				"firstname": "Амина",
 				"lastname": "Котоманова",
 				"description": "Дизайнер",
@@ -245,13 +296,16 @@
 				}
 			},
 			{
-				"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1570018250/team/LevNovokreshchenov_ujhq7z.jpg",
+				"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1570018250/team/LevNovokreshchenov_ujhq7z.jpg",
 				"firstname": "Лев",
 				"lastname": "Новокрещёнов",
-				"description": "Член семьи"
+				"description": "Координатор волонтёров & Партнёры",
+				"contacts": {
+					"telegram": "https://t.me/xpr35"
+				}
 			},
 			{
-				"src": "https://res.cloudinary.com/trigen/image/upload/v1569823747/devfest2019/photos/Rustam.jpg",
+				"src": "https://res.cloudinary.com/trigen/image/upload/c_scale,w_350/v1569823747/devfest2019/photos/Rustam.jpg",
 				"firstname": "Рустам",
 				"lastname": "Хабибуллин",
 				"description": "Разработка сайта, frontend",
@@ -260,7 +314,7 @@
 				}
 			},
 			{
-				"src": "https://res.cloudinary.com/trigen/image/upload/v1569823748/devfest2019/photos/Dan.jpg",
+				"src": "https://res.cloudinary.com/trigen/image/upload/c_scale,w_350/v1569823748/devfest2019/photos/Dan.jpg",
 				"firstname": "Даниил",
 				"lastname": "Оношко",
 				"description": "Разработка сайта",
@@ -270,15 +324,15 @@
 				}
 			},
 			{
-				"src": "https://res.cloudinary.com/trigen/image/upload/v1570288887/devfest2019/photos/MaxFilimonov.jpg",
-				"firstname": "Max",
-				"lastname": "Filimonov",
-				"description": ""
+				"src": "https://res.cloudinary.com/trigen/image/upload/c_scale,w_350/v1570288887/devfest2019/photos/MaxFilimonov.jpg",
+				"firstname": "Максим",
+				"lastname": "Филимонов",
+				"description": "Член семьи"
 			}
 		]
 	},
 	"speakers": {
-		"title": "Speakers",
+		"title": "Спикеры",
 		"nav": [
 			{
 				"type": "all",
@@ -307,23 +361,23 @@
 		]
 	},
 	"schedule": {
-		"title": "Schedule",
+		"title": "Расписание",
 		"nav": [
 			{
 				"date": "2019-11-29",
-				"label": "29 November"
+				"label": "29 ноября"
 			},
 			{
 				"date": "2019-11-30",
-				"label": "30 November"
+				"label": "30 ноября"
 			},
 			{
 				"date": "2019-12-01",
-				"label": "1 December"
+				"label": "1 декабря"
 			}
 		],
 		"filter": {
-			"title": "Filter by track",
+			"title": "Фильтровать по треку",
 			"types": [
 				{
 					"type": "all",
@@ -338,16 +392,8 @@
 					"label": "Data Science"
 				},
 				{
-					"type": "frontend",
-					"label": "Frontend"
-				},
-				{
 					"type": "devops",
 					"label": "DevOps"
-				},
-				{
-					"type": "security",
-					"label": "Security"
 				},
 				{
 					"type": "backend",
@@ -360,20 +406,6 @@
 				{
 					"type": "web",
 					"label": "Web"
-				}
-			],
-			"level": [
-				{
-					"type": "beginner",
-					"label": "Beginner"
-				},
-				{
-					"type": "intermediate",
-					"label": "Intermediate"
-				},
-				{
-					"type": "advanced",
-					"label": "Advanced"
 				}
 			]
 		}
@@ -393,7 +425,7 @@
 		"company": "Компания",
 		"city": "Город",
 		"email": "Почта",
-		"notice": "Сюда мы пришлем билет : )",
+		"notice": "На эту почту мы отправим билет и детали :)",
 		"buy": "Купить",
 		"terms": "Принять <>условия</>",
 		"promocode": "Промокод"
@@ -403,7 +435,7 @@
 		"id": "Номер Билета",
 		"for": "Для",
 		"where": "Где",
-		"location": "Академпарк, ул. Николаева д. 12, г. Новосибирск",
+		"location": "Технопарк, ул.Николаева, 12, г.Новосибирск",
 		"when": "Когда",
 		"date": "29 ноября – 1 декабря",
 		"ticket": "Один билет"
@@ -434,7 +466,6 @@
 		"offerUrl": "/oferta.pdf"
 	},
 	"meta": {
-		"description": "DevFest Siberia - это конференция для разработчиков и всех интересующихся новинками технологий. Самые горячие темы про Android, Web, ML, Blockchain от ведущих экспертов со всего мира!",
-		"twitter-description": "DevFest Siberia - это конференция для разработчиков и всех интересующихся новинками технологий. Самые горячие темы про Android, Web, ML, Blockchain от ведущих экспертов со всего мира!"
+		"description": "DevFest Siberia - это конференция для разработчиков и всех интересующихся технологиями. Основные темы: Mobile, Frontend, Backend, DevOps и Data Science от ведущих экспертов со всего мира! Запланируйте даты: 29 ноября - 1 декабря 2019!"
 	}
 }

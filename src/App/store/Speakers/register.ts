@@ -1,6 +1,9 @@
 // tslint:disable space-in-parens
 import Store from '@flexis/redux';
 import {
+	getLocaleFromPath
+} from '~/services/i18n';
+import {
 	IActions
 } from '../types';
 
@@ -19,13 +22,14 @@ async function loadSpeakersSegmentConfig() {
 	};
 }
 
-async function loadInitialSpeakersData(store: Store<any, IActions>) {
+async function loadInitialSpeakersData(store: Store<any, IActions>, context: Record<string, any>) {
 
 	const {
 		fetchSpeakers
 	} = store.actions.speakers;
+	const locale = context.locale || getLocaleFromPath(location.pathname);
 
-	await fetchSpeakers();
+	await fetchSpeakers(locale);
 }
 
 export function registerSpeakersSegment(store: Store) {

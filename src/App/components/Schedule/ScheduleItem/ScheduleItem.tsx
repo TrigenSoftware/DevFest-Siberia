@@ -43,6 +43,7 @@ export enum VariantScheduleItemStatus {
 export type ScheduleItemStatus = 'past' | 'now' | 'next';
 
 interface ISpeaker {
+	id?: string;
 	name: string;
 	description: string;
 }
@@ -225,7 +226,7 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 										className={classes.speakerName}
 										to={{
 											search: addSearchParams(search, {
-												id: speaker.name.replace(/\s/g, '')
+												id: speaker.id
 											})
 										}}
 									>

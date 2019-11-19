@@ -276,7 +276,8 @@
 				"lastname": "Zharov",
 				"description": "Coordinator & PR",
 				"contacts": {
-					"telegram": "https://t.me/kirzharov"
+					"telegram": "https://t.me/kirzharov",
+					"email": "mailto:kirx@gdg-siberia.com"
 				}
 			},
 			{
@@ -440,7 +441,7 @@
 		"ticket": "One ticket"
 	},
 	"login": {
-		"title": "SIGN IN",
+		"title": "Sign In",
 		"email": "E-mail",
 		"emailPlaceholder": "Enter e-mail",
 		"password": "Password",

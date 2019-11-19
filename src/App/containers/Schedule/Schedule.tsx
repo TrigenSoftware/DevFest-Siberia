@@ -19,6 +19,7 @@ import {
 	Bind
 } from '@flexis/ui/helpers';
 import {
+	getLocalizedPath,
 	getScheduleDates,
 	getScheduleTypes
 } from '~/services/i18n';
@@ -141,8 +142,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 						<ToggleNavLink
 							key={date}
 							to={{
-								pathname: '/schedule',
-								search: addSearchParams(search, {
+								pathname: getLocalizedPath(context, '/schedule'),
+								search:   addSearchParams(search, {
 									date
 								})
 							}}
@@ -169,8 +170,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 							<ToggleNavLink
 								key={type}
 								to={{
-									pathname: '/schedule',
-									search: addSearchParams(search, {
+									pathname: getLocalizedPath(context, '/schedule'),
+									search:   addSearchParams(search, {
 										type
 									})
 								}}
@@ -235,9 +236,10 @@ export class ScheduleContainer extends Component<IProps, IState> {
 			context
 		} = this;
 		const date = new URLSearchParams(search).get('date');
+		const locale = context.getLocale();
 
-		fetchSchedule();
-		fetchSpeakers();
+		fetchSchedule(locale);
+		fetchSpeakers(locale);
 
 		if (!date) {
 
