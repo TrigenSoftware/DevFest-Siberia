@@ -11,7 +11,7 @@ import {
 
 export interface IActionsProps {
 	actionsReady: boolean;
-	fetchSpeakers(lang?: string);
+	fetchSpeakers(locale?: string);
 	selectPromoSpeakers(): Speaker[];
 	selectSpeaker(id: string): Speaker;
 }

@@ -143,7 +143,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 							key={date}
 							to={{
 								pathname: getLocalizedPath(context, '/schedule'),
-								search: addSearchParams(search, {
+								search:   addSearchParams(search, {
 									date
 								})
 							}}
@@ -171,7 +171,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 								key={type}
 								to={{
 									pathname: getLocalizedPath(context, '/schedule'),
-									search: addSearchParams(search, {
+									search:   addSearchParams(search, {
 										type
 									})
 								}}
@@ -236,10 +236,10 @@ export class ScheduleContainer extends Component<IProps, IState> {
 			context
 		} = this;
 		const date = new URLSearchParams(search).get('date');
-		const lang = context.getLocale();
+		const locale = context.getLocale();
 
-		fetchSchedule(lang);
-		fetchSpeakers(lang);
+		fetchSchedule(locale);
+		fetchSpeakers(locale);
 
 		if (!date) {
 

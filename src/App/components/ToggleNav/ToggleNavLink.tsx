@@ -93,6 +93,7 @@ export class ToggleNavLink extends Component<IProps> {
 			return getLocalizedPath(this.context, to) === `${pathname}${search}`;
 		}
 
-		return to.pathname === pathname && to.search === search;
+		return getLocalizedPath(this.context, to.pathname) === pathname
+			&& to.search === search;
 	}
 }

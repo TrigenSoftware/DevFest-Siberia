@@ -22,14 +22,14 @@ async function loadScheduleSegmentConfig() {
 	};
 }
 
-async function loadInitialScheduleData(store: Store<any, IActions>) {
+async function loadInitialScheduleData(store: Store<any, IActions>, context: Record<string, any>) {
 
 	const {
 		fetchSchedule
 	} = store.actions.schedule;
-	const lang = getLocaleFromPath(location.pathname);
+	const locale = context.locale || getLocaleFromPath(location.pathname);
 
-	await fetchSchedule(lang);
+	await fetchSchedule(locale);
 }
 
 export function registerScheduleSegment(store: Store) {

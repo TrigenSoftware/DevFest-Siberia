@@ -104,9 +104,9 @@ export class SpeakersPromo extends Component<IProps> {
 		const {
 			context
 		} = this;
-		const lang = context.getLocale();
+		const locale = context.getLocale();
 
-		fetchSpeakers(lang);
+		fetchSpeakers(locale);
 	}
 }
 
