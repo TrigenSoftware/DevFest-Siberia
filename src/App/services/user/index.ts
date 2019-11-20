@@ -1,4 +1,7 @@
 import createLogger from '~/services/logger';
+import {
+	getLocaleFromPath
+} from '~/services/i18n';
 import client from './client';
 import {
 	userFromResponseData,
@@ -49,7 +52,7 @@ export async function buy({
 	return redirectUrl;
 }
 
-export async function buyAfterpartyTicket({ locale }) {
+export async function buyAfterpartyTicket() {
 
 	logger.debug('buyAfterpartyTicket');
 
@@ -62,7 +65,7 @@ export async function buyAfterpartyTicket({ locale }) {
 	} = await client.post('auth/register', {
 		termsAccepted:  true,
 		paymentRequest: {
-			locale,
+			locale: getLocaleFromPath(location.pathname),
 			products: [{
 				productRef: 'afterparty'
 			}],
@@ -73,7 +76,11 @@ export async function buyAfterpartyTicket({ locale }) {
 
 	logger.debug('buyAfterpartyTicket', 'Response:', buyAfterpartyData);
 
-	console.log(buyAfterpartyData);
+	return buyAfterpartyData;
+}
+
+export async function hasAfterpartyTicket() {
+	console.log('тут пока не знаю, что делать');
 }
 
 export async function login(email: string, password: string) {
