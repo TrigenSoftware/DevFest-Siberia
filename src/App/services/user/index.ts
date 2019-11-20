@@ -76,7 +76,13 @@ export async function buyAfterpartyTicket() {
 
 	logger.debug('buyAfterpartyTicket', 'Response:', buyAfterpartyData);
 
-	return buyAfterpartyData;
+	const {
+		paymentDetails: {
+			redirectUrl
+		}
+	} = buyAfterpartyData;
+
+	return redirectUrl;
 }
 
 export async function hasAfterpartyTicket() {
