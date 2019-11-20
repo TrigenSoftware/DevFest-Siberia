@@ -32,6 +32,7 @@
 }
 
 .title {
+	text-transform: uppercase;
 	font-size: rel(42, 24);
 }
 

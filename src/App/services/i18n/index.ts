@@ -23,7 +23,7 @@ import {
  */
 export function getLocalizedPath(context: I18nConfig, path: string) {
 
-	if (!context) {
+	if (!context || /^\/ru/.test(path)) {
 		return path;
 	}
 
