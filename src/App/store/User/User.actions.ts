@@ -51,6 +51,26 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 		}
 	}
 
+	async hasAfterpartyTicket() {
+
+		try {
+
+			const response = await userService.hasAfterpartyTicket();
+
+			return response;
+
+		} catch (error) {
+			this.setError({
+				type: this.hasAfterpartyTicket,
+				error
+			});
+
+			if (error.response.data.code === 401) {
+				this.refreshToken();
+			}
+		}
+	}
+
 	async login(email: string, password: string) {
 
 		try {
