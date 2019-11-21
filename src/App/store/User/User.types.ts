@@ -1,6 +1,7 @@
 import {
 	Record,
-	Map
+	Map,
+	List
 } from 'immutable';
 import User, {
 	IUserProps
@@ -18,7 +19,7 @@ import Product, {
 
 export interface IUserStateProps {
 	user: User;
-	order: Order;
+	orders: List<Order>;
 	product: Product;
 	errors: Map<any, Error>;
 }
@@ -27,7 +28,7 @@ type UserState = ReturnType<Record.Factory<IUserStateProps>>;
 
 const UserState = Record<IUserStateProps>({
 	user:     null,
-	order:    null,
+	orders:   List(),
 	product:  null,
 	errors:   Map()
 });
@@ -50,10 +51,10 @@ export interface ISetUserAction {
  * SetOrder action.
  */
 
-export type SetOrderPayload = IOrderProps;
+export type SetOrdersPayload = IOrderProps[] | List<IOrderProps>;
 
-export interface ISetOrderAction {
-	payload: SetOrderPayload;
+export interface ISetOrdersAction {
+	payload: SetOrdersPayload;
 }
 
 /**

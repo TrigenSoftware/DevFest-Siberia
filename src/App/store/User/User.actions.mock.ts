@@ -5,7 +5,7 @@ import {
 } from '../types';
 import {
 	SetUserPayload,
-	SetOrderPayload,
+	SetOrdersPayload,
 	SetProductPayload,
 	SetUserErrorPayload,
 	UserState
@@ -50,9 +50,9 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 
 		try {
 
-			const order = await userService.fetchOrders();
+			const orders = await userService.fetchOrders();
 
-			this.setOrder(order);
+			this.setOrders(orders);
 
 		} catch (error) {
 			this.setError({
@@ -124,7 +124,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 	}
 
 	abstract setUser(payload: SetUserPayload);
-	abstract setOrder(payload: SetOrderPayload);
+	abstract setOrders(payload: SetOrdersPayload);
 	abstract setProduct(payload: SetProductPayload);
 	abstract setError(payload: SetUserErrorPayload);
 	abstract clearErrors();

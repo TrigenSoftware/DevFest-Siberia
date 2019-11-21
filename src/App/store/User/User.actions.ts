@@ -6,7 +6,7 @@ import {
 } from '../types';
 import {
 	SetUserPayload,
-	SetOrderPayload,
+	SetOrdersPayload,
 	SetProductPayload,
 	SetUserErrorPayload,
 	UserState
@@ -34,11 +34,11 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 		}
 	}
 
-	async buyAfterpartyTicket() {
+	async buyAfterpartyTicket(locale: string) {
 
 		try {
 
-			const redirectUrl = await userService.buyAfterpartyTicket();
+			const redirectUrl = await userService.buyAfterpartyTicket(locale);
 
 			this.clearErrors();
 			location.href = redirectUrl;
@@ -51,24 +51,12 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 		}
 	}
 
-	async hasAfterpartyTicket() {
+	selectTicketOrder(orders: any[]): any {
+		return orders.find(order => order.items.some(item => item.productId !== 'afterparty'));
+	}
 
-		try {
-
-			const response = await userService.hasAfterpartyTicket();
-
-			return response;
-
-		} catch (error) {
-			this.setError({
-				type: this.hasAfterpartyTicket,
-				error
-			});
-
-			if (error.response.data.code === 401) {
-				this.refreshToken();
-			}
-		}
+	selectAfterpartyTicketOrder(orders: any[]): any {
+		return orders.find(order => order.items.some(item => item.productId === 'afterparty'));
 	}
 
 	async login(email: string, password: string) {
@@ -98,7 +86,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 
 			const order = await userService.fetchOrders();
 
-			this.setOrder(order);
+			this.setOrders(order);
 
 		} catch (error) {
 			this.setError({
@@ -194,7 +182,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 	}
 
 	abstract setUser(payload: SetUserPayload);
-	abstract setOrder(payload: SetOrderPayload);
+	abstract setOrders(payload: SetOrdersPayload);
 	abstract setProduct(payload: SetProductPayload);
 	abstract setError(payload: SetUserErrorPayload);
 	abstract clearErrors();

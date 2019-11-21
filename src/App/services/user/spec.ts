@@ -111,9 +111,7 @@ describe('API', () => {
 
 				const fetchOrdersResponse = await fetchOrders();
 
-				expect(typeof fetchOrdersResponse.status).toBe('string');
-				expect(typeof fetchOrdersResponse.paymentLink).toBe('string');
-				expect(typeof fetchOrdersResponse.items).toBe('object');
+				expect(typeof fetchOrdersResponse.size).toBe(1);
 			});
 		});
 	});

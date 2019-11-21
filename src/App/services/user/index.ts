@@ -1,11 +1,8 @@
 import createLogger from '~/services/logger';
-import {
-	getLocaleFromPath
-} from '~/services/i18n';
 import client from './client';
 import {
 	userFromResponseData,
-	orderFromResponseData,
+	ordersFromResponseData,
 	productFromResponseData
 } from './adapters';
 
@@ -52,7 +49,7 @@ export async function buy({
 	return redirectUrl;
 }
 
-export async function buyAfterpartyTicket() {
+export async function buyAfterpartyTicket(locale: string) {
 
 	logger.debug('buyAfterpartyTicket');
 
@@ -65,7 +62,7 @@ export async function buyAfterpartyTicket() {
 	} = await client.post('auth/register', {
 		termsAccepted:  true,
 		paymentRequest: {
-			locale: getLocaleFromPath(location.pathname),
+			locale,
 			products: [{
 				productRef: 'afterparty'
 			}],
@@ -83,19 +80,6 @@ export async function buyAfterpartyTicket() {
 	} = buyAfterpartyData;
 
 	return redirectUrl;
-}
-
-export async function hasAfterpartyTicket() {
-
-	logger.debug('hasAfterpartyTicket');
-
-	const {
-		data: ordersData
-	} = await client.get('api/profile/orders');
-
-	logger.debug('fetchOrders', 'Response:', ordersData);
-
-	return ordersData.some(order => order.items.some(item => item.productId === 'afterparty'));
 }
 
 export async function login(email: string, password: string) {
@@ -139,7 +123,7 @@ export async function fetchOrders() {
 
 	logger.debug('fetchOrders', 'Response:', ordersData);
 
-	return orderFromResponseData(ordersData[0]);
+	return ordersFromResponseData(ordersData);
 }
 
 export async function fetchProducts() {

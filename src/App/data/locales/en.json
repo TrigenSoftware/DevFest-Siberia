@@ -438,7 +438,9 @@
 		"location": "Academpark, Nikolaeva St 12, Novosibirsk",
 		"when": "When",
 		"date": "29 November – 1 December",
-		"ticket": "One ticket"
+		"ticket": "One ticket",
+		"afterpartyTitle": "Afterparty",
+		"buyAfterparty": "Buy a ticket for Afterparty"
 	},
 	"login": {
 		"title": "Sign In",
