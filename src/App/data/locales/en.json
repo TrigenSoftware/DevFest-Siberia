@@ -58,7 +58,7 @@
 				"sale": "Standard conference pass",
 				"priceType": "Our main batch of tickets for anyone and everyone",
 				"description": "Available until 20th November",
-				"soldOut": false
+				"soldOut": true
 			},
 			{
 				"type": "Later Gator",
