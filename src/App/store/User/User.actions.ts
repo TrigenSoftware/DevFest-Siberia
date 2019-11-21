@@ -154,7 +154,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 		}
 	}
 
-	selectTicketOrder(orders: List<Order>): any {
+	selectTicketOrder(orders: List<Order>): Order {
 		return orders.find(
 			order => order.items.some(
 				item => item.productRef !== 'afterparty'
@@ -162,7 +162,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 		);
 	}
 
-	selectAfterpartyTicketOrder(orders: List<Order>): any {
+	selectAfterpartyTicketOrder(orders: List<Order>): Order {
 		return orders.find(
 			order => order.items.some(
 				item => item.productRef === 'afterparty'
