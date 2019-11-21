@@ -111,7 +111,7 @@ describe('API', () => {
 
 				const fetchOrdersResponse = await fetchOrders();
 
-				expect(typeof fetchOrdersResponse.size).toBe(1);
+				expect(fetchOrdersResponse.size).toEqual(1);
 			});
 		});
 	});
