@@ -120,8 +120,12 @@ export class Speakers extends Component<IProps> {
 		const {
 			fetchSpeakers
 		} = this.props;
+		const {
+			context
+		} = this;
+		const locale = context.getLocale();
 
-		fetchSpeakers();
+		fetchSpeakers(locale);
 	}
 }
 

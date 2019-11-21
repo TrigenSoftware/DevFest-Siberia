@@ -14,6 +14,7 @@ import {
 export * from './TickerPreviewPrimary';
 export * from './TickerPreviewGroup';
 export * from './TickerPreviewField';
+export * from './TicketPreviewSecondary';
 export * from './TicketPreviewAuxiliary';
 export * from './TicketPreviewPrice';
 export * from './TicketPreviewSale';

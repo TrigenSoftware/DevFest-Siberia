@@ -60,9 +60,11 @@ export abstract class SpeakersActions extends SpeakersReducer.Actions<SpeakersSt
 			: speakers.filter(speaker => speaker.type === type);
 	}
 
-	async fetchSpeakers() {
+	async fetchSpeakers(lang?: string) {
 
-		const speakers = await speakersService.fetch();
+		const speakers = await speakersService.fetch({
+			lang
+		});
 
 		this.setSpeakers(speakers);
 	}
