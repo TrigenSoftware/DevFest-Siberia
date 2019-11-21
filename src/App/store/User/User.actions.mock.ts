@@ -112,6 +112,14 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 		}
 	}
 
+	selectTicketOrder(orders: any[]): any {
+		return orders.find(order => order.items.some(item => item.productId !== 'afterparty'));
+	}
+
+	selectAfterpartyTicketOrder(orders: any[]): any {
+		return orders.find(order => order.items.some(item => item.productId === 'afterparty'));
+	}
+
 	isLogged() {
 		return this.logged;
 	}
