@@ -397,10 +397,10 @@
 		"timeEnd": "15:50",
 		"lang": "",
 		"location": "Room #3, 3d floor",
-		"title": "TBA",
+		"title": "Будет анонсирован",
 		"talkTypeBadge": "Mobile",
 		"talkLevelBadge": "",
-		"description": "TBA",
+		"description": "Уточняется",
 		"speakers": [
 			"TBA"
 		]
@@ -425,7 +425,7 @@
 		"timeEnd": "16:50",
 		"lang": "En",
 		"location": "Big room, 2nd floor",
-		"title": "To be announced",
+		"title": "Будет анонсирован",
 		"talkTypeBadge": "Hype",
 		"talkLevelBadge": "Intermediate",
 		"description": "Уточняется",
@@ -761,10 +761,10 @@
 		"timeEnd": "12:50",
 		"lang": "",
 		"location": "13th floor",
-		"title": "TBA",
+		"title": "Будет анонсирован",
 		"talkTypeBadge": "Data Science",
 		"talkLevelBadge": "",
-		"description": "TBA",
+		"description": "Уточняется",
 		"speakers": [
 			"TBA"
 		]
