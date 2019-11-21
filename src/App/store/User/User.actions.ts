@@ -34,6 +34,23 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 		}
 	}
 
+	async buyAfterpartyTicket() {
+
+		try {
+
+			const redirectUrl = await userService.buyAfterpartyTicket();
+
+			this.clearErrors();
+			location.href = redirectUrl;
+
+		} catch (error) {
+			this.setError({
+				type: this.buyAfterpartyTicket,
+				error
+			});
+		}
+	}
+
 	async login(email: string, password: string) {
 
 		try {

@@ -86,7 +86,16 @@ export async function buyAfterpartyTicket() {
 }
 
 export async function hasAfterpartyTicket() {
-	console.log('тут пока не знаю, что делать');
+
+	logger.debug('hasAfterpartyTicket');
+
+	const {
+		data: ordersData
+	} = await client.get('api/profile/orders');
+
+	logger.debug('fetchOrders', 'Response:', ordersData);
+
+	return ordersData.some(order => order.items.some(item => item.productId === 'afterparty'));
 }
 
 export async function login(email: string, password: string) {
