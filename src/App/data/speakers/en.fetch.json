@@ -376,7 +376,7 @@
 		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571600650/speakers/juziaw27hy3fxkwscld3.jpg",
 		"firstname": "Tom",
 		"lastname": "Kozacinski",
-		"description": "Product design consultant",
+		"description": "Product Designer at VIOOH",
 		"location": "🇬🇧",
 		"contacts": {
 			"twitter": "https://twitter.com/universeceo",
@@ -788,25 +788,6 @@
 		"talkLevelBadge": "Hype"
 	},
 	{
-		"id": "DmitriiToloknov",
-		"type": "devops",
-		"promo": true,
-		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1572706106/speakers/db4d6kelytrtoxebnyv5.jpg",
-		"firstname": "Dmitrii",
-		"lastname": "Toloknov",
-		"description": "DevOps at BCS",
-		"location": "🇷🇺",
-		"contacts": {
-			"email": "mailto:profiterole38@gmail.com"
-		},
-		"text": "",
-		"talkTitle": "Version control for microservices",
-		"talkLocation": "",
-		"talkTime": "",
-		"talkTypeBadge": "Beginner",
-		"talkLevelBadge": "DevOps"
-	},
-	{
 		"id": "VasudevMaduri",
 		"type": "web",
 		"promo": true,
@@ -870,7 +851,7 @@
 		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1572706106/speakers/sy06pty1dc19jyovp1wc.jpg",
 		"firstname": "Alexey",
 		"lastname": "Lesovsky",
-		"description": "",
+		"description": "PostgreSQL DBA at Data Egret",
 		"location": "🇷🇺",
 		"contacts": {
 			"github": "https://github.com/lesovsky"
@@ -1004,9 +985,9 @@
 		"description": "Tech Consultant",
 		"location": "🇬🇧",
 		"text": "James has worked in software since the 1990s when TDD was something you studied but never did and Agile and Lean were words used to describe athletes. In 2005 James joined a startup and worked through a huge expansion, at least three major rewrites and an Agile transformation.",
+		"talkTitle": "Why we should be scared of Shor's Algorithm right now",
 		"talkLocation": "",
 		"talkTime": "",
-		"talkTitle": "Why we should be scared of Shor's Algorithm right now",
 		"talkTypeBadge": "Hype",
 		"talkLevelBadge": "Intermediate"
 	}
