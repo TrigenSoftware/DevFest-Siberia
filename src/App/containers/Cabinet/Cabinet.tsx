@@ -59,8 +59,8 @@ export class CabinetContainer extends Component<IProps> {
 			context
 		} = this;
 		const __ = context.bind(tr);
-		const order = selectTicketOrder(orders.toJS());
-		const afterparty = selectAfterpartyTicketOrder(orders.toJS());
+		const order = selectTicketOrder(orders);
+		const afterparty = selectAfterpartyTicketOrder(orders);
 
 		if (!isLogged()) {
 			return null;

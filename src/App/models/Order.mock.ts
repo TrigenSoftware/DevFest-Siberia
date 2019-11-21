@@ -39,6 +39,6 @@ export function mockOrder() {
 	});
 }
 
-export default function mockFavorites() {
+export default function mockOrders() {
 	return List(Array.from({ length: count }).map(mockOrder));
 }
