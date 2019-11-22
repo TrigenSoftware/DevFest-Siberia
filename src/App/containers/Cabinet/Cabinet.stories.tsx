@@ -62,7 +62,6 @@ storiesOf('Containers|Cabinet', module)
 					component={(props) => {
 
 						store.actions.user.login('test', 'test');
-						actions.fetchOrders();
 
 						return (
 							<>
@@ -98,6 +97,7 @@ storiesOf('Containers|Cabinet', module)
 									<Header/>
 									<Cabinet
 										{...props}
+										fetchOrders={() => null}
 									/>
 								</Provider>
 								<Footer/>

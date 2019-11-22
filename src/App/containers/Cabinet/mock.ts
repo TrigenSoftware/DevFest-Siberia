@@ -13,7 +13,7 @@ import {
 import {
 	UserActions
 } from '~/store/User/User.actions.mock';
-import mockOrders, {
+import {
 	mockAfterpartyOrders
 } from '~/models/Order.mock';
 import Cabinet from './Cabinet';
@@ -48,15 +48,6 @@ export const actions = {
 		} = store.actions;
 
 		user.setOrders(mockAfterpartyOrders());
-	},
-
-	fetchOrders() {
-
-		const {
-			user
-		} = store.actions;
-
-		user.setOrders(mockOrders());
 	},
 
 	generate() {
