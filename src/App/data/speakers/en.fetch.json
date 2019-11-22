@@ -266,7 +266,7 @@
 			"site": "http://mikolajdobrucki.com/"
 		},
 		"text": "Mikolaj is a designer and front-end developer leading a design team at ucreate, a British company specialised in building startups. He's passionate about UI Design and typography, and works a lot with CSS and SVG.",
-		"talkTitle": "",
+		"talkTitle": "Getting more with design tokens",
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Web",
@@ -305,7 +305,7 @@
 			"site": "http://github.com/kostja/tarantool"
 		},
 		"text": "Kostja is a well-known expert in the DBMS world. He spent most of his career developing open source DBMS. Since recently he joined Scylla team where his focus is transaction support and synchronous replication. Previously Kostja worked on such open source databases as MySQL and Tarantool. In his free time Kostja maintains a fork of Tarantool database with a few community features.",
-		"talkTitle": "",
+		"talkTitle": "What makes a database unique: Tarantool's best fist.",
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Web",
@@ -376,7 +376,7 @@
 		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571600650/speakers/juziaw27hy3fxkwscld3.jpg",
 		"firstname": "Tom",
 		"lastname": "Kozacinski",
-		"description": "Product design consultant",
+		"description": "Product Designer at VIOOH",
 		"location": "🇬🇧",
 		"contacts": {
 			"twitter": "https://twitter.com/universeceo",
@@ -648,7 +648,7 @@
 		"location": "🇷🇺",
 		"contacts": {},
 		"text": "",
-		"talkTitle": "",
+		"talkTitle": "How to become a Data Scientist: guide for developer, scientist, student.",
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "AI",
@@ -686,7 +686,7 @@
 			"twitter": "https://twitter.com/arkatPDA"
 		},
 		"text": "Coach of the snowboarding troop, CTO and co-founder of tuQuejaSuma.com. His drive comes from solving complex problems. So no one was surprised when he changed from Physics to Computer Science. He worked as part of research and development teams in natural language processing, data mining and artificial intelligence in companies such as Aivo, ViClone, Lvklabs, and Natural Tech. Passionate about free software, especially Linux and Python, he advocates for Data Science and Tensor Flow as manager of PyData Córdoba and TensorFlow Buenos Aires.",
-		"talkTitle": "",
+		"talkTitle": "SEO: de Marketing a Data Science.",
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "AI",
@@ -724,7 +724,7 @@
 			"email": "mailto:bsharchilev@gmail.com"
 		},
 		"text": "- Currently - head of algorithmic ecosystem growth group@Yandex.Zen<br>- Previously - researcher@Yandex Machine Intelligence & Research Dept., PhD student@University of Amsterdam<br>- Education: Mechanics & Mathematics dept.@MSU, Yandex School of Data Analysis",
-		"talkTitle": "",
+		"talkTitle": "Lock, stock, ALS: recommending ads at Yandex.Zen",
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "AI",
@@ -788,25 +788,6 @@
 		"talkLevelBadge": "Hype"
 	},
 	{
-		"id": "DmitriiToloknov",
-		"type": "devops",
-		"promo": true,
-		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1572706106/speakers/db4d6kelytrtoxebnyv5.jpg",
-		"firstname": "Dmitrii",
-		"lastname": "Toloknov",
-		"description": "DevOps at BCS",
-		"location": "🇷🇺",
-		"contacts": {
-			"email": "mailto:profiterole38@gmail.com"
-		},
-		"text": "",
-		"talkTitle": "Version control for microservices",
-		"talkLocation": "",
-		"talkTime": "",
-		"talkTypeBadge": "Beginner",
-		"talkLevelBadge": "DevOps"
-	},
-	{
 		"id": "VasudevMaduri",
 		"type": "web",
 		"promo": true,
@@ -838,7 +819,7 @@
 			"twitter": "https://twitter.com/jevakallio"
 		},
 		"text": "Jani is a senior software developer and an engineering leader living in London. After a 15 year career spanning Web, iOS, Android, Windows, embedded and cloud platforms, he’s now focused on the JavaScript ecosystem, where he’s known as that weird Twitter sh*tposter who sometimes does cool open source things around React and GraphQL.<br>Jani is also a writer, speaker, comedian, improviser, community organiser and, according to a close source, “actually smarter than he looks”. He’s recently developed a conscience and began wondering, what, as an industry, are we even doing?",
-		"talkTitle": "",
+		"talkTitle": "To be announced",
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Intermediate",
@@ -870,7 +851,7 @@
 		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1572706106/speakers/sy06pty1dc19jyovp1wc.jpg",
 		"firstname": "Alexey",
 		"lastname": "Lesovsky",
-		"description": "",
+		"description": "PostgreSQL DBA at Data Egret",
 		"location": "🇷🇺",
 		"contacts": {
 			"github": "https://github.com/lesovsky"
@@ -889,7 +870,7 @@
 		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1572706106/speakers/essvjm6ob48tjfr5tl5j.jpg",
 		"firstname": "Vladimir",
 		"lastname": "Daron",
-		"description": "CTO at WebAnt",
+		"description": "Lead of Google Developer Group in Rostov-on-Don",
 		"location": "🇷🇺",
 		"contacts": {
 			"telegram": "https://t.me/vdaron"
@@ -1004,9 +985,9 @@
 		"description": "Tech Consultant",
 		"location": "🇬🇧",
 		"text": "James has worked in software since the 1990s when TDD was something you studied but never did and Agile and Lean were words used to describe athletes. In 2005 James joined a startup and worked through a huge expansion, at least three major rewrites and an Agile transformation.",
+		"talkTitle": "Why we should be scared of Shor's Algorithm right now",
 		"talkLocation": "",
 		"talkTime": "",
-		"talkTitle": "Why we should be scared of Shor's Algorithm right now",
 		"talkTypeBadge": "Hype",
 		"talkLevelBadge": "Intermediate"
 	}
