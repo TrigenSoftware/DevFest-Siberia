@@ -11,6 +11,8 @@ import {
 import Loading from '~/components/Loading';
 import CabinetContainer from './Cabinet';
 
+function fetchOrders() {}
+
 export function mapStateToProps({ user }: State) {
 	return {
 		user:   user.user,
@@ -20,7 +22,7 @@ export function mapStateToProps({ user }: State) {
 
 export function mapActionsToProps({ user }: IActions) {
 	return {
-		fetchOrders:                 user.fetchOrders,
+		fetchOrders,
 		fetchProfile:                user.fetchProfile,
 		selectTicketOrder:           user.selectTicketOrder,
 		selectAfterpartyTicketOrder: user.selectAfterpartyTicketOrder,

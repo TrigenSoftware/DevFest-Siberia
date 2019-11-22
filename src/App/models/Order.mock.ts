@@ -56,6 +56,10 @@ export function mockAfterpartyOrder() {
 	});
 }
 
+export function mockAfterpartyOrders() {
+	return List([mockOrder(), mockAfterpartyOrder()]);
+}
+
 export default function mockOrders() {
 	return List([mockOrder()]);
 }

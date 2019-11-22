@@ -62,6 +62,7 @@ storiesOf('Containers|Cabinet', module)
 					component={(props) => {
 
 						store.actions.user.login('test', 'test');
+						actions.fetchOrders();
 
 						return (
 							<>
