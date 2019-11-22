@@ -1,4 +1,8 @@
+import {
+	List
+} from 'immutable';
 import * as userService from '~/services/user/mock';
+import Order from '~/models/Order';
 import {
 	IActions,
 	State
@@ -112,12 +116,20 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 		}
 	}
 
-	selectTicketOrder(orders: any[]): any {
-		return orders.find(order => order.items.some(item => item.productId !== 'afterparty'));
+	selectTicketOrder(orders: List<Order>): Order {
+		return orders.find(
+			order => order.items.some(
+				item => item.productRef !== 'afterparty'
+			)
+		);
 	}
 
-	selectAfterpartyTicketOrder(orders: any[]): any {
-		return orders.find(order => order.items.some(item => item.productId === 'afterparty'));
+	selectAfterpartyTicketOrder(orders: List<Order>): Order {
+		return orders.find(
+			order => order.items.some(
+				item => item.productRef === 'afterparty'
+			)
+		);
 	}
 
 	isLogged() {

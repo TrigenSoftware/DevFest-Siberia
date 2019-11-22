@@ -1,4 +1,3 @@
-/* tslint:disable no-magic-numbers */
 import {
 	List
 } from 'immutable';
@@ -6,8 +5,6 @@ import faker from 'faker';
 import Order from './Order';
 import Orderitem from './OrderItem';
 import Ticket from './Ticket';
-
-const count = 3;
 
 export function mockTicket() {
 	return Ticket({
@@ -17,7 +14,19 @@ export function mockTicket() {
 
 export function mockIOrderItem() {
 	return Orderitem({
-		productRef:         faker.lorem.word(),
+		productRef:         'ticket',
+		productName:        faker.lorem.word(),
+		productDescription: faker.lorem.word(),
+		price:              faker.random.number(),
+		originalPrice:      faker.random.number(),
+		promocode:          faker.lorem.word(),
+		ticket:             mockTicket()
+	});
+}
+
+export function mockIOrderAftrepartyItem() {
+	return Orderitem({
+		productRef:         'afterparty',
 		productName:        faker.lorem.word(),
 		productDescription: faker.lorem.word(),
 		price:              faker.random.number(),
@@ -39,6 +48,14 @@ export function mockOrder() {
 	});
 }
 
+export function mockAfterpartyOrder() {
+	return Order({
+		status:      faker.lorem.word(),
+		paymentLink: faker.lorem.word(),
+		items:       List([mockIOrderAftrepartyItem()])
+	});
+}
+
 export default function mockOrders() {
-	return List(Array.from({ length: count }).map(mockOrder));
+	return List([mockOrder()]);
 }

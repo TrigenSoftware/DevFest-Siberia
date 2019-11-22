@@ -13,6 +13,9 @@ import {
 import {
 	UserActions
 } from '~/store/User/User.actions.mock';
+import {
+	mockAfterpartyOrder
+} from '~/models/Order.mock';
 import Cabinet from './Cabinet';
 import {
 	mapStateToProps,
@@ -37,6 +40,19 @@ export const store = new Store<State, IActions>({
 });
 
 export const actions = {
+
+	buyAfterpartyTicket() {
+
+		const {
+			orders
+		} = store.state.user;
+		const {
+			user
+		} = store.actions;
+		const ordersWithAfterparty = orders.push(mockAfterpartyOrder());
+
+		user.setOrders(ordersWithAfterparty);
+	},
 
 	generate() {
 
