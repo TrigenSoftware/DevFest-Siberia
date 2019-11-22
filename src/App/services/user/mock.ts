@@ -2,10 +2,9 @@
 import delay from 'delay';
 import createLogger from '~/services/logger';
 import User from '~/models/User';
-import Order from '~/models/Order';
 import Product from '~/models/Product';
 import mockUser from '~/models/User.mock';
-import mockOrder from '~/models/Order.mock';
+import mockOrders from '~/models/Order.mock';
 import mockProduct from '~/models/Product.mock';
 
 const logger = createLogger('App::services::user');
@@ -40,11 +39,11 @@ export async function fetchOrders() {
 
 	logger.debug('fetchOrders');
 
-	const response = mockOrder();
+	const response = mockOrders();
 
 	logger.debug('fetchOrders', 'Response:', response);
 
-	return Order(response);
+	return response;
 }
 
 export async function fetchProfile() {

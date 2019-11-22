@@ -21,7 +21,8 @@ import Footer from '~/blocks/Footer';
 import ru from '~/data/locales/ru.json';
 import en from '~/data/locales/en.json';
 import Cabinet, {
-	store
+	store,
+	actions
 } from './mock';
 
 const stylableApi = `
@@ -68,6 +69,35 @@ storiesOf('Containers|Cabinet', module)
 									<Header/>
 									<Cabinet
 										{...props}
+									/>
+								</Provider>
+								<Footer/>
+							</>
+						);
+					}}
+				/>
+			</MemoryRouter>
+		)
+	)
+	.add(
+		'with afterparty ticket',
+		() => (
+			<MemoryRouter initialEntries={['/cabinet']}>
+				<Route
+					exact
+					path='/cabinet'
+					component={(props) => {
+
+						store.actions.user.login('test', 'test');
+						actions.buyAfterpartyTicket();
+
+						return (
+							<>
+								<Provider store={store}>
+									<Header/>
+									<Cabinet
+										{...props}
+										fetchOrders={() => null}
 									/>
 								</Provider>
 								<Footer/>

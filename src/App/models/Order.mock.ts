@@ -14,7 +14,19 @@ export function mockTicket() {
 
 export function mockIOrderItem() {
 	return Orderitem({
-		productRef:         faker.lorem.word(),
+		productRef:         'ticket',
+		productName:        faker.lorem.word(),
+		productDescription: faker.lorem.word(),
+		price:              faker.random.number(),
+		originalPrice:      faker.random.number(),
+		promocode:          faker.lorem.word(),
+		ticket:             mockTicket()
+	});
+}
+
+export function mockIOrderAftrepartyItem() {
+	return Orderitem({
+		productRef:         'afterparty',
 		productName:        faker.lorem.word(),
 		productDescription: faker.lorem.word(),
 		price:              faker.random.number(),
@@ -28,10 +40,26 @@ export function mockListOrderItems() {
 	return List([mockIOrderItem()]);
 }
 
-export default function mockOrder() {
+export function mockOrder() {
 	return Order({
 		status:      faker.lorem.word(),
 		paymentLink: faker.lorem.word(),
 		items:       mockListOrderItems()
 	});
+}
+
+export function mockAfterpartyOrder() {
+	return Order({
+		status:      faker.lorem.word(),
+		paymentLink: faker.lorem.word(),
+		items:       List([mockIOrderAftrepartyItem()])
+	});
+}
+
+export function mockAfterpartyOrders() {
+	return List([mockOrder(), mockAfterpartyOrder()]);
+}
+
+export default function mockOrders() {
+	return List([mockOrder()]);
 }

@@ -13,16 +13,18 @@ import CabinetContainer from './Cabinet';
 
 export function mapStateToProps({ user }: State) {
 	return {
-		user:  user.user,
-		order: user.order
+		user:   user.user,
+		orders: user.orders
 	};
 }
 
 export function mapActionsToProps({ user }: IActions) {
 	return {
-		fetchOrders:  user.fetchOrders,
-		fetchProfile: user.fetchProfile,
-		isLogged:     user.isLogged
+		fetchOrders:                 user.fetchOrders,
+		fetchProfile:                user.fetchProfile,
+		selectTicketOrder:           user.selectTicketOrder,
+		selectAfterpartyTicketOrder: user.selectAfterpartyTicketOrder,
+		isLogged:                    user.isLogged
 	};
 }
 

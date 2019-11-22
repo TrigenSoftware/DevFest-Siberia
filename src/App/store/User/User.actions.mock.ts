@@ -1,11 +1,15 @@
+import {
+	List
+} from 'immutable';
 import * as userService from '~/services/user/mock';
+import Order from '~/models/Order';
 import {
 	IActions,
 	State
 } from '../types';
 import {
 	SetUserPayload,
-	SetOrderPayload,
+	SetOrdersPayload,
 	SetProductPayload,
 	SetUserErrorPayload,
 	UserState
@@ -50,9 +54,9 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 
 		try {
 
-			const order = await userService.fetchOrders();
+			const orders = await userService.fetchOrders();
 
-			this.setOrder(order);
+			this.setOrders(orders);
 
 		} catch (error) {
 			this.setError({
@@ -112,6 +116,22 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 		}
 	}
 
+	selectTicketOrder(orders: List<Order>): Order {
+		return orders.find(
+			order => order.items.some(
+				item => item.productRef !== 'afterparty'
+			)
+		);
+	}
+
+	selectAfterpartyTicketOrder(orders: List<Order>): Order {
+		return orders.find(
+			order => order.items.some(
+				item => item.productRef === 'afterparty'
+			)
+		);
+	}
+
 	isLogged() {
 		return this.logged;
 	}
@@ -124,7 +144,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 	}
 
 	abstract setUser(payload: SetUserPayload);
-	abstract setOrder(payload: SetOrderPayload);
+	abstract setOrders(payload: SetOrdersPayload);
 	abstract setProduct(payload: SetProductPayload);
 	abstract setError(payload: SetUserErrorPayload);
 	abstract clearErrors();
