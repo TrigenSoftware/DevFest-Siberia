@@ -22,6 +22,7 @@ export function mapActionsToProps({ user }: IActions) {
 	return {
 		fetchOrders:                 user.fetchOrders,
 		fetchProfile:                user.fetchProfile,
+		buyAfterpartyTicket:         user.buyAfterpartyTicket,
 		selectTicketOrder:           user.selectTicketOrder,
 		selectAfterpartyTicketOrder: user.selectAfterpartyTicketOrder,
 		isLogged:                    user.isLogged

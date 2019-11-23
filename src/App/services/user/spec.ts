@@ -40,7 +40,7 @@ const MOCK_FETCHORDERS_RESPONSE = [
 		paymentLink: 'string',
 		items:       [
 			{
-				productRef:         'string',
+				productId:          'string',
 				productName:        'string',
 				productDescription: 'string',
 				price:              0,
