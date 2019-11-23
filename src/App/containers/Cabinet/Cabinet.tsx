@@ -12,6 +12,9 @@ import {
 	__x
 } from 'i18n-for-react';
 import {
+	Bind
+} from '@flexis/ui/helpers';
+import {
 	getLocalizedPath
 } from '~/services/i18n';
 import Section from '~/components/Section';
@@ -121,7 +124,9 @@ export class CabinetContainer extends Component<IProps> {
 					className={classes.footer}
 				>
 					{!afterparty && (
-						<Button>
+						<Button
+							onClick={this.buyAfterpartyTicket}
+						>
 							{__x`cabinet.buyAfterparty`}
 						</Button>
 					)}
@@ -148,6 +153,20 @@ export class CabinetContainer extends Component<IProps> {
 		} else {
 			history.push(getLocalizedPath(context, '/'));
 		}
+	}
+
+	@Bind()
+	private buyAfterpartyTicket() {
+
+		const {
+			buyAfterpartyTicket
+		} = this.props;
+		const {
+			context
+		} = this;
+		const locale = context.getLocale();
+
+		buyAfterpartyTicket(locale);
 	}
 }
 

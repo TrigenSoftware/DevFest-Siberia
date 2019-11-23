@@ -15,6 +15,7 @@ import {
 export interface IProps extends ISectionProps, IUserStateProps, RouteComponentProps {
 	fetchOrders();
 	fetchProfile();
+	buyAfterpartyTicket(locale: string);
 	selectTicketOrder(orders: List<Order>): Order;
 	selectAfterpartyTicketOrder(orders: List<Order>): Order;
 	isLogged();

@@ -14,7 +14,7 @@ export function mockTicket() {
 
 export function mockIOrderItem() {
 	return Orderitem({
-		productRef:         'ticket',
+		productId:          'ticket',
 		productName:        faker.lorem.word(),
 		productDescription: faker.lorem.word(),
 		price:              faker.random.number(),
@@ -26,7 +26,7 @@ export function mockIOrderItem() {
 
 export function mockIOrderAftrepartyItem() {
 	return Orderitem({
-		productRef:         'afterparty',
+		productId:          'afterparty',
 		productName:        faker.lorem.word(),
 		productDescription: faker.lorem.word(),
 		price:              faker.random.number(),
