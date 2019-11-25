@@ -218,6 +218,10 @@
 	font-weight: bold;
 }
 
+.speakerName:not(:hover):not(:focus) {
+	text-decoration: none;
+}
+
 .speakerDescription {
 	color: value(colorGray1);
 	font-size: 16px;

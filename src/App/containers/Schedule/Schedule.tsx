@@ -19,10 +19,12 @@ import {
 	Bind
 } from '@flexis/ui/helpers';
 import {
+	getLocalizedPath,
 	getScheduleDates,
 	getScheduleTypes
 } from '~/services/i18n';
 import Section from '~/components/Section';
+import SpeakerModal from '~/blocks/SpeakerModal';
 import ToggleNav, {
 	ToggleNavLink
 } from '~/components/ToggleNav';
@@ -70,7 +72,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 	static propTypes = {
 		datetime:             PropTypes.any,
 		fetchSchedule:        PropTypes.func.isRequired,
-		selectScheduleByType: PropTypes.func.isRequired
+		selectScheduleByType: PropTypes.func.isRequired,
+		selectSpeaker:        PropTypes.func.isRequired
 	};
 
 	static getDerivedStateFromProps(
@@ -107,7 +110,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 				search
 			},
 			actionsReady,
-			selectScheduleByType
+			selectScheduleByType,
+			selectSpeaker
 		} = this.props;
 		const {
 			context
@@ -138,8 +142,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 						<ToggleNavLink
 							key={date}
 							to={{
-								pathname: '/schedule',
-								search: addSearchParams(search, {
+								pathname: getLocalizedPath(context, '/schedule'),
+								search:   addSearchParams(search, {
 									date
 								})
 							}}
@@ -166,8 +170,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 							<ToggleNavLink
 								key={type}
 								to={{
-									pathname: '/schedule',
-									search: addSearchParams(search, {
+									pathname: getLocalizedPath(context, '/schedule'),
+									search:   addSearchParams(search, {
 										type
 									})
 								}}
@@ -203,6 +207,9 @@ export class ScheduleContainer extends Component<IProps, IState> {
 								/>
 							);
 						})}
+						<SpeakerModal
+							getSpeaker={selectSpeaker}
+						/>
 					</Schedule>
 				) : (
 					<Loading/>
@@ -219,7 +226,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 				search
 			},
 			datetime,
-			fetchSchedule
+			fetchSchedule,
+			fetchSpeakers
 		} = this.props;
 		const {
 			currentDate
@@ -228,8 +236,10 @@ export class ScheduleContainer extends Component<IProps, IState> {
 			context
 		} = this;
 		const date = new URLSearchParams(search).get('date');
+		const locale = context.getLocale();
 
-		fetchSchedule();
+		fetchSchedule(locale);
+		fetchSpeakers(locale);
 
 		if (!date) {
 

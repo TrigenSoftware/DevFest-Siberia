@@ -1,12 +1,16 @@
 /* tslint:disable:no-magic-numbers */
+import {
+	List
+} from 'immutable';
 import * as userService from '~/services/user';
+import Order from '~/models/Order';
 import {
 	IActions,
 	State
 } from '../types';
 import {
 	SetUserPayload,
-	SetOrderPayload,
+	SetOrdersPayload,
 	SetProductPayload,
 	SetUserErrorPayload,
 	UserState
@@ -29,6 +33,23 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 		} catch (error) {
 			this.setError({
 				type: this.buy,
+				error
+			});
+		}
+	}
+
+	async buyAfterpartyTicket(locale: string) {
+
+		try {
+
+			const redirectUrl = await userService.buyAfterpartyTicket(locale);
+
+			this.clearErrors();
+			location.href = redirectUrl;
+
+		} catch (error) {
+			this.setError({
+				type: this.buyAfterpartyTicket,
 				error
 			});
 		}
@@ -61,7 +82,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 
 			const order = await userService.fetchOrders();
 
-			this.setOrder(order);
+			this.setOrders(order);
 
 		} catch (error) {
 			this.setError({
@@ -127,11 +148,20 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 		}
 	}
 
-	checkToken(error) {
+	selectTicketOrder(orders: List<Order>): Order {
+		return orders.find(
+			order => order.items.some(
+				item => item.productId !== 'afterparty'
+			)
+		);
+	}
 
-		if (error.response.data.code === 401) {
-			this.refreshToken();
-		}
+	selectAfterpartyTicketOrder(orders: List<Order>): Order {
+		return orders.find(
+			order => order.items.some(
+				item => item.productId === 'afterparty'
+			)
+		);
 	}
 
 	refreshToken() {
@@ -158,7 +188,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 	}
 
 	abstract setUser(payload: SetUserPayload);
-	abstract setOrder(payload: SetOrderPayload);
+	abstract setOrders(payload: SetOrdersPayload);
 	abstract setProduct(payload: SetProductPayload);
 	abstract setError(payload: SetUserErrorPayload);
 	abstract clearErrors();

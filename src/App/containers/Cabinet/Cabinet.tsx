@@ -12,15 +12,20 @@ import {
 	__x
 } from 'i18n-for-react';
 import {
+	Bind
+} from '@flexis/ui/helpers';
+import {
 	getLocalizedPath
 } from '~/services/i18n';
 import Section from '~/components/Section';
 import TicketPreview, {
 	TickerPreviewPrimary,
+	TicketPreviewSecondary,
 	TickerPreviewGroup,
 	TickerPreviewField,
 	TicketPreviewAuxiliary
 } from '~/components/TicketPreview';
+import Button from '~/components/Button';
 import {
 	IProps
 } from './types';
@@ -34,9 +39,11 @@ export class CabinetContainer extends Component<IProps> {
 	static contextType = I18nContext;
 
 	static propTypes = {
-		fetchOrders:  PropTypes.func.isRequired,
-		fetchProfile: PropTypes.func.isRequired,
-		isLogged:     PropTypes.func.isRequired
+		fetchOrders:                 PropTypes.func.isRequired,
+		fetchProfile:                PropTypes.func.isRequired,
+		selectTicketOrder:           PropTypes.func.isRequired,
+		selectAfterpartyTicketOrder: PropTypes.func.isRequired,
+		isLogged:                    PropTypes.func.isRequired
 	};
 
 	context!: ContextType<typeof I18nContext>;
@@ -46,13 +53,17 @@ export class CabinetContainer extends Component<IProps> {
 		const {
 			className,
 			user,
-			order,
+			orders,
+			selectTicketOrder,
+			selectAfterpartyTicketOrder,
 			isLogged
 		} = this.props;
 		const {
 			context
 		} = this;
 		const __ = context.bind(tr);
+		const order = selectTicketOrder(orders);
+		const afterparty = selectAfterpartyTicketOrder(orders);
 
 		if (!isLogged()) {
 			return null;
@@ -98,12 +109,28 @@ export class CabinetContainer extends Component<IProps> {
 									/>
 								</TickerPreviewGroup>
 							</TickerPreviewPrimary>
+							{afterparty && (
+								<TicketPreviewSecondary>
+									{__x`cabinet.afterpartyTitle`}
+								</TicketPreviewSecondary>
+							)}
 							<TicketPreviewAuxiliary>
 								{productName}
 							</TicketPreviewAuxiliary>
 						</TicketPreview>
 					))}
 				</article>
+				<footer
+					className={classes.footer}
+				>
+					{!afterparty && (
+						<Button
+							onClick={this.buyAfterpartyTicket}
+						>
+							{__x`cabinet.buyAfterparty`}
+						</Button>
+					)}
+				</footer>
 			</Section>
 		);
 	}
@@ -126,6 +153,20 @@ export class CabinetContainer extends Component<IProps> {
 		} else {
 			history.push(getLocalizedPath(context, '/'));
 		}
+	}
+
+	@Bind()
+	private buyAfterpartyTicket() {
+
+		const {
+			buyAfterpartyTicket
+		} = this.props;
+		const {
+			context
+		} = this;
+		const locale = context.getLocale();
+
+		buyAfterpartyTicket(locale);
 	}
 }
 

@@ -57,15 +57,15 @@
 				"price": "5000₽",
 				"sale": "Standard conference pass",
 				"priceType": "Our main batch of tickets for anyone and everyone",
-				"description": "Available until 15th November",
-				"soldOut": false
+				"description": "Available until 20th November",
+				"soldOut": true
 			},
 			{
 				"type": "Later Gator",
 				"price": "7999₽",
 				"sale": "Last chance conference pass",
 				"priceType": "Last chance to grab tickets for our awesome conference",
-				"description": "On sale from 15th November",
+				"description": "On sale from 21th November",
 				"soldOut": false
 			}
 		]
@@ -103,15 +103,26 @@
 				"items": [
 					{
 						"type": "general",
-						"href": "https://academpark.com",
+						"href": "https://academpark.com/",
 						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/academpark.svg",
 						"title": "Academpark"
 					},
 					{
 						"type": "general",
-						"href": "https://developers.google.com",
+						"href": "https://developers.google.com/",
 						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/google.svg",
 						"title": "Google"
+					}
+				]
+			},
+			{
+				"title": "Gold partners",
+				"items": [
+					{
+						"type": "gold",
+						"href": "https://rocketbank.ru/?utm_source=gdg-siberia.com&utm_medium=logo&utm_campaign=devfest",
+						"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_300/v1573702727/partners/c5820wfbuycxsdjydhsl.png",
+						"title": "Rocketbank"
 					}
 				]
 			},
@@ -121,8 +132,14 @@
 					{
 						"type": "silver",
 						"href": "https://arqatech.com/?utm=dfSiberia19",
-						"src": "https://res.cloudinary.com/dfsiberia/image/upload/v1572372361/partners/an3zf9lfhj4hdvwkpoik.svg",
+						"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_160/v1572372361/partners/an3zf9lfhj4hdvwkpoik.svg",
 						"title": "ARQA Technologies"
+					},
+					{
+						"type": "silver",
+						"href": "https://selectel.ru/en/?utm=dfSiberia19",
+						"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_160/v1573702831/partners/bize9pwewdrj9kyd8ncn.svg",
+						"title": "Selectel"
 					}
 				]
 			},
@@ -131,10 +148,16 @@
 				"items": [
 					{
 						"type": "info",
-						"href": "https://androiddev.apptractor.ru/",
+						"href": "https://androiddev.apptractor.ru/?utm=dfSiberia",
 						"src": "https://res.cloudinary.com/trigen/image/upload/v1565857597/devfest2019/android.svg",
 						"title": "Android Dev Podcast",
 						"text": "Android Dev - is a podcast about apps development for Android and anything around. Our guests - experienced developers, who knows Android since version 1.5"
+					},
+					{
+						"type": "info",
+						"href": "http://it-events.com/?utm=dfSiberia",
+						"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_200/v1573703193/partners/lwy5ywivyb4vgqrvq7ax.png",
+						"title": "IT Events"
 					}
 				]
 			}
@@ -253,7 +276,8 @@
 				"lastname": "Zharov",
 				"description": "Coordinator & PR",
 				"contacts": {
-					"telegram": "https://t.me/kirzharov"
+					"telegram": "https://t.me/kirzharov",
+					"email": "mailto:kirx@gdg-siberia.com"
 				}
 			},
 			{
@@ -414,10 +438,12 @@
 		"location": "Academpark, Nikolaeva St 12, Novosibirsk",
 		"when": "When",
 		"date": "29 November – 1 December",
-		"ticket": "One ticket"
+		"ticket": "One ticket",
+		"afterpartyTitle": "Afterparty",
+		"buyAfterparty": "Buy a ticket for Afterparty"
 	},
 	"login": {
-		"title": "SIGN IN",
+		"title": "Sign In",
 		"email": "E-mail",
 		"emailPlaceholder": "Enter e-mail",
 		"password": "Password",

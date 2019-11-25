@@ -43,6 +43,7 @@ export enum VariantScheduleItemStatus {
 export type ScheduleItemStatus = 'past' | 'now' | 'next';
 
 interface ISpeaker {
+	id?: string;
 	name: string;
 	description: string;
 }
@@ -221,11 +222,16 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 									key={index}
 									className={classes.speaker}
 								>
-									<div
+									<Link
 										className={classes.speakerName}
+										to={{
+											search: addSearchParams(search, {
+												id: speaker.id
+											})
+										}}
 									>
 										{speaker.name}
-									</div>
+									</Link>
 									<div
 										className={classes.speakerDescription}
 									>

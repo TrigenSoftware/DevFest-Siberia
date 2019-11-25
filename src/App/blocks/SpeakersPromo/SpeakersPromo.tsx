@@ -1,11 +1,13 @@
 /* tslint:disable:no-magic-numbers */
 import React, {
+	ContextType,
 	Component
 } from 'react';
 import {
 	withRouter
 } from 'react-router-dom';
 import {
+	I18nContext,
 	__x
 } from 'i18n-for-react';
 import SpeakerModal from '~/blocks/SpeakerModal';
@@ -26,6 +28,10 @@ import {
 } from './SpeakersPromo.st.css';
 
 export class SpeakersPromo extends Component<IProps> {
+
+	static contextType = I18nContext;
+
+	context!: ContextType<typeof I18nContext>;
 
 	render() {
 
@@ -95,8 +101,12 @@ export class SpeakersPromo extends Component<IProps> {
 		const {
 			fetchSpeakers
 		} = this.props;
+		const {
+			context
+		} = this;
+		const locale = context.getLocale();
 
-		fetchSpeakers();
+		fetchSpeakers(locale);
 	}
 }
 

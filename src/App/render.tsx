@@ -160,13 +160,15 @@ async function renderAll(pages: string[]) {
 
 	const writePrecacheManifest = await patchPrecacheManifest();
 	const wrap = await createTemplate();
-	const store = createStore();
-
-	await store.loadAllSegments();
-
 	const renderers = await Promise.all(pages.map(async (routePath) => {
 
+		const store = createStore();
 		const locale = getLocaleFromPath(routePath);
+
+		await store.loadAllSegments({
+			locale
+		});
+
 		const parts = render(store, locale, routePath);
 
 		return () => [

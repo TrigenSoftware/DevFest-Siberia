@@ -41,7 +41,7 @@ const MOCK_FETCHORDERS_RESPONSE = [
 		paymentLink: 'string',
 		items:       [
 			{
-				productRef:         'string',
+				productId:          'string',
 				productName:        'string',
 				productDescription: 'string',
 				price:              0,
@@ -112,9 +112,7 @@ describe('API', () => {
 
 				const fetchOrdersResponse = await fetchOrders();
 
-				expect(typeof fetchOrdersResponse.status).toBe('string');
-				expect(typeof fetchOrdersResponse.paymentLink).toBe('string');
-				expect(typeof fetchOrdersResponse.items).toBe('object');
+				expect(fetchOrdersResponse.size).toEqual(1);
 			});
 		});
 	});
