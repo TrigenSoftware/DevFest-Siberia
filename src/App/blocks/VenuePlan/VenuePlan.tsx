@@ -64,7 +64,7 @@ export class VenuePlan extends Component<IProps> {
 					{__x`venuePlan.title`}
 				</h2>
 				<div
-					className={classes.group}
+					className={classes.floorNav}
 				>
 					<ToggleNav
 						className={classes.nav}

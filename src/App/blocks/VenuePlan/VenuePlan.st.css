@@ -23,23 +23,21 @@
 
 .title {
 	display: flex;
-	position: relative;
 	align-items: baseline;
-	justify-content: start;
-	margin: 0;
+	margin-bottom: rel(30, 82);
 }
 
 .title::after {
 	flex: 1;
 	margin-left: rel(27, 82);
-	border-bottom: rel(1, 82) dashed value(colorGray1);
+	border: rel(1, 82) dashed value(colorGray1);
 	content: '';
 }
 
-.group {
+.floorNav {
 	display: flex;
 	align-items: center;
-	margin: rel(31, 24) 0 rel(56, 24);
+	margin-bottom: rel(56, 24);
 }
 
 /* stylelint-disable a11y/no-display-none */
