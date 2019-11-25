@@ -116,6 +116,7 @@ export class VenuePlan extends Component<IProps> {
 		const floor = new URLSearchParams(search).get('floor');
 
 		if (!floor) {
+
 			history.push({
 				search: addSearchParams(search, {
 					floor: '2'
@@ -156,7 +157,6 @@ export class VenuePlan extends Component<IProps> {
 						2 этаж - потом добавлю картинки
 					</div>
 				);
-
 		}
 	}
 }
