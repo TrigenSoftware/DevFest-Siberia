@@ -9,6 +9,7 @@
 	-st-named:
 		sizeScreenMdMax,
 		sizeScreenSmMax,
+		sizeScreenXs,
 		colorBlue10,
 		colorBlue11,
 		colorBlue13,
@@ -161,5 +162,12 @@
 
 	.filterTitle {
 		margin-bottom: 10px;
+	}
+}
+
+@media (max-width: value(sizeScreenXs)) {
+
+	.title {
+		font-size: 40px;
 	}
 }

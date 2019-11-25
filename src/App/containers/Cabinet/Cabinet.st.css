@@ -17,3 +17,7 @@
 .ticket {
 	max-width: 810px;
 }
+
+.footer {
+	margin-top: rel(42, 24);
+}

@@ -1,4 +1,7 @@
 import {
+	List
+} from 'immutable';
+import {
 	Reducer
 } from '@flexis/redux';
 import User from '~/models/User';
@@ -7,7 +10,7 @@ import Product from '~/models/Product';
 import {
 	UserState,
 	ISetUserAction,
-	ISetOrderAction,
+	ISetOrdersAction,
 	ISetProductAction,
 	ISetUserErrorAction
 } from './User.types';
@@ -26,13 +29,17 @@ export class UserReducer extends Reducer {
 		);
 	}
 
-	setOrder(state: UserState, { payload }: ISetOrderAction) {
+	setOrders(state: UserState, { payload }: ISetOrdersAction) {
 
-		const order = payload && Order(payload);
+		const orders = payload && List(payload).map(Order);
+
+		if (!orders) {
+			return state;
+		}
 
 		return state.set(
-			'order',
-			order
+			'orders',
+			orders
 		);
 	}
 

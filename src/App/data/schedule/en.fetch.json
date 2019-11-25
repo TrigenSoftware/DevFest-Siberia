@@ -75,7 +75,9 @@
 		"speakers": [
 			"TBA"
 		],
-		"workshopDisabledLabel": "Closed"
+		"workshopAddLabel": "Хочу пойти",
+		"workshopLabel": "Я иду! :)",
+		"workshopDeleteLabel": "Не пойти"
 	},
 	{
 		"id": "5GPEf2LsELcnhYbhpfNzN",

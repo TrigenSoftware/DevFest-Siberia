@@ -6,13 +6,20 @@ import {
 	IActions
 } from '~/store/types';
 import {
-	ScheduleSegment
+	ScheduleSegment,
+	SpeakersSegment
 } from '~/store/segments';
 import ScheduleContainer from './Schedule';
 
-export function mapStateToProps({ schedule }: State) {
+export function mapStateToProps(
+	{
+		schedule,
+		speakers
+	}: State
+) {
 	return {
-		schedule: schedule.schedule
+		schedule: schedule.schedule,
+		speakers: speakers.speakers
 	};
 }
 
@@ -21,6 +28,10 @@ const pendingActions = {
 	fetchSchedule() {},
 	selectScheduleByType() {
 		return [];
+	},
+	fetchSpeakers() {},
+	selectSpeaker() {
+		return null;
 	},
 	fetchFavorites() {},
 	addFavorite() {},
@@ -34,6 +45,7 @@ const pendingActions = {
 export function mapActionsToProps(
 	{
 		schedule,
+		speakers,
 		user
 	}: IActions) {
 
@@ -45,6 +57,8 @@ export function mapActionsToProps(
 		actionsReady:         true,
 		fetchSchedule:        schedule.fetchSchedule,
 		selectScheduleByType: schedule.selectScheduleByType,
+		fetchSpeakers:        speakers.fetchSpeakers,
+		selectSpeaker:        speakers.selectSpeaker,
 		fetchFavorites:       schedule.fetchFavorites,
 		addFavorite:          schedule.addFavorite,
 		deleteFavorite:       schedule.deleteFavorite,
@@ -56,7 +70,10 @@ export function mapActionsToProps(
 }
 
 export default Connect({
-	dependsOn:   ScheduleSegment,
+	dependsOn:   [
+		ScheduleSegment,
+		SpeakersSegment
+	],
 	skipWaiting: true,
 	mapStateToProps,
 	mapActionsToProps

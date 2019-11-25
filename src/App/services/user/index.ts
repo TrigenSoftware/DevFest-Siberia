@@ -2,7 +2,7 @@ import createLogger from '~/services/logger';
 import client from './client';
 import {
 	userFromResponseData,
-	orderFromResponseData,
+	ordersFromResponseData,
 	productFromResponseData
 } from './adapters';
 
@@ -49,6 +49,39 @@ export async function buy({
 	return redirectUrl;
 }
 
+export async function buyAfterpartyTicket(locale: string) {
+
+	logger.debug('buyAfterpartyTicket');
+
+	const profile = await fetchProfile();
+
+	logger.debug('buyAfterpartyTicket', 'Response:', profile);
+
+	const {
+		data: buyAfterpartyData
+	} = await client.post('auth/register', {
+		termsAccepted:  true,
+		paymentRequest: {
+			locale,
+			products: [{
+				productRef: 'afterparty'
+			}],
+			promocode: ''
+		},
+		...profile.toJS()
+	});
+
+	logger.debug('buyAfterpartyTicket', 'Response:', buyAfterpartyData);
+
+	const {
+		paymentDetails: {
+			redirectUrl
+		}
+	} = buyAfterpartyData;
+
+	return redirectUrl;
+}
+
 export async function login(email: string, password: string) {
 
 	logger.debug('login', 'Input email:', email);
@@ -90,7 +123,7 @@ export async function fetchOrders() {
 
 	logger.debug('fetchOrders', 'Response:', ordersData);
 
-	return orderFromResponseData(ordersData[0]);
+	return ordersFromResponseData(ordersData);
 }
 
 export async function fetchProducts() {

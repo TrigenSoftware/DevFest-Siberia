@@ -47,9 +47,11 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 		return filtredByDate;
 	}
 
-	async fetchSchedule() {
+	async fetchSchedule(lang?: string) {
 
-		const schedule = await scheduleService.fetch();
+		const schedule = await scheduleService.fetch({
+			lang
+		});
 
 		this.setSchedule(schedule);
 	}
@@ -98,6 +100,8 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 		try {
 
 			const reservations = await scheduleService.fetchReservations();
+
+			console.log(reservations.toJS());
 
 			this.setReservations(reservations);
 

@@ -11,6 +11,7 @@ export interface IUserProps {
 	firstname: string;
 	lastname: string;
 	company: string;
+	position: string;
 	city: string;
 }
 
@@ -22,6 +23,7 @@ const User = Record<IUserProps>({
 	firstname: '',
 	lastname:  '',
 	company:   '',
+	position:  '',
 	city:      ''
 });
 

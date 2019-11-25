@@ -1,3 +1,6 @@
+import {
+	List
+} from 'immutable';
 import User from '~/models/User';
 import Order from '~/models/Order';
 import Product from '~/models/Product';
@@ -9,16 +12,13 @@ export function userFromResponseData(responseData) {
 		firstname: responseData.firstName,
 		lastname:  responseData.lastName,
 		company:   responseData.company,
+		position:  responseData.position,
 		city:      responseData.city
 	});
 }
 
-export function orderFromResponseData(responseData) {
-	return Order({
-		status:      responseData.status,
-		paymentLink: responseData.paymentLink,
-		items:       responseData.items
-	});
+export function ordersFromResponseData(responseData) {
+	return List(responseData).map(Order);
 }
 
 export function productFromResponseData(responseData) {

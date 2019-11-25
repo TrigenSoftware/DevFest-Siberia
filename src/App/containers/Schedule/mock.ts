@@ -15,6 +15,10 @@ import {
 import {
 	UserActions
 } from '~/store/User/User.actions.mock';
+import {
+	SpeakersReducer,
+	SpeakersActions
+} from '~/store/Speakers';
 import Schedule from './Schedule';
 import {
 	mapStateToProps,
@@ -35,9 +39,13 @@ export const store = new Store<State, IActions>({
 	state:    State(),
 	actions:  [
 		ScheduleActions,
+		SpeakersActions,
 		UserActions
 	],
-	reducer:  ScheduleReducer,
+	reducer:  [
+		ScheduleReducer,
+		SpeakersReducer
+	],
 	enhancer: __REDUX_DEVTOOLS_EXTENSION__ && __REDUX_DEVTOOLS_EXTENSION__()
 });
 

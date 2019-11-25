@@ -3,6 +3,7 @@ import * as speakersService from '~/services/speakers';
 import client from './client';
 import userClinet from '../user/client';
 import enSchedule from '~/data/schedule/en.fetch.json?fetch';
+import ruSchedule from '~/data/schedule/ru.fetch.json?fetch';
 import {
 	favoritesFromResponseData,
 	reservationsFromResponseData,
@@ -19,9 +20,10 @@ export async function fetch({
 	logger.debug('fetch', 'Input lang:', lang);
 
 	const fetchSpeakersTask = !skipSpeakers && speakersService.fetch({
+		lang,
 		skipSchedule: true
 	});
-	const url = lang === 'en' ? enSchedule : '';
+	const url = lang === 'en' ? enSchedule : ruSchedule;
 	let schedule: any[] = null;
 
 	if (typeof url !== 'string') {
@@ -76,6 +78,7 @@ function findSpeaker(speakers: any[], id: string) {
 	}
 
 	return {
+		id:          speaker.id,
 		name:        `${speaker.firstname} ${speaker.lastname}`,
 		description: speaker.description
 	};
