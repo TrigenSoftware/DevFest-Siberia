@@ -4,6 +4,11 @@ import client from './client';
 import userClinet from '../user/client';
 import enSchedule from '~/data/schedule/en.fetch.json?fetch';
 import ruSchedule from '~/data/schedule/ru.fetch.json?fetch';
+import {
+	favoritesFromResponseData,
+	reservationsFromResponseData,
+	reservationFromResponseData
+} from './adapters';
 
 const logger = createLogger('App::services::schedule');
 
