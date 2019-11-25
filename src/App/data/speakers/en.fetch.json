@@ -910,13 +910,7 @@
 		"lastname": "Yakil",
 		"description": "Backend C/Go developer at Badoo",
 		"location": "🇷🇺",
-<<<<<<< HEAD
-		"contacts": {
-
-		},
-=======
 		"contacts": {},
->>>>>>> 25f659ef3bded276b87530cd321dc26e6dd5efb4
 		"text": "",
 		"talkTitle": "Integration Tests in Go",
 		"talkLocation": "",
