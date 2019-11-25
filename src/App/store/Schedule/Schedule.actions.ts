@@ -101,8 +101,6 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 
 			const reservations = await scheduleService.fetchReservations();
 
-			console.log(reservations.toJS());
-
 			this.setReservations(reservations);
 
 		} catch (error) {
