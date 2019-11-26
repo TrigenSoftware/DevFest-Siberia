@@ -362,6 +362,11 @@
 	},
 	"schedule": {
 		"title": "Расписание",
+		"favoriteLabel": "Добавить в избранное",
+		"workshopAddLabel": "Хочу пойти",
+		"workshopLabel": "Я иду! :)",
+		"workshopDeleteLabel": "Не пойти",
+		"workshopDisabledLabel": "Нет мест",
 		"nav": [
 			{
 				"date": "2019-11-29",

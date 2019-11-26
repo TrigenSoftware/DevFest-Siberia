@@ -40,8 +40,7 @@
 		"talkLevelBadge": "Beginner",
 		"speakers": [
 			"VsevolodHrechaniuk"
-		],
-		"favoriteLabel": "Add To Favorite"
+		]
 	},
 	{
 		"id": "0IG0y2olrnsldnVT2Vjfg",
@@ -56,10 +55,7 @@
 		"talkLevelBadge": "Intermediate",
 		"speakers": [
 			"AlexeyRodionov"
-		],
-		"workshopAddLabel": "Хочу пойти",
-		"workshopLabel": "Я иду! :)",
-		"workshopDeleteLabel": "Не пойти"
+		]
 	},
 	{
 		"id": "ivZ4manCEMebayE4fk68Y",
@@ -74,10 +70,7 @@
 		"talkLevelBadge": "Intermediate",
 		"speakers": [
 			"TBA"
-		],
-		"workshopAddLabel": "Хочу пойти",
-		"workshopLabel": "Я иду! :)",
-		"workshopDeleteLabel": "Не пойти"
+		]
 	},
 	{
 		"id": "5GPEf2LsELcnhYbhpfNzN",
@@ -106,8 +99,7 @@
 		"talkLevelBadge": "Intermediate",
 		"speakers": [
 			"AlexanderEfremenkov"
-		],
-		"favoriteLabel": "Add To Favorite"
+		]
 	},
 	{
 		"id": "gMn2fAdcpohYAIwqwVdgJ",
@@ -178,10 +170,7 @@
 		"talkLevelBadge": "Intermediate",
 		"speakers": [
 			"LauraCarvajal"
-		],
-		"workshopAddLabel": "Хочу пойти",
-		"workshopLabel": "Я иду! :)",
-		"workshopDeleteLabel": "Не пойти"
+		]
 	},
 	{
 		"id": "3bFCNDoISnij3DG7S9xG6",
@@ -196,10 +185,7 @@
 		"talkLevelBadge": "Intermediate",
 		"speakers": [
 			"VladimirDaron"
-		],
-		"workshopAddLabel": "Хочу пойти",
-		"workshopLabel": "Я иду! :)",
-		"workshopDeleteLabel": "Не пойти"
+		]
 	},
 	{
 		"id": "Fd-P93vm_-4x_yLSntkxC",

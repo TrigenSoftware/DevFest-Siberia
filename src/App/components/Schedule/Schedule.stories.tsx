@@ -58,7 +58,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='Mobile'
 					talkLevelBadge='Intermediate'
 					favorite
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
@@ -81,7 +80,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='All'
 					talkLevelBadge='Intermediate'
 					favorite
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
@@ -104,7 +102,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='Mobile'
 					talkLevelBadge='Intermediate'
 					favorite
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
@@ -126,7 +123,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='Data Science'
 					talkLevelBadge='Intermediate'
 					favorite={false}
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
@@ -148,7 +144,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='Frontend'
 					talkLevelBadge='Intermediate'
 					favorite={false}
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
@@ -170,7 +165,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='DevOps'
 					talkLevelBadge='Intermediate'
 					favorite
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
@@ -192,7 +186,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='Security'
 					talkLevelBadge='Intermediate'
 					favorite
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
@@ -226,7 +219,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='Backend'
 					talkLevelBadge='Intermediate'
 					favorite
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
@@ -248,7 +240,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='Hype'
 					talkLevelBadge='Intermediate'
 					favorite
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
@@ -270,7 +261,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='Web'
 					talkLevelBadge='Intermediate'
 					favorite
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
@@ -292,7 +282,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='All'
 					talkLevelBadge='Advanced'
 					favorite
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
@@ -314,7 +303,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='Mobile'
 					talkLevelBadge='Intermediate'
 					favorite={false}
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
@@ -335,7 +323,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='Data Science'
 					talkLevelBadge='Intermediate'
 					favorite={false}
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
@@ -356,7 +343,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='Frontend'
 					talkLevelBadge='Intermediate'
 					favorite={false}
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
@@ -377,7 +363,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='DevOps'
 					talkLevelBadge='Intermediate'
 					favorite={false}
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
@@ -398,7 +383,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='Security'
 					talkLevelBadge='Beginner'
 					favorite={false}
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
@@ -419,7 +403,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='Backend'
 					talkLevelBadge='Advanced'
 					favorite={false}
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
@@ -440,7 +423,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='Hype'
 					talkLevelBadge='Advanced'
 					favorite={false}
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
@@ -461,7 +443,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='Web'
 					talkLevelBadge='Advanced'
 					favorite={false}
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 			</Schedule>
@@ -492,7 +473,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='Web'
 					talkLevelBadge='Advanced'
 					favorite={false}
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleItem
@@ -513,7 +493,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='Web'
 					talkLevelBadge='Advanced'
 					favorite={false}
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 				<ScheduleSeparator>
@@ -537,7 +516,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='Web'
 					talkLevelBadge='Advanced'
 					favorite={false}
-					favoriteLabel='Favorite'
 					onFavoriteClick={action('click')}
 				/>
 			</Schedule>
@@ -565,7 +543,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='Web'
 					talkLevelBadge='Advanced'
 					workshop={false}
-					workshopAddLabel='Хочу пойти'
 					onWorkshopAddClick={action('add')}
 				/>
 				<ScheduleItem
@@ -587,7 +564,6 @@ storiesOf('Components|Schedule', module)
 					talkLevelBadge='Advanced'
 					workshop
 					workshopDisabled
-					workshopDisabledLabel='Мест больше нет :('
 				/>
 				<ScheduleItem
 					time='9:30 PM'
@@ -607,8 +583,6 @@ storiesOf('Components|Schedule', module)
 					talkTypeBadge='Web'
 					talkLevelBadge='Advanced'
 					workshop
-					workshopLabel='Я иду! :)'
-					workshopDeleteLabel='Не пойти'
 					onWorkshopDeleteClick={action('delete')}
 				/>
 			</Schedule>
