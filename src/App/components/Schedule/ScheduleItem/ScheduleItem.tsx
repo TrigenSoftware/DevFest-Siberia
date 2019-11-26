@@ -53,8 +53,6 @@ export enum VariantScheduleItemType {
 
 export type ScheduleItemStatus = 'past' | 'now' | 'next';
 
-export type ScheduleItemType = 'workshop' | 'talk';
-
 interface ISpeaker {
 	id?: string;
 	name: string;
@@ -63,7 +61,6 @@ interface ISpeaker {
 
 interface ISelfProps extends RouteComponentProps {
 	id?: string;
-	type?: ScheduleItemType;
 	time: ReactNode;
 	lang?: string;
 	place: ReactNode;
@@ -90,8 +87,6 @@ export type IScheduleItemProps = CombinePropsAndAttributes<
 
 export const ScheduleItemStatusValues: ScheduleItemStatus[] = Object.values(VariantScheduleItemStatus);
 
-export const ScheduleItemTypeValues: ScheduleItemType[] = Object.values(VariantScheduleItemType);
-
 export const talkTypeColors: Record<string, Color> = {
 	'all':          'darkblue',
 	'mobile':       'pink',
@@ -113,7 +108,6 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 
 	static propTypes = {
 		id:                    PropTypes.string,
-		type:                  PropTypes.oneOf(ScheduleItemTypeValues),
 		time:                  PropTypes.node.isRequired,
 		lang:                  PropTypes.string,
 		place:                 PropTypes.node.isRequired,
