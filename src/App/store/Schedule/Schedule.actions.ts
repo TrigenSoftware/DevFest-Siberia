@@ -59,11 +59,13 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 		});
 		const workshops = await scheduleService.fetchWorkshops();
 		const updatedSchedule = schedule.map((schedule) => {
+
 			for (const workshop of workshops) {
+
 				if (workshop.workshopId === schedule.id) {
 					return {
 						...schedule,
-						workshopDisabled: workshop === 'fill' && true
+						workshopDisabled: workshop.status === 'full' && true
 					};
 				}
 			}
