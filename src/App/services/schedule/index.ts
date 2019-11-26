@@ -84,6 +84,19 @@ function findSpeaker(speakers: any[], id: string) {
 	};
 }
 
+export async function fetchWorkshops() {
+
+	logger.debug('fetchWorkshops');
+
+	const {
+		data: workshopsData
+	} = await userClinet.get('api/workshop/all');
+
+	logger.debug('fetchWorkshops', 'Response:', workshopsData);
+
+	return workshopsData;
+}
+
 export async function fetchFavorites() {
 
 	logger.debug('fetchFavorites');

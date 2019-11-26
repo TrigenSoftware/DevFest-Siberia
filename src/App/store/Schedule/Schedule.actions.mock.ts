@@ -55,8 +55,21 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 	async fetchSchedule() {
 
 		const schedule = await scheduleService.fetch();
+		const workshops = Reservation({
+			workshopId: '0IG0y2olrnsldnVT2Vjfg',
+			status: 'fill'
+		});
+		const scheduleWithStatus = schedule.map((schedule) => {
+			if (schedule.id === workshops.workshopId) {
+				return {
+					...schedule,
+					workshopDisabled: workshops.status === 'fill' && true
+				};
+			}
+			return schedule;
+		});
 
-		this.setSchedule(schedule);
+		this.setSchedule(scheduleWithStatus);
 	}
 
 	async fetchFavorites() {
