@@ -1,4 +1,7 @@
 import {
+	List
+} from 'immutable';
+import {
 	RouteComponentProps
 } from 'react-router-dom';
 import {
@@ -10,6 +13,8 @@ import {
 import {
 	IProps as ISectionProps
 } from '~/components/Section';
+import Favorite from '~/models/Favorite';
+import Reservation from '~/models/Reservation';
 
 export interface IState {
 	currentDate: Date;
@@ -24,9 +29,11 @@ export interface IProps extends ISectionProps, IScheduleStateProps, ISpeakersSta
 	selectSpeaker(id: string): Speaker;
 	fetchFavorites();
 	addFavorite(lectureId: string);
-	deleteFavorite(ectureId: string);
+	deleteFavorite(lectureId: string);
+	selectIsFavorite(favorites: List<Favorite>, lectureId: string);
 	fetchReservations();
 	addReservation(workshopId: string);
 	deleteReservation(workshopId: string);
+	selectIsReserved(reservations: List<Reservation>, workshopId: string);
 	isLogged();
 }

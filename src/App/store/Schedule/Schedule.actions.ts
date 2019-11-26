@@ -1,6 +1,11 @@
 /* tslint:disable:no-magic-numbers */
+import {
+	List
+} from 'immutable';
 import * as scheduleService from '~/services/schedule';
 import * as userService from '~/services/user';
+import Favorite from '~/models/Favorite';
+import Reservation from '~/models/Reservation';
 import {
 	IActions,
 	State
@@ -136,6 +141,14 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 		} catch (error) {
 			this.checkToken(error);
 		}
+	}
+
+	selectIsFavorite(favorites: List<Favorite>, id: string): boolean {
+		return favorites.some(_ => _.lectureId === id);
+	}
+
+	selectIsReserved(reservations: List<Reservation>, id: string): boolean {
+		return reservations.some(_ => _.workshopId === id);
 	}
 
 	checkToken(error) {

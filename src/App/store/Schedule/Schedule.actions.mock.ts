@@ -1,4 +1,7 @@
 /* tslint:disable:no-magic-numbers */
+import {
+	List
+} from 'immutable';
 import * as scheduleService from '~/services/schedule';
 import * as scheduleServiceMock from '~/services/schedule/mock';
 import Favorite from '~/models/Favorite';
@@ -117,6 +120,14 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 		const updatedReservations = reservations.delete(reservationIndex);
 
 		this.setReservations(updatedReservations);
+	}
+
+	selectIsFavorite(favorites: List<Favorite>, id: string): boolean {
+		return favorites.some(_ => _.lectureId === id);
+	}
+
+	selectIsReserved(reservations: List<Reservation>, id: string): boolean {
+		return reservations.some(_ => _.workshopId === id);
 	}
 
 	abstract setSchedule(payload: SetSchedulePayload);

@@ -1,5 +1,7 @@
 import createLogger from '~/services/logger';
-import mockFavorites from '~/models/Favorite.mock';
+import mockFavorites, {
+	mockFavorite
+} from '~/models/Favorite.mock';
 import mockReservations from '~/models/Reservation.mock';
 
 const logger = createLogger('App::services::schedule');
@@ -11,6 +13,17 @@ export async function fetchFavorites() {
 	const response = mockFavorites();
 
 	logger.debug('fetchFavorites', 'Response:', response);
+
+	return response;
+}
+
+export async function fetchAddFavorite() {
+
+	logger.debug('fetchAddFavorite');
+
+	const response = mockFavorite();
+
+	logger.debug('fetchAddFavorite', 'Response:', response);
 
 	return response;
 }

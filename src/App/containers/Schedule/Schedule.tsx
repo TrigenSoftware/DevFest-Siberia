@@ -79,9 +79,11 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		fetchFavorites:       PropTypes.func.isRequired,
 		addFavorite:          PropTypes.func.isRequired,
 		deleteFavorite:       PropTypes.func.isRequired,
+		selectIsFavorite:     PropTypes.func.isRequired,
 		fetchReservations:    PropTypes.func.isRequired,
 		addReservation:       PropTypes.func.isRequired,
 		deleteReservation:    PropTypes.func.isRequired,
+		selectIsReserved:     PropTypes.func.isRequired,
 		isLogged:             PropTypes.func.isRequired
 	};
 
@@ -120,7 +122,11 @@ export class ScheduleContainer extends Component<IProps, IState> {
 			},
 			actionsReady,
 			selectScheduleByType,
-			selectSpeaker
+			selectSpeaker,
+			favorites,
+			reservations,
+			selectIsFavorite,
+			selectIsReserved
 		} = this.props;
 		const {
 			context
@@ -200,13 +206,14 @@ export class ScheduleContainer extends Component<IProps, IState> {
 						{schedule.map((item, i) => {
 
 							const {
+								id,
 								type,
 								location,
 								date,
 								timeStart,
-								timeEnd,
-								workshop
+								timeEnd
 							} = item;
+							const workshop = selectIsReserved(reservations, id);
 
 							return (
 								<ScheduleItem
@@ -215,7 +222,9 @@ export class ScheduleContainer extends Component<IProps, IState> {
 									place={location}
 									time={formatDate(date, timeStart)}
 									status={this.getStatus(date, timeStart, timeEnd)}
-									{...this.addControlsHandlers(type, workshop)}
+									favorite={selectIsFavorite(favorites, id)}
+									workshop={workshop}
+									{...this.getEventHandlers(type, workshop)}
 								/>
 							);
 						})}
@@ -230,7 +239,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		);
 	}
 
-	async componentDidMount() {
+	componentDidMount() {
 
 		const {
 			history,
@@ -252,10 +261,10 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		const date = new URLSearchParams(search).get('date');
 		const locale = context.getLocale();
 
-		await fetchSchedule(locale);
-		await fetchSpeakers(locale);
-		await fetchFavorites();
-		await fetchReservations();
+		fetchSchedule(locale);
+		fetchSpeakers(locale);
+		fetchFavorites();
+		fetchReservations();
 
 		if (!date) {
 
@@ -345,7 +354,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		}
 	}
 
-	private addControlsHandlers(type: VariantScheduleItemType, workshop: boolean) {
+	private getEventHandlers(type: VariantScheduleItemType, workshop: boolean) {
 
 		const {
 			isLogged
@@ -355,20 +364,19 @@ export class ScheduleContainer extends Component<IProps, IState> {
 			return null;
 		}
 
-		if (type === VariantScheduleItemType.Workshop && workshop) {
-			return {
-				onWorkshopDeleteClick: this.onWorkshopDeleteClick
-			};
-		}
+		switch (true) {
 
-		switch (type) {
+			case type === VariantScheduleItemType.Workshop && workshop:
+				return {
+					onWorkshopDeleteClick: this.onWorkshopDeleteClick
+				};
 
-			case VariantScheduleItemType.Talk:
+			case type === VariantScheduleItemType.Talk:
 				return {
 					onFavoriteClick: this.onFavoriteClick
 				};
 
-			case VariantScheduleItemType.Workshop:
+			case type === VariantScheduleItemType.Workshop:
 				return {
 					onWorkshopAddClick: this.onWorkshopAddClick
 				};

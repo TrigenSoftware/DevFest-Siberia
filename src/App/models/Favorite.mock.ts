@@ -7,7 +7,7 @@ import Favorite from './Favorite';
 
 const count = 3;
 
-function mockFavorite() {
+export function mockFavorite() {
 	return Favorite({
 		lectureId: faker.lorem.word()
 	});

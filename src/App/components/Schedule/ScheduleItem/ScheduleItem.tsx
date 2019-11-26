@@ -110,7 +110,7 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 
 	static propTypes = {
 		id:                    PropTypes.string,
-		type:                  PropTypes.string,
+		type:                  PropTypes.oneOf(ScheduleItemTypeValues),
 		time:                  PropTypes.node.isRequired,
 		lang:                  PropTypes.string,
 		place:                 PropTypes.node.isRequired,
