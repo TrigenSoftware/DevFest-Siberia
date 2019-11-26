@@ -58,7 +58,7 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 			lang
 		});
 		const workshops = await scheduleService.fetchWorkshops();
-		const scheduleWithStatus = schedule.map((schedule) => {
+		const updatedSchedule = schedule.map((schedule) => {
 			for (const workshop of workshops) {
 				if (workshop.workshopId === schedule.id) {
 					return {
@@ -70,7 +70,7 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 			return schedule;
 		});
 
-		this.setSchedule(scheduleWithStatus);
+		this.setSchedule(updatedSchedule);
 	}
 
 	async fetchFavorites() {

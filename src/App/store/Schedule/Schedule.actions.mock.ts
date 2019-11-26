@@ -59,7 +59,7 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 			workshopId: '0IG0y2olrnsldnVT2Vjfg',
 			status: 'fill'
 		});
-		const scheduleWithStatus = schedule.map((schedule) => {
+		const updatedSchedule = schedule.map((schedule) => {
 			if (schedule.id === workshops.workshopId) {
 				return {
 					...schedule,
@@ -69,7 +69,7 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 			return schedule;
 		});
 
-		this.setSchedule(scheduleWithStatus);
+		this.setSchedule(updatedSchedule);
 	}
 
 	async fetchFavorites() {
