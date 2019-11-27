@@ -389,6 +389,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 				};
 
 			default:
+				return {};
 		}
 	}
 }

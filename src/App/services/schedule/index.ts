@@ -35,8 +35,22 @@ export async function fetch({
 		const {
 			data
 		} = await client.get(url);
+		const workshops = await fetchWorkshops();
+		const updatedData = data.map((scheduleItem) => {
 
-		schedule = data;
+			for (const workshop of workshops) {
+
+				if (workshop.workshopId === scheduleItem.id) {
+					return {
+						...scheduleItem,
+						workshopDisabled: workshop.status === 'full' && true
+					};
+				}
+			}
+			return scheduleItem;
+		});
+
+		schedule = updatedData;
 	}
 
 	if (fetchSpeakersTask) {
@@ -53,13 +67,13 @@ export async function fetch({
 				return scheduleItem;
 			}
 
-			const shcedultItemSpeakers = speakersIds
+			const schedultItemSpeakers = speakersIds
 				.map(speakerId => findSpeaker(speakers, speakerId))
 				.filter(Boolean);
 
 			return {
 				...scheduleItem,
-				speakers: shcedultItemSpeakers
+				speakers: schedultItemSpeakers
 			};
 		});
 	}

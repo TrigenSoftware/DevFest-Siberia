@@ -2,7 +2,6 @@
 import {
 	List
 } from 'immutable';
-import * as scheduleService from '~/services/schedule';
 import * as scheduleServiceMock from '~/services/schedule/mock';
 import Favorite from '~/models/Favorite';
 import Reservation from '~/models/Reservation';
@@ -54,23 +53,9 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 
 	async fetchSchedule() {
 
-		const schedule = await scheduleService.fetch();
-		const workshops = Reservation({
-			workshopId: '0IG0y2olrnsldnVT2Vjfg',
-			status: 'full'
-		});
-		const updatedSchedule = schedule.map((schedule) => {
+		const schedule = await scheduleServiceMock.fetch();
 
-			if (schedule.id === workshops.workshopId) {
-				return {
-					...schedule,
-					workshopDisabled: workshops.status === 'full' && true
-				};
-			}
-			return schedule;
-		});
-
-		this.setSchedule(updatedSchedule);
+		this.setSchedule(schedule);
 	}
 
 	async fetchFavorites() {
