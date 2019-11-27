@@ -8,6 +8,7 @@ import {
 	IUserStateProps
 } from '~/store/types';
 import Order from '~/models/Order';
+import OrderItem from '~/models/OrderItem';
 import {
 	IProps as ISectionProps
 } from '~/components/Section';
@@ -16,7 +17,7 @@ export interface IProps extends ISectionProps, IUserStateProps, RouteComponentPr
 	fetchOrders();
 	fetchProfile();
 	buyAfterpartyTicket(locale: string);
-	selectTicketOrder(orders: List<Order>): Order;
-	selectAfterpartyTicketOrder(orders: List<Order>): Order;
+	selectTicketOrder(orders: List<Order>): OrderItem;
+	selectAfterpartyTicketOrder(orders: List<Order>): OrderItem;
 	isLogged();
 }

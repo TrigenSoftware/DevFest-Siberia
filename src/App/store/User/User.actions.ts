@@ -4,6 +4,7 @@ import {
 } from 'immutable';
 import * as userService from '~/services/user';
 import Order from '~/models/Order';
+import OrderItem from '~/models/OrderItem';
 import {
 	IActions,
 	State
@@ -154,20 +155,42 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 		}
 	}
 
-	selectTicketOrder(orders: List<Order>): Order {
-		return orders.find(
-			order => order.items.some(
-				item => item.ticket && item.productId !== 'afterparty'
-			)
+	selectTicketOrder(orders: List<Order>): OrderItem {
+
+		let orderItem: OrderItem = null;
+
+		orders.some(
+			order => order.items.some((item) => {
+
+				if (item.ticket && item.productId !== 'afterparty') {
+					orderItem = item;
+					return true;
+				}
+
+				return false;
+			})
 		);
+
+		return orderItem;
 	}
 
-	selectAfterpartyTicketOrder(orders: List<Order>): Order {
-		return orders.find(
-			order => order.items.some(
-				item => item.ticket && item.productId === 'afterparty'
-			)
+	selectAfterpartyTicketOrder(orders: List<Order>): OrderItem {
+
+		let orderItem: OrderItem = null;
+
+		orders.some(
+			order => order.items.some((item) => {
+
+				if (item.ticket && item.productId === 'afterparty') {
+					orderItem = item;
+					return true;
+				}
+
+				return false;
+			})
 		);
+
+		return orderItem;
 	}
 
 	isUnauthorizedError(error: any) {
