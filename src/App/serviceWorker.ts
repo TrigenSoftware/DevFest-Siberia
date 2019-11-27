@@ -1,4 +1,8 @@
 import {
+	cacheNames
+} from 'workbox-core';
+import {
+	cleanupOutdatedCaches,
 	precacheAndRoute,
 	getCacheKeyForURL
 } from 'workbox-precaching';
@@ -10,7 +14,7 @@ import {
 	NetworkFirst,
 	StaleWhileRevalidate
 } from 'workbox-strategies';
-import connectUpdater from './util/connectUpdater';
+import UpdaterHost from './util/UpdaterHost';
 
 declare var self: ServiceWorkerGlobalScope;
 
@@ -30,6 +34,15 @@ const ignorePrecachePatterns = [
 function filterPrecache({ url }) {
 	return ignorePrecachePatterns.every(_ => !_.test(url));
 }
+
+UpdaterHost.connect({
+	clearCaches: [
+		cacheNames.precache,
+		cacheNames.runtime
+	]
+});
+
+cleanupOutdatedCaches();
 
 precacheAndRoute(
 	self.__precacheManifest.filter(filterPrecache)
@@ -63,5 +76,3 @@ registerRoute(
 		networkTimeoutSeconds: 3
 	})
 );
-
-connectUpdater();

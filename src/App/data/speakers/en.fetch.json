@@ -39,25 +39,6 @@
 		"talkLevelBadge": "Intermediate"
 	},
 	{
-		"id": "LauraCarvajal",
-		"type": "web",
-		"promo": true,
-		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571609942/speakers/phi1mhszavg9nsoiawbm.jpg",
-		"firstname": "Laura",
-		"lastname": "Carvajal",
-		"description": "Principal Engineer at Financial Times",
-		"location": "🇬🇧",
-		"contacts": {
-			"twitter": "https://twitter.com/lc512k"
-		},
-		"text": "Laura is a Principal Engineer at the Financial Times and former accessibility Lead for FT.com",
-		"talkTitle": "Yes! Your site can (and should) be accessible",
-		"talkLocation": "",
-		"talkTime": "",
-		"talkTypeBadge": "Web",
-		"talkLevelBadge": "Advanced"
-	},
-	{
 		"id": "ValarieRegas",
 		"type": "devops",
 		"promo": true,
@@ -232,7 +213,7 @@
 		"talkLevelBadge": "Intermediate"
 	},
 	{
-		"id": "RafałLeszko",
+		"id": "RafalLeszko",
 		"type": "web",
 		"promo": true,
 		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1569454257/speakers/RafalLeszko_bkd3rg.jpg",
@@ -253,7 +234,7 @@
 		"talkLevelBadge": "Advanced"
 	},
 	{
-		"id": "MikołajDobrucki",
+		"id": "MikolajDobrucki",
 		"type": "web",
 		"promo": true,
 		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1569454834/speakers/Miko%C5%82ajDobrucki_wky1ct.jpg",
@@ -446,7 +427,7 @@
 		"talkLevelBadge": "Advanced"
 	},
 	{
-		"id": "RamónGuijarro",
+		"id": "RamonGuijarro",
 		"type": "web",
 		"promo": true,
 		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571604425/speakers/k3mniym9xdypetdxgijp.jpg",
@@ -543,7 +524,7 @@
 		"talkLevelBadge": "Intermediate"
 	},
 	{
-		"id": "NatalyaLukashevich",
+		"id": "NataliaLukashevich",
 		"type": "ai",
 		"promo": true,
 		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571609655/speakers/iz5shg9qon9ctjqlsl2f.jpg",
@@ -845,25 +826,6 @@
 		"talkLevelBadge": "Web"
 	},
 	{
-		"id": "LesovskyAlexey",
-		"type": "web",
-		"promo": true,
-		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1572706106/speakers/sy06pty1dc19jyovp1wc.jpg",
-		"firstname": "Alexey",
-		"lastname": "Lesovsky",
-		"description": "PostgreSQL DBA at Data Egret",
-		"location": "🇷🇺",
-		"contacts": {
-			"github": "https://github.com/lesovsky"
-		},
-		"text": "",
-		"talkTitle": "Patroni failure stories, or How to crash your PostgreSQL; Top mistakes made by developers when working with PostgreSQL",
-		"talkLocation": "",
-		"talkTime": "",
-		"talkTypeBadge": "Intermediate",
-		"talkLevelBadge": "Web"
-	},
-	{
 		"id": "VladimirDaron",
 		"type": "hype",
 		"promo": true,
@@ -989,6 +951,63 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"talkTypeBadge": "Hype",
+		"talkLevelBadge": "Intermediate"
+	},
+	{
+		"id": "AlexanderSmirnov",
+		"type": "mobile",
+		"promo": true,
+		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1569428936/speakers/fh94vylzuqttqtrwupqh.jpg",
+		"firstname": "Alexander",
+		"lastname": "Smirnov",
+		"description": "Head of Mobile at Raiffeisen Bank",
+		"location": "🇷🇺",
+		"text": "Alexander has various experience in developing mobile applications in different domains: finance, newspapers, government services, and taxi applications.He is an active speaker and participant at technical conferences in Russia.<br>Alexander is a Google Developer Expert on Payments in Russia.",
+		"talkTitle": "Android Animations in 2k19",
+		"talkLocation": "",
+		"talkTime": "",
+		"contacts": {
+			"twitter": "https://twitter.com/_smred"
+		},
+		"talkTypeBadge": "Mobile",
+		"talkLevelBadge": "Intermediate"
+	},
+	{
+		"id": "PavelPetrochenko",
+		"type": "ai",
+		"promo": true,
+		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1569428936/speakers/uw5tvgft1oc2vxicbzef.jpg",
+		"firstname": "Pavel",
+		"lastname": "Petrochenko",
+		"description": "Developer at OnPositive",
+		"location": "🇷🇺",
+		"text": "Pavel Petrochenko is a developer at OnPositive, who creates deep learning services, as well as tools for developers and data scientists.",
+		"talkTitle": "Android Animations in 2k19",
+		"talkLocation": "",
+		"talkTime": "",
+		"contacts": {
+			
+		},
+		"talkTypeBadge": "AI",
+		"talkLevelBadge": "Intermediate"
+	},
+	{
+		"id": "BorisMuratshin",
+		"type": "web",
+		"promo": true,
+		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1569428936/speakers/zv1auurfgb7zahcs7d2b.jpg",
+		"firstname": "Boris",
+		"lastname": "Muratshin",
+		"description": "Engineer-Developer at ARQA Technologies",
+		"location": "🇷🇺",
+		"text": "Boris wrote his first program on fortran. Then he was engaged in the development of the DBMS kernel (<a href=\"https://www.openlinksw.com/\" target=\"_blank\">OpenLink</a>),<br>geo-databases, routing and fuzzy search in DataEast and 2GIS.<br>Now he is working in the QORT project at ARQA Technologies",
+		"talkTitle": "Logical fields in SQL, is there an antidote?",
+		"talkLocation": "",
+		"talkTime": "",
+		"contacts": {
+			
+		},
+		"talkTypeBadge": "Web",
 		"talkLevelBadge": "Intermediate"
 	}
 ]
