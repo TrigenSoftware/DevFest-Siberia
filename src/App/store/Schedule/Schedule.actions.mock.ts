@@ -2,7 +2,7 @@
 import {
 	List
 } from 'immutable';
-import * as scheduleServiceMock from '~/services/schedule/mock';
+import * as scheduleService from '~/services/schedule/mock';
 import Favorite from '~/models/Favorite';
 import Reservation from '~/models/Reservation';
 import {
@@ -53,14 +53,14 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 
 	async fetchSchedule() {
 
-		const schedule = await scheduleServiceMock.fetch();
+		const schedule = await scheduleService.fetch();
 
 		this.setSchedule(schedule);
 	}
 
 	async fetchFavorites() {
 
-		const favorites = await scheduleServiceMock.fetchFavorites();
+		const favorites = await scheduleService.fetchFavorites();
 
 		this.setFavorites(favorites);
 	}
@@ -91,7 +91,7 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 
 	async fetchReservations() {
 
-		const reservations = await scheduleServiceMock.fetchReservations();
+		const reservations = await scheduleService.fetchReservations();
 
 		this.setReservations(reservations);
 	}
