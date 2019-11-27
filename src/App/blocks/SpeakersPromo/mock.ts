@@ -10,7 +10,9 @@ import {
 	SpeakersSegment
 } from '~/store/segments';
 import {
-	SpeakersActions,
+	SpeakersActions
+} from '~/store/Speakers/Speakers.actions.mock';
+import {
 	SpeakersReducer
 } from '~/store/Speakers';
 import SpeakersPromo from './SpeakersPromo';

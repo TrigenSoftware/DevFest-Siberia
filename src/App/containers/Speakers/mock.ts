@@ -7,7 +7,9 @@ import {
 	State
 } from '~/store/types';
 import {
-	SpeakersActions,
+	SpeakersActions
+} from '~/store/Speakers/Speakers.actions.mock';
+import {
 	SpeakersReducer
 } from '~/store/Speakers';
 import Speakers from './Speakers';

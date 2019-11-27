@@ -27,6 +27,28 @@ export abstract class SpeakersActions extends SpeakersReducer.Actions<SpeakersSt
 		return speakers.find(speaker => speaker.id === id);
 	}
 
+	selectPromoSpeakers() {
+
+		const {
+			speakers
+		} = this.state;
+		const promoSpeakers = speakers.filter(speaker => speaker.promo);
+
+		if (!promoSpeakers.length) {
+			return [];
+		}
+
+		if (process.env.SEED) {
+			return promoSpeakers.splice(0, 3);
+		}
+
+		if (this.promoSpeakersIndex === -1) {
+			this.promoSpeakersIndex = Math.floor(Math.random() * (promoSpeakers.length - 2));
+		}
+
+		return promoSpeakers.splice(this.promoSpeakersIndex, 3);
+	}
+
 	selectSpeakersByType(type: string) {
 
 		const {
