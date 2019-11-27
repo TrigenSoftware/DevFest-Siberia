@@ -267,7 +267,7 @@
 				"lastname": "Kashnikov",
 				"description": "Program committee member",
 				"contacts": {
-					"site": "http://kayuri.github.io/"
+					"site": "http://kayuri.github.io"
 				}
 			},
 			{
@@ -277,7 +277,7 @@
 				"description": "Coordinator & PR",
 				"contacts": {
 					"telegram": "https://t.me/kirzharov",
-					"email": "mailto:kirx@gdg-siberia.com"
+					"email": "mailto:kir@gdg-siberia.com"
 				}
 			},
 			{
@@ -324,10 +324,52 @@
 				}
 			},
 			{
+				"src": "https://res.cloudinary.com/trigen/image/upload/c_scale,w_350/v1574861708/devfest2019/photos/HelenUzhegova.jpg",
+				"firstname": "Helen",
+				"lastname": "Uzhegova",
+				"description": "PR",
+				"contacts": {
+					"telegram": "https://t.me/uzhegovaelena"
+				}
+			},
+			{
 				"src": "https://res.cloudinary.com/trigen/image/upload/c_scale,w_350/v1570288887/devfest2019/photos/MaxFilimonov.jpg",
 				"firstname": "Max",
 				"lastname": "Filimonov",
 				"description": "Member of the family"
+			},
+			{
+				"src": "https://res.cloudinary.com/trigen/image/upload/c_scale,w_350/v1574861708/devfest2019/photos/MikhaelGaydamaka.jpg",
+				"firstname": "Mikhael",
+				"lastname": "Gaydamaka",
+				"description": "Member of the family"
+			},
+			{
+				"src": "https://res.cloudinary.com/trigen/image/upload/c_scale,w_350/v1574861707/devfest2019/photos/VitaliiMarkus.jpg",
+				"firstname": "Vitalii",
+				"lastname": "Markus",
+				"description": "Program committee member",
+				"contacts": {
+					"telegram": "https://t.me/vitaliy_markus"
+				}
+			},
+			{
+				"src": "https://res.cloudinary.com/trigen/image/upload/c_scale,w_350/v1574861708/devfest2019/photos/AnastasiaMalysheva.jpg",
+				"firstname": "Anastasia",
+				"lastname": "Malysheva",
+				"description": "Program committee member",
+				"contacts": {
+					"telegram": "https://t.me/malysheva_anastasia"
+				}
+			},
+			{
+				"src": "https://res.cloudinary.com/trigen/image/upload/c_scale,w_350/v1574861708/devfest2019/photos/AlexanderTuzovsky.jpg",
+				"firstname": "Alexander",
+				"lastname": "Tuzovsky",
+				"description": "Program committee member",
+				"contacts": {
+					"telegram": "https://t.me/gipertech"
+				}
 			}
 		]
 	},
