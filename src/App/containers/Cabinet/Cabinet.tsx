@@ -82,7 +82,7 @@ export class CabinetContainer extends Component<IProps> {
 					{user && order && order.items.map(({
 						ticket,
 						productName
-					}) => ticket && (
+					}) => (
 						<TicketPreview
 							className={classes.ticket}
 							key={ticket.ticketUID}
