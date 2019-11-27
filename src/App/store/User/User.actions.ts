@@ -90,7 +90,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				error
 			});
 
-			if (error.response.data.code === 401) {
+			if (this.isUnauthorizedError(error)) {
 				this.refreshToken();
 			}
 		}
@@ -110,7 +110,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				error
 			});
 
-			if (error.response.data.code === 401) {
+			if (this.isUnauthorizedError(error)) {
 				this.refreshToken();
 			}
 		}
@@ -130,7 +130,7 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				error
 			});
 
-			if (error.response.data.code === 401) {
+			if (this.isUnauthorizedError(error)) {
 				this.refreshToken();
 			}
 		}
@@ -168,6 +168,10 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 				item => item.productId === 'afterparty'
 			)
 		);
+	}
+
+	isUnauthorizedError(error: any) {
+		return error.response && error.response.data.code === 401;
 	}
 
 	refreshToken() {
