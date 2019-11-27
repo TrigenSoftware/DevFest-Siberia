@@ -1,5 +1,4 @@
 import React, {
-	ContextType,
 	ReactNode,
 	MouseEvent,
 	HTMLAttributes,
@@ -10,11 +9,6 @@ import {
 	withRouter,
 	RouteComponentProps
 } from 'react-router-dom';
-import {
-	I18nContext,
-	__ as tr,
-	__x
-} from 'i18n-for-react';
 import {
 	Bind,
 	CombinePropsAndAttributes
@@ -73,8 +67,13 @@ interface ISelfProps extends RouteComponentProps {
 	favorite?: boolean;
 	value?: string;
 	description?: string;
+	favoriteLabel?: string;
 	workshop?: boolean;
+	workshopLabel?: string;
+	workshopAddLabel?: string;
+	workshopDeleteLabel?: string;
 	workshopDisabled?: boolean;
+	workshopDisabledLabel?: string;
 	onFavoriteClick?(lectureId: string, isFavorite: boolean, event: MouseEvent<HTMLButtonElement>);
 	onWorkshopAddClick?(workshopId: string, event: MouseEvent<HTMLButtonElement>);
 	onWorkshopDeleteClick?(workshopId: string, event: MouseEvent<HTMLButtonElement>);
@@ -104,8 +103,6 @@ export const talkTypeColors: Record<string, Color> = {
 
 class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 
-	static contextType = I18nContext;
-
 	static propTypes = {
 		id:                    PropTypes.string,
 		time:                  PropTypes.node.isRequired,
@@ -120,14 +117,17 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 		favorite:              PropTypes.bool,
 		value:                 PropTypes.string,
 		description:           PropTypes.string,
+		favoriteLabel:         PropTypes.string,
 		workshop:              PropTypes.bool,
+		workshopLabel:         PropTypes.string,
+		workshopAddLabel:      PropTypes.string,
+		workshopDeleteLabel:   PropTypes.string,
 		workshopDisabled:      PropTypes.bool,
+		workshopDisabledLabel: PropTypes.string,
 		onFavoriteClick:       PropTypes.func,
 		onWorkshopAddClick:    PropTypes.func,
 		onWorkshopDeleteClick: PropTypes.func
 	};
-
-	context!: ContextType<typeof I18nContext>;
 
 	render() {
 
@@ -144,8 +144,13 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 			favorite,
 			value,
 			description,
+			favoriteLabel,
 			workshop,
+			workshopLabel,
+			workshopAddLabel,
+			workshopDeleteLabel,
 			workshopDisabled,
+			workshopDisabledLabel,
 			onFavoriteClick,
 			onWorkshopAddClick,
 			onWorkshopDeleteClick,
@@ -155,10 +160,6 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 		const {
 			search
 		} = location;
-		const {
-			context
-		} = this;
-		const __ = context.bind(tr);
 		const color = talkTypeBadge && talkTypeColors[talkTypeBadge.toLowerCase()];
 
 		return (
@@ -256,7 +257,7 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 					{onFavoriteClick && (
 						<ScheduleFavoriteButton
 							onClick={this.onFavoriteClick}
-							title={__`schedule.favoriteLabel`}
+							title={favoriteLabel}
 							active={favorite}
 							value={value}
 						/>
@@ -266,14 +267,14 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 							className={classes.button}
 							onClick={this.onWorkshopAddClick}
 						>
-							{__x`schedule.workshopAddLabel`}
+							{workshopAddLabel}
 						</Button>
 					)}
 					{workshopDisabled && (
 						<div
 							className={classes.disabled}
 						>
-							{__x`schedule.workshopDisabledLabel`}
+							{workshopDisabledLabel}
 						</div>
 					)}
 					{onWorkshopDeleteClick && workshop && !workshopDisabled && (
@@ -281,13 +282,13 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 							<div
 								className={classes.label}
 							>
-								{__x`schedule.workshopLabel`}
+								{workshopLabel}
 							</div>
 							<Button
 								className={classes.delete}
 								onClick={this.onWorkshopDeleteClick}
 							>
-								{__x`schedule.workshopDeleteLabel`}
+								{workshopDeleteLabel}
 							</Button>
 						</>
 					)}

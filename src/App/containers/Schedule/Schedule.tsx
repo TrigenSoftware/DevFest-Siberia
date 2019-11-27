@@ -13,6 +13,7 @@ import {
 } from 'react-router-dom';
 import {
 	I18nContext,
+	__ as tr,
 	__x
 } from 'i18n-for-react';
 import {
@@ -131,6 +132,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		const {
 			context
 		} = this;
+		const __ = context.bind(tr);
 		const nav = getScheduleDates(context);
 		const filterTypes = getScheduleTypes(context);
 		const params = new URLSearchParams(search);
@@ -223,7 +225,12 @@ export class ScheduleContainer extends Component<IProps, IState> {
 									time={formatDate(date, timeStart)}
 									status={this.getStatus(date, timeStart, timeEnd)}
 									favorite={selectIsFavorite(favorites, id)}
+									favoriteLabel={__`schedule.favoriteLabel`}
 									workshop={workshop}
+									workshopLabel={__`schedule.workshopLabel`}
+									workshopAddLabel={__`schedule.workshopAddLabel`}
+									workshopDeleteLabel={__`schedule.workshopDeleteLabel`}
+									workshopDisabledLabel={__`schedule.workshopDisabledLabel`}
 									{...this.getEventHandlers(type, workshop)}
 								/>
 							);
