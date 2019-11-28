@@ -247,8 +247,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 					<Loading/>
 				)}
 				<ScheduleDescriptionModal
-					history={history}
 					location={location}
+					history={history}
 					schedule={scheduleFromProps}
 				/>
 			</Section>
