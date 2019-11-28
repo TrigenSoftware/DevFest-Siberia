@@ -253,6 +253,10 @@
 	color: value(colorWhite);
 }
 
+.button {
+	white-space: nowrap;
+}
+
 .label {
 	display: flex;
 	position: relative;
