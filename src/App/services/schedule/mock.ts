@@ -6,11 +6,14 @@ import mockReservations from '~/models/Reservation.mock';
 
 const logger = createLogger('App::services::schedule');
 
-export async function fetch() {
+export async function fetch({
+	lang = 'en'
+} = {}) {
 
 	logger.debug('fetch');
 
 	let schedule = await scheduleService.fetch({
+		lang,
 		skipWorkshops: true
 	});
 	const workshops = await fetchWorkshops();
