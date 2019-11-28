@@ -14,7 +14,8 @@ const logger = createLogger('App::services::schedule');
 
 export async function fetch({
 	lang = 'en',
-	skipSpeakers = false
+	skipSpeakers = false,
+	skipWorkshops = false
 } = {}) {
 
 	logger.debug('fetch', 'Input lang:', lang);
@@ -23,6 +24,7 @@ export async function fetch({
 		lang,
 		skipSchedule: true
 	});
+	const fetchWorkshopsItems = !skipWorkshops && fetchWorkshops();
 	const url = lang === 'en' ? enSchedule : ruSchedule;
 	let schedule: any[] = null;
 
@@ -53,13 +55,30 @@ export async function fetch({
 				return scheduleItem;
 			}
 
-			const shcedultItemSpeakers = speakersIds
+			const schedultItemSpeakers = speakersIds
 				.map(speakerId => findSpeaker(speakers, speakerId))
 				.filter(Boolean);
 
 			return {
 				...scheduleItem,
-				speakers: shcedultItemSpeakers
+				speakers: schedultItemSpeakers
+			};
+		});
+	}
+
+	if (fetchWorkshopsItems) {
+
+		const workshops = await fetchWorkshopsItems;
+
+		schedule = schedule.map((scheduleItem) => {
+
+			const workshopDisabled = workshops.some(
+				workshop => workshop.workshopId === scheduleItem.id && workshop.status === 'full'
+			);
+
+			return {
+				...scheduleItem,
+				workshopDisabled
 			};
 		});
 	}
@@ -82,6 +101,19 @@ function findSpeaker(speakers: any[], id: string) {
 		name:        `${speaker.firstname} ${speaker.lastname}`,
 		description: speaker.description
 	};
+}
+
+export async function fetchWorkshops() {
+
+	logger.debug('fetchWorkshops');
+
+	const {
+		data: workshopsData
+	} = await userClinet.get('api/workshop/all');
+
+	logger.debug('fetchWorkshops', 'Response:', workshopsData);
+
+	return workshopsData;
 }
 
 export async function fetchFavorites() {

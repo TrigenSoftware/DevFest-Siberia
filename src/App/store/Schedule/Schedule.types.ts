@@ -62,23 +62,3 @@ export type SetReservationsPayload = IReservationProps[] | List<IReservationProp
 export interface ISetReservationsAction {
 	payload: SetReservationsPayload;
 }
-
-/**
- * SetReservation action.
- */
-
-export type SetReservationPayload = IReservationProps;
-
-export interface ISetReservationAction {
-	payload: SetReservationPayload;
-}
-
-/**
- * RemoveReservation action.
- */
-
-export type RemoveReservationPayload = IReservationProps;
-
-export interface IRemoveReservationAction {
-	payload: RemoveReservationPayload;
-}

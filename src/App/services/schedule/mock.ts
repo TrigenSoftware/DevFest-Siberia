@@ -1,8 +1,53 @@
 import createLogger from '~/services/logger';
+import * as scheduleService from '~/services/schedule';
+import Reservation from '~/models/Reservation';
 import mockFavorites from '~/models/Favorite.mock';
 import mockReservations from '~/models/Reservation.mock';
 
 const logger = createLogger('App::services::schedule');
+
+export async function fetch({
+	lang = 'en'
+} = {}) {
+
+	logger.debug('fetch');
+
+	let schedule = await scheduleService.fetch({
+		lang,
+		skipWorkshops: true
+	});
+	const workshops = await fetchWorkshops();
+
+	schedule = schedule.map((scheduleItem) => {
+
+		const workshopDisabled = workshops.some(
+			workshop => workshop.workshopId === scheduleItem.id && workshop.status === 'full'
+		);
+
+		return {
+			...scheduleItem,
+			workshopDisabled
+		};
+	});
+
+	logger.debug('fetch', 'Response:', schedule);
+
+	return schedule;
+}
+
+export async function fetchWorkshops() {
+
+	logger.debug('fetchWorkshops');
+
+	const response = mockReservations().push(Reservation({
+		workshopId: '0IG0y2olrnsldnVT2Vjfg',
+		status: 'full'
+	}));
+
+	logger.debug('fetchWorkshops', 'Response:', response);
+
+	return response;
+}
 
 export async function fetchFavorites() {
 

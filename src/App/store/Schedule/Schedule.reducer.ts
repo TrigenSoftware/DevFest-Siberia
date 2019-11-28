@@ -10,9 +10,7 @@ import {
 	ScheduleState,
 	ISetScheduleAction,
 	ISetFavoritesAction,
-	ISetReservationsAction,
-	ISetReservationAction,
-	IRemoveReservationAction
+	ISetReservationsAction
 } from './Schedule.types';
 
 export class ScheduleReducer extends Reducer {
@@ -51,36 +49,6 @@ export class ScheduleReducer extends Reducer {
 		return state.set(
 			'reservations',
 			reservations
-		);
-	}
-
-	setReservation(state: ScheduleState, { payload }: ISetReservationAction) {
-
-		const reservation = payload && Reservation(payload);
-
-		return state.set(
-			'reservations',
-			state.reservations.push(reservation)
-		);
-	}
-
-	removeReservation(state: ScheduleState, { payload }: IRemoveReservationAction) {
-
-		const {
-			workshopId
-		} = payload;
-		const {
-			reservations
-		} = state;
-		const reservationIndex = reservations.findIndex(_ => _.workshopId === workshopId);
-
-		if (!~reservationIndex) {
-			return state;
-		}
-
-		return state.set(
-			'reservations',
-			state.reservations.delete(reservationIndex)
 		);
 	}
 }

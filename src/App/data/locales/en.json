@@ -362,6 +362,11 @@
 	},
 	"schedule": {
 		"title": "Schedule",
+		"favoriteLabel": "Add To Favorite",
+		"workshopAddLabel": "I Want Go",
+		"workshopLabel": "I Go! :)",
+		"workshopDeleteLabel": "Don't Go",
+		"workshopDisabledLabel": "There are no places",
 		"nav": [
 			{
 				"date": "2019-11-29",

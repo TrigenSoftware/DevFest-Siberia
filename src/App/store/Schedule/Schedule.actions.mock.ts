@@ -2,8 +2,7 @@
 import {
 	List
 } from 'immutable';
-import * as scheduleService from '~/services/schedule';
-import * as userService from '~/services/user';
+import * as scheduleService from '~/services/schedule/mock';
 import Favorite from '~/models/Favorite';
 import Reservation from '~/models/Reservation';
 import {
@@ -52,7 +51,7 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 		return filtredByDate;
 	}
 
-	async fetchSchedule(lang?: string) {
+	async fetchSchedule(lang: string) {
 
 		const schedule = await scheduleService.fetch({
 			lang
@@ -63,84 +62,65 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 
 	async fetchFavorites() {
 
-		try {
+		const favorites = await scheduleService.fetchFavorites();
 
-			const favorites = await scheduleService.fetchFavorites();
-
-			this.setFavorites(favorites);
-
-		} catch (error) {
-			this.checkToken(error);
-		}
+		this.setFavorites(favorites);
 	}
 
 	async addFavorite(lectureId: string) {
 
-		try {
+		const {
+			favorites
+		} = this.state;
+		const addedFavorite = Favorite({
+			lectureId
+		});
+		const updatedFavorites = favorites.push(addedFavorite);
 
-			const favorites = await scheduleService.addFavorite(lectureId);
-
-			this.setFavorites(favorites);
-
-		} catch (error) {
-			this.checkToken(error);
-		}
+		this.setFavorites(updatedFavorites);
 	}
 
 	async deleteFavorite(lectureId: string) {
 
-		try {
+		const {
+			favorites
+		} = this.state;
+		const favoriteIndex = favorites.findIndex(_ => _.lectureId === lectureId);
+		const updatedFavorites = favorites.delete(favoriteIndex);
 
-			const favorites = await scheduleService.deleteFavorite(lectureId);
-
-			this.setFavorites(favorites);
-
-		} catch (error) {
-			this.checkToken(error);
-		}
+		this.setFavorites(updatedFavorites);
 	}
 
 	async fetchReservations() {
 
-		try {
+		const reservations = await scheduleService.fetchReservations();
 
-			const reservations = await scheduleService.fetchReservations();
-
-			this.setReservations(reservations);
-
-		} catch (error) {
-			this.checkToken(error);
-		}
+		this.setReservations(reservations);
 	}
 
 	async addReservation(workshopId: string) {
 
-		try {
+		const {
+			reservations
+		} = this.state;
+		const addedReservation = Reservation({
+			workshopId,
+			status: 'reserved'
+		});
+		const updatedReservations = reservations.push(addedReservation);
 
-			await scheduleService.addReservation(workshopId);
-
-			const reservations = await scheduleService.fetchReservations();
-
-			this.setReservations(reservations);
-
-		} catch (error) {
-			this.checkToken(error);
-		}
+		this.setReservations(updatedReservations);
 	}
 
 	async deleteReservation(workshopId: string) {
 
-		try {
+		const {
+			reservations
+		} = this.state;
+		const reservationIndex = reservations.findIndex(_ => _.workshopId === workshopId);
+		const updatedReservations = reservations.delete(reservationIndex);
 
-			await scheduleService.deleteReservation(workshopId);
-
-			const reservations = await scheduleService.fetchReservations();
-
-			this.setReservations(reservations);
-
-		} catch (error) {
-			this.checkToken(error);
-		}
+		this.setReservations(updatedReservations);
 	}
 
 	selectIsFavorite(favorites: List<Favorite>, id: string): boolean {
@@ -149,18 +129,6 @@ export abstract class ScheduleActions extends ScheduleReducer.Actions<ScheduleSt
 
 	selectIsReserved(reservations: List<Reservation>, id: string): boolean {
 		return reservations.some(_ => _.workshopId === id);
-	}
-
-	checkToken(error) {
-
-		if (error.response.data.code === 401) {
-			this.refreshToken();
-		}
-	}
-
-	refreshToken() {
-		userService.clearToken();
-		location.href = '/?login=true';
 	}
 
 	abstract setSchedule(payload: SetSchedulePayload);
