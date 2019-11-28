@@ -370,6 +370,15 @@
 				"contacts": {
 					"telegram": "https://t.me/gipertech"
 				}
+			},
+			{
+				"src": "https://res.cloudinary.com/trigen/image/upload/v1574928122/devfest2019/photos/PetrGusev.jpg",
+				"firstname": "Petr",
+				"lastname": "Gusev,",
+				"description": "Program committee member",
+				"contacts": {
+					"telegram": "https://t.me/certifiedmindblower"
+				}
 			}
 		]
 	},
