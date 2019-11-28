@@ -93,7 +93,7 @@ export async function fetch({
 	return schedule;
 }
 
-export function findSpeaker(speakers: any[], id: string) {
+function findSpeaker(speakers: any[], id: string) {
 
 	const speaker = speakers.find(_ => _.id === id);
 
