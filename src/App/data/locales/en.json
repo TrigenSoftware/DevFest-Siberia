@@ -342,7 +342,10 @@
 				"src": "https://res.cloudinary.com/trigen/image/upload/c_scale,w_350/v1574861708/devfest2019/photos/MikhaelGaydamaka.jpg",
 				"firstname": "Mikhael",
 				"lastname": "Gaydamaka",
-				"description": "Member of the family"
+				"description": "Member of the family",
+				"contacts": {
+					"telegram": "https://t.me/MikhaelGaydamaka"
+				}
 			},
 			{
 				"src": "https://res.cloudinary.com/trigen/image/upload/c_scale,w_350/v1574861707/devfest2019/photos/VitaliiMarkus.jpg",
