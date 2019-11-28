@@ -72,18 +72,14 @@ export async function fetch({
 
 		schedule = schedule.map((scheduleItem) => {
 
-			const workshopStatus = workshops.some(
+			const workshopDisabled = workshops.some(
 				workshop => workshop.workshopId === scheduleItem.id && workshop.status === 'full'
 			);
 
-			if (workshopStatus) {
-				return {
-					...scheduleItem,
-					workshopDisabled: workshopStatus
-				};
-			}
-
-			return scheduleItem;
+			return {
+				...scheduleItem,
+				workshopDisabled
+			};
 		});
 	}
 
