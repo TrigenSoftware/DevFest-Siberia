@@ -18,6 +18,9 @@ import ToggleNav, {
 	ToggleNavLink
 } from '~/components/ToggleNav';
 import ProfileCard from '~/components/ProfileCard';
+import {
+	ScheduleDescriptionModal
+} from '~/components/Schedule';
 import Badge from '~/components/Badge';
 import Loading from '~/components/Loading';
 import {
@@ -41,13 +44,16 @@ export class Speakers extends Component<IProps> {
 
 		const {
 			className,
-			location: {
-				search
-			},
+			location,
+			history,
+			schedule,
 			actionsReady,
 			selectSpeakersByType,
 			selectSpeaker
 		} = this.props;
+		const {
+			search
+		} = location;
 		const {
 			context
 		} = this;
@@ -111,6 +117,11 @@ export class Speakers extends Component<IProps> {
 				) : (
 					<Loading/>
 				)}
+				<ScheduleDescriptionModal
+					location={location}
+					history={history}
+					schedule={schedule}
+				/>
 			</Section>
 		);
 	}

@@ -32,6 +32,7 @@ import ToggleNav, {
 import Badge from '~/components/Badge';
 import Schedule, {
 	ScheduleItem,
+	ScheduleDescriptionModal,
 	talkTypeColors,
 	VariantScheduleItemStatus,
 	VariantScheduleItemType
@@ -118,17 +119,20 @@ export class ScheduleContainer extends Component<IProps, IState> {
 
 		const {
 			className,
-			location: {
-				search
-			},
+			location,
+			history,
+			schedule: scheduleFromProps,
+			favorites,
+			reservations,
 			actionsReady,
 			selectScheduleByType,
 			selectSpeaker,
-			favorites,
-			reservations,
 			selectIsFavorite,
 			selectIsReserved
 		} = this.props;
+		const {
+			search
+		} = location;
 		const {
 			context
 		} = this;
@@ -242,6 +246,11 @@ export class ScheduleContainer extends Component<IProps, IState> {
 				) : (
 					<Loading/>
 				)}
+				<ScheduleDescriptionModal
+					history={history}
+					location={location}
+					schedule={scheduleFromProps}
+				/>
 			</Section>
 		);
 	}

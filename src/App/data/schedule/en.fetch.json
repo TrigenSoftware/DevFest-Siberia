@@ -40,8 +40,7 @@
 		"talkLevelBadge": "Beginner",
 		"speakers": [
 			"VsevolodHrechaniuk"
-		],
-		"description": "Flutter speed coding bla bla bla"
+		]
 	},
 	{
 		"id": "0IG0y2olrnsldnVT2Vjfg",
@@ -56,8 +55,7 @@
 		"talkLevelBadge": "Intermediate",
 		"speakers": [
 			"AlexeyRodionov"
-		],
-		"description": "Mission Possible: Build PWA out of Web Components in 180 minutes bla bla bla"
+		]
 	},
 	{
 		"id": "ivZ4manCEMebayE4fk68Y",

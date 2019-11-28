@@ -27,9 +27,6 @@ import {
 	ScheduleFavoriteButton
 } from '../ScheduleFavoriteButton';
 import {
-	ScheduleItemModal
-} from '../ScheduleItemModal';
-import {
 	style,
 	classes
 } from './ScheduleItem.st.css';
@@ -47,7 +44,7 @@ export enum VariantScheduleItemType {
 
 export type ScheduleItemStatus = 'past' | 'now' | 'next';
 
-interface ISpeaker {
+export interface ISpeaker {
 	id?: string;
 	name: string;
 	description: string;
@@ -154,8 +151,7 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 			onFavoriteClick,
 			onWorkshopAddClick,
 			onWorkshopDeleteClick,
-			location,
-			history
+			location
 		} = this.props;
 		const {
 			search
@@ -182,7 +178,7 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 				<td
 					className={classes.description}
 				>
-					{!description ? (
+					{!speakers || !description ? (
 						<h4
 							className={classes.title}
 						>
@@ -293,14 +289,6 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 						</>
 					)}
 				</td>
-				{description && (
-					<ScheduleItemModal
-						history={history}
-						location={location}
-						title={String(title)}
-						description={description}
-					/>
-				)}
 			</tr>
 		);
 	}
