@@ -104,13 +104,13 @@
 					{
 						"type": "general",
 						"href": "https://academpark.com/",
-						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/academpark.svg",
+						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/academpark.png",
 						"title": "Academpark"
 					},
 					{
 						"type": "general",
 						"href": "https://developers.google.com/",
-						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/google.svg",
+						"src": "https://res.cloudinary.com/trigen/image/upload/v1565854516/devfest2019/google.png",
 						"title": "Google"
 					}
 				]
@@ -138,7 +138,7 @@
 					{
 						"type": "silver",
 						"href": "https://selectel.ru/en/?utm=dfSiberia19",
-						"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_160/v1573702831/partners/bize9pwewdrj9kyd8ncn.svg",
+						"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_160/v1573702831/partners/bize9pwewdrj9kyd8ncn.png",
 						"title": "Selectel"
 					}
 				]
@@ -149,7 +149,7 @@
 					{
 						"type": "info",
 						"href": "https://androiddev.apptractor.ru/?utm=dfSiberia",
-						"src": "https://res.cloudinary.com/trigen/image/upload/v1565857597/devfest2019/android.svg",
+						"src": "https://res.cloudinary.com/trigen/image/upload/v1565857597/devfest2019/android.png",
 						"title": "Android Dev Podcast",
 						"text": "Android Dev - is a podcast about apps development for Android and anything around. Our guests - experienced developers, who knows Android since version 1.5"
 					},
