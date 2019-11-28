@@ -149,6 +149,10 @@
 
 @media (max-width: value(sizeScreenMdMax)) {
 
+	.filterNav .item {
+		margin-bottom: 15px;
+	}
+
 	.filterNav .active .Badge::after {
 		bottom: -13px;
 	}

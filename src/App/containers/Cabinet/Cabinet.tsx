@@ -80,19 +80,16 @@ export class CabinetContainer extends Component<IProps> {
 				<article
 					className={classes.article}
 				>
-					{user && order && order.items.map(({
-						ticket,
-						productName
-					}) => (
+					{user && order && (
 						<TicketPreview
 							className={classes.ticket}
-							key={ticket.ticketUID}
+							key={order.ticket.ticketUID}
 						>
 							<TickerPreviewPrimary>
 								<TickerPreviewGroup>
 									<TickerPreviewField
 										label={__`cabinet.id`}
-										value={ticket.ticketUID}
+										value={order.ticket.ticketUID}
 									/>
 									<TickerPreviewField
 										label={__`cabinet.for`}
@@ -116,10 +113,10 @@ export class CabinetContainer extends Component<IProps> {
 								</TicketPreviewSecondary>
 							)}
 							<TicketPreviewAuxiliary>
-								{productName}
+								{order.productName}
 							</TicketPreviewAuxiliary>
 						</TicketPreview>
-					))}
+					)}
 				</article>
 				<footer
 					className={classes.footer}
