@@ -16,9 +16,7 @@ import {
 	UserActions
 } from '~/store/User/User.actions.mock';
 import {
-	SpeakersActions
-} from '~/store/Speakers/Speakers.actions.mock';
-import {
+	SpeakersActions,
 	SpeakersReducer
 } from '~/store/Speakers';
 import Schedule from './Schedule';
