@@ -14,13 +14,6 @@ function mockReservation() {
 	});
 }
 
-function disabledReservation() {
-	return Reservation({
-		workshopId: 'ivZ4manCEMebayE4fk68Y',
-		status:     'disabled'
-	});
-}
-
 export default function mockReservations() {
-	return List(Array.from({ length: count }).map(mockReservation)).push(disabledReservation());
+	return List(Array.from({ length: count }).map(mockReservation));
 }

@@ -20,10 +20,14 @@ export async function fetch({
 
 	schedule = schedule.map((scheduleItem) => {
 
-		if (scheduleItem.id === workshops.workshopId) {
+		const workshopStatus = workshops.some(
+			workshop => workshop.workshopId === scheduleItem.id && workshop.status === 'full'
+		);
+
+		if (workshopStatus) {
 			return {
 				...scheduleItem,
-				workshopDisabled: workshops.status === 'full' ? true : false
+				workshopDisabled: workshopStatus
 			};
 		}
 
@@ -39,10 +43,10 @@ export async function fetchWorkshops() {
 
 	logger.debug('fetchWorkshops');
 
-	const response = Reservation({
+	const response = mockReservations().push(Reservation({
 		workshopId: '0IG0y2olrnsldnVT2Vjfg',
 		status: 'full'
-	});
+	}));
 
 	logger.debug('fetchWorkshops', 'Response:', response);
 

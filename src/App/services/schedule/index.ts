@@ -24,7 +24,7 @@ export async function fetch({
 		lang,
 		skipSchedule: true
 	});
-	const fetchWorkshopsItems = !skipWorkshops && await fetchWorkshops();
+	const fetchWorkshopsItems = !skipWorkshops && fetchWorkshops();
 	const url = lang === 'en' ? enSchedule : ruSchedule;
 	let schedule: any[] = null;
 
@@ -68,19 +68,18 @@ export async function fetch({
 
 	if (fetchWorkshopsItems) {
 
+		const workshops = await fetchWorkshopsItems;
+
 		schedule = schedule.map((scheduleItem) => {
 
-			const workshopStatus = fetchWorkshopsItems.find((workshop) => {
-
-				if (workshop.workshopId === scheduleItem.id) {
-					return workshop;
-				}
-			});
+			const workshopStatus = workshops.some(
+				workshop => workshop.workshopId === scheduleItem.id && workshop.status === 'full'
+			);
 
 			if (workshopStatus) {
 				return {
 					...scheduleItem,
-					workshopDisabled: workshopStatus.status === 'full' ? true : false
+					workshopDisabled: workshopStatus
 				};
 			}
 
