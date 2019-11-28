@@ -342,7 +342,10 @@
 				"src": "https://res.cloudinary.com/trigen/image/upload/c_scale,w_350/v1574861708/devfest2019/photos/MikhaelGaydamaka.jpg",
 				"firstname": "Михаил",
 				"lastname": "Гайдамака",
-				"description": "Член семьи"
+				"description": "Член семьи",
+				"contacts": {
+					"telegram": "https://t.me/MikhaelGaydamaka"
+				}
 			},
 			{
 				"src": "https://res.cloudinary.com/trigen/image/upload/c_scale,w_350/v1574861707/devfest2019/photos/VitaliiMarkus.jpg",
@@ -369,6 +372,15 @@
 				"description": "Программный комитет",
 				"contacts": {
 					"telegram": "https://t.me/gipertech"
+				}
+			},
+			{
+				"src": "https://res.cloudinary.com/trigen/image/upload/v1574928122/devfest2019/photos/PetrGusev.jpg",
+				"firstname": "Петр",
+				"lastname": "Гусев,",
+				"description": "Программный комитет",
+				"contacts": {
+					"telegram": "https://t.me/certifiedmindblower"
 				}
 			}
 		]
