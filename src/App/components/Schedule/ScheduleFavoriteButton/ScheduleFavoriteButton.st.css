@@ -16,7 +16,7 @@
 
 .root {
 	-st-states: active;
-	background: none;
+	background-color: transparent;
 	padding: 0;
 	color: value(colorWhite);
 	font-size: 1rem;

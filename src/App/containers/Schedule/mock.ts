@@ -7,12 +7,17 @@ import {
 	State
 } from '~/store/types';
 import {
-	ScheduleActions,
 	ScheduleReducer
 } from '~/store/Schedule';
 import {
-	SpeakersReducer,
-	SpeakersActions
+	ScheduleActions
+} from '~/store/Schedule/Schedule.actions.mock';
+import {
+	UserActions
+} from '~/store/User/User.actions.mock';
+import {
+	SpeakersActions,
+	SpeakersReducer
 } from '~/store/Speakers';
 import Schedule from './Schedule';
 import {
@@ -34,7 +39,8 @@ export const store = new Store<State, IActions>({
 	state:    State(),
 	actions:  [
 		ScheduleActions,
-		SpeakersActions
+		SpeakersActions,
+		UserActions
 	],
 	reducer:  [
 		ScheduleReducer,
@@ -42,3 +48,22 @@ export const store = new Store<State, IActions>({
 	],
 	enhancer: __REDUX_DEVTOOLS_EXTENSION__ && __REDUX_DEVTOOLS_EXTENSION__()
 });
+
+export const actions = {
+
+	generate() {
+
+		const {
+			schedule,
+			user
+		} = store.actions;
+
+		schedule.fetchSchedule();
+		schedule.fetchFavorites();
+		schedule.fetchReservations();
+		user.setToken('token');
+		user.login('test', 'test');
+	}
+};
+
+actions.generate();

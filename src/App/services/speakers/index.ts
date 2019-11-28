@@ -15,7 +15,8 @@ export async function fetch({
 
 	const fetchScheduleTask = !skipSchedule && scheduleService.fetch({
 		lang,
-		skipSpeakers: true
+		skipSpeakers:  true,
+		skipWorkshops: true
 	});
 	const url = lang === 'en' ? enSpeakers : ruSpeakers;
 	let speakers: any[] = null;

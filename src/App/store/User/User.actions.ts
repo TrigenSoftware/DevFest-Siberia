@@ -197,6 +197,13 @@ export abstract class UserActions extends UserReducer.Actions<UserState, State, 
 		return error.response && error.response.data.code === 401;
 	}
 
+	checkToken(error) {
+
+		if (error.response.data.code === 401) {
+			this.refreshToken();
+		}
+	}
+
 	refreshToken() {
 		userService.clearToken();
 		location.href = '/?login=true';

@@ -1,3 +1,4 @@
+/* tslint:disable:no-magic-numbers */
 import 'dotenv/config';
 import moxios from 'moxios';
 import userClient from './client';

@@ -18,8 +18,10 @@ export function mapStateToProps(
 	}: State
 ) {
 	return {
-		schedule: schedule.schedule,
-		speakers: speakers.speakers
+		schedule:     schedule.schedule,
+		speakers:     speakers.speakers,
+		favorites:    schedule.favorites,
+		reservations: schedule.reservations
 	};
 }
 
@@ -32,13 +34,23 @@ const pendingActions = {
 	fetchSpeakers() {},
 	selectSpeaker() {
 		return null;
-	}
+	},
+	fetchFavorites() {},
+	addFavorite() {},
+	selectIsFavorite() {},
+	deleteFavorite() {},
+	fetchReservations() {},
+	addReservation() {},
+	deleteReservation() {},
+	selectIsReserved() {},
+	isLogged() {}
 };
 
 export function mapActionsToProps(
 	{
 		schedule,
-		speakers
+		speakers,
+		user
 	}: IActions
 ) {
 
@@ -51,7 +63,16 @@ export function mapActionsToProps(
 		fetchSchedule:        schedule.fetchSchedule,
 		selectScheduleByType: schedule.selectScheduleByType,
 		fetchSpeakers:        speakers.fetchSpeakers,
-		selectSpeaker:        speakers.selectSpeaker
+		selectSpeaker:        speakers.selectSpeaker,
+		fetchFavorites:       schedule.fetchFavorites,
+		addFavorite:          schedule.addFavorite,
+		deleteFavorite:       schedule.deleteFavorite,
+		selectIsFavorite:     schedule.selectIsFavorite,
+		fetchReservations:    schedule.fetchReservations,
+		addReservation:       schedule.addReservation,
+		deleteReservation:    schedule.deleteReservation,
+		selectIsReserved:     schedule.selectIsReserved,
+		isLogged:             user.isLogged
 	};
 }
 
