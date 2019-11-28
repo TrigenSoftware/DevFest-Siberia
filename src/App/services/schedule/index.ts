@@ -14,7 +14,8 @@ const logger = createLogger('App::services::schedule');
 
 export async function fetch({
 	lang = 'en',
-	skipSpeakers = false
+	skipSpeakers = false,
+	skipWorkshops = false
 } = {}) {
 
 	logger.debug('fetch', 'Input lang:', lang);
@@ -23,6 +24,7 @@ export async function fetch({
 		lang,
 		skipSchedule: true
 	});
+	const fetchWorkshopsItems = !skipWorkshops && await fetchWorkshops();
 	const url = lang === 'en' ? enSchedule : ruSchedule;
 	let schedule: any[] = null;
 
@@ -35,22 +37,8 @@ export async function fetch({
 		const {
 			data
 		} = await client.get(url);
-		const workshops = await fetchWorkshops();
-		const updatedData = data.map((scheduleItem) => {
 
-			for (const workshop of workshops) {
-
-				if (workshop.workshopId === scheduleItem.id) {
-					return {
-						...scheduleItem,
-						workshopDisabled: workshop.status === 'full' && true
-					};
-				}
-			}
-			return scheduleItem;
-		});
-
-		schedule = updatedData;
+		schedule = data;
 	}
 
 	if (fetchSpeakersTask) {
@@ -78,12 +66,34 @@ export async function fetch({
 		});
 	}
 
+	if (fetchWorkshopsItems) {
+
+		schedule = schedule.map((scheduleItem) => {
+
+			const workshopStatus = fetchWorkshopsItems.find((workshop) => {
+
+				if (workshop.workshopId === scheduleItem.id) {
+					return workshop;
+				}
+			});
+
+			if (workshopStatus) {
+				return {
+					...scheduleItem,
+					workshopDisabled: workshopStatus.status === 'full' ? true : false
+				};
+			}
+
+			return scheduleItem;
+		});
+	}
+
 	logger.debug('fetch', 'Response:', schedule);
 
 	return schedule;
 }
 
-function findSpeaker(speakers: any[], id: string) {
+export function findSpeaker(speakers: any[], id: string) {
 
 	const speaker = speakers.find(_ => _.id === id);
 
