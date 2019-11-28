@@ -182,7 +182,7 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 				<td
 					className={classes.description}
 				>
-					{!speakers || !description ? (
+					{!description ? (
 						<h4
 							className={classes.title}
 						>
