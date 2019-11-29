@@ -7,6 +7,7 @@
 :import {
 	-st-from: '~/components/variables.st.css';
 	-st-named:
+		sizeScreenSmMax,
 		sizeBorderRadius,
 		colorGray1;
 }
@@ -54,4 +55,11 @@
 	box-shadow: 0 0 rel(20, 24) 0 rgba(0, 0, 0, .32);
 	border-radius: value(sizeBorderRadius);
 	padding: rel(142, 24) rel(111, 24);
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.content {
+		padding: 10px;
+	}
 }

@@ -12,9 +12,6 @@ import {
 	__x
 } from 'i18n-for-react';
 import {
-	Bind
-} from '@flexis/ui/helpers';
-import {
 	getLocalizedPath,
 	getVenuePlanFloors
 } from '~/services/i18n';
@@ -52,6 +49,8 @@ export class VenuePlan extends Component<IProps> {
 			context
 		} = this;
 		const nav = getVenuePlanFloors(context);
+		const floor = new URLSearchParams(search).get('floor');
+		const navItem = nav.find(navItem => navItem.floor === floor);
 		const __ = context.bind(tr);
 
 		return (
@@ -99,7 +98,7 @@ export class VenuePlan extends Component<IProps> {
 				<div
 					className={classes.content}
 				>
-					{this.renderPlan()}
+					<img src={navItem && navItem.venueUrl} />
 				</div>
 			</Section>
 		);
@@ -122,41 +121,6 @@ export class VenuePlan extends Component<IProps> {
 					floor: '2'
 				})
 			});
-		}
-	}
-
-	@Bind()
-	private renderPlan() {
-
-		const {
-			location: {
-				search
-			}
-		} = this.props;
-		const floor = new URLSearchParams(search).get('floor');
-
-		switch (floor) {
-
-			case '3':
-				return (
-					<div>
-						3 этаж - потом добавлю картинки
-					</div>
-				);
-
-			case '13':
-				return (
-					<div>
-						13 этаж - потом добавлю картинки
-					</div>
-				);
-
-			default:
-				return (
-					<div>
-						2 этаж - потом добавлю картинки
-					</div>
-				);
 		}
 	}
 }

@@ -506,15 +506,13 @@
 		"nav": [
 			{
 				"floor": "2",
-				"label": "2 Floor"
-			},
-			{
-				"floor": "3",
-				"label": "3 Floor"
+				"label": "2 Floor",
+				"venueUrl": "https://res.cloudinary.com/trigen/image/upload/v1575001518/devfest2019/venue/Map-2-Floor-En.svg"
 			},
 			{
 				"floor": "13",
-				"label": "13 Floor"
+				"label": "13 Floor",
+				"venueUrl": "https://res.cloudinary.com/trigen/image/upload/v1575001518/devfest2019/venue/Map-13-Floor-En.svg"
 			}
 		]
 	},
