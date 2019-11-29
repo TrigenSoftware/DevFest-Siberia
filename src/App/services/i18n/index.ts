@@ -200,6 +200,20 @@ export function getVenuePlanFloors(context: I18nConfig): any[] {
 }
 
 /**
+ * Get venue plan img.
+ */
+export function getVenuePlanImage(nav: any[], floor: string) {
+
+	if (!floor) {
+		return null;
+	}
+
+	const navItem = nav.find(navItem => navItem.floor === floor);
+
+	return navItem.venueUrl;
+}
+
+/**
  * Get share links from locales.
  */
 export function getShareLinks(context: I18nConfig): Record<string, string> {

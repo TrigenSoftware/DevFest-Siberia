@@ -1,10 +1,5 @@
+/* tslint:disable:no-magic-numbers */
 import React from 'react';
-import {
-	MemoryRouter
-} from 'react-router';
-import {
-	Provider
-} from '@flexis/redux';
 import {
 	storiesOf
 } from '@storybook/react';
@@ -12,12 +7,11 @@ import {
 	select
 } from '@storybook/addon-knobs';
 import {
+	MemoryRouter
+} from 'react-router';
+import {
 	I18nProvider
 } from 'i18n-for-react';
-import Header, {
-	store
-} from '~/blocks/Header/mock';
-import Footer from '~/blocks/Footer';
 import ru from '~/data/locales/ru.json';
 import en from '~/data/locales/en.json';
 import VenuePlan from './';
@@ -38,11 +32,6 @@ storiesOf('Containers|VenuePlan', module)
 		</div>
 	))
 	.addDecorator(story => (
-		<MemoryRouter initialEntries={['/plan']}>
-			{story()}
-		</MemoryRouter>
-	))
-	.addDecorator(story => (
 		<I18nProvider
 			locale={select('Locale', ['en', 'ru'], 'en')}
 			locales={{
@@ -54,15 +43,14 @@ storiesOf('Containers|VenuePlan', module)
 			{story()}
 		</I18nProvider>
 	))
+	.addDecorator(story => (
+		<MemoryRouter initialEntries={['/plan']}>
+			{story()}
+		</MemoryRouter>
+	))
 	.add(
-		'with default state',
+		'with basic state',
 		() => (
-			<>
-				<Provider store={store}>
-					<Header/>
-				</Provider>
-				<VenuePlan/>
-				<Footer/>
-			</>
+			<VenuePlan/>
 		)
 	);
