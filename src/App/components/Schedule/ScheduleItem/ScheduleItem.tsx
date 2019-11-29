@@ -161,7 +161,6 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 			search
 		} = location;
 		const color = talkTypeBadge && talkTypeColors[talkTypeBadge.toLowerCase()];
-		const isControlShow = this.showControl();
 
 		return (
 			<tr
@@ -252,48 +251,54 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 					{this.renderBadge(talkTypeBadge)}
 					{this.renderBadge(talkLevelBadge)}
 				</td>
-				<td
-					className={classes.controls}
-				>
-					{onFavoriteClick && isControlShow && (
-						<ScheduleFavoriteButton
-							onClick={this.onFavoriteClick}
-							title={favoriteLabel}
-							active={favorite}
-							value={value}
-						/>
-					)}
-					{onWorkshopAddClick && !workshop && !workshopDisabled && isControlShow && (
-						<Button
-							className={classes.button}
-							onClick={this.onWorkshopAddClick}
-						>
-							{workshopAddLabel}
-						</Button>
-					)}
-					{workshopDisabled && isControlShow && (
-						<div
-							className={classes.disabled}
-						>
-							{workshopDisabledLabel}
-						</div>
-					)}
-					{onWorkshopDeleteClick && workshop && !workshopDisabled && isControlShow && (
-						<>
-							<div
-								className={classes.label}
-							>
-								{workshopLabel}
-							</div>
+				{status === VariantScheduleItemStatus.Past ? (
+					<td
+						className={classes.controls}
+					/>
+				) : (
+					<td
+						className={classes.controls}
+					>
+						{onFavoriteClick && (
+							<ScheduleFavoriteButton
+								onClick={this.onFavoriteClick}
+								title={favoriteLabel}
+								active={favorite}
+								value={value}
+							/>
+						)}
+						{onWorkshopAddClick && !workshop && !workshopDisabled && (
 							<Button
-								className={classes.delete}
-								onClick={this.onWorkshopDeleteClick}
+								className={classes.button}
+								onClick={this.onWorkshopAddClick}
 							>
-								{workshopDeleteLabel}
+								{workshopAddLabel}
 							</Button>
-						</>
-					)}
-				</td>
+						)}
+						{workshopDisabled && (
+							<div
+								className={classes.disabled}
+							>
+								{workshopDisabledLabel}
+							</div>
+						)}
+						{onWorkshopDeleteClick && workshop && !workshopDisabled && (
+							<>
+								<div
+									className={classes.label}
+								>
+									{workshopLabel}
+								</div>
+								<Button
+									className={classes.delete}
+									onClick={this.onWorkshopDeleteClick}
+								>
+									{workshopDeleteLabel}
+								</Button>
+							</>
+						)}
+					</td>
+				)}
 				{description && (
 					<ScheduleItemModal
 						history={history}
@@ -344,19 +349,6 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 		if (typeof onWorkshopDeleteClick === 'function') {
 			onWorkshopDeleteClick(id, event);
 		}
-	}
-
-	private showControl() {
-
-		const {
-			status
-		} = this.props;
-
-		if (status === VariantScheduleItemStatus.Past) {
-			return false;
-		}
-
-		return true;
 	}
 
 	private renderBadge(type: string) {
