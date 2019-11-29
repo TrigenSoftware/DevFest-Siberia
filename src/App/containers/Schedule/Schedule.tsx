@@ -263,6 +263,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 				search
 			},
 			datetime,
+			isLogged,
 			fetchSchedule,
 			fetchSpeakers,
 			fetchFavorites,
@@ -279,8 +280,12 @@ export class ScheduleContainer extends Component<IProps, IState> {
 
 		fetchSchedule(locale);
 		fetchSpeakers(locale);
-		fetchFavorites();
-		fetchReservations();
+
+		if (isLogged()) {
+			console.log('here');
+			fetchFavorites();
+			fetchReservations();
+		}
 
 		if (!date) {
 

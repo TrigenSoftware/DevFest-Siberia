@@ -1,6 +1,5 @@
 import createLogger from '~/services/logger';
 import * as speakersService from '~/services/speakers';
-import * as userService from '~/services/user';
 import client from './client';
 import userClinet from '../user/client';
 import enSchedule from '~/data/schedule/en.fetch.json?fetch';
@@ -119,18 +118,15 @@ export async function fetchWorkshops() {
 
 export async function fetchFavorites() {
 
-	if (isLogged()) {
+	logger.debug('fetchFavorites');
 
-		logger.debug('fetchFavorites');
+	const {
+		data: favoritesData
+	} = await userClinet.get('api/favorites');
 
-		const {
-			data: favoritesData
-		} = await userClinet.get('api/favorites');
+	logger.debug('fetchFavorites', 'Response:', favoritesData);
 
-		logger.debug('fetchFavorites', 'Response:', favoritesData);
-
-		return favoritesFromResponseData(favoritesData);
-	}
+	return favoritesFromResponseData(favoritesData);
 }
 
 export async function addFavorite(lectureId: string) {
@@ -161,18 +157,15 @@ export async function deleteFavorite(lectureId: string) {
 
 export async function fetchReservations() {
 
-	if (isLogged()) {
+	logger.debug('fetchReservation');
 
-		logger.debug('fetchReservation');
+	const {
+		data: reservationsData
+	} = await userClinet.get('api/reservation/all');
 
-		const {
-			data: reservationsData
-		} = await userClinet.get('api/reservation/all');
+	logger.debug('fetchReservation', 'Response:', reservationsData);
 
-		logger.debug('fetchReservation', 'Response:', reservationsData);
-
-		return reservationsFromResponseData(reservationsData);
-	}
+	return reservationsFromResponseData(reservationsData);
 }
 
 export async function addReservation(workshopId: string) {
@@ -199,15 +192,4 @@ export async function deleteReservation(workshopId: string) {
 	logger.debug('deleteReservation', 'Response:', deletedReservation);
 
 	return reservationFromResponseData(deletedReservation);
-}
-
-function isLogged() {
-
-	const token = userService.getToken();
-
-	if (token) {
-		return true;
-	}
-
-	return false;
 }

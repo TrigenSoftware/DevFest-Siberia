@@ -6,7 +6,6 @@ import {
 	fetchFavorites,
 	fetchReservations
 } from './';
-import * as userService from '~/services/user';
 import mockFavorites from '~/models/Favorite.mock';
 import mockReservations from '~/models/Reservation.mock';
 
@@ -34,8 +33,6 @@ describe('API', () => {
 					response: MOCK_FETCHFAVORITES_RESPONSE
 				});
 
-				userService.saveToken('test');
-
 				const fetchFavoritesResponse = await fetchFavorites();
 
 				expect(fetchFavoritesResponse.size).toEqual(3);
@@ -50,8 +47,6 @@ describe('API', () => {
 					status:   200,
 					response: MOCK_RESERVATIONS_RESPONSE
 				});
-
-				userService.saveToken('test');
 
 				const fetchReservationsResponse = await fetchReservations();
 
