@@ -507,12 +507,12 @@
 			{
 				"floor": "2",
 				"label": "2 этаж",
-				"venueUrl": "https://res.cloudinary.com/trigen/image/upload/v1575001518/devfest2019/venue/Map-2-Floor-Rus.svg"
+				"venuePlanImage": "https://res.cloudinary.com/trigen/image/upload/v1575001518/devfest2019/venue/Map-2-Floor-Rus.svg"
 			},
 			{
 				"floor": "13",
 				"label": "13 этаж",
-				"venueUrl": "https://res.cloudinary.com/trigen/image/upload/v1575001518/devfest2019/venue/Map-13-Floor-Rus.svg"
+				"venuePlanImage": "https://res.cloudinary.com/trigen/image/upload/v1575001518/devfest2019/venue/Map-13-Floor-Rus.svg"
 			}
 		]
 	},

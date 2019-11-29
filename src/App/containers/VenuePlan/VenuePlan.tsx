@@ -51,7 +51,7 @@ export class VenuePlan extends Component<IProps> {
 		} = this;
 		const nav = getVenuePlanFloors(context);
 		const floor = new URLSearchParams(search).get('floor');
-		const venueUrl = getVenuePlanImage(nav, floor);
+		const venuePlanImage = getVenuePlanImage(nav, floor);
 		const __ = context.bind(tr);
 
 		return (
@@ -96,11 +96,11 @@ export class VenuePlan extends Component<IProps> {
 						{__x`venuePlan.download`}
 					</ToggleNavLink>
 				</div>
-				{venueUrl && (
+				{venuePlanImage && (
 					<div
 						className={classes.content}
 					>
-						<img src={venueUrl} />
+						<img src={venuePlanImage} />
 					</div>
 				)}
 			</Section>
