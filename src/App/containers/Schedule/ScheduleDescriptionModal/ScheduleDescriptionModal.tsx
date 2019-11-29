@@ -12,6 +12,9 @@ import {
 	omit
 } from '@flexis/ui/helpers';
 import {
+	Schedule
+} from '~/store/Schedule/Schedule.types';
+import {
 	deleteSearchParams
 } from '~/blocks/common/router';
 import Modal, {
@@ -27,7 +30,7 @@ type IScheduleDescriptionModalProps = Omit<IModalProps, 'children'>;
 export interface IProps extends IScheduleDescriptionModalProps {
 	location: Location;
 	history: History;
-	schedule: any[];
+	schedule: Schedule[];
 }
 
 interface IState {
@@ -91,7 +94,7 @@ export default class ScheduleDescriptionModal extends Component<IProps> {
 			active
 		} = this.state;
 		const title = new URLSearchParams(search).get('title');
-		const scheduleItem = schedule.find(scheduleItem => scheduleItem.title === title);
+		const scheduleItem = schedule && schedule.find(item => item.title === title);
 
 		return (
 			<Modal
@@ -103,17 +106,21 @@ export default class ScheduleDescriptionModal extends Component<IProps> {
 				onClose={this.onClose}
 				active={active}
 			>
-				<h3
-					className={classes.title}
-				>
-					{title}
-				</h3>
-				<div
-					className={classes.description}
-					dangerouslySetInnerHTML={{
-						__html: scheduleItem && scheduleItem.description
-					}}
-				/>
+				{scheduleItem && (
+					<>
+						<h3
+							className={classes.title}
+						>
+							{title}
+						</h3>
+						<div
+							className={classes.description}
+							dangerouslySetInnerHTML={{
+								__html: scheduleItem.description
+							}}
+						/>
+					</>
+				)}
 			</Modal>
 		);
 	}
