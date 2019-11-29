@@ -251,48 +251,54 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 					{this.renderBadge(talkTypeBadge)}
 					{this.renderBadge(talkLevelBadge)}
 				</td>
-				<td
-					className={classes.controls}
-				>
-					{onFavoriteClick && (
-						<ScheduleFavoriteButton
-							onClick={this.onFavoriteClick}
-							title={favoriteLabel}
-							active={favorite}
-							value={value}
-						/>
-					)}
-					{onWorkshopAddClick && !workshop && !workshopDisabled && (
-						<Button
-							className={classes.button}
-							onClick={this.onWorkshopAddClick}
-						>
-							{workshopAddLabel}
-						</Button>
-					)}
-					{workshopDisabled && (
-						<div
-							className={classes.disabled}
-						>
-							{workshopDisabledLabel}
-						</div>
-					)}
-					{onWorkshopDeleteClick && workshop && !workshopDisabled && (
-						<>
-							<div
-								className={classes.label}
-							>
-								{workshopLabel}
-							</div>
+				{status === VariantScheduleItemStatus.Past ? (
+					<td
+						className={classes.controls}
+					/>
+				) : (
+					<td
+						className={classes.controls}
+					>
+						{onFavoriteClick && (
+							<ScheduleFavoriteButton
+								onClick={this.onFavoriteClick}
+								title={favoriteLabel}
+								active={favorite}
+								value={value}
+							/>
+						)}
+						{onWorkshopAddClick && !workshop && !workshopDisabled && (
 							<Button
-								className={classes.delete}
-								onClick={this.onWorkshopDeleteClick}
+								className={classes.button}
+								onClick={this.onWorkshopAddClick}
 							>
-								{workshopDeleteLabel}
+								{workshopAddLabel}
 							</Button>
-						</>
-					)}
-				</td>
+						)}
+						{workshopDisabled && (
+							<div
+								className={classes.disabled}
+							>
+								{workshopDisabledLabel}
+							</div>
+						)}
+						{onWorkshopDeleteClick && workshop && !workshopDisabled && (
+							<>
+								<div
+									className={classes.label}
+								>
+									{workshopLabel}
+								</div>
+								<Button
+									className={classes.delete}
+									onClick={this.onWorkshopDeleteClick}
+								>
+									{workshopDeleteLabel}
+								</Button>
+							</>
+						)}
+					</td>
+				)}
 				{description && (
 					<ScheduleItemModal
 						history={history}
