@@ -6,16 +6,23 @@ import {
 	IActions
 } from '~/store/types';
 import {
-	SpeakersSegment
+	SpeakersSegment,
+	ScheduleSegment
 } from '~/store/segments';
 import {
 	IActionsProps
 } from './types';
 import Speakers from './Speakers';
 
-export function mapStateToProps({ speakers }: State) {
+export function mapStateToProps(
+	{
+		speakers,
+		schedule
+	}: State
+) {
 	return {
-		speakers: speakers.speakers
+		speakers: speakers.speakers,
+		schedule: schedule.schedule
 	};
 }
 
@@ -45,7 +52,10 @@ export function mapActionsToProps({ speakers }: IActions): IActionsProps {
 }
 
 export default Connect({
-	dependsOn:   SpeakersSegment,
+	dependsOn:   [
+		SpeakersSegment,
+		ScheduleSegment
+	],
 	skipWaiting: true,
 	mapStateToProps,
 	mapActionsToProps

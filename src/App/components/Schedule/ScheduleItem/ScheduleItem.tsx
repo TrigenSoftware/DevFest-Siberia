@@ -27,9 +27,6 @@ import {
 	ScheduleFavoriteButton
 } from '../ScheduleFavoriteButton';
 import {
-	ScheduleItemModal
-} from '../ScheduleItemModal';
-import {
 	style,
 	classes
 } from './ScheduleItem.st.css';
@@ -133,6 +130,9 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 
 		const {
 			className,
+			location: {
+				search
+			},
 			time,
 			lang,
 			place,
@@ -153,13 +153,8 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 			workshopDisabledLabel,
 			onFavoriteClick,
 			onWorkshopAddClick,
-			onWorkshopDeleteClick,
-			location,
-			history
+			onWorkshopDeleteClick
 		} = this.props;
-		const {
-			search
-		} = location;
 		const color = talkTypeBadge && talkTypeColors[talkTypeBadge.toLowerCase()];
 
 		return (
@@ -182,7 +177,7 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 				<td
 					className={classes.description}
 				>
-					{!speakers || !description ? (
+					{!description ? (
 						<h4
 							className={classes.title}
 						>
@@ -298,14 +293,6 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 							</>
 						)}
 					</td>
-				)}
-				{description && (
-					<ScheduleItemModal
-						history={history}
-						location={location}
-						title={String(title)}
-						description={description}
-					/>
 				)}
 			</tr>
 		);

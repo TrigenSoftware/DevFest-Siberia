@@ -30,6 +30,7 @@ interface ITalkProps {
 	lang: string;
 	location: string;
 	title: string;
+	description?: string;
 	talkTypeBadge?: string;
 	talkLevelBadge?: string;
 }
@@ -168,6 +169,7 @@ export default class SpeakerCard extends Component<IProps> {
 								lang,
 								location,
 								title,
+								description,
 								talkTypeBadge,
 								talkLevelBadge
 							},
@@ -179,6 +181,7 @@ export default class SpeakerCard extends Component<IProps> {
 								lang={lang}
 								place={location}
 								title={title}
+								description={description}
 								talkTypeBadge={talkTypeBadge}
 								talkLevelBadge={talkLevelBadge}
 								status={VariantScheduleItemStatus.Next}

@@ -25,15 +25,11 @@ async function loadScheduleSegmentConfig() {
 async function loadInitialScheduleData(store: Store<any, IActions>, context: Record<string, any>) {
 
 	const {
-		fetchSchedule,
-		fetchFavorites,
-		fetchReservations
+		fetchSchedule
 	} = store.actions.schedule;
 	const locale = context.locale || getLocaleFromPath(location.pathname);
 
 	await fetchSchedule(locale);
-	await fetchFavorites();
-	await fetchReservations();
 }
 
 export function registerScheduleSegment(store: Store) {

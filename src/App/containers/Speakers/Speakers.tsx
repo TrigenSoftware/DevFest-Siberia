@@ -23,6 +23,7 @@ import Loading from '~/components/Loading';
 import {
 	addSearchParams
 } from '~/blocks/common/router';
+import ScheduleDescriptionModal from '../Schedule/ScheduleDescriptionModal';
 import {
 	IProps
 } from './types';
@@ -41,13 +42,16 @@ export class Speakers extends Component<IProps> {
 
 		const {
 			className,
-			location: {
-				search
-			},
+			location,
+			history,
+			schedule,
 			actionsReady,
 			selectSpeakersByType,
 			selectSpeaker
 		} = this.props;
+		const {
+			search
+		} = location;
 		const {
 			context
 		} = this;
@@ -111,6 +115,11 @@ export class Speakers extends Component<IProps> {
 				) : (
 					<Loading/>
 				)}
+				<ScheduleDescriptionModal
+					location={location}
+					history={history}
+					schedule={schedule}
+				/>
 			</Section>
 		);
 	}

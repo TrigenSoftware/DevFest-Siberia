@@ -12,23 +12,25 @@ import {
 	omit
 } from '@flexis/ui/helpers';
 import {
+	Schedule
+} from '~/store/Schedule/Schedule.types';
+import {
 	deleteSearchParams
 } from '~/blocks/common/router';
 import Modal, {
 	IProps as IModalProps
-} from '../../Modal';
+} from '~/components/Modal';
 import {
 	style,
 	classes
-} from './ScheduleItemModal.st.css';
+} from './ScheduleDescriptionModal.st.css';
 
-type IScheduleItemModalProps = Omit<IModalProps, 'children'>;
+type IScheduleDescriptionModalProps = Omit<IModalProps, 'children'>;
 
-export interface IProps extends IScheduleItemModalProps {
+export interface IProps extends IScheduleDescriptionModalProps {
 	location: Location;
 	history: History;
-	title: string;
-	description: string;
+	schedule: Schedule[];
 }
 
 interface IState {
@@ -40,21 +42,19 @@ const {
 	transitionDuration
 } = Modal.defaultProps;
 
-export class ScheduleItemModal extends Component<IProps> {
+export default class ScheduleDescriptionModal extends Component<IProps> {
 
 	static propTypes = {
 		location:    PropTypes.object.isRequired,
 		history:     PropTypes.object.isRequired,
-		title:       PropTypes.string.isRequired,
-		description: PropTypes.string.isRequired
+		schedule:    PropTypes.array.isRequired
 	};
 
 	static getDerivedStateFromProps(
 		{
 			location: {
 				search
-			},
-			title
+			}
 		}: IProps,
 		{
 			prevSearch
@@ -65,7 +65,7 @@ export class ScheduleItemModal extends Component<IProps> {
 			return null;
 		}
 
-		const searchWithParam = new URLSearchParams(search).get('title') === title;
+		const searchWithParam = new URLSearchParams(search).has('title');
 		const nextState: Partial<IState> = {
 			active:     searchWithParam,
 			prevSearch: search
@@ -83,14 +83,22 @@ export class ScheduleItemModal extends Component<IProps> {
 
 		const {
 			className,
-			title,
-			description,
+			location: {
+				search
+			},
+			schedule,
 			children,
 			...props
 		} = this.props;
 		const {
 			active
 		} = this.state;
+		const title = new URLSearchParams(search).get('title');
+		const scheduleItem = schedule.find(item => item.title === title);
+
+		if (!scheduleItem) {
+			return null;
+		}
 
 		return (
 			<Modal
@@ -110,7 +118,7 @@ export class ScheduleItemModal extends Component<IProps> {
 				<div
 					className={classes.description}
 					dangerouslySetInnerHTML={{
-						__html: description
+						__html: scheduleItem.description
 					}}
 				/>
 			</Modal>

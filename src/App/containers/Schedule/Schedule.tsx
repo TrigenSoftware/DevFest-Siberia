@@ -40,6 +40,7 @@ import Loading from '~/components/Loading';
 import {
 	addSearchParams
 } from '~/blocks/common/router';
+import ScheduleDescriptionModal from './ScheduleDescriptionModal';
 import {
 	IProps,
 	IState
@@ -118,17 +119,20 @@ export class ScheduleContainer extends Component<IProps, IState> {
 
 		const {
 			className,
-			location: {
-				search
-			},
+			location,
+			history,
+			schedule,
+			favorites,
+			reservations,
 			actionsReady,
 			selectScheduleByType,
 			selectSpeaker,
-			favorites,
-			reservations,
 			selectIsFavorite,
 			selectIsReserved
 		} = this.props;
+		const {
+			search
+		} = location;
 		const {
 			context
 		} = this;
@@ -138,7 +142,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		const params = new URLSearchParams(search);
 		const date = params.get('date') || nav[0].date;
 		const type = params.get('type');
-		const schedule = selectScheduleByType(date, type);
+		const scheduleByType = selectScheduleByType(date, type);
 
 		return (
 			<Section
@@ -205,7 +209,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 				</div>
 				{actionsReady ? (
 					<Schedule>
-						{schedule.map((item, i) => {
+						{scheduleByType.map((item, i) => {
 
 							const {
 								id,
@@ -242,6 +246,11 @@ export class ScheduleContainer extends Component<IProps, IState> {
 				) : (
 					<Loading/>
 				)}
+				<ScheduleDescriptionModal
+					location={location}
+					history={history}
+					schedule={schedule}
+				/>
 			</Section>
 		);
 	}
@@ -254,6 +263,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 				search
 			},
 			datetime,
+			isLogged,
 			fetchSchedule,
 			fetchSpeakers,
 			fetchFavorites,
@@ -270,8 +280,11 @@ export class ScheduleContainer extends Component<IProps, IState> {
 
 		fetchSchedule(locale);
 		fetchSpeakers(locale);
-		fetchFavorites();
-		fetchReservations();
+
+		if (isLogged()) {
+			fetchFavorites();
+			fetchReservations();
+		}
 
 		if (!date) {
 

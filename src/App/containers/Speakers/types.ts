@@ -3,7 +3,8 @@ import {
 } from 'react-router-dom';
 import {
 	Speaker,
-	ISpeakersStateProps
+	ISpeakersStateProps,
+	IScheduleStateProps
 } from '~/store/types';
 import {
 	IProps as ISectionProps
@@ -18,5 +19,6 @@ export interface IActionsProps {
 
 export interface IProps extends ISectionProps,
 	ISpeakersStateProps,
+	IScheduleStateProps,
 	IActionsProps,
 	RouteComponentProps {}
