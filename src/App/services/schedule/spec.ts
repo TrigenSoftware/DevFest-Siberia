@@ -6,9 +6,7 @@ import {
 	fetchFavorites,
 	fetchReservations
 } from './';
-import {
-	login
-} from '../user';
+import * as userService from '~/services/user';
 import mockFavorites from '~/models/Favorite.mock';
 import mockReservations from '~/models/Reservation.mock';
 
@@ -36,7 +34,7 @@ describe('API', () => {
 					response: MOCK_FETCHFAVORITES_RESPONSE
 				});
 
-				await login('test@mail.ru', 'some-password');
+				userService.saveToken('test');
 
 				const fetchFavoritesResponse = await fetchFavorites();
 
@@ -53,7 +51,7 @@ describe('API', () => {
 					response: MOCK_RESERVATIONS_RESPONSE
 				});
 
-				await login('test@mail.ru', 'some-password');
+				userService.saveToken('test');
 
 				const fetchReservationsResponse = await fetchReservations();
 
