@@ -291,6 +291,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		}
 
 		if (!datetime) {
+			this.updateCurrentDate();
 			this.updateIntervalId = setInterval(this.updateCurrentDate, UPDATE_INTERVAL);
 		}
 	}
