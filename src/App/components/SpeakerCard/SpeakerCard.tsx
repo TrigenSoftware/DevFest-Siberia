@@ -17,7 +17,6 @@ import ContactLink, {
 import Badge from '../Badge';
 import Schedule, {
 	VariantScheduleItemStatus,
-	ISpeaker,
 	ScheduleItem
 } from '../Schedule';
 import {
@@ -32,7 +31,6 @@ interface ITalkProps {
 	location: string;
 	title: string;
 	description?: string;
-	speakers?: ISpeaker[];
 	talkTypeBadge?: string;
 	talkLevelBadge?: string;
 }
@@ -172,7 +170,6 @@ export default class SpeakerCard extends Component<IProps> {
 								location,
 								title,
 								description,
-								speakers,
 								talkTypeBadge,
 								talkLevelBadge
 							},
@@ -185,7 +182,6 @@ export default class SpeakerCard extends Component<IProps> {
 								place={location}
 								title={title}
 								description={description}
-								speakers={speakers}
 								talkTypeBadge={talkTypeBadge}
 								talkLevelBadge={talkLevelBadge}
 								status={VariantScheduleItemStatus.Next}

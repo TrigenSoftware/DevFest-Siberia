@@ -44,7 +44,7 @@ export enum VariantScheduleItemType {
 
 export type ScheduleItemStatus = 'past' | 'now' | 'next';
 
-export interface ISpeaker {
+interface ISpeaker {
 	id?: string;
 	name: string;
 	description: string;
@@ -177,7 +177,7 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 				<td
 					className={classes.description}
 				>
-					{!speakers || !description ? (
+					{!description ? (
 						<h4
 							className={classes.title}
 						>

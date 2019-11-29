@@ -94,7 +94,11 @@ export default class ScheduleDescriptionModal extends Component<IProps> {
 			active
 		} = this.state;
 		const title = new URLSearchParams(search).get('title');
-		const scheduleItem = schedule && schedule.find(item => item.title === title);
+		const scheduleItem = schedule.find(item => item.title === title);
+
+		if (!scheduleItem) {
+			return null;
+		}
 
 		return (
 			<Modal
@@ -106,21 +110,17 @@ export default class ScheduleDescriptionModal extends Component<IProps> {
 				onClose={this.onClose}
 				active={active}
 			>
-				{scheduleItem && (
-					<>
-						<h3
-							className={classes.title}
-						>
-							{title}
-						</h3>
-						<div
-							className={classes.description}
-							dangerouslySetInnerHTML={{
-								__html: scheduleItem.description
-							}}
-						/>
-					</>
-				)}
+				<h3
+					className={classes.title}
+				>
+					{title}
+				</h3>
+				<div
+					className={classes.description}
+					dangerouslySetInnerHTML={{
+						__html: scheduleItem.description
+					}}
+				/>
 			</Modal>
 		);
 	}
