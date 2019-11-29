@@ -290,9 +290,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 			});
 		}
 
-		this.updateCurrentDate();
-
 		if (!datetime) {
+			this.updateCurrentDate();
 			this.updateIntervalId = setInterval(this.updateCurrentDate, UPDATE_INTERVAL);
 		}
 	}
