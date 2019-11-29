@@ -130,6 +130,9 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 
 		const {
 			className,
+			location: {
+				search
+			},
 			time,
 			lang,
 			place,
@@ -150,12 +153,8 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 			workshopDisabledLabel,
 			onFavoriteClick,
 			onWorkshopAddClick,
-			onWorkshopDeleteClick,
-			location
+			onWorkshopDeleteClick
 		} = this.props;
-		const {
-			search
-		} = location;
 		const color = talkTypeBadge && talkTypeColors[talkTypeBadge.toLowerCase()];
 
 		return (
