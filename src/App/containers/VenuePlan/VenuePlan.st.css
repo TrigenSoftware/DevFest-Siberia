@@ -1,0 +1,65 @@
+
+:import {
+	-st-from: '@flexis/ui/stylable/rel';
+	-st-default: rel;
+}
+
+:import {
+	-st-from: '~/components/variables.st.css';
+	-st-named:
+		sizeScreenSmMax,
+		sizeBorderRadius,
+		colorGray1;
+}
+
+:import {
+	-st-from: '~/components/Section/Section.st.css';
+	-st-named: center;
+}
+
+.root .center {
+	padding-top: rel(32, 24);
+	padding-bottom: rel(136, 24);
+}
+
+.title {
+	display: flex;
+	align-items: baseline;
+	margin-bottom: rel(30, 82);
+}
+
+.title::after {
+	flex: 1;
+	margin-left: rel(27, 82);
+	border: rel(1, 82) dashed value(colorGray1);
+	content: '';
+}
+
+.floorNav {
+	display: flex;
+	align-items: center;
+	margin-bottom: rel(56, 24);
+}
+
+/* stylelint-disable a11y/no-display-none */
+.nav::after {
+	display: none;
+}/* stylelint-enable */
+
+.spacer {
+	margin: auto;
+	width: 0;
+}
+
+.content {
+	box-shadow: 0 0 rel(20, 24) 0 rgba(0, 0, 0, .32);
+	border-radius: value(sizeBorderRadius);
+	padding: rel(142, 24) rel(111, 24);
+}
+
+@media (max-width: value(sizeScreenSmMax)) {
+
+	.content {
+		padding: 10px;
+	}
+}

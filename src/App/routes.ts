@@ -8,6 +8,7 @@ export enum Routes {
 	Buy = '/buy',
 	Cabinet = '/cabinet',
 	Schedule = '/schedule',
+	VenuePlan = '/plan',
 	TermsOfService = '/terms',
 	Ru = '/ru'
 }

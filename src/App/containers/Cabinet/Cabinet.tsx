@@ -41,6 +41,7 @@ export class CabinetContainer extends Component<IProps> {
 	static propTypes = {
 		fetchOrders:                 PropTypes.func.isRequired,
 		fetchProfile:                PropTypes.func.isRequired,
+		buyAfterpartyTicket:         PropTypes.func.isRequired,
 		selectTicketOrder:           PropTypes.func.isRequired,
 		selectAfterpartyTicketOrder: PropTypes.func.isRequired,
 		isLogged:                    PropTypes.func.isRequired

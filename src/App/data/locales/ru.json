@@ -511,6 +511,23 @@
 		"submit": "Войти!",
 		"link": "Нет аккаунта? Нужен билет, что зайти в профиль!"
 	},
+	"venuePlan": {
+		"title": "Карта",
+		"download": "Скачать PDF",
+		"planUrl": "/plan.pdf",
+		"nav": [
+			{
+				"floor": "2",
+				"label": "2 этаж",
+				"venuePlanImage": "https://res.cloudinary.com/trigen/image/upload/v1575013578/devfest2019/venue/Map-2-Floor-Rus.svg"
+			},
+			{
+				"floor": "13",
+				"label": "13 этаж",
+				"venuePlanImage": "https://res.cloudinary.com/trigen/image/upload/v1575013578/devfest2019/venue/Map-13-Floor-Rus.svg"
+			}
+		]
+	},
 	"coc": {
 		"title": "Правила поведения",
 		"rules": "Все участники, спикеры, партнёры, волонтеры на конференции DevFest Siberia обязуются соблюдать правила поведения. Организаторы надеются на вашу сознательность и помощь в соблюдении этих правил.",

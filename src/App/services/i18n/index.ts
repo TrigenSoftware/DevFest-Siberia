@@ -184,6 +184,36 @@ export function getTickets(context: I18nConfig): any[] {
 }
 
 /**
+ * Get venue plan floors from locales.
+ */
+export function getVenuePlanFloors(context: I18nConfig): any[] {
+
+	const {
+		venuePlan: {
+			nav
+		}
+	} = context.getCatalog(
+		context.getLocale()
+	) as any;
+
+	return nav;
+}
+
+/**
+ * Get venue plan img.
+ */
+export function getVenuePlanImage(nav: any[], floor: string) {
+
+	if (!floor) {
+		return null;
+	}
+
+	const navItem = nav.find(item => item.floor === floor);
+
+	return navItem.venuePlanImage;
+}
+
+/**
  * Get share links from locales.
  */
 export function getShareLinks(context: I18nConfig): Record<string, string> {

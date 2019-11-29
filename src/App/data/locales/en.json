@@ -511,6 +511,23 @@
 		"submit": "Let me in!",
 		"link": "Don't have account? Buy a ticket to join!"
 	},
+	"venuePlan": {
+		"title": "Plan",
+		"download": "Download pdf",
+		"planUrl": "/plan.pdf",
+		"nav": [
+			{
+				"floor": "2",
+				"label": "2 Floor",
+				"venuePlanImage": "https://res.cloudinary.com/trigen/image/upload/v1575013578/devfest2019/venue/Map-2-Floor-En.svg"
+			},
+			{
+				"floor": "13",
+				"label": "13 Floor",
+				"venuePlanImage": "https://res.cloudinary.com/trigen/image/upload/v1575013578/devfest2019/venue/Map-13-Floor-En.svg"
+			}
+		]
+	},
 	"coc": {
 		"title": "Code Of Conduct",
 		"rules": "All attendees, speakers, sponsors and volunteers at DevFest Siberia are required to agree with the following code of conduct. Organisers will enforce this code throughout the event. We are expecting cooperation from all participants to help ensuring a safe environment for everybody.",
