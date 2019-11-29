@@ -162,6 +162,7 @@ export async function deleteFavorite(lectureId: string) {
 export async function fetchReservations() {
 
 	if (isLogged()) {
+
 		logger.debug('fetchReservation');
 
 		const {
