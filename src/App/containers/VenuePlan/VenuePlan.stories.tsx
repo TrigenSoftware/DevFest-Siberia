@@ -49,7 +49,7 @@ storiesOf('Containers|VenuePlan', module)
 		</MemoryRouter>
 	))
 	.add(
-		'with basic state',
+		'with default state',
 		() => (
 			<VenuePlan/>
 		)

@@ -208,7 +208,7 @@ export function getVenuePlanImage(nav: any[], floor: string) {
 		return null;
 	}
 
-	const navItem = nav.find(navItem => navItem.floor === floor);
+	const navItem = nav.find(item => item.floor === floor);
 
 	return navItem.venueUrl;
 }
