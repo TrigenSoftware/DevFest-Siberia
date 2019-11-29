@@ -6,10 +6,6 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import {
-	withRouter,
-	RouteComponentProps
-} from 'react-router-dom';
-import {
 	Bind,
 	CombinePropsAndAttributes
 } from '@flexis/ui/helpers';
@@ -50,7 +46,7 @@ export interface ISpeaker {
 	description: string;
 }
 
-interface ISelfProps extends RouteComponentProps {
+interface ISelfProps {
 	id?: string;
 	time: ReactNode;
 	lang?: string;
@@ -98,7 +94,7 @@ export const talkTypeColors: Record<string, Color> = {
 	'advanced':     'darkblue'
 };
 
-class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
+export class ScheduleItem extends Component<IScheduleItemProps> {
 
 	static propTypes = {
 		id:                    PropTypes.string,
@@ -150,8 +146,7 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 			workshopDisabledLabel,
 			onFavoriteClick,
 			onWorkshopAddClick,
-			onWorkshopDeleteClick,
-			location
+			onWorkshopDeleteClick
 		} = this.props;
 		const {
 			search
@@ -444,5 +439,3 @@ class ScheduleItemWithRouter extends Component<IScheduleItemProps> {
 		);
 	}
 }
-
-export const ScheduleItem = withRouter(ScheduleItemWithRouter);

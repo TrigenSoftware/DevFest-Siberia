@@ -18,14 +18,12 @@ import ToggleNav, {
 	ToggleNavLink
 } from '~/components/ToggleNav';
 import ProfileCard from '~/components/ProfileCard';
-import {
-	ScheduleDescriptionModal
-} from '~/components/Schedule';
 import Badge from '~/components/Badge';
 import Loading from '~/components/Loading';
 import {
 	addSearchParams
 } from '~/blocks/common/router';
+import ScheduleDescriptionModal from '../Schedule/ScheduleDescriptionModal';
 import {
 	IProps
 } from './types';

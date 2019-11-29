@@ -16,7 +16,7 @@ import {
 } from '~/blocks/common/router';
 import Modal, {
 	IProps as IModalProps
-} from '../../Modal';
+} from '~/components/Modal';
 import {
 	style,
 	classes
@@ -39,7 +39,7 @@ const {
 	transitionDuration
 } = Modal.defaultProps;
 
-export class ScheduleDescriptionModal extends Component<IProps> {
+export default class ScheduleDescriptionModal extends Component<IProps> {
 
 	static propTypes = {
 		location:    PropTypes.object.isRequired,
@@ -91,7 +91,7 @@ export class ScheduleDescriptionModal extends Component<IProps> {
 			active
 		} = this.state;
 		const title = new URLSearchParams(search).get('title');
-		const scheduleDescription = schedule.find(scheduleItem => scheduleItem.title === title);
+		const scheduleItem = schedule.find(scheduleItem => scheduleItem.title === title);
 
 		return (
 			<Modal
@@ -111,7 +111,7 @@ export class ScheduleDescriptionModal extends Component<IProps> {
 				<div
 					className={classes.description}
 					dangerouslySetInnerHTML={{
-						__html: scheduleDescription && scheduleDescription.description
+						__html: scheduleItem && scheduleItem.description
 					}}
 				/>
 			</Modal>

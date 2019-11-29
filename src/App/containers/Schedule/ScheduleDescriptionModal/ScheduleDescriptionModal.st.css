@@ -10,7 +10,7 @@
 }
 
 :import {
-	-st-from: '../../variables.st.css';
+	-st-from: '~/components/variables.st.css';
 	-st-named:
 		sizeScreenSmMax,
 		colorBlue10;

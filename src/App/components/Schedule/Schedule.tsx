@@ -9,7 +9,6 @@ import {
 
 export * from './ScheduleItem';
 export * from './ScheduleSeparator';
-export * from './ScheduleDescriptionModal';
 
 export type IProps = TableHTMLAttributes<HTMLTableElement>;
 

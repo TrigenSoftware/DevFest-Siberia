@@ -32,7 +32,6 @@ import ToggleNav, {
 import Badge from '~/components/Badge';
 import Schedule, {
 	ScheduleItem,
-	ScheduleDescriptionModal,
 	talkTypeColors,
 	VariantScheduleItemStatus,
 	VariantScheduleItemType
@@ -41,6 +40,7 @@ import Loading from '~/components/Loading';
 import {
 	addSearchParams
 } from '~/blocks/common/router';
+import ScheduleDescriptionModal from './ScheduleDescriptionModal';
 import {
 	IProps,
 	IState
@@ -121,7 +121,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 			className,
 			location,
 			history,
-			schedule: scheduleFromProps,
+			schedule,
 			favorites,
 			reservations,
 			actionsReady,
@@ -142,7 +142,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		const params = new URLSearchParams(search);
 		const date = params.get('date') || nav[0].date;
 		const type = params.get('type');
-		const schedule = selectScheduleByType(date, type);
+		const scheduleByType = selectScheduleByType(date, type);
 
 		return (
 			<Section
@@ -209,7 +209,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 				</div>
 				{actionsReady ? (
 					<Schedule>
-						{schedule.map((item, i) => {
+						{scheduleByType.map((item, i) => {
 
 							const {
 								id,
@@ -249,7 +249,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 				<ScheduleDescriptionModal
 					location={location}
 					history={history}
-					schedule={scheduleFromProps}
+					schedule={schedule}
 				/>
 			</Section>
 		);
