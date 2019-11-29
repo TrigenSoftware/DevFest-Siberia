@@ -62,7 +62,7 @@ export default class ScheduleDescriptionModal extends Component<IProps> {
 			return null;
 		}
 
-		const searchWithParam = /[^\w]title=/.test(search);
+		const searchWithParam = new URLSearchParams(search).has('title');
 		const nextState: Partial<IState> = {
 			active:     searchWithParam,
 			prevSearch: search
