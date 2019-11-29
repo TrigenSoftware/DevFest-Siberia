@@ -6,6 +6,9 @@ import {
 	fetchFavorites,
 	fetchReservations
 } from './';
+import {
+	login
+} from '../user';
 import mockFavorites from '~/models/Favorite.mock';
 import mockReservations from '~/models/Reservation.mock';
 
@@ -33,6 +36,8 @@ describe('API', () => {
 					response: MOCK_FETCHFAVORITES_RESPONSE
 				});
 
+				await login('test@mail.ru', 'some-password');
+
 				const fetchFavoritesResponse = await fetchFavorites();
 
 				expect(fetchFavoritesResponse.size).toEqual(3);
@@ -47,6 +52,8 @@ describe('API', () => {
 					status:   200,
 					response: MOCK_RESERVATIONS_RESPONSE
 				});
+
+				await login('test@mail.ru', 'some-password');
 
 				const fetchReservationsResponse = await fetchReservations();
 
