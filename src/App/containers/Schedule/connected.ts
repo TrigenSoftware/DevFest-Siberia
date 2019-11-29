@@ -7,7 +7,8 @@ import {
 } from '~/store/types';
 import {
 	ScheduleSegment,
-	SpeakersSegment
+	SpeakersSegment,
+	UserSegment
 } from '~/store/segments';
 import ScheduleContainer from './Schedule';
 
@@ -79,7 +80,8 @@ export function mapActionsToProps(
 export default Connect({
 	dependsOn:   [
 		ScheduleSegment,
-		SpeakersSegment
+		SpeakersSegment,
+		UserSegment
 	],
 	skipWaiting: true,
 	mapStateToProps,

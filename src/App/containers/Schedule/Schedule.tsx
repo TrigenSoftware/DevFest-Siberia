@@ -282,7 +282,6 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		fetchSpeakers(locale);
 
 		if (isLogged()) {
-			console.log('here');
 			fetchFavorites();
 			fetchReservations();
 		}
