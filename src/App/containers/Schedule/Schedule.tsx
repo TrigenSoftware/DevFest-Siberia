@@ -14,7 +14,7 @@ import {
 } from 'react-router-dom';
 import {
 	I18nContext,
-	__ as tr,
+	// __ as tr,
 	__x
 } from 'i18n-for-react';
 import {
@@ -34,8 +34,8 @@ import Badge from '~/components/Badge';
 import Schedule, {
 	ScheduleItem,
 	talkTypeColors,
-	VariantScheduleItemStatus,
-	VariantScheduleItemType
+	VariantScheduleItemStatus
+	// VariantScheduleItemType
 } from '~/components/Schedule';
 import Loading from '~/components/Loading';
 import {
@@ -123,13 +123,13 @@ export class ScheduleContainer extends Component<IProps, IState> {
 			location,
 			history,
 			schedule,
-			favorites,
-			reservations,
+			// favorites,
+			// reservations,
 			actionsReady,
 			selectScheduleByType,
-			selectSpeaker,
-			selectIsFavorite,
-			selectIsReserved
+			selectSpeaker
+			// selectIsFavorite,
+			// selectIsReserved
 		} = this.props;
 		const {
 			search
@@ -137,7 +137,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		const {
 			context
 		} = this;
-		const __ = context.bind(tr);
+		// const __ = context.bind(tr);
 		const nav = getScheduleDates(context);
 		const filterTypes = getScheduleTypes(context);
 		const params = new URLSearchParams(search);
@@ -213,14 +213,14 @@ export class ScheduleContainer extends Component<IProps, IState> {
 						{scheduleByType.map((item, i) => {
 
 							const {
-								id,
-								type,
+								// id,
+								// type,
 								location,
 								date,
 								timeStart,
 								timeEnd
 							} = item;
-							const workshop = selectIsReserved(reservations, id);
+							// const workshop = selectIsReserved(reservations, id);
 
 							return (
 								<ScheduleItem
@@ -229,14 +229,14 @@ export class ScheduleContainer extends Component<IProps, IState> {
 									place={location}
 									time={formatDate(date, timeStart)}
 									status={this.getStatus(date, timeStart, timeEnd)}
-									favorite={selectIsFavorite(favorites, id)}
-									favoriteLabel={__`schedule.favoriteLabel`}
-									workshop={workshop}
-									workshopLabel={__`schedule.workshopLabel`}
-									workshopAddLabel={__`schedule.workshopAddLabel`}
-									workshopDeleteLabel={__`schedule.workshopDeleteLabel`}
-									workshopDisabledLabel={__`schedule.workshopDisabledLabel`}
-									{...this.getEventHandlers(type, workshop)}
+									// favorite={selectIsFavorite(favorites, id)}
+									// favoriteLabel={__`schedule.favoriteLabel`}
+									// workshop={workshop}
+									// workshopLabel={__`schedule.workshopLabel`}
+									// workshopAddLabel={__`schedule.workshopAddLabel`}
+									// workshopDeleteLabel={__`schedule.workshopDeleteLabel`}
+									// workshopDisabledLabel={__`schedule.workshopDisabledLabel`}
+									// {...this.getEventHandlers(type, workshop)}
 								/>
 							);
 						})}
@@ -315,39 +315,39 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		clearInterval(this.updateIntervalId);
 	}
 
-	@Bind()
-	private onFavoriteClick(lectureId: string, favorite: boolean) {
+	// @Bind()
+	// private onFavoriteClick(lectureId: string, favorite: boolean) {
 
-		const {
-			addFavorite,
-			deleteFavorite
-		} = this.props;
+	// 	const {
+	// 		addFavorite,
+	// 		deleteFavorite
+	// 	} = this.props;
 
-		if (favorite) {
-			addFavorite(lectureId);
-		} else {
-			deleteFavorite(lectureId);
-		}
-	}
+	// 	if (favorite) {
+	// 		addFavorite(lectureId);
+	// 	} else {
+	// 		deleteFavorite(lectureId);
+	// 	}
+	// }
 
-	@Bind()
-	private onWorkshopAddClick(workshopId: string) {
+	// @Bind()
+	// private onWorkshopAddClick(workshopId: string) {
 
-		const {
-			addReservation
-		} = this.props;
+	// 	const {
+	// 		addReservation
+	// 	} = this.props;
 
-		addReservation(workshopId);
-	}
+	// 	addReservation(workshopId);
+	// }
 
-	@Bind()
-	private onWorkshopDeleteClick(workshopId: string) {
-		const {
-			deleteReservation
-		} = this.props;
+	// @Bind()
+	// private onWorkshopDeleteClick(workshopId: string) {
+	// 	const {
+	// 		deleteReservation
+	// 	} = this.props;
 
-		deleteReservation(workshopId);
-	}
+	// 	deleteReservation(workshopId);
+	// }
 
 	@Bind()
 	private updateCurrentDate() {
@@ -377,37 +377,37 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		}
 	}
 
-	private getEventHandlers(type: VariantScheduleItemType, workshop: boolean) {
+	// private getEventHandlers(type: VariantScheduleItemType, workshop: boolean) {
 
-		const {
-			isLogged
-		} = this.props;
+	// 	const {
+	// 		isLogged
+	// 	} = this.props;
 
-		if (!isLogged()) {
-			return null;
-		}
+	// 	if (!isLogged()) {
+	// 		return null;
+	// 	}
 
-		switch (true) {
+	// 	switch (true) {
 
-			case type === VariantScheduleItemType.Workshop && workshop:
-				return {
-					onWorkshopDeleteClick: this.onWorkshopDeleteClick
-				};
+	// 		case type === VariantScheduleItemType.Workshop && workshop:
+	// 			return {
+	// 				onWorkshopDeleteClick: this.onWorkshopDeleteClick
+	// 			};
 
-			case type === VariantScheduleItemType.Talk:
-				return {
-					onFavoriteClick: this.onFavoriteClick
-				};
+	// 		case type === VariantScheduleItemType.Talk:
+	// 			return {
+	// 				onFavoriteClick: this.onFavoriteClick
+	// 			};
 
-			case type === VariantScheduleItemType.Workshop:
-				return {
-					onWorkshopAddClick: this.onWorkshopAddClick
-				};
+	// 		case type === VariantScheduleItemType.Workshop:
+	// 			return {
+	// 				onWorkshopAddClick: this.onWorkshopAddClick
+	// 			};
 
-			default:
-				return {};
-		}
-	}
+	// 		default:
+	// 			return {};
+	// 	}
+	// }
 }
 
 export default withRouter(ScheduleContainer);

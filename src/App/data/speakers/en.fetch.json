@@ -788,7 +788,7 @@
 		"talkLevelBadge": "Web"
 	},
 	{
-		"id": "Jani Eväkallio",
+		"id": "JaniEvakallio",
 		"type": "web",
 		"promo": true,
 		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1572708043/speakers/sgqibsj4fbd5qtxo5qk3.jpg",
@@ -986,7 +986,7 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"contacts": {
-			
+
 		},
 		"talkTypeBadge": "AI",
 		"talkLevelBadge": "Intermediate"
@@ -1005,9 +1005,66 @@
 		"talkLocation": "",
 		"talkTime": "",
 		"contacts": {
-			
+
 		},
 		"talkTypeBadge": "Web",
+		"talkLevelBadge": "Intermediate"
+	},
+	{
+		"id": "EugeneMikhantiev",
+		"type": "ai",
+		"promo": true,
+		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1569428936/speakers/eopbm1p2oj9ffzmbsbml.jpg",
+		"firstname": "Eugene",
+		"lastname": "Mikhantiev",
+		"description": "Principal ML Engineer",
+		"location": "🇷🇺",
+		"text": "Experienced physicist, electrical engineer, programmer. Now engaged in industry computer vision.",
+		"talkTitle": "Computer vision on microcontroller",
+		"talkLocation": "",
+		"talkTime": "",
+		"contacts": {
+
+		},
+		"talkTypeBadge": "AI",
+		"talkLevelBadge": "Intermediate"
+	},
+	{
+		"id": "LauraCarvajal",
+		"type": "web",
+		"promo": true,
+		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1571609942/speakers/phi1mhszavg9nsoiawbm.jpg",
+		"firstname": "Laura",
+		"lastname": "Carvajal",
+		"description": "Principal Engineer at Financial Times",
+		"location": "🇬🇧",
+		"contacts": {
+		 "twitter": "https://twitter.com/lc512k"
+		},
+		"text": "Laura is a Principal Engineer at the Financial Times and former accessibility Lead for FT.com",
+		"talkTitle": "Yes! Your site can (and should) be accessible",
+		"talkLocation": "",
+		"talkTime": "",
+		"talkTypeBadge": "Web",
+		"talkLevelBadge": "Advanced"
+	},
+	{
+		"id": "AlexanderGoncharenko",
+		"type": "ai",
+		"promo": true,
+		"src": "https://res.cloudinary.com/dfsiberia/image/upload/c_scale,w_350/v1569428936/speakers/qqvin24l266bwd94yhqa.jpg",
+		"firstname": "Alexander",
+		"lastname": "Goncharenko",
+		"description": "Deep Learning Researcher at Expasoft",
+		"location": "🇷🇺",
+		"text": "I am deep learning researcher at Expasoft LLC and Ph.D studetnt at Novosibirsk State University. Believe that \"AI is the new electricity\" (c) Andrew Ng. Research interests connected with mobile neural networks (knowledge distillation, quantinization, prunning and neural architecture search) and neural networks hardware accelerators. I like sport, especially jogging.",
+		"talkTitle": "Computer vision on microcontroller",
+		"talkLocation": "",
+		"talkTime": "",
+		"contacts": {
+
+		},
+		"talkTypeBadge": "AI",
 		"talkLevelBadge": "Intermediate"
 	}
 ]
