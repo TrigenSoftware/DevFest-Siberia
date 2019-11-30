@@ -1,6 +1,7 @@
 /* tslint:disable:no-magic-numbers */
 import {
 	parseISO,
+	isSameDay,
 	format
 } from 'date-fns';
 import React, {
@@ -112,7 +113,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 	context!: ContextType<typeof I18nContext>;
 	updateIntervalId: any = null;
 	state = {
-		currentDate: null
+		currentDate: new Date()
 	};
 
 	render() {
@@ -292,7 +293,7 @@ export class ScheduleContainer extends Component<IProps, IState> {
 
 			schedule.some(({ date }) => {
 
-				if (currentDate <= new Date(date)) {
+				if (isSameDay(currentDate, new Date(date))) {
 					history.push({
 						search: addSearchParams(search, {
 							date
@@ -300,11 +301,12 @@ export class ScheduleContainer extends Component<IProps, IState> {
 					});
 					return true;
 				}
+
+				return false;
 			});
 		}
 
 		if (!datetime) {
-			this.updateCurrentDate();
 			this.updateIntervalId = setInterval(this.updateCurrentDate, UPDATE_INTERVAL);
 		}
 	}
