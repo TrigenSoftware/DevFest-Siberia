@@ -97,6 +97,10 @@
 	width: 145%;
 }
 
+.goodbye {
+	width: 100%;
+}
+
 @media (max-width: value(sizeScreenMdMax)) {
 
 	.svg {

@@ -8,6 +8,10 @@ export const end = `2019-12-01T14:00:00${timezone}`;
 
 export const endTime = new Date(end);
 
+export const goodbye = `2019-12-01T19:15:00${timezone}`;
+
+export const goodbyeTime = new Date(goodbye);
+
 export const keywords = [
 	'event',
 	'devfest',

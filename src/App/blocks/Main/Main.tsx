@@ -5,6 +5,7 @@ import React, {
 import SROnly from '@flexis/ui/components/SROnly';
 import {
 	I18nContext,
+	__ as tr,
 	__x
 } from 'i18n-for-react';
 import Section, {
@@ -12,8 +13,10 @@ import Section, {
 } from '~/components/Section';
 import TimerCat from '~/components/TimerCat/loadable';
 import {
-	startTime
+	startTime,
+	goodbyeTime
 } from '~/data';
+import goodbye from './goodbye.jpg';
 import {
 	style,
 	classes
@@ -39,13 +42,25 @@ export default class Main extends Component<IProps> {
 			className,
 			...props
 		} = this.props;
-		const locale = this.context.getLocale();
 
 		return (
 			<Section
 				{...props}
 				className={style(classes.root, className)}
 			>
+				{new Date() >= goodbyeTime
+					? this.renderGoodbye()
+					: this.renderTimer()}
+			</Section>
+		);
+	}
+
+	private renderTimer() {
+
+		const locale = this.context.getLocale();
+
+		return (
+			<>
 				<article
 					className={classes.info}
 				>
@@ -76,7 +91,20 @@ export default class Main extends Component<IProps> {
 					locale={locale}
 					start={startTime}
 				/>
-			</Section>
+			</>
+		);
+	}
+
+	private renderGoodbye() {
+
+		const __ = this.context.bind(tr);
+
+		return (
+			<img
+				className={style(classes.goodbye)}
+				src={goodbye}
+				title={__`main.goodbye`}
+			/>
 		);
 	}
 }
