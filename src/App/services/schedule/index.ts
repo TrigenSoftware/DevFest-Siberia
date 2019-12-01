@@ -14,8 +14,8 @@ const logger = createLogger('App::services::schedule');
 
 export async function fetch({
 	lang = 'en',
-	skipSpeakers = false,
-	skipWorkshops = false
+	skipSpeakers = false
+	// skipWorkshops = false
 } = {}) {
 
 	logger.debug('fetch', 'Input lang:', lang);
@@ -24,7 +24,7 @@ export async function fetch({
 		lang,
 		skipSchedule: true
 	});
-	const fetchWorkshopsItems = !skipWorkshops && fetchWorkshops();
+	// const fetchWorkshopsItems = !skipWorkshops && fetchWorkshops();
 	const url = lang === 'en' ? enSchedule : ruSchedule;
 	let schedule: any[] = null;
 
@@ -66,22 +66,22 @@ export async function fetch({
 		});
 	}
 
-	if (fetchWorkshopsItems) {
+	// if (fetchWorkshopsItems) {
 
-		const workshops = await fetchWorkshopsItems;
+	// 	const workshops = await fetchWorkshopsItems;
 
-		schedule = schedule.map((scheduleItem) => {
+	// 	schedule = schedule.map((scheduleItem) => {
 
-			const workshopDisabled = workshops.some(
-				workshop => workshop.workshopId === scheduleItem.id && workshop.status === 'full'
-			);
+	// 		const workshopDisabled = workshops.some(
+	// 			workshop => workshop.workshopId === scheduleItem.id && workshop.status === 'full'
+	// 		);
 
-			return {
-				...scheduleItem,
-				workshopDisabled
-			};
-		});
-	}
+	// 		return {
+	// 			...scheduleItem,
+	// 			workshopDisabled
+	// 		};
+	// 	});
+	// }
 
 	logger.debug('fetch', 'Response:', schedule);
 

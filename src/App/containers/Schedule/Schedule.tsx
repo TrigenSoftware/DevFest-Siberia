@@ -264,11 +264,11 @@ export class ScheduleContainer extends Component<IProps, IState> {
 				search
 			},
 			datetime,
-			isLogged,
+			// isLogged,
 			fetchSchedule,
-			fetchSpeakers,
-			fetchFavorites,
-			fetchReservations
+			fetchSpeakers
+			// fetchFavorites,
+			// fetchReservations
 		} = this.props;
 		const {
 			currentDate
@@ -282,10 +282,10 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		fetchSchedule(locale);
 		fetchSpeakers(locale);
 
-		if (isLogged()) {
-			fetchFavorites();
-			fetchReservations();
-		}
+		// if (isLogged()) {
+		// 	fetchFavorites();
+		// 	fetchReservations();
+		// }
 
 		if (!date) {
 

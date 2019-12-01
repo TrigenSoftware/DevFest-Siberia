@@ -12,23 +12,23 @@ export async function fetch({
 
 	logger.debug('fetch');
 
-	let schedule = await scheduleService.fetch({
-		lang,
-		skipWorkshops: true
+	const schedule = await scheduleService.fetch({
+		lang
+		// skipWorkshops: true
 	});
-	const workshops = await fetchWorkshops();
+	// const workshops = await fetchWorkshops();
 
-	schedule = schedule.map((scheduleItem) => {
+	// schedule = schedule.map((scheduleItem) => {
 
-		const workshopDisabled = workshops.some(
-			workshop => workshop.workshopId === scheduleItem.id && workshop.status === 'full'
-		);
+	// 	const workshopDisabled = workshops.some(
+	// 		workshop => workshop.workshopId === scheduleItem.id && workshop.status === 'full'
+	// 	);
 
-		return {
-			...scheduleItem,
-			workshopDisabled
-		};
-	});
+	// 	return {
+	// 		...scheduleItem,
+	// 		workshopDisabled
+	// 	};
+	// });
 
 	logger.debug('fetch', 'Response:', schedule);
 
