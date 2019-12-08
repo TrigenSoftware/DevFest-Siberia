@@ -1,36 +1,31 @@
-import {
-	promises as fs
-} from 'fs';
-import {
-	createHash
-} from 'crypto';
 import path from 'path';
-import React from 'react';
-import {
-	renderToString
-} from 'react-dom/server';
+import React, {
+	ReactElement
+} from 'react';
+import Renderer, {
+	Html
+} from '@trigen/scripts-preset-react-app/helpers/renderer';
 import {
 	ChunkExtractor
 } from '@loadable/server';
 import {
-	Helmet,
-	HelmetData
+	Helmet
 } from 'react-helmet';
 import {
 	I18nProvider
 } from 'i18n-for-react';
-import Store, {
+import {
 	Provider
 } from '@flexis/redux';
-import jsesc from 'jsesc';
 import {
 	StaticRouter
 } from 'react-router';
+import jsesc from 'jsesc';
 import {
 	getLocaleFromPath
 } from './services/i18n';
-import ru from '~/data/locales/ru.json';
-import en from '~/data/locales/en.json';
+import ru from './data/locales/ru.json';
+import en from './data/locales/en.json';
 import App from './App';
 import sprite from 'svg-sprite-loader/runtime/sprite.build';
 import createStore from './store';
@@ -38,165 +33,124 @@ import {
 	RoutesList
 } from './routes';
 
-const BUILD = 'build';
-const extractorOptions = {
-	statsFile:   path.resolve(BUILD, 'loadable-stats.json'),
-	entrypoints: ['index']
-};
+const i18nEn = jsesc(JSON.stringify({
+	locale:  'en',
+	locales: { en }
+}), {
+	json:            true,
+	isScriptContext: true,
+	wrap:            true
+});
+const i18nRu = process.env.DISABLE_RU ? i18nEn : jsesc(JSON.stringify({
+	locale:  'ru',
+	locales: { ru }
+}), {
+	json:            true,
+	isScriptContext: true,
+	wrap:            true
+});
 
-function render(
-	store: Store,
-	locale: string,
-	location: string
-): [HelmetData, string, string] {
+class AppRenderer extends Renderer {
 
-	const extractor = new ChunkExtractor(extractorOptions);
-	const jsx = extractor.collectChunks(
-		<I18nProvider
-			locale={locale}
-			locales={{
-				ru: process.env.DISABLE_RU ? en : ru,
-				en
-			}}
-			objectNotation
-		>
-			<StaticRouter
-				location={location}
-			>
-				<Provider store={store}>
-					<App
-						disableRouter
-					/>
-				</Provider>
-			</StaticRouter>
-		</I18nProvider>
-	);
-	const view: string = renderToString(jsx);
-	const scripts: string = extractor.getScriptTags()
-		.replace(/\n/g, '')
-		.replace(/async/g, 'defer');
-	const helmet = Helmet.renderStatic();
-
-	return [
-		helmet,
-		scripts,
-		view
-	];
-}
-
-async function patchPrecacheManifest() {
-
-	const files = await fs.readdir(BUILD);
-	const precacheManifestFile = files.find(_ => /precache-manifest/.test(_));
-
-	if (!precacheManifestFile) {
-		throw Error('No precache manifest');
-	}
-
-	const template = await fs.readFile(path.join(BUILD, 'index.html'), 'utf8');
-	const precacheManifestPath = path.join(BUILD, precacheManifestFile);
-	const precacheManifest = await fs.readFile(precacheManifestPath, 'utf8');
-
-	return () => {
-
-		const spriteHtml = sprite.stringify();
-		const result = template.replace(/(<div id=view>)/, `${spriteHtml}$1`);
-		const hash = createHash('md5').update(result).digest('hex');
-		const updatedPrecacheManifest = precacheManifest.replace(
-			/"[^"]*"(,\n\s+)"url": "\/index.html"/,
-			`"${hash}", "url": "/shell.html"`
-		);
-
-		return Promise.all([
-			fs.writeFile(path.join(BUILD, 'shell.html'), result),
-			fs.writeFile(precacheManifestPath, updatedPrecacheManifest)
-		]);
+	extractorOptions = {
+		statsFile:   path.resolve(this.BUILD_DIR, 'loadable-stats.json'),
+		entrypoints: ['index']
 	};
-}
 
-async function createTemplate() {
-
-	const template = await fs.readFile(path.join(BUILD, 'index.html'), 'utf8');
-	const enstr = jsesc(JSON.stringify({
-		locale:  'en',
-		locales: { en }
-	}), {
-		json:            true,
-		isScriptContext: true,
-		wrap:            true
-	});
-	const rustr = process.env.DISABLE_RU ? enstr : jsesc(JSON.stringify({
-		locale:  'ru',
-		locales: { ru }
-	}), {
-		json:            true,
-		isScriptContext: true,
-		wrap:            true
-	});
-
-	return (
-		[helmet, scripts, view]: [HelmetData, string, string],
-		locale: string
-	) => {
-
-		const spriteHtml = sprite.stringify();
-		const result = template
-			.replace(/<html([^>]*)>/, `<html$1 ${helmet.htmlAttributes.toString()}>`)
-			.replace(/(<head[^>]*>)/, `$1${[
-				helmet.base.toString(),
-				helmet.title.toString(),
-				helmet.meta.toString(),
-				helmet.script.toString()
-			].join('')}`)
-			.replace(/<script[^>]*src.*<\/script>/, scripts)
-			.replace('<script', `<script>var I18N=${locale === 'ru' ? rustr : enstr};</script><script`)
-			.replace(/(<div id=view>)(<\/div>)/, `${spriteHtml}$1${view}$2`);
-
-		return result;
-	};
-}
-
-async function renderAll(pages: string[]) {
-
-	const writePrecacheManifest = await patchPrecacheManifest();
-	const wrap = await createTemplate();
-	const renderers = await Promise.all(pages.map(async (routePath) => {
+	async render(route: string) {
 
 		const store = createStore();
-		const locale = getLocaleFromPath(routePath);
+		const locale = getLocaleFromPath(route);
 
 		await store.loadAllSegments({
 			locale
 		});
 
-		const parts = render(store, locale, routePath);
+		return (
+			<I18nProvider
+				locale={locale}
+				locales={{
+					ru: process.env.DISABLE_RU ? en : ru,
+					en
+				}}
+				objectNotation
+			>
+				<StaticRouter
+					location={route}
+				>
+					<Provider store={store}>
+						<App
+							disableRouter
+						/>
+					</Provider>
+				</StaticRouter>
+			</I18nProvider>
+		);
+	}
 
-		return () => [
-			routePath,
-			wrap(parts, locale)
-		];
-	}));
+	renderTemplate(jsx: ReactElement) {
 
-	// need to add all SVGs
+		const {
+			extractorOptions
+		} = this;
+		const {
+			locale
+		} = jsx.props;
+		const extractor = new ChunkExtractor(extractorOptions);
+		const template = super.renderTemplate(
+			extractor.collectChunks(jsx)
+		);
+		const helmet = Helmet.renderStatic();
+		const scripts: string = extractor.getScriptTags()
+			.replace(/\n/g, '')
+			.replace(/async/g, 'defer');
 
-	await writePrecacheManifest();
-	await Promise.all(renderers.map(async (render) => {
+		return Html.apply(
+			template,
+			Html.addHtmlAttributes(
+				helmet.htmlAttributes.toString()
+			),
+			Html.addHeadElements(
+				helmet.base.toString(),
+				helmet.title.toString(),
+				helmet.meta.toString(),
+				helmet.script.toString()
+			),
+			Html.replaceEntryScript(scripts),
+			Html.prependEmbededScripts(
+				`var I18N=${locale === 'ru' ? i18nRu : i18nEn};`
+			)
+		);
+	}
 
-		const [
-			routePath,
-			html
-		] = render();
+	async afterRender() {
 
-		await fs.mkdir(
-			path.join(BUILD, routePath),
-			{ recursive: true }
+		await super.afterRender();
+
+		const spriteHtml = sprite.stringify();
+
+		this.addSprite(spriteHtml);
+		await this.createShellHtml(spriteHtml);
+	}
+
+	private addSprite(sprite: string) {
+		this.output.forEach((file) => {
+			file.content = Html.apply(
+				file.content,
+				Html.addElementsBeforeView(sprite)
+			);
+		});
+	}
+
+	private async createShellHtml(sprite: string) {
+
+		const shellHtml = Html.apply(
+			this.template,
+			Html.addElementsBeforeView(sprite)
 		);
 
-		await fs.writeFile(
-			path.join(BUILD, routePath, 'index.html'),
-			html
-		);
-	}));
+		await this.writeAndInjectShellIntoPrecacheManifest(shellHtml);
+	}
 }
 
-renderAll(RoutesList);
+new AppRenderer().renderRoutes(RoutesList);
