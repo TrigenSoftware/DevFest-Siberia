@@ -4,17 +4,17 @@ export default function initUpdater(registration: Promise<ServiceWorkerRegistrat
 
 	const updater = new UpdaterClient();
 
-	updater.onUpdateAvailable(() => {
+	updater.onUpdateAvailable = () => {
 
 		if (confirm('A new version is available. Refresh?')) {
 			updater.update();
 		}
-	});
+	};
 
-	updater.onUpdate(() => {
+	updater.onUpdate = () => {
 		location.reload();
 		return true;
-	});
+	};
 
 	updater.start(registration);
 }

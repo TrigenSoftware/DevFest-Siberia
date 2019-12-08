@@ -1,22 +1,14 @@
 
 export default class UpdaterClient {
 
+	onUpdateAvailable: () => void = null;
+	onUpdate: () => boolean|Promise<boolean> = null;
 	private registration: ServiceWorkerRegistration = null;
 	private nextServiceWorker: ServiceWorker = null;
-	private updateAvailableListener: () => void = null;
-	private updateListener: () => boolean|Promise<boolean> = null;
 
 	constructor() {
 		this.onUpdateFound = this.onUpdateFound.bind(this);
 		this.onStateChange = this.onStateChange.bind(this);
-	}
-
-	onUpdateAvailable(listener: () => void) {
-		this.updateAvailableListener = listener;
-	}
-
-	onUpdate(listener: () => boolean|Promise<boolean>) {
-		this.updateListener = listener;
 	}
 
 	async start(
@@ -68,7 +60,7 @@ export default class UpdaterClient {
 
 		const {
 			nextServiceWorker,
-			updateAvailableListener
+			onUpdateAvailable
 		} = this;
 
 		switch (nextServiceWorker.state) {
@@ -76,9 +68,9 @@ export default class UpdaterClient {
 			case 'installed':
 
 				if (navigator.serviceWorker.controller
-					&& typeof updateAvailableListener === 'function'
+					&& typeof onUpdateAvailable === 'function'
 				) {
-					updateAvailableListener();
+					onUpdateAvailable();
 				}
 
 				break;
@@ -90,19 +82,19 @@ export default class UpdaterClient {
 	private listenController() {
 
 		const {
-			updateListener
+			onUpdate
 		} = this;
 		let refreshing = false;
 
 		navigator.serviceWorker.addEventListener('controllerchange', async () => {
 
 			if (refreshing
-				|| typeof updateListener !== 'function'
+				|| typeof onUpdate !== 'function'
 			) {
 				return;
 			}
 
-			refreshing = await updateListener();
+			refreshing = await onUpdate();
 		});
 	}
 }
