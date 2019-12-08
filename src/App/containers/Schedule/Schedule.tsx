@@ -14,7 +14,6 @@ import {
 } from 'react-router-dom';
 import {
 	I18nContext,
-	// __ as tr,
 	__x
 } from 'i18n-for-react';
 import {
@@ -35,7 +34,6 @@ import Schedule, {
 	ScheduleItem,
 	talkTypeColors,
 	VariantScheduleItemStatus
-	// VariantScheduleItemType
 } from '~/components/Schedule';
 import Loading from '~/components/Loading';
 import {
@@ -123,13 +121,9 @@ export class ScheduleContainer extends Component<IProps, IState> {
 			location,
 			history,
 			schedule,
-			// favorites,
-			// reservations,
 			actionsReady,
 			selectScheduleByType,
 			selectSpeaker
-			// selectIsFavorite,
-			// selectIsReserved
 		} = this.props;
 		const {
 			search
@@ -137,7 +131,6 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		const {
 			context
 		} = this;
-		// const __ = context.bind(tr);
 		const nav = getScheduleDates(context);
 		const filterTypes = getScheduleTypes(context);
 		const params = new URLSearchParams(search);
@@ -213,14 +206,11 @@ export class ScheduleContainer extends Component<IProps, IState> {
 						{scheduleByType.map((item, i) => {
 
 							const {
-								// id,
-								// type,
 								location,
 								date,
 								timeStart,
 								timeEnd
 							} = item;
-							// const workshop = selectIsReserved(reservations, id);
 
 							return (
 								<ScheduleItem
@@ -229,14 +219,6 @@ export class ScheduleContainer extends Component<IProps, IState> {
 									place={location}
 									time={formatDate(date, timeStart)}
 									status={this.getStatus(date, timeStart, timeEnd)}
-									// favorite={selectIsFavorite(favorites, id)}
-									// favoriteLabel={__`schedule.favoriteLabel`}
-									// workshop={workshop}
-									// workshopLabel={__`schedule.workshopLabel`}
-									// workshopAddLabel={__`schedule.workshopAddLabel`}
-									// workshopDeleteLabel={__`schedule.workshopDeleteLabel`}
-									// workshopDisabledLabel={__`schedule.workshopDisabledLabel`}
-									// {...this.getEventHandlers(type, workshop)}
 								/>
 							);
 						})}
@@ -264,11 +246,8 @@ export class ScheduleContainer extends Component<IProps, IState> {
 				search
 			},
 			datetime,
-			// isLogged,
 			fetchSchedule,
 			fetchSpeakers
-			// fetchFavorites,
-			// fetchReservations
 		} = this.props;
 		const {
 			currentDate
@@ -281,11 +260,6 @@ export class ScheduleContainer extends Component<IProps, IState> {
 
 		fetchSchedule(locale);
 		fetchSpeakers(locale);
-
-		// if (isLogged()) {
-		// 	fetchFavorites();
-		// 	fetchReservations();
-		// }
 
 		if (!date) {
 
@@ -315,40 +289,6 @@ export class ScheduleContainer extends Component<IProps, IState> {
 		clearInterval(this.updateIntervalId);
 	}
 
-	// @Bind()
-	// private onFavoriteClick(lectureId: string, favorite: boolean) {
-
-	// 	const {
-	// 		addFavorite,
-	// 		deleteFavorite
-	// 	} = this.props;
-
-	// 	if (favorite) {
-	// 		addFavorite(lectureId);
-	// 	} else {
-	// 		deleteFavorite(lectureId);
-	// 	}
-	// }
-
-	// @Bind()
-	// private onWorkshopAddClick(workshopId: string) {
-
-	// 	const {
-	// 		addReservation
-	// 	} = this.props;
-
-	// 	addReservation(workshopId);
-	// }
-
-	// @Bind()
-	// private onWorkshopDeleteClick(workshopId: string) {
-	// 	const {
-	// 		deleteReservation
-	// 	} = this.props;
-
-	// 	deleteReservation(workshopId);
-	// }
-
 	@Bind()
 	private updateCurrentDate() {
 		this.setState(() => ({
@@ -376,38 +316,6 @@ export class ScheduleContainer extends Component<IProps, IState> {
 			return VariantScheduleItemStatus.Next;
 		}
 	}
-
-	// private getEventHandlers(type: VariantScheduleItemType, workshop: boolean) {
-
-	// 	const {
-	// 		isLogged
-	// 	} = this.props;
-
-	// 	if (!isLogged()) {
-	// 		return null;
-	// 	}
-
-	// 	switch (true) {
-
-	// 		case type === VariantScheduleItemType.Workshop && workshop:
-	// 			return {
-	// 				onWorkshopDeleteClick: this.onWorkshopDeleteClick
-	// 			};
-
-	// 		case type === VariantScheduleItemType.Talk:
-	// 			return {
-	// 				onFavoriteClick: this.onFavoriteClick
-	// 			};
-
-	// 		case type === VariantScheduleItemType.Workshop:
-	// 			return {
-	// 				onWorkshopAddClick: this.onWorkshopAddClick
-	// 			};
-
-	// 		default:
-	// 			return {};
-	// 	}
-	// }
 }
 
 export default withRouter(ScheduleContainer);

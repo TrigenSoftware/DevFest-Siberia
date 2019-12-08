@@ -14,21 +14,7 @@ export async function fetch({
 
 	const schedule = await scheduleService.fetch({
 		lang
-		// skipWorkshops: true
 	});
-	// const workshops = await fetchWorkshops();
-
-	// schedule = schedule.map((scheduleItem) => {
-
-	// 	const workshopDisabled = workshops.some(
-	// 		workshop => workshop.workshopId === scheduleItem.id && workshop.status === 'full'
-	// 	);
-
-	// 	return {
-	// 		...scheduleItem,
-	// 		workshopDisabled
-	// 	};
-	// });
 
 	logger.debug('fetch', 'Response:', schedule);
 
