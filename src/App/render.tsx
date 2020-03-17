@@ -9,7 +9,9 @@ import {
 import Renderer, {
 	Html
 } from '@trigen/scripts-preset-react-app/helpers/renderer';
-import pasteBrowserslistEnv from '@trigen/scripts-preset-react-app/helpers/pasteBrowserslistEnv';
+import {
+	pasteBrowserslistEnv
+} from '@trigen/scripts-preset-react-app/helpers';
 import {
 	excludeAssets
 } from '@trigen/scripts-preset-react-app/webpack/common';
