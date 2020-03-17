@@ -24,6 +24,7 @@
     "build:docs": "trigen-scripts build:docs",
     "start:storybook": "trigen-scripts start:storybook -c .storybook",
     "build:storybook": "trigen-scripts build:storybook -c .storybook",
+    "build:norobots": "echo 'User-agent: *\nDisallow: /' > build/robots.txt",
     "start": "trigen-scripts start",
     "build": "trigen-scripts build",
     "build:render": "trigen-scripts build:render",
