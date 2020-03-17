@@ -2,9 +2,17 @@ import path from 'path';
 import React, {
 	ReactElement
 } from 'react';
+import {
+	BdslBuilder,
+	getBrowserslistEnvList
+} from 'bdsl-webpack-plugin';
 import Renderer, {
 	Html
 } from '@trigen/scripts-preset-react-app/helpers/renderer';
+import pasteBrowserslistEnv from '@trigen/scripts-preset-react-app/helpers/pasteBrowserslistEnv';
+import {
+	excludeAssets
+} from '@trigen/scripts-preset-react-app/webpack/common';
 import {
 	ChunkExtractor
 } from '@loadable/server';
@@ -56,6 +64,10 @@ class AppRenderer extends Renderer {
 		statsFile:   path.resolve(this.BUILD_DIR, 'loadable-stats.json'),
 		entrypoints: ['index']
 	};
+	browserslistEnvs = [
+		...getBrowserslistEnvList(),
+		undefined
+	];
 
 	async render(route: string) {
 
@@ -88,22 +100,113 @@ class AppRenderer extends Renderer {
 		);
 	}
 
+	extractResources(extractor: ChunkExtractor) {
+
+		const links = extractor.getLinkElements().reduce((links, link) => {
+
+			const props = {
+				...link.props
+			};
+
+			if (props.as === 'style'
+				&& !excludeAssets.test(props.href)
+			) {
+
+				Reflect.deleteProperty(props, 'as');
+
+				return [
+					...links,
+					{
+						...link,
+						props
+					}
+				];
+			}
+
+			return links;
+		}, []);
+		const [chunks] = extractor.getScriptTags().split('\n');
+		const [, ...scripts] = extractor.getScriptElements().map((script) => {
+
+			const props = {
+				...script.props,
+				defer: true
+			};
+
+			Reflect.deleteProperty(props, 'async');
+
+			return {
+				...script,
+				props
+			};
+		});
+
+		return {
+			links,
+			chunks,
+			scripts
+		};
+	}
+
+	renderDsl(jsx: ReactElement): [string, string] {
+
+		const {
+			extractorOptions,
+			browserslistEnvs
+		} = this;
+		const bdslBuilder = new BdslBuilder();
+		const [
+			chunks,
+			template
+		] = browserslistEnvs.reduce((_, env) => {
+
+			const extractor = new ChunkExtractor({
+				...extractorOptions,
+				statsFile: path.resolve(
+					this.BUILD_DIR,
+					pasteBrowserslistEnv('loadable-stats.[env].json', env)
+				)
+			});
+			const template = super.renderTemplate(
+				extractor.collectChunks(jsx)
+			);
+			const {
+				links,
+				chunks,
+				scripts
+			} = this.extractResources(extractor);
+
+			bdslBuilder.addEnv({ env }, [
+				...links,
+				...scripts
+			]);
+
+			return [
+				chunks,
+				template
+			];
+		}, ['', '']);
+		const dsl = bdslBuilder.build({
+			debug: false
+		});
+		const scripts = `${chunks}<script>${dsl}</script>`;
+
+		return [
+			scripts,
+			template
+		];
+	}
+
 	renderTemplate(jsx: ReactElement) {
 
 		const {
-			extractorOptions
-		} = this;
-		const {
 			locale
 		} = jsx.props;
-		const extractor = new ChunkExtractor(extractorOptions);
-		const template = super.renderTemplate(
-			extractor.collectChunks(jsx)
-		);
+		const [
+			scripts,
+			template
+		] = this.renderDsl(jsx);
 		const helmet = Helmet.renderStatic();
-		const scripts: string = extractor.getScriptTags()
-			.replace(/\n/g, '')
-			.replace(/async/g, 'defer');
 
 		return Html.apply(
 			template,
@@ -114,9 +217,10 @@ class AppRenderer extends Renderer {
 				helmet.base.toString(),
 				helmet.title.toString(),
 				helmet.meta.toString(),
+				helmet.link.toString(),
 				helmet.script.toString()
 			),
-			Html.replaceEntryScript(scripts),
+			Html.replaceDslScript(scripts),
 			Html.prependEmbededScripts(
 				`var I18N=${locale === 'ru' ? i18nRu : i18nEn};`
 			)

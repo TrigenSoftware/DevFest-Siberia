@@ -5,7 +5,10 @@ import LoadablePlugin from '@loadable/webpack-plugin';
 import {
 	StylableImportOrderPlugin
 } from '@trigen/scripts-preset-react-app/webpack/StylableImportOrderPlugin';
-import findIndex from '@trigen/scripts-preset-react-app/helpers/findIndex';
+import {
+	findIndex,
+	pasteBrowserslistEnv
+} from '@trigen/scripts-preset-react-app/helpers';
 import update from 'immutability-helper';
 
 const jsonDataLoader = {
@@ -35,7 +38,9 @@ export function dev(config) {
 	});
 }
 
-export function build(config) {
+export function build(config, {
+	browserslistEnv
+}) {
 	return update(config, {
 		output: {
 			publicPath: {
@@ -44,6 +49,11 @@ export function build(config) {
 					: config.output.publicPath
 			}
 		},
+		// optimization: {
+		// 	minimize: {
+		// 		$set: false
+		// 	}
+		// },
 		module: {
 			rules: {
 				[findIndex('test', '/\\.svg$/', config.module.rules)]: {
@@ -67,7 +77,9 @@ export function build(config) {
 				new StylableImportOrderPlugin({
 					fullControl: true
 				}),
-				new LoadablePlugin()
+				new LoadablePlugin({
+					filename: pasteBrowserslistEnv('loadable-stats.[env].json', browserslistEnv)
+				})
 			]
 		}
 	});

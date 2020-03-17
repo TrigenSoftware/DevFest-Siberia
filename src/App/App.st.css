@@ -24,6 +24,19 @@
 }
 
 /**
+ * Disable preloader
+ */
+
+:global(#preloader) {
+	/* stylelint-disable-next-line a11y/no-display-none */
+	display: none;
+}
+
+:global(#view) {
+	display: block !important;
+}
+
+/**
  * iOS status bar
  */
 

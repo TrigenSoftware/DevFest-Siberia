@@ -4,6 +4,7 @@ import {
 	render,
 	hydrate
 } from 'react-dom';
+import whenDomReady from 'when-dom-ready';
 import {
 	loadableReady
 } from '@loadable/component';
@@ -98,4 +99,6 @@ async function main() {
 	}
 }
 
-loadableReady(main);
+loadableReady()
+	.then(whenDomReady.resume())
+	.then(main);

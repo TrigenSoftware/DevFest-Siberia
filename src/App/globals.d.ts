@@ -11,7 +11,7 @@ declare module '*.st.css' {
 
 declare module '*.svg' {
 	// tslint:disable-next-line
-	const svg: typeof import('@trigen/scripts-preset-react-app/helpers/IconComponent').default;
+	const svg: typeof import('@trigen/scripts-preset-react-app/helpers/icons/IconComponent').default;
 	export default svg;
 }
 
@@ -31,13 +31,6 @@ declare module '*.jpg' {
 declare module 'raw-loader!*' {
 	const str: string;
 	export default str;
-}
-
-declare namespace React {
-	// tslint:disable-next-line
-	interface ImgHTMLAttributes<T> {
-		loading?: string;
-	}
 }
 
 declare module '*?tsw' {
