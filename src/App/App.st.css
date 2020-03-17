@@ -27,10 +27,10 @@
  * Disable preloader
  */
 
+/* stylelint-disable a11y/no-display-none */
 :global(#preloader) {
-	/* stylelint-disable-next-line a11y/no-display-none */
 	display: none;
-}
+}/* stylelint-enable a11y/no-display-none */
 
 :global(#view) {
 	display: block !important;
