@@ -2463,10 +2463,10 @@
     typedoc "^0.17.0"
     typescript "3.8.3"
 
-"@trigen/scripts-preset-react-app@^5.1.1":
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/@trigen/scripts-preset-react-app/-/scripts-preset-react-app-5.1.1.tgz#4d7ca4ff5bbbb133957e7f732dc2563c85314ad9"
-  integrity sha512-KDqkCTX8RF3TTmiHT5TU4py/U3lWgw+3dZNRv+QjsCbJX6XrJ8oDTHzLstJFUQ2nScnRMlf8UL3fv7KN93Ty9g==
+"@trigen/scripts-preset-react-app@^5.1.2":
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/@trigen/scripts-preset-react-app/-/scripts-preset-react-app-5.1.2.tgz#5164b3a13a511bc87403fededa61ee5767caedb9"
+  integrity sha512-kI/SATVgNBut4ucFbKrqJb+zISAkYrdvLAhtCLRoLJjEC7wcUCJgCRQT2pNWyLzY1dz7Ca2GwqhlPYqctJL0DA==
   dependencies:
     "@babel/register" "^7.4.0"
     "@flexis/favicons" "^1.3.4"
@@ -2715,20 +2715,25 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.0.tgz#69a23a3ad29caf0097f06eda59b361ee2f0639f6"
   integrity sha1-aaI6OtKcrwCX8G7aWbNh7i8GOfY=
 
-"@types/mustache@^0.8.32":
-  version "0.8.32"
-  resolved "https://registry.yarnpkg.com/@types/mustache/-/mustache-0.8.32.tgz#7db3b81f2bf450bd38805f596d20eca97c4ed595"
-  integrity sha512-RTVWV485OOf4+nO2+feurk0chzHkSjkjALiejpHltyuMf/13fGymbbNNFrSKdSSUg1TIwzszXdWsVirxgqYiFA==
+"@types/mustache@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@types/mustache/-/mustache-4.0.1.tgz#e4d421ed2d06d463b120621774185a5cd1b92d77"
+  integrity sha512-wH6Tu9mbiOt0n5EvdoWy0VGQaJMHfLIxY/6wS0xLC7CV1taM6gESEzcYy0ZlWvxxiiljYvfDIvz4hHbUUDRlhw==
 
 "@types/node@*", "@types/node@^13.1.1", "@types/node@^13.1.2":
   version "13.9.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-13.9.0.tgz#5b6ee7a77faacddd7de719017d0bc12f52f81589"
   integrity sha512-0ARSQootUG1RljH2HncpsY2TJBfGQIKOOi7kxzUY6z54ePu/ZD+wJA8zI2Q6v8rol2qpG/rvqsReco8zNMPvhQ==
 
-"@types/node@^12.0.7", "@types/node@^12.7.2":
+"@types/node@^12.7.2":
   version "12.12.29"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.29.tgz#46275f028b4e463b9ac5fefc1d08bc66cc193f25"
   integrity sha512-yo8Qz0ygADGFptISDj3pOC9wXfln/5pQaN/ysDIzOaAWXt73cNHmtEC8zSO2Y+kse/txmwIAJzkYZ5fooaS5DQ==
+
+"@types/node@^13.9.1":
+  version "13.9.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-13.9.1.tgz#96f606f8cd67fb018847d9b61e93997dabdefc72"
+  integrity sha512-E6M6N0blf/jiZx8Q3nb0vNaswQeEyn0XlupO+xN6DtJ6r6IT4nXrTry7zhIfYvFCl3/8Cu6WIysmUBKiqV0bqQ==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
@@ -2832,7 +2837,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.8.19", "@types/react@^16.9.2", "@types/react@^16.9.23", "@types/react@^16.9.4":
+"@types/react@*", "@types/react@^16.9.2", "@types/react@^16.9.23", "@types/react@^16.9.4":
   version "16.9.23"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.23.tgz#1a66c6d468ba11a8943ad958a8cb3e737568271c"
   integrity sha512-SsGVT4E7L2wLN3tPYLiF20hmZTPGuzaayVunfgXzUn1x4uHVsKH6QDJQ/TdpHqwsTLd4CwrmQ2vOgxN7gE24gw==
@@ -9019,7 +9024,7 @@ hmr-filter-webpack-plugin@^1.0.0:
   resolved "https://registry.yarnpkg.com/hmr-filter-webpack-plugin/-/hmr-filter-webpack-plugin-1.0.0.tgz#91dff4bcc2a7265aceb43bfa3e24d5e21231ab38"
   integrity sha512-asWoE7UOnCJMAdKAOmHzsV3RioGeNwtxXfFmWOWJl0LGYENw3rNg4GFL+NX8NiRg8KyvkURkVrP4sYSK1yIHQw==
 
-hoist-non-react-statics@^3.1.0, hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.1:
+hoist-non-react-statics@^3.1.0, hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.1, hoist-non-react-statics@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
   integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
@@ -9266,15 +9271,15 @@ husky@^4.0.9:
     slash "^3.0.0"
     which-pm-runs "^1.0.0"
 
-i18n-for-browser@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/i18n-for-browser/-/i18n-for-browser-1.2.2.tgz#c58254365a2de998be8165d29d09ee029a23280c"
-  integrity sha512-89iTkuIaaCWT5xbTXAQIX7o+y9I7F3TLqPE6yn/gREGabp5mMrSt+r/G+h/u7L72a5r4BFEh427RJvR3Qhxtiw==
+i18n-for-browser@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/i18n-for-browser/-/i18n-for-browser-2.0.1.tgz#dfe05e2984cc7e4edc7a15305ef22e6ec1811d68"
+  integrity sha512-0mOSMP73i8iKPD18feRatmtFyTzjO+96smiYtJNY5/najN3/Bl1fnr0FYsynyOnDJl8GnhTNSErqYFDJl6dwqA==
   dependencies:
     "@babel/runtime" "^7.4.5"
     "@types/js-cookie" "^2.2.2"
-    "@types/mustache" "^0.8.32"
-    "@types/node" "^12.0.7"
+    "@types/mustache" "^4.0.1"
+    "@types/node" "^13.9.1"
     "@types/sprintf-js" "^1.1.2"
     assert "^2.0.0"
     cldr-core "^36.0.0"
@@ -9283,17 +9288,17 @@ i18n-for-browser@^1.2.2:
     make-plural-compiler "^5.0.0"
     math-interval-parser "^2.0.1"
     messageformat "^2.2.1"
-    mustache "^3.0.1"
+    mustache "^4.0.1"
     sprintf-js "^1.1.2"
     url "^0.11.0"
 
-i18n-for-react@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/i18n-for-react/-/i18n-for-react-2.0.2.tgz#dae00bacfd1635ff2f80f545529b69fce934d3c3"
-  integrity sha512-o0JjWJ6gjjiC6D92T5WuI5PNijRqlnoQLdnkDtRVahVg2w6U4LV99yu7mCAjMO1QmfrlDxRbTJq8hi+QehOW+Q==
+i18n-for-react@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/i18n-for-react/-/i18n-for-react-3.0.0.tgz#57bbf0fb11fd591bada2ce36e1b237e4155b7751"
+  integrity sha512-lEuoGHFdIAOKojgOrcIV1QQv2t5R5vO9MsB4GZz6M3zxwiEhHx8O9Ti+d6Ov3O1c7ITb/iCX83EaIBTe6GYBSA==
   dependencies:
-    "@types/react" "^16.8.19"
-    hoist-non-react-statics "^3.3.0"
+    "@types/react" "^16.9.23"
+    hoist-non-react-statics "^3.3.2"
 
 iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
   version "0.4.24"
@@ -12871,10 +12876,10 @@ murmurhash@^0.0.2:
   resolved "https://registry.yarnpkg.com/murmurhash/-/murmurhash-0.0.2.tgz#6f07bd8a1105e709c26fc89420cb5930c24585fe"
   integrity sha1-bwe9ihEF5wnCb8iUIMtZMMJFhf4=
 
-mustache@^3.0.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/mustache/-/mustache-3.2.1.tgz#89e78a9d207d78f2799b1e95764a25bf71a28322"
-  integrity sha512-RERvMFdLpaFfSRIEe632yDm5nsd0SDKn8hGmcUwswnyiE5mtdZLDybtHAz6hjJhawokF0hXvGLtx9mrQfm6FkA==
+mustache@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/mustache/-/mustache-4.0.1.tgz#d99beb031701ad433338e7ea65e0489416c854a2"
+  integrity sha512-yL5VE97+OXn4+Er3THSmTdCFCtx5hHWzrolvH+JObZnUYwuaG7XV+Ch4fR2cIrcYI0tFHxS7iyFYl14bW8y2sA==
 
 mute-stream@0.0.7:
   version "0.0.7"
