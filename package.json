@@ -63,7 +63,8 @@
     "react-focus-lock": "^2.2.1",
     "react-helmet": "^5.2.1",
     "react-router-dom": "^5.1.2",
-    "redux": "^4.0.4"
+    "redux": "^4.0.4",
+    "when-dom-ready": "^1.2.12"
   },
   "devDependencies": {
     "@loadable/babel-plugin": "^5.10.0",

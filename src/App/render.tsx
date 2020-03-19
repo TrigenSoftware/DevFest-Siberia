@@ -102,8 +102,7 @@ class AppRenderer extends Renderer {
 		);
 		const helmet = Helmet.renderStatic();
 		const scripts: string = extractor.getScriptTags()
-			.replace(/\n/g, '')
-			.replace(/async/g, 'defer');
+			.replace(/\n/g, '');
 
 		return Html.apply(
 			template,
