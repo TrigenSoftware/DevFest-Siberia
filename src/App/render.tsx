@@ -3,7 +3,6 @@ import React, {
 	ReactElement
 } from 'react';
 import {
-	BdslBuilder,
 	getBrowserslistEnvList
 } from 'bdsl-webpack-plugin';
 import Renderer, {
@@ -12,9 +11,6 @@ import Renderer, {
 import {
 	pasteBrowserslistEnv
 } from '@trigen/scripts-preset-react-app/helpers';
-import {
-	excludeAssets
-} from '@trigen/scripts-preset-react-app/webpack/common';
 import {
 	ChunkExtractor
 } from '@loadable/server';
@@ -102,52 +98,12 @@ class AppRenderer extends Renderer {
 		);
 	}
 
-	extractResources(extractor: ChunkExtractor) {
-
-		const links = extractor.getLinkElements().reduce((links, link) => {
-
-			const props = {
-				...link.props
-			};
-
-			if (props.as === 'style'
-				&& !excludeAssets.test(props.href)
-			) {
-
-				Reflect.deleteProperty(props, 'as');
-
-				return [
-					...links,
-					{
-						...link,
-						props
-					}
-				];
-			}
-
-			return links;
-		}, []);
-		const [chunks] = extractor.getScriptTags().split('\n');
-		const [, ...scripts] = extractor.getScriptElements().map((script) => {
-
-			const props = {
-				...script.props,
-				defer: true
-			};
-
-			Reflect.deleteProperty(props, 'async');
-
-			return {
-				...script,
-				props
-			};
-		});
-
-		return {
-			links,
-			chunks,
-			scripts
-		};
+	extractScripts(extractor: ChunkExtractor, isEsm = false) {
+		return extractor.getScriptTags().split('\n').map((script, i) => (
+			i === 0
+				? script
+				: script.replace('<script ', isEsm ? '<script type="module" ' : '<script nomodule ')
+		));
 	}
 
 	renderDsl(jsx: ReactElement): [string, string] {
@@ -156,11 +112,10 @@ class AppRenderer extends Renderer {
 			extractorOptions,
 			browserslistEnvs
 		} = this;
-		const bdslBuilder = new BdslBuilder();
 		const [
-			chunks,
+			scripts,
 			template
-		] = browserslistEnvs.reduce((_, env) => {
+		] = browserslistEnvs.reduce(([allScripts], env) => {
 
 			const extractor = new ChunkExtractor({
 				...extractorOptions,
@@ -172,26 +127,16 @@ class AppRenderer extends Renderer {
 			const template = super.renderTemplate(
 				extractor.collectChunks(jsx)
 			);
-			const {
-				links,
+			const [
 				chunks,
-				scripts
-			} = this.extractResources(extractor);
-
-			bdslBuilder.addEnv({ env }, [
-				...links,
 				...scripts
-			]);
+			] = this.extractScripts(extractor, env === 'esm');
 
 			return [
-				chunks,
+				`${allScripts ? '' : chunks}${allScripts}${scripts.join('')}`,
 				template
 			];
 		}, ['', '']);
-		const dsl = bdslBuilder.build({
-			debug: false
-		});
-		const scripts = `${chunks}<script>${dsl}</script>`;
 
 		return [
 			scripts,

@@ -1,3 +1,7 @@
 [
-	"@trigen/scripts-preset-react-app"
+	["@trigen/scripts-preset-react-app", {
+		"bdsl": {
+			"withStylesheets": false
+		}
+	}]
 ]
