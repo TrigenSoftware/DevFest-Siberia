@@ -178,7 +178,10 @@ class AppRenderer extends Renderer {
 				scripts
 			} = this.extractResources(extractor);
 
-			bdslBuilder.addEnv({ env }, [
+			bdslBuilder.addEnv({
+				isModule: env === 'esm',
+				env
+			}, [
 				...links,
 				...scripts
 			]);
@@ -190,7 +193,7 @@ class AppRenderer extends Renderer {
 		}, ['', '']);
 		const dsl = bdslBuilder.build({
 			debug: false
-		}).replace(/\/.*\.test\([^)]+\)/, "'noModule' in dsld.createElement('script')");
+		});
 		const scripts = `${chunks}<script>${dsl}</script>`;
 
 		return [
