@@ -1,7 +1,8 @@
 [
 	["@trigen/scripts-preset-react-app", {
 		"bdsl": {
-			"moduleEnv": "esm"
+			"moduleEnv": "esm",
+			"withStylesheets": false
 		}
 	}]
 ]
