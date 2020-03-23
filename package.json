@@ -57,7 +57,7 @@
     "immutable": "4.0.0-rc.12",
     "js-logger": "^1.6.0",
     "prop-types": "^15.6.0",
-    "qs": "^6.9.1",
+    "qs": "^6.9.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-focus-lock": "^2.2.1",
