@@ -76,7 +76,7 @@
     "@trigen/scripts-preset-react-app": "^5.2.0",
     "@types/faker": "^4.1.11",
     "faker": "^4.1.0",
-    "jsesc": "^2.5.2",
+    "jsesc": "^3.0.1",
     "mjml": "^4.6.2",
     "moxios": "^0.4.0",
     "webpack-bundle-analyzer": "^3.6.1"
