@@ -79,7 +79,7 @@
     "jsesc": "^3.0.1",
     "mjml": "^4.6.2",
     "moxios": "^0.4.0",
-    "webpack-bundle-analyzer": "^3.6.1"
+    "webpack-bundle-analyzer": "^3.7.0"
   },
   "resolutions": {
     "@stylable/optimizer": "2.1.1"
