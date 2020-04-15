@@ -2600,10 +2600,10 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
-"@types/google-map-react@^1.1.5":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@types/google-map-react/-/google-map-react-1.1.5.tgz#6fc83620ea3b927aa1c4b8654ff9e151364c7786"
-  integrity sha512-PbpOQucrBYhCDLz/Xodtm2NZlkIY/paieEXSMheS3CKcLg5pvzowB5aY6cmj+7uY99j+qzYfO2IIUgraoDaBaQ==
+"@types/google-map-react@^1.1.6":
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/@types/google-map-react/-/google-map-react-1.1.6.tgz#a415154a334ffe229aa5ec24b994f29f64fc724b"
+  integrity sha512-E0Cgiz2L/6n4bO3aO5QXiDfhDLS0/u4F+gI2Yr6PPhl19N8M2WbgEmh+mTC0b6MIHXMF6fWgV6OdrrSeZNhnhQ==
   dependencies:
     "@types/react" "*"
 
