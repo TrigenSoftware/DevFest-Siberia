@@ -1228,10 +1228,10 @@
     vinyl "^2.2.0"
     vinyl-fs "^3.0.3"
 
-"@flexis/ui@^1.2.0-beta":
-  version "1.2.0-beta"
-  resolved "https://registry.yarnpkg.com/@flexis/ui/-/ui-1.2.0-beta.tgz#b587b8813c74f8f081b425eb6e693822f89355e1"
-  integrity sha512-wtq4seRudEpyr9cqOKMvj6qitJ4sBF0Du1n+5Z0ZQCbdL4E8XutoUNNM9iPMJ0sTh9TPhsSiOVlOthH7s/E7GQ==
+"@flexis/ui@^1.3.0-beta":
+  version "1.3.0-beta"
+  resolved "https://registry.yarnpkg.com/@flexis/ui/-/ui-1.3.0-beta.tgz#b524d47a6fdcc0105c6442326e6b9991099be078"
+  integrity sha512-5hW66bz18wsvZE1LlSRXAGWe3oOViWvnYERn2FF/3mDa+OUeQ5DAfh0x6U3okT/+8PHmv7SX8ha9SZuYRV54TA==
   dependencies:
     "@babel/runtime" "^7.6.2"
     "@stylable/runtime" "^2.1.3"
