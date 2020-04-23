@@ -63,7 +63,9 @@ export default class Partners extends Component<IProps> {
 							{items.map((item, i) => (
 								<BrandsItem
 									key={i}
-									{...item}
+									href={item.href}
+									src={item.src}
+									title={item.title}
 								/>
 							))}
 						</BrandsRow>
