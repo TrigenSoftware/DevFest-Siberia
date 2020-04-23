@@ -7,6 +7,7 @@ import {
 	omit,
 	CombinePropsAndAttributes,
 	Bind,
+	SetImmediate,
 	subscribeEvent
 } from '@flexis/ui/helpers';
 import Button from '../Button';
@@ -187,6 +188,7 @@ export default class Share extends Component<IProps, IState> {
 		}));
 	}
 
+	@SetImmediate()
 	private toggleEffects() {
 
 		const {

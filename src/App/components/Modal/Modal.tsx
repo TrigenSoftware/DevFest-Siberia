@@ -5,7 +5,8 @@ import React, {
 import FocusLock from 'react-focus-lock';
 import {
 	subscribeEvent,
-	Bind
+	Bind,
+	SetImmediate
 } from '@flexis/ui/helpers';
 import FlexisModal, {
 	IProps as IFlexisModalProps,
@@ -93,6 +94,7 @@ export default class Modal extends Component<IProps> {
 		}
 	}
 
+	@SetImmediate()
 	private toggleEffects() {
 
 		const {
