@@ -5,6 +5,9 @@ import {
 import {
 	action
 } from '@storybook/addon-actions';
+import {
+	MemoryRouter
+} from 'react-router';
 import Schedule, {
 	ScheduleItem,
 	VariantScheduleItemStatus,
@@ -21,6 +24,11 @@ storiesOf('Components|Schedule', module)
 	.addParameters({
 		info: stylableApi
 	})
+	.addDecorator(story => (
+		<MemoryRouter initialEntries={['/schedule']}>
+			{story()}
+		</MemoryRouter>
+	))
 	.add(
 		'with default state',
 		() => (
