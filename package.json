@@ -37,7 +37,7 @@
     "@flexis/redux": "^1.2.0-alpha",
     "@flexis/ui": "^1.2.0-beta",
     "@loadable/component": "^5.10.2",
-    "@stylable/runtime": "^2.1.3",
+    "@stylable/runtime": "^3.11.7",
     "@types/google-map-react": "^1.1.6",
     "@types/loadable__component": "^5.10.0",
     "@types/prop-types": "^15.7.3",
