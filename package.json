@@ -33,7 +33,7 @@
     "serve": "trigen-scripts serve"
   },
   "dependencies": {
-    "@babel/runtime": "^7.9.2",
+    "@babel/runtime": "^7.12.18",
     "@flexis/redux": "^1.2.0-alpha",
     "@flexis/ui": "^1.2.0-beta",
     "@loadable/component": "^5.10.2",
