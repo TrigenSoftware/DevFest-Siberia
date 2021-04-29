@@ -1,0 +1,62 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "22:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: date-fns
+    versions:
+    - 2.16.1
+    - 2.18.0
+    - 2.19.0
+    - 2.20.0
+    - 2.20.1
+    - 2.20.2
+    - 2.20.3
+    - 2.21.0
+  - dependency-name: "@stylable/runtime"
+    versions:
+    - 3.11.13
+    - 3.11.14
+    - 4.0.0
+    - 4.0.1
+    - 4.0.2
+    - 4.0.4
+    - 4.0.6
+  - dependency-name: qs
+    versions:
+    - 6.10.0
+    - 6.9.6
+  - dependency-name: "@babel/runtime"
+    versions:
+    - 7.12.13
+    - 7.12.18
+    - 7.12.5
+    - 7.13.10
+    - 7.13.6
+    - 7.13.7
+    - 7.13.9
+  - dependency-name: mjml
+    versions:
+    - 4.8.1
+    - 4.8.2
+    - 4.9.0
+  - dependency-name: "@trigen/scripts-preset-react-app"
+    versions:
+    - 7.0.6
+    - 7.3.3
+  - dependency-name: "@types/qs"
+    versions:
+    - 6.9.5
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
+  - dependency-name: jquery
+    versions:
+    - 3.5.1
